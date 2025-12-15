@@ -24,7 +24,9 @@ IF = {
 571 = { set_variable = { var = SOV_garrison_strength value = 1  } }
 408 = { set_variable = { var = SOV_garrison_strength value = 1  } }
 
-
+set_power_balance = {
+id= SOV_power_balance
+} 
 
 country_event = { id = soviet.1013 days = 900 } #battle of lake khasan
 
@@ -513,8 +515,46 @@ if = {
 	}
 }
 
+SOV = {
+    add_dynamic_modifier = {
+	   modifier = SOV_military_industrial_complex_modifier
+    }
+	add_dynamic_modifier = {
+	   modifier = SOV_STAVKA
+    }
+
+	
+set_variable = { var = SOV_production_speed_arms_factory_factor value = 0.05 }
+set_variable = { var = SOV_political_power_gain_modifier value = -0.2 }
+set_variable = { var = SOV_stability_factor_modifier value = 0.00 }
+set_variable = { var = SOV_industry_consumer_goods_modifier value = 0.00 } 
+set_variable = { var = SOV_production_speed_arms_factory_factor value = 0.05 }
+set_variable = { var = SOV_industry_production_efficiency_max_modifier value = 0.00 }
+set_variable = { var = SOV_production_factory_efficiency_gain_factor_modifier value = 0.00 }
+set_variable = { var = SOV_stability_weekly_modifier value = -0.0003 }
+set_variable = { var = SOV_research_speed_factor_var value = 0.00 }
+set_variable = { var = SOV_military_industrial_organization_funds_gain_var value = 0.00 }
+set_variable = { var = SOV_power_balance_weekly value = -0.0002}
+
+set_variable = { var = SOV_army_morale_factor value = 0.05 }
+set_variable = { var = SOV_cavalry_attack_factor value = 0.1 }
+set_variable = { var = SOV_cavalry_defence_factor value = 0.1 }
+set_variable = { var = SOV_experience_gain_factor value = -0.2 }
+set_variable = { var = SOV_experience_gain_army_factor value = -0.5 }
+set_variable = { var = SOV_mobilization_law_cost_factor value = -0.5 }
+set_variable = { var = SOV_mobilization_speed value = 0.2 }
+set_variable = { var = SOV_max_planning value = 0.05 }
+set_variable = { var = SOV_planning_speed value = -0.3 }
+set_variable = { var = SOV_minimum_training_level value = -0.2 }
+
+
+
 set_convoys = 200
+<<<<<<< HEAD
+set_stability = 0.45
+=======
 set_stability = 0.85
+>>>>>>> ee2be1ce198a37482484952062fe920f8c348d6d
 set_war_support = 0.6
 
 set_politics = {
