@@ -1,5 +1,267 @@
 
 PAR_instant_effect_decisions = {
+	ITA_correct_italian_milita_template = {
+		allowed = { tag = PAR }
+		ai_will_do = {
+			base = 6000			
+		}
+		available = {
+			OR = {
+				AND = {
+					ITA = {
+						has_country_flag = ITA_bigger_milita_flag
+						NOT = {
+							has_country_flag = ITA_bigger_milita_given_flag
+						}
+					}
+					
+				}
+				AND = {
+					ITA = {
+						has_country_flag = ITA_bigger_milita_given_flag
+						NOT = {
+							has_country_flag = ITA_bigger_milita_flag
+							
+						}
+					}
+					
+				}
+				
+			}
+			
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			if = {
+				limit = {
+					ITA = {
+						has_country_flag = ITA_bigger_milita_flag
+						has_completed_focus = ITA_CC.NN_division_primacy
+						NOT = {
+							has_country_flag = ITA_bigger_milita_given_flag
+						}
+					}
+					
+				}
+				division_template = { #Blackshirts
+					name = "Camicia Nera" 
+					division_names_group = ITA_INF_02
+					template_counter = 68
+					is_locked = yes
+					force_allow_recruiting = yes
+					division_cap = 24 
+					template_counter = 137
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						recon = { x = 0 y = 2 }
+						pack_artillery = { x = 0 y = 3 }
+						anti_air_company = { x = 1 y = 0 }
+						logistics_company = { x = 1 y = 1 }
+						field_hospital = { x = 1 y = 2 }
+						anti_tank  = { x = 1 y = 3 }
+					}
+
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+						
+
+						militia = { x = 2 y = 0 }
+						militia = { x = 2 y = 1 }
+						militia = { x = 2 y = 2 }
+						
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }	
+						artillery_brigade = { x = 3 y = 2 }
+						artillery_brigade = { x = 3 y = 3 }
+						
+						anti_air = { x = 4 y = 0 }	
+						anti_tank_brigade = { x = 4 y = 1 }	
+						artillery_brigade = { x = 4 y = 2 }				
+					}
+				}
+				set_country_flag = ITA_bigger_milita_given_flag
+
+			}
+			else_if = {
+				limit = {
+					ITA = {
+						has_country_flag = ITA_bigger_milita_flag
+						NOT = {
+							has_country_flag = ITA_bigger_milita_given_flag
+							has_completed_focus = ITA_CC.NN_division_primacy
+						}
+					}
+					
+				}
+				division_template = { #Blackshirts
+					name = "Camicia Nera" 
+					division_names_group = ITA_INF_02
+					template_counter = 68
+					is_locked = yes
+					force_allow_recruiting = yes
+					division_cap = 18 
+					template_counter = 137
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						recon = { x = 0 y = 2 }
+						pack_artillery = { x = 0 y = 3 }
+						anti_air_company = { x = 1 y = 0 }
+						logistics_company = { x = 1 y = 1 }
+						field_hospital = { x = 1 y = 2 }
+						anti_tank  = { x = 1 y = 3 }
+					}
+
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+						
+
+						militia = { x = 2 y = 0 }
+						militia = { x = 2 y = 1 }
+						militia = { x = 2 y = 2 }
+						
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }	
+						artillery_brigade = { x = 3 y = 2 }
+						artillery_brigade = { x = 3 y = 3 }
+						
+						anti_air = { x = 4 y = 0 }	
+						anti_tank_brigade = { x = 4 y = 1 }	
+						artillery_brigade = { x = 4 y = 2 }				
+					}
+				}
+				set_country_flag = ITA_bigger_milita_given_flag
+
+			}
+			else_if = {
+				limit = {
+					ITA = {
+						has_country_flag = ITA_bigger_milita_given_flag
+						has_completed_focus = ITA_CC.NN_division_primacy
+						NOT = {
+							has_country_flag = ITA_bigger_milita_flag
+							
+						}
+					}
+				}
+				division_template = { #Blackshirts
+					name = "Camicia Nera" 
+					division_names_group = ITA_INF_02
+					template_counter = 68
+					is_locked = yes
+					force_allow_recruiting = yes
+					division_cap = 24 
+					template_counter = 137
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						recon = { x = 0 y = 2 }
+						pack_artillery = { x = 0 y = 3 }
+						anti_air_company = { x = 1 y = 0 }
+						logistics_company = { x = 1 y = 1 }
+						field_hospital = { x = 1 y = 2 }
+						anti_tank  = { x = 1 y = 3 }
+					}
+
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+						
+
+						militia = { x = 2 y = 0 }
+						militia = { x = 2 y = 1 }
+						militia = { x = 2 y = 2 }
+						
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }	
+						artillery_brigade = { x = 3 y = 2 }
+						artillery_brigade = { x = 3 y = 3 }
+						
+						anti_air = { x = 4 y = 0 }	
+						anti_tank_brigade = { x = 4 y = 1 }				
+					}
+				}
+				clr_country_flag = ITA_bigger_milita_given_flag
+
+			}
+			else_if = {
+				limit = {
+					ITA = {
+						has_country_flag = ITA_bigger_milita_given_flag
+						
+						NOT = {
+							has_completed_focus = ITA_CC.NN_division_primacy
+							has_country_flag = ITA_bigger_milita_flag
+							
+						}
+					}
+				}
+				division_template = { #Blackshirts
+					name = "Camicia Nera" 
+					division_names_group = ITA_INF_02
+					template_counter = 68
+					is_locked = yes
+					force_allow_recruiting = yes
+					division_cap = 18
+					template_counter = 137
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						recon = { x = 0 y = 2 }
+						pack_artillery = { x = 0 y = 3 }
+						anti_air_company = { x = 1 y = 0 }
+						logistics_company = { x = 1 y = 1 }
+						field_hospital = { x = 1 y = 2 }
+						anti_tank  = { x = 1 y = 3 }
+					}
+
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+						
+
+						militia = { x = 2 y = 0 }
+						militia = { x = 2 y = 1 }
+						militia = { x = 2 y = 2 }
+						
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }	
+						artillery_brigade = { x = 3 y = 2 }
+						artillery_brigade = { x = 3 y = 3 }
+						
+						anti_air = { x = 4 y = 0 }	
+						anti_tank_brigade = { x = 4 y = 1 }				
+					}
+				}
+				clr_country_flag = ITA_bigger_milita_given_flag
+
+			}
+		}
+	}
 	JAP_remove_additional_debuffs_in_forward_states = {
 		allowed = { tag = PAR }
 		ai_will_do = {
@@ -809,6 +1071,7 @@ PAR_instant_effect_decisions = {
 			}
 		}	
 	}
+	
 	
 	PAR_POL_capital = {
 		allowed = { tag = PAR }
@@ -6662,6 +6925,190 @@ PAR_instant_effect_decisions = {
 			}
 		}
 	}
+
+	MAN_subsup1 = {
+		allowed = { tag = PAR }
+		ai_will_do = {
+			base = 1000			
+		}
+		available = {
+			MAN = {
+				has_idea = MAN_subs_1
+				has_country_flag = MAN_subs1_flag
+				has_navy_size = {
+					archetype = ship_hull_submarine 
+					size > 24
+				}
+			}
+			
+		}
+		cost = 0
+		fire_only_once = no
+
+		complete_effect = {
+			MAN = {
+				clr_country_flag = MAN_subs1_flag
+				set_country_flag = MAN_subs2_flag
+				swap_ideas = {
+					remove_idea = MAN_subs_1
+					add_idea = MAN_subs_2
+				}
+			}
+		}
+	}
+	MAN_subsdown1 = {
+		allowed = { tag = PAR }
+		ai_will_do = {
+			base = 1000			
+		}
+		available = {
+			MAN = {
+				has_idea = MAN_subs_2
+				has_country_flag = MAN_subs2_flag
+				has_navy_size = {
+					archetype = ship_hull_submarine 
+					size < 25
+				}
+			}
+			
+		}
+		cost = 0
+		fire_only_once = no
+
+		complete_effect = {
+			MAN = {
+				clr_country_flag = MAN_subs2_flag
+				set_country_flag = MAN_subs1_flag
+				swap_ideas = {
+					remove_idea = MAN_subs_2
+					add_idea = MAN_subs_1
+				}
+			}
+		}
+	}
+	MAN_subsup2 = {
+		allowed = { tag = PAR }
+		ai_will_do = {
+			base = 1000			
+		}
+		available = {
+			MAN = {
+				has_idea = MAN_subs_2
+				has_country_flag = MAN_subs2_flag
+				has_navy_size = {
+					archetype = ship_hull_submarine 
+					size > 39
+				}
+			}
+			
+		}
+		cost = 0
+		fire_only_once = no
+
+		complete_effect = {
+			MAN = {
+				clr_country_flag = MAN_subs2_flag
+				set_country_flag = MAN_subs3_flag
+				swap_ideas = {
+					remove_idea = MAN_subs_2
+					add_idea = MAN_subs_3
+				}
+			}
+		}
+	}
+	MAN_subsdown2 = {
+		allowed = { tag = PAR }
+		ai_will_do = {
+			base = 1000			
+		}
+		available = {
+			ENG = {
+				has_idea = MAN_subs_3
+				has_country_flag = MAN_subs3_flag
+				has_navy_size = {
+					archetype = ship_hull_submarine 
+					size < 40
+				}
+			}
+			
+		}
+		cost = 0
+		fire_only_once = no
+
+		complete_effect = {
+			ENG = {
+				clr_country_flag = MAN_subs3_flag
+				set_country_flag = MAN_subs2_flag
+				swap_ideas = {
+					remove_idea = MAN_subs_3
+					add_idea = MAN_subs_2
+				}
+			}
+		}
+	}
+	MAN_subsup3 = {
+		allowed = { tag = PAR }
+		ai_will_do = {
+			base = 1000			
+		}
+		available = {
+			MAN = {
+				has_idea = MAN_subs_3
+				has_country_flag = MAN_subs3_flag
+				has_navy_size = {
+					archetype = ship_hull_submarine 
+					size > 64
+				}
+			}
+			
+		}
+		cost = 0
+		fire_only_once = no
+
+		complete_effect = {
+			MAN = {
+				clr_country_flag = MAN_subs3_flag
+				set_country_flag = MAN_subs4_flag
+				swap_ideas = {
+					remove_idea = MAN_subs_3
+					add_idea = MAN_subs_4
+				}
+			}
+		}
+	}
+	MAN_subsdown3 = {
+		allowed = { tag = PAR }
+		ai_will_do = {
+			base = 1000			
+		}
+		available = {
+			ENG = {
+				has_idea = MAN_subs_4
+				has_country_flag = MAN_subs4_flag
+				has_navy_size = {
+					archetype = ship_hull_submarine 
+					size < 65
+				}
+			}
+			
+		}
+		cost = 0
+		fire_only_once = no
+
+		complete_effect = {
+			ENG = {
+				clr_country_flag = MAN_subs4_flag
+				set_country_flag = MAN_subs3_flag
+				swap_ideas = {
+					remove_idea = MAN_subs_4
+					add_idea = MAN_subs_3
+				}
+			}
+		}
+	}
+
+
+
 	CHI_dont_let_japan_snake = {
 		allowed = { tag = PAR }
 		ai_will_do = {
@@ -10907,56 +11354,7 @@ PAR_instant_effect_decisions = {
 			
 		}
 	}
-	PAR_JAP = {
-
-		icon = generic_megaphone
-   
-		allowed = {
-		   tag = PAR
-		}
-		available = {	
-		   USA = {is_ai = no}
-		   JAP = { is_ai = yes }
-		   GER = {is_ai = no}
-		   NOT = { USA = { has_idea = USA_jap_is_ai } }
-		}
-
-		cost = 0
-
-		complete_effect = {
-           USA = { add_ideas = USA_jap_is_ai }
-		}
-
-		ai_will_do = {
-			base = 1000
-			
-		}
-	}
-	PAR_JAP_2 = {
-
-		icon = generic_megaphone
-   
-		allowed = {
-		   tag = PAR
-		}
-		available = {	
-		   USA = {is_ai = no}
-		   JAP = { is_ai = no}
-		   GER = {is_ai = no}
-		   USA = { has_idea = USA_jap_is_ai }
-		}
-
-		cost = 0
-
-		complete_effect = {
-           USA = { remove_ideas = USA_jap_is_ai }
-		}
-
-		ai_will_do = {
-			base = 1000
-			
-		}
-	}
+	
 
 
 	PAR_RAJ_1 = {

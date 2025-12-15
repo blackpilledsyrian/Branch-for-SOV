@@ -268,7 +268,7 @@ buildings = {
 
 	rocket_site = {
 		show_on_map = 1
-		base_cost = 8000
+		base_cost = 4000
 		icon_frame = 13
 		rocket_production = 0
 		rocket_launch_capacity = 2
@@ -284,6 +284,51 @@ buildings = {
 			shares_slots = yes
 			exclusive_with = mega_gun_emplacement
 			
+		}
+	}
+	naval_supply_hub = {
+		show_on_map = 1
+		base_cost = 12500
+		icon_frame = 29
+		disabled_in_dmz = yes
+		naval_supply_hub = yes
+		infrastructure_construction_effect = yes
+		only_costal = yes
+		tags = { naval_buildings_tag }
+		building_prerequisite = {
+			building_dependency = {
+				building = naval_base
+				level = 8
+			}
+		}
+		level_cap = {
+			province_max = 1
+		}
+	}
+	
+	naval_headquarters = {
+		dlc_allowed = { has_dlc = "No Compromise, No Surrender" }
+		show_on_map = 1
+		base_cost = 10000
+		per_controlled_building_extra_cost = 5000
+		icon_frame = 30
+		value = 1
+		naval_headquarter = yes
+		disabled_in_dmz = yes
+		infrastructure_construction_effect = yes
+		only_costal = yes
+		tags = { naval_buildings_tag }
+		building_prerequisite = {
+			building_dependency = {
+				building = naval_base
+				level = 8
+			}
+		}
+		level_cap = {
+			province_max = 1
+		}
+		modules = {
+			naval_leader_module
 		}
 	}
 
@@ -405,7 +450,7 @@ buildings = {
 		dlc_allowed = { has_dlc = Gotterdammerung }
 		hide_if_missing_tech = yes
 		show_on_map = 1
-		base_cost = 25000
+		base_cost = 20000
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 25
 		value = 1

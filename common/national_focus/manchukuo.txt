@@ -425,10 +425,10 @@ focus_tree = {
 			}
 			custom_effect_tooltip = spacers
 			610 = {
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 4
 					instant_build = yes 
 				}
 			}
@@ -800,7 +800,7 @@ focus_tree = {
 					}
 				}
 				custom_effect_tooltip = spacers
-				add_stability = -0.025
+				add_stability = -0.05
 				custom_effect_tooltip = 500lesswork
 				add_to_variable = {
 					var = logs
@@ -1018,7 +1018,7 @@ focus_tree = {
 					}
 				}
 				custom_effect_tooltip = spacers
-				add_stability = -0.025
+				add_stability = -0.05
 				custom_effect_tooltip = 500lesswork
 				add_to_variable = {
 					var = logs
@@ -1067,7 +1067,12 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
-					level = 4
+					level = 2
+					instant_build = yes 
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
 					instant_build = yes 
 				}
 				add_building_construction = {
@@ -1280,10 +1285,10 @@ focus_tree = {
 		completion_reward = {
 
 			610 ={
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 3
 					instant_build = yes 
 				}
 				add_building_construction = {
@@ -1309,7 +1314,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 7.16
+		cost = 5
 
 		prerequisite = { 
 			focus = MAN_ignore_the_opium_addicts 
@@ -1384,7 +1389,10 @@ focus_tree = {
 		}
 
 
-		available = {}
+		available = {
+			has_tech = fuel_refining
+			has_tech = improved_oil_processing
+		}
 
 		bypass = {}
 
@@ -1439,7 +1447,7 @@ focus_tree = {
 					}
 					add_resource = {
 						type = oil 
-						amount = 6
+						amount = 9
 					}
 				}
 				else_if = {
@@ -1469,7 +1477,7 @@ focus_tree = {
 						}
 						add_resource = {
 							type = oil 
-							amount = 9
+							amount = 12
 						}
 					}
 				}
@@ -1499,7 +1507,7 @@ focus_tree = {
 						}
 						add_resource = {
 							type = oil 
-							amount = 12
+							amount = 15
 						}
 					}
 				}
@@ -1512,8 +1520,6 @@ focus_tree = {
 				category = cat_synth_oil
 				category = cat_synth_rubber
 			}
-			set_technology = { synth_oil_experiments = 1 }
-			set_technology = { fuel_refining = 1 }
 			if = {
 				limit = { 
 					NOT = {
@@ -1521,7 +1527,7 @@ focus_tree = {
 					}
 				}
 				custom_effect_tooltip = spacers
-				add_stability = -0.025
+				add_stability = -0.05
 				custom_effect_tooltip = 500lesswork
 				add_to_variable = {
 					var = logs
@@ -1715,7 +1721,7 @@ focus_tree = {
 						has_country_flag = good_workers
 					}
 				}
-				add_stability = -0.025
+				add_stability = -0.05
 				custom_effect_tooltip = 500lesswork
 				add_to_variable = {
 					var = logs
@@ -1748,7 +1754,7 @@ focus_tree = {
 		}
 
 		available = {
-			arms_factory > 32
+			arms_factory > 25
 		}
 
 		bypass = {
@@ -1795,7 +1801,7 @@ focus_tree = {
 					}
 				}
 				custom_effect_tooltip = spacers
-				add_stability = -0.025
+				add_stability = -0.05
 				custom_effect_tooltip = 500lesswork
 				add_to_variable = {
 					var = logs
@@ -1820,12 +1826,11 @@ focus = {
 		cost = 7.16
 
 		prerequisite = { 
-			focus = MAN_strike_the_earth 
+			focus = MAN_strike_the_earth
+			focus = MAN_bleed_the_earth 
 		}
 		prerequisite = {
 			focus = MAN_shape_the_earth
-		}
-		prerequisite = {
 			focus = MAN_bleed_the_earth 
 		}
 		
@@ -1938,7 +1943,7 @@ focus = {
 						has_country_flag = good_workers
 					}
 				}
-				add_stability = -0.025
+				add_stability = -0.05
 				custom_effect_tooltip = 500lesswork
 				add_to_variable = {
 					var = logs
@@ -2114,7 +2119,7 @@ focus = {
 
 		completion_reward = {
 			add_political_power = 100
-			add_stability = 0.1
+			add_stability = 0.15
 			add_war_support = 0.1
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = MAN_recruitable_tt0
@@ -3246,7 +3251,7 @@ focus = {
 		x = 0
 		y = 3
 		relative_position_id = MAN_invite_japanese_investors
-		cost = 7.16
+		cost = 5
 
 		available = {
 		}
@@ -3399,7 +3404,7 @@ focus = {
 			custom_effect_tooltip = Mine_222_arrow_with_effect
 
 			custom_effect_tooltip = spacers
-			
+			transfer_state = 745 
 		}
 		
 	}
@@ -3639,7 +3644,7 @@ focus = {
 
 			add_to_variable = { 
 				var = MAN_kempeitai_var_research_speed_factor
-				value = 0.075
+				value = 0.05
 				tooltip = research_speed_factor_tooltip
 			}
 			
@@ -3722,7 +3727,7 @@ focus = {
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = MAN_recruitable_tt0
 			add_to_variable = {
-				MAN_military_industry_dm_consumer_goods_factor = -0.03
+				MAN_military_industry_dm_consumer_goods_factor = -0.02
 				tooltip = consumer_goods_tooltip
 			}
 
@@ -3778,6 +3783,13 @@ focus = {
 			}
 			custom_effect_tooltip = MANspace
 			add_offsite_building = { type = arms_factory level = 3 }
+
+			CHI = {
+				750 = {
+					add_resistance = 15
+					add_resistance_target = 5
+				}
+			}
 		}
 	}
 	
@@ -4017,7 +4029,7 @@ focus = {
 
 		completion_reward = {
 			
-			add_stability = 0.1
+			add_stability = 0.15
 			add_political_power = 150
 			
 		}
@@ -4263,6 +4275,7 @@ focus = {
 			has_stability > 0.95
 			has_war_support >0.95
 
+			arms_factory > 59
 		}
 
 		bypass = {
@@ -4460,7 +4473,7 @@ focus = {
 					}
 				}
 				custom_effect_tooltip = spacers
-				add_stability = -0.025
+				add_stability = -0.05
 				custom_effect_tooltip = 500lesswork
 				add_to_variable = {
 					var = logs
@@ -4483,13 +4496,8 @@ focus = {
 
 		prerequisite = { 
 			focus = MAN_man_for_money_pre_1
-		}
-		prerequisite = { 
 			focus = MAN_national_cooperation_government
 		}
-		prerequisite = { 
-			focus = arasaka_1 
-		}	
 		
 		ai_will_do = {
 			factor = 1
@@ -4544,7 +4552,7 @@ focus = {
 					}
 				}
 				custom_effect_tooltip = spacers
-				add_stability = -0.025
+				add_stability = -0.05
 				custom_effect_tooltip = 500lesswork
 				add_to_variable = {
 					var = logs
@@ -4837,11 +4845,10 @@ focus = {
 		}
 		completion_reward = {
 
-			add_stability = 0.1
-			add_war_support = 0.1
+			add_war_support = 0.15
 
 			set_variable = { var = counter_man value = 200 }
-			custom_effect_tooltip = spacers
+			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = loggs_pacifist_tooltip
 			custom_effect_tooltip = loggies_pacifism_200_tooltip
 			custom_effect_tooltip = spacers
@@ -4946,7 +4953,7 @@ focus = {
 			add_stability = 0.3
 			add_war_support = -0.175
 
-			custom_effect_tooltip = spacers
+			custom_effect_tooltip = MANspace
 		
 			set_variable = { var = counter_man value = 100 }
 
@@ -5732,7 +5739,7 @@ focus = {
 				tooltip = MAN_resorse_2_fix
 			}
 
-			custom_effect_tooltip = spacers
+			custom_effect_tooltip = MANspace
 			random_core_state = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -5741,7 +5748,19 @@ focus = {
 					instant_build = yes 
 				}
 			}
-			custom_effect_tooltip = spacers
+			custom_effect_tooltip = MANspace
+			if = {
+				limit = {
+					NOT = {
+						OR= {
+							has_completed_focus = MAN_appease_the_bandits
+							has_completed_focus = MAN_crack_down_on_banditry
+						}
+					}
+				}
+				custom_effect_tooltip = import_codex_focus_tooltip
+			}
+			
 			if = {
 				limit = { 
 					has_completed_focus = MAN_appease_the_bandits
@@ -5754,10 +5773,10 @@ focus = {
 					has_completed_focus = MAN_crack_down_on_banditry
 				}
 				custom_effect_tooltip = loggs_pacifist_tooltip
-				custom_effect_tooltip = loggies_pacifism_150_tooltip
+				custom_effect_tooltip = loggies_pacifism_200_tooltip
 			}
 
-
+			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = 500work
 			add_to_variable = {
 				var = logs
@@ -6443,7 +6462,12 @@ focus = {
 		}
 
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = MAN_need_research_speed2
+				MAN = {
+					check_variable = { var = MAN_kempeitai_var_research_speed_factor value = -0.10 compare = greater_than_or_equals }
+				}
+			}
 		}
 
 		bypass = {
@@ -6484,7 +6508,12 @@ focus = {
 		}
 
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = MAN_need_research_speed2
+				MAN = {
+					check_variable = { var = MAN_kempeitai_var_research_speed_factor value = -0.10 compare = greater_than_or_equals }
+				}
+			}
 		}
 
 		bypass = {
@@ -6632,7 +6661,12 @@ focus = {
 	}
 
 	available = {
-
+		715 = {
+			infrastructure > 7
+		}
+		716 = {
+			infrastructure > 7
+		}
 	}
 
 	bypass = {
@@ -6650,12 +6684,11 @@ focus = {
 			value = 0.05
 			tooltip = stability_tooltip_general
 		}
-		custom_effect_tooltip = spacers
 		328 = {
-			add_extra_state_shared_building_slots = 3
+			add_extra_state_shared_building_slots = 4
 			add_building_construction = {
 				type = industrial_complex
-				level = 3
+				level = 4
 				instant_build = yes 
 			}
 			add_building_construction = {
@@ -6665,7 +6698,7 @@ focus = {
 			}
 		
 		}
-		custom_effect_tooltip = spacers
+		custom_effect_tooltip = MANspace
 		add_tech_bonus = {
 			category = industry 
 			name = industry
@@ -6905,7 +6938,7 @@ focus = {
 				value = 8000
 			   }
 			custom_effect_tooltip = spacers
-			add_stability = -0.025
+			add_stability = -0.05
 		}
 	}	
 	
@@ -6951,7 +6984,7 @@ focus = {
 			custom_effect_tooltip = B112
 			custom_effect_tooltip = B113
 			custom_effect_tooltip = spacers
-			add_stability = -0.025
+			add_stability = -0.05
 		}
 	}
 	
@@ -6997,6 +7030,11 @@ focus = {
 				value = 0.25
 				tooltip = industrial_capacity_factory_tooltip
 			}
+			add_to_variable = {
+				var = MAN_military_industry_dm_production_factory_efficiency_gain_factor
+				value = 0.1
+				tooltip = production_factory_efficiency_gain_factor_tooltip
+			} 
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = inc_small_man_right_side
 			add_to_variable = {
@@ -7005,7 +7043,7 @@ focus = {
 			}
 
 			custom_effect_tooltip = spacers
-			add_stability = -0.025
+			add_stability = -0.06
 		}
 	}
 	focus = {
@@ -7058,7 +7096,7 @@ focus = {
 				}
 			}
 			custom_effect_tooltip = spacers
-			add_stability = -0.025
+			add_stability = -0.05
 		}
 	}
 	focus = {
@@ -7207,7 +7245,7 @@ focus = {
 			}
 
 			custom_effect_tooltip = spacers
-			add_stability = -0.025
+			add_stability = -0.05
 		}
 	}	
 	
@@ -7670,6 +7708,7 @@ focus = {
 				}
 			}
 			610 ={
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
 					level = 1
@@ -10678,6 +10717,7 @@ focus = {
 						
 						has_tech = jap_1940_medium_tank_chassis
 					}
+					set_technology = { jap_advanced_turret = 1 }
 					set_technology = { jap_1942_medium_tank_chassis = 1 }
 					}
 				}
@@ -10987,6 +11027,61 @@ focus = {
 				amount = 75
 			}
 			navy_experience = 100
+			custom_effect_tooltip = MANspace
+			hidden_effect = {
+				add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "MAN"
+					version_name = "Minekaze/Mutsuki Class"
+				}
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+				}
+				add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "MAN"
+					version_name = "Minekaze/Mutsuki Class"
+				}
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+				}
+				add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "MAN"
+					version_name = "Minekaze/Mutsuki Class"
+				}
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+				}
+				add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "MAN"
+					version_name = "Minekaze/Mutsuki Class"
+				}
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+				}
+				add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "MAN"
+					version_name = "Minekaze/Mutsuki Class"
+				}
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+				}
+			}
+			custom_effect_tooltip = shippies_man_1
+			
 		}
 	 }
 	
@@ -11057,7 +11152,7 @@ focus = {
 			}
 	
 		available = {
-			has_stability > 0.1
+			has_stability > 0.4
 		}
 	
 			bypass = {
@@ -11085,7 +11180,8 @@ focus = {
 				custom_effect_tooltip = the_adored_one
 				custom_effect_tooltip = D1
 				custom_effect_tooltip = spacers
-				custom_effect_tooltip = the_beloved_one
+				custom_effect_tooltip = mines_1_workers_needed
+				custom_effect_tooltip = Mine_civilian_cost_from_2_to_3
 				custom_effect_tooltip = D1_1
 
 				
@@ -11128,6 +11224,59 @@ focus = {
 					uses = 2
 					category = naval_doctrine
 				}
+			hidden_effect = {
+				add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "MAN"
+					version_name = "Minekaze/Mutsuki Class"
+				}
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+				}
+				add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "MAN"
+					version_name = "Minekaze/Mutsuki Class"
+				}
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+				}
+				add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "MAN"
+					version_name = "Minekaze/Mutsuki Class"
+				}
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+				}
+				add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "MAN"
+					version_name = "Minekaze/Mutsuki Class"
+				}
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+				}
+				add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "MAN"
+					version_name = "Minekaze/Mutsuki Class"
+				}
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+				}
+			}
+			custom_effect_tooltip = shippies_man_1
 			}
 	
 		}
@@ -11174,25 +11323,20 @@ focus = {
 						}
 						is_core_of = ROOT
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = dockyard
-						level = 2
+						level = 3
 						instant_build = yes
 					}
-					set_state_flag = MAN_expand_the_repair_yards_2dockyard
+				}
+				add_doctrine_cost_reduction = {
+					name = land_doc_bonus
+					cost_reduction = 0.5
+					uses = 1
+					category = naval_doctrine
 				}
 				custom_effect_tooltip = MANspace
-				set_technology ={
-					early_ship_hull_light = 1
-					basic_ship_hull_light = 1
-					early_ship_hull_submarine = 1
-					early_ship_hull_cruiser = 1
-					basic_battery = 1
-					basic_cruiser_armor_scheme = 1
-					sonar = 1
-					basic_fire_control_system = 1
-				}
 				
 			}
 			
@@ -11378,7 +11522,7 @@ focus = {
 			focus = MAN_improve_naval_capabilities
 		}
 
-		cost = 7.16
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -11389,7 +11533,17 @@ focus = {
 		}
 
 		available = {
-			has_war_with = ENG
+			custom_trigger_tooltip = {
+				tooltip = USA_escalation_is_over_2	
+				JAP = {
+					check_variable = {
+						var = JAP_war_escalation_var
+						value = 2
+						compare = greater_than_or_equals
+					}
+				}
+				
+			}
 		}
 
 		bypass = {}
@@ -12060,6 +12214,12 @@ focus = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			add_tech_bonus = {
+				name = MAN_fighter_modernization
+				bonus = 1
+				uses = 1
+				category = light_fighter		
+			}
 
 			custom_effect_tooltip = iappie_2
 			if={

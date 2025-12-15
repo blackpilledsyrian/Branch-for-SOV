@@ -1,0 +1,355 @@
+delay_track = {
+    name = "Delay"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+armored_spearhead_track = {
+    name = "Spearhead"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+elastic_defence_track_nigger = {
+    name = "Elastic Defence"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+
+
+schwerpunk_track = {
+    name = "Force Concentration"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+blitzkrieg_track = {
+    name = "Blitzkrieg"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+kampfgruppe_track = {
+    name = "Kampfgruppe"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+firebrigades_new = {
+    name = "Firebrigades"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+mw_mastery_track = {
+    name = "Mobile Warfare Mastery"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+sup_delay_track = {
+    name = "Delay"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+mobile_defence_track = {
+    name = "Mobile Defence"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+intergrated_support_track = {
+    name = "Support Organization Doctrine"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+sup_mechanized_offensive_track = {
+    name = "Mechanized Offensive"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+
+concentrated_fire_plans_track = {
+    name = "Concentrated Fire Plans"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+combined_arms_track = {
+    name = "Concentrated Fire Plans"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+tactical_control_track = {
+    name = "Tactical Control"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+sup_mastery_track = {
+    name = "Superior Firepower Mastery"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+grand_battle_plan_track = {
+    name = "Grand Battle Plan"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+prepared_defense_track = {
+    name = "Prepared Defense"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+grand_assault_track = {
+    name = "Grand Assault"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+primary_assault_arm_track = {
+    name = "Primary Assault Arm"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+c3i_theory_track = {
+    name = "C3I Theory"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+central_planning_track = {
+    name = "Central Planning"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+assault_concentration_track = {
+    name = "Assault Concentration"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+night_assault_tactics_track = {
+    name = "Night Assault Tactics"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+force_employment_doctrine_track = {
+    name = "Force Employment"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+pocket_defence_track = {
+    name = "Force Employment"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+defence_in_depth_track = {
+    name = "Force Employment"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+deep_operations_track = {
+    name = "Deep Operations"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+attritional_warfare_track = {
+    name = "Operational Concentration"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+vast_offensives_track = {
+    name = "Vast Offensives"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+breakthrough_priority_track = {
+    name = "Breakthrough Priority"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}
+mechanized_wave_track = {
+    name = "Mechanized Wave"
+    icon = "GFX_blank"
+    icon_frame = "GFX_blank"
+    mastery = {
+        multiplier = 1
+        categories = {
+            category_all_infantry
+        }
+    }
+}

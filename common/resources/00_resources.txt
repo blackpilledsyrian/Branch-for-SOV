@@ -35,4 +35,5 @@ resources = {
 		cic = 0.033
 		convoys = 0.01
 	} 
+	
 }

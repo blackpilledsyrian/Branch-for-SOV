@@ -570,7 +570,7 @@ JAP_mitsu = {
 		
 		
 		equipment_bonus = {
-			maximum_speed = 0.15
+			maximum_speed = 0.1
 			supply_consumption = 0.05
 		}
 	}
@@ -720,7 +720,7 @@ JAP_mitsu = {
 		
 
 		production_bonus ={
-			production_efficiency_gain_factor = 0.4
+			production_efficiency_gain_factor = 0.3
 			production_cost_factor = -0.05
 		}
 		
@@ -1273,7 +1273,10 @@ JAP_yokosuka_naval_arsenal_organization = {
 	include = generic_task_force_ship_organization
 	icon = GFX_idea_yokosuka_naval_arsenal
 	allowed = {	
-		tag = JAP
+			OR = {
+					original_tag = JAP
+					original_tag = MAN
+				}
 	}
 	initial_trait = {
 		name = generic_mio_initial_trait_task_force_ship_builders
@@ -1306,7 +1309,11 @@ JAP_maizuru_naval_arsenal_organization = {
 	include = generic_escort_ship_organization
 	icon = GFX_idea_maizuru_naval_arsenal
 	allowed = {	
-		tag = JAP
+		OR = {
+			original_tag = JAP
+			original_tag = MAN
+			original_tag = RCC
+		}
 	}
 	available = {
 			JAP = {has_completed_focus = JAP_reestablish_the_maizuru_naval_district }

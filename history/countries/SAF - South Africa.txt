@@ -4,7 +4,7 @@ oob = "SAF_1936"
 set_research_slots = 4
 starting_train_buffer = 2
 
-set_stability = 0.7
+set_stability = 0.8
 set_war_support = 0.3
 add_manpower = 150000
 set_variable = {
@@ -31,7 +31,7 @@ set_variable = {	SAF_gd_stability_factor_var = -0.2	}
 set_variable = {	SAF_gd_stability_weekly_var = 0	}
 set_variable = {	SAF_gd_production_speed_arms_factory_factor_var = -0.2	}
 set_variable = {	SAF_gd_production_speed_industrial_complex_factor_var = -0.15	}
-set_variable = {	SAF_gd_production_speed_dockyard_factor_var = -0.15	}
+set_variable = {	SAF_gd_production_speed_dockyard_factor_var = -0.8	}
 set_variable = {	SAF_gd_production_speed_infrastructure_factor_var = -0.2	}
 
 set_variable = {	SAF_political_power_factor_var = 0	}

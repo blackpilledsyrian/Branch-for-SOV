@@ -18121,8 +18121,7 @@ SOV_5_year_plan_decisions = {
 		cost = 25
 
 		modifier = {
-			civilian_factory_use = 4
-			stability_weekly = -0.005		
+			civilian_factory_use = 4		
 		}
 
 		remove_effect = {
@@ -18207,7 +18206,7 @@ SOV_5_year_plan_decisions = {
 
 		modifier = {
 			civilian_factory_use = 4
-			stability_weekly = -0.005		
+				
 		}
 
 		remove_effect = {
@@ -18303,7 +18302,7 @@ SOV_5_year_plan_decisions = {
 
 		modifier = {
 			civilian_factory_use = 4
-			stability_weekly = -0.005		
+					
 		}
 
 		remove_effect = {
@@ -18399,7 +18398,6 @@ SOV_5_year_plan_decisions = {
 
 		modifier = {
 			civilian_factory_use = 4
-			stability_weekly = -0.005		
 		}
 
 		remove_effect = {
@@ -18493,7 +18491,7 @@ SOV_5_year_plan_decisions = {
 
 		modifier = {
 			civilian_factory_use = 4
-			stability_weekly = -0.005		
+			 		
 		}
 
 		remove_effect = {

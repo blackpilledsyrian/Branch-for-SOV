@@ -1,10 +1,19 @@
 ﻿l_english:
-
+just_returned_state_flag:0 "Returned State Recently"
+JAP_can_only_return_tt:0 "Can only return one state every §Y30§! days"
+JAP_plunder_state_flag:0 "Currently Exploited"
+JAP_heavy_plunder_modifier:0 "Severe Exploitation"
+JAP_medium_plunder_modifier:0 "Moderate Exploitation"
+JAP_light_plunder_modifier:0 "Light Exploitation"
+JAP_modify_marcopolo_tt: "Modify the §YSecond Sino-Japanese War§! by:"
+JAP_plunder_state_trigger:0 "Plunder"
+JAP_plunder_state_stop_trigger:0 "Stop the Plunder"
+JAP_plunder_state_tt:0 "Factories and some resources are moved to §YJapanese core states§!, §G1§! factory moves every §Y20§! days, each evacuated factory increases local §YResistance Target§! by §R2%§!, and after all are evacuated §Y3 Levels of Plunder§! occur, each granting either §G+2%§! §YResearch Speed§!, §G+2%§! §YConstruction Speed§!, or some §YEconomic Capacity Surplus§!, while also significantly increasing §YResistance§!."
 JAP_increase_amount_of_occupied_states_tt:0 "Limit of §YOccupied Chinese states§! increases by §G2§!"
 JAP_increase_amount_of_occupied_states_one_tt:0 "Limit of §YOccupied Chinese states§! increases by §G1§!"
 armored_train:0 "Armored Train"
 SAF_get_trains_tt:0 "§Y15§! units of §YArmored Train§! is added to the national stockpile."
-days_passed_from_chi_declaration_flag:0 "§Y40 days have passed since the declaration of war§!"
+days_passed_from_chi_declaration_flag:0 "§Y90 days have passed since the declaration of war§!"
 JAP_first_offensive_planning_tt:0 "All states south of §YBeijing§! to §YNanjing§!:"
 deletes_milita_tt:0 "§RDELETES ALL MILITA UNITS§!"
 civil_war_simulated_tt:0 "This focus will be automatically completed on the 17th of July. The civil war will then conclude in 365 days. In the meantime, you can complete your civil war focuses."
@@ -138,7 +147,7 @@ B3:0 "§4 Changsha  |§G3000§! £GFX_right_arrow §G4500§!| §!"
 B4:0 "§4 Chongqing |§G6000§! £GFX_right_arrow §G10000§!| §!"
 B5:0 "§Y30-days wait§! £GFX_right_arrow §Y 60-days wait§!"
 D1:0 "§5 Jehol   |§2 1 dockyard§! £GFX_right_arrow §2 2 dockyard§!|§!"
-D1_1:0 "§4 Jehol   |§R1000§! £GFX_right_arrow §R1500§!| §!"
+D1_1:0 "§4 Jehol   |§R1000§! £GFX_right_arrow §R2000§!| §!"
 
 D2:0 "§4 Wuhan       |§G2000§! £GFX_right_arrow §G1500§!| §!"
 D3:0 "§4 Changsha  |§G3000§! £GFX_right_arrow §G2500§!| §!"
@@ -206,8 +215,8 @@ B111:0 "Buildings construction Speed |§G +1.00%§! £GFX_right_arrow §G +2.00%
 B112:0 "Cost of building |§G +1.00%§! £GFX_right_arrow §G +2.00%§!|"
 B222:0 "Decision cost:\n        Cap Increase: §G10§! £GFX_right_arrow §G15§!\n        §R1500§! £GFX_right_arrow §R2250§! volunteers\n        §O 4 £GFX_civ_factory §! £GFX_right_arrow §O 2 £GFX_civ_factory §!"
 
-B112:0 "Cost of building it £GFX_right_arrow §R500§! volunteers"
-B113:0 "Amount of divisions £GFX_right_arrow §Y2§! "
+B112:0 "Cost of building it £GFX_right_arrow  §R500§! volunteers"
+B113:0 "Amount of divisions £GFX_right_arrow  §Y3§! "
 ##############################################workers
 the_defence_force:0"§YAllows Building of Reserve Defences in Liaotung :§!"
 
@@ -1274,7 +1283,7 @@ ship_designer_capital_ship:0 "Capital Ship"
 ITA_state_development_africa3:0 "African Regional Development"
 ITA_state_development_africa:0 "African Regional Development"
 ITA_state_development_africa2:0 "African Regional Development"
-ITA_state_development_africa_tt:0 "\n§YAll Ethiopian states§! and §YTripoli, Benghazi§!, §YTobruk§!, §YEl Agheila§!:\nAdd §YAfrican Regional Development§! (§Y365§! days) which grants:\nLocal Available Resources: §G+30%§!\n§YMilitary Factory§! construction speed: §G+30%§!\n§YCivilian Factory§! construction speed: §G+30%§!\n§Y$dockyard$§! construction speed: §G+30%§!"
+ITA_state_development_africa_tt:0 "\n§YAll Ethiopian states§! and §YTripoli, Benghazi§!, §YTobruk§!, §YEl Agheila§!:\nAdd §YAfrican Regional Development§! (§Y365§! days) which grants:\nLocal Available Resources: §G+20%§!\n§YMilitary Factory§! construction speed: §G+20%§!\n§YCivilian Factory§! construction speed: §G+20%§!\n§Y$dockyard$§! construction speed: §G+20%§!"
 ITA_state_development_africa_tt2:0 "§YAll Ethiopian states§!:\n   Add §G2§! §YInfrastructure§!.\n   Add §G5§! Building Slots.\n   Compliance: §G+20%§!."
 
 
@@ -1383,7 +1392,7 @@ railwagun_ic_fix_tt2:0 "§GRemoves§! §YRailway Artillery§!: Production Cost I
 railwagun_ic_fix_tt:0 "§YRailway Artillery§!: Production Cost: §R+40.00%§!"
 
 ########ENG TOOLTIPS ##############
-ENG_help_norway_tt:0 "§YNorway§! declares war on §YGermany§! and joins §YAllies§!\n Will spawn §Y6 Infantry Division§! in §YNorway§!\n For §Y180 days§!:\n Factory Output: §R-15%§!."
+ENG_help_norway_tt:0 "§YNorway§! declares war on §YGermany§! and joins §YAllies§!\n Will spawn §Y6 Infantry Division§! in §YNorway§!\n For §Y180 days§!:\n Factory Output: §R-10%§!."
 ENG_dont_help_norway_tt:0 "§YNorway§! declares war on §YGermany§! but wont be able to join §YAllies§! until its too late."
 ENG_compass_failed_tt:0 "If the mission is aborted it will fail automatically.\n§YFranken§!:\nAdd §G2§! Building Slots\nAdd §G2§! §YCivilian Factories§!.\n§YHannover§!:\nAdd §G2§! Building Slots\nAdd §G2§! §YMilitary Factories§!."
 
@@ -2105,8 +2114,9 @@ JAP_air_bonus_tt3:0 "§YClose Air Support§!: Ground Attack: §G+10%§!\n§YTact
  JAP_final_china_offensive_tt:0 "All Chinese states will lose modifiers that slow down combat for §Y180 days§!"
  JAP_freeze_the_front_tt:0 "All Chinese states will gain modifiers that stop combat for §Y180 days§! (includes Laos and Tonkin)"
  JAP_buildup_islands_tt:0 "§YOkinawa, Iwo Jima, Marcus Island, Palau and Truk Atoll§!:\nSet §YAir Base§! to level 6\n§YAll Islands§!:\nSet §YAnti-Air§! to level 3\n§YAll provinces§! on all islands:\nAdd level §G3§! §YCoastal§! Forts\nIf you have completed §YSuperiority of Airpower§!:\n§YOkinawa, Iwo Jima, Marcus Island, Palau and Truk Atoll§!:\nSet §YAir Base§! to level 7\n§YSaipan, Chichijima, Kwajalein, Yap§!:\nSet §YAir Base§! to level 4"
- JAP_further_expansion_tt:0 "§YYunnan, Guangxi, Guizhou and Dali§! will receive §G+15%§! Compliance:  if you control them."
- JAP_interior_expansion_tt:0 "§YSichuan, Changde, Suizhou, Hunan and Zunyi§! will receive §G+10%§! Compliance: if you control them."
+ JAP_further_expansion_tt:0 "§YYunnan, Guangxi, Guizhou and Dali§! will receive §G+15%§! Compliance Growth Speed:  if you control them."
+ dev_of_china_jap_tt:0 "All currently controlled Chinese states will receive §G+10%§! Compliance Growth Speed"
+ JAP_interior_expansion_tt:0 "§YSichuan, Changde, Suizhou, Hunan and Zunyi§! will receive §G+10%§! Compliance Growth Speed: if you control them."
  JAP_interior_expansion_tt2:0 "§YHuangshan, Jiangxi, Suizhou and Hunan§! will receive §G+10%§! Compliance: if you control them."
  JAP_north_states_tt3:0 "You will recieve §G+200000§! Manpower for reach of the following states you control: §YXian, Shaanxi, and Ordos§!."
  JAP_recruit_manpower_tt:0 "You will recieve §G+200000§! Manpower for reach of the following states you control: §YBeijing, Hebei, Shandong, Qingdao, Jiangsu, and Shanghai§!."
@@ -2114,7 +2124,7 @@ JAP_air_bonus_tt3:0 "§YClose Air Support§!: Ground Attack: §G+10%§!\n§YTact
  JAP_north_states_tt2:0 "§YXian, Shaanxi, and Ordos§! will receive resources if you control them."
  JAP_north_states_tt4:0 "§YShanxi, and Suiyuan§! will receive resources if you control them."
  JAP_coastal_states_tt2:0 "All currently controlled Southern Chinese coastal states will receive §Y2§! Dockyards and §Y3§! coastal forts on ports."
- JAP_coastal_states_tt:0 "All newly conquered coastal states will receive §G+10%§! compliance."
+ JAP_coastal_states_tt:0 "All newly conquered coastal states will receive §G+15%§! Compliance Growth Speed."
  JAP_coastal_states_tt3:0 "All currently controlled Southern Chinese coastal states will receive §G+10%§! compliance."
  JAP_tank_bonus_during_china_tt:0 "All Armor and Motorized/Mechanized:\n§YForest§!\n Attack: §G+10%§!\n§YUrban§!\n Attack: §G+10%§!\n§YHills§!\n Attack: §G+10%§!\n§YRiver§!\n Attack: §G+10%§!\n§YMountains§!\n Attack: §G+20%§!"
 
@@ -2238,7 +2248,7 @@ JAP_air_bonus_tt3:0 "§YClose Air Support§!: Ground Attack: §G+10%§!\n§YTact
  SOV_lessons_of_war_tt:0 "Will be automatically completed once requirements are met, however the requirements will still be listed here.\n\n"
  SOV_no_naval_invasions_tt:0 "Naval Invasions: §RDisallowed§!"
  SOV_great_war_info_tt:0 "\nModify §YHome of the Revolution§! by\nNaval Invasions: §GAllowed§!"
- SOV_2nd_5_year_plan_arms_production_tt:0 "\nThis idea will be automatically §Rreplaced§! when the date is beyond §YJune 1st 1937§! by §YArmament Production Phase 2§!\nModify §YArmament Production Phase§! by\n§YMilitary Factory§! construction speed: §G+10%§!\n§YCivilian Factory§! construction speed: §R-45%§!\nThis idea will be automatically §Rremoved§! when the date is beyond §YJuly 1st 1938§!."
+ SOV_2nd_5_year_plan_arms_production_tt:0 "\nThis idea will be automatically §Rreplaced§! when the date is beyond §YJune 1st 1937§! by §YArmament Production Phase 2§!\nModify §YArmament Production Phase§! by\n§YMilitary Factory§! construction speed: §G+10%§!\n§YCivilian Factory§! construction speed: §R-65%§!\nThis idea will be automatically §Rremoved§! when the date is beyond §YJuly 1st 1938§!"
  SOV_2nd_5_year_plan_heavy_industry_tt:0 "\nThis idea will be automatically §Rremoved§! when the date is beyond §YJuly 1st 1938§!.\n"
  SOV_winter_war_malus_tt:0 "Infantry Battalion: HP §R-11§W\nConscript Battalion: HP §R-7§W"
  SOV_winter_war_1_malus_tt:0 "Infantry Battalion: HP §R-9§W\nConscript Battalion: HP §R-5.5§W"
@@ -2248,7 +2258,7 @@ JAP_air_bonus_tt3:0 "§YClose Air Support§!: Ground Attack: §G+10%§!\n§YTact
  SOV_stavka_tt:0 "§YConscript Battalion:§!\nInfantry Equipment: §G-20§!\nHP: §R-2§!"
  SOV_phase_of_5_year_plan_focus_tt:0 "A state must have been marked by the great industrial planners of the Union to be a part of the next phase of the five year plan for this focus to have any effects.\n\nEvery §Y80 days§!, a new state will be marked automatically!\n\nWill be bypassed if you do not have the idea §YStalin's Second Five Year Plan§!\n\n"
  SOV_phase_of_5_year_plan_focus_arms_tt:0 "\nA state must have been marked by the great industrial planners of the Union to be a part of the next phase of the five year plan for this focus to have any effects.\n\nEvery §Y80 days§!, a new state will be marked automatically!\n\nWill be bypassed if you do not have the idea §YStalin's Second Five Year Plan§!\n\n" 
- SOV_mark_for_5_year_plan_tt:0 "This §Ydecision§! will select an area of the Soviet Union that will be developed. Each state that is marked will gain the following upon completing one of the §Y'Phase of the Five Year Plan Focuses'§!:\nThree §YArms Factories§!\nOne §YInfrastructure§!\nor\nTwo §YCivilian Factories§!\nOne §YInfrastructure§!\n\nThis will be reset upon the completion of every focus.\n\n"
+ SOV_mark_for_5_year_plan_tt:0 "This §Ydecision§! will select an area of the Soviet Union that will be developed. Each state that is marked will gain bonuses depending on the five year plan side we have chosen."
  SOV_marked_for_5_year_plan_tt:0 "This state has been marked by the great industrial planners of the Union to be a part of the next phase of the five year plan. §RLong live comrade Stalin!§!\n\n"
  SOV_5_year_plan_convert_old_planes_tt:0 "£decision_icon_small! Unlocks Decision: Expand the §YVakhmistrov's Circus§!.\n"
  SOV_5_year_plan_chromium_tt:0 "£decision_icon_small! Unlocks Decision: Improve §YRare Metal§! Production.\n"
@@ -2505,7 +2515,7 @@ USA_spawn_in_china_5:0 "Completing this §YNational Focus§! will give §YChina�
  #################################################################################################
  ################################## GER TOOLTIPS #################################################
  #################################################################################################
- GER_weserubung_tt:0 "If you went with the §YFalkenhorst plan§!:\n Ports in §YHannover§!, §YWeser-Ems§!, §YVorpommern§! and §YMecklenburg§! are preparing for invasion of Norway. In order to launch the invasions you need either:\n At least §Y2 Capital Ships§! and §Y10 Screen ships§! in ports of the respective states for up to §Y5 division§!\n At least §Y3 Capital Ships§! and §Y20 Screen ships§! in ports of the respective states for up to §Y10 divisions§!.\n Divisions in §YHannover§! will be teleported to §YOslo§!.\n Divisions in §YWeser-Ems§! will be teleported to §YTrondheim§!.\n Divisions in §YVorpommern§! will be teleported to §YBergen§!.\n Divisions in §YMecklenburg§! will be teleported to §YKristiansand§!. Additionally 2 30 width mountaineers will spawn in Narvik.\n In order to check the requirements properly, all other units that you are not planning to teleport have to leave the respective state. You can launch the invasions without having every Taskforce ready by simply not putting any units in that state (will result in not getting the respective Norway state)."
+ GER_weserubung_tt:0 "If you went with the §YFalkenhorst plan§!:\n Ports in §YHannover§!, §YWeser-Ems§!, §YVorpommern§! and §YMecklenburg§! are preparing for invasion of Norway. In order to launch the invasions you need either:\n At most §Y5 division§! in the respective states\n At most §Y10 division§! in the respective states and §YPlan Z§! finished.\n Divisions in §YHannover§! will be teleported to §YOslo§!.\n Divisions in §YWeser-Ems§! will be teleported to §YTrondheim§!.\n Divisions in §YVorpommern§! will be teleported to §YBergen§!.\n Divisions in §YMecklenburg§! will be teleported to §YKristiansand§!. Additionally 2 30 width mountaineers will spawn in Narvik.\n All other units that you are not planning to teleport have to leave the respective state !! You can launch the invasions without having every Taskforce ready by simply not putting any units in that state (will result in not getting the respective Norway state)."
  GER_goring_attack:0 "§RWe will be ready for war in july 1939 at earliest!§!"
  GER_schacht_attack:0 "§RWe will be ready for war in september 1939 at earliest!§!\nWhen Danzig or War is triggered:\n"
  GER_elalamein_tt:0 "Modify §YArbeitseinsatz§! by\n   Factory Output: §G+10%§!\n"
@@ -3006,6 +3016,7 @@ FRA_core2_tt:0 "Modify §YThe French Armed Forces§! by\nDivision Attack on Core
  NZL_wartime_mobilization_tt1:0 " Modifiy §YSpirit of Aotearoa§! by\nWar Support: §G+40%§!$RIGHT|+=%$ \nPolitical Power Gain: §G+0.25§!$RIGHT|+=%$"
  NZL_modifiy_spirit_of_aotearoa_GDP2_tt1:0 "Modifiy §YSpirit of Aotearoa§!  by\nConstruction Speed: §G+5%§!$RIGHT|+=%$ \nConsumer Goods Factories: §Y-10%§!$RIGHT|+=%$ \nPolitical Power Gain: §G+0.20§!$RIGHT|+=%$"
  NZL_labour_victory_tt1:0 "Modifiy §YSpirit of Aotearoa§!  by\nConsumer Goods Factories: §Y-2.5%§!$RIGHT|+=%$ \nStability: §G+5%§!$RIGHT|+=%$ \nFactory Output: §G+5%§!$RIGHT|+=%$ \nDockyard Output: §G+5%§!$RIGHT|+=%$"
+ NZL_aoteaoraorassadsa_tt:0 "Modifiy §YSpirit of Aotearoa§! by:\n"
  NZL_manpower_act_tt1:0 "Modifiy §YSpirit of Aotearoa§!  by\nRecruitable Population: §Y+4%§!$RIGHT|+=%$ \nResource Gain Efficiency: §G+10%§!$RIGHT|+=%$ \nFactory Output: §G+5%§!$RIGHT|+=%$ \nDockyard Output: §G+5%§!$RIGHT|+=%$ \nProduction Efficiency Growth: §G+10%§!$RIGHT|+=%$"
  NZL_social_security_act_tt1:0 "Modifiy §YSpirit of Aotearoa§!  by\nRecruitable Population: §Y+5%§!$RIGHT|+=%$ \nFactory Output: §G+10%§!$RIGHT|+=%$ \nDockyard Output: §G+5%§!$RIGHT|+=%$"
  NZL_amend_treaty_tt1:0 "Modifiy §YSpirit of Aotearoa§!  by\nRecruitable Population: §Y+1%§!$RIGHT|+=%$ \nConstruction Speed: §G+5%§!$RIGHT|+=%$"

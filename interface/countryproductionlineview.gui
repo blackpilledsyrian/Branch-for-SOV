@@ -725,6 +725,26 @@ guiTypes = {
 						format = left
 						#pdx_tooltip = "PRODUCTION_MATERIALS_CHROMIUM"
 					}
+					buttonType = {
+						name = "coal_icon"
+						position = { x=350 y=2 }
+						spriteType = "GFX_resources_strip"
+						frame = 7
+						#pdx_tooltip = "PRODUCTION_MATERIALS_CHROMIUM"
+					}
+
+					instantTextboxType = {
+						name = "coal_value"
+						position = { x = 381 y = 5 }
+						textureFile = ""
+						font = "hoi_18mbs"
+						borderSize = {x = 0 y = 0}
+						text = "999"
+						maxWidth = 50
+						maxHeight = 20
+						format = left
+						#pdx_tooltip = "PRODUCTION_MATERIALS_CHROMIUM"
+					}
 				}				
 				#################################
 				iconType = {
@@ -1827,6 +1847,21 @@ guiTypes = {
 			
 			buttonType = {
 				name = "chromium_checkbox"
+				position = { x = 311 y = 1 }
+				quadTextureSprite ="GFX_generic_checkbox"
+				Orientation = "UPPER_LEFT"
+				clicksound = click_checkbox
+			}
+			iconType = {
+				name = "coal_icon"
+				position = { x=287 y=2 }
+				spriteType = "GFX_resources_strip"
+				frame = 7
+				#pdx_tooltip = "PRODUCTION_MATERIALS_CHROMIUM"
+			}
+			
+			buttonType = {
+				name = "coal_checkbox"
 				position = { x = 311 y = 1 }
 				quadTextureSprite ="GFX_generic_checkbox"
 				Orientation = "UPPER_LEFT"
@@ -4833,5 +4868,41 @@ guiTypes = {
 			max_slots_vertical = 1
 			format = "UPPER_LEFT"
 		}
+	}
+	containerWindowType = {
+		name = "resource_strip_item"
+		position = { x=0 y=0 }
+		size = { width = 70 height = 30 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_mini_tooltip"
+		}
+
+		iconType = {
+			name = "energy_ratio_anim"
+			spriteType = "GFX_ongoing_contruction_anim"
+			position = { x = 5 y = 5 }
+		}
+
+		buttonType = {
+			name = "icon"
+			position = { x=4 y=2 }
+			spriteType = "GFX_resources_strip"
+		}
+		
+		instantTextboxType = {
+			name = "value"
+			position = { x=35 y=7 }
+			font = "hoi_16mbs"
+			fixedsize = yes
+			text = "15"
+			maxWidth = 50
+			maxHeight = 30
+			format = left
+			orientation = "UPPER_LEFT"
+		}	
+
 	}
 }

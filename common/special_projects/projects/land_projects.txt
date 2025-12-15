@@ -1057,7 +1057,6 @@ sp_land_super_heavy_railway_gun = {
 		sp_land_generic_reward_critical_failure
 	}
 }
-
 sp_land_multi_charge_large_caliber_gun = {
 	specialization = specialization_land
 

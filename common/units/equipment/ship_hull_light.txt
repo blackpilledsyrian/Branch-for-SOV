@@ -9,7 +9,7 @@ equipments = {
 		interface_category = interface_category_screen_ships
 		alias = destroyer
 		priority = 2000
-
+		naval_dominance_factor = 300
 		upgrades = {
 			ship_torpedo_upgrade
 			destroyer_engine_upgrade
@@ -101,7 +101,7 @@ equipments = {
 		
 		armor_value = 2.1
 		anti_air_attack = 3
-		naval_torpedo_damage_reduction_factor = 0.5
+		naval_torpedo_damage_reduction_factor = 0.6
 		surface_detection = 6
 		sub_detection = 1
 		surface_visibility = 14
