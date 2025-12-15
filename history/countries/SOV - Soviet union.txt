@@ -167,6 +167,8 @@ starting_train_buffer = 2
 
 # Starting tech
 set_technology = { #player 
+	mass_assault = 1
+	width_tech_sov = 1
 	basic_train = 1
 	################## infantry #############
 	infantry_weapons = 1  
@@ -512,7 +514,7 @@ if = {
 }
 
 set_convoys = 200
-set_stability = 0.75
+set_stability = 0.85
 set_war_support = 0.6
 
 set_politics = {
