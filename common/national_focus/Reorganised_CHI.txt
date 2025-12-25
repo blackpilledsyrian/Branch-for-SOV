@@ -2181,12 +2181,16 @@ focus_tree = {
 					tooltip = army_eperience_tooltip
 				}
 				add_to_variable = {
+					RCC_land_mastery_gain_factor = 0.2
+					tooltip = land_mastery_tp
+				}
+				add_to_variable = {
 					RCC_land_doctrine_cost_factor = -0.3
 					tooltip = army_doctrine_tooltip
 				}
 				add_doctrine_cost_reduction = {
 					name = land_doc_bonus
-					cost_reduction = 0.50
+					cost_reduction = 0.4
 					uses = 1
 					category = land_doctrine
 				}
@@ -2199,12 +2203,16 @@ focus_tree = {
 					tooltip = army_eperience_tooltip
 				}
 				add_to_variable = {
+					RCC_land_mastery_gain_factor = 0.15
+					tooltip = land_mastery_tp
+				}
+				add_to_variable = {
 					RCC_land_doctrine_cost_factor = -0.25
 					tooltip = army_doctrine_tooltip
 				}
 				add_doctrine_cost_reduction = {
 					name = land_doc_bonus
-					cost_reduction = 0.5
+					cost_reduction = 0.4
 					uses = 1
 					category = land_doctrine
 				}
@@ -2534,7 +2542,7 @@ focus_tree = {
 
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.50
+				cost_reduction = 0.4
 				uses = 1
 				category = land_doctrine
 			}
@@ -2581,7 +2589,7 @@ focus_tree = {
 				limit = { has_war = no}
 				add_doctrine_cost_reduction = {
 					name = land_doc_bonus
-					cost_reduction = 0.75
+					cost_reduction = 0.6
 					uses = 3
 					category = land_doctrine
 				}
@@ -2591,7 +2599,7 @@ focus_tree = {
 				limit = { has_war = yes}
 				add_doctrine_cost_reduction = {
 					name = land_doc_bonus
-					cost_reduction = 0.75
+					cost_reduction = 0.6
 					uses = 2
 					category = land_doctrine
 				}
@@ -2629,6 +2637,10 @@ focus_tree = {
 			add_to_variable = {
 				RCC_army_exp = 0.075
 				tooltip = army_eperience_tooltip
+			}
+			add_to_variable = {
+				RCC_land_mastery_gain_factor = 0.075
+				tooltip = land_mastery_tp
 			}
 			add_to_variable = {
 				RCC_land_doctrine_cost_factor = -0.1
@@ -2836,12 +2848,16 @@ focus_tree = {
 				tooltip = army_eperience_tooltip
 			}
 			add_to_variable = {
+					RCC_land_mastery_gain_factor = 0.075
+					tooltip = land_mastery_tp
+				}
+			add_to_variable = {
 				RCC_land_doctrine_cost_factor = -0.1
 				tooltip = army_doctrine_tooltip
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.50
+				cost_reduction = 0.4
 				uses = 1
 				category = land_doctrine
 			}
@@ -3037,7 +3053,7 @@ focus_tree = {
 			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.50
+				cost_reduction = 0.4
 				uses = 1
 				category = land_doctrine
 			}
@@ -3181,7 +3197,7 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.50
+				cost_reduction = 0.4
 				uses = 2
 				category = land_doctrine
 			}
@@ -3417,7 +3433,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.50
+				cost_reduction = 0.4
 				uses = 1
 				category = land_doctrine
 			}
@@ -3450,7 +3466,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.50
+				cost_reduction = 0.4
 				uses = 1
 				category = land_doctrine
 			}
@@ -3625,6 +3641,10 @@ focus_tree = {
 			add_to_variable = {
 				RCC_army_exp = 0.05
 				tooltip = army_eperience_tooltip
+			}
+			add_to_variable = {
+				RCC_land_mastery_gain_factor = 0.05
+				tooltip = land_mastery_tp
 			}
 			add_to_variable = {
 				RCC_land_doctrine_cost_factor = -0.05

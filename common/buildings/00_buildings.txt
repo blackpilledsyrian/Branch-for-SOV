@@ -3,7 +3,9 @@ buildings = {
 	# show_on_map:
 	#    if provincial = yes, then show_on_map = X is amount per each province
 	#    if provincial = no, then show_on_map = X is amount per state
-
+	
+	
+	
 	supply_node = {
 		show_on_map = 1
 		base_cost = 14000
@@ -85,6 +87,7 @@ buildings = {
 			state_max = 99
 		}
 	}
+	
 
 	air_base = {
 		show_on_map = 1
@@ -307,7 +310,6 @@ buildings = {
 	}
 	
 	naval_headquarters = {
-		dlc_allowed = { has_dlc = "No Compromise, No Surrender" }
 		show_on_map = 1
 		base_cost = 10000
 		per_controlled_building_extra_cost = 5000

@@ -5,7 +5,9 @@ new_mobile_warfare = {
     description = GRAND_DOCTRINE_MOBILE_WARFARE_DESC
     icon = GFX_doctrine_mobile_warfare_medium
     available = {
-        always = yes
+        NOT = {
+            has_completed_track = force_employment_doctrine_track
+        }
     }
 
     xp_cost = 0
@@ -33,49 +35,35 @@ new_mobile_warfare = {
     max_track_rows = 1 # Optional: unlimited by default
     # EFFECTS
     effect = {
-         if = {
-            limit = {
-                tag = ITA 
-            }
-            modifier = { 
-                custom_modifier_tooltip = deletes_milita_tt
-            }
-            ITA = {
-                delete_unit_template_and_units = {
-                    division_template = "Camicia Nera"
-                    disband = yes #will refund equipment and manpower
+        
+        hidden_effect = {
+             if = {
+                limit = {
+                    tag = CHI 
                 }
-                
-                clr_country_flag = ITA_bigger_milita_flag
-                        
+                set_technology = {
+                    width_tech_chi = 0
+                }
             }
-        }
-        if = {
-            limit = {
-                tag = CHI 
+            else_if = {
+                limit = {
+                    tag = SOV 
+                }
+                set_technology = {
+                    width_tech_sov = 0
+                }
+            }
+            else = {
+                set_technology = {
+                    width_tech = 0
+                }
             }
             set_technology = {
-                width_tech_chi = 0
-            }
-        }
-        else_if = {
-            limit = {
-                tag = SOV 
+                gbp_second_bonus = 0
             }
             set_technology = {
-                width_tech_sov = 0
+                gbp_first_bonus = 0
             }
-        }
-        else = {
-            set_technology = {
-                width_tech = 0
-            }
-        }
-        set_technology = {
-            gbp_second_bonus = 0
-        }
-        set_technology = {
-            gbp_first_bonus = 0
         }
     }
     category_front_line = {
@@ -91,10 +79,7 @@ new_mobile_warfare = {
 	
 
     milestones = {
-         {}
-         {}
-         {}
-         {}
+          {}
          {}
          {}
          {}
@@ -111,7 +96,9 @@ superior_firepower = {
     description = GRAND_DOCTRINE_SUPERIOR_FIREPOWER_DESC
     icon = GFX_doctrine_superior_firepower_medium
     available = {
-        always = yes
+       NOT = {
+            has_completed_track = force_employment_doctrine_track
+        }
     }
 
     xp_cost = 0
@@ -139,49 +126,35 @@ superior_firepower = {
 
     # EFFECTS
     effect = {
-         if = {
-            limit = {
-                tag = ITA 
-            }
-            modifier = { 
-                custom_modifier_tooltip = deletes_milita_tt
-            }
-            ITA = {
-                delete_unit_template_and_units = {
-                    division_template = "Camicia Nera"
-                    disband = yes #will refund equipment and manpower
+        
+        hidden_effect = {
+             if = {
+                limit = {
+                    tag = CHI 
                 }
-                
-                clr_country_flag = ITA_bigger_milita_flag
-                        
+                set_technology = {
+                    width_tech_chi = 0
+                }
             }
-        }
-        if = {
-            limit = {
-                tag = CHI 
+            else_if = {
+                limit = {
+                    tag = SOV 
+                }
+                set_technology = {
+                    width_tech_sov = 0
+                }
+            }
+            else = {
+                set_technology = {
+                    width_tech = 0
+                }
             }
             set_technology = {
-                width_tech_chi = 0
-            }
-        }
-        else_if = {
-            limit = {
-                tag = SOV 
+                gbp_second_bonus = 0
             }
             set_technology = {
-                width_tech_sov = 0
+                gbp_first_bonus = 0
             }
-        }
-        else = {
-            set_technology = {
-                width_tech = 0
-            }
-        }
-        set_technology = {
-            gbp_second_bonus = 0
-        }
-        set_technology = {
-            gbp_first_bonus = 0
         }
     }
    category_front_line = {
@@ -203,9 +176,6 @@ superior_firepower = {
          {}
          {}
          {}
-         {}
-         {}
-         {}
 
     }
 }
@@ -217,7 +187,9 @@ grand_battleplan = {
     description = GRAND_DOCTRINE_GRAND_BATTLEPLAN_DESC
     icon = GFX_doctrine_grand_battleplan_medium
     available = {
-        always = yes
+        NOT = {
+            has_completed_track = force_employment_doctrine_track
+        }
     }
 
     xp_cost = 0
@@ -241,59 +213,28 @@ grand_battleplan = {
 
     # EFFECTS
     effect = {
-         if = {
-            limit = {
-                tag = ITA 
-            }
-            modifier = { 
-                custom_modifier_tooltip = deletes_milita_tt
-            }
-            ITA = {
-                delete_unit_template_and_units = {
-                    division_template = "Camicia Nera"
-                    disband = yes #will refund equipment and manpower
+        
+        hidden_effect = {
+             set_technology = {
+                    width_tech = 0
                 }
-                
-                clr_country_flag = ITA_bigger_milita_flag
-                        
-            }
+                set_technology = {
+                    width_tech_chi = 0
+                }
+                set_technology = {
+                    width_tech_sov = 0
+                }
         }
-        if = {
-            limit = {
-                tag = CHI 
-            }
-            set_technology = {
-                width_tech_chi = 0
-            }
-        }
-        else_if = {
-            limit = {
-                tag = SOV 
-            }
-            set_technology = {
-                width_tech_sov = 0
-            }
-        }
-        else = {
-            set_technology = {
-                width_tech = 0
-            }
-        }
-        set_technology = {
-            gbp_second_bonus = 0
-        }
-        set_technology = {
-            gbp_first_bonus = 0
-        }
+       
+        
+        
+        
     }
     max_dig_in = 7
     dig_in_speed_factor = 0.3 #25% bonus
     planning_speed = 0.2
 
     milestones = {
-         {}
-         {}
-         {}
          {}
          {}
          {}
@@ -333,30 +274,18 @@ mass_assault = {
         mechanized_wave_track
 
     }
+    
     effect = {
-         if = {
-            limit = {
-                tag = ITA 
+           
+       
+       hidden_effect = {
+            
+            set_technology = {
+                gbp_second_bonus = 0
             }
-            modifier = { 
-                custom_modifier_tooltip = deletes_milita_tt
+            set_technology = {
+                gbp_first_bonus = 0
             }
-            ITA = {
-                delete_unit_template_and_units = {
-                    division_template = "Camicia Nera"
-                    disband = yes #will refund equipment and manpower
-                }
-                
-                clr_country_flag = ITA_bigger_milita_flag
-                        
-            }
-        }
-        
-        set_technology = {
-            gbp_second_bonus = 0
-        }
-        set_technology = {
-            gbp_first_bonus = 0
         }
     }
 
@@ -370,9 +299,6 @@ mass_assault = {
     
 
     milestones = {
-         {}
-         {}
-         {}
          {}
          {}
          {}

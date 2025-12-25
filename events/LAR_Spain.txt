@@ -7404,6 +7404,7 @@ country_event = {
 			}
 			ITA = {
 				add_to_variable = { ITA_re_experience_gain_army_factor = 0.3 }
+				add_to_variable = { ITA_land_mastery_gain_factor = 0.3 }
 			}
 			if = {
 				limit = {
@@ -7505,7 +7506,7 @@ country_event = {
 			
 				add_doctrine_cost_reduction = {
 					name = scw_bonus
-					cost_reduction = 0.5
+					cost_reduction = 0.4
 					uses = 2
 					category = land_doctrine
 				}
@@ -7541,7 +7542,7 @@ country_event = {
 				}
 				add_doctrine_cost_reduction = {
 					name = scw_bonus
-					cost_reduction = 0.5
+					cost_reduction = 0.4
 					uses = 2
 					category = land_doctrine
 				}
@@ -7556,7 +7557,7 @@ country_event = {
 				}
 				add_doctrine_cost_reduction = {
 					name = scw_bonus
-					cost_reduction = 0.5
+					cost_reduction = 0.4
 					uses = 2
 					category = air_doctrine
 				}
@@ -7570,7 +7571,7 @@ country_event = {
 				}
 				add_doctrine_cost_reduction = {
 					name = scw_bonus
-					cost_reduction = 0.5
+					cost_reduction = 0.4
 					uses = 1
 					category = land_doctrine
 				}
@@ -7586,13 +7587,13 @@ country_event = {
 				}
 				add_doctrine_cost_reduction = {
 					name = scw_bonus
-					cost_reduction = 0.5
+					cost_reduction = 0.4
 					uses = 3
 					category = land_doctrine
 				}	
 				add_doctrine_cost_reduction = {
 					name = scw_bonus
-					cost_reduction = 0.5
+					cost_reduction = 0.4
 					uses = 2
 					category = air_doctrine
 				}
