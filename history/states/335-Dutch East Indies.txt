@@ -2,14 +2,14 @@
 state = {
 	id = 335
 	name = "STATE_335" # Java
-	manpower = 41718200
+	manpower = 25718200
 	
 	state_category = city
 	
 	resources = {
-		rubber = 50 # 20 moved to papua# was: 242
-		oil = 4 # was: 16 #was 10
-		steel = 7
+		rubber = 200 # 20 moved to papua# was: 242
+		oil = 16 # was: 16 #was 10
+		steel = 28
 	}
 
 	history = {
@@ -25,9 +25,6 @@ state = {
 
 		buildings = {
 			infrastructure = 5
-			arms_factory = 2
-			industrial_complex = 2
-			dockyard = 1
 			air_base = 6
 			7381 = {
 				naval_base = 6

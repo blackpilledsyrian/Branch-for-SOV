@@ -67,6 +67,26 @@
 				load_oob = EFR_armistice_army
 				custom_effect_tooltip = EFR_bring_back_the_arymy_tt
 			}
+			 add_resource = {
+				type = chromium
+				amount = 45
+				state = 20
+			}
+			add_resource = {
+				type = steel
+				amount = 15
+				state = 20
+			}
+			add_resource = {
+				type = steel
+				amount = 45
+				state = 26
+			}
+			add_resource = {
+				type = tungsten
+				amount = 30
+				state = 735
+			}
 
 		}
 		
@@ -98,7 +118,7 @@
 		}
 		
 		ai_will_do = {
-			factor = 5 
+			factor = 999 
 		}
 	}
 	
@@ -228,19 +248,15 @@
 		   factor = 47
 		}
 		 available = {
-		NOT = {
-	  has_tech = superior_firepower
-	  has_tech = trench_warfare 
-	  has_tech = mass_assault 
-	  }
+	
 	}
 		
 		completion_reward = {
-			army_experience = 20
+			army_experience = 150
 	 	add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.7
-				uses = 2
+				cost_reduction = 0.8
+				uses = 3
 				category = land_doctrine
 			}
 		}
@@ -268,19 +284,15 @@
 		}
 		
 		 available = {
-		NOT = {
-	  has_tech = mobile_warfare 
-	  has_tech = trench_warfare 
-	  has_tech = mass_assault 
-	  }
+		
 	}
 		
 		completion_reward = {
-			army_experience = 20
+			army_experience = 150
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.7
-				uses = 2
+				cost_reduction = 0.8
+				uses = 3
 				category = land_doctrine
 			}
 		}
@@ -300,18 +312,14 @@
 		   factor = 50
 		}
 		 available = {
-		NOT = {
-	  has_tech = mobile_warfare 
-	  has_tech = superior_firepower
-	  has_tech = mass_assault 
-	  }
+		
 	}
 		completion_reward = {
-				army_experience = 20
+				army_experience = 150
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.7
-				uses = 2
+				cost_reduction = 0.8
+				uses = 3
 				category = land_doctrine
 			}
 				
@@ -331,18 +339,14 @@
 		   factor = 46
 		}
 	 available = {
-		NOT = {
-	  has_tech = mobile_warfare 
-	  has_tech = superior_firepower
-	  has_tech = trench_warfare
-	  }
+		
 	}
 		completion_reward = {
-			army_experience = 20
+			army_experience = 150
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.7
-				uses = 2
+				cost_reduction = 0.8
+				uses = 3
 				category = land_doctrine
 			}
 		}
@@ -365,9 +369,10 @@
 			
 		} 
 	  completion_reward = {
+			
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.7
+				cost_reduction = 0.8
 				uses = 2
 				category = land_doctrine
 			}
@@ -396,6 +401,10 @@
 		   factor = 50
 		}
 	  completion_reward = {
+		add_mastery = {
+				amount = 80
+				folder = land
+			}
 			add_equipment_to_stockpile = { 
 				type = infantry_equipment amount = 500 producer = GER 
 			}
@@ -525,6 +534,10 @@
 		   factor = 50
 		}
 	  completion_reward = {
+		add_mastery = {
+				amount = 80
+				folder = land
+			}
 			mio:FRA_hotchkiss_organization = {
 				add_mio_funds = 10000
 			}
@@ -585,6 +598,10 @@
 			factor = 50
 		}
 		completion_reward = {
+			add_mastery = {
+				amount = 80
+				folder = land
+			}
 			mio:Fra_somua = {
 				add_mio_funds = 10000
 			}
@@ -690,7 +707,6 @@
 						artillery = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
 						engineer = { x = 0 y = 2 }
-						anti_air_company = { x = 0 y = 3 }
 						maintenance_company = { x = 1 y = 0 }
 						logistics_company_mot = { x = 1 y = 1 }
 					}
@@ -724,7 +740,7 @@
 		completion_reward = {
 			 add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.7
+				cost_reduction = 0.8
 				uses = 2
 				category = land_doctrine
 			}
@@ -849,6 +865,10 @@
 		   factor = 50
 		}
 			completion_reward = { 
+				add_mastery = {
+					amount = 80
+					folder = land
+				}
 				mio:FRA_mas_organization = {
 					add_mio_funds = 10000
 				}
@@ -891,18 +911,20 @@
 				  
 						motorized = { x = 2 y = 0 }
 						artillery_brigade_mot = { x = 2 y = 1 }
-						anti_tank_brigade_mot = { x = 2 y = 2 }
+						motorized = { x = 2 y = 2 }
 						
 						artillery_brigade_mot = { x = 3 y = 0 }
 						artillery_brigade_mot = { x = 3 y = 1 }
 						artillery_brigade_mot = { x = 3 y = 2 }
 						artillery_brigade_mot = { x = 3 y = 3 }
 					}
+					regimental_support = {
+						anti_tank_brigade = { x = 0 y = 0 }
+					}
 					support = {
 						artillery = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
 						engineer = { x = 0 y = 2 }
-						anti_air_company = { x = 0 y = 3 }
 					}
 				}
 				every_state = {
@@ -982,7 +1004,7 @@
 			add_tech_bonus = {
 				bonus = 0.5
 				uses = 2
-				category = artillery
+				category = cat_artillery
 			}
 		}
 	}   
@@ -1126,7 +1148,7 @@
 		completion_reward = { 
 				add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.7
+				cost_reduction = 0.8
 				uses = 2
 				category = land_doctrine
 			}
@@ -1162,7 +1184,7 @@
 	  completion_reward = { 
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.7
+				cost_reduction = 0.8
 				uses = 2
 				category = land_doctrine
 			}
@@ -1194,7 +1216,7 @@
 		completion_reward = { 
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.7
+				cost_reduction = 0.8
 				uses = 2
 				category = land_doctrine
 			}
@@ -1226,7 +1248,7 @@
 		completion_reward = { 
 			 add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.7
+				cost_reduction = 0.8
 				uses = 2
 				category = land_doctrine
 			}
@@ -1258,7 +1280,7 @@
 		completion_reward = { 
 			 add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.7
+				cost_reduction = 0.8
 				uses = 2
 				category = land_doctrine
 			}
@@ -1284,7 +1306,7 @@
 		completion_reward = { 
 			 add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.7
+				cost_reduction = 0.8
 				uses = 2
 				category = land_doctrine
 			}
@@ -1306,6 +1328,10 @@
 		   factor = 12
 		}
 		completion_reward = { 
+			add_mastery = {
+				amount = 80
+				folder = land
+			}
 			mio:FRA_mas_organization = {
 				add_mio_funds = 12000
 			}
@@ -1390,12 +1416,15 @@
 					  
 							volkssturm_infantry = { x = 2 y = 0 }
 							artillery_brigade_mot = { x = 2 y = 1 }
-							anti_tank_brigade_mot = { x = 2 y = 2 }
+							volkssturm_infantry = { x = 2 y = 2 }
 							
 							artillery_brigade_mot = { x = 3 y = 0 }
 							artillery_brigade_mot = { x = 3 y = 1 }
 							artillery_brigade_mot = { x = 3 y = 2 }
 							artillery_brigade_mot = { x = 3 y = 3 }
+						}
+						regimental_support = {
+							anti_tank_brigade = { x = 0 y = 0 }
 						}
 						support = {
 							artillery = { x = 0 y = 0 }
@@ -1403,9 +1432,6 @@
 							mot_recon = { x = 0 y = 2 }
 							maintenance_company = { x = 1 y = 0 }
 							logistics_company_mot = { x = 1 y = 1 }
-							anti_air_company = { x = 0 y = 3 }
-							
-							
 						}
 						priority = 2
 					}
@@ -1665,6 +1691,10 @@
 		   factor = 100
 		}
 		completion_reward = { 
+			add_mastery = {
+				amount = 80
+				folder = land
+			}
 			mio:FRA_mas_organization = {
 				add_mio_funds = 12000
 			}
@@ -1702,10 +1732,14 @@
 									artillery_brigade = { x = 3 y = 0 }
 									artillery_brigade = { x = 3 y = 1 }
 									artillery_brigade = { x = 3 y = 2 }
-									anti_tank_brigade = { x = 3 y = 3 }
+									anti_air_heavy = { x = 3 y = 3 }
 									
 									artillery_heavy = { x = 4 y = 0 }
-									anti_air = { x = 4 y = 1 }
+									field_gun_brigade = { x = 4 y = 1 }
+								}
+								regimental_support = {
+									anti_air = { x = 0 y = 0 }
+									anti_tank_brigade = { x = 0 y = 1 }
 								}
 									support = {
 												artillery = { x = 0 y = 0 }
@@ -1801,7 +1835,6 @@
 		completion_reward = { 
 			set_technology = {
 				artillery2 = 1
-				antitank1 = 1
 			}
 			add_equipment_to_stockpile = { 
 				type = artillery_equipment amount = 600 producer = GER 
@@ -1898,7 +1931,7 @@
 				bonus = 0.5
 				ahead_reduction = 0.5
 				uses = 2
-				category = artillery
+				category = cat_artillery
 			}
 		} 
 	}	 
@@ -1961,9 +1994,8 @@
 					}
 					support = {
 						artillery = { x = 0 y = 0 }
-					  engineer = { x = 0  y = 1 }  
-					  military_police = { x = 0  y = 2 }
-					  anti_air_company = { x = 0 y = 3 }
+						engineer = { x = 0 y = 1 }
+						military_police = { x = 0 y = 2 }
 					}
 				}  
 						every_state = {
@@ -2059,16 +2091,21 @@
 						garrison = { x = 2 y = 1 }
 						garrison = { x = 2 y = 2 }
 				
-						pack_artillery_brigade = { x = 3 y = 0 }
-						pack_artillery_brigade = { x = 3 y = 1 }
-						pack_artillery_brigade = { x = 3 y = 2 }
-						pack_artillery_brigade = { x = 3 y = 3 }
+						field_gun_brigade = { x = 3 y = 0 }
+						field_gun_brigade = { x = 3 y = 1 }
+						field_gun_brigade = { x = 3 y = 2 }
+						field_gun_brigade = { x = 3 y = 3 }
+					}
+					regimental_support = {
+						pack_artillery_brigade = { x = 0 y = 0 }
+						pack_artillery_brigade = { x = 0 y = 1 }
+						pack_artillery_brigade = { x = 0 y = 2 }
+						pack_artillery_brigade = { x = 0 y = 3 }
 					}
 					support = {
 						artillery = { x = 0 y = 0 }
-					  engineer = { x = 0  y = 1 }  
-					  military_police = { x = 0  y = 2 }
-					  anti_air_company = { x = 0 y = 3 }
+						engineer = { x = 0 y = 1 }
+						military_police = { x = 0 y = 2 }
 					}
 				}  
 						every_state = {
@@ -2879,6 +2916,15 @@
 					}		
 				}	
 			}
+			random_core_state = {
+				
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+				}
+			}
 			add_tech_bonus = {
 				name = EFR_industry_bopnus
 				bonus = 1
@@ -2996,7 +3042,7 @@
 		}
 		
 		ai_will_do = {
-			factor = 5 
+			factor = 999 
 		}
 	}
 	
@@ -3796,7 +3842,7 @@
 		}
 		
 		ai_will_do = {
-			factor = 5 
+			factor = 999 
 		}
 	}
 	
@@ -3821,7 +3867,7 @@
 		}
 		
 		ai_will_do = {
-			factor = 5 
+			factor = 999 
 		}
 	}
 	
@@ -3851,7 +3897,7 @@
 		}
 		
 		ai_will_do = {
-			factor = 5 
+			factor = 999 
 		}
 	}
 	
@@ -3871,6 +3917,7 @@
 		available_if_capitulated = yes
 
 		available = {
+			is_ally_with = GER
 			GER = {
 				has_completed_focus = GER_arbeitseinsatz
 			}
@@ -3883,7 +3930,7 @@
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 999
 		}
 	}
 	
@@ -4255,10 +4302,14 @@
 									artillery_brigade = { x = 3 y = 0 }
 									artillery_brigade = { x = 3 y = 1 }
 									artillery_brigade = { x = 3 y = 2 }
-									anti_tank_brigade = { x = 3 y = 3 }
+									anti_air_heavy = { x = 3 y = 3 }
 									
 									artillery_heavy = { x = 4 y = 0 }
-									anti_air = { x = 4 y = 1 }
+									field_gun_brigade = { x = 4 y = 1 }
+								}
+								regimental_support = {
+									anti_air = { x = 0 y = 0 }
+									anti_tank_brigade = { x = 0 y = 1 }
 								}
 									support = {
 												artillery = { x = 0 y = 0 }

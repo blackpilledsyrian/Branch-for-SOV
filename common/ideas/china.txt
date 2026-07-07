@@ -96,6 +96,8 @@ ideas = {
 				army_strength_factor = 1
 				army_org_factor = 0.1
 				supply_consumption_factor = -0.5
+				supply_node_range = 1
+				surrender_limit = 1
 
 			}
 		}
@@ -174,9 +176,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				production_speed_supply_node_factor = 0.5
-				production_speed_rail_way_factor = 0.5
-				production_speed_naval_base_factor = 0.5
+				production_speed_supply_node_factor = 1
+				production_speed_rail_way_factor = 1
+				production_speed_naval_base_factor = 1
 			}
 		}
 		CHI_chinese_general_staff = {
@@ -209,7 +211,7 @@ ideas = {
 			research_bonus = {
 				infantry_weapons = -0.2
 				armor = -0.15
-				artillery = -0.3
+				cat_artillery = -0.3
 				air_equipment = -0.3
 				electronics = -0.3
 				motorized_equipment = -0.2
@@ -217,9 +219,7 @@ ideas = {
 			}
 			equipment_bonus = {
 
-				suicide = {
-					build_cost_ic = 0.1 instant = yes
-				}
+			
 				
 				infantry_equipment = {
 					build_cost_ic = 0.1 instant = yes
@@ -230,10 +230,7 @@ ideas = {
 				
 			}
 
-			modifier = {
-				
-				license_production_speed = -0.5
-			}
+			
 			
 		}
 		CHI_agrarian_society2 = {
@@ -247,16 +244,14 @@ ideas = {
 			research_bonus = {
 				infantry_weapons = -0.1
 				armor = -0.05
-				artillery = -0.2
+				cat_artillery = -0.2
 				air_equipment = -0.2
 				electronics = -0.2
 				motorized_equipment = -0.1
 				para_tech = -0.4
 			}
 			equipment_bonus = {
-				suicide = {
-					build_cost_ic = 0.1 instant = yes
-				}
+			
 	
 			
 				infantry_equipment = {
@@ -267,10 +262,7 @@ ideas = {
 				}
 			}
 
-			modifier = {
-				
-				license_production_speed = -0.5
-			}
+			
 			
 		}
 		CHI_agrarian_society3 = {
@@ -283,7 +275,7 @@ ideas = {
 
 			research_bonus = {
 				infantry_weapons = -0.06
-				artillery = -0.05
+				cat_artillery = -0.05
 				air_equipment = -0.05
 				electronics = -0.05
 				motorized_equipment = -0.05
@@ -296,9 +288,7 @@ ideas = {
 				
 			}
 
-			modifier = {
-				license_production_speed = -0.3
-			}
+			
 			
 		}
 		CHI_state_of_army = {
@@ -1549,7 +1539,7 @@ ideas = {
 			}	
 			research_bonus = {
 				industry = 0.1
-				artillery = 0.1
+				cat_artillery = 0.1
 				armor = 0.2
 			}			
 			traits = { OAK_trait_steelworks2 }
@@ -1585,7 +1575,7 @@ ideas = {
 			}	
 			research_bonus = {
 				industry = 0.1
-				artillery = 0.1
+				cat_artillery = 0.1
 				armor = 0.2
 			}			
 			traits = { OAK_trait_steelworks }
@@ -1661,7 +1651,7 @@ ideas = {
 			}		
 			research_bonus = {
 				infantry_weapons = 0.15	
-				artillery = 0.3
+				cat_artillery = 0.3
              }				
 			traits = { OAK_arsenal }
 			equipment_bonus = {
@@ -1703,7 +1693,7 @@ ideas = {
 			}			
 			research_bonus = {
 				infantry_weapons = 0.15
-				artillery = 0.05
+				cat_artillery = 0.05
             }				
 			traits = { OAK_arsenal }
 			equipment_bonus = {
@@ -1785,7 +1775,7 @@ ideas = {
 			}
 			
 			research_bonus = {
-				artillery = 0.25
+				cat_artillery = 0.25
 			}
 			traits = { artillery_research_trait }	
 		}

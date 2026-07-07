@@ -5,9 +5,9 @@ state = {
 	manpower = 4461400
 	buildings_max_level_factor = 1.25
 	resources = {
-		oil = 20 # was: 70
-		steel = 7
-		chromium = 6
+		oil = 80 # was: 70
+		steel = 28
+		chromium = 24
 	}
 
 	state_category = large_city
@@ -18,6 +18,8 @@ state = {
 		victory_points = { 3663 5 }
 		victory_points = { 657 3 }
 		buildings = {
+			tank_assembly = 1
+			air_assembly = 1
 			infrastructure = 6
 			arms_factory = 4
 			industrial_complex = 4

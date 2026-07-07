@@ -27,11 +27,7 @@ RCC_a_army_of_criminals = {
 	land_doctrine_cost_factor = RCC_land_doctrine_cost_factor 
 	send_volunteer_size = no_yato_retardato
 	custom_modifier_tooltip = RCC_train_hp_tt
-	naval_invasion_capacity = RCC_naval_invasion_capacity
-
-	sortie_efficiency  = 0.1
-    positioning  = 0.05
-    navy_anti_air_attack_factor = 0.2
+	naval_invasion_division_cap = RCC_national_naval_invasion_cap
 
 }
 
@@ -59,6 +55,7 @@ RCC_torn_industry = { #NATIONAL SPIRIT
 	line_change_production_efficiency_factor =RCC_change_eff
 	industrial_capacity_factory = RCC_output
 	industrial_capacity_dockyard = RCC_dock_output
+	min_export = RCC_min_export
 
 	
 	# later stuff

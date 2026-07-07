@@ -8,7 +8,7 @@ equipments = {
 		type = submarine
 		group_by = archetype
 		priority = 2500
-		naval_dominance_factor = 9
+		naval_dominance_factor = 0
 		upgrades = {
 			ship_reliability_upgrade
 			sub_engine_upgrade
@@ -45,10 +45,7 @@ equipments = {
 			category = ship_sub_coating
 			count < 2
 		}
-		module_count_limit = {
-			category = ship_anti_air
-			count < 2
-		}
+		
 		module_count_limit = {
 			category = ship_rocket
 			count < 2
@@ -73,7 +70,7 @@ equipments = {
 		torpedo_attack = 0
 
 		
-		anti_air_attack = 4
+		anti_air_attack = 2
 		
 		armor_value = 0
 
@@ -92,7 +89,7 @@ equipments = {
 
 		fuel_consumption = 0.07
 		
-		build_cost_ic = 850
+		build_cost_ic = 2000
 		resources = {
 			steel = 4
 		}
@@ -108,7 +105,7 @@ equipments = {
 		priority = 2500
 		
 		module_slots = inherit
-		naval_dominance_factor = 9
+		naval_dominance_factor = 0
 	}
 
 	ship_hull_submarine_2 = {
@@ -127,7 +124,7 @@ equipments = {
 					ship_radar
 					ship_sub_snorkel
 					ship_sub_coating
-					ship_anti_air
+					
 					
 				}
 			}
@@ -138,7 +135,7 @@ equipments = {
 					ship_radar
 					ship_sub_snorkel
 					ship_sub_coating
-					ship_anti_air
+					
 					
 				}
 			}
@@ -159,11 +156,11 @@ equipments = {
 		naval_range = 4000
 		reliability = 0.70
 		max_strength = 300
-		naval_dominance_factor = 11
+		naval_dominance_factor = 0
 		
 
 		
-		build_cost_ic = 950
+		build_cost_ic = 2100
 		resources = {
 			steel = 6
 		}
@@ -191,7 +188,7 @@ equipments = {
 					ship_radar
 					ship_sub_snorkel
 					ship_sub_coating
-					ship_anti_air
+					
 					ship_rocket
 				}
 			}
@@ -202,7 +199,7 @@ equipments = {
 					ship_radar
 					ship_sub_snorkel
 					ship_sub_coating
-					ship_anti_air
+					
 					
 				}
 			}
@@ -214,10 +211,10 @@ equipments = {
 			rear_1_custom_slot = empty
 		}
 	
-		sub_visibility = 7
+		sub_visibility = 6
 		naval_speed = 15
 		reliability = 0.75
-		naval_dominance_factor = 13
+		naval_dominance_factor = 0
 		
 		naval_range = 5000
 		
@@ -226,7 +223,7 @@ equipments = {
 
 
 		
-		build_cost_ic = 1100
+		build_cost_ic = 2200
 		resources = {
 			steel = 7
 			chromium = 1
@@ -258,7 +255,7 @@ equipments = {
 					ship_radar
 					ship_sub_snorkel
 					ship_sub_coating
-					ship_anti_air
+					
 					ship_rocket
 				}
 			}
@@ -268,7 +265,7 @@ equipments = {
 					ship_radar
 					ship_sub_snorkel
 					ship_sub_coating
-					ship_anti_air
+					
 					ship_rocket
 				}
 			}
@@ -281,10 +278,10 @@ equipments = {
 			rear_1_custom_slot = empty
 		}
 	
-		sub_visibility = 6
+		sub_visibility = 5
 		naval_speed = 15
 		reliability = 0.80
-		naval_dominance_factor = 15
+		naval_dominance_factor = 0
 
 		naval_range = 6000
 		anti_air_attack = 4
@@ -293,7 +290,7 @@ equipments = {
 		
 
 		
-		build_cost_ic = 1400
+		build_cost_ic = 2300
 		resources = {
 			steel = 8
 			chromium = 3
@@ -327,7 +324,7 @@ equipments = {
 				allowed_module_categories = {
 					ship_radar
 					ship_sub_snorkel
-					ship_anti_air
+					
 					ship_rocket
 					ship_sub_coating
 					ship_light_battery_sub
@@ -352,7 +349,7 @@ equipments = {
 			rear_1_custom_slot = empty
 		}
 		
-		sub_visibility = 7
+		sub_visibility = 6
 		naval_speed = 12
 		reliability = 0.75
 		anti_air_attack = 4
@@ -360,11 +357,11 @@ equipments = {
 		naval_range = 5000
 		
 		max_strength = 300
-		naval_dominance_factor = 9
+		naval_dominance_factor = 0
 
 
 		
-		build_cost_ic = 1300
+		build_cost_ic = 2500
 		resources = {
 			steel = 7
 			chromium = 1
@@ -396,7 +393,7 @@ equipments = {
 				allowed_module_categories = {
 					ship_radar
 					ship_sub_snorkel
-					ship_anti_air
+					
 					ship_sub_coating
 					ship_rocket
 					ship_light_battery_sub
@@ -406,7 +403,7 @@ equipments = {
 				required = no
 				allowed_module_categories = {
 					ship_radar
-					ship_anti_air
+					
 					ship_torpedo_sub
 					ship_airplane_launcher
 					ship_extra_fuel_tank
@@ -426,17 +423,17 @@ equipments = {
 			rear_1_custom_slot = empty
 		}
 
-		sub_visibility = 10
+		sub_visibility = 9
 		naval_speed = 20
 		reliability = 0.75
 		anti_air_attack = 4
 		naval_range = 6500
-		naval_dominance_factor = 17
+		naval_dominance_factor = 0
 		max_strength = 450
 
 
 		
-		build_cost_ic = 1400
+		build_cost_ic = 2800
 		resources = {
 			steel = 8
 			chromium = 2
@@ -456,7 +453,7 @@ equipments = {
 				allowed_module_categories = {
 					ship_radar
 					ship_sub_snorkel
-					ship_anti_air
+					
 					
 				}
 			}
@@ -468,18 +465,18 @@ equipments = {
 			fixed_ship_engine_slot = inherit
 		}
 		
-		sub_visibility = 7
+		sub_visibility = 6
 		naval_speed = 10
 		reliability = 0.60
 		anti_air_attack = 6
 		naval_range = 500
-		naval_dominance_factor = 9
+		naval_dominance_factor = 0
 		max_strength = 300
 
 		manpower = 100
 
 		
-		build_cost_ic = 300
+		build_cost_ic = 600
 		resources = {
 			steel = 1
 		}
@@ -504,7 +501,7 @@ equipments = {
 				allowed_module_categories = {
 					ship_radar
 					ship_sub_snorkel
-					ship_anti_air
+					
 					ship_sub_coating
 					ship_rocket
 					ship_nuclear_rocket
@@ -514,7 +511,7 @@ equipments = {
 				required = no
 				allowed_module_categories = {
 					ship_radar
-					ship_anti_air
+					
 					ship_torpedo_sub
 					ship_airplane_launcher
 					ship_extra_fuel_tank
@@ -533,18 +530,18 @@ equipments = {
 			fixed_ship_engine_slot = sub_ship_nuclear_engine_1
 		}
 		
-		sub_visibility = 9
+		sub_visibility = 8
 		naval_speed = 16
 		reliability = 0.75
 		anti_air_attack = 4
 		naval_range = 6500
-		naval_dominance_factor = 20
+		naval_dominance_factor = 0
 		
 		max_strength = 400
 
 
 		
-		build_cost_ic = 1600
+		build_cost_ic = 3200
 		resources = {
 			steel = 8
 			chromium = 3

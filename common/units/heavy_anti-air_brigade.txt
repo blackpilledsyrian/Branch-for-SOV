@@ -20,6 +20,7 @@ sub_units = {
 			category_line_artillery
 			category_heavy_anti_air			
 		}
+		allow_in_army_hq = yes
 
 		combat_width = 2
 
@@ -31,11 +32,12 @@ sub_units = {
 		manpower = 550
 		training_time = 80
 		max_organisation = 4
-		default_morale = 0.1
+		default_morale = 0.08
 		initiative = 0.01
+		is_artillery_brigade = yes
 		max_strength = 10
 		weight = 0.6
-		maximum_speed = -0.46
+		maximum_speed = -0.37
 		supply_consumption = 0.08
 		experience_loss_factor = -0.01
 		forest = {
@@ -98,7 +100,9 @@ sub_units = {
 			category_army
 			category_line_artillery
 			category_heavy_anti_air
+			category_mot_arty
 		}
+		allow_in_army_hq = yes
 
 		combat_width = 2
 		
@@ -110,10 +114,10 @@ sub_units = {
 		manpower = 550
 		training_time = 80
 		max_organisation = 4
-		default_morale = 0.1
+		default_morale = 0.08
 		max_strength = 10
 		weight = 0.7
-		maximum_speed = -0.33
+		maximum_speed = -0.12
 		initiative = 0.01
 		supply_consumption = 0.14
 		defense = 0.1

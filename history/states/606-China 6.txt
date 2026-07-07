@@ -2,7 +2,7 @@ state = {
 	id = 606
 	name = "STATE_606"
 	resources = {
-		steel = 12
+		steel = 48
 	}
 
 	history = {
@@ -11,7 +11,7 @@ state = {
 		add_dynamic_modifier = { modifier = CHI_tougher_resistance0 }
 		buildings = {
 			infrastructure = 4
-			industrial_complex = 4
+			industrial_complex = 3
 			arms_factory = 3
 
 		}

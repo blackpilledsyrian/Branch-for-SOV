@@ -1154,7 +1154,7 @@ characters = {
 		name=POL_jozef_wiatr
 		portraits = {
 			army = {
-				small="gfx/interface/ideas/ministers/generic_army_leader_8"
+				small="gfx/interface/ideas/ministers/generic_army_leader_8.dds"
 			}
 		}
 		advisor = {
@@ -1255,9 +1255,7 @@ characters = {
 					OR = {
 						has_capitulated = no
 					}
-					NOT = {
-						has_completed_focus = POL_force_a_change_on_beck
-					}
+					
 					
 				}
 			}

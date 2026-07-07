@@ -2,11 +2,12 @@ state = {
 	id = 41
 	name = "STATE_41"
 	resources = {
-		steel = 15 # was: 110
-		aluminium = 10 # was: 38
+		steel = 60 # was: 110
+		aluminium = 40 # was: 38
 	}
 
 	history = {
+		set_state_flag = flagger_spain_pain
 		owner = SPN
 		victory_points = {
 			3938 15 
@@ -16,10 +17,9 @@ state = {
 			858 1
 		}
 
-		1936.1.1.13 = {
-			owner = SPR
-		}
+		
 		buildings = {
+			tank_assembly = 1
 			infrastructure = 6
 			arms_factory = 3
 			industrial_complex = 1

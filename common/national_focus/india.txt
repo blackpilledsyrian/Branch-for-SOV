@@ -13,7 +13,17 @@ focus_tree = {
 	default = no
 	
 	continuous_focus_position = { x = 50 y = 2000 }
-									
+
+	# Joint UK–Raj imperial defense branch (same shared_focus id as UK; definitions in ENG_RAJ_burma_joint.txt)
+	shared_focus = ENG_crimson_sun
+
+	# Commonwealth joint area (definitions in commonwealth_joint.txt)
+	shared_focus = COMMON_strengthen_commonwealth_ties
+	shared_focus = COMMON_joint_commonwealth_training
+	shared_focus = COMMON_commonwealth_combined_programs
+	shared_focus = COMMON_support_china
+	shared_focus = COMMON_allow_volunteers_to_china
+	shared_focus = COMMON_invade_iraq
 
 	###################
 	######NEW TREE#####
@@ -27,7 +37,7 @@ focus_tree = {
 		x = 7
 		y = 0
 
-		cost = 5
+		cost = 4.285
 
 		ai_will_do = {
 			factor = 100
@@ -45,7 +55,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		complete_tooltip = {
-			add_political_power = 150 
+			add_political_power = 110 
 			add_ideas = { RAJ_bhimrao_ramji_ambedkar }
 				add_autonomy_ratio = {
 				value = 0.2
@@ -53,11 +63,12 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_political_power = 150 
+			add_political_power = 110 
 			add_ideas = { RAJ_bhimrao_ramji_ambedkar }
 				add_autonomy_ratio = {
 				value = 0.2
 			}
+			
 		}
 	}
 	
@@ -485,18 +496,16 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-			swap_ideas = {
-				remove_idea = RAJ_sikhism
-				add_idea = RAJ_sikhism_encouraged
-			}
-		}
+		
 
 		completion_reward = {
+			
 			swap_ideas = {
 				remove_idea = RAJ_sikhism
 				add_idea = RAJ_sikhism_encouraged
 			}
+			add_stability = 0.2
+			add_war_support  = 0.15
 		}
 	}
 	
@@ -580,12 +589,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		complete_tooltip = {
-			swap_ideas = {
-				remove_idea = RAJ_sikhism_encouraged
-				add_idea = RAJ_sikhism_united
-			}
-		
-			add_ideas = partial_economic_mobilisation
+			
 		}
 
 		completion_reward = {
@@ -593,7 +597,9 @@ focus_tree = {
 				remove_idea = RAJ_sikhism_encouraged
 				add_idea = RAJ_sikhism_united
 			}
-	
+			add_stability = 0.2
+			add_war_support  = 0.15
+			custom_effect_tooltip = MANspace
 			add_ideas = partial_economic_mobilisation
 		}
 	}
@@ -1227,7 +1233,7 @@ focus_tree = {
 		x = 14
 		y = 0
 
-		cost = 7.2
+		cost = 5.2
 
 		ai_will_do = {
 			factor = 4
@@ -1484,7 +1490,7 @@ focus_tree = {
 			}
 			add_resource = {
 				state = 431
-				amount = 10
+				amount = 30
 				type = steel
 			}
 			add_to_variable = {
@@ -1532,7 +1538,7 @@ focus_tree = {
 			}
 			add_resource = {
 				state = 439
-				amount = 10
+				amount = 30
 				type = steel
 			}
 		}
@@ -1550,7 +1556,7 @@ focus_tree = {
 			}
 			add_resource = {
 				state = 439
-				amount = 10
+				amount = 30
 				type = steel
 			}
 			add_to_variable = {
@@ -1787,25 +1793,17 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-			custom_effect_tooltip = RAJ_attempt_industrialization_tt_3
-			
-			build_railway = { # Delhi to Calcutta #
-				level = 2
-				path = { 2086 10794 5086 12137 5055 5040 7938 10332 10471 1637 12452 7593 4204 4245
-				}
-			}
-   			
-		}
+	
 
 		completion_reward = {
 			custom_effect_tooltip = RAJ_attempt_industrialization_tt_3
 
    			build_railway = { # Delhi to Calcutta #
 				level = 2
-				path = { 2086 10794 5086 12137 5055 5040 7938 10332 10471 1637 12452 7593 4204 4245
+				path = { 2086 10794 5086 12137 5055 5040 7938 2005 1569 4516 10361 7537 7565 7662 1609 12050 4245
 				}
 			}
+
    			
 			add_to_variable = {
 				var = rapid_industrialization
@@ -2032,7 +2030,7 @@ focus_tree = {
 			}
 			add_resource = {
 				type = oil
-				amount = 15
+				amount = 45
 				state = 294
 			}
 		}
@@ -2059,7 +2057,7 @@ focus_tree = {
 			}
 			add_resource = {
 				type = oil
-				amount = 15 
+				amount = 45 
 				state = 294
 			}
 		}		
@@ -2101,22 +2099,22 @@ focus_tree = {
 			}
 			add_resource = {
 				state = 294
-				amount = 20
+				amount = 60
 				type = steel
 			}
 			add_resource = {
 				state = 294
 				type = aluminium
-				amount = 10
+				amount = 30
 			}
 			add_resource = {
 				state = 294
-				amount = 10
+				amount = 30
 				type = tungsten
 			}
 			add_resource = {
 				state = 294
-				amount = 10
+				amount = 30
 				type = chromium
 			}
 		}
@@ -2923,63 +2921,10 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-			custom_effect_tooltip = RAJ_attempt_industrialization_tt_3
-
-			build_railway = { # Delhi to Ahmadabad #
-				level = 1
-				path = { 2086 2054 1908 4149 12886 1103 9975
-				}
-			}
-			
-			433 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					level = 1
-					type = infrastructure
-					instant_build = yes
-				}
-			}
-			
-			build_railway = { # Lucknow to Ahmadabad #
-				level = 1
-				path = { 12137 2036 1949 10816 4106 12743 7165 9975
-				}
-			}
-			
-			437 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					level = 1
-					type = infrastructure
-					instant_build = yes
-				}
-			}
-			
-			build_railway = { # Lucknow to Hyderabad #
-				level = 1
-				path = { 12137 5055 5040 5096 4953 11995 4950 10030 12781 5019 11950 8087
-				}
-			}
-			
-			436 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					level = 1
-					type = infrastructure
-					instant_build = yes
-				}
-			}
-		}
-
+	
 		completion_reward = {
 			custom_effect_tooltip = RAJ_attempt_industrialization_tt_3
 
-			build_railway = { # Delhi to Ahmadabad #
-				level = 1
-				path = { 2086 2054 1908 4149 12886 1103 9975
-				}
-			}
 			
 			433 = {
 				add_extra_state_shared_building_slots = 1
@@ -2990,11 +2935,6 @@ focus_tree = {
 				}
 			}
 			
-			build_railway = { # Lucknow to Ahmadabad #
-				level = 1
-				path = { 12137 2036 1949 10816 4106 12743 7165 9975
-				}
-			}
 			
 			437 = {
 				add_extra_state_shared_building_slots = 1
@@ -3005,11 +2945,7 @@ focus_tree = {
 				}
 			}
 			
-			build_railway = { # Lucknow to Hyderabad #
-				level = 1
-				path = { 12137 5055 5040 5096 4953 11995 4950 10030 12781 5019 11950 8087
-				}
-			}
+			
 			
 			436 = {
 				add_extra_state_shared_building_slots = 1
@@ -3978,7 +3914,7 @@ focus_tree = {
 
 		complete_tooltip = {
 			add_tech_bonus = {
-				category = artillery
+				category = cat_artillery
 				uses = 1
 				ahead_reduction = 1
 				name = RAJ_ahead_of_time_arty
@@ -3995,7 +3931,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				category = artillery
+				category = cat_artillery
 				uses = 1
 				ahead_reduction = 1
 				name = RAJ_ahead_of_time_arty
@@ -4199,7 +4135,7 @@ focus_tree = {
 
 		x = 20
 		y = 9
-		cost = 5
+		cost = 4
 
 		ai_will_do = {
 			factor = 4
@@ -4222,20 +4158,20 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		complete_tooltip = {
-			army_experience = 50
+			army_experience = 35
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
 		}
 
 		completion_reward = {
-			army_experience = 50
+			army_experience = 35
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -4341,14 +4277,21 @@ focus_tree = {
 							mountaineers = { x = 2 y = 1 }
 							mountaineers = { x = 2 y = 2 }
 						
-							pack_artillery_brigade = { x = 3 y = 0 }
-							pack_artillery_brigade = { x = 3 y = 1 }
-							pack_artillery_brigade = { x = 3 y = 2 }
-							pack_artillery_brigade = { x = 3 y = 3 }	
+							field_gun_brigade = { x = 3 y = 0 }
+							field_gun_brigade = { x = 3 y = 1 }
+							field_gun_brigade = { x = 3 y = 2 }
+							field_gun_brigade = { x = 3 y = 3 }	
 			
-							pack_artillery_brigade = { x = 4 y = 0 }
+							field_gun_brigade = { x = 4 y = 0 }
 					
 									}
+						regimental_support = {
+							pack_artillery_brigade = { x = 0 y = 0 }
+							pack_artillery_brigade = { x = 0 y = 1 }
+							pack_artillery_brigade = { x = 0 y = 2 }
+							pack_artillery_brigade = { x = 0 y = 3 }
+							pack_artillery_brigade = { x = 0 y = 4 }
+						}
 					support = {
 						artillery = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
@@ -4564,7 +4507,7 @@ focus_tree = {
 	
 	focus = {
 		id = RAJ_military_restructuring   
-		icon = GFX_USA_war_powers_act
+		icon = GFX_focus_generic_military_mission
 		relative_position_id = RAJ_build_up_strategic_oil_reserve
 		prerequisite = { focus = RAJ_build_up_strategic_oil_reserve }
 		x = 3
@@ -4921,6 +4864,9 @@ focus_tree = {
 		}
 
 		available = {
+			ENG = {
+				has_completed_track = fighter_operations_KNI
+			}
 		}
 
 		bypass = {
@@ -4971,6 +4917,9 @@ focus_tree = {
 		}
 
 		available = {
+			ENG = {
+				has_completed_track = fighter_operations_KNI
+			}
 		}
 
 		bypass = {
@@ -5201,7 +5150,7 @@ focus_tree = {
 			
 			add_doctrine_cost_reduction = {
                 name = land_doc_bonus
-                cost_reduction = 0.4
+                cost_reduction = 0.5
                 uses = 1
                 category = land_doctrine
             }
@@ -5216,7 +5165,7 @@ focus_tree = {
 			army_experience = 25
 			add_doctrine_cost_reduction = {
                 name = land_doc_bonus
-                cost_reduction = 0.4
+                cost_reduction = 0.5
                 uses = 1
                 category = land_doctrine
             }
@@ -5287,7 +5236,7 @@ focus_tree = {
 		complete_tooltip = {
 			add_doctrine_cost_reduction = {
                 name = land_doc_bonus
-                cost_reduction = 0.4
+                cost_reduction = 0.5
                 uses = 2
                 category = land_doctrine
             }
@@ -5296,7 +5245,7 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
                 name = land_doc_bonus
-                cost_reduction = 0.4
+                cost_reduction = 0.5
                 uses = 2
                 category = land_doctrine
             }
@@ -5540,7 +5489,7 @@ focus_tree = {
 				bonus = 1.0 
 			}	
 			add_tech_bonus = {
-				category = artillery
+				category = cat_artillery
 				uses = 1
 				bonus = 0.5 
 			}
@@ -5572,18 +5521,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-			add_tech_bonus = {
-				category = cat_mechanized_equipment
-				uses = 1
-				bonus = 1.0
-			}
-			add_tech_bonus = {
-				bonus = 1
-				uses = 1
-				category = armor
-			}
-		}
+		
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -5596,6 +5534,7 @@ focus_tree = {
 				uses = 1
 				category = armor
 			}
+			
 		}
 	}
 	
@@ -5625,17 +5564,27 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-			swap_ideas = {
-				remove_idea = RAJ_arms_discount
-				add_idea = RAJ_industry_for_war
-			}
-		}
+		
 
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = RAJ_arms_discount
 				add_idea = RAJ_industry_for_war
+			}
+			random_core_state = {
+				limit = {
+					state = 823
+					state = 288
+					state = 640
+					state = 434
+					state = 432
+				}
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+				}
 			}
 		}
 	}
@@ -5996,18 +5945,6 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-			custom_effect_tooltip = RAJ_attempt_industrialization_tt_2
-
-			431 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes 
-				}
-			}
-		}
 
 		completion_reward = {
 			custom_effect_tooltip = RAJ_attempt_industrialization_tt_2
@@ -6023,6 +5960,22 @@ focus_tree = {
 			add_to_variable = {
 				var = rapid_industrialization
 				value = 5 
+			}
+			random_core_state = {
+				limit = {
+					state = 823
+					state = 288
+					state = 640
+					state = 434
+					state = 432
+				}
+				
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+				}
 			}
 		}		
 	}	
@@ -6167,7 +6120,7 @@ focus_tree = {
 		x = 0
 		y = 2
 
-		cost = 7.2
+		cost = 6.2
 
 		ai_will_do = {
 			factor = 80
@@ -6185,19 +6138,29 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-			
-			add_offsite_building = {
-				type = arms_factory
-				level = 4
-			}
-		}
+		
 
 		completion_reward = {
 			
 			add_offsite_building = {
 				type = arms_factory
-				level = 4
+				level = 3
+			}
+			random_core_state = {
+				limit = {
+					state = 823
+					state = 288
+					state = 640
+					state = 434
+					state = 432
+				}
+				
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+				}
 			}
 		}		
 	}	
@@ -6492,22 +6455,22 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		complete_tooltip = {
-			431 = {
+			429 = {
 				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = dockyard
-					level = 5
+					level = 4
 					instant_build = yes 
 				}
 			} 
 		}
 
 		completion_reward = {
-			431 = {
+			429 = {
 				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = dockyard
-					level = 5
+					level = 4
 					instant_build = yes 
 				}
 			} 
@@ -6540,7 +6503,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		complete_tooltip = {
-			659 = {
+			428 = {
 				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = dockyard
@@ -6551,7 +6514,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			659 = {
+			428 = {
 				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = dockyard
@@ -6946,7 +6909,7 @@ focus_tree = {
 			
 			add_doctrine_cost_reduction = {
                 name = naval_doc_bonus
-                cost_reduction = 0.4
+                cost_reduction = 0.5
                 uses = 2
                 category = naval_doctrine
             }	
@@ -6958,7 +6921,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
                 name = naval_doc_bonus
-                cost_reduction = 0.4
+                cost_reduction = 0.5
                 uses = 2
                 category = naval_doctrine
             }	
@@ -7081,7 +7044,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
                 name = naval_doc_bonus
-                cost_reduction = 0.4
+                cost_reduction = 0.5
                 uses = 2
                 category = naval_doctrine
             }
@@ -7096,7 +7059,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
                 name = naval_doc_bonus
-                cost_reduction = 0.4
+                cost_reduction = 0.5
                 uses = 2
                 category = naval_doctrine
             }	

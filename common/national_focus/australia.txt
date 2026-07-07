@@ -20,6 +20,14 @@ focus_tree = {
 	
 	continuous_focus_position = { x = 1850 y = 1150 }
 
+	# Commonwealth joint area (definitions in commonwealth_joint.txt)
+	shared_focus = COMMON_strengthen_commonwealth_ties
+	shared_focus = COMMON_joint_commonwealth_training
+	shared_focus = COMMON_commonwealth_combined_programs
+	shared_focus = COMMON_support_china
+	shared_focus = COMMON_allow_volunteers_to_china
+	shared_focus = COMMON_invade_iraq
+
 
 	############################
 	###### Poltical Part #######
@@ -355,11 +363,11 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 10
+					amount = 30
 				}
 			    add_resource = {
 				type = chromium
-				amount = 5
+				amount = 15
 				}
 			}
 		}
@@ -453,7 +461,7 @@ focus_tree = {
 				}
 			    add_resource = {
 				type = rubber
-				amount = 20
+				amount = 60
 				}
 		    }  
 	    }
@@ -681,7 +689,7 @@ focus_tree = {
 		icon = GFX_goal_AST_R56_white_australia
 		x = -3
 		y = 2
-		cost = 7.16
+		cost = 6.445
 		ai_will_do = {
 			factor = 200			
 		}
@@ -696,7 +704,7 @@ focus_tree = {
 				AST_political_power_cost_var = -0.15
 				tooltip = AST_pol_pow_cost_tt2
 			}	
-			add_political_power = 50
+			add_political_power = 10
 			add_war_support = 0.10
 			add_stability = 0.1			
 		}
@@ -811,7 +819,7 @@ focus_tree = {
 		icon = GFX_AST_to_arms
 		x = 0
 		y = 2
-		cost = 5
+		cost = 4
 		ai_will_do = {
 			factor = 200			
 		}
@@ -1010,25 +1018,25 @@ focus_tree = {
 			285 = {
 			    add_resource = {
 				    type = aluminium
-			        amount = 9
+			        amount = 27
 			  	}	
 		        add_resource = {
 			       	type = oil
-	    		    amount = 8
+	    		    amount = 24
 	         	}
 			}
 			517 = {
 				add_resource = {
 			       	type = tungsten
-	    		    amount = 4
+	    		    amount = 12
 	         	}
 				add_resource = {
 			       	type = chromium
-	    		    amount = 4
+	    		    amount = 12
 	         	}
                 add_resource = {
 			       	type = steel
-	    		    amount = 5
+	    		    amount = 15
 	         	}					
 		    }
 		}
@@ -1135,15 +1143,18 @@ focus_tree = {
 
 						volkssturm_infantry  = { x = 3 y = 0 }		
 						volkssturm_infantry  = { x = 3 y = 1 }
-						pack_artillery_brigade = { x = 3 y = 2 }
-						pack_artillery_brigade = { x = 3 y = 3 }
+						field_gun_brigade = { x = 3 y = 2 }
+						field_gun_brigade = { x = 3 y = 3 }
 						
+					}
+					regimental_support = {
+						pack_artillery_brigade = { x = 0 y = 0 }
+						pack_artillery_brigade = { x = 0 y = 1 }
 					}
 
 					support = {
 						artillery = { x = 0 y = 0 }
-					   	construction_engineer = { x = 0 y = 1 }
-					   	anti_air_company = { x = 0 y = 2 }
+						construction_engineer = { x = 0 y = 1 }
 						military_police = { x = 1 y = 0 }
 						logistics_company = { x = 1 y = 1 }
 					}
@@ -1445,7 +1456,7 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_equipment_to_stockpile = { type = transport_plane_equipment amount = 150 producer = USA }		
+			add_equipment_to_stockpile = { type = transport_plane_equipment amount = 100 producer = USA }		
 			add_equipment_to_stockpile = { type = motorized_equipment amount = 1500 producer = USA }
 			add_equipment_to_stockpile = { type = train_equipment amount = 25 producer = USA }	
 			add_equipment_to_stockpile = { type = convoy amount = 75 producer = USA }	
@@ -1569,89 +1580,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = AST_defend_java
-
-		prerequisite = { focus = AST_swpa_protector }
-		relative_position_id = AST_swpa_protector
-		mutually_exclusive = {
-			focus = AST_commit_to_singapore
-		}
-		icon = GFX_focus_hol_continue_the_war_in_batavia
-		x = 1
-		y = 1
-		cost =  2.9
-		ai_will_do = {
-			factor = 200			
-		}
-		available = {
-
-		}
-		
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			335 = {
-				strategic_state_location = {
-					favorable_approach3 = 1209 # Province ID
-				}
-				set_building_level  = {
-					type = air_base
-					level = 8
-					instant_build = yes
-				}
-				set_building_level  = {
-					type = anti_air_building
-					level = 2
-					instant_build = yes
-				}
-				#Fortify entire coastline
-				set_building_level = {
-					type = coastal_bunker
-					province = {
-						all_provinces = yes
-						limit_to_coastal = yes
-					}
-					level = 2
-					instant_build = yes
-				}
-
-				# Batavia extra forts
-				set_building_level = {
-					type = coastal_bunker
-					province = 7381
-					level = 4
-					instant_build = yes
-				}
-				### Soerabaja extra forts
-				set_building_level = {
-					type = coastal_bunker
-					province = 4608
-					level = 4
-					instant_build = yes
-				}
-				set_building_level = {
-					type = bunker
-					province = 4608
-					level = 3
-					instant_build = yes
-				}
-				set_building_level = {
-					type = bunker
-					province = 7381
-					level = 3
-					instant_build = yes
-				}
-
-			}	
-		}
-	}
-	focus = {
 		id = AST_commit_to_singapore
 
 		prerequisite = { focus = AST_swpa_protector }
 		relative_position_id = AST_swpa_protector
-		mutually_exclusive = {
-			focus = AST_defend_java
-		}
 		icon = GFX_goal_MAL_malaya
 		x = 3
 		y = 1
@@ -1673,6 +1605,11 @@ focus_tree = {
 					type = air_base
 					level = 8
 					instant_build = yes
+				}
+				set_building_level = {
+					type = naval_headquarters
+					level = 1
+					province = 12299
 				}
 
 				#Fortify entire coastline
@@ -1978,36 +1915,9 @@ focus_tree = {
 					}
 			}
 			set_technology = { scout_plane1  = 1 }
-			add_equipment_to_stockpile = { type = transport_plane_equipment amount = 100 producer = AST }			
 			add_equipment_to_stockpile = { type = medium_plane_scout_plane_airframe amount = 50 producer = AST }	
 		}
 	}
-#event to covert either to tanks and mech or arty production. Tanks gives more mills. +100% train ic cost
-	focus = {
-		id = ast_convert_locomotive_works
-
-		prerequisite = { focus = ast_lithgow_factory }
-		prerequisite = {
-			focus = ast_aircraft_corporation
-		}
-		relative_position_id = ast_aircraft_corporation
-		icon = GFX_AST_convert_loco_works
-		x = 1
-		y = 1
-		cost = 7.16
-		ai_will_do = {
-			factor = 200			
-		}
-		available = {
-
-		}
-		
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-				AST = { country_event = { id = australia.18 days = 0 } }			
-		}
-	}
-
 	focus = {
 		id = ast_commonwealth_ties
 
@@ -2395,7 +2305,7 @@ focus_tree = {
 			
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -2436,7 +2346,7 @@ focus_tree = {
 			custom_effect_tooltip = MANspace
 			523 = {
 				strategic_state_location = {
-					favorable_approach3 = 7362 # Province ID
+					favorable_approach3 = 4329 # Province ID
 				}
 				set_building_level = {
 				  type = air_base
@@ -2447,7 +2357,7 @@ focus_tree = {
 
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -2468,7 +2378,7 @@ focus_tree = {
 		icon = GFX_goal_AST_coa_army
 		x = 0
 		y = 2
-		cost = 5
+		cost = 4
 		ai_will_do = {
 			factor = 200			
 		}
@@ -2489,7 +2399,7 @@ focus_tree = {
 
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -2501,8 +2411,8 @@ focus_tree = {
 				}
 				custom_effect_tooltip = AST_modify_army_spirit_tt2
 				add_to_variable = {
-					AST_experience_gain_army_var = 0.04
-					tooltip = AST_xp_gain_flat
+					AST_experience_gain_army_var = 0.03
+					tooltip = AST_xp_gain_2
 				}
 			}
 			
@@ -2583,7 +2493,7 @@ focus_tree = {
 			custom_effect_tooltip = AST_modify_army_spirit_tt
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -2645,20 +2555,23 @@ focus_tree = {
 						artillery_brigade = { x = 3 y = 0 }
 						artillery_brigade = { x = 3 y = 1 }
 						artillery_brigade = { x = 3 y = 2 }
-						anti_tank_brigade = { x = 3 y = 3 }
+						anti_air_heavy = { x = 3 y = 3 }
 						
 						artillery_heavy = { x = 4 y = 0 }
-						anti_air = { x = 4 y = 1 }
+						field_gun_brigade = { x = 4 y = 1 }
+					}
+					regimental_support = {
+						anti_air = { x = 0 y = 0 }
+						anti_tank_brigade = { x = 0 y = 1 }
 					}
 					
 					support = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
 						recon = { x = 0 y = 2 }
-						military_police = { x = 0 y = 3 }		
+						military_police = { x = 0 y = 3 }
 						maintenance_company = { x = 1 y = 0 }
 						logistics_company = { x = 1 y = 1 }
-						field_hospital = { x = 1 y = 2 }
 					}
 				}
 				451 = {
@@ -2823,7 +2736,7 @@ focus_tree = {
 				name = artillery_bonus
 				bonus = 0.5
 				uses = 2
-				category = artillery
+				category = cat_artillery
 			}
 			if = {
 				limit = {
@@ -2905,7 +2818,7 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -2988,6 +2901,15 @@ focus_tree = {
 				bonus = 0.75
 				uses = 2
 				category = armor 
+			}
+			random_core_state = {
+				
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+				}
 			}
 			if = {
 				limit = {
@@ -3203,18 +3125,25 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
 			random_owned_controlled_state= {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
+			
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+				}
 			}
+			
 			if = {
 				limit = {
 					NOT = {
@@ -3414,7 +3343,7 @@ focus_tree = {
 		x = 32
 		y = 0
 
-		cost = 2.9
+		cost = 1.9
 
 		ai_will_do = {
 			factor = 1
@@ -3444,7 +3373,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 7
 				add_building_construction = {
 					type = dockyard
-					level = 7
+					level = 6
 					instant_build = yes
 				}
 			}
@@ -3458,7 +3387,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 7
 				add_building_construction = {
 					type = dockyard
-					level = 7
+					level = 6
 					instant_build = yes
 				}
 				set_state_flag = AST_cockatoo_island_shipyards_DY

@@ -14,11 +14,12 @@ sub_units = {
 		}
 
 		group = support
+		regimental = no
 
 		categories = {
 			
 			category_support_battalions
-			
+			category_flame_tanks
 			category_all_armor
 			category_army
 		}
@@ -87,11 +88,12 @@ sub_units = {
 		}
 
 		group = support
+		regimental = no
 
 		categories = {
 			
 			category_support_battalions
-			
+			category_flame_tanks
 			category_all_armor
 			category_army
 		}
@@ -160,11 +162,12 @@ sub_units = {
 		}
 
 		group = support
+		regimental = no
 
 		categories = {
 			
 			category_support_battalions
-			
+			category_flame_tanks
 			category_all_armor
 			category_army
 		}
@@ -236,11 +239,12 @@ sub_units = {
 		}
 
 		group = support
+		regimental = no
 
 		categories = {
 			
 			category_support_battalions
-			
+			category_flame_tanks
 			category_all_armor
 			category_army
 		}

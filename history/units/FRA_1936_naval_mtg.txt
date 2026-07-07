@@ -16,6 +16,8 @@
 			ship = { name = "Bretagne" definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = FRA version_name = "Bretagne Class" } } }	
 			ship = { name = "Courbet" definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = FRA version_name = "Courbet Class" } } }        
 			ship = { name = "Paris" definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = FRA version_name = "Courbet Class" } } }
+			ship = { name = "Jean Bart" definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = FRA version_name = "Courbet Class" } } }
+
 			ship = { name = "Algérie" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = FRA version_name = "Algérie Class" } } }			
 			ship = { name = "Foch" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FRA version_name = "Suffren Class" } } }
 			ship = { name = "Dupleix" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FRA version_name = "Suffren Class" } } }
@@ -225,8 +227,8 @@ instant_effect = {
 			version_name = "Dunkerque Class"
 		}
 		name = "Dunkerque" 
-		requested_factories = 1
-		progress = 0.5
+		requested_factories = 10
+		progress = 0.6
 		amount = 1
 	}
 	# BC: Dunkerque (Comm. 16-Apr, 1937)	
@@ -237,8 +239,8 @@ instant_effect = {
 			version_name = "Dunkerque Class"
 		}
 		name = "Strasbourg" 
-		requested_factories = 1
-		progress = 0.2
+		requested_factories = 10
+		progress = 0.5
 		amount = 1
 	}
 	# BB: Richelieu	
@@ -248,8 +250,8 @@ instant_effect = {
 			creator = "FRA" 
 			version_name = "Richelieu Class"
 		}
-		requested_factories = 1
-		progress = 0.15
+		requested_factories = 10
+		progress = 0.3
 		amount = 1
 	}
 	# DD: Le Fantasque class (x4) ("Le Malin" "L'Indomptable" "Le Fantasque" "Le Triomphant")
@@ -260,7 +262,7 @@ instant_effect = {
 			version_name = "Le Fantasque Class"
 		}
 		name = "Le Malin" 
-		requested_factories = 1
+		requested_factories = 10
 		progress = 0.8
 		amount = 1
 	}
@@ -271,7 +273,7 @@ instant_effect = {
 			version_name = "Le Fantasque Class"
 		}
 		name = "L'Indomptable" 
-		requested_factories = 1
+		requested_factories = 10
 		progress = 0.95
 		amount = 1
 	}
@@ -282,7 +284,7 @@ instant_effect = {
 			version_name = "Le Fantasque Class"
 		}
 		name = "Le Fantasque" 
-		requested_factories = 1
+		requested_factories = 10
 		progress = 0.85
 		amount = 1
 	}
@@ -293,7 +295,7 @@ instant_effect = {
 			version_name = "Le Fantasque Class"
 		}
 		name = "Le Triomphant" 
-		requested_factories = 1
+		requested_factories = 10
 		progress = 0.80
 		amount = 1
 	}
@@ -306,8 +308,8 @@ instant_effect = {
 			version_name = "La Galissonnière Class"
 		}
 		name = "Jean de Vienne" 
-		requested_factories = 1
-		progress = 0.35
+		requested_factories = 10
+		progress = 0.8
 		amount = 1
 	}
 	add_equipment_production = {
@@ -317,8 +319,8 @@ instant_effect = {
 			version_name = "La Galissonnière Class"
 		}
 		name = "Marseillaise" 
-		requested_factories = 1
-		progress = 0.15
+		requested_factories = 10
+		progress = 0.8
 		amount = 1
 	}
 	add_equipment_production = {
@@ -328,8 +330,8 @@ instant_effect = {
 			version_name = "La Galissonnière Class"
 		}
 		name = "Gloire" 
-		requested_factories = 1
-		progress = 0.15
+		requested_factories = 10
+		progress = 0.7
 		amount = 1
 	}
 	add_equipment_production = {
@@ -339,8 +341,8 @@ instant_effect = {
 			version_name = "La Galissonnière Class"
 		}
 		name = "Montcalm" 
-		requested_factories = 1
-		progress = 0.15
+		requested_factories = 10
+		progress = 0.7
 		amount = 1
 	}
 	# SS: Redoutable variant (x7) ("Le Héros" "Le Conquérant" "Le Tonnant" "Agosta" "Sfax" "Casabianca" "Bévéziers")
@@ -350,7 +352,7 @@ instant_effect = {
 			creator = "FRA" 
 			version_name = "Redoutable Class"
 		}
-		requested_factories = 1
+		requested_factories = 10
 		progress = 0.20
 		amount = 3
 	}
@@ -360,7 +362,7 @@ instant_effect = {
 			creator = "FRA" 
 			version_name = "Redoutable Class"
 		}
-		requested_factories = 1
+		requested_factories = 10
 		progress = 0.20
 		amount = 2
 	}
@@ -370,7 +372,7 @@ instant_effect = {
 			creator = "FRA" 
 			version_name = "Redoutable Class"
 		}
-		requested_factories = 1
+		requested_factories = 10
 		progress = 0.25
 		amount = 2
 	}
@@ -381,7 +383,7 @@ instant_effect = {
 			creator = "FRA" 
 			version_name = "Minerve Class"
 		}
-		requested_factories = 1
+		requested_factories = 10
 		progress = 0.20
 		amount = 1
 	}
@@ -392,7 +394,7 @@ instant_effect = {
 			version_name = "Minerve Class"
 		}
 
-		requested_factories = 1
+		requested_factories = 10
 		progress = 0.20
 		amount = 1
 	}
@@ -403,7 +405,7 @@ instant_effect = {
 			version_name = "Minerve Class"
 		}
  
-		requested_factories = 1
+		requested_factories = 10
 		progress = 0.20
 		amount = 1
 	}
@@ -414,7 +416,7 @@ instant_effect = {
 			version_name = "Minerve Class"
 		}
 
-		requested_factories = 1
+		requested_factories = 10
 		progress = 0.10
 		amount = 1
 	}

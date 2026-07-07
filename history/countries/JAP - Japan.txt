@@ -5,7 +5,7 @@ set_rule = { can_create_factions = no }
 set_stability = 0.2
 set_war_support = 0.5
 set_fuel_ratio = 0.75
-set_research_slots = 7
+set_research_slots = 6
 starting_train_buffer = 2
 set_country_flag = fuel_system_enabled
 set_country_flag = JAP_subs1_flag
@@ -22,7 +22,15 @@ IF = {
 		#scientist = FRA_louis_renault
 		#state = 16
 	}
+	complete_special_project = {
+		project = sp:sp_naval_cruiser_submarine
+		#scientist = FRA_louis_renault
+		#state = 16
+	}
+	
+	
 }
+
 set_variable = { JAP_max_occupied_states_var = 10 }
 
 
@@ -31,12 +39,11 @@ set_variable = { JAP_army_attack_factor_polo_var = 0 }
 set_variable = { JAP_army_defense_factor_polo_var = 0 }
 set_variable = { JAP_war_escalation_var = 0 }
 
-set_variable = { JAP_factory_output_modifier = 0.3 }
-set_variable = { JAP_dockyard_output_modifier = 0.25 }
+
 set_variable = { JAP_interior_counter_var = 0 }
 
 set_variable = { JAP_command_power_gain_mult_var = -0.2 }
-set_variable = { JAP_max_command_power_var = 0 }
+set_variable = { JAP_max_command_power_var = 20 }
 set_variable = { JAP_army_org_factor_var = 0.125 }
 set_variable = { JAP_max_planning_var = -0.02 }
 set_variable = { JAP_planning_speed_var = -0.2 }
@@ -53,9 +60,10 @@ set_variable = { JAP_out_of_supply_factor_var = 0 }
 set_variable = { JAP_army_morale_factor_var = 0 }
 set_variable = { JAP_org_loss_when_moving_var = 0 }
 set_variable = { JAP_amphibious_invasion_defence_var = 0 }
-set_variable = { JAP_political_power_cost_var = 0.1 }
+set_variable = { JAP_political_power_cost_var = -0.1 }
 set_variable = { JAP_production_factory_efficiency_base_factor = 0.05 }
-
+set_variable = { JAP_local_resources_factor_var = 0.1 }
+set_variable = { JAP_resistance_target_modifier = 0 }
 
 set_variable = { JAP_needed_inf_equipment = 39999 }
 set_variable = { JAP_needed_horse_equipment = 12299 }
@@ -71,6 +79,7 @@ set_variable = { JAP_needed_motorized_equipment = 1999 }
 set_variable = { JAP_needed_manpower = 800000 }
 
 
+
 set_variable = {
 	JAP_production_factory_max_efficiency_factor_var = 0.08
 }
@@ -80,9 +89,10 @@ set_variable = {
 set_variable = {
 	JAP_production_speed_arms_factory_factor_var = -0.2
 }
-set_variable = {
-	JAP_production_speed_industrial_complex_factor_var = 0.2
-}
+### in start_up on_actions
+#set_variable = {
+	#JAP_production_speed_industrial_complex_factor_var = 0.2
+#}
 
 add_dynamic_modifier = {
 	modifier = JAP_eco_and_politics
@@ -280,7 +290,8 @@ add_breakthrough_points = {
 }
 
 set_technology = { #player 
- 	asiatic_tanks = 1
+building_tech = 1 
+ 
 	basic_train = 1
 	basic_fire_control_system = 1
 	improved_fire_control_system = 1 
@@ -334,8 +345,6 @@ set_technology = { #player
 	cv_CAS_1937 = 1
 	strategic_bomber_1937 = 1
 	######  doctrines #####
-	trench_warfare = 1
-	base_strike = 1
 	######  economic ######
 	basic_machine_tools = 1
 	starting_industry = 1
@@ -361,12 +370,11 @@ set_technology = { #player
 			small_gun = 1
 			support_gun = 1
 			armour_sloping = 1
-			engine_tech_1 = 1
-			engine_tech_2 = 1
+	
 			turret_basket = 1
 			early_cupola = 1
 			automatic_gun2 = 1
-			armor_tech_1 = 1
+	
 			armour_sloping2 = 1	
 			howizer = 1
 		}
@@ -718,7 +726,7 @@ if = {
 				fixed_ship_radar_slot = empty
 				fixed_ship_engine_slot = heavy_ship_engine_2
 				fixed_ship_secondaries_slot = dp_ship_secondaries_1
-				mid_1_custom_slot = ship_deck_space
+		
 			}
 			obsolete = yes
 		}
@@ -744,7 +752,7 @@ if = {
 			parent_version = 0
 			modules = {
 				fixed_ship_deck_slot_1 = ship_deck_space
-				fixed_ship_deck_slot_2 = empty
+	
 				fixed_ship_anti_air_slot = empty
 				fixed_ship_radar_slot = empty
 				fixed_ship_engine_slot = carrier_ship_engine_1
@@ -759,7 +767,6 @@ if = {
 			parent_version = 0
 			modules = {
 				fixed_ship_deck_slot_1 = ship_deck_space
-				fixed_ship_deck_slot_2 = ship_deck_space
 				fixed_ship_anti_air_slot = ship_anti_air_1
 				fixed_ship_radar_slot = empty
 				fixed_ship_engine_slot = carrier_ship_engine_1
@@ -1082,7 +1089,7 @@ if = {
 				fixed_ship_torpedo_slot = ship_torpedo_sub_2
 				fixed_ship_engine_slot = sub_ship_engine_2
 				front_1_custom_slot = ship_extra_fuel_tank
-				mid_1_custom_slot = empty
+				mid_1_custom_slot = ship_light_battery_sub
 				rear_1_custom_slot = ship_airplane_launcher_1
 			}
 		}

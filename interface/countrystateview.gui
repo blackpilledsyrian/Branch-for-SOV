@@ -426,7 +426,14 @@ guiTypes = {
 					spriteType = "GFX_modifiers_unplanned_offensive_icon"
 					position = { x = 0 y = 0 }
 					Orientation = "UPPER_LEFT"			
-				}	
+				}
+
+				iconType = {
+					name = "HOL_grebbelinie_icon"
+					spriteType = "GFX_modifiers_HOL_grebbelinie_icon"
+					position = { x = 0 y = 0 }
+					Orientation = "UPPER_LEFT"
+				}
 			}
 
 			gridBoxType = {
@@ -472,7 +479,7 @@ guiTypes = {
 			name = "core_country_flag"
 			quadTextureSprite ="GFX_flag_small2"
 			position = { x= 0 y = 0 }
-			#Orientation = "UPPER_LEFT"
+			
 		}
 		
 		iconType ={
@@ -509,12 +516,6 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiled_header_1"
 			size = { X=44 Y= 45 }
 			alwaystransparent = yes
-		}
-		
-		iconType = {
-			name = "level_bg"
-			position = { x=24 y=7 }	
-			quadTextureSprite = "GFX_tiled_header_scimpro"
 		}
 		
 		instantTextboxType = {
@@ -564,6 +565,7 @@ guiTypes = {
 			position = { x = 8 y = 1 }
 			quadTextureSprite = "GFX_buildings_strip"
 			scale = 0.5
+			alwaystransparent = yes	# MFU: blocks the click that converts mil<->civ factories; icon still renders
 		}
 		iconType = {
 			name = "building_status_overlay"
@@ -741,7 +743,6 @@ guiTypes = {
 			name = "stakeholder_country_flag"
 			quadTextureSprite ="GFX_flag_small2"
 			position = { x= 0 y = 1 }
-			#Orientation = "UPPER_LEFT"
 		}
 		
 		iconType = {
@@ -783,6 +784,24 @@ guiTypes = {
 			position = { x = 18 y = 30 }
 			quadTextureSprite ="GFX_mapicon_unit_flag_stripe"
 			orientation = "UPPER_LEFT"
+		}
+	}
+
+	# MFU fix: 1.19 (Operation Postern) added "strategic_locations_grid", which the
+	# engine populates with entries of this container type. The modded copy of this
+	# file kept the grid but dropped this definition, so opening the state/province
+	# view logged "Undefined GUI_TYPE: province_view_strategic_location_entry - This
+	# will most likely crash the game" and then crashed. Restored from vanilla 1.19.
+	containerWindowType = {
+		name = "province_view_strategic_location_entry"
+		size = { width = 40 height = 47 }
+		position = { x = 4 y = 2 }
+		clipping = no
+
+		iconType = {
+			name = "icon"
+			quadTextureSprite ="GFX_idea_unknown"
+			scale = 0.8
 		}
 	}
 }

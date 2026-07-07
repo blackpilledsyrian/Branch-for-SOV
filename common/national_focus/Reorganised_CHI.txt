@@ -505,15 +505,18 @@ focus_tree = {
 								artillery_brigade = { x = 3 y = 2 }
 								
 								artillery_heavy = { x = 4 y = 0 }
-								anti_air = { x = 4 y = 1 }
-								anti_air = { x = 4 y = 2 }
+								field_gun_brigade = { x = 4 y = 1 }
+								field_gun_brigade = { x = 4 y = 2 }
 								
+							}
+							regimental_support = {
+								anti_air = { x = 0 y = 0 }
+								anti_air = { x = 0 y = 1 }
 							}
 								support = {
 											artillery = { x = 0 y = 0 }
 											recon = { x = 0 y = 1 }
-											  engineer = { x = 0 y = 2 }
-											anti_air_company = { x = 0 y = 3 }
+											engineer = { x = 0 y = 2 }
 								}
 				}
 							every_state = {
@@ -672,15 +675,18 @@ focus_tree = {
 								artillery_brigade = { x = 3 y = 2 }
 								
 								artillery_heavy = { x = 4 y = 0 }
-								anti_air = { x = 4 y = 1 }
-								anti_air = { x = 4 y = 2 }
+								field_gun_brigade = { x = 4 y = 1 }
+								field_gun_brigade = { x = 4 y = 2 }
 								
+							}
+							regimental_support = {
+								anti_air = { x = 0 y = 0 }
+								anti_air = { x = 0 y = 1 }
 							}
 								support = {
 											artillery = { x = 0 y = 0 }
 											recon = { x = 0 y = 1 }
-											  engineer = { x = 0 y = 2 }
-											anti_air_company = { x = 0 y = 3 }
+											engineer = { x = 0 y = 2 }
 								}
 				}
 							every_state = {
@@ -2251,7 +2257,7 @@ focus_tree = {
 				name = artillery
 				bonus = 1
 				uses = 1
-				category = artillery
+				category = cat_artillery
 			}
 		}
 	}
@@ -2688,7 +2694,11 @@ focus_tree = {
 					limit = {
 						RCC = {
 							NOT = {
-								has_tech = mass_assault
+								OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 							}
 						}
 					}
@@ -2720,7 +2730,6 @@ focus_tree = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							anti_air_company = { x = 0 y = 2 }
 						}	
 						
 						priority = 1
@@ -2759,7 +2768,6 @@ focus_tree = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							anti_air_company = { x = 0 y = 2 }
 						}	
 						
 						priority = 1
@@ -3504,7 +3512,7 @@ focus_tree = {
 			tooltip = consumer_goods_tooltip
 		}
 		add_to_variable = {
-			RCC_naval_invasion_capacity = 100
+			RCC_national_naval_invasion_cap = 100
 		}
 		custom_effect_tooltip = allow_rcc_to_invade
 		custom_effect_tooltip = RCC_spawn_army_tt
@@ -3513,7 +3521,11 @@ focus_tree = {
 				limit = {
 					RCC = {
 						NOT = {
-							has_tech = mass_assault
+							OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 						}
 					}
 				}
@@ -3545,7 +3557,6 @@ focus_tree = {
 					support = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
-						anti_air_company = { x = 0 y = 2 }
 					}	
 					
 					priority = 1
@@ -3584,7 +3595,6 @@ focus_tree = {
 					support = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
-						anti_air_company = { x = 0 y = 2 }
 					}	
 					
 					priority = 1
@@ -3695,7 +3705,7 @@ focus_tree = {
 				name = artillery
 				bonus = 0.75
 				uses = 1
-				category = artillery
+				category = cat_artillery
 			}
 			custom_effect_tooltip = MANspace
 			if = {
@@ -4168,7 +4178,10 @@ focus_tree = {
 				RCC_pp_gain = 0.10
 				tooltip = political_power_gain_modifier_tooltip
 			}
-
+			add_to_variable = {
+				RCC_operative_slot = 1
+				tooltip = agency_3_tt
+			}
 		}
 	}
 	focus = {
@@ -4429,6 +4442,11 @@ focus_tree = {
 				value = 0.05
 				tooltip = MAN_resorse_2_fix
 			}
+			add_to_variable = {
+				var = RCC_min_export
+				value = 0.05
+				tooltip = min_export_tooltip
+			}
 			add_political_power = 100
 		}
 	}
@@ -4684,7 +4702,11 @@ focus_tree = {
 					limit = {
 						RCC = {
 							NOT = {
-								has_tech = mass_assault
+								OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 							}
 						}
 					}
@@ -4716,7 +4738,6 @@ focus_tree = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							anti_air_company = { x = 0 y = 2 }
 							artillery_heavy_support = { x = 1 y = 0 }
 						}	
 						
@@ -4755,7 +4776,6 @@ focus_tree = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							anti_air_company = { x = 0 y = 2 }
 							artillery_heavy_support = { x = 1 y = 0 }
 						}	
 						
@@ -4825,6 +4845,7 @@ focus_tree = {
 				value = 0.05
 				tooltip = arms_factory_build_speed_factor_tooltip
 			}
+			
 			
 		}
 	}
@@ -5281,7 +5302,7 @@ focus_tree = {
 				AND = {
 					has_full_control_of_state = 840
 					has_full_control_of_state = 613
-					}
+				}
 				JAP = {has_completed_focus = JAP_wang_jingwes_regime }
 				date > 1940.01.01
 			}
@@ -5405,7 +5426,11 @@ focus_tree = {
 				limit = {
 					RCC = {
 						NOT = {
-							has_tech = mass_assault
+						OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 						}
 					}
 				}
@@ -5437,7 +5462,6 @@ focus_tree = {
 					support = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
-						anti_air_company = { x = 0 y = 2 }
 						artillery_heavy_support = { x = 1 y = 0 }
 					}	
 					
@@ -5476,7 +5500,6 @@ focus_tree = {
 					support = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
-						anti_air_company = { x = 0 y = 2 }
 						artillery_heavy_support = { x = 1 y = 0 }
 					}	
 					
@@ -5642,7 +5665,11 @@ focus_tree = {
 				limit = {
 					RCC = {
 						NOT = {
-							has_tech = mass_assault
+							OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 						}
 					}
 				}
@@ -5674,7 +5701,6 @@ focus_tree = {
 					support = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
-						anti_air_company = { x = 0 y = 2 }
 						artillery_heavy_support = { x = 1 y = 0 }
 					}	
 					
@@ -5713,7 +5739,6 @@ focus_tree = {
 					support = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
-						anti_air_company = { x = 0 y = 2 }
 						artillery_heavy_support = { x = 1 y = 0 }
 					}	
 					
@@ -5899,13 +5924,22 @@ focus_tree = {
 		completion_reward = {
 			add_country_leader_trait = RCC_wang_the_one_and_only
 			custom_effect_tooltip = MANspace
+			add_to_variable = {
+				RCC_operative_slot = 1
+				tooltip = agency_3_tt
+			}
+			custom_effect_tooltip = MANspace
 		custom_effect_tooltip = RCC_spawn_in_core_states_tt
 		hidden_effect = {
 				if = {
 				limit = {
 					RCC = {
 						NOT = {
-							has_tech = mass_assault
+							OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 						}
 					}
 				}
@@ -5937,7 +5971,6 @@ focus_tree = {
 					support = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
-						anti_air_company = { x = 0 y = 2 }
 						artillery_heavy_support = { x = 1 y = 0 }
 					}	
 					
@@ -5976,7 +6009,6 @@ focus_tree = {
 					support = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
-						anti_air_company = { x = 0 y = 2 }
 						artillery_heavy_support = { x = 1 y = 0 }
 					}	
 					

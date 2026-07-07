@@ -3,14 +3,15 @@ state = {
 	id = 70
 	name = "STATE_70"
 	resources = {
-		tungsten = 1.000
-		steel = 8
+		tungsten = 20.000
+		steel = 60
 	}
 
 	history = {
-		owner = CZE
+		owner = SLO
 		victory_points = { 9692 10 } 
 		victory_points = { 3484 3 }
+		victory_points = { 11522 3 }
 
 		buildings = {
 			infrastructure = 5
@@ -18,9 +19,15 @@ state = {
 			arms_factory = 2
 			air_base = 3
 			fuel_silo = 2
+			tank_assembly = 1
+			11522 = {
+				landmark_bojnice_castle = {
+					level = 1
+				}
+			}
 
 		}
-		add_core_of = CZE
+		add_core_of = SLO
 		1939.3.14 = {
 			owner = SLO
 			controller = SLO

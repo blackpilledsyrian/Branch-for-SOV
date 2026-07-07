@@ -6,8 +6,9 @@ state =
 	state_category = town
 	resources = {
 
-		steel = 10
-		chromium = 5
+		steel = 42
+		chromium = 32
+	
 	}
 	
 	
@@ -17,7 +18,7 @@ state =
 		add_core_of = CHI
 		add_dynamic_modifier = { modifier = CHI_tougher_resistance0 }
 		victory_points = {
-			1069 3 
+			1069 6
 		}
 		victory_points = {
 			1184 1 
@@ -26,21 +27,21 @@ state =
 			4205 1 
 		}
 		victory_points = {
-			10000 5 
+			10000 4 
 		}
 		
 		buildings = {
 			10000 = {
-				naval_base = 5
+				naval_base = 8
 				coastal_bunker = 1
 				bunker = 1
 			}
 			infrastructure = 3
-			industrial_complex = 3
+			industrial_complex = 2
 			arms_factory = 1
 			air_base = 3
 			4205 = {
-				naval_base = 2
+				naval_base = 4
 				coastal_bunker = 1
 				bunker = 1
 			}

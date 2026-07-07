@@ -140,12 +140,16 @@ ITA_military_industry_dynamic_modifier = { #NATIONAL SPIRIT
 	custom_modifier_tooltip = ITA_OAK_military_industry_dynamic_modifier_tt #Research Penalties applied via hidden NS ITA_hidden_research_penalties_ns
 
 
+
+
 	# later stuff
 	line_change_production_efficiency_factor = ITA_military_industry_dm_line_change_production_efficiency_factor #0.1
 	production_lack_of_resource_penalty_factor = ITA_military_industry_dm_production_lack_of_resource_penalty_factor #0.1
 	equipment_upgrade_xp_cost = ITA_military_industry_dm_equipment_upgrade_xp_cost #-0.1
 	industrial_capacity_dockyard = ITA_military_industry_dm_industrial_capacity_dockyard #0.05
 	air_equipment_upgrade_xp_cost = ITA_military_industry_air_equipment_upgrade_xp_cost #-0.1/+0.1
+
+	production_speed_tank_assembly_factor = ITA_production_speed_tank_assembly_factor
 	
 	research_speed_factor = ITA_research_speed_factor_var 
 	#air_research_speed_factor = ITA_air_research_speed_factor_var 
@@ -166,6 +170,7 @@ ITA_regio_esercito_dynamic_modifier = { #NATIONAL SPIRIT
 	army_org_factor = ITA_re_army_army_org_factor 
 	org_loss_when_moving = ITA_re_org_loss_when_moving 
 	experience_gain_army_factor = ITA_re_experience_gain_army_factor 
+	army_experience_from_volunteers = -0.65  
 	land_mastery_gain_factor  = ITA_land_mastery_gain_factor 
 
 	# later stuff
@@ -195,6 +200,7 @@ ITA_regio_esercito_dynamic_modifier = { #NATIONAL SPIRIT
 	breakthrough_factor  = ITA_re_breakthrough_factor #0
 	army_defence_factor = ITA_re_army_defence_factor #-0.05
 	special_forces_min = ITA_special_forces_min_var
+	military_industrial_organization_funds_gain = 0.15
 
 	send_volunteer_size = 2	
 	send_volunteer_divisions_required = -1
@@ -213,7 +219,7 @@ ITA_regio_esercito_2_dynamic_modifier = { #NATIONAL SPIRIT
 	icon = GFX_idea_ITA_regio_esercito_2
 
 	max_dig_in_factor = ITA_re_army_max_dig_in_factor 
-
+	army_experience_from_volunteers = -0.65  
 	land_doctrine_cost_factor = ITA_re_land_doctrine_cost_factor 
 	army_speed_factor = ITA_re_army_speed_factor 
 	army_org_factor = ITA_re_army_army_org_factor 
@@ -240,6 +246,7 @@ ITA_regio_esercito_2_dynamic_modifier = { #NATIONAL SPIRIT
 	supply_consumption_factor = ITA_re_supply_consumption_factor 
 	acclimatization_hot_climate_gain_factor = ITA_re_acclimatization_hot_climate_gain_factor 
 	heat_attrition_factor = ITA_re_heat_attrition_factor 
+	military_industrial_organization_funds_gain = 0.15
 
 	planning_speed = ITA_re_planning_speed #-0.25
 	max_planning = ITA_re_max_planning #-0.25
@@ -270,7 +277,7 @@ ITA_regio_esercito_3_dynamic_modifier = { #NATIONAL SPIRIT
 	army_speed_factor = ITA_re_army_speed_factor 
 	army_org_factor = ITA_re_army_army_org_factor 
 	org_loss_when_moving = ITA_re_org_loss_when_moving 
-
+	army_experience_from_volunteers = -0.65  
 	# later stuff
 	army_morale_factor = ITA_re_army_morale_factor 
 	army_leader_cost_factor = ITA_re_army_leader_cost_factor 
@@ -292,6 +299,7 @@ ITA_regio_esercito_3_dynamic_modifier = { #NATIONAL SPIRIT
 	supply_consumption_factor = ITA_re_supply_consumption_factor 
 	acclimatization_hot_climate_gain_factor = ITA_re_acclimatization_hot_climate_gain_factor 
 	heat_attrition_factor = ITA_re_heat_attrition_factor 
+	military_industrial_organization_funds_gain = 0.15
 
 
 	planning_speed = ITA_re_planning_speed #-0.25
@@ -325,7 +333,7 @@ ITA_regia_aeronautica_dynamic_modifier = { #NATIONAL SPIRIT
 	air_night_penalty = ITA_ra_air_night_penalty #-0.15
 	air_weather_penalty = ITA_ra_air_weather_penalty #-0.15
 	air_accidents_factor = ITA_ra_air_accidents_factor #0.05
-	custom_modifier_tooltip = ITA_regia_aeronautica_dynamic_modifier_tt 
+	
 
 	#  later stuff
 	air_training_xp_gain_factor = ITA_ra_air_training_xp_gain_factor #0.1
@@ -345,8 +353,7 @@ ITA_regia_aeronautica_dynamic_modifier = { #NATIONAL SPIRIT
 	air_attack_factor = ITA_ra_air_attack
 	air_intercept_efficiency = ITA_ra_air_interception
 
-	custom_modifier_tooltip = ITA_planes_cost_tt
-
+	
 }
 
 ITA_regia_aeronautica_2_dynamic_modifier = { #NATIONAL SPIRIT

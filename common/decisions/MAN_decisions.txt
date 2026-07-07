@@ -45,7 +45,7 @@ prospect_for_resources = {
 			328 = {
 				add_resource = {
 					type = aluminium
-					amount = 8
+					amount = 24
 				}
 				}
 			}	
@@ -105,7 +105,7 @@ prospect_for_resources = {
 			612 = {
 				add_resource = {
 					type = steel
-					amount = 12
+					amount = 36
 				}
 			}
 		}
@@ -161,7 +161,7 @@ prospect_for_resources = {
 		612 = {
 			add_resource = {
 				type = chromium
-				amount = 10
+				amount = 30
 			}
 		}
 	}
@@ -214,7 +214,7 @@ prospect_for_resources = {
 		716 = {
 			add_resource = {
 				type = steel
-				amount = 12
+				amount = 36
 			}
 		}
 	}
@@ -268,7 +268,7 @@ prospect_for_resources = {
 		761 = {
 			add_resource = {
 				type = oil
-				amount = 12
+				amount = 36
 			}
 		}
 	}
@@ -578,48 +578,51 @@ MAN_internal_factions = {
 				has_country_flag = faction_change_going
 			}
 			has_country_flag = pro_corpo
-
-			custom_trigger_tooltip = {
-				tooltip = custom_tooltip_copro_loyal_50
-				if = {
-					limit = {
-							JAP = {
-								NOT ={
-									has_completed_focus = JAP_found_mangyo
-								}
-							}
-						NOT ={
-							has_completed_focus = MAN_modernizing_the_economy
-						}
-					}
-					check_variable = {
-						Mitsui_loyalty > 49
-					}
-					check_variable = {
-						SM_loyalty > 49
-					}
-						else_if = {
-							limit = {
-								OR = {
-									JAP = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = custom_tooltip_copro_loyal_50
+					if = {
+						limit = {
+								JAP = {
+									NOT ={
 										has_completed_focus = JAP_found_mangyo
 									}
-									has_completed_focus = MAN_modernizing_the_economy
 								}
-				
+							NOT ={
+								has_completed_focus = MAN_modernizing_the_economy
 							}
-							check_variable = {
-								Mitsui_loyalty > 49
-							}
-							check_variable = {
-								SM_loyalty > 49
-							}
-							check_variable = {
-								MIC_loyalty > 49
-							}
+						}
+						check_variable = {
+							Mitsui_loyalty > 49
+						}
+						check_variable = {
+							SM_loyalty > 49
+						}
+							else_if = {
+								limit = {
+									OR = {
+										JAP = {
+											has_completed_focus = JAP_found_mangyo
+										}
+										has_completed_focus = MAN_modernizing_the_economy
+									}
+					
+								}
+								check_variable = {
+									Mitsui_loyalty > 49
+								}
+								check_variable = {
+									SM_loyalty > 49
+								}
+								check_variable = {
+									MIC_loyalty > 49
+								}
+						}
 					}
-				}
+				}	
+				has_idea_with_trait = JAP_naoki_hoshino_trait
 			}
+			
 
 		}
 		visible = {
@@ -984,6 +987,7 @@ MAN_internal_factions = {
 					
 				}
 				MAN_MIC_low_loyalty_increase_effect = yes
+				MAN_MIC_low_influence_increase_effect = yes
 			}
 			MAN_KPT_low_influence_increase_effect = yes
 		}
@@ -2158,7 +2162,7 @@ MAN_internal_factions = {
 		}
 		custom_cost_text = stabber_cost_2
 
-		days_remove = 90
+		days_remove = 70
 		days_re_enable = 0
 
 		fire_only_once = no
@@ -2169,7 +2173,7 @@ MAN_internal_factions = {
 				add_stability = -0.02
 			}
 
-			set_country_flag = { flag = faction_change_going value = 1 days = 90 }
+			set_country_flag = { flag = faction_change_going value = 1 days = 70 }
 			
 			MAN_KPT_medium_loyalty_increase_effect = yes
 			custom_effect_tooltip = MANspace
@@ -2216,7 +2220,7 @@ MAN_internal_factions = {
 		}
 		custom_cost_text = stabber_cost_man
 
-		days_remove = 90
+		days_remove = 70
 		days_re_enable = 0
 
 		fire_only_once = no
@@ -2227,7 +2231,7 @@ MAN_internal_factions = {
 				add_political_power = -25
 			}
 
-			set_country_flag = { flag = faction_change_going value = 1 days = 90 }
+			set_country_flag = { flag = faction_change_going value = 1 days = 70 }
 
 				if={
 					limit = {
@@ -2448,6 +2452,8 @@ MAN_internal_factions = {
 					ideology = neutrality
 					popularity = -0.02
 				}
+				#you wont escape it
+				add_stability = -0.06
 
 				else_if = {
 					limit = {
@@ -2477,6 +2483,8 @@ MAN_internal_factions = {
 						ideology = neutrality
 						popularity = -0.01
 					}
+					#you wont escape it
+					add_stability = -0.03
 
 				}
 				else_if = {
@@ -2507,6 +2515,8 @@ MAN_internal_factions = {
 						ideology = neutrality
 						popularity = -0.01
 					}
+					#you wont escape it
+					add_stability = -0.03
 
 				}
 				else_if = {
@@ -2707,6 +2717,8 @@ MAN_internal_factions = {
 					ideology = neutrality
 					popularity = -0.02
 				}
+				#you wont escape it
+				add_stability = -0.03
 
 				else_if = {
 					limit = {
@@ -2736,6 +2748,8 @@ MAN_internal_factions = {
 						ideology = neutrality
 						popularity = -0.01
 					}
+					#you wont escape it
+				add_stability = -0.06
 
 				}
 				else_if = {
@@ -2766,6 +2780,8 @@ MAN_internal_factions = {
 						ideology = neutrality
 						popularity = -0.01
 					}
+					#you wont escape it
+				add_stability = -0.03
 
 				}
 				else_if = {
@@ -2946,6 +2962,8 @@ MAN_internal_factions = {
 					ideology = neutrality
 					popularity = -0.02
 				}
+				#you wont escape it
+				add_stability = -0.06
 
 				else_if = {
 					limit = {
@@ -2975,6 +2993,8 @@ MAN_internal_factions = {
 						ideology = neutrality
 						popularity = -0.01
 					}
+					#you wont escape it
+				add_stability = -0.03
 
 				}
 				else_if = {
@@ -3005,6 +3025,8 @@ MAN_internal_factions = {
 						ideology = neutrality
 						popularity = -0.01
 					}
+					#you wont escape it
+				add_stability = -0.03
 
 				}
 				else_if = {
@@ -3085,7 +3107,7 @@ MAN_internal_factions = {
 				ideology = fascism
 				popularity = -0.04
 			}
-			add_stability = 0.02
+			add_stability = 0.06
 		}
 	}
 
@@ -3801,9 +3823,9 @@ MAN_internal_factions = {
 		}
 	}
 
-	SYSTEM_CHANGE_OY_BONUS_1 ={
+   SYSTEM_CHANGE_OY_BONUS_1 ={
 		icon = GFX_decision_generic_scorched_earth
- 
+ 	
 		available = {
 			tag = MAN
 		}
@@ -3850,10 +3872,10 @@ MAN_internal_factions = {
 		}
 
 			remove_effect = {
-				add_stability = -0.0001
+				add_stability = -0.001
 			}
-	}
-	SYSTEM_CHANGE_OY_BONUS_2 ={
+   }
+   SYSTEM_CHANGE_OY_BONUS_2 ={
 		icon = GFX_decision_generic_scorched_earth
  
 		available = {
@@ -3901,10 +3923,10 @@ MAN_internal_factions = {
 		}
 
 			remove_effect = {
-				add_stability = -0.0001
+				add_stability = -0.001
 			}
-	}
-	SYSTEM_CHANGE_OY_BONUS_3 ={
+   }
+  SYSTEM_CHANGE_OY_BONUS_3 ={
 		icon = GFX_decision_generic_scorched_earth
  
 		available = {
@@ -3950,7 +3972,7 @@ MAN_internal_factions = {
 				compare = less_than
 			}
 
-			}
+		}
 			
 		
 
@@ -3959,10 +3981,10 @@ MAN_internal_factions = {
 		}
 
 			remove_effect = {
-				add_stability = -0.0001
+				add_stability = -0.001
 			}
-	}
-	SYSTEM_CHANGE_OY_BONUS_4 ={
+  }
+   SYSTEM_CHANGE_OY_BONUS_4 ={
 		icon = GFX_decision_generic_scorched_earth
  
 		available = {
@@ -4018,292 +4040,292 @@ MAN_internal_factions = {
 			remove_effect = {
 				add_stability = -0.0001
 			}
-	}
+   }
 
-	SYSTEM_CHANGE_OY_BONUS_10 ={
-		icon = GFX_decision_generic_ignite_civil_war
+	#SYSTEM_CHANGE_OY_BONUS_10 ={
+	#	icon = GFX_decision_generic_ignite_civil_war
+   	#
+	#	available = {
+	#		tag = MAN
+	#		OR = {
+	#			custom_trigger_tooltip = {
+	#				tooltip = unpatriotic_moffo_1
+	#				OR = {
+	#					communism > 0.20
+	#					democratic > 0.20
+	#				}
+	#			}
+	#			
+	#			custom_trigger_tooltip = {
+	#				tooltip = unpatriotic_moffo_2
+	#				neutrality > 0.35
+	#			}
+	#		}
+	#	}
+
+	#	visible = {
+	#		always = no
+	#	}
+
+		#selectable_mission = no
+		#days_mission_timeout = 70
+		#is_good = no
+		#fire_only_once = no
+
+		#days_remove = 70
+
+		#modifier = {
+		#	industrial_capacity_factory = -0.1
+		#	industrial_capacity_dockyard = -0.1
+		#}
+
+		#activation = {
+			#OR = {
+				#communism > 0.20
+				#neutrality > 0.3
+				#democratic > 0.20
+			#}
+
+		#}
+
+		#ai_will_do = {
+		#	factor = 0
+		#}
+		#remove_effect = {
+			#custom_effect_tooltip = communist_manchu_removal_2
+
+			#if = {
+				#limit = {
+				#	has_stability > 0.01
+				# }
+					#add_stability = -0.005
+
+					#else_if = {
+						#limit = { has_stability < 0.01 }
+						#add_war_support = -0.01
+				#}
+			#}
+		#}
+		
+	#}
+	#SYSTEM_CHANGE_OY_BONUS_11 ={
+	#	icon = GFX_decision_generic_ignite_civil_war
  
-		available = {
-			tag = MAN
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = unpatriotic_moffo_1
-					OR = {
-						communism > 0.20
-						democratic > 0.20
-					}
-				}
-				
-				custom_trigger_tooltip = {
-					tooltip = unpatriotic_moffo_2
-					neutrality > 0.35
-				}
-			}
-		}
+	#	available = {
+	#		tag = MAN
+	#		OR = {
+	#			custom_trigger_tooltip = {
+	#				tooltip = unpatriotic_moffo_3
+	#				OR = {
+	#					communism > 0.30
+	#					democratic > 0.30
+	#				}
+	#			}
+	#			custom_trigger_tooltip = {
+	#				tooltip = unpatriotic_moffo_4
+	#				neutrality > 0.45
+	#			}
+	#		}
+	#	}
 
-		visible = {
-			always = no
-		}
+	#	visible = {
+	#		always = no
+	#	}
 
-		selectable_mission = no
-		days_mission_timeout = 70
-		is_good = no
-		fire_only_once = no
+	#	selectable_mission = no
+	#	days_mission_timeout = 1
+	#	is_good = no
+	#	fire_only_once = no
 
-		days_remove = 70
+	#	days_remove = 70
 
-		modifier = {
-			industrial_capacity_factory = -0.1
-			industrial_capacity_dockyard = -0.1
-		}
+	#	modifier = {
+	#		stability_weekly = -0.001
+	#		industrial_capacity_factory = -0.2
+	#		industrial_capacity_dockyard = -0.2
+	#		consumer_goods_expected_value = 0.02
+	#	}
 
-		activation = {
-			OR = {
-				communism > 0.20
-				neutrality > 0.3
-				democratic > 0.20
-			}
+	#	activation = {
+	#		OR = {
+	#			communism > 0.30
+	#			neutrality > 0.45
+	#			democratic > 0.30
+	#		}
 
-		}
-
-		ai_will_do = {
-			factor = 0
-		}
-		remove_effect = {
-			custom_effect_tooltip = communist_manchu_removal_2
-
-			if = {
-				limit = {
-					has_stability > 0.01
-				 }
-					add_stability = -0.005
-
-					else_if = {
-						limit = { has_stability < 0.01 }
-						add_war_support = -0.01
-				}
-			}
-		}
-
-	}
-	SYSTEM_CHANGE_OY_BONUS_11 ={
-		icon = GFX_decision_generic_ignite_civil_war
- 
-		available = {
-			tag = MAN
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = unpatriotic_moffo_3
-					OR = {
-						communism > 0.30
-						democratic > 0.30
-					}
-				}
-				custom_trigger_tooltip = {
-					tooltip = unpatriotic_moffo_4
-					neutrality > 0.45
-				}
-			}
-		}
-
-		visible = {
-			always = no
-		}
-
-		selectable_mission = no
-		days_mission_timeout = 1
-		is_good = no
-		fire_only_once = no
-
-		days_remove = 70
-
-		modifier = {
-			stability_weekly = -0.001
-			industrial_capacity_factory = -0.2
-			industrial_capacity_dockyard = -0.2
-			consumer_goods_expected_value = 0.02
-		}
-
-		activation = {
-			OR = {
-				communism > 0.30
-				neutrality > 0.45
-				democratic > 0.30
-			}
-
-		}
+	#	}
 			
 		
 
-		ai_will_do = {
-			factor = 0
-		}
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
 
-		remove_effect = {
-			custom_effect_tooltip = communist_manchu_removal_2
-			if = {
-				limit = {
-					has_stability > 0.01
-				 }
-					add_stability = -0.01
+	#	remove_effect = {
+	#		custom_effect_tooltip = communist_manchu_removal_2
+	#		if = {
+	#			limit = {
+	#				has_stability > 0.01
+	#			 }
+	#				add_stability = -0.01
 
-					else_if = {
-						limit = { has_stability < 0.01 }
-						add_war_support = -0.02
-				}
-			}
+	#				else_if = {
+	#					limit = { has_stability < 0.01 }
+	#					add_war_support = -0.02
+	#			}
+	#		}
 
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.01
-			}
-		}
-	}
-	SYSTEM_CHANGE_OY_BONUS_12 ={
-		icon = GFX_decision_generic_ignite_civil_war
+	#		add_popularity = {
+	#			ideology = fascism
+	#			popularity = 0.01
+	#		}
+	#	}
+	#}
+	#SYSTEM_CHANGE_OY_BONUS_12 ={
+	#	icon = GFX_decision_generic_ignite_civil_war
  
-		available = {
-			tag = MAN
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = unpatriotic_moffo_5
-					OR = {
-						communism > 0.40
-						democratic > 0.40
-					}
-				}
-				custom_trigger_tooltip = {
-					tooltip = unpatriotic_moffo_6
-					neutrality > 0.6
-				}
-			}
-		}
+	#	available = {
+	#		tag = MAN
+	#		OR = {
+	#			custom_trigger_tooltip = {
+	#				tooltip = unpatriotic_moffo_5
+	#				OR = {
+	#					communism > 0.40
+	#					democratic > 0.40
+	#				}
+	#			}
+	#			custom_trigger_tooltip = {
+	#				tooltip = unpatriotic_moffo_6
+	#				neutrality > 0.6
+	#			}
+	#		}
+	#	}
 
-		visible = {
-			always = no
-		}
+	#	visible = {
+	#		always = no
+	#	}
 
-		selectable_mission = no
-		days_mission_timeout = 1
-		is_good = no
-		fire_only_once = no
+	#	selectable_mission = no
+	#	days_mission_timeout = 1
+	#	is_good = no
+	#	fire_only_once = no
 
-		days_remove = 70
+	#	days_remove = 70
 
-		modifier = {
-			civilian_factory_use = 5
-			consumer_goods_expected_value = 0.05
-			stability_weekly = -0.002
-			industrial_capacity_factory = -0.4
-			industrial_capacity_dockyard = -0.4
-		}
+	#	modifier = {
+	#		civilian_factory_use = 5
+	#		consumer_goods_expected_value = 0.05
+	#		stability_weekly = -0.002
+	#		industrial_capacity_factory = -0.4
+	#		industrial_capacity_dockyard = -0.4
+	#	}
 
-		activation = {
-			OR = {
-				communism > 0.40
-				neutrality > 0.6
-				democratic > 0.40
-			}
-		}
+		#activation = {
+		#	OR = {
+	#			communism > 0.40
+	#			neutrality > 0.6
+	#			democratic > 0.40
+	#		}
+	#	}
 			
 		
 
-		ai_will_do = {
-			factor = 0
-		}
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
 
-		remove_effect = {
-			custom_effect_tooltip = communist_manchu_removal_2
-			if = {
-				limit = {
-					has_stability > 0.01
-				 }
-					add_stability = -0.02
+	#	remove_effect = {
+	#		custom_effect_tooltip = communist_manchu_removal_2
+	#		if = {
+	#			limit = {
+	#				has_stability > 0.01
+	#			 }
+	#				add_stability = -0.02
 
-					else_if = {
-						limit = { has_stability < 0.01 }
-						add_war_support = -0.03
-				}
-			}
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-		}
-	}
+	#				else_if = {
+	#					limit = { has_stability < 0.01 }
+	#					add_war_support = -0.03
+	#			}
+	#		}
+	#		add_popularity = {
+	#			ideology = fascism
+	#			popularity = 0.02
+	#		}
+	#	}
+	#}
 
-	SYSTEM_CHANGE_OY_BONUS_13 ={
-		icon = GFX_decision_generic_ignite_civil_war
+	#SYSTEM_CHANGE_OY_BONUS_13 ={
+	#	icon = GFX_decision_generic_ignite_civil_war
  
-		available = {
-			tag = MAN
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = unpatriotic_moffo_7
-					OR = {
-					communism > 0.55
-					democratic > 0.55
-					}
-				}
-				custom_trigger_tooltip = {
-					tooltip = unpatriotic_moffo_8
-					neutrality > 0.75
-				}
-			}
-		}
+	#	available = {
+		#	tag = MAN
+		#	OR = {
+			#	custom_trigger_tooltip = {
+			#		tooltip = unpatriotic_moffo_7
+		#			OR = {
+			#		communism > 0.55
+			#		democratic > 0.55
+			#		}
+			#	}
+			#	custom_trigger_tooltip = {
+			#		tooltip = unpatriotic_moffo_8
+			#		neutrality > 0.75
+			#	}
+			#}
+		#}
 
-		visible = {
-			always = no
-		}
+		#visible = {
+		#	always = no
+		#}
 
-		selectable_mission = no
-		days_mission_timeout = 60
-		is_good = no
-		fire_only_once = no
+		#selectable_mission = no
+		#days_mission_timeout = 60
+		#is_good = no
+		#fire_only_once = no
 
-		days_remove = 90
+		#days_remove = 90
 
-		modifier = {
-			civilian_factory_use = 5
-			consumer_goods_expected_value = 0.1
-			stability_weekly = -0.003
-			industrial_capacity_factory = -0.6
-			industrial_capacity_dockyard = -0.6
-		}
+		#modifier = {
+		#	civilian_factory_use = 5
+		#	consumer_goods_expected_value = 0.1
+		#	stability_weekly = -0.003
+		#	industrial_capacity_factory = -0.6
+		#	industrial_capacity_dockyard = -0.6
+		#}
 
-		activation = {
-			OR = {
-				communism > 0.55
-				neutrality > 0.75
-				democratic > 0.55
-			}
-		}
+		#activation = {
+		#	OR = {
+		#		communism > 0.55
+		#		neutrality > 0.75
+		#		democratic > 0.55
+		#	}
+		#}
 			
 		
 
-		ai_will_do = {
-			factor = 0
-		}
+		#ai_will_do = {
+	#		factor = 0
+		#}
 
-		remove_effect = {
-			custom_effect_tooltip = communist_manchu_removal_2
-			if = {
-				limit = {
-					has_stability > 0.01
-				 }
-					add_stability = -0.03
+		#remove_effect = {
+		#	custom_effect_tooltip = communist_manchu_removal_2
+		#	if = {
+		#		limit = {
+		#			has_stability > 0.01
+		#		 }
+		#			add_stability = -0.03
 
-					else_if = {
-						limit = { has_stability < 0.01 }
-						add_war_support = -0.03
-				}
-			}
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.03
-			}
-		}
-	}
+		#			else_if = {
+		#				limit = { has_stability < 0.01 }
+		#				add_war_support = -0.03
+		#		}
+		#	}
+		#	add_popularity = {
+		#		ideology = fascism
+		#		popularity = 0.03
+		#	}
+		#}
+	#}
 
 
 }
@@ -4367,11 +4389,11 @@ MAN_economic_retadism = {
 		}
 		remove_effect = {
 			add_to_variable = { workeers_flag = +1 }
-			custom_effect_tooltip = loggi_5k
-				add_to_variable = { var = counter_man_total value = 500 }
+			custom_effect_tooltip = loggi_10k
+				add_to_variable = { var = counter_man_total value = 1000 }
 				add_to_variable = {
 					var = logs
-					value = 500
+					value = 1000
 				}
 				if = {
 					limit = {
@@ -4572,12 +4594,12 @@ MAN_economic_retadism = {
 				}
 			}
 			add_to_variable = { workeers_flag = +1 }
-			custom_effect_tooltip = loggi_40k
+			custom_effect_tooltip = loggi_35k
 			custom_effect_tooltip = MANspace
-				add_to_variable = { var = counter_man_total value = 4000 }
+				add_to_variable = { var = counter_man_total value = 3500 }
 				add_to_variable = {
 					var = logs
-					value = 4000
+					value = 3500
 				}
 	
 		}
@@ -4606,6 +4628,9 @@ MAN_economic_retadism = {
 						has_country_flag = ANti_infinite_com
 					}
 				}
+				visible = {
+					always = no
+				}
 
 				fire_only_once = no
 
@@ -4620,7 +4645,7 @@ MAN_economic_retadism = {
 				}
 
 				remove_effect = {
-					custom_effect_tooltip = JAP_kempeitai_bonus2
+					custom_effect_tooltip = JAP_kempeitai_bonus
 					custom_effect_tooltip = 7daysfree
 				}
 				complete_effect = {
@@ -4628,7 +4653,7 @@ MAN_economic_retadism = {
 					custom_effect_tooltip = stab_rec_tooltip
 					custom_effect_tooltip = MANspace
 					add_stability = -0.01
-					RCC = {
+					JAP = {
 						add_to_variable = {
 							RCC_compliance_gain = 0.01
 						}
@@ -4661,7 +4686,7 @@ MAN_economic_retadism = {
 				complete_effect = {
 					set_country_flag = { flag = ANti_infinite_com value = 1 days = 7}
 					remove_decision = contexted_zone
-					RCC = {
+					JAP = {
 						add_to_variable = {
 							RCC_compliance_gain = -0.01
 						}
@@ -5461,7 +5486,7 @@ MAN_economic_retadism = {
 						any_allied_country ={has_full_control_of_state = 716}
 					}
 
-					num_of_civilian_factories_available_for_projects > 3
+					num_of_civilian_factories_available_for_projects > 2
 						
 					check_variable = {
 						var = logs
@@ -5471,7 +5496,7 @@ MAN_economic_retadism = {
 				}
 	
 				visible = {
-					NOT= {has_completed_focus = MAN_import_of_labor_for_construction}	
+					NOT= { has_completed_focus = MAN_import_of_labor_for_construction }	
 
 					check_variable = {
 						workeers_CSS < 11
@@ -5480,7 +5505,7 @@ MAN_economic_retadism = {
 				priority = 3
 
 					modifier = {
-						civilian_factory_use = 4
+						civilian_factory_use = 3
 					}
 
 					custom_cost_trigger = {
@@ -5496,7 +5521,7 @@ MAN_economic_retadism = {
 			days_remove = 70
 
 			complete_effect = {
-
+				add_to_variable = { var = counter_building_usage value = -10 }
 				add_to_variable = {
 					var = workeers_CSS
 					value = 1
@@ -5538,7 +5563,7 @@ MAN_economic_retadism = {
 
 						check_variable = {
 							var = logs
-							   value = 2250
+							   value = 1800
 							compare = greater_than_or_equals
 						}
 					} 
@@ -5558,7 +5583,7 @@ MAN_economic_retadism = {
 			custom_cost_trigger = {
 				check_variable = {
 					var = logs
-					   value = 2250
+					   value = 1800
 					compare = greater_than_or_equals
 				}
 			}
@@ -5569,7 +5594,7 @@ MAN_economic_retadism = {
 			days_re_enable = 0
 
 			complete_effect = {	
-
+				add_to_variable = { var = counter_building_usage value = -10 }
 				add_to_variable = {
 					var = workeers_CSS
 					value = 1
@@ -5579,7 +5604,7 @@ MAN_economic_retadism = {
 
 			   subtract_from_variable = {
 				var = logs
-				value = 2250
+				value = 1800
 			   }
 			}
 
@@ -5653,14 +5678,10 @@ MAN_economic_retadism = {
 			var = logs
 			value = 2500
 		   }
-		   add_to_variable = {
-			var = worker_civs
-			value = 1
-		}
 		}
 
-	 remove_effect = {
-
+	 	remove_effect = {
+			add_to_variable = { var = counter_building_usage value = 5 }
 			add_to_variable = {
 				var = workers_civs
 				value = 1
@@ -5722,19 +5743,15 @@ MAN_economic_retadism = {
 		   days_remove = 70
 		   days_re_enable = 0
    
-		   complete_effect = {	
-			  subtract_from_variable = {
-			   var = logs
-			   value = 2000
-			  }
-			  add_to_variable = {
-			   var = worker_civs
-			   value = 1
-		   }
-		   }
+		complete_effect = {	
+		  subtract_from_variable = {
+		   var = logs
+			  value = 2000
+		  }
+		}
    
 		remove_effect = {
-   
+			add_to_variable = { var = counter_building_usage value = 5 }
 			   add_to_variable = {
 				   var = workers_civs
 				   value = 1
@@ -5752,11 +5769,9 @@ MAN_economic_retadism = {
 			 add_stability = -0.005
 			custom_effect_tooltip = Check_add_2
 		}
-	 }
-
-
+	}
 	
-	 MAN_mills = {
+	MAN_mills = {
 
 	 icon = GFX_decision_generic_merge_plant_materiel
 		available = { 
@@ -5806,13 +5821,13 @@ MAN_economic_retadism = {
 			var = logs
 			value = 1500
 		   }
-
-		   add_to_variable = {
-			var = worker_mills
-			value = 1
 		}
-		}
-	 remove_effect = {
+		remove_effect = {
+			add_to_variable = { var = counter_building_usage value = 5 }
+			add_to_variable = {
+				   var = worker_mills
+				   value = 1
+			   }
 
 			715 ={
 				add_extra_state_shared_building_slots = 1
@@ -5875,14 +5890,14 @@ MAN_economic_retadism = {
 			   var = logs
 			   value = 1000
 			  }
-   
-			  add_to_variable = {
-			   var = worker_mills
-			   value = 1
-		   }
-		   }
-		remove_effect = {
-   
+		    }
+			remove_effect = {
+				add_to_variable = { var = counter_building_usage value = 5 }
+				add_to_variable = {
+				   var = worker_mills
+				   value = 1
+			   }
+
 			   715 ={
 				   add_extra_state_shared_building_slots = 1
 				   add_building_construction = {
@@ -5945,13 +5960,13 @@ MAN_economic_retadism = {
 				var = logs
 				value = 1000
 		   }
-
-		   add_to_variable = {
+		}
+		remove_effect = {
+			add_to_variable = { var = counter_building_usage value = 5 }
+				add_to_variable = {
 				var = worker_cost_3
 				value = 1
 			}
-		}
-		remove_effect = {
 
 			random_state = {
 				prioritize = {
@@ -6030,13 +6045,14 @@ MAN_economic_retadism = {
 				var = logs
 				value = 2000
 		   }
-		   add_to_variable = {
+		   
+		}
+			remove_effect = {
+				add_to_variable = { var = counter_building_usage value = 5 }
+				add_to_variable = {
 				var = worker_cost_3
 				value = 1
 			}
-		}
-			remove_effect = {
-
 				random_state = {
 					prioritize = {
 						610
@@ -6119,44 +6135,43 @@ MAN_economic_retadism = {
 						var = logs
 						value = 1000
 				   }
+
+				}
+				fixed_random_seed = no
+				remove_effect = {
+					add_to_variable = { var = counter_building_usage value = 5 }
 				    add_to_variable = {
 						var = worker_Pmind
 						value = 1
 					}
-				}
-			fixed_random_seed = no
-			remove_effect = {
-
-
-				717 ={
-					add_resource = {
-							type = steel
-							amount = 1
-					}
-					add_resource = {
-						type = aluminium
-						amount = 1
-					}
-
-				}
-				random_list = {
-					1 = {
-						717 ={
+					717 ={
 							add_resource = {
-									type = steel
-									amount = 1
+								type = steel
+								amount = 3
+							}
+							add_resource = {
+								type = aluminium
+								amount = 3
+							}
+						}
+					random_list = {
+						1 = {
+							717 ={
+								add_resource = {
+										type = steel
+										amount = 3
+								}
+							}
+						}
+						1 = {
+							717 ={
+								add_resource = {
+										type = aluminium
+										amount = 3
+								}
 							}
 						}
 					}
-					1 = {
-						717 ={
-							add_resource = {
-									type = aluminium
-									amount = 1
-							}
-						}
-					}
-				}
 				custom_effect_tooltip = MANspace
 				custom_effect_tooltip = Check_add_3
 			}
@@ -6219,41 +6234,43 @@ MAN_economic_retadism = {
 							var = logs
 							value = 1000
 					   }
-					   add_to_variable = {
-							var = worker_Smind
-							value = 1
-					 }
+					  
 					}
 				fixed_random_seed = no
 				remove_effect = {
+					add_to_variable = { var = counter_building_usage value = 5 }
+					 add_to_variable = {
+							var = worker_Smind
+							value = 1
+					 }
 					612 ={
-					add_resource = {
-						type = tungsten
-						amount = 1
-					}
-					add_resource = {
-						type = chromium
-						amount = 1
-					}
-					random_list = {
-						1 = {
-							612 ={
-								add_resource = {
-										type = tungsten
-										amount = 1
+						add_resource = {
+							type = tungsten
+							amount = 3
+						}
+						add_resource = {
+							type = chromium
+							amount = 3
+						}
+						random_list = {
+							1 = {
+								612 ={
+									add_resource = {
+											type = tungsten
+											amount = 3
+									}
+								}
+							}
+							1 = {
+								612 ={
+									add_resource = {
+											type = chromium
+											amount = 3
+									}
 								}
 							}
 						}
-						1 = {
-							612 ={
-								add_resource = {
-										type = chromium
-										amount = 1
-								}
-							}
-						}
 					}
-				}
 				custom_effect_tooltip = MANspace
 				custom_effect_tooltip = Check_add_3
 
@@ -6319,22 +6336,22 @@ MAN_economic_retadism = {
 						var = logs
 						value = 1000
 				   }
-				   add_to_variable = {
-						var = worker_Pmind
-						value = 1
-					}
 				}
 				fixed_random_seed = no
 				remove_effect = {
-
+					add_to_variable = { var = counter_building_usage value = 5 }
+					add_to_variable = {
+						var = worker_Pmind
+						value = 1
+					}
 					717 ={
 							add_resource = {
 									type = steel
-									amount = 1
+									amount = 3
 							}
 							add_resource = {
 								type = aluminium
-								amount = 1
+								amount = 3
 							}
 						}
 					random_list = {
@@ -6342,7 +6359,7 @@ MAN_economic_retadism = {
 							717 ={
 								add_resource = {
 										type = steel
-										amount = 1
+										amount = 3
 								}
 							}
 						}
@@ -6350,7 +6367,7 @@ MAN_economic_retadism = {
 							717 ={
 								add_resource = {
 										type = aluminium
-										amount = 1
+										amount = 3
 								}
 							}
 						}
@@ -6413,22 +6430,22 @@ MAN_economic_retadism = {
 							var = logs
 							value = 1000
 					   }
-					   add_to_variable = {
-							var = worker_Smind
-							value = 1
-						}
 					}
 					fixed_random_seed = no
 				remove_effect = {
-					
+					add_to_variable = { var = counter_building_usage value = 5 }
+					add_to_variable = {
+							var = worker_Smind
+							value = 1
+						}
 					612 ={
 						add_resource = {
 							type = tungsten
-							amount = 1
+							amount = 3
 					}
 					add_resource = {
 						type = chromium
-						amount = 1
+						amount = 3
 					}
 					
 					}
@@ -6437,7 +6454,7 @@ MAN_economic_retadism = {
 							612 ={
 								add_resource = {
 										type = tungsten
-										amount = 1
+										amount = 3
 								}
 							}
 						}
@@ -6445,7 +6462,7 @@ MAN_economic_retadism = {
 							612 ={
 								add_resource = {
 										type = chromium
-										amount = 1
+										amount = 3
 								}
 							}
 						}
@@ -6519,28 +6536,29 @@ MAN_economic_retadism = {
 						var = logs
 						value = 1500
 				   }
-
-				   add_to_variable = {
+				}
+			remove_effect = {
+				add_to_variable = { var = counter_building_usage value = 5 }
+				add_to_variable = {
 						var = worker_Pmind
 						value = 1
 					}
-				}
-			remove_effect = {
 				717 ={
 					add_resource = {
 							type = steel
-							amount = 2
+							amount = 6
 					}
 					add_resource = {
 						type = aluminium
-						amount = 2
+						amount = 6
 					}
 				}
 				custom_effect_tooltip = MANspace
 				custom_effect_tooltip = Check_add_3
 				}
-			}
-			MAN_mines_at_cost_left = {
+		}
+
+		MAN_mines_at_cost_left = {
 				icon = GFX_decision_generic_construction
 					available = { 
 						has_completed_focus = MAN_man_for_money_pre_1
@@ -6593,21 +6611,22 @@ MAN_economic_retadism = {
 							var = logs
 							value = 1500
 					   }
-					   add_to_variable = {
-							var = worker_Smind
-							value = 1
-						}
 					}
 
 				remove_effect = {
+					add_to_variable = { var = counter_building_usage value = 5 }
+						add_to_variable = {
+							var = worker_Pmind
+							value = 1
+						}
 					612 ={
 							add_resource = {
 								type = tungsten
-								amount = 2
+								amount = 6
 						}
 						add_resource = {
 							type = chromium
-							amount = 2
+							amount = 6
 						}
 					}
 					custom_effect_tooltip = MANspace
@@ -6688,9 +6707,8 @@ MAN_economic_retadism = {
 					  }
 					  support = {
 							  artillery = { x = 0 y = 0 }
-							  engineer = { x = 0  y = 1 }  
-							  military_police = { x = 0  y = 2 }
-							  anti_air_company = { x = 0 y = 3 }
+							  engineer = { x = 0 y = 1 }
+							  military_police = { x = 0 y = 2 }
 					  }
 					  is_locked = no
 				  }
@@ -6715,6 +6733,367 @@ MAN_economic_retadism = {
 				custom_effect_tooltip = MANspace
 				custom_effect_tooltip = repetition_30
 			}
+		}
+
+		#2->3 pointers 
+		Send_the_planes_japan = {
+			icon = GFX_decision_generic_merge_plant_aircraft
+			available = {
+				has_equipment = {
+					convoy > 49
+				}
+				NOT = {
+					has_country_flag = Develop_air_fatory_center
+				}
+				check_variable = {
+					compare = greater_than_or_equals
+					value = 500
+					var = logs
+				}
+				OR = {
+						has_completed_focus = MAN_agility_focus
+						has_completed_focus = MAN_range_focus
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_range_focus
+						not ={
+							has_completed_focus = MAN_unified_fighter_development
+						}
+					}
+					has_equipment = {
+						small_plane_airframe > 59
+					}
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_range_focus
+						has_completed_focus = MAN_unified_fighter_development
+					}
+					has_equipment = {
+						small_plane_airframe > 119
+					}
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_agility_focus
+						not ={
+							has_completed_focus = MAN_strategic_bomber_effort
+						}
+					}
+					has_equipment = {
+						medium_plane_fighter_airframe > 39
+					}
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_agility_focus
+						has_completed_focus = MAN_strategic_bomber_effort
+					}
+					has_equipment = {
+						medium_plane_fighter_airframe > 79
+					}
+				}
+			}
+			days_re_enable = 1
+			days_remove = 90
+			fire_only_once = no
+			
+			modifier = {
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor = -0.03
+				civilian_factory_use = 2
+			}
+
+			custom_cost_trigger = {
+				check_variable = {
+					var = logs
+					   value = 500
+					compare = greater_than_or_equals
+				}
+			}
+			custom_cost_text = MAN_500_Volunteers_2 
+
+			complete_effect = {
+				#custom_effect_tooltip = neddie_5k
+				subtract_from_variable = {
+					var = logs
+					value = 500
+			   	}
+				air_experience = 10
+				if = {
+					limit = { 
+						has_completed_focus = MAN_range_focus
+						NOT = {
+							has_completed_focus = MAN_unified_fighter_development
+						}
+						
+					}
+					send_equipment = {
+						equipment = small_plane_airframe
+						amount = 60
+						target = JAP
+						new_prioritised = yes
+						
+					}
+					mio:JAP_mitsubishi_organization = {
+						add_mio_funds = 500
+					}
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_range_focus
+						has_completed_focus = MAN_unified_fighter_development
+					}
+					send_equipment = {
+						equipment = small_plane_airframe
+						amount = 120
+						target = JAP
+						new_prioritised = yes
+					}
+					mio:JAP_mitsubishi_organization = {
+						add_mio_funds = 500
+					}
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_agility_focus
+						NOT = {
+							has_completed_focus = MAN_strategic_bomber_effort
+						}
+					}
+					send_equipment = {
+						equipment = medium_plane_fighter_airframe
+						amount = 40
+						target = JAP
+						new_prioritised = yes
+					}
+					mio:JAP_aichi_organization = {
+						add_mio_funds = 500
+					}
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_agility_focus
+						has_completed_focus = MAN_strategic_bomber_effort
+					}
+					send_equipment = {
+						equipment = medium_plane_fighter_airframe
+						amount = 80
+						target = JAP
+						new_prioritised = yes
+					}
+					mio:JAP_aichi_organization = {
+						add_mio_funds = 500
+					}
+				}
+			}
+			remove_effect = {
+				#hidden_effect = {
+				#	add_equipment_to_stockpile = {
+				#		type = convoy
+				#		amount = 75
+				#	}	
+				#}
+				if = {
+					limit = { 
+						OR = {
+							has_completed_focus = MAN_range_focus
+							has_completed_focus = MAN_agility_focus
+						}
+						not = {
+							has_completed_focus = MAN_strategic_bomber_effort
+							has_completed_focus = MAN_unified_fighter_development
+						}
+					}
+					add_cic = 4000
+				}
+				if = {
+					limit = { 
+						OR = {
+							has_completed_focus = MAN_strategic_bomber_effort
+							has_completed_focus = MAN_unified_fighter_development
+						}
+					}
+					add_cic = 8000
+				}
+
+			}
+			
+		}
+		#3->4 pointers 
+		Send_the_bombers_japan = {
+			icon = GFX_decision_generic_merge_plant_aircraft
+			available = {
+				has_equipment = {
+					convoy > 49
+				}
+				check_variable = {
+					compare = greater_than_or_equals
+					value = 500
+					var = logs
+				}
+				NOT = {
+					has_country_flag = Develop_air_fatory_center
+				}
+				has_completed_focus = MAN_bomber_modernization
+				if = {
+					limit = { 
+						has_completed_focus = MAN_range_focus
+						not ={
+							has_completed_focus = MAN_unified_fighter_development
+						}
+					}
+					has_equipment = {
+						small_plane_cas_airframe > 39
+						
+					}
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_range_focus
+						has_completed_focus = MAN_unified_fighter_development
+					}
+					has_equipment = {
+						small_plane_cas_airframe > 79
+					}
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_agility_focus
+						not ={
+							has_completed_focus = MAN_strategic_bomber_effort
+						}
+					}
+					has_equipment = {
+						medium_plane_airframe > 19
+					}
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_agility_focus
+						has_completed_focus = MAN_strategic_bomber_effort
+					}
+					has_equipment = {
+						medium_plane_airframe > 39
+					}
+				}
+			}
+			days_re_enable = 1
+			days_remove = 90
+			fire_only_once = no
+			
+			modifier = {
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor = -0.03
+				civilian_factory_use = 2
+			}
+
+			custom_cost_trigger = {
+				check_variable = {
+					var = logs
+					   value = 500
+					compare = greater_than_or_equals
+				}
+			}
+			custom_cost_text = MAN_500_Volunteers_2 
+
+			complete_effect = {
+
+				subtract_from_variable = {
+					var = logs
+					value = 500
+			   	}
+				air_experience = 10
+				mio:JAP_nakajima_organization = {
+					add_mio_funds = 100
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_range_focus
+						NOT = {
+							has_completed_focus = MAN_unified_fighter_development
+						}
+						
+					}
+					send_equipment = {
+						equipment = small_plane_cas_airframe
+						amount = 40
+						target = JAP
+						new_prioritised = yes
+					}
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_range_focus
+						has_completed_focus = MAN_unified_fighter_development
+					}
+					send_equipment = {
+						equipment = small_plane_cas_airframe
+						amount = 80
+						target = JAP
+						new_prioritised = yes
+					}
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_agility_focus
+						NOT = {
+							has_completed_focus = MAN_strategic_bomber_effort
+						}
+					}
+					send_equipment = {
+						equipment = medium_plane_airframe
+						amount = 20
+						target = JAP
+						new_prioritised = yes
+					}
+				}
+				if = {
+					limit = { 
+						has_completed_focus = MAN_agility_focus
+						has_completed_focus = MAN_strategic_bomber_effort
+					}
+					send_equipment = {
+						equipment = medium_plane_airframe
+						amount = 40
+						target = JAP
+						new_prioritised = yes
+					}
+				}
+			}
+			remove_effect = {
+				#hidden_effect = {
+				#	add_equipment_to_stockpile = {
+				#		type = convoy
+				#		amount = 75
+				#	}	
+				#}
+				if = {
+					limit = { 
+						OR = {
+							has_completed_focus = MAN_range_focus
+							has_completed_focus = MAN_agility_focus
+						}
+						not = {
+							has_completed_focus = MAN_strategic_bomber_effort
+							has_completed_focus = MAN_unified_fighter_development
+						}
+					}
+					add_cic = 4000
+				}
+				if = {
+					limit = { 
+						OR = {
+							has_completed_focus = MAN_strategic_bomber_effort
+							has_completed_focus = MAN_unified_fighter_development
+						}
+					}
+					add_cic = 8000
+				}
+
+			}
+			
 		}
 }
 #################################
@@ -6770,7 +7149,9 @@ MAN_research_unit_short_funded ={
 			available = { 
 
 				num_of_civilian_factories_available_for_projects > 3
-				dockyard > 0
+				has_equipment = {
+					convoy > 49
+				}
 
 				NOT = {
 					has_country_flag = delivery_from_japan
@@ -6786,15 +7167,14 @@ MAN_research_unit_short_funded ={
 				civilian_factory_use = 4
 			}
 			
-			cost = 25
+			cost = 10
 			days_remove = 28
-
+			
 			complete_effect = {
 				set_country_flag = { flag = delivery_from_japan value = 1 days = 28}
 				set_variable = {
 					block_it_fully = 1
 				}
-
 			}
 
 			remove_effect = {
@@ -6923,7 +7303,7 @@ MAN_research_unit_short_funded ={
 				}
 
 				set_variable = {
-					weeks_waited_ic = -1
+					weeks_waited_ic = 0
 				}
 				set_variable = {
 					block_it_fully = 0
@@ -6941,7 +7321,9 @@ MAN_research_unit_short_funded ={
 			available = { 
 
 				num_of_civilian_factories_available_for_projects > 3
-				dockyard > 0
+				has_equipment = {
+					convoy > 49
+				}
 
 				NOT = {
 					has_country_flag = delivery_from_japan
@@ -6958,7 +7340,7 @@ MAN_research_unit_short_funded ={
 
 			}
 			
-			cost = 25
+			cost = 10
 			days_remove = 28
 
 			complete_effect = {
@@ -7158,7 +7540,7 @@ MAN_research_unit_short_funded ={
 				}
 
 				set_variable = {
-					weeks_waited_ic = -1
+					weeks_waited_ic = 0
 				}
 				set_variable = {
 					block_it_fully = 0
@@ -7176,7 +7558,9 @@ MAN_research_unit_short_funded ={
 			available = { 
 
 				num_of_civilian_factories_available_for_projects > 3
-				dockyard > 0
+				has_equipment = {
+					convoy > 49
+				}
 
 				NOT = {
 					has_country_flag = delivery_from_japan
@@ -7193,7 +7577,7 @@ MAN_research_unit_short_funded ={
 
 			}
 			
-			cost = 25
+			cost = 10
 			days_remove = 28
 
 			complete_effect = {
@@ -7323,7 +7707,7 @@ MAN_research_unit_short_funded ={
 				}
 
 				set_variable = {
-					weeks_waited_ic = -1
+					weeks_waited_ic = 0
 				}
 				set_variable = {
 					block_it_fully = 0
@@ -7343,7 +7727,9 @@ MAN_research_unit_short_funded ={
 			available = { 
 
 				num_of_civilian_factories_available_for_projects > 3
-				dockyard > 0
+				has_equipment = {
+					convoy > 49
+				}
 				NOT = {
 					has_country_flag = delivery_from_japan
 				}
@@ -7358,7 +7744,7 @@ MAN_research_unit_short_funded ={
 				civilian_factory_use = 4
 			}
 			
-			cost = 25
+			cost = 10
 			days_remove = 28
 
 			complete_effect = {
@@ -7488,7 +7874,7 @@ MAN_research_unit_short_funded ={
 				}
 
 				set_variable = {
-					weeks_waited_ic = -1
+					weeks_waited_ic = 0
 				}
 				set_variable = {
 					block_it_fully = 0
@@ -7505,7 +7891,9 @@ MAN_research_unit_short_funded ={
 			available = { 
 
 				num_of_civilian_factories_available_for_projects > 3
-				dockyard > 0
+				has_equipment = {
+					convoy > 49
+				}
 				NOT = {
 					has_country_flag = delivery_from_japan
 				}
@@ -7521,7 +7909,7 @@ MAN_research_unit_short_funded ={
 
 			}
 			
-			cost = 25
+			cost = 10
 			days_remove = 28
 
 			complete_effect = {
@@ -7651,7 +8039,7 @@ MAN_research_unit_short_funded ={
 				}
 
 				set_variable = {
-					weeks_waited_ic = -1
+					weeks_waited_ic = 0
 				}
 				set_variable = {
 					block_it_fully = 0
@@ -7669,7 +8057,9 @@ MAN_research_unit_short_funded ={
 			available = { 
 
 				num_of_civilian_factories_available_for_projects > 3
-				dockyard > 0
+				has_equipment = {
+					convoy > 49
+				}
 
 				NOT = {
 					has_country_flag = delivery_from_japan
@@ -7692,7 +8082,7 @@ MAN_research_unit_short_funded ={
 				civilian_factory_use = 4
 			}
 			
-			cost = 25
+			cost = 10
 			days_remove = 28
 
 			complete_effect = {
@@ -7822,7 +8212,7 @@ MAN_research_unit_short_funded ={
 				}
 
 				set_variable = {
-					weeks_waited_ic = -1
+					weeks_waited_ic = 0
 				}
 				set_variable = {
 					block_it_fully = 0
@@ -7840,7 +8230,9 @@ MAN_research_unit_short_funded ={
 			available = { 
 
 				num_of_civilian_factories_available_for_projects > 3
-				dockyard > 0
+				has_equipment = {
+					convoy > 49
+				}
 
 				NOT = {
 					has_country_flag = delivery_from_japan
@@ -7856,7 +8248,7 @@ MAN_research_unit_short_funded ={
 				civilian_factory_use = 4
 			}
 			
-			cost = 25
+			cost = 10
 			days_remove = 28
 
 			complete_effect = {
@@ -8031,7 +8423,7 @@ MAN_research_unit_short_funded ={
 				}
 				
 				set_variable = {
-					weeks_waited_ic = -1
+					weeks_waited_ic = 0
 				}
 				set_variable = {
 					block_it_fully = 0
@@ -8151,7 +8543,7 @@ MAN_research_unit_short_funded ={
 				add_tech_bonus = {
 					bonus = 0.75
 					uses = 1
-					category = artillery
+					category = cat_artillery
 					name = artillery
 				}
 
@@ -8545,7 +8937,7 @@ MAN_research_unit_long_funded ={
 					add_tech_bonus = {
 						bonus = 0.50
 						uses = 1
-						category = artillery
+						category = cat_artillery
 						name = artillery
 					}
 					custom_effect_tooltip = MANspace
@@ -8605,7 +8997,7 @@ MAN_research_unit_long_funded ={
 						bonus = 0.75
 						uses = 1
 						ahead_reduction = 0.5
-						category = artillery
+						category = cat_artillery
 						name = artillery
 					}
 					custom_effect_tooltip = MANspace
@@ -8681,7 +9073,7 @@ MAN_research_unit_long_funded ={
 							bonus = 1
 							uses = 1
 							ahead_reduction = 1
-							category = artillery
+							category = cat_artillery
 						}
 						custom_effect_tooltip = MANspace
 						mio:JAP_osaka_army_arsenal_artillery_organization = {
@@ -8914,9 +9306,12 @@ Exports_to_japan ={
 			available = {
 				always = no
 			}
+			visible = {
+				always = no
+			}
 
 			fire_only_once = yes
-			days_remove = 90
+			days_remove = 60
 
 			modifier = {
 				consumer_goods_expected_value = 0.01
@@ -8949,9 +9344,12 @@ Exports_to_japan ={
 			available = {
 				always = no
 			}
+			visible = {
+				always = no
+			}
 
 			fire_only_once = yes
-			days_remove = 90
+			days_remove = 60
 
 			modifier = {
 				consumer_goods_expected_value = 0.01
@@ -8999,9 +9397,12 @@ Exports_to_japan ={
 			available = {
 				always = no
 			}
+			visible = {
+				always = no
+			}
 
 			fire_only_once = yes
-			days_remove = 90
+			days_remove = 60
 
 			modifier = {
 				consumer_goods_expected_value = 0.01
@@ -9032,9 +9433,12 @@ Exports_to_japan ={
 			available = {
 				always = no
 			}
+			visible = {
+				always = no
+			}
 
 			fire_only_once = yes
-			days_remove = 90
+			days_remove = 60
 
 			modifier = {
 				consumer_goods_expected_value = 0.01
@@ -9084,16 +9488,17 @@ Exports_to_japan ={
 
 			available = {
 				tag = MAN
-				has_completed_focus = MAN_fighter_modernization
-				NOT = {	has_completed_focus = MAN_agility_focus }
-				NOT =  {
-					has_country_flag = Develop_air_fatory_center			
-				}
+				#has_completed_focus = MAN_fighter_modernization
+				#NOT = {	has_completed_focus = MAN_agility_focus }
+				#NOT =  {
+				#	has_country_flag = Develop_air_fatory_center			
+				#}
+				date > 1947.01.01
 			}
 			visible = {
 				country_exists = JAP
 				is_in_faction_with = JAP
-
+				always = no
 			}
 
 			ai_will_do = {
@@ -9108,11 +9513,12 @@ Exports_to_japan ={
 			days_remove = 120
 
 			activation = {
-				has_completed_focus = MAN_fighter_modernization
-				NOT = {	has_completed_focus = MAN_agility_focus }
-				NOT = {
-					has_country_flag = Develop_air_fatory_center 
-				}
+				#has_completed_focus = MAN_fighter_modernization
+				#NOT = {	has_completed_focus = MAN_agility_focus }
+				#NOT = {
+				#	has_country_flag = Develop_air_fatory_center 
+				#}
+				has_country_flag = no_fuck_you_there_isnt_one
 			}
 
 			modifier = {
@@ -9221,15 +9627,16 @@ Exports_to_japan ={
 
 			available = {
 				tag = MAN
-				has_completed_focus = MAN_fighter_modernization
-				NOT =  {
-					has_country_flag = Develop_air_fatory_center			
-				}
+				#has_completed_focus = MAN_fighter_modernization
+				#NOT =  {
+				#	has_country_flag = Develop_air_fatory_center			
+				#}
+				date > 1947.01.01
 			}
 			visible = {
 				country_exists = JAP
 				is_in_faction_with = JAP
-
+				always = no
 			}
 
 			ai_will_do = {
@@ -9244,10 +9651,11 @@ Exports_to_japan ={
 			days_remove = 120
 
 			activation = {
-				has_completed_focus = MAN_agility_focus
-				NOT = {
-					has_country_flag = Develop_air_fatory_center 
-				}
+				#has_completed_focus = MAN_agility_focus
+				#NOT = {
+				#	has_country_flag = Develop_air_fatory_center 
+				#}
+				has_country_flag = no_fuck_you_there_isnt_one
 			}
 
 			modifier = {

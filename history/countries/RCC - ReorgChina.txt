@@ -16,7 +16,7 @@ set_country_flag = JAP_no_grinding_flag
 set_research_slots = 4
 
 609 = {
-	add_extra_state_shared_building_slots = 30
+	add_extra_state_shared_building_slots = 40
 }
 
 add_to_tech_sharing_group = japanese_research
@@ -83,6 +83,7 @@ set_variable = { RCC_re_max_command_power_mult = -0.4 }
 set_variable = { RCC_supply_consumption_factor = 0.00 }
 set_variable = { RCC_land_doctrine_cost_factor = 0.2 }
 set_variable = { research_speed_rcc = 0 }
+set_variable = { RCC_min_export = 0.1 }
 
 set_variable = { RCC_military_industry_dm_production_speed_industrial_complex_factor = 0 }
 set_variable = { RCC_military_industry_dm_production_speed_arms_factory_factor = 0 }
@@ -113,7 +114,8 @@ set_variable = {RCC_land_mastery_gain_factor = -0.5}
 set_variable = {RCC_compliance_gain = 0}
 set_variable = {RCC_resistance_target = 0.05}
 set_variable = {RCC_resistance_damage_to_garrison = 0}
-set_variable = {RCC_naval_invasion_capacity = -100}
+set_variable = {RCC_national_naval_invasion_cap = -100}
+set_variable = {RCC_operative_slot = -1}
 
 set_variable = {RCC_garries_factor = 0}
 set_variable = {RCC_resistance_factor_activity = 0}
@@ -153,7 +155,8 @@ recruit_character = RCC_ding_mocun_appease
 
 
 set_technology = {
-	asiatic_tanks = 1
+	building_tech = 1 
+	
 	basic_train = 1
 	starting_industry = 1
 	construction1 = 1
@@ -202,7 +205,7 @@ set_technology = {
 			small_gun = 1
 			support_gun = 1
 			armour_sloping = 1
-			engine_tech_1 = 1
+	
 			turret_basket = 1
 			early_cupola = 1
 			automatic_gun2 = 1

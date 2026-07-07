@@ -1,10 +1,11 @@
-delay = {
-    track = delay_track
-    name = "Elastic Defense"
-    description = SUBDOCTRINE_DELAY_MW_DESC
-    icon = GFX_elastic_defence_medium
 
-    xp_cost = 180
+advanced_squad_tactics = {
+    track = spirit_of_infantry_track
+    name = "Advanced Squad Tactics"
+    description = ""
+    icon = GFX_adv_inf_tactics_medium
+
+    xp_cost = 120
     xp_type = army
 
     available = {
@@ -12,817 +13,1263 @@ delay = {
     }
 
     # EFFECTS
-		category_front_line = {
-			max_organisation = 2
-		}
-	
-		category_support_battalions = {
-			max_organisation = 6
-		}		
-
-        enable_tactic = tactic_elastic_defense
-    rewards = {
-       
-    }
-}
-armored_spearhead = {
-    track = armored_spearhead_track
-    name = "Armored Reserve"
-    description = SUBDOCTRINE_ARMORED_SPEARHEAD_DESC
-    icon = GFX_armored_operations_medium
-
-    xp_cost = 180
-    xp_type = army
-
-    available = {
-        has_completed_track = delay_track
-        NOT = {
-            has_completed_track = armored_spearhead_track
-        }
-       
-    }
-    category_all_infantry = {
-        maximum_speed = 0.1
-    }
-    category_cavalry = {
-        maximum_speed = 0.1
-    }
-    category_motorised = {
-        max_organisation = 1
-    }
-    category_all_armor = {
-        max_strength = 1
+	category_all_infantry = {
         max_organisation = 2
-    }
-    effect = {
-        add_mastery = {
-            amount = 1
-            track = armored_spearhead_track
-        }
-    }
-    
-		enable_tactic = tactic_delay
-		enable_tactic = tactic_unexpected_thrust
-
-
-    # EFFECTS
-		
-
-    rewards = {
-        it_has_to_be_here = {
-            mastery = 1
-        }
-    }
-}
-mobile_infantry_new = {
-    track = armored_spearhead_track
-    name = "Mobile Infantry Reserve"
-    description = SUBDOCTRINE_ARMORED_SPEARHEAD_DESC
-    icon = GFX_doctrine_mission_type_tactics_medium
-
-    xp_cost = 180
-    xp_type = army
-
-    available = {
-        has_completed_track = delay_track
-         NOT = {
-            has_completed_track = armored_spearhead_track
-         }
-    }
-    category_cavalry = {
-        maximum_speed = 0.1
-    }
-    category_all_infantry = {
-        maximum_speed = 0.1
-    }
-    category_motorised = {
-        max_strength = 0.5
-        max_organisation = 3
-    }
-    effect = {
-        add_mastery = {
-            amount = 1
-            track = armored_spearhead_track
-        }
-    }
+        default_morale = 0.04
+    }	
 
     
-
-		enable_tactic = tactic_delay
-		enable_tactic = tactic_unexpected_thrust
-
-    # EFFECTS
-		
-
     rewards = {
-        it_has_to_be_here = {
-            mastery = 1
+        advanced_squad_tactics_mastery = {
+           category_all_infantry = {
+                max_organisation = 3
+                soft_attack = 0.05
+                hard_attack = 0.05
+             
+
+            }
+            
         }
     }
 }
 elastic_defence = {
-    track = elastic_defence_track_nigger
-    name = "Motorized Assault Tactics"
-    description = SUBDOCTRINE_ELASTIC_DEFENCE_DESC
-    icon = GFX_doctrine_mobile_infantry_medium
+    track = infantry_tactics_track
+    name = "Elastic Defense"
+    description = ""
+    icon = GFX_elastic_defence_medium
 
-    xp_cost = 180
+    xp_cost = 120
     xp_type = army
 
     available = {
-        
-         has_completed_subdoctrine = armored_spearhead
-        
-        
+         has_doctrine = advanced_squad_tactics
     }
-        anti_air_mot = {
-			default_morale = 0.03
-			breakthrough = 0.1
-			max_organisation = 2
-		}
-		anti_tank_brigade_mot = {
-			default_morale = 0.03
-			breakthrough = 0.1
-			max_organisation = 2
-		}
-		field_gun_brigade_mot = {
-			default_morale = 0.03
-			breakthrough = 0.1
-			max_organisation = 2
-		}
-		pack_artillery_brigade_mot = {
-			default_morale = 0.03
-			breakthrough = 0.1
-			max_organisation = 2
-		}
-		artillery_heavy_mot = {
-			default_morale = 0.03
-			breakthrough = 0.1
-			max_organisation = 2
-		}
-		artillery_brigade_mot = {
-			default_morale = 0.03
-			breakthrough = 0.1
-			max_organisation = 2
-		}
-		anti_air_heavy_mot = {
-			default_morale = 0.03
-			breakthrough = 0.1
-			max_organisation = 2
-		}
-		motorized_rocket_brigade = {
-			default_morale = 0.03
-			breakthrough = 0.1
-			max_organisation = 2
-		}	
-		
+
+    # EFFECTS
 		category_all_infantry = {
-			max_organisation = 3
-			breakthrough = 0.1
-			default_morale = 0.03
-			
-		}
+            defense = 0.1
+            max_organisation = 2
+        }
+        effect = {
+            set_country_flag = picked_elastic_defense_flag
+        }
 
-        
     
-				
-		enable_tactic = tactic_blitz
-		enable_tactic = tactic_default_blitz
-
-    # EFFECTS
-		
-
     rewards = {
-        mass_motorization = {
-            anti_air_mot = {
-                maximum_speed = 0.1
-                breakthrough = 0.1
-            }
-            anti_tank_brigade_mot = {
-                maximum_speed = 0.1
-                breakthrough = 0.1
-            }
-            field_gun_brigade_mot = {
-                maximum_speed = 0.1
-                breakthrough = 0.1
-            }
-            pack_artillery_brigade_mot = {
-                maximum_speed = 0.1
-                breakthrough = 0.1
-            }
-            artillery_heavy_mot = {
-                maximum_speed = 0.1
-                breakthrough = 0.1
-            }
-            artillery_brigade_mot = {
-                maximum_speed = 0.1
-                breakthrough = 0.1
-            }
-            anti_air_heavy_mot = {
-                maximum_speed = 0.1
-                breakthrough = 0.1
-            }
-            motorized_rocket_brigade = {
-                maximum_speed = 0.1
-                breakthrough = 0.1
-            }
+        elastic_defence_mastery = {
             category_motorised = {
-                maximum_speed = 0.1
-                
-            }
-            category_all_infantry = {
-                breakthrough = 0.1
-                default_morale = 0.2
-            }
-            
-            
-        }
-        mobile_combat_formations = {
-            category_support_battalions = {
-                max_organisation = 6
-            }
-        
-            category_motorised = {
+                max_organisation = 2
                 max_strength = 0.75
-                max_organisation = 3
-            }
-           
-        }
-        rapid_exploitation_forces = {
-            category_motorised = {
-                breakthrough = 0.2
-            }
-            category_leg_infantry = {
-                maximum_speed = 0.1
-            }
-            category_cavalry = {
-                maximum_speed = 0.1
-            }
-        }
-        mechanized_offensives = {
-            category_all_infantry = {
-                max_organisation = 3
-                soft_attack = 0.1
-                hard_attack = 0.1
-                breakthrough = 0.1
-            }
-            
-            
-        }
-    }
-}
-elastic_defence_2 = {
-    track = elastic_defence_track_nigger
-    name = "Armored Spearhead"
-    description = SUBDOCTRINE_ELASTIC_DEFENCE_DESC
-    icon = GFX_doctrine_armored_spearhead_medium
-
-    xp_cost = 180
-    xp_type = army
-
-    available = {
-       
-         has_completed_subdoctrine = mobile_infantry_new
-    }
-
-    # EFFECTS
-		category_support_battalions = {
-			max_organisation = 6
-		}
-		category_all_armor = {
-			breakthrough = 0.15
-		}
-		category_motorised = {
-			max_strength = 0.75
-			max_organisation = 3
-		}
-				
-		enable_tactic = tactic_blitz
-		enable_tactic = tactic_default_blitz
-
-    rewards = {
-        Bewegungskrieg = {
-            category_all_infantry = {
-                max_organisation = 3
-            }
-            category_motorised = {
-                max_organisation = 3
-                default_morale = 0.1
-            }
-        }
-        Panzerkeil = {
-           category_support_battalions = {
-                max_organisation = 4
             }
             category_all_armor = {
-                maximum_speed = 0.15
-                breakthrough = 0.1
-            }
-            enable_tactic = tactic_breakthrough
-           
-       }
-       Schwerpunkt = {
+                max_organisation = 2
 
-            category_all_infantry = {
+            }
+        }
+        elastic_defence_mastery2 = {
+           
+
+            category_all_armor = {
+                defense = 0.05
                 max_organisation = 2
                 breakthrough = 0.1
-                default_morale = 0.03
-            }	
-            category_all_armor = {
-                default_morale = 0.2
-                soft_attack = 0.04
-                hard_attack = 0.04
             }
-       }
-       Blitzkrieg = {
-           category_all_armor = {
-                default_morale = 0.1
-                max_organisation = 3
-                soft_attack = 0.05
-                hard_attack = 0.05
-            }   
-       }
+            
+        }
     }
 }
-
-schwerpunk = {
-    track = schwerpunk_track
-    name = "Schwerpunkt"
+motorized_assault = {
+    track = infantry_tactics_track
+    name = "Motorized Assault Tactics"
     description = ""
-    icon = GFX_schwerpunk_medium
+    icon = GFX_doctrine_mobile_infantry_medium
 
-    xp_cost = 180
+    xp_cost = 120
     xp_type = army
 
     available = {
-      # has_completed_track = elastic_defence_track_nigger
-       has_completed_subdoctrine = mobile_infantry_new
+       has_doctrine = advanced_squad_tactics
     }
 
     # EFFECTS
-		category_all_armor = {
-			default_morale = 0.2
-		}
-
-		category_all_infantry = {
-			max_organisation = 2
-		}	
-		category_all_armor = {
-			soft_attack = 0.04
-			hard_attack = 0.04
-		}
-		
+    effect = {
+            set_country_flag = picked_mot_ass_flag
+          
+        }
+   
 	
-		enable_tactic = tactic_elastic_defense
+        category_mot_arty = {
+            maximum_speed = 0.1
+            breakthrough = 0.1
+        }
+        category_motorised = {
+            maximum_speed = 0.1
+            breakthrough = 0.1
+            
+        }
+        category_all_infantry = {
+            max_organisation = 2
+        }
 
+    
     rewards = {
+        motorized_assault_mastery = {
+            category_mot_arty = {
+                max_strength = 0.5
+                default_morale = 0.08
+                breakthrough = 0.05
+            }
+            
+            category_motorised = {
+                max_strength = 0.5
+                default_morale = 0.08
+                max_organisation = 1
+                
+            }
+            
+        }
+        motorized_assault_mastery2 = {
+            
+             category_all_armor = {
+                defense = 0.05
+                max_organisation = 2
+                breakthrough = 0.1
+            }
+            
+        }
     }
 }
-mass_motorization_new = {
-    track = schwerpunk_track
-    name = "Mass Motorization"
+devil_gardnes = {
+    track = infantry_tactics_track
+    name = "Devils Gardens"
     description = ""
-    icon = GFX_mass_motorization_medium
+    icon = GFX_devils_gardens_medium
 
-    xp_cost = 180
+    xp_cost = 120
     xp_type = army
 
     available = {
-     #  has_completed_track = elastic_defence_track_nigger
-       has_completed_subdoctrine = armored_spearhead
-       
+       has_doctrine = advanced_squad_tactics
     }
+
+      effect = {
+            set_country_flag = picked_devil_gardens_flag
+          
+        }    
 
     # EFFECTS
-		anti_air_mot = {
-			maximum_speed = 0.1
-			breakthrough = 0.1
-		}
-		anti_tank_brigade_mot = {
-			maximum_speed = 0.1
-			breakthrough = 0.1
-		}
-		field_gun_brigade_mot = {
-			maximum_speed = 0.1
-			breakthrough = 0.1
-		}
-		pack_artillery_brigade_mot = {
-			maximum_speed = 0.1
-			breakthrough = 0.1
-		}
-		artillery_heavy_mot = {
-			maximum_speed = 0.1
-			breakthrough = 0.1
-		}
-		artillery_brigade_mot = {
-			maximum_speed = 0.1
-			breakthrough = 0.1
-		}
-		anti_air_heavy_mot = {
-			maximum_speed = 0.1
-			breakthrough = 0.1
-		}
-		motorized_rocket_brigade = {
-			maximum_speed = 0.1
-			breakthrough = 0.1
-		}
-		category_motorised = {
-			maximum_speed = 0.1
-			
-		}
-		category_all_infantry = {
-			breakthrough = 0.1
-			default_morale = 0.2
-		}
-
-    rewards = {
-    }
-}
-blitzkrieg = {
-    track = blitzkrieg_track
-    name = "Blizkrieg"
-    description = SUBDOCTRINE_ARMORED_SPEARHEAD_DESC
-    icon = GFX_doctrine_shock_and_awe_medium
-
-    xp_cost = 180
-    xp_type = army
-
-    available = {
-       has_completed_track = schwerpunk_track
-       has_completed_subdoctrine = mobile_infantry_new
-    }
-
-    # EFFECTS
-		category_all_armor = {
-			default_morale = 0.1
-			max_organisation = 3
-			breakthrough = 0.05
-			soft_attack = 0.04
-			hard_attack = 0.04
-		}
-		
-		enable_tactic = tactic_breakthrough
-		
-		category_motorised = {
-			max_organisation = 3
-			default_morale = 0.1
-		}
-
-    rewards = {
-    }
-}
-mechanized_offensive_new = {
-    track = blitzkrieg_track
-    name = "Mechanized Offensive"
-    description = SUBDOCTRINE_ARMORED_SPEARHEAD_DESC
-    icon = GFX_mechanised_offensive_medium
-
-    xp_cost = 180
-    xp_type = army
-
-    available = {
-       has_completed_track = schwerpunk_track
-       has_completed_subdoctrine = armored_spearhead
-    }
-
-    # EFFECTS
-		category_all_infantry = {
-			max_organisation = 3
-			soft_attack = 0.1
-			hard_attack = 0.1
-			breakthrough = 0.1
-		}
-		
-		category_all_armor = {
-			breakthrough = 0.05
-		}
-
-    rewards = {
-    }
-}
-kampfgruppe = {
-    track = kampfgruppe_track
-    name = "Kampfgruppe"
-    description = SUBDOCTRINE_ARMORED_SPEARHEAD_DESC
-    icon = GFX_kampfgruppe_medium
-
-    xp_cost = 180
-    xp_type = army
-
-    available = {
-        has_completed_track = blitzkrieg_track
-    }
-
-    # EFFECTS
-	
-		no_supply_grace = 48
-		
-		category_all_infantry = {
-			max_organisation = 1
-			default_morale = 0.15
-			soft_attack = 0.05
-		}
-		category_army = {
-			max_strength = 0.5
-		}
-	
-		category_motorised = {
-			max_strength = 1.5
-		}
-		
-		# faster planning
-		planning_speed = 0.2
-		
-		pocket_penalty = -0.1
-		
-		enable_tactic = tactic_overwhelming_fire
-		enable_tactic = tactic_default_overwhelming_fire    
-
-    rewards = {
-    }
-}
-firebrigades_new = {
-    track = firebrigades_new
-    name = "Firebrigades"
-    description = SUBDOCTRINE_MOBILE_DEFENSE_DESC
-    icon = GFX_firebrigades_medium
-
-    xp_cost = 180
-    xp_type = army
-
-    available = {
-        has_completed_track = kampfgruppe_track
-    }
-
     category_all_infantry = {
-        max_organisation = 2
-    }
-
-    category_line_artillery = {
-        max_organisation = 2
+        soft_attack = 0.15
+        hard_attack = 0.15
+        max_organisation = 1
     }
     
-    category_all_armor = {
-        max_organisation = 2
-        breakthrough = 0.1
-        soft_attack = 0.03
-        hard_attack = 0.03
-    }
-		
-
     rewards = {
-
-       
+        devil_gardnes_mastery = {
+            category_all_infantry = {
+                max_strength = 0.5
+                max_organisation = 2
+            }
+            dig_in_speed_factor = 0.25
+            category_anti_air = {
+                air_attack = 0.2
+             
+            }
+            
+        }
+        devil_gardnes_mastery2 = {
+           
+            category_all_armor = {
+                defense = 0.05
+                max_organisation = 2
+                breakthrough = 0.1
+            }
+        }
     }
 }
-####MW mastery, reward names wip
+tactical_withdrawal = {
+    track = advanced_infantry_tactics_track
+    name = "Tactical Withdrawal"
+    description = ""
+    icon = GFX_withdrawal_medium
 
-modern_blizkrieg_new = {
-    track = mw_mastery_track
-    name = "Modern Blizkrieg"
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        has_completed_track = infantry_tactics_track
+    }
+    effect = {
+        set_country_flag = picked_tactical_withdrawal_flag
+    }
+
+    # EFFECTS
+
+    category_all_infantry = {
+        defense = 0.05
+        max_organisation = 3
+        default_morale = 0.08
+    }
+
+    
+    rewards = {
+        tactical_withdrawal_mastery = {
+           category_all_armor = {
+                default_morale = 0.12
+                defense = 0.1
+            }
+            
+        }
+        tactical_withdrawal_mastery2 = {
+           
+            category_motorised = {
+                max_strength = 1.5
+                max_organisation = 2
+            }
+            
+            
+
+        }
+        tactical_withdrawal_mastery3 = {
+            category_all_armor = {
+                max_organisation = 2
+            }
+           category_all_infantry = {
+                max_organisation = 2
+                soft_attack = 0.05
+                hard_attack = 0.05
+           }
+           category_army = {
+                max_strength = 0.5
+            }
+        }
+    }
+}
+strategic_consolidation = {
+    track = advanced_infantry_tactics_track
+    name = "Local Consolidation"
+    description = ""
+    icon = GFX_volk_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        has_completed_track = infantry_tactics_track
+    }
+    effect = {
+        set_country_flag = picked_strategic_consolidation_flag
+    }
+
+    # EFFECTS
+
+    modifier = { 
+        custom_modifier_tooltip = MW_volksturm_bonuses_tt
+    }
+
+    # EFFECTS
+    effect = {
+      hidden_effect = {
+        set_technology = {
+            MW_volksturm_bonuses = 1
+        }
+            
+       }
+    }
+
+    
+    rewards = {
+        strategic_consolidation_mastery = {
+            bicycle_battalion = {
+                default_morale = 0.12
+                max_organisation = 3
+            }
+            garrison = {
+                default_morale = 0.12
+                max_organisation = 3
+            }
+            category_all_infantry = {
+                default_morale = 0.04
+                max_organisation = 1
+            }
+           
+            
+        }
+        strategic_consolidation_mastery2 = {
+
+            category_all_infantry = {
+                max_strength = 0.5
+                max_organisation = 4
+              
+           }
+            
+
+        }
+        strategic_consolidation_mastery3 = {
+            category_all_armor = {
+                max_organisation = 2
+            }
+           category_all_infantry = {
+                max_organisation = 2
+                soft_attack = 0.05
+                hard_attack = 0.05
+           }
+           category_army = {
+                max_strength = 0.5
+            }
+        }
+    }
+}
+
+anti_tank_frontline = {
+    track = advanced_infantry_tactics_track
+    name = "Anti-Tank Frontline"
+    description = ""
+    icon = GFX_doctrine_antitank_frontline_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        has_completed_track = infantry_tactics_track
+    }
+    effect = {
+        set_country_flag = picked_anti_tank_frontline_flag
+    }
+
+    # EFFECTS
+
+	category_all_infantry = {
+        hard_attack = 0.1
+        max_organisation = 2
+    }
+    category_anti_tank = {
+        hard_attack = 0.1
+        max_strength = 1
+    }	
+    
+    rewards = {
+        anti_tank_frontline_mastery = {
+            
+            category_anti_tank = {
+                max_organisation = 2
+                hard_attack = 0.05
+                max_strength = 1
+            }
+            
+        }
+        anti_tank_frontline_mastery2 = {
+            category_motorised = {
+                max_strength = 1.5
+                max_organisation = 2
+            }
+           
+            
+        }
+        anti_tank_frontline_mastery3 = {
+                category_anti_tank = {
+                    max_organisation = 2
+                    hard_attack = 0.1
+                    max_strength = 0.5
+                }
+                category_all_infantry = {
+                    hard_attack = 0.15
+                
+                }
+                category_army = {
+                    max_strength = 0.5
+                }
+            
+        }
+    }
+}
+flexible_cooperation = {
+    track = spirit_of_armor_track
+    name = "Flexible Cooperation"
+    description = ""
+    icon = GFX_flexible_co_operation_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        always = yes
+    }
+
+    # EFFECTS
+   
+    category_all_armor = {
+        breakthrough = 0.1
+        default_morale = 0.08
+    }
+		
+    rewards = {
+        flexible_cooperation_mastery = {
+            category_all_armor = {
+                max_organisation = 2
+                default_morale = 0.04
+            }
+            category_all_infantry = {
+                max_organisation = 2
+            }
+        }
+        
+    }
+}
+force_liquidation = {
+    track = armored_tactics_track
+    name = "Force Concentration"
     description = ""
     icon = GFX_modern_blitzkrieg_medium
 
-    xp_cost = 180
+    xp_cost = 120
     xp_type = army
 
     available = {
-        has_completed_track = firebrigades_new
+        has_doctrine = flexible_cooperation
+    }
+
+    # EFFECTS
+    category_all_armor = {
+        max_organisation = 3
+        soft_attack = 0.03
+        hard_attack = 0.03
     }
 
 
     rewards = {
-    
-        suppressive_engagement = {
-           
-            category_line_artillery = {
-                soft_attack = 0.05
-                hard_attack = 0.05
+        force_liquidation_mastery = {
+            category_all_armor = {
+                 breakthrough = 0.1
+                 soft_attack = 0.03
+                 hard_attack = 0.03
+            }
+            category_all_infantry = {
+                max_organisation = 2
+                default_morale = 0.08
             }
             
-            category_all_armor = {
-                breakthrough = 0.05
-                soft_attack = 0.05
-                hard_attack = 0.05
-            }
         }
-        forced_entry_operations = {
-             enable_tactic = tactic_backhand_blow
+        force_liquidation_mastery2 = {
             category_all_armor = {
-                default_morale = 0.1
+                max_organisation = 3
+                
+            }
+            category_motorised = {
                 max_organisation = 1
-                breakthrough = 0.15
-             
+                breakthrough = 0.1
             }
-
+            
         }
-        total_domination = {
-            category_all_infantry = {
-                breakthrough = 0.2	
-                max_organisation = 1
-            }
-            ground_attack_factor = 0.05
-        }
-        deep_penetration_tactics = {
-            category_line_artillery = {
-                soft_attack = 0.05
-                hard_attack = 0.05
-            }
-
-            category_all_armor = {
-                max_organisation = 2
-            }	
-           
-        }
-        maximum_insertion = {
-            category_line_artillery = {
-                soft_attack = 0.05
-                hard_attack = 0.05
-                max_organisation = 2
-            }
-        }
-        overextended_breakthrough = {
-            enable_tactic = tactic_tactical_withdrawal
-            category_all_armor = {
-                max_organisation = 2
-                defense = 0.05
-            }
-        }
-    
         
     }
 }
-tank_destroyer_force_new = {
-    track = mw_mastery_track
-    name = SUBDOCTRINE_TANK_DESTROYER_FORCE
-    description = SUBDOCTRINE_TANK_DESTROYER_FORCE_DESC
-    icon = GFX_doctrine_tank_destroyer_force_medium
+indirect_fire_primacy = {
+    track = armored_tactics_track
+    name = "Indirect Fire Primacy"
+    description = ""
+    icon = GFX_doctrine_self_propelled_support_medium
 
-    xp_cost = 180
+    xp_cost = 120
     xp_type = army
+
     available = {
-        has_completed_track = kampfgruppe_track
+       has_doctrine = flexible_cooperation
     }
 
+    # EFFECTS
+	category_medium_spg = {
+        soft_attack = 0.1
+        hard_attack = 0.1
+    }	
 
-    ai_will_do = {
-
-        base = 0
-
-    }  
-
-    mastery = { # This will override the default mastery conditions for the track
-        multiplier = 4 # Multiplies manpower contribution to mastery gain (in this case, 5 times less manpower is needed to gain the same amount of mastery)
-        sub_units = { # Which subunits contribute to mastery gain?
-            light_tank_destroyer_brigade
-            medium_tank_destroyer_brigade
-            heavy_tank_destroyer_brigade
-            super_heavy_tank_destroyer_brigade
-        }
-        categories = { # Which subunit categories constribute to mastery gain?
-        }
-        equipment = { # Subunits with this equipment category will contribute to mastery gain
-        }
-    }
-
+    
     rewards = {
-
-        dedicated_anti_armor_units = {
-           
-            category_line_artillery = {
-                hard_attack = 0.1
+        indirect_fire_primacy_mastery = {
+           category_all_armor = {
+                soft_attack = 0.06
+                hard_attack = 0.06
+            }
+            category_all_infantry = {
+                max_organisation = 2
+                default_morale = 0.08
             }
             
-            category_all_armor = {
-                breakthrough = 0.05
-                hard_attack = 0.1
-            }
         }
-        long_range_kill_zones = {
-            enable_tactic = tactic_backhand_blow
+        indirect_fire_primacy_mastery2 = {
             category_all_armor = {
-                default_morale = 0.1
+                max_organisation = 3
+                
+            }
+            category_motorised = {
                 max_organisation = 1
-                defense = 0.05
-                hard_attack = 0.05
-             
+                breakthrough = 0.1
             }
-
+            
         }
-        anti_tank_ambush_tactics = {
-            category_all_infantry = {
-                hard_attack = 0.1	
-                max_organisation = 1
-            }
-            ground_attack_factor = 0.05
-        }
-        armored_interdiction = {
-            category_line_artillery = {
-                hard_attack = 0.1
-            }
-            category_all_armor = {
-                max_organisation = 2
-            }	
-           
-        }
-        precision_piercing_operations = {
-            category_line_artillery = {
-                hard_attack = 0.1
-                max_organisation = 2
-            }
-        }
-        mobile_hunter_groups = {
-            enable_tactic = tactic_tactical_withdrawal
-            category_all_armor = {
-                max_organisation = 2
-                defense = 0.05
-            }
-        }
+        
     }
- }
+}
+encirclement_primacy = {
+    track = armored_tactics_track
+    name = "Encirclement Primacy"
+    description = ""
+    icon = GFX_maneuver_medium
 
-strategic_defensive_shift = {
-    track = mw_mastery_track
-    name = "Hardened Strategic Defense"
-    description = "In face of overwhelming odds, we cannot expect to always be on the offense. By hardening key points of the front, we can deny our enemy the land it so desperately needs to regain at minimal loss to our strength."
-    icon = GFX_doctrine_field_engineering_medium
-
-    xp_cost = 180
+    xp_cost = 120
     xp_type = army
 
     available = {
-        has_completed_track = kampfgruppe_track
+       has_doctrine = flexible_cooperation
+    }
+
+    # EFFECTS
+	category_all_armor = {
+        
+        default_morale = 0.08
+        maximum_speed = 0.15
+    }	
+    
+    rewards = {
+        indirect_fire_primacy_mastery = {
+           category_all_armor = {
+                 breakthrough = 0.15
+            }
+            category_all_infantry = {
+                max_organisation = 2
+                default_morale = 0.08
+            }
+            
+        }
+        indirect_fire_primacy_mastery2 = {
+           category_all_armor = {
+                max_organisation = 4
+                
+            }
+            category_motorised = {
+                max_organisation = 1
+                breakthrough = 0.1
+            }
+            
+        }
+        
+    }
+}
+battlefield_supremacy = {
+    track = advanced_armored_tactics_track
+    name = "Battlefield Supremacy"
+    description = ""
+    icon = GFX_battlefield_surpremacy_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        has_completed_track = armored_tactics_track
+    }
+    effect = {
+        set_country_flag = picked_battlefield_supremacy_flag
+    }
+
+    # EFFECTS
+    army_speed_factor = -0.05
+	category_all_armor = {
+        max_strength = 0.5
+        soft_attack = 0.05
+        hard_attack = 0.05
+    }
+    category_heavy_and_super_heavy_tanks = {
+        max_strength = 0.5
+        soft_attack = 0.05
+        hard_attack = 0.05
+    }
+    
+    rewards = {
+        battlefield_supremacy_mastery = {
+           category_all_armor = {
+                max_organisation = 2
+                default_morale = 0.04
+            }
+            category_motorised = {
+                max_organisation = 3
+                default_morale = 0.04
+            }
+            
+        }
+        battlefield_supremacy_mastery2 = {
+            category_all_armor = {
+                max_organisation = 4
+            }
+            category_all_infantry = {
+                max_organisation = 2
+            }
+            
+        }
+        battlefield_supremacy_mastery3 = {
+           category_all_armor = {
+                max_organisation = 3
+                breakthrough = 0.15
+                armor_value = 0.2
+                default_morale = 0.04
+            }
+            
+        }
+        
+    }
+}
+firebrigades_mw_doctrine = {
+    track = advanced_armored_tactics_track
+    name = "Firebrigades"
+    description = ""
+    icon = GFX_firebrigadies_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        has_completed_track = armored_tactics_track
+    }
+    effect = {
+        set_country_flag = picked_firebrigades_mw_doctrine_flag
+    }
+
+    # EFFECTS
+
+    category_all_infantry = {
+        default_morale = 0.08
+        max_organisation = 2
+    }
+    category_motorised = {
+        max_organisation = 2
+        default_morale = 0.08
+        max_strength = 0.5
+    }
+
+		
+
+    rewards = {
+        firebrigades_new_doc_mastery = {
+            category_all_armor = {
+                default_morale = 0.12
+                max_strength = 0.75
+            }
+            
+        }
+        firebrigades_new_doc_mastery2 = {
+            category_motorised = {
+                max_strength = 1.5
+                max_organisation = 2
+            }
+           
+            
+        }
+        firebrigades_new_doc_mastery3 = {
+            category_army = {
+                default_morale = 0.08
+                max_strength = 0.5
+            }
+           
+          
+            
+        }
+    }
+	
+}
+td_force = {
+    track = advanced_armored_tactics_track
+    name = "Tank Destroyer Force"
+    description = ""
+    icon = GFX_doctrine_tank_destroyer_force_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        has_completed_track = armored_tactics_track
+    }
+    effect = {
+        set_country_flag = picked_td_forcedoctrine_flag
+    }
+
+    # EFFECTS
+
+    category_anti_tank = {
+        max_organisation = 2
+        hard_attack = 0.1
+        
+        
+    }
+    category_sp_td = {
+        max_organisation = 2
+        ap_attack = 0.2
+        armor_value = 0.5
+    }
+    
+    rewards = {
+        td_force_mastery = {
+           category_all_armor = {
+                max_organisation = 3
+                default_morale = 0.04
+            }
+            category_motorised = {
+                max_organisation = 2
+                default_morale = 0.04
+            }
+            
+        }
+        td_force_mastery2 = {
+            
+            category_all_infantry = {
+                max_organisation = 3
+                defense = 0.05
+                hard_attack = 0.1
+            }
+
+            category_all_armor = {
+                hard_attack = 0.1
+               
+            }
+            
+        }
+        td_force_mastery3 = {
+           category_all_armor = {
+                max_organisation = 2
+                default_morale = 0.08
+                defense = 0.1
+            }
+            
+        }
+        
+    }
+}
+pocket_liquidation = {
+    track = spirit_of_combat_support
+    name = "Pocket Liquidation"
+    description = ""
+    icon = GFX_pocket_liquidation_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        always = yes
+    }
+
+    # EFFECTS
+    
+    category_line_artillery = {
+        max_organisation = 2
+    }
+    category_front_line = {
+        max_organisation = 1
+    }
+ 
+
+    rewards = {
+        pocket_liquidation_mastery = {
+        
+           category_support_battalions = {
+                max_organisation = 3
+           }
+            category_line_artillery = {
+                soft_attack = 0.05
+                hard_attack = 0.05
+            }
+            
+        }
+       
+        
+    }
+}
+ag_tactics = {
+    track = combat_support_tactics
+    name = "Assault-Gun Tactics"
+    description = ""
+    icon = GFX_ag_tactics_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        has_doctrine = pocket_liquidation
+    }
+    modifier = { 
+        custom_modifier_tooltip = MW_assault_gun_bonuses_tt
     }
 
 
-    ai_will_do = { base = 0 }
-
-
-
-     mastery = { # This will override the default mastery conditions for the track
-        multiplier = 2 # Multiplies manpower contribution to mastery gain (in this case, 5 times less manpower is needed to gain the same amount of mastery)
-        sub_units = { # Which subunits contribute to mastery gain?
-          
+    # EFFECTS
+    effect = {
+      hidden_effect = {
+        set_technology = {
+            combat_support_tactics_bonus = 1
         }
-        categories = { # Which subunit categories constribute to mastery gain?
-            category_all_armor
-            category_all_infantry
+            
+       }
+    }
+		
+  
+    rewards = {
+       
+        ag_tactics_mastery = {
+             mastery = 100
+           category_support_battalions = {
+                max_organisation = 8
+           }
+            
         }
-        equipment = { # Subunits with this equipment category will contribute to mastery gain
-        }
+       
+       
+        
+    }
+}
+flame_warfare = {
+    track = combat_support_tactics
+    name = "Flame Warfare"
+    description = ""
+    icon = GFX_flame_warfare_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        has_doctrine = pocket_liquidation
+    }
+
+    # EFFECTS
+	category_flame_tanks = {
+        soft_attack = 0.3
+		hard_attack = 0.3
+		defense = 0.3
+		air_attack = 0.3
+		breakthrough = 0.3
     }
 
     rewards = {
+       flame_warfare_mastery = {
+           mastery = 100
+            category_support_battalions = {
+                max_organisation = 8
+           }
+        }
+       
+       
+        
+    }
+}
+logi_focus = {
+    track = combat_support_tactics
+    name = "Logistical Focus"
+    description = ""
+    icon = GFX_central_planning_medium
 
-        planned_fighting_withdrawal = {
-           enable_tactic = tactic_tactical_withdrawal
-           industrial_capacity_factory = 0.05
-            category_all_infantry = {
-                defense = 0.2			
-                max_organisation = 1
-            }
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+       has_doctrine = pocket_liquidation
+    }
+
+    # EFFECTS
+	category_logistics = {
+        supply_consumption_factor = -0.1
+    }
+  
+    rewards = {
+       logi_focus_mastery = {
+        mastery = 100
+           category_support_battalions = {
+                max_organisation = 8
+           }
+            
         }
-        counterattack_reserve_groups = {
-            enable_tactic = tactic_backhand_blow
-            conscription = 0.01
+       
+       
+        
+    }
+}
+combat_engineer = {
+    track = advanced_combat_support_tactics
+    name = "Combat Engineer Primacy"
+    description = ""
+    icon = GFX_doctrine_field_engineering_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        has_completed_track = combat_support_tactics
+    }
+
+    # EFFECTS
+	mobile_engineer = {
+        fort = {
+			attack = 0.1
+		}
+        urban = {
+			attack = 0.02
+		}
+        soft_attack = 1.5
+		hard_attack = 1.5
+       
+      
+    }
+    construction_engineer = {
+        fort = {
+			attack = 0.1
+		}
+        urban = {
+			attack = 0.02
+		}
+        soft_attack = 1.5
+		hard_attack = 1.5
+       
+        
+    }
+    engineer = {
+        fort = {
+			attack = 0.1
+		}
+        urban = {
+			attack = 0.02
+		}
+        soft_attack = 1.5
+		hard_attack = 1.5
+        
+        
+    }
+    
+    
+    
+    rewards = {
+       combat_engineer_mastery = {
             category_line_artillery = {
-                max_organisation = 1
-            }
-            category_all_armor = {
-                max_organisation = 1
-            }
-        }
-        urban_resistance_preparations = {
-            conscription = 0.01
-            industrial_capacity_factory = 0.05
-            compliance_growth_on_our_occupied_states = -0.2
-            resistance_growth_on_our_occupied_states = 0.2
-        }
-        emergency_reinforcement_cycles = {
-          
-            category_all_armor = {
                 max_organisation = 2
                 soft_attack = 0.05
                 hard_attack = 0.05
-            }	
-           
-        }
-        fortified_defense_lines = {
-            dig_in_speed_factor = 0.3
-            category_all_armor = {
-                default_morale = 0.1
-                defense = 0.05
             }
-           
+            
         }
-        stabilized_front_operations = {
+       combat_engineer_mastery2 = {
+           
+            category_support_battalions = {
+                max_organisation = 6
+            }
+        }
+        combat_engineer_mastery3 = {
+           category_all_armor = {
+                breakthrough = 0.15
+            }
+            category_all_infantry = {
+                max_organisation = 2
+                breakthrough = 0.2
+            }
+            
+        }
+       
+        
+    }
+}
+firepower_concentration = {
+    track = advanced_combat_support_tactics
+    name = "Firepower Concentration"
+    description = ""
+    icon = GFX_doctrine_fire_concentration_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+         has_completed_track = combat_support_tactics
+    }
+
+    # EFFECTS
+	category_line_artillery = {
+        max_organisation = 2
+        soft_attack = 0.05
+        hard_attack = 0.05
+    }
+    
+    rewards = {
+       firepower_concentration_mastery = {
+        category_line_artillery = {
+            max_organisation = 2
+            soft_attack = 0.05
+            hard_attack = 0.05
+        }
+           
+            
+        }
+       firepower_concentration_mastery2 = {
+           
+            category_all_armor = {
+                soft_attack = 0.08
+                hard_attack = 0.08
+           }
+            
+        }
+        firepower_concentration_mastery3 = {
+            category_all_armor = {
+                breakthrough = 0.15
+            }
+            category_all_infantry = {
+                max_organisation = 2
+                breakthrough = 0.2
+            }
+        }
+       
+        
+    }
+}
+heli_operations = {
+    track = advanced_combat_support_tactics
+    name = "Helicopter Operations"
+    description = ""
+    icon = GFX_doctrine_air_cavalry_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        has_completed_track = combat_support_tactics
+    }
+
+    # EFFECTS
+	helicopter_transport = {
+        defense = 0.2
+		breakthrough = 0.2
+        supply_consumption_factor = -0.05
+    }
+    helicopter_field_hospital = {
+        casualty_trickleback = 0.1
+        experience_loss_factor = -0.05
+    }
+    helicopter_recon = {
+		hills = {
+			movement = 0.1
+		}
+		mountain = {
+			movement = 0.1
+		}
+		jungle = {
+			movement = 0.1
+		}
+		marsh = {
+			movement = 0.1
+		}
+	
+		desert = {
+			movement = 0.1
+		}
+		
+    }
+    
+    rewards = {
+       heli_operations_mastery = {
             category_line_artillery = {
-                soft_attack = 0.05
-                hard_attack = 0.05
-            }
-            category_all_armor = {
-                max_organisation = 1
-            }
+            max_organisation = 2
+            soft_attack = 0.05
+            hard_attack = 0.05
         }
+            
+        }
+       heli_operations_mastery2 = {
+           helicopter_transport = {
+                max_organisation = 10
+            }
+            helicopter_field_hospital = {
+               max_organisation = 10
+            }
+            helicopter_recon = {
+                max_organisation = 10
+                
+            }
+            
+        }
+        heli_operations_mastery3 = {
+           category_all_armor = {
+                breakthrough = 0.15
+            }
+            category_all_infantry = {
+                max_organisation = 2
+                breakthrough = 0.2
+            }
+            
+        }
+       
+        
+    }
+}
+mission_type_tactics = {
+    track = spirit_of_operations
+    name = "Mission Type Tactics"
+    description = ""
+    icon = GFX_doctrine_mission_type_tactics_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        always = yes
+    }
+
+    # EFFECTS
+		
+    planning_speed = 0.2
+    enable_tactic = tactic_delay
+   
+
+    rewards = {
+        mission_type_tactics_mastery = {
+            category_all_infantry = {
+                experience_loss_factor = -0.01
+            }
+            category_front_line = {
+                breakthrough = 0.05
+                
+            }
+            
+            enable_tactic = tactic_elastic_defense
+		  
+
+            
+        }
+      
+        
+    }
+}
+combined_arms_neww = {
+    track = operation_tactics
+    name = "Combined Arms"
+    description = ""
+    icon = GFX_kampfgruppe_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+       has_doctrine = mission_type_tactics
+     
+    }
+
+    # EFFECTS
+    ground_attack_factor = 0.05
+    shore_bombardment_bonus = 0.25  
+    
+    rewards = {
+       combined_arms_new_mastery = {
+            planning_speed = 0.2
+            org_loss_when_moving = -0.15
+            enable_tactic = tactic_unexpected_thrust
+            
+        }
+        combined_arms_new_mastery2 = {
+            max_planning = 0.025
+            category_front_line = {
+                max_organisation = 2
+            }
+            enable_tactic = tactic_blitz
+            
+        }
+      
+        
+    }
+}
+war_of_annihilation = {
+    track = advanced_operation_tactics
+    name = "War of Annihilation"
+    description = "We will for the total annihilation of our enemies. Nothing is allowed to stand between us and victory. "
+    icon = GFX_doctrine_shock_and_awe_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        has_completed_track = operation_tactics
+    }
+
+    # EFFECTS
+     category_all_infantry = {
+        default_morale = 0.08
+    }
+	compliance_growth_on_our_occupied_states = -0.2
+    resistance_target_on_our_occupied_states = 0.1
+    conscription = 0.02
+
+    
+    rewards = {
+       war_of_annihilation_mastery = {
+           enable_tactic = tactic_breakthrough
+           enable_tactic = tactic_overwhelming_fire
+            
+        }
+        war_of_annihilation_mastery2 = {
+           attrition = -0.1
+           pocket_penalty = -0.1
+            
+        }
+        war_of_annihilation_mastery3 = {
+             enable_tactic = tactic_backhand_blow
+              enable_tactic = tactic_tactical_withdrawal
+           ground_attack_factor = 0.05
+            
+        }
+      
+        
+    }
+}
+war_of_movement = {
+    track = advanced_operation_tactics
+    name = "War of Movement"
+    description = ""
+    icon = GFX_doctrine_war_of_movement_medium
+
+    xp_cost = 120
+    xp_type = army
+
+    available = {
+        has_completed_track = operation_tactics
+    }
+
+    # EFFECTS
+        category_mot_arty = {
+            maximum_speed = 0.05
+        }
+        category_all_infantry = {
+            maximum_speed = 0.05
+            default_morale = 0.064
+        }
+		category_leg_infantry = {
+            maximum_speed = 0.1
+        }
+        category_line_artillery = {
+            maximum_speed = 0.15
+        }
+        category_cavalry = {
+            maximum_speed = 0.15
+        }
+        
+        
+
+    
+    rewards = {
+       war_of_movement_mastery = {
+           enable_tactic = tactic_breakthrough
+           enable_tactic = tactic_overwhelming_fire
+            
+        }
+       war_of_movement_mastery2 = {
+           org_loss_when_moving = -0.2
+           no_supply_grace = 48
+            
+        }
+        war_of_movement_mastery3 = {
+             enable_tactic = tactic_backhand_blow
+            enable_tactic = tactic_tactical_withdrawal
+            ground_attack_factor = 0.05
+            
+        }
+      
+        
     }
 }

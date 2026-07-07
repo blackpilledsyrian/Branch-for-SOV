@@ -56,11 +56,17 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				tag = POR
+				factor = 1000
+			}
 			
 		}
 						
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
+
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -90,10 +96,15 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				tag = POR
+				factor = 1000
+			}
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 	}							
 
@@ -128,10 +139,15 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				tag = POR
+				factor = 1000
+			}
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -162,10 +178,15 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				tag = POR
+				factor = 1000
+			}
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -174,7 +195,7 @@ technologies = {
 		enable_subunits = {
 			pack_artillery_brigade
 			pack_artillery_brigade_mot
-			pack_artillery
+			
 		}
 		
 		enable_equipments = {
@@ -198,7 +219,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -231,7 +253,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		
@@ -246,28 +269,19 @@ technologies = {
 		on_research_complete = {
 			custom_effect_tooltip = infgunmot_tt
 		}
-		pack_artillery = {
+		pack_artillery_brigade = {
 			need = {
 				motorized_equipment = 20
 				horse_equipment = -20
 			}
-			fuel_capacity = 50
+			fuel_capacity = 10
 			defense = 0.2
 			breakthrough = 0.2
 			soft_attack = 0.2
 		}
 		
 		
-		pack_artillery_brigade_mot = {
-			need = {
-				motorized_equipment = 10
-			}
-			breakthrough = 0.4
-			defense = 0.25
-		}
-		on_research_complete = {
-			custom_effect_tooltip = packmot_tt
-		}
+	
 		
 		research_cost = 1
 		start_year = 1937
@@ -285,7 +299,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 	}
 
@@ -304,7 +319,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		
@@ -338,7 +354,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		
@@ -383,7 +400,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}	
 		
 		ai_will_do = {
@@ -425,7 +443,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 	
 		ai_will_do = {
@@ -457,7 +476,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 	
 		ai_will_do = {
@@ -494,7 +514,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -524,7 +545,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 	
 		ai_will_do = {
@@ -554,7 +576,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 	
 		ai_will_do = {
@@ -589,7 +612,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -627,7 +651,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 	}
 
@@ -665,7 +690,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 	
 		ai_will_do = {
@@ -712,7 +738,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 	
 		ai_will_do = {
@@ -745,7 +772,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -783,7 +811,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		
@@ -823,7 +852,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		
@@ -858,7 +888,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -914,7 +945,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		
@@ -989,7 +1021,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		
@@ -1029,7 +1062,8 @@ technologies = {
 		special_project_specialization = { specialization_land }
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		ai_will_do = {
 			factor = 20
@@ -1045,6 +1079,9 @@ technologies = {
 		category_light_artillery = {
 			soft_attack = 0.1
 			breakthrough = 0.15
+		}
+		on_research_complete = {
+			add_ideas = expensive_arty_license
 		}
 		XOR = {
 			artillery8_2
@@ -1066,7 +1103,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		
@@ -1108,7 +1146,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -1132,7 +1171,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -1164,7 +1204,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -1208,7 +1249,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -1268,7 +1310,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 	   
@@ -1361,7 +1404,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 	   
@@ -1402,7 +1446,8 @@ technologies = {
 		}
 
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -1483,7 +1528,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -1511,6 +1557,9 @@ technologies = {
 		   breakthrough = 0.15
 		   soft_attack = 0.1
 		}
+		on_research_complete = {
+			add_ideas = expensive_heavy_arty_license
+		}
 		path = {
 			leads_to_tech = heavy_artillery7
 			research_cost_coeff = 1
@@ -1531,7 +1580,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -1568,7 +1618,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -1609,7 +1660,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -1657,7 +1709,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -1699,7 +1752,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -1759,7 +1813,8 @@ technologies = {
 			siege_artillery4_2
 		}		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 				
@@ -1799,7 +1854,7 @@ technologies = {
 		}
 		
 		artillery_siege_support = {
-		maximum_speed = 0.118
+		maximum_speed = 0.1
 		need = {
 			mechanized_equipment = 10
 		}
@@ -1808,7 +1863,8 @@ technologies = {
 		}
 			
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -1845,7 +1901,8 @@ technologies = {
 			siege_artillery4_1
 		}			
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		artillery_siege_support = {	
 			jungle = {
@@ -1899,7 +1956,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		artillery_siege_support = {	
 			urban = {
@@ -1946,7 +2004,8 @@ technologies = {
 		}
 				
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		
 		ai_will_do = {
@@ -2004,6 +2063,7 @@ technologies = {
 		
 		categories = {
 			rocketry
+			
 		}
 	}
 
@@ -2041,6 +2101,7 @@ technologies = {
 		
 		categories = {
 			rocketry
+			
 		}
 	}
 	
@@ -2078,7 +2139,8 @@ technologies = {
 		
 		categories = {
 			rocketry
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -2105,8 +2167,9 @@ technologies = {
 		
 		categories = {
 			rocketry
-			artillery
+			cat_artillery
 			mot_rockets
+			inf_artillery
 		}
 	}
 
@@ -2172,7 +2235,8 @@ technologies = {
 		
 		categories = {
 			rocketry
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 	}
 
@@ -2198,7 +2262,8 @@ technologies = {
 		
 		categories = {
 			rocketry
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -2232,7 +2297,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 			cat_anti_tank
 		}
 		special_project_specialization = { specialization_land }
@@ -2240,66 +2306,15 @@ technologies = {
 ##### Motor towing	
 	at_line_mot = {
 		
-		path = {
-			leads_to_tech = antitank1
-			research_cost_coeff = 1
-		}
-		
-		show_effect_as_desc = yes
-		anti_tank_brigade_mot = {
-			need = {
-				motorized_equipment = 10
-			}
-			hard_attack = 0.1
-			defense = 0.25
-		}
-		on_research_complete = {
-			custom_effect_tooltip = antitankmot_tt
-		}
-
-
-		show_effect_as_desc = yes
-		
-		research_cost = 1.3
-		start_year = 1936
-		folder = {
-			name = artillery_folder
-			position = { x = 20 y = @1936 }
-		}
-		
-		categories = {
-			artillery
-			cat_anti_tank
-		}
-		
-	   
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				tag = USA
-				factor = 50
-			}
-			modifier = {
-				tag = GER
-				factor = 50
-			}
-			modifier = {
-				tag = ENG
-				factor = 30
-			}
-		}
-	}
-	antitank1 = {
-
 		on_research_complete = {
 			custom_effect_tooltip = antitank1_tt
 		}
-		anti_tank = {
+		anti_tank_brigade = {
 			need = {
-				motorized_equipment = 20
-				horse_equipment = -20
+				motorized_equipment = 24
+				horse_equipment = -24
 			}
-			fuel_capacity = 50
+			fuel_capacity = 10
 			defense = 0.2
 			hard_attack = 0.2
 			soft_attack = 0.2
@@ -2310,7 +2325,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = artillery_folder
-			position = { x = 20 y = @1938 }
+			position = { x = 20 y = @1937 }
 		}
 		
 		ai_will_do = {
@@ -2318,11 +2333,12 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 			cat_anti_tank
 		}
 	}
-
+	
 
 	antitank4 = {
 		
@@ -2351,7 +2367,8 @@ technologies = {
 			
 		}
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 			cat_anti_tank
 		}
 		special_project_specialization = { specialization_land }
@@ -2405,33 +2422,15 @@ technologies = {
 				movement = -0.1
 			}
 		}
-		anti_tank_brigade_mot = {			
-			forest = {
-				movement = -0.1
-			}
-			hills = {
-				movement = -0.1
-			}
-			mountain = {
-				movement = -0.1
-			}		
-			jungle = {
-				movement = -0.1
-			}
-			marsh = {
-				movement = -0.1
-			}
-			river = {
-				movement = -0.1
-			}
-		}
+		
 		
 		ai_will_do = {
 			factor = 10
 			
 		}
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 			cat_anti_tank
 		}
 		special_project_specialization = { specialization_land }
@@ -2444,18 +2443,12 @@ technologies = {
 #			custom_effect_tooltip = antitank5_2_tt
 #		}
 #		show_effect_as_desc = yes
-		anti_tank = {
-			hard_attack = 0.1
-			ap_attack = 0.15
-		}
+	
 		anti_tank_brigade = {
 			hard_attack = 0.1
 			ap_attack = 0.2
 		}
-		anti_tank_brigade_mot = {
-			hard_attack = 0.1
-			ap_attack = 0.2
-		}
+		
 		XOR = {
 			antitank5_1 
 		}
@@ -2464,7 +2457,9 @@ technologies = {
 			NOT = { is_researching_technology = "antitank5_1" }
 		}
 		
-		
+		on_research_complete = {
+			custom_effect_tooltip = expensive_anti_tank_license
+		}
 		research_cost = 1.6
 		start_year = 1941
 		folder = {
@@ -2477,7 +2472,8 @@ technologies = {
 			
 		}
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 			cat_anti_tank
 		}
 		special_project_specialization = { specialization_land }
@@ -2503,7 +2499,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 			cat_anti_tank
 		}
 		special_project_specialization = { specialization_land }
@@ -2548,7 +2545,8 @@ technologies = {
 		}
 						
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}	
 		special_project_specialization = { specialization_land }
 	}
@@ -2559,12 +2557,12 @@ technologies = {
 		on_research_complete = {
 			custom_effect_tooltip = antiairmot_tt
 		}
-		anti_air_company = {
+		anti_air = {
 			need = {
-				motorized_equipment = 16
-				horse_equipment = -16
+				motorized_equipment = 20
+				horse_equipment = -20
 			}
-			fuel_capacity = 50
+			fuel_capacity = 10
 			defense = 0.2
 			air_attack = 0.2
 		}
@@ -2581,7 +2579,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 	}
 
@@ -2619,7 +2618,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -2655,7 +2655,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -2691,7 +2692,8 @@ technologies = {
 		}
 		
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 	}
 ###firecontrol
@@ -2722,7 +2724,8 @@ technologies = {
 		}
 						
 		categories = {
-			artillery
+			cat_artillery
+			inf_artillery
 		}
 	}
 

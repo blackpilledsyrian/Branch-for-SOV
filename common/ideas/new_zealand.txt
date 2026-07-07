@@ -63,6 +63,39 @@ ideas = {
 		}
 
 	}
+	industrial_research = {
+		maurice_wilkins = {
+			name = "Maurice Wilkins"
+			allowed = {
+				original_tag = NZL
+			}
+			research_bonus = {
+				nuclear = 0.3
+			}
+			traits = { nuclear_scientist }
+			available = {
+				has_completed_focus = NZL_sir_ernest_rutherford
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		NZL_frank_whittle = {
+			name = "Frank Whittle"
+			allowed = {
+				original_tag = NZL
+			}
+			research_bonus = {
+				rocketry = 0.15
+			}
+			traits = { rocket_scientist }
+			available = {
+				has_completed_focus = NZL_employ_whittle
+			}
+		}
+
+	}
 
 	country = {
 		NZL_fortress_ast = {
@@ -754,10 +787,11 @@ ideas = {
 				experience_gain_army = 0.07
 				send_volunteers_tension = -0.5
 				send_volunteer_divisions_required = -1
+				conscription = 0.02
 				sortie_efficiency  = 0.1
 				positioning  = 0.05
 				navy_anti_air_attack_factor = 0.2
-				military_industrial_organization_funds_gain = 0.2
+				military_industrial_organization_funds_gain = 0.3
 			}
 		}
 		NZL_stomp_out_pacifism = {

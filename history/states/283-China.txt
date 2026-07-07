@@ -2,7 +2,7 @@ state = {
 	id = 283
 	name = "STATE_283"
 	resources = {
-		tungsten = 1.000
+		tungsten = 4.000
 	}
 
 	history = {
@@ -13,9 +13,15 @@ state = {
 			favorable_approach = 12797
 		}
 		buildings = {
-			infrastructure = 3
+			infrastructure = 1
 			air_base = 10
 			arms_factory = 1
+		}
+		victory_points = {
+			1933 6
+		}
+		victory_points = {
+			3745 6
 		}
 		
 		1938.10.25 = {
@@ -37,7 +43,7 @@ state = {
 	provinces = {
 		556  1647 1933 1985 3745 4313 5025 6638 7397 7911 12797 12882 13711 13720 13721  13708 13712
 	}
-	manpower = 3705400
+	manpower = 5705400
 	buildings_max_level_factor = 1.000
 	state_category = rural
 }

@@ -2875,19 +2875,20 @@ CHI_80_division_plan = {
 					artillery_brigade = { x = 2 y = 3 }
 					artillery_brigade = { x = 3 y = 0 }
 					artillery_brigade = { x = 3 y = 1 }
-					anti_air = { x = 3 y = 2 }
+					field_gun_brigade = { x = 3 y = 2 }
 
 				
+				}
+				regimental_support = {
+					anti_air = { x = 0 y = 0 }
 				}
 				support = {
 					artillery = { x = 0 y = 0 }
 					recon = { x = 0 y = 1 }
-					anti_air_company = { x = 0 y = 2 }
-					military_police = { x = 0 y = 3 }
+					military_police = { x = 0 y = 2 }
 					field_hospital = { x = 1 y = 0 }
-					pack_artillery = { x = 1 y = 1 }
-					engineer = { x = 1 y = 2 }
-					artillery_heavy_support = { x = 1 y = 3 }
+					engineer = { x = 1 y = 1 }
+					artillery_heavy_support = { x = 1 y = 2 }
 				}
 
 				priority = 2 
@@ -2924,7 +2925,10 @@ CHI_usa_airforce_in_china = {
 
 		visible = {
 			CHI = {
-				has_completed_focus = CHI_14th_airforce_in_china
+				OR = {
+					has_completed_focus = CHI_14th_airforce_in_china
+					has_completed_focus = CHI_14th_airforce_in_china_2
+				}
 			}
 			
 	
@@ -2991,7 +2995,7 @@ CHI_roads_of_life = {
 		}
 
 		on_map_mode = map_only
-		days_mission_timeout = 17
+		days_mission_timeout = 5
 	
 		timeout_effect = {	
 			if = {
@@ -3083,7 +3087,7 @@ CHI_roads_of_life = {
 		}
 
 		on_map_mode = map_only
-		days_mission_timeout = 17
+		days_mission_timeout = 5
 
 		timeout_effect = {	
 			if = {
@@ -3174,7 +3178,7 @@ CHI_roads_of_life = {
 		}
 
 		on_map_mode = map_only
-		days_mission_timeout = 17
+		days_mission_timeout = 5
 
 		timeout_effect = {	
 			if = {
@@ -3277,7 +3281,7 @@ CHI_roads_of_life = {
 		}
 
 		on_map_mode = map_only
-		days_mission_timeout = 17
+		days_mission_timeout = 5
 
 		timeout_effect = {	
 			if = {
@@ -3368,7 +3372,7 @@ CHI_roads_of_life = {
 		}
 
 		on_map_mode = map_only
-		days_mission_timeout = 17
+		days_mission_timeout = 5
 
 		timeout_effect = {	
 			if = {
@@ -3460,7 +3464,7 @@ CHI_roads_of_life = {
 		}
 
 		on_map_mode = map_only
-		days_mission_timeout = 17
+		days_mission_timeout = 5
 
 		timeout_effect = {	
 			if = {
@@ -3552,7 +3556,7 @@ CHI_roads_of_life = {
 		}
 
 		on_map_mode = map_only
-		days_mission_timeout = 17
+		days_mission_timeout = 5
 
 		timeout_effect = {	
 			if = {
@@ -3643,7 +3647,7 @@ CHI_roads_of_life = {
 		}
 
 		on_map_mode = map_only
-		days_mission_timeout = 17
+		days_mission_timeout = 5
 
 		timeout_effect = {	
 			if = {
@@ -3766,7 +3770,7 @@ CHI_roads_of_life = {
 		}
 		highlight_states = {
 			highlight_provinces = { 
-				1553 
+				13734 
 			
 			}
 		}
@@ -4383,7 +4387,7 @@ CHI_roads_of_life = {
 					name = CHI_arty
 					bonus = 0.75
 					uses = 1
-					category = artillery
+					category = cat_artillery
 				}
 				add_to_variable = { var = CHI_next_research_bonus value =  1 }
 			}
@@ -4423,7 +4427,7 @@ CHI_roads_of_life = {
 		available = {
 			RAJ = {
 				NOT = {
-					controls_province = 1553
+					controls_province = 13734
 				
 				}
 			}
@@ -4431,7 +4435,7 @@ CHI_roads_of_life = {
 		}
 		highlight_states = {
 			highlight_provinces = { 
-				1553 
+				13734 
 			
 			}
 		}
@@ -4439,7 +4443,7 @@ CHI_roads_of_life = {
 		activation = {
 			has_completed_focus = CHI_expand_the_hump
 			RAJ = {
-				controls_province = 1553
+				controls_province = 13734
 				
 			}	
 		}
@@ -4564,7 +4568,7 @@ CHI_roads_of_life = {
 				if = {
 					limit = {
 						RAJ = {
-							controls_province = 1553
+							controls_province = 13734
 						}
 					}
 					activate_mission = CHI_the_hump_decision
@@ -5130,6 +5134,10 @@ CHI_roads_of_life = {
 			}
 			
 			custom_effect_tooltip = CHI_lend_lease_will_arrive_tt
+			CHI = {
+				add_cic = CHI_burma_civ_ic_lend_lease
+			}
+		
 			hidden_effect = {
 				CHI = {
 					add_equipment_to_stockpile = { type = infantry_equipment amount = CHI_burma_inf_equip_lend_lease producer = USA }
@@ -5221,6 +5229,10 @@ CHI_roads_of_life = {
 					var = CHI_burma_anti_air_equip_lend_lease 
 					value = 0
 				}
+				set_variable = {
+					var = CHI_burma_civ_ic_lend_lease 
+					value = 0
+				}
 				set_variable = { 
 					var = CHI_burma_research_equip_lend_lease 
 					value = 0
@@ -5230,13 +5242,22 @@ CHI_roads_of_life = {
 					value = 0
 				}
 				
+				
 
 			}
 			
 
 		}
 		timeout_effect = {
-
+		
+			add_offsite_building = { type = industrial_complex level = 2 }
+			CHI = {
+				modify_tech_sharing_bonus = {
+					id = us_research
+					bonus = 0.15
+				}
+			}
+			
 			hidden_effect = {
 				if = {
 					limit = {
@@ -5256,6 +5277,7 @@ CHI_roads_of_life = {
 				}
 			}
 			CHI = {
+				add_cic = CHI_burma_civ_ic_lend_lease
 				add_equipment_to_stockpile = { type = infantry_equipment amount = CHI_burma_inf_equip_lend_lease producer = USA }
 				add_equipment_to_stockpile = { type = horse_equipment amount = CHI_burma_horse_equip_lend_lease producer = USA }
 				if = {
@@ -5345,6 +5367,10 @@ CHI_roads_of_life = {
 				var = CHI_burma_anti_air_equip_lend_lease 
 				value = 0
 			}
+			set_variable = {
+				var = CHI_burma_civ_ic_lend_lease 
+				value = 0
+			}
 			set_variable = { 
 				var = CHI_burma_research_equip_lend_lease 
 				value = 0
@@ -5389,7 +5415,7 @@ CHI_roads_of_life = {
 					name = CHI_arty
 					bonus = 0.75
 					uses = 1
-					category = artillery
+					category = cat_artillery
 				}
 				add_to_variable = { var = CHI_next_research_bonus value =  1 }
 			}
@@ -5427,7 +5453,10 @@ CHI_roads_of_life = {
 		icon = ger_military_buildup
 
 		available = {
-			RAJ = {
+			#RAJ = {
+				#has_capitulated = yes
+			#}
+			JAP = {
 				has_capitulated = yes
 			}
 			
@@ -5435,9 +5464,9 @@ CHI_roads_of_life = {
 		activation = {
 			has_completed_focus = CHI_establish_burma_road
 			has_global_flag = CHI_ledo_road_built
-			RAJ = {
-				has_capitulated = no
-			}
+			#RAJ = {
+				#has_capitulated = no
+			#}
 		
 					
 		}
@@ -5459,6 +5488,10 @@ CHI_roads_of_life = {
 		complete_effect = {
 			country_event = { id = china.213 }
 			custom_effect_tooltip = CHI_lend_lease_will_arrive_tt
+			CHI = {
+				add_cic = CHI_ledo_civ_ic_lend_lease
+			}
+	
 			hidden_effect = {
 				CHI = {
 					add_equipment_to_stockpile = { type = infantry_equipment amount = CHI_ledo_inf_equip_lend_lease producer = USA }
@@ -5558,13 +5591,26 @@ CHI_roads_of_life = {
 					var = CHI_ledo_routes_used 
 					value = 0
 				}
+				set_variable = {
+					var = CHI_ledo_civ_ic_lend_lease 
+					value = 0
+				}
 				
 			}
 			
 
 		}
 		timeout_effect = {
-
+			
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_offsite_building = { type = arms_factory level = 1 }
+			CHI = {
+				modify_tech_sharing_bonus = {
+					id = us_research
+					bonus = 0.15
+				}
+			}
+			
 			hidden_effect = {
 				if = {
 					limit = {
@@ -5580,6 +5626,7 @@ CHI_roads_of_life = {
 				}
 			}
 			CHI = {
+				add_cic = CHI_ledo_civ_ic_lend_lease
 				add_equipment_to_stockpile = { type = infantry_equipment amount = CHI_ledo_inf_equip_lend_lease producer = USA }
 				add_equipment_to_stockpile = { type = horse_equipment amount = CHI_ledo_horse_equip_lend_lease producer = USA }
 				if = {
@@ -5669,6 +5716,10 @@ CHI_roads_of_life = {
 				var = CHI_ledo_anti_air_equip_lend_lease 
 				value = 0
 			}
+			set_variable = {
+				var = CHI_ledo_civ_ic_lend_lease 
+				value = 0
+			}
 			set_variable = { 
 				var = CHI_ledo_research_equip_lend_lease 
 				value = 0
@@ -5713,7 +5764,7 @@ CHI_roads_of_life = {
 					name = CHI_arty
 					bonus = 0.75
 					uses = 1
-					category = artillery
+					category = cat_artillery
 				}
 				add_to_variable = { var = CHI_next_research_bonus value =  1 }
 			}

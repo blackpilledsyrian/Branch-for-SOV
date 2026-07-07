@@ -4,11 +4,11 @@ state = {
 	manpower = 12700000
 	state_category = town
 	resources = {
-		tungsten = 10 # was: 20
-		steel = 20 # was: 20
-		chromium = 4 # was: 4
-		aluminium = 13
-		oil = 2
+		tungsten = 52 # was: 20
+		steel = 40 # was: 20
+		chromium = 16 # was: 4
+		aluminium = 48
+		oil = 8
 	}
 
 	history = {
@@ -26,6 +26,12 @@ state = {
 			arms_factory = 1
 			air_base = 2
 			
+		}
+		victory_points = { 
+			9938 1 
+		}
+		victory_points = { 
+			9970 3 
 		}
 
 		

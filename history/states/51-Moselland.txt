@@ -4,7 +4,8 @@ state = {
 	name = "STATE_51"
 	manpower = 6144743
 	resources = {
-		steel = 17 # was: 54
+		steel = 68 # was: 54
+		tungsten = 40
 	}
 
 
@@ -27,6 +28,7 @@ state = {
 		buildings = {
 			infrastructure = 7
 			arms_factory = 5
+			tank_assembly = 1
 			industrial_complex = 5		
 			air_base = 6
 
@@ -49,7 +51,7 @@ state = {
 	}
 
 	provinces = {
-		529 587 3444 3512 3547 6469 6570 9482 9522 13446 13452 13457
+		529 587 3444 3512 3547 6469 6570 9482 9522  13452 13457
 	}
 	
 }

@@ -1,7 +1,12 @@
 ﻿capital = 2
 
 oob = "ITA_1936"
-
+158 = {
+	add_extra_state_shared_building_slots = 2
+}
+159 = {
+	add_extra_state_shared_building_slots = 2
+}
 set_research_slots = 5
 starting_train_buffer = 2
 set_convoys = 300
@@ -17,6 +22,7 @@ add_ideas = {
 	ITA_subs_1
 	ITA_bad_engine_1
 	italy_no_africa_first
+	ITA_regia_aeronautica
 }
 
 ITA_initiate_balance_of_power_effect = yes 
@@ -62,6 +68,7 @@ set_variable = { ITA_global_building_slots_factor_var = 0 }
 set_variable = { ITA_industry_consumer_goods_modifier = -0.02 }
 
 add_dynamic_modifier = { modifier = ITA_ricostruzione_industriale_dynamic_modifier }
+set_variable = { ITA_production_speed_tank_assembly_factor = -0.2 }
 
 
 #MILITARY INDUSTRY
@@ -91,8 +98,8 @@ set_variable = { ITA_re_org_loss_when_moving = 0 }
 
 set_variable = { ITA_re_army_morale_factor = 0 }
 set_variable = { ITA_re_army_leader_cost_factor = 0 }
-set_variable = { ITA_re_experience_gain_army_factor = -0.6 }
-set_variable = { ITA_land_mastery_gain_factor = -0.6 }
+set_variable = { ITA_re_experience_gain_army_factor = -0.3 }
+set_variable = { ITA_land_mastery_gain_factor = -0.3 }
 set_variable = { ITA_re_experience_gain_factor = 0 }
 set_variable = { ITA_re_army_core_defence_factor = 0 }
 set_variable = { ITA_re_army_core_attack_factor = 0 }
@@ -135,7 +142,6 @@ set_variable = { ITA_ra_air_range_factor = 0 }
 set_variable = { ITA_ra_air_superiority_efficiency = 0 }
 set_variable = { ITA_ra_air_intercept_efficiency = 0 }
 
-add_dynamic_modifier = { modifier = ITA_regia_aeronautica_dynamic_modifier }
 
 
 #REGIA MARINA
@@ -279,6 +285,7 @@ recruit_character = ITA_agostino_rocca
 
 # Starting tech
 set_technology = { #player 
+building_tech = 1 
 	basic_train = 1
 	################ infantry ############
 	infantry_at = 1
@@ -331,7 +338,6 @@ set_technology = { #player
 	CAS_1937 = 1
 	
 	################ doctrines ###################
-	fleet_in_being = 1
 	################ economy ###################
 	starting_industry = 1
 	synth_oil_experiments = 1
@@ -353,7 +359,7 @@ set_technology = { #player
 			small_gun = 1
 			armour_sloping = 1
 		
-			engine_tech_1 = 1
+		
 			automatic_gun2 = 1
 			ita_1936_light_tank_chassis = 1
 			ita_1936_medium_tank_chassis = 1

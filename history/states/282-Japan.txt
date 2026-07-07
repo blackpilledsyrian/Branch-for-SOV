@@ -3,18 +3,26 @@ state = {
 	id = 282
 	name = "STATE_282"
 	resources = {
-		aluminium = 8
-		steel = 3
+		aluminium = 32
+		steel = 12
 	}
 
 	history = {
 		owner = JAP
 		add_core_of = JAP
+		
+		1936.1.1.14 = {
+			set_state_flag = no_china_war_state_flag	
+			set_state_flag = less_players_state_flag	
+
+		}
 		1936.1.1.13 = {
 			set_state_flag = no_china_war_state_flag	
 
 		}
 		buildings = {
+			air_assembly = 1
+
 			infrastructure = 8
 			air_base = 6
 			industrial_complex = 4
@@ -23,6 +31,15 @@ state = {
 			9998 = {
 				naval_base = 15
 
+			}
+			1182 = {
+				landmark_tokyo_imperial_palace = {
+				    level = 1
+				    allowed = {
+				        has_dlc = "No Compromise, No Surrender"
+				    }
+				}
+				
 			}
 
 		}

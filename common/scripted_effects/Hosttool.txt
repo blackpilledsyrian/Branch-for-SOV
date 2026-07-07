@@ -4,7 +4,7 @@ generic_bonus_1 = {
 	category = all_air 
     category = armor 
     category = industry 
-    category = artillery 
+    category = cat_artillery 
     category = electronics 
     category = tank_upgrade 
     category = naval_equipment 
@@ -22,7 +22,7 @@ generic_bonus_3 = {
 	category = all_air 
     category = armor 
     category = industry 
-    category = artillery 
+    category = cat_artillery 
     category = electronics 
     category = tank_upgrade 
     category = naval_equipment 
@@ -40,7 +40,7 @@ generic_bonus_2y = {
 	category = all_air 
     category = armor 
     category = industry 
-    category = artillery 
+    category = cat_artillery 
     category = electronics 
     category = tank_upgrade 
     category = naval_equipment 
@@ -58,7 +58,7 @@ generic_bonus_999 = {
 	category = all_air 
     category = armor 
     category = industry 
-    category = artillery 
+    category = cat_artillery 
     category = electronics 
     category = tank_upgrade 
     category = naval_equipment 
@@ -73,5 +73,12 @@ HMP_anti_building_exploit_effect = { #add to horst tool
 every_country = {
 	add_equipment_to_stockpile= { type = convoy_1  amount = 1 }
 }
+}
+
+HMP_targeted_sub_wipe_effect = {
+	destroy_ships = {
+		type = ship_hull_submarine
+		count = all
+	}
 }
 

@@ -300,7 +300,7 @@ characters={
 			research_bonus = { 
 				armor = 0.1
 				infantry = 0.1
-				artillery = 0.1
+				cat_artillery = 0.1
 				motorized_equipment = 0.1  
 			}
 		}
@@ -395,7 +395,7 @@ characters={
 		name="Alexander Fyodorovich Kerensky"
 		portraits={
 			civilian={
-				large="Portrait_Soviet_Generic_1.tga"
+				large="gfx/leaders/SOV/Portrait_Soviet_Generic_1.dds"
 			}
 		}
 		country_leader={
@@ -409,7 +409,7 @@ characters={
 		name="Alexander Guchkov"
 		portraits={
 			civilian={
-				large="Portrait_SOV_Alexander_Guchkov.tga"
+				large="gfx/leaders/SOV/Portrait_Soviet_Generic_1.dds"
 			}
 		}
 		country_leader={
@@ -827,7 +827,7 @@ characters={
 		portraits ={
 			army = {
 				large = "gfx/leaders/SOV/Portrait_sov_rotminstrov.dds"
-				small= "gfx/ideas/SOV_rotminstrov.dds"
+				small= "gfx/interface/ideas/SOV_rotminstrov.dds"
 			}
 		}
 		corps_commander={
@@ -1347,7 +1347,7 @@ characters={
 		name="Yakov Kreizer"
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_SOV_yakov_kreizer.dds"
+				small="gfx/interface/ideas/SOV/idea_SOV_yakov_kreizer.dds"
 			}
 			army={
 				large="gfx/leaders/SOV/Portrait_Yakov_Kreizer.dds"
@@ -1368,7 +1368,7 @@ characters={
 		name="Pavel Batov"
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_SOV_pavel_batov.dds"
+				small="gfx/interface/ideas/SOV/idea_SOV_pavel_batov.dds"
 			}
 			army={
 				large="gfx/leaders/SOV/Portrait_Pavel_Batov.dds"
@@ -1724,7 +1724,19 @@ characters={
 		
 			
 			traits = { mass_assault_expert }
-		}	
+		}
+		field_marshal = {
+			#available = {
+				#has_completed_focus = SOV_hero_of_the_union 
+			#}
+			traits={ expert_delegator thorough_planner brilliant_strategist aggressive_assaulter panzer_leader trickster }
+			skill = 6
+			attack_skill = 5
+			defense_skill = 6
+			planning_skill = 7
+			logistics_skill = 5
+			legacy_id=-1
+		}		
 	}
 	SOV_pyotr_smirnov = {
 		portraits={

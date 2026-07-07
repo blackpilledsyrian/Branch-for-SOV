@@ -4,27 +4,33 @@ state = {
 	provinces = {
 		13414 4041 4896 5030 7101 7201 7279 7434 10006 10304 10757 10822 12086 12414 13635 13639
 	}
-	manpower = 7500000
+	manpower = 8500000
 	buildings_max_level_factor = 1.000
 	state_category = town
 	resources = {
-		aluminium = 10
-		chromium = 8
-		steel = 8
+		aluminium = 45
+		chromium = 35
+		steel = 38
 	}
 	history = {
 		set_state_flag = JAP_interior_flag
 		add_dynamic_modifier = { modifier = CHI_tougher_resistance3 }
+		
+		
 		owner = CHI
 		add_core_of = CHI
 		
 		buildings = {
-			infrastructure = 4
+			infrastructure = 2
 			arms_factory = 2
+			industrial_complex = 2
 			air_base = 2
 		}
 		victory_points = {
 			7101 10 
+		}
+		victory_points = {
+			10304 4
 		}
 		1939.1.1 = {
 			buildings = {

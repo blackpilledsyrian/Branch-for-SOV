@@ -6,7 +6,7 @@ state = {
 	
 	state_category = town
 	resources = {
-		steel = 15 # was: 40
+		steel = 60 # was: 40
 	}
 
 	history = {
@@ -17,6 +17,7 @@ state = {
 		buildings = {
 			infrastructure = 3
 			air_base = 15
+			#air_assembly = 1
 	
 		}
 		victory_points = {

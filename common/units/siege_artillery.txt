@@ -17,6 +17,7 @@ sub_units = {
 		}
 		
 		group = support
+		regimental = no
 		
 		categories = {
 			category_support_battalions
@@ -45,7 +46,7 @@ sub_units = {
 		supply_consumption = 0.18
 		supply_consumption_factor = 0.1
 		
-		maximum_speed = -0.66
+		maximum_speed = -0.62
 
 		# Support nerfs to combat abilities
 		defense = -0.19

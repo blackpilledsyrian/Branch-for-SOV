@@ -1,6 +1,6 @@
 guiTypes = {
-	@doctrine_track_width = 224 # Includes margin of 30 px to each side, so actual content is 360px
-	@doctrine_track_height = 854
+	@doctrine_track_width = 280 # Includes margin of 30 px to each side, so actual content is 360px
+	@doctrine_track_height = 230
 
 	containerWindowType = {
 		name = "country_doctrine_view"
@@ -220,7 +220,7 @@ guiTypes = {
 
 		iconType = {
 			name = "doctrine_icon"
-			position = { x = -908 y = 0 }
+			position = { x = 10 y = 4 }
 			quadTextureSprite = "GFX_mobile_warfare_medium"
 			alwaystransparent = "yes"
 		}
@@ -288,23 +288,8 @@ guiTypes = {
 	containerWindowType = {
 		name = "reward_item"
 		size = { width = 72 height = 130 }
-		position = { x=0 y=0}
-
-		iconType = {
-			name = "progress_line"
-			spriteType = "GFX_techtree_line_down_currently_researching"
-			orientation = center_up
-			position = {x=-17 y=0}
-		}
-
-		iconType = {
-			name = "progress_fill"
-			spriteType = "GFX_mastery_progress_fill"
-			orientation = center_up
-			position = {x=-17 y=0}
-			frame = 0
-		}
-		
+		position = { x=60 y=0}
+	
 		positionType = {
 			name = mastery_text_right
 			position = { x = 14 y = 68 }
@@ -391,6 +376,20 @@ guiTypes = {
 			fixedsize = yes
 			format = center
 		}
+		iconType = {
+			name = "progress_line"
+			spriteType = "GFX_blank" # MFU: hide the green "currently researching" highlight (the green half-circle on 1.19) - was GFX_techtree_line_down_currently_researching
+			orientation = center_up
+			position = {x=-17 y= 25}
+		}
+
+		iconType = {
+			name = "progress_fill"
+			spriteType = "GFX_mastery_progress_fill"
+			orientation = center_up
+			position = {x=-17 y=23}
+			frame = 0
+		}
 	}
 
 	containerWindowType = {
@@ -399,7 +398,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "content"
-			position = { x = 20 y = -60 }
+			position = { x = -75 y = -90 }
 			size = { width=-20 height=100%% }
 						
 			containerWindowType = {
@@ -425,7 +424,7 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "track_name"
-				position = { x = -130 y = 24 }
+				position = { x = -70 y = 82 }
 				maxWidth = 260
 				maxHeight = 52
 				orientation = center_up
@@ -445,17 +444,12 @@ guiTypes = {
 				smooth_scrolling = yes
 				drag_scroll = { left }
 				
-				background = {
-					name = "scroll_dummy_background" # Without this, scrollbar won't appear
-					spriteType ="GFX_tiled_window_transparent"
-				}
-
 				gridBoxType = {
 					name = "rewards_grid"
 					size = { width = 100%% height = 100%% }
-					position = { x = -36 y = 0 }
+					position = { x = -36 y = -25 }
 					orientation = center_up
-					slotsize = { width = 72 height = 88 }
+					slotsize = { width = 72 height = 64 }
 					max_slots_horizontal = 1
 					format = "UPPER_LEFT"
 				}
@@ -470,7 +464,7 @@ guiTypes = {
 								
 				containerWindowType = {
 					name = "bonus_container"
-					position = { x = -195 y = -2 }
+					position = { x = -173 y = 64 }
 					orientation = upper_right
 
 					iconType = {
@@ -490,7 +484,7 @@ guiTypes = {
 
 				iconType = {
 					name = "sub_doctrine_icon"
-					position = { x = -31 y = -33 }
+					position = { x = -81 y = 9 }
 					quadTextureSprite = "GFX_mobile_warfare_medium"
 					alwaystransparent = "yes"
 					orientation = center_up
@@ -500,7 +494,7 @@ guiTypes = {
 					name = "sub_doctrine_name"
 					text = "Sub Doctrine"
 					orientation = center
-					position = { x=-100 y=-15}
+					position = { x=-30 y=-18}
 					font = "hoi_16mbs"
 					maxWidth = 200
 					maxHeight = 30
@@ -520,7 +514,7 @@ guiTypes = {
 				
 				instantTextBoxType = {
 					name = "bonus_text"
-					position = { x = -196 y = -2 }
+					position = { x = -179 y = 65 }
 					orientation = upper_right
 					textureFile = ""
 					font = "hoi_16mbs"
@@ -540,12 +534,12 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "mastery_text_container"
-				position = { x = 125 y = 96 }
+				position = { x = 288 y = 139 }
 
 				iconType = {
 					name = "mastery_text_bg"
 					position = { x = 0 y = 0 }
-					spriteType = "GFX_mastery_amount_frame_big"
+					spriteType = "GFX_blank"
 					frame = 0
 				}
 

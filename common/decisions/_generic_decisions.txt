@@ -79,7 +79,6 @@ political_actions = {
 		
 		complete_effect = {
 			add_war_support = 0.05
-			army_experience = 50
 		}
 		
 		ai_will_do = {
@@ -151,6 +150,10 @@ political_actions = {
 				tag = CHI
 				date > 1937.4.1
 			}
+			modifier = {
+				factor = 0
+				tag = SPN
+			}
 		}
 	}
 	Increased_luxuries2 = { #Massive Propaganda Investment
@@ -213,6 +216,10 @@ political_actions = {
 			modifier = {
 				factor = 0
 				tag = SPR
+			}
+			modifier = {
+				factor = 0
+				tag = SPN
 			}
 			modifier = {
 				add = 5
@@ -283,6 +290,10 @@ political_actions = {
 			modifier = {
 				factor = 0
 				tag = SPR
+			}
+			modifier = {
+				factor = 0
+				tag = SPN
 			}
 			modifier = {
 				add = 5
@@ -356,6 +367,10 @@ political_actions = {
 				tag = SPR
 			}
 			modifier = {
+				factor = 0
+				tag = SPN
+			}
+			modifier = {
 				add = 5
 				factor = 2
 				tag = CHI
@@ -423,6 +438,10 @@ political_actions = {
 				tag = SPR
 			}
 			modifier = {
+				factor = 0
+				tag = SPN
+			}
+			modifier = {
 				add = 5
 				factor = 2
 				tag = CHI
@@ -485,6 +504,10 @@ political_actions = {
 			modifier = {
 				factor = 0
 				tag = SPR
+			}
+			modifier = {
+				factor = 0
+				tag = SPN
 			}
 			modifier = {
 				factor = 0
@@ -825,6 +848,10 @@ economy_decisions = {
 				add = 1
 				has_stability < 0.4
 			}
+			modifier = {
+				factor = 0
+				tag = SPN
+			}
 		}
 	}
 
@@ -909,44 +936,14 @@ economy_decisions = {
 				tag = CHI
 				date > 1939.1.1
 			}
+			modifier = {
+				factor = 0
+				tag = SPN
+			}
 		}
 	}
 
-	convert_industrial_complexes = {
-
-		icon = generic_construction
-
-		available = {
-			has_stability > 0.2
-			
-		}
-
-		visible = {
-			always = yes
-
-		}
-
-		fire_only_once = yes
-
-		modifier = {
-			conversion_cost_mil_to_civ_factor = -0.2
-			industrial_capacity_factory = -0.1
-
-		}
-
-		days_remove = 120
-
-		cost = 25
-
-		complete_effect = {
-
-		}
-
-		ai_will_do = {
-			base = 0
-		}
-	}
-
+	
 	convert_military_complexes = {
 
 		icon = generic_construction
@@ -1326,6 +1323,14 @@ operations = {
 				add = 5
 				tag = ENG
 				date > 1937.5.1
+			}
+			modifier = {
+				factor = 0
+				tag = SPN
+			}
+			modifier = {
+				factor = 0
+				tag = SPR
 			}
 		}
 	}
@@ -1790,6 +1795,7 @@ war_measures = {
 				has_idea = GER_war_economy
 				has_idea = tot_economic_mobilisation
 				has_idea = AST_war_economy
+				has_idea = SPR_war_economy
 			}
 			OR = {
 				AND = {
@@ -1843,6 +1849,45 @@ war_measures = {
 			}
 		}
 	}
+
+
+	
+	navy_xp_to_mastery = {
+		icon = generic_prepare_civil_war
+		
+		available = {
+			
+		}
+		
+		visible = {
+		
+		}
+		
+		custom_cost_trigger = {
+			has_navy_experience > 100
+		}
+		
+		custom_cost_text = navy_xp_more_than_100
+		
+		days_remove = 30
+		days_re_enable = 120
+		
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+		  add_mastery = {
+				amount = 60
+				folder = naval
+			
+			}
+		    hidden_effect = {
+				navy_experience = -100
+			}
+		}
+		
+	}
+
+
 
 	war_bonds_cancel = {
 		icon = generic_industry
@@ -1983,6 +2028,10 @@ economy_decisions = {
 			modifier = {
 				factor = 10
 				any_owned_state = { free_building_slots = { building = industrial_complex size < 1 include_locked = no } }
+			}
+			modifier = {
+				factor = 0
+				tag = SPN
 			}
 		}
 	}

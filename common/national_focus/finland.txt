@@ -471,23 +471,23 @@ focus_tree = {
 		completion_reward = {
 			add_resource = {
 				type = steel
-				amount = 10
+				amount = 30
 				state = 148
 			}
 				add_resource = {
 				type = chromium
-				amount = 8
+				amount = 24
 				state = 148
 			}
 				add_resource = {
 				type = tungsten
-				amount = 7
+				amount = 21
 				state = 722
 			}
 			
 				add_resource = {
 				type = steel
-				amount = 5
+				amount = 15
 				state = 722
 			}
 			
@@ -779,7 +779,7 @@ focus_tree = {
 			add_tech_bonus = {
 				bonus = 0.5
 				uses = 1
-				category = artillery
+				category = cat_artillery
 			}
 		}
 	}
@@ -798,7 +798,7 @@ focus_tree = {
 				ahead_reduction = 0.5
 				uses = 2
 				category = infantry_weapons
-				category = artillery
+				category = cat_artillery
 			}
 		}
 	}
@@ -1475,52 +1475,14 @@ focus_tree = {
 		will_lead_to_war_with = SOV
 
 		completion_reward = { 
-			add_ideas = continuation_war_idea
+			add_timed_idea = {
+				idea = continuation_war_idea
+				days = 500
+			}
+	
 			country_event = { id = finland.26 }
 		}
 	}  	
 	
-	focus = {
-		id = FIN_push_forwards
-		icon = GFX_focus_generic_air_defense
-		prerequisite = { focus = FIN_continuation_war }
-		mutually_exclusive = { focus = FIN_reclaim_land }
-		x = 10
-		y = 11
-		cost = 10
-		ai_will_do = {
-			factor = 0
-		}	
-		available = {	111 = {	is_owned_by = FIN }	}
-
-
-		completion_reward = { 
-	  
-			swap_ideas = { 
-				remove_idea = continuation_war_idea
-				add_idea = continuation_war_idea_push
-			}
-		}	
-	}
-	focus = {
-		id = FIN_reclaim_land
-		icon = GFX_focus_generic_coastal_fort
-		prerequisite = { focus = FIN_continuation_war }
-		mutually_exclusive = { focus = FIN_push_forwards }
-		x = 12
-		y = 11
-		cost = 10
-		ai_will_do = {
-			factor = 10
-		}	
-		available = {	111 = {	is_owned_by = FIN }	}
-
-
-		completion_reward = {		
-			swap_ideas = { 
-				remove_idea = continuation_war_idea
-				add_idea = continuation_war_idea_hold
-			}
-		}
-	}
+	
 }	  

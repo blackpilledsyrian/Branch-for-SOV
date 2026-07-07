@@ -61,31 +61,6 @@
 #	}
 #}
 
-
-no_garrison = {
-	icon = 1
-	
-	
-
-	sound_effect = "Martial_Law_Interface_No_Garrison"
-	
-	state_modifier = {
-		resistance_target = 0.4
-		no_compliance_gain = 1
-		required_garrison_factor = -3
-	}
-	
-	suppressed_state_modifier = {
-		#no_compliance_gain = 1
-		required_garrison_factor = -1
-		resistance_target = 0.4
-	}
-	
-	ai_will_do = {
-		base = 0
-	}
-}
-
 autonomous_occupation = {
 	icon = 2
 	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
@@ -98,7 +73,6 @@ autonomous_occupation = {
 		}
 		has_government = democratic #? on design
 	}
-	
 	
 	state_modifier = {
 		compliance_gain 				= 0.02
@@ -693,6 +667,51 @@ bul_military_governor_occupation = {
 		modifier = {
 			check_variable = { resistance_target_without_law > 0.55 } 						
 			add = 400
+		}
+	}
+}
+
+colonial_spr_police_improved = {
+	icon = 13
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	fallback_law = colonial_police_improved
+
+	visible = {
+		original_tag = SPR
+		has_completed_focus = SPA_law_of_the_colonisation_of_large_areas
+		FROM = { capital_scope = { is_on_continent = africa } }
+	}
+
+	state_modifier = {
+		resistance_target 				= -0.35
+		compliance_gain 				= 0.015
+		required_garrison_factor 		= -0.35
+		resistance_damage_to_garrison	= -0.45
+		local_factories 				= 0.25
+		local_resources 				= 0.25
+	}
+
+
+	ai_will_do = {
+		base = 250
+		modifier = {
+			check_variable  = { resistance_target_without_law > 0.3}
+			add = 200
+		}
+
+
+		modifier = {
+			check_variable  = { resistance_target_without_law > 0.44}
+
+			set_temp_variable = { requirement_limit = 0.35 }
+			if = {
+				limit = { occupation_law = local_police_force_garrison }
+				set_temp_variable = { requirement_limit = 0.55 }
+			}
+			check_variable = { garrison_min_support_ratio < requirement_limit }
+
+			add = 350
 		}
 	}
 }

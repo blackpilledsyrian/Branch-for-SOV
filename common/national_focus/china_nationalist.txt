@@ -82,12 +82,10 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 100
-		
 			
 			
+				
 			
-			
-		
 			
 		}
 	}
@@ -312,7 +310,7 @@ focus_tree = {
 			custom_effect_tooltip = CHI_modify_industry_spriti_intro
 			add_to_variable = { 
 				var = CHI_consumer_goods_expected_value_var 
-				value = -0.03
+				value = -0.025
 				tooltip = consumer_goods_tooltip
 			}
 		}
@@ -384,7 +382,7 @@ focus_tree = {
 			custom_effect_tooltip = CHI_modify_industry_spriti_intro
 			add_to_variable = { 
 				var = CHI_consumer_goods_expected_value_var 
-				value = -0.03
+				value = -0.025
 				tooltip = consumer_goods_tooltip
 			}
 			
@@ -421,7 +419,7 @@ focus_tree = {
 			custom_effect_tooltip = CHI_modify_industry_spriti_intro
 			add_to_variable = { 
 				var = CHI_production_speed_buildings_factor_var 
-				value = 0.15
+				value = 0.1
 				tooltip = buildings_build_speed_factor_tooltip
 			}
 			
@@ -742,7 +740,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -789,7 +787,7 @@ focus_tree = {
 			custom_effect_tooltip = CHI_modify_industry_spriti_intro
 			add_to_variable = { 
 				var = CHI_consumer_goods_expected_value_var 
-				value = -0.05
+				value = -0.04
 				tooltip = consumer_goods_tooltip
 			}
 			
@@ -908,6 +906,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			
 			620 = {
 				add_building_construction  = {
 					type = industrial_complex
@@ -1084,11 +1083,11 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			custom_effect_tooltip = CHI_reduces_inflation_twice_tt
-			hidden_effect = {
-				CHI_hyper_inflation_level_down = yes
-				CHI_hyper_inflation_level_down = yes
-			}
+			#custom_effect_tooltip = CHI_reduces_inflation_twice_tt
+			#hidden_effect = {
+				#CHI_hyper_inflation_level_down = yes
+				#CHI_hyper_inflation_level_down = yes
+			#}
 			
 			if = {
 				limit = {
@@ -1443,9 +1442,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_timed_idea = {
-				idea = CHI_build_railways
-				days = 90
+			every_state = {
+				limit = {
+					is_core_of = CHI 
+					is_controlled_by = CHI
+				}
+				add_dynamic_modifier = {
+					modifier = CHI_build_railways_in_china
+					days = 90
+				}
 			}
 			
 		}
@@ -1864,9 +1869,15 @@ focus_tree = {
 
 
 		completion_reward = {
-			add_timed_idea = {
-				idea = CHI_build_railways
-				days = 90
+			every_state = {
+				limit = {
+					is_core_of = CHI 
+					is_controlled_by = CHI
+				}
+				add_dynamic_modifier = {
+					modifier = CHI_build_railways_in_china
+					days = 90
+				}
 			}
 			
 		}
@@ -1970,17 +1981,18 @@ focus = {
 						artillery_brigade = { x = 2 y = 3 }
 						artillery_brigade = { x = 3 y = 0 }
 						artillery_brigade = { x = 3 y = 1 }
-						anti_air = { x = 3 y = 2 }
+						field_gun_brigade = { x = 3 y = 2 }
 
 					
+					}
+					regimental_support = {
+						anti_air = { x = 0 y = 0 }
 					}
 					support = {
 						artillery = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
-						anti_air_company = { x = 0 y = 2 }
 						field_hospital = { x = 1 y = 0 }
-						pack_artillery = { x = 1 y = 1 }
-						engineer = { x = 1 y = 2 }
+						engineer = { x = 1 y = 1 }
 					}
 
 					priority = 2 
@@ -2141,11 +2153,9 @@ focus = {
 						artillery = { x = 0 y = 0 }
 						recon_ac = { x = 0 y = 1 }
 						mobile_engineer = { x = 0 y = 2 }
-						anti_tank = { x = 0 y = 3 }
 						maintenance_company = { x = 1 y = 0 }
 						logistics_company_mot = { x = 1 y = 1 }
 						anti_air_heavy_support = { x = 1 y = 2 }
-						signal_company = { x = 1 y = 3 }
 					}
 					priority = 2
 				}
@@ -2254,14 +2264,14 @@ focus = {
 			
 			random_state = {
 				prioritize = {
-					751
+					605
 				}
 				limit = {
-					industrial_complex > 1
+					industrial_complex > 0
 					is_controlled_by = CHI 
 				}
 				
-				remove_building = { type = industrial_complex level = 2 }
+				remove_building = { type = industrial_complex level = 1 }
 			}
 			
 			SOV = {
@@ -2347,7 +2357,7 @@ focus = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -2424,7 +2434,7 @@ focus = {
 		completion_reward = {
 			
 			activate_mission_tooltip = CHI_overseas_imports_decision
-			CHI_hyper_inflation_level_up = yes
+			#CHI_hyper_inflation_level_up = yes
 			if = {
 				limit = {
 					NOT = {
@@ -2503,7 +2513,7 @@ focus = {
 				name = CHI_sino_american_cooperative_organization
 				bonus = 1
 				uses = 1
-				category = artillery
+				category = cat_artillery
 			}
 			add_tech_bonus = {
 				name = CHI_sino_american_cooperative_organization
@@ -2566,7 +2576,7 @@ focus = {
 	}
 	focus = {
 		id = CHI_chennault
-		icon = GFX_focus_generic_military_mission
+		icon =  GFX_focus_generic_military_academy
 		prerequisite = { focus = CHI_approach_the_allies }
 		x = 1
 		y = 1
@@ -2741,7 +2751,7 @@ focus = {
 	
 	focus = {
 		id = CHI_appoint_stilwell
-		icon = GFX_USA_war_powers_act
+		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = CHI_chennault }
 		x = -1
 		y = 1
@@ -2949,7 +2959,16 @@ focus = {
 		}
 
 		available = {
-		#1942? from asam to yunan instead of burma 
+			USA = {
+				has_completed_focus = USA_support_china
+			}
+			RAJ = {
+				has_capitulated = no 
+			} 
+			RAJ = {
+				controls_state = 432
+				controls_state = 823
+			}
 		}
 
 		bypass = {
@@ -2962,8 +2981,9 @@ focus = {
 
 		completion_reward = {
 			USA = {
-				unlock_decision_tooltip = USA_build_ledo_road
+				activate_decision = USA_build_ledo_road
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = CHI_ledo_road_tt
 		}
 	}
@@ -3007,7 +3027,7 @@ focus = {
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -3160,7 +3180,7 @@ focus = {
 			
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -3265,12 +3285,12 @@ focus = {
 			custom_effect_tooltip = CHI_modify_army_intro
 			add_to_variable = { 
 				var = CHI_land_doctrine_cost_factor_var 
-				value = -0.1
+				value = -0.15
 				tooltip = land_doc_tp
 			}
 			add_to_variable = { 
 				var = CHI_air_doctrine_cost_factor_var 
-				value = -0.1
+				value = -0.15
 				tooltip = air_doc_tp
 			}
 			add_to_variable = { 
@@ -3293,11 +3313,7 @@ focus = {
 				value = -0.1
 				tooltip = air_spirit_cost_tt
 			}
-			add_to_variable = { 
-				var = CHI_experience_gain_army_factor_var 
-				value = 0.05
-				tooltip = army_xp_tp
-			}
+			
 			add_to_variable = { 
 				var = CHI_land_mastery_gain_factor_var 
 				value = 0.05
@@ -3339,9 +3355,53 @@ focus = {
 
 		completion_reward = {
 			CHI_hyper_inflation_level_up = yes
-			add_timed_idea = {
-				idea = CHI_new_lines
-				days = 180
+			random_owned_controlled_state = {
+				prioritize = {
+					754
+				}
+			
+					add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+						type = tank_assembly
+						level = 2
+						instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = {
+					755
+				}
+			
+					add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+						type = air_assembly
+						level = 1
+						instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = {
+					604
+				}
+			
+					add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+						type = tank_assembly
+						level = 1
+						instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = {
+					752
+				}
+			
+					add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+						type = air_assembly
+						level = 1
+						instant_build = yes 
+				}
 			}
 		}
 	}
@@ -3381,7 +3441,7 @@ focus = {
 				name = CHI_artillery_modernization
 				bonus = 1.0
 				uses = 1
-				category = artillery
+				category = cat_artillery
 			}
 			add_equipment_to_stockpile = { type = artillery_equipment amount = 600 producer = CHI }
 			
@@ -4031,12 +4091,12 @@ focus = {
 		completion_reward = {
 			add_to_variable = { 
 				var = CHI_land_doctrine_cost_factor_var 
-				value = -0.1
+				value = -0.15
 				tooltip = land_doc_tp
 			}
 			add_to_variable = { 
 				var = CHI_air_doctrine_cost_factor_var 
-				value = -0.1
+				value = -0.15
 				tooltip = air_doc_tp
 			}
 			add_to_variable = { 
@@ -4059,14 +4119,10 @@ focus = {
 				value = -0.1
 				tooltip = air_spirit_cost_tt
 			}
-			add_to_variable = { 
-				var = CHI_experience_gain_army_factor_var 
-				value = 0.05
-				tooltip = army_xp_tp
-			}
+			
 			add_to_variable = { 
 				var = CHI_land_mastery_gain_factor_var 
-				value = 0.05
+				value = 0.1
 				tooltip = land_mastery_tp
 			}
 		}
@@ -4121,7 +4177,7 @@ focus = {
 		y = 1
 		relative_position_id = CHI_military_affairs_commission
 
-		cost = 4.3
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 1
@@ -4159,12 +4215,12 @@ focus = {
 							id = 996
 							id = 10101
 						}
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 					set_building_level = {
 						type = anti_air_building
-						level = 2
+						level = 3
 						instant_build = yes
 					}
 					
@@ -4182,12 +4238,12 @@ focus = {
 							id = 7014
 							
 						}
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 					set_building_level = {
 						type = anti_air_building
-						level = 2
+						level = 3
 						instant_build = yes
 					}
 					
@@ -4204,7 +4260,7 @@ focus = {
 							id = 4105
 							
 						}
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 					
@@ -4222,7 +4278,7 @@ focus = {
 		y = 1
 		relative_position_id = CHI_military_affairs_commission
 
-		cost = 4.3
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 1
@@ -4255,12 +4311,12 @@ focus = {
 							id = 7656
 							id = 7129
 						}
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 					set_building_level = {
 						type = anti_air_building
-						level = 2
+						level = 3
 						instant_build = yes
 					}
 				}
@@ -4297,12 +4353,12 @@ focus = {
 							id = 10102
 							id = 4089
 						}
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 					set_building_level = {
 						type = anti_air_building
-						level = 2
+						level = 3
 						instant_build = yes
 					}
 				}
@@ -4319,7 +4375,7 @@ focus = {
 		y = 1
 		relative_position_id = CHI_the_wufu_line
 
-		cost = 5
+		cost = 2.9
 		ai_will_do = {
 			factor = 1
 		}
@@ -4357,17 +4413,18 @@ focus = {
 						province = {
 							id = 1036
 							id = 4619
+							id = 13405
 							id = 12467
 							id = 13403
 							id = 13402
 							id = 13401
 						}
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 					set_building_level = {
 						type = anti_air_building
-						level = 2
+						level = 3
 						instant_build = yes
 					}
 				}
@@ -4381,7 +4438,7 @@ focus = {
 							id = 13615
 							id = 1612
 						}
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 					
@@ -4399,13 +4456,16 @@ focus = {
 							id = 7502
 							id = 13411
 							id = 13412
+
+							id = 13626
+							id = 12350
 						}
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 					set_building_level = {
 						type = anti_air_building
-						level = 2
+						level = 3
 						instant_build = yes
 					}
 				}
@@ -4420,12 +4480,12 @@ focus = {
 							id = 12086
 							id = 13414
 						}
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 					set_building_level = {
 						type = anti_air_building
-						level = 2
+						level = 3
 						instant_build = yes
 					}
 				}
@@ -4439,7 +4499,7 @@ focus = {
 							id = 1628
 							
 						}
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 				
@@ -4456,7 +4516,7 @@ focus = {
 		y = 1
 		relative_position_id = CHI_the_huoshan_line
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 1
@@ -4570,7 +4630,7 @@ focus = {
 					}
 					set_building_level = {
 						type = anti_air_building
-						level = 2
+						level = 3
 						instant_build = yes
 					}
 				}
@@ -4715,19 +4775,20 @@ focus = {
 					artillery_brigade = { x = 2 y = 3 }
 					artillery_brigade = { x = 3 y = 0 }
 					artillery_brigade = { x = 3 y = 1 }
-					anti_air = { x = 3 y = 2 }
+					field_gun_brigade = { x = 3 y = 2 }
 
 				
+				}
+				regimental_support = {
+					anti_air = { x = 0 y = 0 }
 				}
 				support = {
 					artillery = { x = 0 y = 0 }
 					recon = { x = 0 y = 1 }
-					anti_air_company = { x = 0 y = 2 }
-					military_police = { x = 0 y = 3 }
+					military_police = { x = 0 y = 2 }
 					field_hospital = { x = 1 y = 0 }
-					pack_artillery = { x = 1 y = 1 }
-					engineer = { x = 1 y = 2 }
-					artillery_heavy_support = { x = 1 y = 3 }
+					engineer = { x = 1 y = 1 }
+					artillery_heavy_support = { x = 1 y = 2 }
 				}
 
 				priority = 2 
@@ -4869,12 +4930,15 @@ focus = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_stability = -0.15
+			add_stability = -0.1
 			custom_effect_tooltip = CHI_flood_the_country_tt
-			set_country_flag = CHI_flood_happened_flag
-			607 = {	
-					set_demilitarized_zone = yes
+			
+			hidden_effect = {
+				country_event = { id = china.222 days = 3 } 
+				news_event = { id = news.409 } 	
 			}
+
+
 			hidden_effect = {
 				607 = {
 				damage_building = {
@@ -4958,7 +5022,11 @@ focus = {
 					limit = {
 						CHI = {
 							NOT = {
-								has_tech = mass_assault
+								OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 							}
 						}
 					}
@@ -4990,7 +5058,6 @@ focus = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							anti_air_company = { x = 0 y = 2 }
 						}	
 						
 						priority = 1
@@ -5018,17 +5085,18 @@ focus = {
 							artillery_brigade = { x = 2 y = 3 }
 							artillery_brigade = { x = 3 y = 0 }
 							artillery_brigade = { x = 3 y = 1 }
-							anti_air = { x = 3 y = 2 }
+							field_gun_brigade = { x = 3 y = 2 }
 
 						
+						}
+						regimental_support = {
+							anti_air = { x = 0 y = 0 }
 						}
 						support = {
 							artillery = { x = 0 y = 0 }
 							recon = { x = 0 y = 1 }
-							anti_air_company = { x = 0 y = 2 }
 							field_hospital = { x = 1 y = 0 }
-							pack_artillery = { x = 1 y = 1 }
-							engineer = { x = 1 y = 2 }
+							engineer = { x = 1 y = 1 }
 						}
 
 						priority = 2 
@@ -5037,7 +5105,11 @@ focus = {
 				if = {
 					limit = {
 						CHI = {
-							has_tech = mass_assault
+						OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 						}
 					}
 					division_template = {
@@ -5072,7 +5144,6 @@ focus = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							anti_air_company = { x = 0 y = 2 }
 						}	
 						
 						priority = 1
@@ -5100,7 +5171,7 @@ focus = {
 							artillery_brigade = { x = 2 y = 3 }
 							artillery_brigade = { x = 3 y = 0 }
 							artillery_brigade = { x = 3 y = 1 }
-							anti_air = { x = 3 y = 2 }
+							field_gun_brigade = { x = 3 y = 2 }
 
 							infantry = { x = 4 y = 0 }
 							infantry = { x = 4 y = 1 }
@@ -5108,13 +5179,14 @@ focus = {
 
 						
 						}
+						regimental_support = {
+							anti_air = { x = 0 y = 0 }
+						}
 						support = {
 							artillery = { x = 0 y = 0 }
 							recon = { x = 0 y = 1 }
-							anti_air_company = { x = 0 y = 2 }
 							field_hospital = { x = 1 y = 0 }
-							pack_artillery = { x = 1 y = 1 }
-							engineer = { x = 1 y = 2 }
+							engineer = { x = 1 y = 1 }
 						}
 
 						priority = 2 
@@ -5363,7 +5435,11 @@ focus = {
 					limit = {
 						CHI = {
 							NOT = {
-								has_tech = mass_assault
+								OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 							}
 						}
 					}
@@ -5395,7 +5471,6 @@ focus = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							anti_air_company = { x = 0 y = 2 }
 						}	
 						
 						priority = 1
@@ -5423,17 +5498,18 @@ focus = {
 							artillery_brigade = { x = 2 y = 3 }
 							artillery_brigade = { x = 3 y = 0 }
 							artillery_brigade = { x = 3 y = 1 }
-							anti_air = { x = 3 y = 2 }
+							field_gun_brigade = { x = 3 y = 2 }
 
 						
+						}
+						regimental_support = {
+							anti_air = { x = 0 y = 0 }
 						}
 						support = {
 							artillery = { x = 0 y = 0 }
 							recon = { x = 0 y = 1 }
-							anti_air_company = { x = 0 y = 2 }
 							field_hospital = { x = 1 y = 0 }
-							pack_artillery = { x = 1 y = 1 }
-							engineer = { x = 1 y = 2 }
+							engineer = { x = 1 y = 1 }
 						}
 
 						priority = 2 
@@ -5442,7 +5518,11 @@ focus = {
 				if = {
 					limit = {
 						CHI = {
-							has_tech = mass_assault
+							OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 						}
 					}
 					division_template = {
@@ -5477,7 +5557,6 @@ focus = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							anti_air_company = { x = 0 y = 2 }
 						}	
 						
 						priority = 1
@@ -5505,7 +5584,7 @@ focus = {
 							artillery_brigade = { x = 2 y = 3 }
 							artillery_brigade = { x = 3 y = 0 }
 							artillery_brigade = { x = 3 y = 1 }
-							anti_air = { x = 3 y = 2 }
+							field_gun_brigade = { x = 3 y = 2 }
 
 							infantry = { x = 4 y = 0 }
 							infantry = { x = 4 y = 1 }
@@ -5513,13 +5592,14 @@ focus = {
 
 						
 						}
+						regimental_support = {
+							anti_air = { x = 0 y = 0 }
+						}
 						support = {
 							artillery = { x = 0 y = 0 }
 							recon = { x = 0 y = 1 }
-							anti_air_company = { x = 0 y = 2 }
 							field_hospital = { x = 1 y = 0 }
-							pack_artillery = { x = 1 y = 1 }
-							engineer = { x = 1 y = 2 }
+							engineer = { x = 1 y = 1 }
 						}
 
 						priority = 2 

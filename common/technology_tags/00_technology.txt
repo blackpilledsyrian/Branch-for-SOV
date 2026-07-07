@@ -2,6 +2,7 @@
 # If adding new technology, make sure they are uniquely named.
 
 technology_categories = {
+	inf_artillery
 	pykrete_tech
 	all_air
 	air_upgrade
@@ -18,7 +19,7 @@ technology_categories = {
 	cat_medium_armor
 	cat_stug
 	cat_heavy_armor
-	artillery
+	cat_artillery
 	cat_anti_tank
 	naval_air
 	infantry_weapons
@@ -181,6 +182,7 @@ technology_folders = {
 					original_tag = BUL
 					original_tag = MON
 					original_tag = POL
+					original_tag = HOL
 				}
 				has_dlc = "No Step Back"
 			}		
@@ -323,7 +325,12 @@ technology_folders = {
 	upgrade_folder = {
 		ledger = army
 		available = {
-			has_dlc = "No Step Back"
+			AND = {
+				has_dlc = "No Step Back"
+				NOT = {
+					original_tag = HOL
+				}
+			}
 		}
 	}	
 	armour_folder = {
@@ -344,6 +351,7 @@ technology_folders = {
 					original_tag = JAP
 					original_tag = ITA
 					original_tag = HUN
+					original_tag = HOL
 					original_tag = ROM
 					original_tag = SPR
 					original_tag = MAN
@@ -493,6 +501,7 @@ technology_folders = {
 			original_tag = MEX
 			original_tag = EFR
 			original_tag = POL
+			original_tag = SPR
 		  }
 		}
 	}
@@ -533,6 +542,7 @@ technology_folders = {
 		original_tag = GER
 		original_tag = SLO
 		original_tag = EFR
+		original_tag = SPR
 		}
 	  }
 	}

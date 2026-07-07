@@ -154,15 +154,4 @@
  ITA_power_balance_lost_core_4:0 "$ITA_power_balance_lost_core_1$"
  ITA_power_balance_lost_core_5:0 "$ITA_power_balance_lost_core_1$"
 
-  ####### SOVIET BOP #######
- SOV_old_bolsheviks_side:0 "Old Bolsheviks"
- SOV_stalin_side:0 "Stalinist Consolidation"
- SOV_centre_range:0 "Struggle for power"
- SOV_old_bolsheviks_low_control_range:0 "Bolshevik Influence"
- SOV_old_bolsheviks_medium_control_range:0 "Bolsheviks on the Rise"
- SOV_old_bolsheviks_high_control_range:0 "Revival of Soviet Institutions"
- SOV_old_bolsheviks_total_control_range:0 "Red Army Ascendant"
- SOV_stalin_low_control_range:0 "Loyalists in Power"
- SOV_stalin_medium_control_range:0 "Stalin's Grip Tightens'"
- SOV_stalin_high_control_range:0 "Stalinist Control of Institutions"
- SOV_stalin_total_control_range:0 "The Cult of Stalin"
+ 

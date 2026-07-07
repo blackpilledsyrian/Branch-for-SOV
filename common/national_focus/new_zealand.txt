@@ -442,7 +442,7 @@ focus = {
 			add_stability = -0.1
 			add_resource = {
 								type = rubber
-								amount = 10
+								amount = 30
 								state = 723
 							}
 			
@@ -884,7 +884,7 @@ focus = {
 						284 = {
 							add_resource = {
 								type = steel
-								amount = 16
+								amount = 48
 							}
 						}
 					
@@ -914,7 +914,7 @@ focus = {
 						284 = {
 							add_resource = {
 								type = tungsten
-								amount = 10
+								amount = 30
 							}
 						}
 					
@@ -1077,27 +1077,59 @@ focus = {
 	focus = {
 		id = NZL_sir_ernest_rutherford
 		icon = GFX_focus_research
-		x = 40
+		x = 39
 		y = 5
 		cost = 5
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
 		}
-		prerequisite = { focus = NZL_total_destruction  } prerequisite = { focus = NZL_hawker_investments  }
+		mutually_exclusive = {
+			focus = NZL_employ_whittle
+		}
+		prerequisite = { focus = NZL_spitfire_development } prerequisite = { focus = NZL_total_destruction focus = NZL_hawker_investments }
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			
-						add_tech_bonus = {
-							name = NZL_project_seal
-							bonus = 1
-			
-							uses = 2
-							category = nuclear
-						}
-					
+			add_tech_bonus = {
+				name = NZL_project_seal
+				bonus = 1
+				uses = 1
+				category = nuclear
+			}
+			add_breakthrough_points = {
+				specialization = specialization_nuclear
+				value = 1
+			}
 		}
 	}
 
+	focus = {
+		id = NZL_employ_whittle
+		icon = GFX_goal_generic_build_airforce
+		x = 41
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		mutually_exclusive = {
+			focus = NZL_sir_ernest_rutherford
+		}
+		prerequisite = { focus = NZL_spitfire_development } prerequisite = { focus = NZL_total_destruction focus = NZL_hawker_investments }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 2.5
+				ahead_reduction = 0.5
+				uses = 1
+				technology = eng_jet_fighter_1945
+			}
+
+			add_breakthrough_points = {
+				specialization = specialization_nuclear
+				value = 1
+			}
+		}
+	}
 	#NZ Space Program
 	focus = {
 		id = NZL_nz_space_program
@@ -1140,7 +1172,7 @@ focus = {
 						army_experience = 50
 						add_doctrine_cost_reduction = {
 							name = land_doc_bonus
-							cost_reduction = 0.4
+							cost_reduction = 0.5
 							uses = 1
 							category = land_doctrine
 						}
@@ -1226,14 +1258,21 @@ focus = {
 									include_locked = yes
 								}
 							}
-							add_extra_state_shared_building_slots = 5
+							add_extra_state_shared_building_slots = 6
 							add_building_construction = {
 								type = arms_factory
 								level = 2
 								instant_build = yes
 							}
+				
+								add_building_construction = {
+								type = tank_assembly
+								level = 1
+								instant_build = yes 
+							}
 							set_state_flag = NZL_domestic_arms_industry_AF
 						}
+						
 					
 		}
 	}
@@ -1307,9 +1346,12 @@ focus = {
 
                         	artillery_brigade = { x = 3 y = 0 }
                         	artillery_brigade = { x = 3 y = 1 }
-                        	anti_air = { x = 3 y = 2 }
+                        	field_gun_brigade = { x = 3 y = 2 }
 
                     	}
+                   		regimental_support = {
+                        	anti_air = { x = 0 y = 0 }
+                   		}
 					
                     	support = {
                         	artillery = { x = 0 y = 0 }
@@ -1358,7 +1400,7 @@ focus = {
 							name = NZL_artillery_focus
 							bonus = 0.5
 							uses = 1
-							category = artillery
+							category = cat_artillery
 						}
 					
 			
@@ -1593,7 +1635,7 @@ focus = {
 			add_tech_bonus = {
 			    bonus = 0.5
 			    uses = 2
-			    category = artillery
+			    category = cat_artillery
 			}
 			
 			
@@ -1646,6 +1688,10 @@ focus = {
 			add_to_variable = {
 				NZL_political_power_cost_var = -0.25
 			}
+			add_mastery = {
+				amount = 20
+				folder = land
+			}
 		}
 	}
 
@@ -1664,7 +1710,7 @@ focus = {
 			army_experience = 50
 				add_doctrine_cost_reduction = {
 							name = land_doc_bonus
-							cost_reduction = 0.4
+							cost_reduction = 0.5
 							uses = 1
 							category = land_doctrine
 						}
@@ -1734,9 +1780,12 @@ focus = {
 
                         	artillery_brigade = { x = 4 y = 0 }
                         	artillery_brigade = { x = 4 y = 1 }
-                        	anti_air = { x = 4 y = 2 }
+                        	field_gun_brigade = { x = 4 y = 2 }
 
                     	}
+                   		regimental_support = {
+                        	anti_air = { x = 0 y = 0 }
+                   		}
 					
                     	support = {
                         	artillery = { x = 0 y = 0 }
@@ -1776,13 +1825,13 @@ focus = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
 			add_doctrine_cost_reduction = {
                 name = land_doc_bonus
-                cost_reduction = 0.4
+                cost_reduction = 0.5
                 uses = 2
                 category = special_forces_doctrine
             }
@@ -1884,7 +1933,7 @@ focus = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 							name = land_doc_bonus
-							cost_reduction = 0.4
+							cost_reduction = 0.5
 							uses = 1
 							category = land_doctrine
 						}
@@ -1912,7 +1961,7 @@ focus = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 							name = land_doc_bonus
-							cost_reduction = 0.4
+							cost_reduction = 0.5
 							uses = 1
 							category = land_doctrine
 						}
@@ -1936,14 +1985,14 @@ focus = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 							name = land_doc_bonus
-							cost_reduction = 0.4
+							cost_reduction = 0.5
 							uses = 1
 							category = land_doctrine
 						}
 		add_tech_bonus = {
 		bonus = 0.50
 		uses = 2
-		category = artillery
+		category = cat_artillery
 		}
 		}
 	}
@@ -1968,6 +2017,15 @@ focus = {
 			swap_ideas = {
 				add_idea = NZL_resource_rationing_idea_2
 				remove_idea = NZL_resource_rationing_idea
+			}
+			random_core_state = {
+				
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+				}
 			}
 		}
 	}
@@ -2040,9 +2098,12 @@ focus = {
 	
 								artillery_brigade = { x = 4 y = 0 }
 								artillery_brigade = { x = 4 y = 1 }
-								anti_air = { x = 4 y = 2 }
+								field_gun_brigade = { x = 4 y = 2 }
 	
 							}
+							   regimental_support = {
+								anti_air = { x = 0 y = 0 }
+							   }
 						
 							support = {
 								artillery = { x = 0 y = 0 }
@@ -2096,9 +2157,12 @@ focus = {
 
                         	artillery_brigade = { x = 3 y = 0 }
                         	artillery_brigade = { x = 3 y = 1 }
-                        	anti_air = { x = 3 y = 2 }
+                        	field_gun_brigade = { x = 3 y = 2 }
 
                     	}
+                   		regimental_support = {
+                        	anti_air = { x = 0 y = 0 }
+                   		}
 					
                     	support = {
                         	artillery = { x = 0 y = 0 }
@@ -2594,7 +2658,7 @@ focus = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 							name = land_doc_bonus
-							cost_reduction = 0.4
+							cost_reduction = 0.5
 							uses = 3
 							category = naval_doctrine
 						}
@@ -2623,7 +2687,7 @@ focus = {
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = convoy 
-				amount = 200
+				amount = 50
 				producer = NZL
 			}
 		}
@@ -2637,7 +2701,7 @@ focus = {
 		icon = GFX_goal_generic_air_doctrine
 		x = 40
 		y = 0
-		cost = 5
+		cost = 3
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
 		}
@@ -2656,13 +2720,13 @@ focus = {
 							}
 							add_equipment_to_stockpile = {
 								type = tac_bomber_equipment_1937
-								amount = 100
+								amount = 50
 								producer = ENG
 							}
 							else = {
 								add_equipment_to_stockpile = {
 									type = tac_bomber_equipment_1934
-									amount = 100
+									amount = 50
 									producer = ENG
 								}	
 							}
@@ -2703,7 +2767,7 @@ focus = {
 						}
 						add_doctrine_cost_reduction = {
 							name = land_doc_bonus
-							cost_reduction = 0.4
+							cost_reduction = 0.5
 							uses = 1
 							category = air_doctrine
 						}
@@ -2722,7 +2786,7 @@ focus = {
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
 		}
-		prerequisite = { focus = NZL_learn_from_the_britsh  }
+		prerequisite = { focus = NZL_study_raf_pilots  }
 		completion_reward = {
 			add_tech_bonus = {
 				name = NZL_spitfire_development
@@ -2777,7 +2841,7 @@ focus = {
 			air_experience = 50
 			add_doctrine_cost_reduction = {
 							name = land_doc_bonus
-							cost_reduction = 0.4
+							cost_reduction = 0.5
 							uses = 1
 							category = air_doctrine
 						}
@@ -2900,7 +2964,7 @@ focus = {
 						navy_experience = 75
 						add_doctrine_cost_reduction = {
 							name = land_doc_bonus
-							cost_reduction = 0.4
+							cost_reduction = 0.5
 							uses = 1
 							category = naval_doctrine
 						}

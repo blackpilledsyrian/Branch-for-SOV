@@ -40,9 +40,14 @@ division_template = {
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }	
 		
-		mountain_gun_brigade = { x = 3 y = 0 }	
-		mountain_gun_brigade = { x = 3 y = 1 }
-		mountain_gun_brigade = { x = 3 y = 2 }
+		field_gun_brigade = { x = 3 y = 0 }	
+		field_gun_brigade = { x = 3 y = 1 }
+		field_gun_brigade = { x = 3 y = 2 }
+		}
+		regimental_support = {
+			mountain_gun_brigade = { x = 0 y = 0 }
+			mountain_gun_brigade = { x = 0 y = 1 }
+			mountain_gun_brigade = { x = 0 y = 2 }
 		}
 	support = {
 		artillery = { x = 0 y = 0 }
@@ -659,6 +664,7 @@ instant_effect = {
 		requested_factories = 6
 		progress = 0.20
 		efficiency = 100
+		industrial_manufacturer = mio:POL_fb_lucznik
 	}
 	
 	add_equipment_production = {
@@ -667,6 +673,16 @@ instant_effect = {
 			creator = "POL"
 		}
 		requested_factories = 2
+		progress = 0.20
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = radio_equipment_1
+			creator = "POL"
+		}
+		requested_factories = 1
 		progress = 0.20
 		efficiency = 100
 	}
@@ -680,15 +696,6 @@ instant_effect = {
 		progress = 0.20
 		efficiency = 100
 	}
-	add_equipment_production = {
-		equipment = {
-			type = fighter_equipment_1934
-			creator = "POL"
-		}
-		requested_factories = 1
-		progress = 0.20
-		efficiency = 100
-	}
 	add_equipment_production = {	
 		equipment = {
 			type = heavy_anti_air_equipment_2
@@ -697,6 +704,7 @@ instant_effect = {
 		requested_factories = 1
 		progress = 0.3
 		efficiency = 75
+		industrial_manufacturer = mio:POL_zaklady_przemyslowe
 	}
 	add_equipment_production = {
 		equipment = {
@@ -706,6 +714,7 @@ instant_effect = {
 		requested_factories = 1
 		progress = 0.20
 		efficiency = 100
+		industrial_manufacturer = mio:POL_zaklady_przemyslowe
 	}
 	add_equipment_production = {
 		equipment = {
@@ -715,6 +724,7 @@ instant_effect = {
 		requested_factories = 2
 		progress = 0.20
 		efficiency = 100
+		industrial_manufacturer = mio:POL_polski_fiat
 	}
 	add_equipment_production = {
 		equipment = {

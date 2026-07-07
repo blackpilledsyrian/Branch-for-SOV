@@ -4,6 +4,939 @@
 
 add_namespace = spain
 
+country_event = {
+	id = spain.22t3
+	title = "Terror Attack"
+	desc = spain.22t3.d
+	picture = GFX_report_event_spr_civil_war_faction_defeated
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Savages"
+		
+		effect_tooltip = {
+			add_political_power = -25
+			add_stability = -0.05
+			custom_effect_tooltip = remove_days_from_colapse_2
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = COLAPSE_WILL_HAPPNE_WE_GOONA_DIE
+					days = -100
+				}
+			}
+			custom_effect_tooltip = SPR_dev_plan_3_plus_bad
+  			add_to_variable = { var = SPR_1_dev_plan value = -12 }
+		}
+		set_country_flag = terror_1_spr
+	}
+}
+country_event = {
+	id = spain.22t4
+	title = "Collapsing Infrastructure"
+	desc = spain.22t4.d
+	picture = GFX_report_event_spr_civil_war_faction_defeated
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Incompetence..."
+		effect_tooltip = {
+			add_political_power = -15
+			add_stability = -0.05
+			add_war_support = -0.035
+			custom_effect_tooltip = SPR_dev_plan_1_tree_only_bad
+			add_to_variable = { var = SPR_1_dev_plan value = -3 }
+		}
+			
+	}
+}
+country_event = {
+	id = spain.22t5
+	title = "Fuel Silo Burning"
+	desc = spain.22t5.d
+	picture = GFX_report_event_spr_civil_war_faction_defeated
+
+	is_triggered_only = yes
+
+	option = {
+		name = "...."
+		effect_tooltip = {
+			add_political_power = -15
+			add_stability = -0.025
+			add_war_support = -0.035
+			add_fuel = -150000
+			custom_effect_tooltip = SPR_dev_plan_1_tree_only_bad
+			add_to_variable = { var = SPR_1_dev_plan value = -3 }
+		}
+			
+	}
+}
+country_event = {
+	id = spain.22t6
+	title = "Collapsing Cranes"
+	desc = spain.22t6.d
+	picture = GFX_report_event_spr_civil_war_faction_defeated
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Unfortunate"
+		effect_tooltip = {
+			add_political_power = -15
+			add_stability = -0.025
+			add_war_support = -0.035
+			custom_effect_tooltip = SPR_dev_plan_1_tree_only_bad
+			add_to_variable = { var = SPR_1_dev_plan value = -3 }
+		}
+			
+	}
+}
+
+country_event = {
+	id = spain.22t9
+	title = "The Two Front War"
+	desc = spain.22t9.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war_with = SOV
+		NOT = {
+			has_country_flag = check_sov_ger_war
+		}
+	}
+
+	option = {
+		name = "It's bad"
+		set_country_flag = check_sov_ger_war
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = SPA_begin_the_second_development_plan
+				}
+			}
+			custom_effect_tooltip = remove_days_from_colapse_0_fuck_you
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = COLAPSE_WILL_HAPPNE_WE_GOONA_DIE
+					days = -250
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_completed_focus = SPA_begin_the_second_development_plan
+				NOT = {
+					has_completed_focus = SPA_supercharge_the_War_economy
+					has_completed_focus = SPA_stabilize_the_war_Economy
+				}
+			}
+			custom_effect_tooltip = remove_days_from_colapse_1
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = COLAPSE_WILL_HAPPNE_WE_GOONA_DIE
+					days = -150
+				}
+			}
+			custom_effect_tooltip = SPR_dev_plan_2_plus_bad
+			add_to_variable = { var = SPR_1_dev_plan value = -9 }
+		}
+		if = {
+			limit = {
+				has_completed_focus = SPA_supercharge_the_War_economy
+			}
+			custom_effect_tooltip = remove_days_from_colapse_1
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = COLAPSE_WILL_HAPPNE_WE_GOONA_DIE
+					days = -150
+				}
+			}
+			custom_effect_tooltip = SPR_dev_plan_5_plus_bad
+			add_to_variable = { var = SPR_1_dev_plan value = -25 }
+		}
+		if = {
+			limit = {
+				has_completed_focus = SPA_stabilize_the_war_Economy
+			}
+			custom_effect_tooltip = remove_days_from_colapse_3
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = COLAPSE_WILL_HAPPNE_WE_GOONA_DIE
+					days = -50
+				}
+			}
+			custom_effect_tooltip = SPR_dev_plan_4_plus_bad
+			add_to_variable = { var = SPR_1_dev_plan value = -15 }
+		}
+		
+	}
+}
+
+country_event = {
+	id = spain.203t1
+	title = "New Caudillo Directive"
+	desc = spain.250t1.d
+	picture = GFX_decision_cat_picture_soviet_comecon
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Long Live Spain"
+		hidden_effect = {
+			
+		
+			random_list = {
+				1 = {
+					modifier = {
+						factor = 1
+						SPR = {
+							NOT = {
+								has_country_flag  = mission_flag_blok1_port 
+							}
+						}
+					}
+					modifier = {
+						factor = 0
+						SPR = {
+							has_country_flag  = mission_flag_blok1_port 
+						}
+					}
+					SPR = {
+						activate_mission = SPR_1_dev_year_plan_deep_simple_ports_decision
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 1
+						SPR = {
+							NOT = {
+								has_country_flag  = mission_flag_blok1_air 
+							}
+						}
+					}
+					modifier = {
+						factor = 0
+						SPR = {
+							has_country_flag  = mission_flag_blok1_air
+						}
+					}
+					SPR = {
+						activate_mission = SPR_1_dev_year_plan_air_shield
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 1
+						SPR = {
+							NOT = {
+								has_country_flag  = mission_flag_blok1_research 
+							}
+						}
+					}
+					modifier = {
+						factor = 0
+						SPR = {
+							has_country_flag  = mission_flag_blok1_research 
+						}
+					}
+					SPR = {
+						activate_mission = SPR_1_dev_year_plan_facility_research
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 1
+						SPR = {
+							NOT = {
+								has_country_flag  = mission_flag_blok1_nuke 
+							}
+						}
+					}
+					modifier = {
+						factor = 0
+						SPR = {
+							has_country_flag  = mission_flag_blok1_nuke 
+						}
+					}
+					SPR = {
+						activate_mission = SPR_1_dev_year_plan_facility__nuclear_research
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 1
+						SPR = {
+							NOT = {
+								has_country_flag  = mission_flag_blok1_navy_base 
+							}
+						}
+					}
+					modifier = {
+						factor = 0
+						SPR = {
+							has_country_flag  = mission_flag_blok1_navy_base 
+						}
+					}
+					SPR = {
+						activate_mission = SPR_1_dev_year_plan_naval_bases
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 1
+						SPR = {
+							NOT = {
+								has_country_flag  = mission_flag_blok1_asabely_plantu
+							}
+						}
+					}
+					modifier = {
+						factor = 0
+						SPR = {
+							has_country_flag  = mission_flag_blok1_asabely_plantu
+						}
+					}
+					SPR = {
+						activate_mission = SPR_1_dev_year_plan_asabely_plantu
+					}
+				}
+			}
+			random_list = {
+				2 = {
+
+				}
+				1 = {
+					modifier = {
+						factor = 1
+						SPR = {
+							NOT = {
+								has_country_flag  = mission_flag_blok1_repay
+							}
+						}
+					}
+					modifier = {
+						factor = 0
+						SPR = {
+							has_country_flag  = mission_flag_blok1_repay 
+						}
+					}
+					SPR = {
+						activate_mission = SPR_1_dev_year_plan_please_german_monkes
+						set_country_flag = mission_flag_repay_ger
+					}
+				}
+			
+			}
+		}
+	}
+
+}
+
+country_event = {
+	id = spain.100t1
+	title = "Parliamentary Meeting"
+	desc = spain.100t1.d
+	picture = GFX_decision_cat_picture_soviet_comecon
+
+	is_triggered_only = yes
+
+	option = {
+		name = "The Moderate Wing"
+		if = {
+			limit = {
+				NOT = {
+					has_idea = SPR_side_industrial_bonuses_c4
+				}
+			 }
+			custom_effect_tooltip = moderate_wing_things
+		}
+
+		if = {
+			limit = {
+				has_idea = SPR_side_industrial_bonuses_c4
+			}
+			custom_effect_tooltip = too_much_both_sides
+			custom_effect_tooltip = MANspace
+			if = {
+				limit = { 
+					has_idea = SPR_side_industrial_bonuses_c4
+				}
+				add_stability = -0.05
+				add_cic = -5000
+				add_popularity = {
+					ideology = neutrality
+					popularity = -0.04
+				}
+			}
+		}
+		
+		set_country_flag = moderate_wing_request
+		hidden_effect = {
+			random_list = { 
+				1 = {
+					set_country_flag = industrial_mission
+					random_core_state = {
+					if = {
+					limit = {
+						NOT  = {
+							state = 178
+							state = 699
+							state = 297
+							state = 290
+							state = 177
+							state = 783
+
+							state = 459
+							state = 513
+							state = 462
+							state = 461
+							state = 460
+						}
+						
+						NOT = {
+							has_state_flag = DEVELOPMENT_PROGRAM_1
+						}
+					}
+						set_state_flag = DEVELOPMENT_PROGRAM_1
+						
+					}
+				}
+				}
+				1 = {
+					set_country_flag = infrastructure_mission
+					random_core_state = {
+					if = {
+					limit = {
+						NOT  = {
+							state = 178
+							state = 699
+							state = 297
+							state = 290
+							state = 177
+							state = 783
+
+							state = 459
+							state = 513
+							state = 462
+							state = 461
+							state = 460
+						}
+						NOT = {
+							has_state_flag = DEVELOPMENT_PROGRAM_2
+						}
+					}
+						set_state_flag = DEVELOPMENT_PROGRAM_2
+						
+					}
+				}
+				}
+				1 = {
+					set_country_flag = resources_mission
+					random_core_state = {
+					if = {
+					limit = {
+						NOT  = {
+							state = 178
+							state = 699
+							state = 297
+							state = 290
+							state = 177
+							state = 783
+
+							state = 459
+							state = 513
+							state = 462
+							state = 461
+							state = 460
+						}
+						NOT = {
+							has_state_flag = DEVELOPMENT_PROGRAM_3
+						}
+					}
+						set_state_flag = DEVELOPMENT_PROGRAM_3
+					}
+				}
+				}
+				0.4 = {
+					set_country_flag = conversion_mission
+					random_core_state = {
+					if = {
+					limit = {
+						NOT  = {
+							state = 178
+							state = 699
+							state = 297
+							state = 290
+							state = 177
+							state = 783
+
+							state = 459
+							state = 513
+							state = 462
+							state = 461
+							state = 460
+						}
+						NOT = {
+							has_state_flag = DEVELOPMENT_PROGRAM_4
+						}
+					}
+						set_state_flag = DEVELOPMENT_PROGRAM_4
+					}
+				}
+				}
+
+			}
+			random_list = {
+				3= {
+
+				} 
+				1= {
+					if = {
+						limit = {
+							has_tech = synth_oil_experiments
+							NOT = {
+								has_country_flag = refinery_3_flag
+							}
+
+							NOT = {
+								has_country_flag = rubber_ref_mission #2
+							}
+							NOT = {
+								has_country_flag = silo_mission #3
+							}
+
+						}
+						set_country_flag = oil_ref_mission  #1
+					}
+				}
+				1= {
+					if = {
+						limit = {
+							has_tech = rubber_processing
+							NOT = {
+								has_country_flag = refinery_rub_3_flag
+							}
+
+							NOT = {
+								has_country_flag = silo_mission #3
+							}
+							NOT = {
+								has_country_flag = oil_ref_mission #1
+							}
+
+						}
+						set_country_flag = rubber_ref_mission #2
+					}
+				} 
+				1= {
+					if = {
+						limit = { 
+							NOT = {
+								has_country_flag = silo_3_flag
+							}
+
+							NOT = {
+								has_country_flag = rubber_ref_mission # 2
+							}
+							NOT = {
+								has_country_flag = oil_ref_mission # 1
+							}
+							
+						}
+						set_country_flag = silo_mission #3
+					}
+				}
+
+			}
+		}
+			
+		
+	}
+		
+	option = {
+		name = "The Radical Wing"
+		if = {
+			limit = {
+				NOT = {
+					has_idea = SPR_side_industrial_bonuses_m4
+				}
+			 }
+			custom_effect_tooltip = radical_wing_things
+		}
+		if = {
+			limit = {
+				has_idea = SPR_side_industrial_bonuses_m4
+			}
+			custom_effect_tooltip = too_much_both_sides
+			custom_effect_tooltip = MANspace
+			if = {
+				limit = { 
+					has_idea = SPR_side_industrial_bonuses_m4
+				}
+				add_stability = -0.05
+				add_cic = -5000
+				add_popularity = {
+					ideology = communism
+					popularity = 0.03
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.03
+				}
+			}
+		}
+
+		set_country_flag = radical_wing_request
+		hidden_effect = {
+			random_list = { 
+				3 = {
+					set_country_flag = military_mission
+					random_core_state = {
+					if = {
+					limit = {
+						
+						NOT  = {
+							state = 178
+							state = 699
+							state = 297
+							state = 290
+							state = 177
+							state = 783
+
+							state = 459
+							state = 513
+							state = 462
+							state = 461
+							state = 460
+						}
+
+						NOT = {
+							has_state_flag = DEVELOPMENT_PROGRAM_5
+						}
+					}
+						set_state_flag = DEVELOPMENT_PROGRAM_5
+						
+					}
+				}
+				}
+				2 = {
+					set_country_flag = dockyard_mission
+					random_core_state = {
+					if = {
+						limit = {
+							is_coastal = yes
+
+							NOT  = {
+								state = 178
+								state = 699
+								state = 297
+								state = 290
+								state = 177
+								state = 783
+
+								state = 459
+								state = 513
+								state = 462
+								state = 461
+								state = 460
+							}
+
+							NOT = {
+								has_state_flag = DEVELOPMENT_PROGRAM_6
+							}
+						}
+						set_state_flag = DEVELOPMENT_PROGRAM_6
+						
+					}
+				}
+				}
+				1 = {
+					set_country_flag = fort_costalforst_mission
+					random_core_state = {
+					if = {
+						limit = {
+							state = 171
+							state = 167
+							state = 165
+							state = 794
+							state = 172
+							state = 792
+							NOT = {
+								has_state_flag = DEVELOPMENT_PROGRAM_7
+							}
+						}
+						set_state_flag = DEVELOPMENT_PROGRAM_7
+					}
+				}
+				}
+			}
+		}
+	
+	}
+}
+
+country_event = {
+	id = spain.1111
+	title = "The Market Under Watch"
+	desc = spain.1111.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Discipline must come before prosperity."
+		add_to_variable = {
+			SPR_RIGHT_industry_consumer_goods_factor = 0.004
+			tooltip = consumer_goods_tooltip
+		}
+		add_cic = 4500
+	}
+}
+
+country_event = {
+	id = spain.1112
+	title = "The Market Rebuilds Itself"
+	desc = spain.1112.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Spain stands tall again."
+		add_to_variable = {
+			SPR_RIGHT_industry_consumer_goods_factor = -0.004
+			tooltip = consumer_goods_tooltip
+		}
+	}
+}
+
+#random events absed on what advisors you got
+country_event = {
+	id = spain.969
+	title = "The Warm Sun"
+	desc = spain.969.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Finally."
+		add_political_power = 150
+	}
+}
+
+country_event = {
+	id = spain.966
+	title = "A Cold and Dark Night"
+	desc = spain.966.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Slow and Painful Death"
+		set_country_flag = killed_them_all
+		remove_ideas = SPR_ramon_serrano_sener
+		remove_ideas = SPR_demetrio_carceller_segura
+		remove_ideas = SPR_joaquin_bejumea
+		remove_ideas = SPR_juan_martch_right
+		remove_ideas = SPR_juan_andrade_right
+		remove_ideas = SPR_jose_antonio_primo_de_rivera
+		add_manpower = -1
+		create_country_leader = {
+				name = "Francisco Franco"
+				desc = "POLITICS_FRANCISCO_FRANCO_DESC"
+				picture = "GFX_portrait_spain_francisco_franco"
+				expire = "1965.1.1"
+				ideology = despotism
+			traits = {
+				caudillo_2
+			}
+		}
+	}
+}
+
+#random events absed on what advisors you got
+
+country_event = {
+	id = spain.901
+	title = "Strange Outcome"
+	desc = spain.901.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Nothing even happens."
+	}
+
+}
+country_event = {
+	id = spain.902
+	title = "Financial Drawbacks"
+	desc = spain.902.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Could have been worse..."
+		custom_effect_tooltip = SPR_eco_modif
+			add_to_variable = {
+				SPR_RIGHT_industry_consumer_goods_factor = 0.01
+				tooltip = consumer_goods_tooltip
+			}
+			add_political_power = -25
+	}
+
+}
+country_event = {
+	id = spain.903
+	title = "Steady Growth?"
+	desc = spain.903.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Better than nothing..."
+		custom_effect_tooltip = SPR_eco_modif
+			add_to_variable = {
+				SPR_RIGHT_industry_consumer_goods_factor = -0.02
+				tooltip = consumer_goods_tooltip
+			}
+			add_political_power = 25
+	}
+
+}
+country_event = {
+	id = spain.905
+	title = spain.905.t
+	desc = spain.905.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = "...."
+		custom_effect_tooltip = SPR_eco_modif
+			add_to_variable = {
+				SPR_RIGHT_industry_consumer_goods_factor = 0.02
+				tooltip = consumer_goods_tooltip
+			}
+		SPR_increase_level_1_csg_gain_effect = yes
+			add_political_power = -50
+	}
+
+}
+country_event = {
+	id = spain.904
+	title = "Fiscal Policy Stagnation"
+	desc = spain.904.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = "What have they done?!"
+		custom_effect_tooltip = SPR_eco_modif
+			add_to_variable = {
+				SPR_RIGHT_industry_consumer_goods_factor = 0.04
+				tooltip = consumer_goods_tooltip
+			}
+		SPR_increase_level_2_csg_gain_effect = yes
+			add_political_power = -75
+	}
+
+}
+country_event = {
+	id = spain.906
+	title = "Economic Growth"
+	desc = spain.906.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+
+ option = {
+		name = "Good stuff..."
+		custom_effect_tooltip = SPR_eco_modif
+			add_to_variable = {
+				SPR_RIGHT_industry_consumer_goods_factor = -0.025
+				tooltip = consumer_goods_tooltip
+			}
+		SPR_decrease_level_1_csg_gain_effect = yes
+			add_political_power = 50
+	}
+
+}
+country_event = {
+	id = spain.907
+	title = "Miracle from Chaos"
+	desc = spain.907.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+
+ option = {
+		name = "A good day to be alive..."
+		custom_effect_tooltip = SPR_eco_modif
+			add_to_variable = {
+				SPR_RIGHT_industry_consumer_goods_factor = -0.05
+				tooltip = consumer_goods_tooltip
+			}
+		SPR_decrease_level_3_csg_gain_effect = yes
+			add_political_power = 100
+	}
+
+}
+
+country_event = {
+	id = spain.700
+	title = "Cracking Sounds Over the Sea"
+	desc = spain.700.d
+	hidden = yes
+
+	is_triggered_only = yes
+		
+	immediate = { 
+		hidden_effect = {
+			if = {
+			limit = {
+				SPR = {
+					NOT = {
+						OR = {
+							has_tech = mass_assault
+							has_tech = peoples_army
+						}
+					}
+				}
+			}
+			load_oob = "SPR_deployment_oob"
+		}
+		else_if = {
+			limit = {
+				SPR = {
+					OR = {
+						has_tech = mass_assault
+						has_tech = peoples_army
+					}
+					
+				}
+			}
+			load_oob = "SPR_mass_deployment_oob"
+			add_manpower = -85000
+		}
+		}
+		
+	}	
+}
+
+
+#################### rework events up 
+
 # Spanish Civil War
 country_event = {
 	id = spain.1
@@ -824,12 +1757,10 @@ country_event = {
 				artillery_brigade = { x = 4 y = 1 }	
 			}
 			support = {
-				pack_artillery = { x = 0 y = 0 } 
-				engineer = { x = 0 y = 1 } 		
-				recon = { x = 0 y = 2 }
-				logistics_company = { x = 0 y = 3 }
-				anti_air_company = { x = 1 y = 0 }
-				artillery = { x = 1 y = 1 }
+				engineer = { x = 0 y = 0 }
+				recon = { x = 0 y = 1 }
+				logistics_company = { x = 0 y = 2 }
+				artillery = { x = 1 y = 0 }
 			}
 
 			priority = 2

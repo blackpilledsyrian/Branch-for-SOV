@@ -185,6 +185,10 @@ CZE_reichskommissariat = {
 	color_ui = rgb { 122 145 93 }
 }
 
+SLO_puppet = {
+	color = rgb { 158  161  188 }
+	color_ui = rgb { 255 255 255 }
+}
 SPR_civil_war = {
 	color = rgb { 200 100 31 }
 	color_ui = rgb { 245 123 38 }
@@ -360,6 +364,11 @@ SOV_russia = {
 HOL_benelux_unified = {
 	color = rgb { 255 128 0 }
 	color_ui = rgb { 255 128 0 }
+}
+
+HOL_FREE = {
+	color = rgb { 203 138 74 }
+	color_ui = rgb { 255 179 96 }
 }			  
 SPR_nationalist_spain = {
 	color = rgb { 200 100 31 }
@@ -507,7 +516,14 @@ JAP_greater_reich = {
 	color_ui = rgb { 179 0 0 }
 }
 
-
+SPR_red_falanga = {
+		color = rgb { 219 49 9 }
+	color_ui = rgb { 219 49 9 }
+}
+SPR_gray_carlists = {
+		color = rgb {243 98 30 }
+	color_ui = rgb { 243 98 30 }
+}
 
 
 

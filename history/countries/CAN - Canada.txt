@@ -2,6 +2,7 @@
 
 oob = "CAN_1936"
 add_manpower = 50000
+
 if = {
 	limit = { has_dlc = "Man the Guns" }
 	set_naval_oob = "CAN_1936_naval_mtg"
@@ -64,6 +65,7 @@ set_variable = { var = CAN_local_resources_factor_var value  = 0.0 }
 
 set_variable = {	CAN_cost_civ_to_mill_conversion_var = 0.1	}
 set_variable = {	CAN_cost_mill_to_civ_conversion_var = 0.0	}
+set_variable = {	var = CAN_production_speed_air_assembly_factor value = 0	}
 
 
 set_variable = { var = CAN_political_power_gain_var value  = -0.6 }
@@ -170,6 +172,7 @@ IF = {
 
 # Starting tech
 set_technology = { #player 
+building_tech = 1 
 	radio_detection = 1
 	basic_gun_laying_radar = 1
 	basic_train = 1
@@ -217,8 +220,6 @@ set_technology = { #player
 	eng_naval_bomber_1936 = 1
 	eng_cv_naval_bomber_1936 = 1
 	################# ships ##############
-	trench_warfare = 1
-	fleet_in_being = 1
 	electronic_mechanical_engineering = 1
 	
 	
@@ -244,8 +245,7 @@ set_technology = { #player
 			small_gun2 = 1
 			support_gun = 1
 			armour_sloping = 1
-			engine_tech_1 = 1
-			engine_tech_2 = 1
+		
 			automatic_gun2 = 1
 			armour_sloping2 = 1 
 
@@ -340,7 +340,6 @@ if = {
 		basic_medium_battery = 1 
 		basic_heavy_battery = 1
 		basic_dp_light_battery = 1 
-		basic_cruiser_armor_scheme = 1
 		improved_sonar = 1 
 		improved_depth_charges = 1
 	}
@@ -381,7 +380,7 @@ set_popularities = {
 }
 
 
-set_convoys = 200
+set_convoys = 150
 set_stability = 0.5
 set_war_support = 0.10
 

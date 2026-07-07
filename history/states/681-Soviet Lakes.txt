@@ -8,11 +8,14 @@ state = {
 
 	history = {
 		owner = SAF
-		1936.1.1.13 = {
+		1936.1.1.14 = {
 			owner = CAN
 			add_core_of = CAN
 			remove_core_of = SAF
 
+		}
+		strategic_state_location = {
+			favorable_approach5 = 12589
 		}
 		buildings = {
 			infrastructure = 5

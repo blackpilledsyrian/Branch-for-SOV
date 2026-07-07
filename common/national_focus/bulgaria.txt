@@ -24,6 +24,8 @@ focus_tree = {
 
 	continuous_focus_position = { x = 50 y = 1500 }
 
+	shared_focus = AXIS_authorize_volunteers_to_japan
+
 
 ######  ##   ##  ##      ######   ######  ######	######  ######
 ##   ## ##   ##  ##      ##    	  ##  ##  ##   ##	  ##	##  ##
@@ -106,10 +108,10 @@ focus_tree = {
 			custom_effect_tooltip = MANspace			
 			
 			212 = {
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
-					level = 4
+					level = 3
 					instant_build = yes
 				}
 			}				
@@ -175,7 +177,7 @@ focus_tree = {
 			custom_effect_tooltip = BUL_modify_industry_spirit
 			add_to_variable = { 
 				var = BUL_production_speed_industrial_complex_factor_var 
-				value = 0.25
+				value = 0.3
 				tooltip = industrial_complex_build_speed_factor_tooltip
 			}
 			add_to_variable = { 
@@ -203,10 +205,10 @@ focus_tree = {
 				}
 			}				
 			48 = {
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
-					level = 4
+					level = 3
 					instant_build = yes
 				}
 			}							
@@ -251,7 +253,7 @@ focus_tree = {
 			}
 			add_to_variable = { 
 				var = BUL_political_power_gain_var 
-				value = 0.20
+				value = 0.1
 				tooltip = political_power_gain_daily_tooltip
 			}	
 		}
@@ -348,7 +350,7 @@ focus_tree = {
 			custom_effect_tooltip = BUL_modify_industry_spirit
 			add_to_variable = { 
 				var = BUL_production_speed_arms_factory_factor_var 
-				value = 0.2
+				value = 0.1
 				tooltip = arms_factory_build_speed_factor_tooltip
 			}
 			add_to_variable = { 
@@ -469,11 +471,11 @@ focus_tree = {
 		211 = {
 			add_resource = {
 				type = steel
-				amount = 8	
+				amount = 24	
 				}
 			add_resource = {
 				type = aluminium
-				amount = 8	
+				amount = 24	
 				}
 				add_building_construction = {
 					type = infrastructure
@@ -484,11 +486,11 @@ focus_tree = {
 		49 = {
 			add_resource = {
 				type = steel
-				amount = 8	
+				amount = 24	
 				}
 			add_resource = {
 				type = aluminium
-				amount = 8	
+				amount = 24	
 				}
 				add_building_construction = {
 					type = infrastructure
@@ -651,7 +653,6 @@ focus_tree = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
 						recon = { x = 0 y = 2 }
-						pack_artillery = { x = 0 y = 3 }
 						maintenance_company = { x = 1 y = 0 }
 						logistics_company = { x = 1 y = 1 }
 						field_hospital = { x = 1 y = 2 }
@@ -769,6 +770,14 @@ focus_tree = {
 				add_building_construction = {
 					type = industrial_complex
 					level = 3
+					instant_build = yes
+				}
+			}	
+			806 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
 					instant_build = yes
 				}
 			}	
@@ -1178,14 +1187,10 @@ focus_tree = {
 			custom_effect_tooltip = BUL_modify_production_spirit
 			add_to_variable = { 
 				var = BUL_production_factory_start_efficiency_factor_var 
-				value = 0.1
+				value = 0.06
 				tooltip = BUL_efficiency_base_tt
 			}
-			add_to_variable = { 
-				var = BUL_industrial_capacity_factory_var 
-				value = 0.1
-				tooltip = BUL_factory_output_tt
-			}
+			
 		}	
 	}
 	
@@ -1203,7 +1208,7 @@ focus_tree = {
 			custom_effect_tooltip = BUL_modify_production_spirit
 			add_to_variable = { 
 				var = BUL_production_factory_max_efficiency_factor_var 
-				value = 0.05
+				value = 0.03
 				tooltip = BUL_efficiency_cap_tt
 			}
 		}	
@@ -1223,7 +1228,7 @@ focus_tree = {
 			custom_effect_tooltip = BUL_modify_production_spirit
 			add_to_variable = { 
 				var = BUL_production_factory_efficiency_gain_factor_var 
-				value = 0.1
+				value = 0.2
 				tooltip = BUL_efficiency_gain_tt
 			}
 		}	
@@ -1243,7 +1248,7 @@ focus_tree = {
 			custom_effect_tooltip = BUL_modify_production_spirit
 			add_to_variable = { 
 				var = BUL_line_change_production_efficiency_factor_var 
-				value = 0.125
+				value = 0.1
 				tooltip = BUL_retention_tt
 			}		
 		}	
@@ -1260,6 +1265,12 @@ focus_tree = {
 		cost = 5
 		
 		completion_reward = {
+			custom_effect_tooltip = BUL_modify_industry_spirit
+			add_to_variable = { 
+				var = BUL_production_speed_buildings_factor_var 
+				value = 0.025
+				tooltip = BUL_construction_speed_tt
+			}
 			add_tech_bonus = {
 				name = all_industry_bonus
 				bonus = 1.25
@@ -1283,7 +1294,7 @@ focus_tree = {
 			custom_effect_tooltip = BUL_modify_industry_spirit
 			add_to_variable = { 
 				var = BUL_production_speed_buildings_factor_var 
-				value = 0.075
+				value = 0.10
 				tooltip = BUL_construction_speed_tt
 			}
 		}	
@@ -1338,6 +1349,15 @@ focus_tree = {
 				uses = 1
 				category = industry
 			} 
+			random_core_state = {
+				
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+				}
+			}
 		}	
 	}
 	
@@ -1376,7 +1396,7 @@ focus_tree = {
 		48 = {
 			add_resource = {
 				type = steel
-				amount = 16	
+				amount = 48	
 				}	
 			}
 			add_tech_bonus = {
@@ -1451,12 +1471,18 @@ focus_tree = {
 				}		
 			}
 			806 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
-				}		
+				}	
+			
+				add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+				}	
 			}	
 		}	
 	}
@@ -1708,6 +1734,23 @@ focus_tree = {
 		
 		completion_reward = {	
 			unlock_decision_category_tooltip = BUL_arms_purchase 
+			custom_effect_tooltip = MANspace
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 4000 producer = GER }
+			add_equipment_to_stockpile = { 
+				type = artillery_equipment amount = 300 producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = heavy_artillery_equipment amount = 100 producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = special_equipment_1 amount = 400 producer = GER
+			}					
+			add_equipment_to_stockpile = {
+				type = horse_equipment amount = 800 producer = GER 
+			}
+			add_equipment_to_stockpile = { 
+				type = support_equipment amount = 300 producer = GER 
+			}	
 		}
 	}
 	
@@ -1858,7 +1901,7 @@ focus_tree = {
 			custom_effect_tooltip = BUL_modify_army_spirit
 			add_to_variable = { 
 				var = BUL_experience_gain_army_factor_var 
-				value = 0.1
+				value = 0.05
 				tooltip = army_xp_tp
 			}
 			add_to_variable = { 
@@ -1919,7 +1962,7 @@ focus_tree = {
 				name = artillery_bonus
 				bonus = 0.5
 				uses = 2
-				category = artillery
+				category = cat_artillery
 			}			
 		}
 	}
@@ -1947,8 +1990,8 @@ focus_tree = {
 			}			
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.6
-				uses = 1
+				cost_reduction = 0.5
+				uses = 2
 				category = land_doctrine
 			}	
 		}
@@ -2161,8 +2204,6 @@ focus_tree = {
 						anti_air_heavy_support = { x = 0 y = 3 }
 						maintenance_company = { x = 1 y = 0 }
 						logistics_company = { x = 1 y = 1 }
-						field_hospital = { x = 1 y = 2 }
-						signal_company = { x = 1 y = 3 }
 					}
 
 				}
@@ -2208,8 +2249,8 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.6
-				uses = 1
+				cost_reduction = 0.5
+				uses = 2
 				category = land_doctrine
 			}			
 		}
@@ -2256,7 +2297,7 @@ focus_tree = {
 				bonus = 0.5
 				ahead_reduction = 1
 				uses = 1
-				category = artillery
+				category = cat_artillery
 			}
 		}
 	}
@@ -2305,7 +2346,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.6
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -2479,7 +2520,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.6
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -2645,7 +2686,7 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = land_doctrine
 			}		
@@ -2913,7 +2954,7 @@ focus_tree = {
 		completion_reward = {	
 			add_doctrine_cost_reduction = {
 				name = naval_doctrine_bonus
-				cost_reduction = 0.6
+				cost_reduction = 0.5
 				uses = 3
 				category = naval_doctrine
 			}			

@@ -408,7 +408,7 @@ leader_traits = {
 		random = no
 		sprite = 13
 		fascism_drift = 0.05
-		power_balance_daily = 0.00014280
+		power_balance_daily = 0.0002
 		stability_factor = 0.05
 		industrial_capacity_factory = -0.05
 		industrial_capacity_dockyard = -0.05
@@ -1109,17 +1109,6 @@ leader_traits = {
 		}
 	}
 
-	collectivization_specialist = {
-		random = no
-		sprite = 10
-
-		industrial_capacity_factory = 0.1
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
 	nkvd_rezident = {
 		random = no
 		sprite = 13
@@ -1144,13 +1133,6 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-	}
-
-	lifelong_carlist = {
-		random = no
-		sprite = 13
-		neutrality_drift = 0.1
-		stability_factor = 0.1
 	}
 
 	falangist_industrialist = {
@@ -1184,13 +1166,6 @@ leader_traits = {
 		sprite = 13
 		fascism_drift = 0.1
 		political_power_factor = 0.05
-	}
-
-	falangist_figurehead = {
-		random = no
-		sprite = 13
-		fascism_drift = 0.1
-		political_power_factor = 0.1
 	}
 
 	carlist_intellectual = {
@@ -1653,6 +1628,12 @@ leader_traits = {
 		consumer_goods_expected_value = -0.05
 	}
 
+	hol_strict_austerity_adherent = {
+		random = no
+		stability_factor = -0.10
+		consumer_goods_expected_value = -0.05
+	}
+
 	strict_austerity_adherent = {
 		random = no
 		stability_factor = -0.25
@@ -1712,7 +1693,8 @@ leader_traits = {
 
 	comintern_workhorse = {
 		sprite = 13
-		random = no 
+		random = no
+		stability_weekly = 0.002 
 		stability_factor = 0.05
 		communism_drift = 0.05
 	}
@@ -2168,12 +2150,11 @@ leader_traits = {
 
 	sins_of_the_father = {
 		random = no
-		production_speed_arms_factory_factor = 0.1
 		political_power_gain = -0.1
-		high_command_cost_factor = -0.34
-		air_chief_cost_factor = -0.34
-		army_chief_cost_factor = -0.34
-		navy_chief_cost_factor = -0.34
+		high_command_cost_factor = -0.15
+		air_chief_cost_factor = -0.15
+		army_chief_cost_factor = -0.15
+		navy_chief_cost_factor = -0.15
 	}
 
 	empire_builder = {
@@ -2192,7 +2173,12 @@ leader_traits = {
 		resistance_damage_to_garrison = -0.15
 		high_command_cost_factor = -0.15
 	}
-
+	caudilla_3 = {
+		random = no
+		political_power_gain = 0.05
+		stability_factor = -0.05
+		war_support_factor = 0.1
+	}
 	caudillo_2 = {
 		random = no
 		resistance_damage_to_garrison = -0.15
@@ -2281,13 +2267,13 @@ leader_traits = {
 		}
 		targeted_modifier = {	
 			tag = GER
-			attack_bonus_against = 0.1
-			defense_bonus_against = 0.1	
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
 		}
 		targeted_modifier = {	
 			tag = ITA
-			attack_bonus_against = 0.1
-			defense_bonus_against = 0.1	
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
 		}
 		
 		ai_will_do = {
@@ -2928,6 +2914,7 @@ leader_traits = {
 		production_speed_arms_factory_factor = 0.15
 		production_speed_industrial_complex_factor = -0.05
 		production_speed_dockyard_factor = 0.15
+	 
 		industrial_capacity_factory = 0.05
 		industrial_capacity_dockyard = 0.05
 		
@@ -2956,6 +2943,7 @@ leader_traits = {
 		production_speed_infrastructure_factor = 0.10
 		production_speed_synthetic_refinery_factor = 0.1
 		production_speed_synthetic_rubber_refinery_factor = 0.05
+		
 		local_resources_factor = 0.05
 		
 		ai_will_do = {
@@ -2979,12 +2967,11 @@ leader_traits = {
 
 	GERminister_of_armament_and_war_production = {
 		sprite = 10
-		industrial_capacity_factory = 0.15
-		production_factory_max_efficiency_factor = 0.025
-		production_factory_efficiency_gain_factor = 0.15
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.2
+		industrial_capacity_factory = 0.10
 		industry_repair_factor = 0.25
 		industry_free_repair_factor = 0.25
-
 		equipment_bonus = {
 			infantry = {
 				build_cost_ic = -0.1 instant = yes 
@@ -3166,19 +3153,7 @@ leader_traits = {
 		experience_gain_army = 0.05
 		land_doctrine_cost_factor = -0.05
 		
-		grand_mechanized_offensive_mastery_gain_factor = 0.1
-		infantry_offensive_mastery_gain_factor = 0.1
-		dispersed_support_mastery_gain_factor = 0.1
-		intergrated_support_mastery_gain_factor = 0.1
-		mobile_breach_artillery_mastery_gain_factor = 0.1
-		air_land_battle_mastery_gain_factor = 0.1
-		elastic_defence_mastery_gain_factor = 0.1
-		elastic_defence_2_mastery_gain_factor = 0.1
-		modern_blizkrieg_new_mastery_gain_factor = 0.1
-		tank_destroyer_force_new_mastery_gain_factor = 0.1
-		strategic_defensive_shift_mastery_gain_factor = 0.1
-		human_wave_offensive_mastery_gain_factor = 0.1
-		massed_firepower_mastery_gain_factor = 0.1
+
 		
 		
 		ai_will_do = {
@@ -3193,21 +3168,7 @@ leader_traits = {
 		land_doctrine_cost_factor = -0.05
 		
 		
-		elastic_defence_mastery_gain_factor = 0.2
-		elastic_defence_2_mastery_gain_factor = 0.2
-		modern_blizkrieg_new_mastery_gain_factor = 0.2
-		tank_destroyer_force_new_mastery_gain_factor = 0.2
-		strategic_defensive_shift_mastery_gain_factor = 0.2
-		
-		
-		grand_mechanized_offensive_mastery_gain_factor = 0.1
-		infantry_offensive_mastery_gain_factor = 0.1
-		dispersed_support_mastery_gain_factor = 0.1
-		intergrated_support_mastery_gain_factor = 0.1
-		mobile_breach_artillery_mastery_gain_factor = 0.1
-		air_land_battle_mastery_gain_factor = 0.1
-		human_wave_offensive_mastery_gain_factor = 0.1
-		massed_firepower_mastery_gain_factor = 0.1
+
 		
 		
 		ai_will_do = {
@@ -3230,22 +3191,7 @@ leader_traits = {
 		land_doctrine_cost_factor = -0.05
 		
 		
-		dispersed_support_mastery_gain_factor = 0.2
-		intergrated_support_mastery_gain_factor = 0.2
-		mobile_breach_artillery_mastery_gain_factor = 0.2
-		air_land_battle_mastery_gain_factor = 0.2
-		
-		
-		
-		grand_mechanized_offensive_mastery_gain_factor = 0.1
-		infantry_offensive_mastery_gain_factor = 0.1
-		elastic_defence_mastery_gain_factor = 0.1
-		elastic_defence_2_mastery_gain_factor = 0.1
-		modern_blizkrieg_new_mastery_gain_factor = 0.1
-		tank_destroyer_force_new_mastery_gain_factor = 0.1
-		strategic_defensive_shift_mastery_gain_factor = 0.1
-		human_wave_offensive_mastery_gain_factor = 0.1
-		massed_firepower_mastery_gain_factor = 0.1
+	
 		
 		
 		equipment_bonus = {
@@ -3265,21 +3211,7 @@ leader_traits = {
 		max_planning = 0.025
 		planning_speed = 0.05
 		
-		grand_mechanized_offensive_mastery_gain_factor = 0.2
-		infantry_offensive_mastery_gain_factor = 0.2
-		
-		
-		dispersed_support_mastery_gain_factor = 0.1
-		intergrated_support_mastery_gain_factor = 0.1
-		mobile_breach_artillery_mastery_gain_factor = 0.1
-		air_land_battle_mastery_gain_factor = 0.1
-		elastic_defence_mastery_gain_factor = 0.1
-		elastic_defence_2_mastery_gain_factor = 0.1
-		modern_blizkrieg_new_mastery_gain_factor = 0.1
-		tank_destroyer_force_new_mastery_gain_factor = 0.1
-		strategic_defensive_shift_mastery_gain_factor = 0.1
-		human_wave_offensive_mastery_gain_factor = 0.1
-		massed_firepower_mastery_gain_factor = 0.1
+
 		
 		
 		
@@ -3294,21 +3226,7 @@ leader_traits = {
 		army_attack_factor = 0.05
 		land_doctrine_cost_factor = -0.05
 		
-		human_wave_offensive_mastery_gain_factor = 0.2
-		massed_firepower_mastery_gain_factor = 0.2
-		
-		
-		grand_mechanized_offensive_mastery_gain_factor = 0.1
-		infantry_offensive_mastery_gain_factor = 0.1
-		dispersed_support_mastery_gain_factor = 0.1
-		intergrated_support_mastery_gain_factor = 0.1
-		mobile_breach_artillery_mastery_gain_factor = 0.1
-		air_land_battle_mastery_gain_factor = 0.1
-		elastic_defence_mastery_gain_factor = 0.1
-		elastic_defence_2_mastery_gain_factor = 0.1
-		modern_blizkrieg_new_mastery_gain_factor = 0.1
-		tank_destroyer_force_new_mastery_gain_factor = 0.1
-		strategic_defensive_shift_mastery_gain_factor = 0.1
+	
 		
 		
 		
@@ -3589,21 +3507,7 @@ leader_traits = {
 		land_doctrine_cost_factor = -0.05
 		
 		
-		elastic_defence_mastery_gain_factor = 0.2
-		elastic_defence_2_mastery_gain_factor = 0.2
-		modern_blizkrieg_new_mastery_gain_factor = 0.2
-		tank_destroyer_force_new_mastery_gain_factor = 0.2
-		strategic_defensive_shift_mastery_gain_factor = 0.2
 		
-		
-		grand_mechanized_offensive_mastery_gain_factor = 0.1
-		infantry_offensive_mastery_gain_factor = 0.1
-		dispersed_support_mastery_gain_factor = 0.1
-		intergrated_support_mastery_gain_factor = 0.1
-		mobile_breach_artillery_mastery_gain_factor = 0.1
-		air_land_battle_mastery_gain_factor = 0.1
-		human_wave_offensive_mastery_gain_factor = 0.1
-		massed_firepower_mastery_gain_factor = 0.1
 		
 		
 		
@@ -6506,19 +6410,21 @@ leader_traits = {
 		neutrality_drift = 0.05
 		war_support_factor = -0.1
 		stability_factor = 0.1
-		stability_weekly = 0.004
-		custom_modifier_tooltip =communist_manchu_advisor_removal_2
+		#stability_weekly = 0.004
+		stability_weekly = 0.003
+		#custom_modifier_tooltip =communist_manchu_advisor_removal_2
 
 		ai_will_do = {
 			factor = 1
 		}
 	}
 	cofonder_of_concorida_association = {
-		stability_weekly = 0.004
+		#stability_weekly = 0.004
+		stability_weekly = 0.003
 		political_advisor_cost_factor = -0.25
 		war_support_factor = -0.05
 		democratic_drift = 0.05
-		custom_modifier_tooltip =communist_manchu_advisor_removal_1
+		#custom_modifier_tooltip =communist_manchu_advisor_removal_1
 
 		ai_will_do = {
 			factor = 1
@@ -6539,10 +6445,10 @@ leader_traits = {
 		random = no
 
 		custom_modifier_tooltip = the_opium_L
-		local_resources_factor = 0.1
+		local_resources_factor = 0.15
 		consumer_goods_expected_value = -0.04
 
-		stability_weekly = -0.002
+		stability_weekly = -0.0015
 		weekly_manpower = -350
 
 		ai_will_do = {
@@ -7004,7 +6910,6 @@ leader_traits = {
 	}
 	unwavering = {
 		random = no
-		political_power_factor = 0.25
 		stability_weekly = 0.002
 	}
 	rocque_trait = {
@@ -7159,5 +7064,89 @@ leader_traits = {
 		ai_will_do = {
 			factor = 500
 		}
+	}
+
+	#spanish nightmare
+
+	spr_ini_united_1 = {
+		random = no
+
+		political_power_gain = 0.4
+		industrial_capacity_factory = -0.1
+		industrial_capacity_dockyard = -0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	spr_ini_united_2 = {
+		random = no
+		political_power_gain = 0.2
+		production_speed_buildings_factor = 0.05
+		industrial_capacity_factory = -0.05
+		industrial_capacity_dockyard = -0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+	spr_ini_united_3 = {
+		random = no
+
+		political_power_gain = -0.15
+		production_speed_buildings_factor = 0.05
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+	spr_ini_united_4 = {
+		random = no
+
+		political_power_gain = -0.4
+		stability_factor = 0.05
+		production_speed_buildings_factor = 0.075
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	spr_AKC_company = {
+		random = no
+
+		production_speed_buildings_factor = 0.15
+		cic_construction_boost = 0.1
+		cic_construction_boost_factor = 0.1
+
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	spr_AKC_company_1 = {
+		random = no
+
+		production_speed_buildings_factor = 0.2
+		cic_construction_boost = 0.15
+		cic_construction_boost_factor = 0.15
+
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	construction_company_spr = {
+		random = no
+
+		ai_will_do = {
+			factor = 100
+		}
+		production_speed_infrastructure_factor = 0.1
+		production_speed_buildings_factor = 0.05
+		production_speed_supply_node_factor = 0.1
 	}
 }

@@ -1,6 +1,19 @@
 on_actions = {
     on_startup = { #Bonuses will be given through focus instead
         effect = {
+			USA = {
+				add_ideas = { USA_procurement_click_tracker }
+
+				set_variable = { var = USA_procure_clicks_RAJ value = 0 }
+				set_variable = { var = USA_procure_clicks_ENG value = 0 }
+				set_variable = { var = USA_procure_clicks_AST value = 0 }
+				set_variable = { var = USA_procure_clicks_NZL value = 0 }
+				set_variable = { var = USA_procure_clicks_SAF value = 0 }
+				set_variable = { var = USA_procure_clicks_FRA value = 0 }
+				set_variable = { var = USA_procure_clicks_POL value = 0 }
+				set_variable = { var = USA_procure_clicks_CAN value = 0 }
+				set_variable = { var = USA_procure_clicks_HOL value = 0 }
+			}
             
            
             every_state = {
@@ -63,7 +76,7 @@ on_actions = {
                             }
                         }
                     }
-                    add_to_variable = { var = USA_industrial_capacity_dockyard_var2 value =  0.01 }
+                    add_to_variable = { var = USA_industrial_capacity_dockyard_var2 value =  0.015 }
                 }
                 else_if = {
                     limit = {
@@ -96,7 +109,7 @@ on_actions = {
                             }
                         }
                     }
-                    add_to_variable = { var = USA_industrial_capacity_dockyard_var2 value =  0.02 }
+                    add_to_variable = { var = USA_industrial_capacity_dockyard_var2 value =  0.03 }
                 }
                 else_if = {
                     limit = {
@@ -129,7 +142,7 @@ on_actions = {
                             }
                         }
                     }
-                    add_to_variable = { var = USA_industrial_capacity_dockyard_var2 value =  0.03 }
+                    add_to_variable = { var = USA_industrial_capacity_dockyard_var2 value =  0.045 }
                 }
                 else_if = {
                     limit = {
@@ -162,7 +175,7 @@ on_actions = {
                             }
                         }
                     }
-                    add_to_variable = { var = USA_industrial_capacity_dockyard_var2 value =  0.04 }
+                    add_to_variable = { var = USA_industrial_capacity_dockyard_var2 value =  0.06 }
                 }
                 else_if = {
                     limit = {
@@ -181,7 +194,7 @@ on_actions = {
                             }
                         }
                     }
-                    add_to_variable = { var = USA_industrial_capacity_dockyard_var2 value =  0.05 }
+                    add_to_variable = { var = USA_industrial_capacity_dockyard_var2 value =  0.075 }
                 }
             }
             if = {
@@ -1438,9 +1451,9 @@ on_actions = {
                   country_event = { id = usa.449 } 
                 
             }
-                add_to_variable = { var = USA_industrial_capacity_factory_var2 value =  0.013 }
-                add_to_variable = { var = USA_industrial_capacity_dockyard_var2 value =  0.013 }
-                add_to_variable = { var = USA_production_factory_max_efficiency_factor_var2 value =  0.002 }
+                add_to_variable = { var = USA_industrial_capacity_factory_var2 value =  0.008 }
+                add_to_variable = { var = USA_industrial_capacity_dockyard_var2 value =  0.009 }
+                add_to_variable = { var = USA_production_factory_max_efficiency_factor_var2 value =  0.0025 }
                 if = {
                     limit = {
                         AND = {
@@ -1477,16 +1490,16 @@ on_actions = {
                     limit = {
                         AND = {
                             check_variable = { var = USA_production_cost_synthetic_rubber_refinery_factor_var value = 0 compare = greater_than }
-                            date > 1941.9.1
+                            date > 1942.6.1
                         }
                     }
                     USA = {
-                        add_to_variable = { var = USA_production_cost_synthetic_rubber_refinery_factor_var value =  -0.2 }
-                        add_to_variable = { var = USA_production_cost_synthetic_refinery_factor_var value =  -0.2 }
+                        add_to_variable = { var = USA_production_cost_synthetic_rubber_refinery_factor_var value =  -0.5 }
+                        add_to_variable = { var = USA_production_cost_synthetic_refinery_factor_var value =  -0.5 }
                     }
                     ENG = {
-                        add_to_variable = { var = ENG_production_speed_synthetic_refinery_factor_var value =  -0.2 }
-                        add_to_variable = { var = ENG_production_speed_synthetic_rubber_refinery_factor_var value =  -0.2 }
+                        add_to_variable = { var = ENG_production_speed_synthetic_refinery_factor_var value =  -0.5 }
+                        add_to_variable = { var = ENG_production_speed_synthetic_rubber_refinery_factor_var value =  -0.5 }
                     }
                     
                 }
@@ -1518,72 +1531,72 @@ on_actions = {
                     10 = {
                        add_resource = {
                             type = steel
-                            amount = 1
+                            amount = 6
                             state = 126
                         }
                         add_resource = {
                             type = aluminium
-                            amount = 1
+                            amount = 6
                             state = 126
                         }
                     }
                     10 = {
                         add_resource = {
                             type = steel
-                            amount = 1
+                            amount = 6
                             state = 285
                         }
                          add_resource = {
                             type = chromium
-                            amount = 1
+                            amount = 6
                             state = 285
                         }
                     }
                     10 = {
                        add_resource = {
                             type = steel
-                            amount = 1
+                            amount = 6
                             state = 681
                         }
                         add_resource = {
                             type = tungsten
-                            amount = 1
+                            amount = 6
                             state = 681
                         }
                     }
                     10 = {
                         add_resource = {
                             type = steel
-                            amount = 1
+                            amount = 6
                             state = 468
                         }
                         add_resource = {
                             type = chromium
-                            amount = 1
+                            amount = 6
                             state = 468
                         }
                     }
                     10 = {
                         add_resource = {
                             type = steel
-                            amount = 1
+                            amount = 6
                             state = 433
                         }
                         add_resource = {
                             type = rubber
-                            amount = 1
+                            amount = 6
                             state = 433
                         }
                     }
                     10 = {
                         add_resource = {
                             type = steel
-                            amount = 1
+                            amount = 6
                             state = 539
                         }
                         add_resource = {
                             type = chromium
-                            amount = 1
+                            amount = 6
                             state = 539
                         }
                     }

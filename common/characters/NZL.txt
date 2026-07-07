@@ -580,4 +580,36 @@ characters={
 			
 		}
 	}		
+	NZL_maurice_wilkins = {
+		name = "Maurice Wilkins"
+		portraits = {
+			army = {
+				large = GFX_portrait_USA_robert_oppenheimer
+				small = GFX_idea_robert_oppenheimer
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_nuclear_specialist scientist_trait_brilliant_theorist }
+			skills = {
+				specialization_nuclear = 2
+			}
+		}
+	}
+	NZL_frank_whittle = {
+		name = "Frank Whittle"
+		portraits = {
+			army = {
+				large = GFX_portrait_ENG_frank_whittle
+				small = GFX_idea_frank_whittle
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_jet_expert scientist_trait_bright }
+			skills = {
+				specialization_air = 2
+			}
+		}
+	}
 }

@@ -3,8 +3,8 @@ state = {
 	name = "STATE_537"
 	manpower = 295196
 	resources = {
-		steel = 10
-		oil = 30
+		steel = 32
+		oil = 120
 	}
 	
 	state_category = rural
@@ -15,6 +15,7 @@ state = {
 		
 		buildings = {
 			industrial_complex = 2
+			arms_factory = 1
 			infrastructure = 3
 			12446 = {
 				naval_base = 1

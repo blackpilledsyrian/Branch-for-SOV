@@ -2,9 +2,9 @@ state = {
 	id = 620
 	name = "STATE_620"
 	resources = {
-			steel = 6
-			chromium = 4
-			aluminium = 5
+			steel = 24
+			chromium = 16
+			aluminium = 20
 	}
 
 	history = {
@@ -13,6 +13,7 @@ state = {
 		add_core_of = CHI
 		add_dynamic_modifier = { modifier = CHI_tougher_resistance2 }
 		buildings = {
+			tank_assembly = 1
 			infrastructure = 3
 			arms_factory = 2
 			air_base = 2
@@ -28,7 +29,7 @@ state = {
 	}
 
 	provinces = {
-		13405 13404 13403 13402 13401 1036 4619 4631 7167  7637 9959 10462  12467 
+		13405 13404 13403 13402 13401 1036 4619 4631 7167  7637 9959 10462  12467     13615 4130 7625
 	}
 	manpower = 15541600
 	buildings_max_level_factor = 1.000

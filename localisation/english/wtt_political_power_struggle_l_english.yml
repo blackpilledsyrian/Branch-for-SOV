@@ -140,7 +140,7 @@
  
  WTT_seek_support_from_warlord:0 "Negotiate for support from [From.GetNameDef]"
  WTT_seek_support_from_warlord_cost_tt:0 "The cost of getting [From.GetNameDef] to support us scales based on ideology and their opinion of us.\n"
- WTT_pay_for_support_from_warlord_PP:0 "Publically support [From.GetNameDef]'s political agenda"
+ WTT_pay_for_support_from_warlord_PP:0 "Publicly support [From.GetNameDef]'s political agenda"
  WTT_pay_for_support_from_warlord_PP_timeout:0 "Negotiating for support from [From.GetLeader] again will become more expensive.\n"
  WTT_pay_for_support_from_warlord_equipment:0 "Send equipment and men to [From.GetNameDef]"
  WTT_pay_for_support_from_warlord_equipment_timeout:0 "Delivery expected in [From.GetNameDef]"
@@ -189,7 +189,7 @@
 
 #Current leader being mean and removing local support in a state
  wtt_political_organisation.7.t:0 "Report from [state.GetName]"
- wtt_political_organisation.7.desc:0 "A demonstration in [state.GetName] has escalated into violence as protesters were attacked by a group of masked thugs. this explosion of violence seems to have had the desired effect, as the political support for the opposition has all but disappeared. \n\nWhile there is nothing directly connecting us to this incident, the message should have come through loud and clear."
+ wtt_political_organisation.7.desc:0 "A demonstration in [state.GetName] has escalated into violence as protesters were attacked by a group of masked thugs. This explosion of violence seems to have had the desired effect, as the political support for the opposition has all but disappeared. \n\nWhile there is nothing directly connecting us to this incident, the message should have come through loud and clear."
  wtt_political_organisation.7.a:0 "That should teach them not to meddle."
  wtt_political_organisation.8.t:0 "Report from [state.GetName]"
  wtt_political_organisation.8.desc:0 "A demonstration in support of our government in [state.GetName] has been attacked by armed thugs in the employ of [majority_country.GetLeader]. A number of our supporters have been killed in the clash, and support for our government has dropped precariously."
@@ -205,8 +205,8 @@
  wtt_political_organisation.11.desc:0 "Our campaign to suppress support for [majority_country.GetLeader] seems to have fallen well short of a complete success. Despite our best efforts, a majority of citizens in [state.GetName] still support [majority_country.GetLeader]."
  wtt_political_organisation.11.a:0 "We may need to hammer the message home."
  wtt_political_organisation.12.t:0 "Oppression in [state.GetName]"
- wtt_political_organisation.12.desc_not_majority:0 "[state.GetName] is experiencing an unprecedented wave of political violence. Street battles between supporters of [From.GetLeader] and [majority_country.GetLeader] are a daily occurence. For the moment, it appears that [majority_country.GetLeader] still has the majority of the population behind him."
- wtt_political_organisation.12.desc_has_majority:0 "Agents of [From.GetLeader] in [state.GetName] have started a campaign of intimidation and political terror. Reports have come in that citizens who support us are publically harrassed and branded as traitors. Party officials have been beaten up and some of our offices have been burned down. Despite all this, a majority of the local population still refuses to bow to terror and continues to support us."
+ wtt_political_organisation.12.desc_not_majority:0 "[state.GetName] is experiencing an unprecedented wave of political violence. Street battles between supporters of [From.GetLeader] and [majority_country.GetLeader] are a daily occurrence. For the moment, it appears that [majority_country.GetLeader] still has the majority of the population behind him."
+ wtt_political_organisation.12.desc_has_majority:0 "Agents of [From.GetLeader] in [state.GetName] have started a campaign of intimidation and political terror. Reports have come in that citizens who support us are publicly harassed and branded as traitors. Party officials have been beaten up and some of our offices have been burned down. Despite all this, a majority of the local population still refuses to bow to terror and continues to support us."
  wtt_political_organisation.12.a:0 "We will prevail."
 
 #Warlord support 
@@ -218,7 +218,7 @@
  wtt_political_warlord_support.2.desc:1 "In a personal letter to [Root.GetLeader], [warlord_asked_for_support.GetLeader] thanks us for our generous support of his administration. The letter continues to say that after much personal deliberation, [warlord_asked_for_support.GetLeader] has come to the conclusion that the interests of China as a whole are best served by giving [Root.GetLeader] a bigger role in shaping its political future.\n\nFrom now on, the letter ends, [warlord_asked_for_support] will support our efforts in the current political struggle."
  wtt_political_warlord_support.2.a:0 "Good Man."
  wtt_political_warlord_support.3.t:0 "[warlord_asked_for_support.GetNameDefCap] Refuses"
- wtt_political_warlord_support.3.desc:0 "Our mission to secure the support of [warlord_asked_for_support.GetLeader] has not been met with success. [warlord_asked_for_support.GetLeader] considers to the current political struggle to be a mere sideshow distracting us from focusing on the real threats facing China."
+ wtt_political_warlord_support.3.desc:0 "Our mission to secure the support of [warlord_asked_for_support.GetLeader] has not been met with success. [warlord_asked_for_support.GetLeader] considers the current political struggle to be a mere sideshow distracting us from focusing on the real threats facing China."
  wtt_political_warlord_support.3.a:0 "As long as he remains neutral..."
  wtt_political_warlord_support.10.desc:0 "We have so far elected to sit out the current political struggle. It appears that this has not gone unnoticed by [From.GetLeader]. He has send a note, asking what it would take for us to declare our support for his side.\n\nWe should weigh our options carefully and ensure we do not sell our independence too cheaply."
  wtt_political_warlord_support.10.a:0 "Ask for a show of public support."
@@ -230,10 +230,10 @@
  wtt_political_warlord_support.11.a:0 "If this is what it takes..."
  wtt_political_warlord_support.11.b:0 "Unacceptable."
  wtt_political_warlord_support.12.t:0 "[From.GetLeader] demands guns."
- wtt_political_warlord_support.12.desc:0 "Negotiations with [From.GetLeader] have concluded. The leader of [From.GetNameDef] has noted that the population in his state are very concerned about the poor equipment of his soldiers. Many units do not even have a rifle for every man, and a number of soldiers have to use outdated weaponry including old muzzle-loaded muskets and swords. \n\nSince choosing sides in the ongoing conflict might lead to a military confrontation down the line, [From.GetLeader] wanted a firm commitment on our part to reequip his forces with weapons before he will make his support publically known."
+ wtt_political_warlord_support.12.desc:0 "Negotiations with [From.GetLeader] have concluded. The leader of [From.GetNameDef] has noted that the population in his state are very concerned about the poor equipment of his soldiers. Many units do not even have a rifle for every man, and a number of soldiers have to use outdated weaponry including old muzzle-loaded muskets and swords. \n\nSince choosing sides in the ongoing conflict might lead to a military confrontation down the line, [From.GetLeader] wanted a firm commitment on our part to reequip his forces with weapons before he will make his support publicly known."
  wtt_political_warlord_support.12.a:0 "Let's hope we don't end up regretting this..."
  wtt_political_warlord_support.13.t:0 "[From.GetLeader] requests military assistance."
- wtt_political_warlord_support.13.desc:0 "Negotiations with [From.GetLeader] have concluded. In his reply, [From.GetLeader] noted that his military forces is desperately lacking in experienced officers and is in dire need of reform. The people of [From.GetNameDef] would never tolerate him taking such a bold stance in the current struggle while his army was in such shambles. \n\nIf we were to help [From.GetLeader] in reforming his army, he would be happy to publically support us."
+ wtt_political_warlord_support.13.desc:0 "Negotiations with [From.GetLeader] have concluded. In his reply, [From.GetLeader] noted that his military forces is desperately lacking in experienced officers and is in dire need of reform. The people of [From.GetNameDef] would never tolerate him taking such a bold stance in the current struggle while his army was in such shambles. \n\nIf we were to help [From.GetLeader] in reforming his army, he would be happy to publicly support us."
  wtt_political_warlord_support.13.a:0 "A minor sacrifice."
  wtt_political_warlord_support.21.t:0 "[From.GetLeader] lends his support."
  wtt_political_warlord_support.21.desc:0 "Speaking to the assembled national and international press earlier this week, [From.GetLeader] called himself "the first student of [From.From.GetLeader] thought", saying that it is men like [From.From.GetLeader] that will allow China to rise from the chaos of internal strife and conflict.\n\nWhen asked whether he would consider [From.From.GetLeader] for a position in his government, [From.GetLeader] replied that he would be happy to have someone with [From.From.GetLeader]'s experience and wisdom by his side."
@@ -245,7 +245,7 @@
  wtt_political_warlord_support.23.a:0 "They are very welcome."
 
  wtt_take_national_leadership.1.t:0 "[From.GetLeader] Ready to Take National Leadership"
- wtt_take_national_leadership.1.desc:0 "All across China, large demonstrations have taken place, demanding that [old_leader.GetLeader] setp down as leader of China and hand over control to [new_leader.GetLeader]. Even within our government, there are many who believe that [new_leader.GetLeader] has better chances to unite China and lead it into the future. \n\nPolitical support for [new_leader.GetLeader] has grown to the point where refusing the transfer of power would risk a return to hostilities."
+ wtt_take_national_leadership.1.desc:0 "All across China, large demonstrations have taken place, demanding that [old_leader.GetLeader] step down as leader of China and hand over control to [new_leader.GetLeader]. Even within our government, there are many who believe that [new_leader.GetLeader] has better chances to unite China and lead it into the future. \n\nPolitical support for [new_leader.GetLeader] has grown to the point where refusing the transfer of power would risk a return to hostilities."
  wtt_take_national_leadership.1.a:0 "The people have made their will known."
  wtt_take_national_leadership.1.b:0 "This isn't a democracy!"
  wtt_take_national_leadership.2.t:0 "[old_leader.GetLeader] Submits"

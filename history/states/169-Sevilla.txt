@@ -3,17 +3,22 @@ state = {
 	name = "STATE_169"
 
 	history = {
+		set_state_flag = flagger_spain_pain
 		owner = SPR
 		victory_points = {
 			1048 1
 		}
 		victory_points = {
-			7183 5
+			4080 1
+		}
+		victory_points = {
+			7183 6
 		}
 		buildings = {
 			infrastructure = 6
 			industrial_complex = 2
 			arms_factory = 4
+			dockyard = 1
 			air_base = 2
 			
 		}

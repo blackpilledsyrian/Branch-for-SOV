@@ -143,7 +143,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = MAN_corporate_takeover
 
-		cost = 5
+		cost = 7.15
 
 		prerequisite = { 
 			focus = MAN_corporate_takeover 
@@ -153,7 +153,9 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 
 		bypass = {}
 
@@ -162,17 +164,28 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			custom_effect_tooltip = MAN_recruitable_tt0
-			
-			add_to_variable = {
-				MAN_military_industry_dm_consumer_goods_factor = -0.03
-				tooltip = consumer_goods_tooltip
-			}
-			MAN_mitzu_medium_loyalty_increase_effect = yes	
-			MAN_SM_medium_loyalty_increase_effect = yes
-			
+			if = {
+				limit = { 
+					NOT = {
+						JAP = {
+							has_completed_focus = JAP_found_mangyo
+						}	
+					}
+					
+				}
+				custom_effect_tooltip = MAN_recruitable_tt0
+				
+				add_to_variable = {
+					MAN_military_industry_dm_consumer_goods_factor = -0.03
+					tooltip = consumer_goods_tooltip
+				}
+				MAN_mitzu_medium_loyalty_increase_effect = yes	
+				MAN_SM_medium_loyalty_increase_effect = yes
+				
 
-			custom_effect_tooltip = MANspace
+				custom_effect_tooltip = MANspace
+			}
+			
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip =MAN_naoki_hoshino
 			if = {
@@ -195,10 +208,10 @@ focus_tree = {
 					custom_effect_tooltip = MAN_MIC_founding_man
 
 					set_variable = {
-						MIC_influence = 35
+						MIC_influence = 55
 					}
 					set_variable = {
-						MIC_loyalty = 35
+						MIC_loyalty = 55
 					}
 					
 				}
@@ -512,19 +525,19 @@ focus_tree = {
 					}
 					add_resource = {
 						type = steel 
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = aluminium 
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = tungsten 
-						amount = 4
+						amount = 12
 					}
 					add_resource = {
 						type = chromium 
-						amount = 4
+						amount = 12
 					}
 				}
 				else_if = {
@@ -549,19 +562,19 @@ focus_tree = {
 						}
 						add_resource = {
 							type = steel 
-							amount = 4
+							amount = 12
 						}
 						add_resource = {
 							type = aluminium 
-							amount = 4
+							amount = 12
 						}
 						add_resource = {
 							type = tungsten 
-							amount = 6
+							amount = 18
 						}
 						add_resource = {
 							type = chromium 
-							amount = 6
+							amount = 18
 						}
 					}
 				}
@@ -586,19 +599,19 @@ focus_tree = {
 						}
 						add_resource = {
 							type = steel 
-							amount = 6
+							amount = 18
 						}
 						add_resource = {
 							type = aluminium 
-							amount = 6
+							amount = 18
 						}
 						add_resource = {
 							type = tungsten 
-							amount = 9
+							amount = 27
 						}
 						add_resource = {
 							type = chromium 
-							amount = 9
+							amount = 27
 						}
 					}
 				}
@@ -627,11 +640,11 @@ focus_tree = {
 					}
 					add_resource = {
 						type = tungsten 
-						amount = 4
+						amount = 12
 					}
 					add_resource = {
 						type = chromium 
-						amount = 4
+						amount = 12
 					}
 				}
 				else_if = {
@@ -656,11 +669,11 @@ focus_tree = {
 						}
 						add_resource = {
 							type = tungsten 
-							amount = 6
+							amount = 18
 						}
 						add_resource = {
 							type = chromium 
-							amount = 6
+							amount = 18
 						}
 					}
 				}
@@ -685,11 +698,11 @@ focus_tree = {
 						}
 						add_resource = {
 							type = tungsten 
-							amount = 9
+							amount = 27
 						}
 						add_resource = {
 							type = chromium 
-							amount = 9
+							amount = 27
 						}
 					}
 				}
@@ -717,11 +730,11 @@ focus_tree = {
 					}
 					add_resource = {
 						type = steel 
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = aluminium 
-						amount = 3
+						amount = 9
 					}
 				}
 				else_if = {
@@ -746,11 +759,11 @@ focus_tree = {
 						}
 						add_resource = {
 							type = steel 
-							amount = 4
+							amount = 12
 						}
 						add_resource = {
 							type = aluminium 
-							amount = 4
+							amount = 12
 						}
 					}
 				}
@@ -775,11 +788,11 @@ focus_tree = {
 						}
 						add_resource = {
 							type = steel 
-							amount = 6
+							amount = 18
 						}
 						add_resource = {
 							type = aluminium 
-							amount = 6
+							amount = 18
 						}
 					}
 				}
@@ -901,11 +914,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MAN_recruitable_tt0
 
-			add_to_variable = {
-				var = MAN_military_industry_dm_local_resources_factor
-				value = 0.05
-				tooltip = MAN_resorse_2_fix
-			}
+			
 			add_to_variable = {
 				MAN_industry_spirit_population_factor_pog = -0.02
 				tooltip = CAN_recruitable_tt1
@@ -978,15 +987,15 @@ focus_tree = {
 			612 = {
 				add_resource = {
 					type = steel 
-					amount = 6
+					amount = 18
 				}
 				add_resource = {
 					type = tungsten 
-					amount = 3
+					amount = 9
 				}
 				add_resource = {
 					type = chromium 
-					amount = 3
+					amount = 9
 				}
 			}
 			custom_effect_tooltip = spacers
@@ -1064,7 +1073,12 @@ focus_tree = {
 			}
 			
 			714 = {
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = tank_assembly
+					level = 2
+					instant_build = yes 
+				}
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -1182,7 +1196,7 @@ focus_tree = {
 
 			add_to_variable = {
 				var = MAN_political_power_factor_var
-				value = 0.05
+				value = 0.1
 				tooltip = political_power_gain_modifier_tooltip
 			}
 			custom_effect_tooltip = spacers
@@ -1390,7 +1404,7 @@ focus_tree = {
 
 
 		available = {
-			has_political_power > 74
+			#has_political_power > 74
 			has_tech = fuel_refining
 			has_tech = improved_oil_processing
 		}
@@ -1448,7 +1462,7 @@ focus_tree = {
 					}
 					add_resource = {
 						type = oil 
-						amount = 9
+						amount = 27
 					}
 				}
 				else_if = {
@@ -1478,7 +1492,7 @@ focus_tree = {
 						}
 						add_resource = {
 							type = oil 
-							amount = 12
+							amount = 36
 						}
 					}
 				}
@@ -1508,7 +1522,7 @@ focus_tree = {
 						}
 						add_resource = {
 							type = oil 
-							amount = 15
+							amount = 45
 						}
 					}
 				}
@@ -2251,7 +2265,7 @@ focus = {
 
 		completion_reward = {
 
-			716 = {
+			717 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
@@ -2339,11 +2353,16 @@ focus = {
 				tooltip = industrial_complex_build_speed_factor_tooltip
 			}
 			custom_effect_tooltip = MANspace
-			716 = {
-				add_extra_state_shared_building_slots = 3
+			714 = {
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
 					level = 3
+					instant_build = yes 
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
 					instant_build = yes 
 				}
 			}
@@ -2378,10 +2397,10 @@ focus = {
 				tooltip = industrial_capacity_factory_tooltip
 			}
 			716 = {
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 5
 					instant_build = yes 
 				}
 			}
@@ -2414,7 +2433,7 @@ focus = {
 				tooltip = production_factory_max_efficiency_tooltip
 			}
 
-				random_core_state = {
+				612 = {
 					add_extra_state_shared_building_slots = 3 
 					add_building_construction = {
 						type = arms_factory
@@ -2450,7 +2469,7 @@ focus = {
 			custom_effect_tooltip = MAN_recruitable_tt0
 			add_to_variable = {
 				var = MAN_military_industry_dm_production_speed_industrial_complex_factor
-				value = 0.025
+				value = 0.05
 				tooltip = industrial_complex_build_speed_factor_tooltip
 			}
 			add_to_variable = {
@@ -2553,19 +2572,19 @@ focus = {
 					}
 					add_resource = {
 						type = steel 
-						amount = 4
+						amount = 12
 					}
 					add_resource = {
 						type = aluminium 
-						amount = 4
+						amount = 12
 					}
 					add_resource = {
 						type = tungsten 
-						amount = 2
+						amount = 6
 					}
 					add_resource = {
 						type = chromium 
-						amount = 2
+						amount = 6
 					}
 				}
 				else_if = {
@@ -2590,19 +2609,19 @@ focus = {
 						}
 						add_resource = {
 							type = steel 
-							amount = 6
+							amount = 18
 						}
 						add_resource = {
 							type = aluminium 
-							amount = 6
+							amount = 18
 						}
 						add_resource = {
 							type = tungsten 
-							amount = 3
+							amount = 9
 						}
 						add_resource = {
 							type = chromium 
-							amount = 3
+							amount = 9
 						}
 					}
 				}
@@ -2627,19 +2646,19 @@ focus = {
 						}
 						add_resource = {
 							type = steel 
-							amount = 8
+							amount = 24
 						}
 						add_resource = {
 							type = aluminium 
-							amount = 8
+							amount = 24
 						}
 						add_resource = {
 							type = tungsten 
-							amount = 4
+							amount = 12
 						}
 						add_resource = {
 							type = chromium 
-							amount = 4
+							amount = 12
 						}
 					}
 				}
@@ -2668,11 +2687,11 @@ focus = {
 					}
 					add_resource = {
 						type = tungsten 
-						amount = 4
+						amount = 12
 					}
 					add_resource = {
 						type = chromium 
-						amount = 4
+						amount = 12
 					}
 				}
 				else_if = {
@@ -2697,11 +2716,11 @@ focus = {
 						}
 						add_resource = {
 							type = tungsten 
-							amount = 6
+							amount = 18
 						}
 						add_resource = {
 							type = chromium 
-							amount = 6
+							amount = 18
 						}
 					}
 				}
@@ -2726,11 +2745,11 @@ focus = {
 						}
 						add_resource = {
 							type = tungsten 
-							amount = 8
+							amount = 24
 						}
 						add_resource = {
 							type = chromium 
-							amount = 8
+							amount = 24
 						}
 					}
 				}
@@ -2758,11 +2777,11 @@ focus = {
 					}
 					add_resource = {
 						type = steel 
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = aluminium 
-						amount = 3
+						amount = 9
 					}
 				}
 				else_if = {
@@ -2787,11 +2806,11 @@ focus = {
 						}
 						add_resource = {
 							type = steel 
-							amount = 4
+							amount = 12
 						}
 						add_resource = {
 							type = aluminium 
-							amount = 4
+							amount = 12
 						}
 					}
 				}
@@ -2816,11 +2835,11 @@ focus = {
 						}
 						add_resource = {
 							type = steel 
-							amount = 6
+							amount = 18
 						}
 						add_resource = {
 							type = aluminium 
-							amount = 6
+							amount = 18
 						}
 					}
 				}
@@ -3266,14 +3285,11 @@ focus = {
 
 			add_to_variable = {
 				var = MAN_military_industry_dm_production_speed_infrastructure_factor
-				value = 0.05
+				value = 0.1
 				tooltip = infrastructure_build_speed_factor_tooltip
 			}
 
-			add_to_variable = {
-				MAN_military_industry_dm_local_resources_factor = 0.075
-				tooltip = MAN_resorse_2_fix
-			}
+			
 			add_to_variable = {
 				MAN_industry_spirit_population_factor_pog = -0.02
 				tooltip = CAN_recruitable_tt1
@@ -3380,7 +3396,7 @@ focus = {
 				}
 				add_resource = {
 					type = steel
-					amount = 10
+					amount = 30
 				}
 			}
 			714 = {
@@ -3392,7 +3408,7 @@ focus = {
 					}
 					add_resource = {
 						type = steel
-						amount = 10
+						amount = 30
 					}
 			}
 			custom_effect_tooltip = MANspace
@@ -3438,7 +3454,7 @@ focus = {
 			}
 			add_to_variable = {
 				var = MAN_military_industry_dm_production_speed_industrial_complex_factor
-				value = -0.1
+				value = -0.2
 				tooltip = industrial_complex_build_speed_factor_tooltip
 			}
 			add_to_variable = {
@@ -3510,7 +3526,7 @@ focus = {
 					NOT = {has_country_flag = MAN_KPT_integrated}
 				}
 
-				612 = {
+				761 = {
 					add_extra_state_shared_building_slots = 2
 						add_building_construction = {
 						type = arms_factory
@@ -3531,7 +3547,7 @@ focus = {
 						NOT = {has_country_flag = MAN_KPT_removed}
 
 					}
-					612 = {
+					761 = {
 						add_extra_state_shared_building_slots = 2
 						add_building_construction = {
 							type = arms_factory
@@ -3553,7 +3569,7 @@ focus = {
 						NOT = {has_country_flag = MAN_KPT_removed}
 
 					}
-					612 = {
+					761 = {
 						add_extra_state_shared_building_slots = 3
 						add_building_construction = {
 							type = arms_factory
@@ -3574,7 +3590,7 @@ focus = {
 						NOT = {has_country_flag = MAN_KPT_removed}
 	
 					}
-					612 = {
+					761 = {
 						add_extra_state_shared_building_slots = 4
 						add_building_construction = {
 							type = arms_factory
@@ -3828,7 +3844,7 @@ focus = {
 		completion_reward = {
 			custom_effect_tooltip = MAN_recruitable_tt0
 				add_to_variable = {
-					MAN_military_industry_dm_consumer_goods_factor = -0.02
+					MAN_military_industry_dm_consumer_goods_factor = -0.04
 					tooltip = consumer_goods_tooltip
 				}
 			CAN = {
@@ -3975,7 +3991,7 @@ focus = {
 			focus = MAN_transit_hub
 		}
 
-		cost = 3
+		cost = 2
 
 
 		ai_will_do = {
@@ -4057,7 +4073,7 @@ focus = {
 		}
 
 		available = {
-			has_stability > 0.9
+			has_stability > 0.8
 		}
 
 		bypass = {
@@ -4133,6 +4149,11 @@ focus = {
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = MAN_recruitable_tt0
 			add_to_variable = {
+				var = MAN_military_industry_dm_factory_max_efficiency_factor 
+				value = 0.02
+				tooltip = production_factory_max_efficiency_tooltip
+			}
+			add_to_variable = {
 				var = MAN_military_industry_dm_industrial_capacity_factory
 				value = 0.1
 				tooltip = industrial_capacity_factory_tooltip
@@ -4166,7 +4187,7 @@ focus = {
 			focus = MAN_transit_hub
 		}
 
-		cost = 3
+		cost = 2
 
 
 		ai_will_do = {
@@ -4222,7 +4243,7 @@ focus = {
 		completion_reward = {
 
 			add_political_power = 50
-
+			add_stability = 0.05
 			every_state = {
 				limit = {
 					is_core_of = MAN 
@@ -4277,6 +4298,7 @@ focus = {
 			has_war_support >0.95
 
 			arms_factory > 59
+			dockyard > 9
 		}
 
 		bypass = {
@@ -4290,21 +4312,31 @@ focus = {
 		completion_reward = {
 			custom_effect_tooltip = MAN_recruitable_tt0
 			add_to_variable = {
+				var = MAN_military_industry_dm_factory_max_efficiency_factor 
+				value = 0.02
+				tooltip = production_factory_max_efficiency_tooltip
+			}
+			add_to_variable = {
 				var = MAN_military_industry_dm_production_lack_of_resource_penalty_factor 
-				value = -0.1
+				value = -0.15
 				tooltip = Production_lacking_MAN_tooltip
 			}
 			custom_effect_tooltip = spacers
 			717 = {
 				
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
 					type = industrial_complex
-					level = 4
+					level = 6
 					instant_build = yes 
 				}
 			}
-
+			716 = {
+				add_extra_state_shared_building_slots = 6
+			}
+			745 = {
+				add_extra_state_shared_building_slots = 6
+			}
 
 			hidden_effect = {
 				set_cosmetic_tag = MAN_corporate_paradise_fascism
@@ -4505,15 +4537,15 @@ focus = {
 		}
 
 		available = {
-			has_stability > 0.74
+			has_stability > 0.6
 			761 = {
-				infrastructure > 8
+				infrastructure > 6
 			}
 			717 = {
-				infrastructure > 8
+				infrastructure > 6
 			}
 			612 = {
-				infrastructure > 8
+				infrastructure > 6
 			}
 		}
 
@@ -4535,7 +4567,7 @@ focus = {
 
 			add_to_variable = {
 				var = MAN_military_industry_dm_local_resources_factor
-				value = 0.15
+				value = 0.05
 				tooltip = MAN_resorse_2_fix
 			}
 			714 = {
@@ -4879,7 +4911,10 @@ focus = {
 								artillery_heavy = { x = 4 y = 0 }
 								
 								artillery_heavy = { x = 4 y = 1 }
-								anti_air = { x = 4 y = 2 }
+								field_gun_brigade = { x = 4 y = 2 }
+							}
+							regimental_support = {
+								anti_air = { x = 0 y = 0 }
 							}
 								support = {
 									artillery = { x = 0 y = 0 }
@@ -4887,7 +4922,6 @@ focus = {
 									mobile_engineer = { x = 0 y = 2 }
 									maintenance_company = { x = 0 y = 3 }
 									field_gun_support = { x = 1 y = 0 }
-									anti_air_company = { x = 1 y = 1 }
 								}
 						}
 							every_state = {
@@ -4988,7 +5022,10 @@ focus = {
 								artillery_heavy = { x = 4 y = 0 }
 								
 								artillery_heavy = { x = 4 y = 1 }
-								anti_air = { x = 4 y = 2 }
+								field_gun_brigade = { x = 4 y = 2 }
+							}
+							regimental_support = {
+								anti_air = { x = 0 y = 0 }
 							}
 								support = {
 									artillery = { x = 0 y = 0 }
@@ -4996,7 +5033,6 @@ focus = {
 									mobile_engineer = { x = 0 y = 2 }
 									maintenance_company = { x = 0 y = 3 }
 									field_gun_support = { x = 1 y = 0 }
-									anti_air_company = { x = 1 y = 1 }
 								}
 						}
 							every_state = {
@@ -5310,7 +5346,7 @@ focus = {
 			custom_effect_tooltip = MAN_recruitable_tt0
 			add_to_variable = {
 				var = MAN_military_industry_dm_factory_max_efficiency_factor
-				value = 0.03
+				value = 0.02
 				tooltip = production_factory_max_efficiency_tooltip
 			}
 			add_to_variable = {
@@ -5336,7 +5372,7 @@ focus = {
 					NOT = {has_country_flag = MAN_KPT_integrated}
 				}
 
-				612 = {
+				717 = {
 					add_extra_state_shared_building_slots = 1
 						add_building_construction = {
 						type = arms_factory
@@ -5359,7 +5395,7 @@ focus = {
 						NOT = {has_country_flag = MAN_KPT_removed}
 
 					}
-					612 = {
+					717 = {
 						add_extra_state_shared_building_slots = 2
 						add_building_construction = {
 							type = arms_factory
@@ -5383,7 +5419,7 @@ focus = {
 						NOT = {has_country_flag = MAN_KPT_removed}
 
 					}
-					612 = {
+					717 = {
 						add_extra_state_shared_building_slots = 3
 						add_building_construction = {
 							type = arms_factory
@@ -5406,7 +5442,7 @@ focus = {
 						NOT = {has_country_flag = MAN_KPT_removed}
 	
 					}
-					612 = {
+					717 = {
 						add_extra_state_shared_building_slots = 4
 						add_building_construction = {
 							type = arms_factory
@@ -5470,12 +5506,12 @@ focus = {
 			
 			add_to_variable = {
 				var = MAN_military_industry_dm_production_speed_arms_factory_factor
-				value = 0.075
+				value = 0.05
 				tooltip = arms_factory_build_speed_factor_tooltip
 			}
 			add_to_variable = { 
 				var = MAN_military_industry_dm_production_speed_buildings_factor 
-				value = -0.02 
+				value = -0.04
 				tooltip = buildings_build_speed_factor_tooltip 
 			}
 			add_to_variable = {
@@ -5736,7 +5772,7 @@ focus = {
 			}
 			add_to_variable = {
 				var = MAN_military_industry_dm_local_resources_factor
-				value = 0.1
+				value = 0.05
 				tooltip = MAN_resorse_2_fix
 			}
 
@@ -5816,7 +5852,7 @@ focus = {
 			custom_effect_tooltip = MAN_recruitable_tt0
 			add_to_variable = {
 				var = MAN_military_industry_dm_local_resources_factor
-				value = 0.15
+				value = 0.1
 				tooltip = MAN_resorse_2_fix
 			}
 			add_to_variable = {
@@ -5831,19 +5867,19 @@ focus = {
 				}
 				add_resource = {
 					type = steel 
-					amount = 3
+					amount = 9
 				}
 				add_resource = {
 					type = aluminium  
-					amount = 2
+					amount = 6
 				}
 				add_resource = {
 					type = tungsten  
-					amount = 2
+					amount = 6
 				}					
 				add_resource = {
 					type = chromium  
-					amount = 1
+					amount = 3
 				}	
 			}
 			custom_effect_tooltip = spacers
@@ -5888,7 +5924,7 @@ focus = {
 			custom_effect_tooltip = MAN_recruitable_tt0
 			add_to_variable = {
 				var = MAN_military_industry_dm_factory_max_efficiency_factor
-				value = 0.03
+				value = 0.02
 				tooltip = production_factory_max_efficiency_tooltip
 			}
 			add_to_variable = {
@@ -6093,7 +6129,28 @@ focus = {
 		
 
 		available = {
+			if = {
+				limit = {
+					282 = {
+						NOT = {
+							has_state_flag = no_china_war_state_flag
+							has_state_flag = no_partial_china_war_state_flag
+						}
+					}
+				}
 			has_war = yes
+			}
+			if = {
+				limit = {
+					282 = {
+						OR = {
+							has_state_flag = no_china_war_state_flag
+							has_state_flag = no_partial_china_war_state_flag
+						}
+					}
+				}
+				date > 1938.02.10
+			}
 			has_country_flag = Peace_for_now
 		}
 
@@ -6115,7 +6172,7 @@ focus = {
 				value = 0.05
 				tooltip = stability_tooltip_general
 			}
-			add_stability = -0.1
+			add_stability = -0.2
 			custom_effect_tooltip = spacers
 			hidden_effect = {
 				set_cosmetic_tag = MAN_black_fascism
@@ -6686,10 +6743,10 @@ focus = {
 			tooltip = stability_tooltip_general
 		}
 		328 = {
-			add_extra_state_shared_building_slots = 4
+			add_extra_state_shared_building_slots = 3
 			add_building_construction = {
 				type = industrial_complex
-				level = 4
+				level = 3
 				instant_build = yes 
 			}
 			add_building_construction = {
@@ -6745,7 +6802,7 @@ focus = {
 		}
 		add_to_variable = {
 			var = MAN_military_industry_dm_factory_max_efficiency_factor
-			value = 0.02
+			value = 0.03
 			tooltip = production_factory_max_efficiency_tooltip
 		} 
 	}
@@ -6804,7 +6861,7 @@ focus = {
 			}
 			add_to_variable = { 
 				var = MAN_kempeitai_var_research_speed_factor
-				value = -0.15
+				value = -0.30
 				tooltip = research_speed_factor_tooltip
 			}
 			custom_effect_tooltip = spacers
@@ -6883,7 +6940,28 @@ focus = {
 		}
 
 		available = {
+			if = {
+				limit = {
+					282 = {
+						NOT = {
+							has_state_flag = no_china_war_state_flag
+							has_state_flag = no_partial_china_war_state_flag
+						}
+					}
+				}
 			has_war = yes
+			}
+			if = {
+				limit = {
+					282 = {
+						OR = {
+							has_state_flag = no_china_war_state_flag
+							has_state_flag = no_partial_china_war_state_flag
+						}
+					}
+				}
+				date > 1938.02.10
+			}
 		
 		}
 
@@ -6937,7 +7015,15 @@ focus = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			custom_effect_tooltip = MAN_the_death_of_china
 
+			add_to_variable = {
+				var = MAN_political_power_factor_var
+				value = 0.075
+				tooltip = political_power_gain_modifier_tooltip
+			}
+
+			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = inc_man_right_side
 			add_to_variable = {
 				var = logs
@@ -7028,12 +7114,12 @@ focus = {
 			custom_effect_tooltip = MAN_recruitable_tt0
 			add_to_variable = {
 				var = MAN_military_industry_dm_factory_max_efficiency_factor
-				value = -0.02
+				value = -0.04
 				tooltip = production_factory_max_efficiency_tooltip
 			}
 			add_to_variable = {
 				var = MAN_military_industry_dm_industrial_capacity_factory
-				value = 0.25
+				value = 0.125
 				tooltip = industrial_capacity_factory_tooltip
 			}
 			add_to_variable = {
@@ -7185,12 +7271,12 @@ focus = {
 			uses = 1
 			bonus = 0.75
 		}
-		RCC= {
+		JAP= {
 			add_tech_bonus = {
 				category = industry 
 				name = MAN_a_black_sun_rises
 				uses = 1
-				bonus = 0.75
+				bonus = 0.5
 			}
 		}
 		custom_effect_tooltip = inc_man_right_side
@@ -7239,7 +7325,7 @@ focus = {
 
 			add_to_variable = {
 				var = MAN_political_power_factor_var
-				value = 0.15
+				value = 0.075
 				tooltip = political_power_gain_modifier_tooltip
 			}
 
@@ -7275,7 +7361,28 @@ focus = {
 		}
 
 		available = {
-			has_war_with = CHI 
+			if = {
+			limit = {
+				282 = {
+					NOT = {
+						has_state_flag = no_china_war_state_flag
+						has_state_flag = no_partial_china_war_state_flag
+					}
+				}
+			}
+			has_war_with = CHI
+		}
+		if = {
+			limit = {
+				282 = {
+					OR = {
+						has_state_flag = no_china_war_state_flag
+						has_state_flag = no_partial_china_war_state_flag
+					}
+				}
+			}
+			date > 1938.02.10
+		}
 		}
 
 		bypass = {
@@ -7554,7 +7661,6 @@ focus = {
 
 
 	completion_reward = {
-
 			custom_effect_tooltip = R1
 			custom_effect_tooltip = spacers
 			custom_effect_tooltip = R1-1
@@ -7629,11 +7735,6 @@ focus = {
 				value = -0.1
 				tooltip = industrial_capacity_factory_tooltip
 			}
-			add_to_variable = {
-				var = MAN_military_industry_dm_industrial_capacity_dockyard
-				value = -0.05
-				tooltip = industrial_dockyard_capacity_factory_tooltip
-			}
 			custom_effect_tooltip = MANspace
 		custom_effect_tooltip = MAN_the_death_of_china
 			add_to_variable = { 
@@ -7706,10 +7807,15 @@ focus = {
 
 		completion_reward = {
 			716 = {
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
 					level = 3
+					instant_build = yes 
+				}
+				add_building_construction = {
+					type = tank_assembly
+					level = 1
 					instant_build = yes 
 				}
 			}
@@ -7853,6 +7959,12 @@ focus = {
 		}
 
 		available = {
+			OR = {
+				has_doctrine = new_mobile_warfare
+				has_doctrine = superior_firepower
+				has_doctrine = grand_battleplan
+				has_doctrine = mass_assault
+			}
 
 		}
 
@@ -7869,12 +7981,20 @@ focus = {
 			custom_effect_tooltip = MAN_criminals
 
 			add_to_variable = {
-				MAN_special_forces_attack_factor = 0.05
+				MAN_special_forces_attack_factor = 0.03
 				tooltip = special_forces_attack_tooltip
 			}
 			add_to_variable = {
-				MAN_special_forces_defence_factor = 0.05
+				MAN_special_forces_defence_factor = 0.03
 				tooltip = special_forces_defense_tooltip
+			}
+			add_to_variable = {
+				MAN_armor_attack = -0.05
+				tooltip = army_armor_attack_tooltip
+			}
+			add_to_variable = {
+				 MAN_armor_defense = -0.05
+				tooltip = army_armor_defense_tooltip
 			}
 			custom_effect_tooltip = MANspace
 			add_to_variable = {
@@ -7884,13 +8004,13 @@ focus = {
 			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = special_forces_doctrine
 			}
@@ -7992,8 +8112,13 @@ focus = {
 			custom_effect_tooltip = MAN_recruitable_tt0
 			add_to_variable = {
 				var = MAN_military_industry_dm_industrial_capacity_factory
-				value = 0.05
+				value = 0.1
 				tooltip = industrial_capacity_factory_tooltip
+			}
+			add_to_variable = {
+				var = MAN_military_industry_dm_production_factory_efficiency_gain_factor 
+				value = 0.1
+				tooltip = production_factory_efficiency_gain_factor_tooltip
 			}
 			custom_effect_tooltip = spacers
 			swap_ideas = {
@@ -8001,6 +8126,46 @@ focus = {
 				add_idea = MAN_Heavy_Industry_tank_0
 			}
 			custom_effect_tooltip = spacers
+			if = {
+				limit = {
+					NOT = {
+						has_facility_specialization = specialization_land
+					}
+				}
+				if ={
+
+				
+				limit = { 
+					has_dlc = Gotterdammerung 
+					611 = {
+						is_fully_controlled_by = ROOT
+						can_construct_building = land_facility 
+					}
+				}
+					
+				611 = {
+					add_building_construction = {
+						type = land_facility
+						level = 1
+						instant_build = yes 
+						province = 4495
+					}
+					
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = {
+						can_construct_building = land_facility 
+					}
+					construct_building_in_random_province = {
+						land_facility = 1
+					}
+				}
+			}
+			custom_effect_tooltip = spacers
+		}
+
 			if = {
 				limit = {
 					has_idea = jap_kwantung_army_3
@@ -8043,11 +8208,11 @@ focus = {
 		completion_reward = {
 			custom_effect_tooltip = MAN_criminals
 			add_to_variable = {
-				MAN_max_planning_var = 0.04
+				MAN_max_planning_var = 0.06
 				tooltip = max_planning_tooltip
 			}
 			add_to_variable = {
-				MAN_panning_speed_var = -0.15
+				MAN_panning_speed_var = -0.1
 				tooltip = planning_speed_tooltip
 			}
 			add_to_variable = {
@@ -8059,6 +8224,124 @@ focus = {
 				value = 0.1
 				tooltip = command_daily_power_tt_10
 			}
+
+			custom_effect_tooltip = MANspace
+						if = {
+				limit = {
+					has_idea = jap_kwantung_army_3
+					has_doctrine = new_mobile_warfare
+				}
+
+					add_daily_mastery = {
+						name = "Ruthless Japanese Training"
+						amount = 0.1
+						days = 200
+						track = operation_tactics
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Japanese Assualt Training"
+						amount = 0.1
+						days = 200
+						track = operation_tactics_SFP
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Ruthless Japanese Training"
+						amount = 0.1
+						days = 200
+						track = operation_tactics_GBP
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Ruthless Japanese Training"
+						amount = 0.1
+						days = 200
+						track = operation_tactics_MA
+					}
+				}
+			# no debuff
+			if = {
+				limit = {
+					NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+					has_doctrine = new_mobile_warfare
+				}
+
+					add_daily_mastery = {
+						name = "Ruthless Japanese Training"
+						amount = 0.05
+						days = 200
+						track = operation_tactics
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Ruthless Japanese Training"
+						amount = 0.05
+						days = 200
+						track = operation_tactics_SFP
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Ruthless Japanese Training"
+						amount = 0.05
+						days = 200
+						track = operation_tactics_GBP
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = mass_assault
+					}
+					
+
+					add_daily_mastery = {
+						name = "Ruthless Japanese Training"
+						amount = 0.05
+						days = 200
+						track = operation_tactics_MA
+					}
+				}
+			# 
+			
 
 			 
 		}
@@ -8099,16 +8382,27 @@ focus = {
 		completion_reward = {
 			custom_effect_tooltip = MAN_criminals
 			add_to_variable = {
-				MAN_special_forces_attack_factor = 0.05
+				var = MAN_army_attack_factor_var
+				value = -0.03
+				tooltip = army_attack_factor_tooltip
+			}
+			add_to_variable = {
+				MAN_special_forces_attack_factor = 0.03
 				tooltip = special_forces_attack_tooltip
 			}
 			add_to_variable = {
-				MAN_special_forces_defence_factor = 0.05
+				MAN_special_forces_defence_factor = 0.03
 				tooltip = special_forces_defense_tooltip
 			}
 			add_to_variable = {
 				MAN_panning_speed_var = 0.15
 				tooltip = planning_speed_tooltip
+			}
+
+			add_mastery_bonus = {
+				name = "Japanese Officers"
+				bonus = 0.1
+				days = 90
 			}
 		}
 	}
@@ -8141,6 +8435,12 @@ focus = {
 		}
 
 		available = {
+			OR = {
+				has_doctrine = new_mobile_warfare
+				has_doctrine = superior_firepower
+				has_doctrine = grand_battleplan
+				has_doctrine = mass_assault
+			}
 
 		}
 
@@ -8177,7 +8477,7 @@ focus = {
 
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = land_doctrine
 			}
@@ -8202,7 +8502,7 @@ focus = {
 		x = 0
 		y = 2
 
-		cost = 7.16
+		cost = 5
 		prerequisite = { 
 			focus = MAN_special_forces 
 		}
@@ -8298,7 +8598,122 @@ focus = {
 				MAN_max_planning_var = 0.025
 				tooltip = max_planning_tooltip
 			}
-
+			custom_effect_tooltip = spacers
+			if = {
+				limit = {
+					has_idea = jap_kwantung_army_3
+					has_doctrine = new_mobile_warfare
+				}
+				
+				add_daily_mastery = {
+					name = "Assualt Infantry Training"
+					amount = 0.2
+					days = 200
+					track = spirit_of_infantry_track
+				}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Supressive Fire Assualt Infantry Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_infantry_SFP_track
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Multi-layer Assualt Infantry Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_infantry_GBP_track
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Small Assualty Unit Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_infantry_MA_track
+					}
+				}
+			# no debuff
+			if = {
+				limit = {
+					NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+					has_doctrine = new_mobile_warfare
+				}
+				
+				add_daily_mastery = {
+					name = "Assualt Infantry Training"
+					amount = 0.1
+					days = 200
+					track = spirit_of_infantry_track
+				}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Supressive Fire Assualt Infantry Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_infantry_SFP_track
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Multi-layer Rotation Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_infantry_GBP_track
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Small Assualty Unit Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_infantry_MA_track
+					}
+				}
+			#
+			
 			custom_effect_tooltip = spacers
 			add_equipment_to_stockpile = { 
 				type = infantry_equipment amount = 2000 producer = jap
@@ -8360,6 +8775,46 @@ focus = {
 			custom_effect_tooltip = spacers
 			if = {
 				limit = {
+					NOT = {
+						has_facility_specialization = specialization_land
+					}
+				}
+				if ={
+
+				
+				limit = { 
+					has_dlc = Gotterdammerung 
+					611 = {
+						is_fully_controlled_by = ROOT
+						can_construct_building = land_facility 
+					}
+				}
+					
+				611 = {
+					add_building_construction = {
+						type = land_facility
+						level = 1
+						instant_build = yes 
+						province = 4495
+					}
+					
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = {
+						can_construct_building = land_facility 
+					}
+					construct_building_in_random_province = {
+						land_facility = 1
+					}
+				}
+			}
+			custom_effect_tooltip = spacers
+		}
+
+			if = {
+				limit = {
 					has_idea = jap_kwantung_army_3
 				}
 				army_experience = 230
@@ -8418,6 +8873,168 @@ focus = {
 				MAN_max_planning_var = 0.05
 				tooltip = max_planning_tooltip
 			}
+			custom_effect_tooltip = spacers
+			if = {
+				limit = {
+					has_idea = jap_kwantung_army_3
+					has_doctrine = new_mobile_warfare
+				}
+					add_daily_mastery = {
+						name = "Infiltration Squad Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_operations
+					}
+					add_daily_mastery = {
+						name = "Japanese Assualt Training"
+						amount = 0.1
+						days = 200
+						track = operation_tactics
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Infiltration Squad Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_operations_SFP
+					}
+					add_daily_mastery = {
+						name = "Japanese Assualt Training"
+						amount = 0.1
+						days = 200
+						track = operation_tactics_SFP
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Infiltration Squad Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_operations_GBP
+					}
+					add_daily_mastery = {
+						name = "Japanese Assualt Training"
+						amount = 0.1
+						days = 200
+						track = operation_tactics_GBP
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Infiltration Squad Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_operations_MA
+					}
+					add_daily_mastery = {
+						name = "Japanese Assualt Training"
+						amount = 0.1
+						days = 200
+						track = operation_tactics_MA
+					}
+				}
+			# no debuff
+			if = {
+				limit = {
+					NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+					has_doctrine = new_mobile_warfare
+				}
+					add_daily_mastery = {
+						name = "Infiltration Squad Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_operations
+					}
+					add_daily_mastery = {
+						name = "Japanese Assualt Training"
+						amount = 0.05
+						days = 200
+						track = operation_tactics
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Infiltration Squad Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_operations_SFP
+					}
+					add_daily_mastery = {
+						name = "Japanese Assualt Training"
+						amount = 0.05
+						days = 200
+						track = operation_tactics_SFP
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Infiltration Squad Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_operations_GBP
+					}
+					add_daily_mastery = {
+						name = "Japanese Assualt Training"
+						amount = 0.05
+						days = 200
+						track = operation_tactics_GBP
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Infiltration Squad Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_operations_MA
+					}
+					add_daily_mastery = {
+						name = "Japanese Assualt Training"
+						amount = 0.05
+						days = 200
+						track = operation_tactics_MA
+					}
+				}
+			# 
+			
 			custom_effect_tooltip = spacers
 
 			every_army_leader = {
@@ -8506,6 +9123,173 @@ focus = {
 			}
 
 			custom_effect_tooltip = spacers
+
+			if = {
+				limit = {
+					has_idea = jap_kwantung_army_3
+					has_doctrine = new_mobile_warfare
+				}
+				
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_combat_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.1
+						days = 200
+						track = combat_support_tactics
+					}
+				}
+
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_combat_SFP_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.1
+						days = 200
+						track = combat_support_SFP_tactics
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_combat_GBP_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.1
+						days = 200
+						track = combat_support_GBP_tactics
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_combat_MA_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.1
+						days = 200
+						track = combat_support_MA_tactics
+					}
+				}
+			# no debuff
+			if = {
+				limit = {
+					NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+					has_doctrine = new_mobile_warfare
+				}
+				
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_combat_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.05
+						days = 200
+						track = combat_support_tactics
+					}
+				}
+
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_combat_SFP_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.05
+						days = 200
+						track = combat_support_SFP_tactics
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_combat_GBP_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.05
+						days = 200
+						track = combat_support_GBP_tactics
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_combat_MA_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.05
+						days = 200
+						track = combat_support_MA_tactics
+					}
+				}
+			#
+
+			custom_effect_tooltip = spacers
 			custom_effect_tooltip = already_research_artillery_gives_bonuses
 			if = {
 				limit = { 
@@ -8542,7 +9326,7 @@ focus = {
 						name = artillery
 						bonus = 0.25
 						uses = 1
-						category = artillery
+						category = cat_artillery
 					}
 
 				set_technology = {
@@ -8567,7 +9351,7 @@ focus = {
 						name = artillery
 						bonus = 0.25
 						uses = 1
-						category = artillery
+						category = cat_artillery
 					}
 
 				set_technology = {
@@ -8592,7 +9376,7 @@ focus = {
 						name = artillery
 						bonus = 0.25
 						uses = 1
-						category = artillery
+						category = cat_artillery
 					}
 					
 				set_technology = {
@@ -8615,7 +9399,7 @@ focus = {
 					name = artillery
 					bonus = 0.5
 					uses = 1
-					category = artillery
+					category = cat_artillery
 				}
 				set_technology = {
 					heavy_antiair_2 = 1
@@ -8634,7 +9418,7 @@ focus = {
 					name = artillery
 					bonus = 0.5
 					uses = 1
-					category = artillery
+					category = cat_artillery
 				}
 				set_technology = {
 					heavy_artillery2 = 1
@@ -8653,7 +9437,7 @@ focus = {
 					name = artillery
 					bonus = 0.5
 					uses = 1
-					category = artillery
+					category = cat_artillery
 				}
 				set_technology = {
 					artillery4 = 1
@@ -8671,7 +9455,7 @@ focus = {
 					bonus = 0.75
 					ahead_reduction = 0.25
 					uses = 1
-					category = artillery
+					category = cat_artillery
 				}
 
 			}
@@ -8717,7 +9501,173 @@ focus = {
 				MAN_arty_attc = 0.1
 				tooltip = army_artillery_attack_tooltip
 			}
+			custom_effect_tooltip = spacers
+			if = {
+				limit = {
+					has_idea = jap_kwantung_army_3
+					has_doctrine = new_mobile_warfare
+				}
+				
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_combat_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.1
+						days = 200
+						track = combat_support_tactics
+					}
+				}
 
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_combat_SFP_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.1
+						days = 200
+						track = combat_support_SFP_tactics
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_combat_GBP_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.1
+						days = 200
+						track = combat_support_GBP_tactics
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_combat_MA_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.1
+						days = 200
+						track = combat_support_MA_tactics
+					}
+				}
+			# no debuff
+			if = {
+				limit = {
+					NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+					has_doctrine = new_mobile_warfare
+				}
+				
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_combat_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.05
+						days = 200
+						track = combat_support_tactics
+					}
+				}
+
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_combat_SFP_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.05
+						days = 200
+						track = combat_support_SFP_tactics
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_combat_GBP_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.05
+						days = 200
+						track = combat_support_GBP_tactics
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Backline Support Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_combat_MA_support
+					}
+					add_daily_mastery = {
+						name = "Artillery Crew Training"
+						amount = 0.05
+						days = 200
+						track = combat_support_MA_tactics
+					}
+				}
+			#
+
+			
 			custom_effect_tooltip = spacers
 
 			add_equipment_to_stockpile = { 
@@ -8747,7 +9697,7 @@ focus = {
 		x = 1
 		y = 1
 
-		cost = 7.16
+		cost = 5
 
 		prerequisite = {
 			focus = MAN_frontline_infantry_4
@@ -8792,6 +9742,7 @@ focus = {
 			else = {
 				army_experience = 80
 			}	
+
 		custom_effect_tooltip = spacers
 		
 		
@@ -8811,7 +9762,7 @@ focus = {
 		x = 3
 		y = 3
 
-		cost = 7.16
+		cost = 5
 		prerequisite = { focus = MAN_center_inf }
 
 
@@ -8847,11 +9798,17 @@ focus = {
 
 			custom_effect_tooltip = MANspace
 			set_technology = { railway_gun = 1 }
-			create_railway_gun = {
-				equipment = railway_gun_equipment_1
-				name =  "Kyūrei-shiki"
-				location = 11771
+			if = {
+				limit = {
+					has_tech = railway_gun
+				}
+				create_railway_gun = {
+					equipment = railway_gun_equipment_1
+					name =  "Kyūrei-shiki"
+					location = 11771
+				}
 			}
+			
 		}
 	}
 	focus = { 
@@ -9003,7 +9960,172 @@ focus = {
 				MAN_supply_consumption_factor= 0.05
 				tooltip = supply_consumption_factor_tooltip
 			}
+			custom_effect_tooltip = spacers
 
+			if = {
+				limit = {
+					has_idea = jap_kwantung_army_3
+					has_doctrine = new_mobile_warfare
+				}
+				
+					add_daily_mastery = {
+						name = "Japanese Tactics Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_operations
+					}
+					add_daily_mastery = {
+						name = "Enemy Adaptation Training"
+						amount = 0.1
+						days = 200
+						track = operation_tactics
+					}
+				}
+
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Japanese Tactics Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_operations_SFP
+					}
+					add_daily_mastery = {
+						name = "Enemy Adaptation Training"
+						amount = 0.1
+						days = 200
+						track = operation_tactics_SFP
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Japanese Tactics Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_operations_GBP
+					}
+					add_daily_mastery = {
+						name = "Enemy Adaptation Training"
+						amount = 0.1
+						days = 200
+						track = operation_tactics_GBP
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Japanese Tactics Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_operations_MA
+					}
+					add_daily_mastery = {
+						name = "Enemy Adaptation Training"
+						amount = 0.1
+						days = 200
+						track = operation_tactics_MA
+					}
+				}
+			# no debuff
+			if = {
+				limit = {
+					NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+					has_doctrine = new_mobile_warfare
+					}
+				
+					add_daily_mastery = {
+						name = "Japanese Tactics Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_operations
+					}
+					add_daily_mastery = {
+						name = "Enemy Adaptation Training"
+						amount = 0.05
+						days = 200
+						track = operation_tactics
+					}
+				}
+
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Japanese Tactics Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_operations_SFP
+					}
+					add_daily_mastery = {
+						name = "Enemy Adaptation Training"
+						amount = 0.05
+						days = 200
+						track = operation_tactics_SFP
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Japanese Tactics Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_operations_GBP
+					}
+					add_daily_mastery = {
+						name = "Enemy Adaptation Training"
+						amount = 0.05
+						days = 200
+						track = operation_tactics_GBP
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Japanese Tactics Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_operations_MA
+					}
+					add_daily_mastery = {
+						name = "Enemy Adaptation Training"
+						amount = 0.05
+						days = 200
+						track = operation_tactics_MA
+					}
+				}
+			#
 		}
 	}
 	focus = { 
@@ -9049,6 +10171,121 @@ focus = {
 				tooltip = army_command_power_tooltip_10
 			}
 
+			custom_effect_tooltip = MANspace
+			if = {
+				limit = {
+					has_idea = jap_kwantung_army_3
+					has_doctrine = new_mobile_warfare
+				}
+				
+				add_daily_mastery = {
+					name = "Assualt Infantry Training"
+					amount = 0.4
+					days = 200
+					track = spirit_of_infantry_track
+				}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Supressive Fire Assualt Infantry Training"
+						amount = 0.4
+						days = 200
+						track = spirit_of_infantry_SFP_track
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Multi-layer Assualt Infantry Training"
+						amount = 0.4
+						days = 200
+						track = spirit_of_infantry_GBP_track
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Small Assualty Unit Training"
+						amount = 0.4
+						days = 200
+						track = spirit_of_infantry_MA_track
+					}
+				}
+			# no debuff
+			if = {
+				limit = {
+					NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+					has_doctrine = new_mobile_warfare
+				}
+				
+				add_daily_mastery = {
+					name = "Assualt Infantry Training"
+					amount = 0.2
+					days = 200
+					track = spirit_of_infantry_track
+				}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Supressive Fire Assualt Infantry Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_infantry_SFP_track
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Multi-layer Rotation Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_infantry_GBP_track
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Small Assualty Unit Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_infantry_MA_track
+					}
+				}
+			#
 			custom_effect_tooltip = MANspace
 			every_army_leader = {
 				add_logistics = 1
@@ -9099,7 +10336,7 @@ focus = {
 			tooltip = Supply_node_tooltip
 		}
 		add_to_variable = {
-			MAN_supply_consumption_factor= 0.05
+			MAN_supply_consumption_factor= -0.05
 			tooltip = supply_consumption_factor_tooltip
 		}
 		custom_effect_tooltip = spacers
@@ -9159,6 +10396,15 @@ focus = {
 			factor = 1
 		}
 
+		available = {
+			OR = {
+				has_doctrine = new_mobile_warfare
+				has_doctrine = superior_firepower
+				has_doctrine = grand_battleplan
+				has_doctrine = mass_assault
+			}
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -9192,7 +10438,7 @@ focus = {
 
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -9228,7 +10474,9 @@ focus = {
 		}
 
 
-		available = {}
+		available = {
+			
+		}
 		bypass = {}
 
 		cancel_if_invalid = yes
@@ -9253,7 +10501,169 @@ focus = {
 				MAN_panning_speed_var = 0.15
 				tooltip = planning_speed_tooltip
 			}
-
+			custom_effect_tooltip = spacers
+			if = {
+				limit = {
+					has_idea = jap_kwantung_army_3
+					has_doctrine = new_mobile_warfare
+				}
+				
+				add_daily_mastery = {
+					name = "Tank Crew Training"
+					amount = 0.2
+					days = 200
+					track = spirit_of_armor_track
+				}
+				add_daily_mastery = {
+					name = "Tank Commander Training"
+					amount = 0.1
+					days = 200
+					track = armored_tactics_track
+				}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Tank Coordination Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_armor_SFP_track
+					}
+					add_daily_mastery = {
+						name = "Tank Coordination Training"
+						amount = 0.1
+						days = 200
+						track = armored_tactics_SFP_track
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Tank Cohesion Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_armor_GBP_track
+					}
+					add_daily_mastery = {
+						name = "Tank Cohesion Training"
+						amount = 0.1
+						days = 200
+						track = armored_tactics_GBP_track
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Tank Indoctrination Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_armor_MA_track
+					}
+					add_daily_mastery = {
+						name = "Tank Indoctrination Training"
+						amount = 0.1
+						days = 200
+						track = armored_tactics_MA_track
+					}
+				}
+			# no debuff
+			if = {
+				limit = {
+					NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+					has_doctrine = new_mobile_warfare
+				}
+				
+				add_daily_mastery = {
+					name = "Tank Crew Training"
+					amount = 0.1
+					days = 200
+					track = spirit_of_armor_track
+				}
+				add_daily_mastery = {
+					name = "Tank Commander Training"
+					amount = 0.05
+					days = 200
+					track = armored_tactics_track
+				}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Tank Coordination Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_armor_SFP_track
+					}
+					add_daily_mastery = {
+						name = "Tank Coordination Training"
+						amount = 0.05
+						days = 200
+						track = armored_tactics_SFP_track
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Tank Cohesion Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_armor_GBP_track
+					}
+					add_daily_mastery = {
+						name = "Tank Cohesion Training"
+						amount = 0.05
+						days = 200
+						track = armored_tactics_GBP_track
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Tank Indoctrination Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_armor_MA_track
+					}
+					add_daily_mastery = {
+						name = "Tank Indoctrination Training"
+						amount = 0.05
+						days = 200
+						track = armored_tactics_MA_track
+					}
+				}
+			#
 			custom_effect_tooltip = spacers
 
 			mio:JAP_mitsu = {
@@ -9279,7 +10689,9 @@ focus = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 
 		bypass = {}
 
@@ -9306,6 +10718,169 @@ focus = {
 				MAN_land_doctrine_cost_factor = -0.1
 				tooltip = land_doc_tp
 			}
+			custom_effect_tooltip = spacers
+			if = {
+				limit = {
+					has_idea = jap_kwantung_army_3
+					has_doctrine = new_mobile_warfare
+				}
+				
+				add_daily_mastery = {
+					name = "Tank Crew Training"
+					amount = 0.2
+					days = 200
+					track = spirit_of_armor_track
+				}
+				add_daily_mastery = {
+					name = "Tank Commander Training"
+					amount = 0.1
+					days = 200
+					track = armored_tactics_track
+				}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Tank Coordination Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_armor_SFP_track
+					}
+					add_daily_mastery = {
+						name = "Tank Coordination Training"
+						amount = 0.1
+						days = 200
+						track = armored_tactics_SFP_track
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Tank Cohesion Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_armor_GBP_track
+					}
+					add_daily_mastery = {
+						name = "Tank Cohesion Training"
+						amount = 0.1
+						days = 200
+						track = armored_tactics_GBP_track
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Tank Indoctrination Training"
+						amount = 0.2
+						days = 200
+						track = spirit_of_armor_MA_track
+					}
+					add_daily_mastery = {
+						name = "Tank Indoctrination Training"
+						amount = 0.1
+						days = 200
+						track = armored_tactics_MA_track
+					}
+				}
+			# no debuff
+			if = {
+				limit = {
+					NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+					has_doctrine = new_mobile_warfare
+				}
+				
+				add_daily_mastery = {
+					name = "Tank Crew Training"
+					amount = 0.1
+					days = 200
+					track = spirit_of_armor_track
+				}
+				add_daily_mastery = {
+					name = "Tank Commander Training"
+					amount = 0.05
+					days = 200
+					track = armored_tactics_track
+				}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Tank Coordination Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_armor_SFP_track
+					}
+					add_daily_mastery = {
+						name = "Tank Coordination Training"
+						amount = 0.05
+						days = 200
+						track = armored_tactics_SFP_track
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Tank Cohesion Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_armor_GBP_track
+					}
+					add_daily_mastery = {
+						name = "Tank Cohesion Training"
+						amount = 0.05
+						days = 200
+						track = armored_tactics_GBP_track
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Tank Indoctrination Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_armor_MA_track
+					}
+					add_daily_mastery = {
+						name = "Tank Indoctrination Training"
+						amount = 0.05
+						days = 200
+						track = armored_tactics_MA_track
+					}
+				}
+			#
 			custom_effect_tooltip = spacers
 			mio:JAP_osaka_army_arsenal_organization = {
 				add_mio_funds = 750
@@ -9601,7 +11176,7 @@ focus = {
 			custom_effect_tooltip = spacers
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -9788,7 +11363,121 @@ focus = {
 				uses = 1
 				technology = jap_mechanised_infantry2
 			}
-
+			custom_effect_tooltip = spacers
+			if = {
+				limit = {
+					has_idea = jap_kwantung_army_3
+					has_doctrine = new_mobile_warfare
+				}
+				
+				add_daily_mastery = {
+					name = "Spearhead Infantry Training"
+					amount = 0.1
+					days = 200
+					track = spirit_of_infantry_track
+				}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Supression Infantry Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_infantry_SFP_track
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Multi-layer Rotation Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_infantry_GBP_track
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Small Regiment Cohesion Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_infantry_MA_track
+					}
+				}
+			# no debuff
+			if = {
+				limit = {
+					NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+					has_doctrine = new_mobile_warfare
+				}
+				
+				add_daily_mastery = {
+					name = "Spearhead Infantry Training"
+					amount = 0.05
+					days = 200
+					track = spirit_of_infantry_track
+				}
+				}
+				if = {
+					limit = {
+						NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Supression Infantry Training"
+						amount = 0.05
+						days = 200
+						track = spirit_of_infantry_SFP_track
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Multi-layer Rotation Training"
+						amount = 0.05
+						days = 200
+						track = spirit_of_infantry_GBP_track
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Small Regiment Cohesion Training"
+						amount = 0.05
+						days = 200
+						track = spirit_of_infantry_MA_track
+					}
+				}
+			#
 			custom_effect_tooltip = spacers
 			if = {
 				limit = {
@@ -9865,9 +11554,7 @@ focus = {
 							artillery = { x = 0 y = 0 }
 							recon_ac = { x = 0 y = 1 }
 							engineer = { x = 0 y = 2 }
-							anti_air_company = { x = 0 y = 3 }
 							artillery_heavy_support = { x = 1 y = 0 }
-	
 						}
 					}
 					every_state = {
@@ -10157,6 +11844,124 @@ focus = {
 			if = {
 				limit = {
 					has_idea = jap_kwantung_army_3
+					has_doctrine = new_mobile_warfare
+				}
+				
+				add_daily_mastery = {
+					name = "Spearhead Infantry Training"
+					amount = 0.1
+					days = 200
+					track = spirit_of_infantry_track
+				}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Supression Infantry Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_infantry_SFP_track
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Multi-layer Rotation Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_infantry_GBP_track
+					}
+				}
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_3
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Small Regiment Cohesion Training"
+						amount = 0.1
+						days = 200
+						track = spirit_of_infantry_MA_track
+					}
+				}
+			# no debuff
+			if = {
+				limit = {
+					NOT = {
+						has_idea = jap_kwantung_army_3
+					}
+					has_doctrine = new_mobile_warfare
+				}
+				
+				add_daily_mastery = {
+					name = "Spearhead Infantry Training"
+					amount = 0.05
+					days = 200
+					track = spirit_of_infantry_track
+				}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = superior_firepower
+					}
+					
+					add_daily_mastery = {
+						name = "Supression Infantry Training"
+						amount = 0.05
+						days = 200
+						track = spirit_of_infantry_SFP_track
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = grand_battleplan
+					}
+					
+					add_daily_mastery = {
+						name = "Multi-layer Rotation Training"
+						amount = 0.05
+						days = 200
+						track = spirit_of_infantry_GBP_track
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = jap_kwantung_army_3
+						}
+						has_doctrine = mass_assault
+					}
+					
+					add_daily_mastery = {
+						name = "Small Regiment Cohesion Training"
+						amount = 0.05
+						days = 200
+						track = spirit_of_infantry_MA_track
+					}
+				}
+			#
+
+			
+			custom_effect_tooltip = spacers
+
+			if = {
+				limit = {
+					has_idea = jap_kwantung_army_3
 				}
 				army_experience = 230
 			}
@@ -10249,9 +12054,7 @@ focus = {
 							artillery = { x = 0 y = 0 }
 							recon = { x = 0 y = 1 }
 							engineer = { x = 0 y = 2 }
-							anti_air_company = { x = 0 y = 3 }
 							artillery_heavy_support = { x = 1 y = 0 }
-	
 						}
 					}
 					every_state = {
@@ -10492,7 +12295,45 @@ focus = {
 		relative_position_id = MAN_tank_mech_focus_fuckers_1
 		x = 7
 		y = 1
+		available = {
+			has_army_manpower = {
+				size > 399999
+			}
+			if = {
+				limit = {
+					282 = {
+						NOT = {
+							has_state_flag = no_china_war_state_flag
+							has_state_flag = no_partial_china_war_state_flag
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = USA_escalation_is_over_2	
+					JAP = {
+						check_variable = {
+							var = JAP_war_escalation_var
+							value = 2
+							compare = greater_than_or_equals
+						}
+					}
+					
+				}
 
+			}
+			if = {
+				limit = {
+					282 = {
+						OR = {
+							has_state_flag = no_china_war_state_flag
+							has_state_flag = no_partial_china_war_state_flag
+						}
+					}
+				}
+				date > 1938.02.10
+			}
+		}
+		
 		cost = 7.16
 		prerequisite = { 
 			focus = MAN_tank_mech_focus_fuckers_1 
@@ -10538,48 +12379,6 @@ focus = {
 
 			if = {
 				limit = {
-					NOT = {
-						has_facility_specialization = specialization_land
-					}
-				}
-				if ={
-
-				
-				limit = { 
-					has_dlc = Gotterdammerung 
-					611 = {
-						is_fully_controlled_by = ROOT
-						can_construct_building = land_facility 
-					}
-				}
-					
-				611 = {
-					add_building_construction = {
-						type = land_facility
-						level = 1
-						instant_build = yes 
-						province = 4495
-					}
-					
-				}
-			}
-			else = {
-				random_owned_controlled_state = {
-					limit = {
-						can_construct_building = land_facility 
-					}
-					construct_building_in_random_province = {
-						land_facility = 1
-					}
-				}
-			}
-			custom_effect_tooltip = spacers
-		}
-
-		
-
-			if = {
-				limit = {
 					has_idea = jap_kwantung_army_3
 				}
 				army_experience = 230
@@ -10587,7 +12386,27 @@ focus = {
 			else = {
 				army_experience = 80
 			}
-			
+			if = {
+				limit = {
+					casualties_inflicted_by = {
+						opponent = CHI
+						thousands < 100
+					}
+				}
+			}
+			if = {
+				limit = {
+					casualties_inflicted_by = {
+						opponent = CHI
+						thousands > 100
+					}
+				}
+				add_mastery_bonus = {
+					name = "Refroming Army"
+					bonus = 0.2
+					days = 180
+				}
+			}
 		}
 	}
 
@@ -10921,7 +12740,7 @@ focus = {
 				tooltip = MAN_army_def_factor_tooltip
 			}
 			add_to_variable = {
-				MAN_arty_attc = -0.005
+				MAN_arty_attc = -0.1
 				tooltip = army_artillery_attack_tooltip
 			}
 			custom_effect_tooltip = spacers
@@ -10956,7 +12775,12 @@ focus = {
 						instant_build = yes 
 						province = 4495
 					}
-					
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = tank_assembly
+						level = 1
+						instant_build = yes 
+					}
 				}
 				
 			}
@@ -11112,7 +12936,7 @@ focus = {
 			}
 	
 			available = {
-				
+				dockyard > 14
 			}
 	
 			bypass = {
@@ -11132,7 +12956,7 @@ focus = {
 				}
 				add_doctrine_cost_reduction = {
 					name = land_doc_bonus
-					cost_reduction = 0.4
+					cost_reduction = 0.5
 					uses = 2
 					category = special_forces_doctrine
 				}
@@ -11337,7 +13161,7 @@ focus = {
 				}
 				add_doctrine_cost_reduction = {
 					name = land_doc_bonus
-					cost_reduction = 0.4
+					cost_reduction = 0.5
 					uses = 1
 					category = naval_doctrine
 				}
@@ -11567,12 +13391,12 @@ focus = {
 			}
 			custom_effect_tooltip = MANspace
 
-			navy_experience = 75
+			navy_experience = 125
 
 			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
 				name = land_doctrine
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = naval_doctrine
 			}
@@ -11695,7 +13519,7 @@ focus = {
 			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = naval_doctrine
 			}
@@ -11824,7 +13648,11 @@ focus = {
 			factor = 2
 		}
 		available = {
-			arms_factory > 19
+			#arms_factory > 19
+			612 = {
+				air_assembly > 0
+				arms_factory > 4
+			}
 		}
 		bypass = {
 
@@ -11837,7 +13665,7 @@ focus = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = air_doctrine
 			}
@@ -11852,6 +13680,16 @@ focus = {
 				bonus = 0.5
 				uses = 1
 				category = cat_heavy_fighter	
+			}			
+			air_experience = 50
+			custom_effect_tooltip = MANspace
+			612 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = air_assembly
+					level = 1
+					instant_build = yes 
+				}
 			}
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = figters_japan_export
@@ -11895,6 +13733,8 @@ focus = {
 				uses = 1
 				category = light_fighter		
 			}
+			air_experience = 50
+			custom_effect_tooltip = MANspace
 			612 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -11902,14 +13742,19 @@ focus = {
 					level = 2
 					instant_build = yes
 				}
+					add_building_construction = {
+						type = air_assembly
+						level = 1
+						instant_build = yes 
+				}
 			}
 
 			custom_effect_tooltip = MANspace
 			activate_decision = Develop_air_fatory_center_2
-			custom_effect_tooltip = MANspace
-			custom_effect_tooltip = if_completed
-			custom_effect_tooltip = air_production_small_1_adds
-			custom_effect_tooltip = MANspace
+			#custom_effect_tooltip = MANspace
+			#custom_effect_tooltip = if_completed
+			#custom_effect_tooltip = air_production_small_1_adds
+			
 			
 			
 			
@@ -11953,33 +13798,28 @@ focus = {
 				category = cas_bomber
 				category = tactical_bomber					
 			}
-			
+			air_experience = 50
+			custom_effect_tooltip = MANspace
 			612 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 2
 					instant_build = yes
 				}
-			}
-			random_core_state = {
-				prioritize = {
-					328
-					716
-					610
-				}
-				remove_building = {
-					type = industrial_complex
+				add_building_construction = {
+					type = air_assembly
 					level = 1
+					instant_build = yes 
 				}
 			}
 
 			custom_effect_tooltip = MANspace
 			activate_decision = Develop_air_fatory_center_4
-			custom_effect_tooltip = MANspace
-			custom_effect_tooltip = if_completed
-			custom_effect_tooltip = air_production_large_1_adds
-			custom_effect_tooltip = MANspace
+			#custom_effect_tooltip = MANspace
+			#custom_effect_tooltip = if_completed
+			#custom_effect_tooltip = air_production_large_1_adds
+			
 			
 		}
 	}
@@ -11999,8 +13839,10 @@ focus = {
 		}
 
 
-		bypass = {
-
+		available = {
+			NOT = {
+				has_country_flag = cope
+			}
 		}
 
 		cancel_if_invalid = yes
@@ -12016,17 +13858,10 @@ focus = {
 				category = tactical_bomber					
 			}
 			custom_effect_tooltip = MANspace
-			if = {
-				limit = { has_completed_focus = MAN_agility_focus }
-				add_equipment_to_stockpile = { type = nav_bomber_equipment_1938 amount = 100 producer = JAP }
-			}
-			if = {
-				limit = { NOT = {has_completed_focus = MAN_agility_focus }}
-				add_equipment_to_stockpile = { type = CAS_equipment_1937 amount = 150 producer = JAP }
-			}
+			add_equipment_to_stockpile = { type = CAS_equipment_1937 amount = 150 producer = JAP }
 			custom_effect_tooltip = MANspace
 			add_ideas = { MAN_Air_Service }
-			custom_effect_tooltip = MANspace
+			#custom_effect_tooltip = MANspace
 			custom_effect_tooltip = bomber_japan_export
 		
 		}
@@ -12050,17 +13885,44 @@ focus = {
 			NOT = {
 				has_country_flag = cope
 			}
-			custom_trigger_tooltip = {
-				tooltip = USA_escalation_is_over_2	
-				JAP = {
-					check_variable = {
-						var = JAP_war_escalation_var
-						value = 2
-						compare = greater_than_or_equals
+			612 = {
+				air_assembly > 3
+				arms_factory > 11
+			}
+			if = {
+				limit = {
+					282 = {
+						NOT = {
+							has_state_flag = no_china_war_state_flag
+							has_state_flag = no_partial_china_war_state_flag
+						}
 					}
 				}
-				
+				custom_trigger_tooltip = {
+					tooltip = USA_escalation_is_over_2	
+					JAP = {
+						check_variable = {
+							var = JAP_war_escalation_var
+							value = 2
+							compare = greater_than_or_equals
+						}
+					}
+					
+				}
+
 			}
+			if = {
+				limit = {
+					282 = {
+						OR = {
+							has_state_flag = no_china_war_state_flag
+							has_state_flag = no_partial_china_war_state_flag
+						}
+					}
+				}
+				date > 1938.02.10
+			}
+			
 		}
 
 		bypass = {
@@ -12086,31 +13948,20 @@ focus = {
 			}
 
 			612 = {
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 4
+					level = 3
 					instant_build = yes
 				}
 			}
-			random_core_state = {
-				prioritize = {
-					328
-					716
-					610
-				}
-				remove_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 
-			custom_effect_tooltip = MANspace
+			#custom_effect_tooltip = MANspace
 			activate_decision = Develop_air_fatory_center_5
-			custom_effect_tooltip = MANspace
-			custom_effect_tooltip = if_completed
-			custom_effect_tooltip = air_production_large_2_adds
-			custom_effect_tooltip = MANspace
+			#custom_effect_tooltip = MANspace
+			#custom_effect_tooltip = if_completed
+			#custom_effect_tooltip = air_production_large_2_adds
+			
 		}
 	}
 
@@ -12132,17 +13983,44 @@ focus = {
 			NOT = {
 				has_country_flag = cope
 			}
-			custom_trigger_tooltip = {
-				tooltip = USA_escalation_is_over_2	
-				JAP = {
-					check_variable = {
-						var = JAP_war_escalation_var
-						value = 2
-						compare = greater_than_or_equals
+			612 = {
+				air_assembly > 3
+				arms_factory > 11
+			}
+			if = {
+				limit = {
+					282 = {
+						NOT = {
+							has_state_flag = no_china_war_state_flag
+							has_state_flag = no_partial_china_war_state_flag
+						}
 					}
 				}
-				
+				custom_trigger_tooltip = {
+					tooltip = USA_escalation_is_over_2	
+					JAP = {
+						check_variable = {
+							var = JAP_war_escalation_var
+							value = 2
+							compare = greater_than_or_equals
+						}
+					}
+					
+				}
+
 			}
+			if = {
+				limit = {
+					282 = {
+						OR = {
+							has_state_flag = no_china_war_state_flag
+							has_state_flag = no_partial_china_war_state_flag
+						}
+					}
+				}
+				date > 1938.02.10
+			}
+			
 		}
 
 		bypass = {
@@ -12157,7 +14035,7 @@ focus = {
 			custom_effect_tooltip = MAN_recruitable_tt0
 			add_to_variable = {
 				var = MAN_military_industry_dm_industrial_capacity_factory
-				value = 0.025
+				value = 0.05
 				tooltip = industrial_capacity_factory_tooltip
 			}
 			add_tech_bonus = {
@@ -12167,22 +14045,22 @@ focus = {
 				uses = 1
 				category = light_fighter		
 			}
-			add_equipment_to_stockpile = { type = fighter_equipment_1934 amount = 300 producer = JAP }
+			#add_equipment_to_stockpile = { type = fighter_equipment_1934 amount = 300 producer = JAP }
 			612 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 			}
 
-			custom_effect_tooltip = MANspace
+			#custom_effect_tooltip = MANspace
 			activate_decision = Develop_air_fatory_center_3
-			custom_effect_tooltip = MANspace
-			custom_effect_tooltip = if_completed
-			custom_effect_tooltip = air_production_small_2_adds
-			custom_effect_tooltip = MANspace
+			#custom_effect_tooltip = MANspace
+			#custom_effect_tooltip = if_completed
+			#custom_effect_tooltip = air_production_small_2_adds
+			
 		}
 	}
 	focus = {
@@ -12210,6 +14088,9 @@ focus = {
 					}
 				}
 			}
+			NOT = {
+				has_country_flag = cope
+			}
 		}
 
 		bypass = {}
@@ -12224,6 +14105,18 @@ focus = {
 				bonus = 1
 				uses = 1
 				category = light_fighter		
+			}
+
+			random_core_state = {
+				prioritize = {
+					328
+					716
+					610
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
 			}
 
 			custom_effect_tooltip = iappie_2
@@ -12291,7 +14184,7 @@ focus = {
 				custom_effect_tooltip = no_jappie1940
 				custom_effect_tooltip = jappie1942
 			}
-			custom_effect_tooltip = american_uk_air_streamline
+			custom_effect_tooltip = american_uk_air_1
 
 
 
@@ -12306,7 +14199,7 @@ focus = {
 					}	
 				}
 
-				add_equipment_to_stockpile = { type = fighter_equipment_1936 amount = 500 producer = JAP }
+				add_equipment_to_stockpile = { type = fighter_equipment_1936 amount = 200 producer = JAP }
 
 				else_if = {
 					limit = {
@@ -12316,7 +14209,7 @@ focus = {
 						}	
 					}
 
-					add_equipment_to_stockpile = { type = fighter_equipment_1938	amount = 500 producer = JAP }
+					add_equipment_to_stockpile = { type = fighter_equipment_1938	amount = 200 producer = JAP }
 					
 				}
 				else_if = {
@@ -12327,7 +14220,7 @@ focus = {
 						}	
 					}	
 					
-					add_equipment_to_stockpile = { type = fighter_equipment_1940	amount = 500 producer = JAP }
+					add_equipment_to_stockpile = { type = fighter_equipment_1940	amount = 200 producer = JAP }
 				}
 				else_if = {
 					limit = {
@@ -12336,7 +14229,7 @@ focus = {
 						}	
 					}
 
-					add_equipment_to_stockpile = { type = fighter_equipment_1942	amount = 500 producer = JAP }
+					add_equipment_to_stockpile = { type = fighter_equipment_1942	amount = 200 producer = JAP }
 				}
 			}
 

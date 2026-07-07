@@ -7,13 +7,14 @@ state = {
 	state_category = usa_state
 	
 	resources = {
-		oil = 140 # was: 350
-		aluminium = 8 # was: 14
+		oil = 560 # was: 350
+		aluminium = 32 # was: 14
 	}
 
 	history = {
 		owner = USA
 		buildings = {
+			air_assembly = 2
 			infrastructure = 6
 			industrial_complex = 3
 			arms_factory = 3

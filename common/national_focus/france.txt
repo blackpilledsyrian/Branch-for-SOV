@@ -10,9 +10,16 @@ focus_tree = {
 		}
 	}
 	
-	continuous_focus_position = { x = 4300 y = 1800	 }
+	continuous_focus_position = { x = 4300 y = 1795	 }
 
 	default = no
+
+	# Commonwealth joint area (definitions in commonwealth_joint.txt)
+	shared_focus = COMMON_strengthen_commonwealth_ties
+	shared_focus = COMMON_joint_commonwealth_training
+
+	# Commonwealth combined programs branch (definitions in commonwealth_combined_programs_joint.txt)
+	shared_focus = COMMON_commonwealth_combined_programs
 	
 	focus = { #Law that makes the government able to dissolve political parties
 		id = FRA_10th_of_january_law
@@ -69,7 +76,8 @@ focus_tree = {
 			unlock_decision_tooltip = FRA_reorganize_aviation_industry_north
 			unlock_decision_tooltip = FRA_reorganize_aviation_industry_west
 			custom_effect_tooltip = FRA_left_side_tt
-
+			custom_effect_tooltip = MANspace
+			custom_effect_tooltip = tooltip_france_bunkers_1
 		}
 	}
 
@@ -304,15 +312,41 @@ focus_tree = {
 				}
 	
 				SPN = {
-					add_equipment_to_stockpile = {
-						type = infantry_equipment_0
-						amount = 7000
-						producer = FRA
-					}	
-					add_equipment_to_stockpile = {
-						type = artillery_equipment_1
-						amount = 250
-						producer = FRA
+					if = {
+						limit = {
+							SPR = {
+								NOT = {
+									has_completed_focus = naval_blockade_of_republicans
+								}
+							}
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_equipment_0
+							amount = 7000
+							producer = FRA
+						}	
+						add_equipment_to_stockpile = {
+							type = artillery_equipment_1
+							amount = 250
+							producer = FRA
+						}
+					}
+					if = {
+						limit = {
+							SPR = {
+								has_completed_focus = naval_blockade_of_republicans
+							}
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_equipment_0
+							amount = 5000
+							producer = FRA
+						}	
+						add_equipment_to_stockpile = {
+							type = artillery_equipment_1
+							amount = 200
+							producer = FRA
+						}
 					}
 				}
 
@@ -830,7 +864,7 @@ focus_tree = {
 			factor = 1
 		}
 		bypass = {
-			
+			has_country_flag = mumiago_mission_timed_out
 		}
 
 		completion_reward = {
@@ -951,6 +985,8 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.1
 			custom_effect_tooltip = FRA_right_side_tt
+			custom_effect_tooltip = MANspace
+			custom_effect_tooltip = tooltip_france_bunkers_2
 
 		}
 	}
@@ -1066,10 +1102,10 @@ focus_tree = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = FRA_vincent_auriol
 			add_to_variable = {
-				FRA_industry_production_efficiency_max_modifier = -0.03
+				FRA_industry_production_efficiency_max_modifier = -0.05
 			}
 			add_to_variable = {
-				FRA_industry_industrial_capacity_factory_modifier = -0.1
+				FRA_industry_industrial_capacity_factory_modifier = -0.15
 			}
 			custom_effect_tooltip = FRA_pol_chaos7_tt
 
@@ -1124,10 +1160,10 @@ focus_tree = {
 				}	
 			}
 			781 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 				
@@ -1265,10 +1301,10 @@ focus_tree = {
 				}	
 			}
 			774 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 				
@@ -1375,7 +1411,7 @@ focus_tree = {
 
 		completion_reward = {
 			
-			add_war_support = 0.15
+			add_war_support = 0.1
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = FRA
@@ -1495,7 +1531,7 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = FRA_improve_slugish_eco3_tt
-			add_to_variable = { var = FRA_industry_consumer_goods_modifier value = -0.05 }
+			add_to_variable = { var = FRA_industry_consumer_goods_modifier value = -0.04 }
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = FRA
@@ -1929,20 +1965,23 @@ focus_tree = {
 				}
 				add_war_support = -0.05
 				add_stability = 0.05
-				add_to_variable = {
-				add_to_variable = {
-					FRA_industry_industrial_capacity_factory_modifier = 0.075
-				}
-				add_to_variable = {
-					FRA_industrial_capacity_dockyard_modifier = 0.075
-				}
-				add_to_variable = {
-					FRA_production_factory_efficiency_gain_factor_modifier = 0.1
-				}
+				hidden_effect = {
+					add_to_variable = {
+						FRA_industry_industrial_capacity_factory_modifier = 0.075
+					}
+					add_to_variable = {
+						FRA_industrial_capacity_dockyard_modifier = 0.075
+					}
+					add_to_variable = {
+						FRA_production_factory_efficiency_gain_factor_modifier = 0.1
+					}
+					
+				}	
 				custom_effect_tooltip = FRA_pol_chaos21_tt	
-			}	
+			
 			
 		}	
+	}
 	}
 	focus = {
 		id = FRA_france_en_avant
@@ -2506,7 +2545,12 @@ focus_tree = {
 		}
 
 		available = {			
-			has_capitulated = yes
+			OR = {
+				has_capitulated = yes
+				country_exists = EFR
+
+			}
+			
 		}
 
 		available_if_capitulated = yes
@@ -2515,8 +2559,29 @@ focus_tree = {
 				FRA = {
 					add_to_variable = { FRA_military_industrial_organization_funds_gain_var = 0.2 }
 				}
-				
+				461 = {
+					set_demilitarized_zone = no
+				}
+				462 = {
+					set_demilitarized_zone = no
+				}
+				459 = {
+					set_demilitarized_zone = no
+				}
+				460 = {
+					set_demilitarized_zone = no
+				}
+				513 = {
+					set_demilitarized_zone = no
+				}
+				458 = {
+					set_demilitarized_zone = no
+				}
+				665 = {
+					set_demilitarized_zone = no
+				}
 			}
+			give_market_access = USA
 			remove_dynamic_modifier = {
 				modifier = FRA_initial_war_euthasium
 				scope = ROOT
@@ -2531,14 +2596,13 @@ focus_tree = {
 			add_to_variable = {
 				FRA_command_power_gain_mult_var = 0.4
 			}
-			add_to_variable = {
-				FRA_max_command_power_var = 20
-			}
+			
 			add_timed_idea = {
 				idea = FRA_training_idea_cap
 				days = 60
 			}
 			set_variable = { var = FRA_production_speed_dockyard_factor_modifier value = 0 }
+			set_variable = { var = FRA_production_speed_naval_base_factor_modifier value = 0 }
 			if = {
 				limit = {
 					has_country_flag = FRA_u_held_4
@@ -3575,7 +3639,15 @@ focus_tree = {
 		available_if_capitulated = yes
 			
 		completion_reward = {
-
+			539 = {
+			
+				add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = tank_assembly
+					level = 2
+					instant_build = yes 
+			}
+			}
 			set_capital = {state = 772}
 			772 = {
 				add_extra_state_shared_building_slots = 4
@@ -3685,15 +3757,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				has_legitimacy > 90
-			}
-			else = {
-				num_of_factories > 24
-			}
+			
 		}
 		
 		cancel_if_invalid = yes
@@ -3909,7 +3973,7 @@ focus_tree = {
 			army_experience = 50
 		 	add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = land_doctrine
 			}
@@ -3995,13 +4059,12 @@ focus_tree = {
 						medium_armor = { x = 3 y = 2 }
 					}
 					support = {
-						pack_artillery = { x = 0 y = 0 }
-						artillery = { x = 0 y = 1 }
-						engineer = { x = 0 y = 2 }
-						recon_ac = { x = 0 y = 3 }
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						recon_ac = { x = 0 y = 2 }
 						maintenance_company = { x = 1 y = 0 }
 						logistics_company = { x = 1 y = 1 }
-						military_police = { x = 1 y = 2 }	
+						military_police = { x = 1 y = 2 }
 					}
 				}
 				
@@ -4064,13 +4127,12 @@ focus_tree = {
 						medium_armor = { x = 3 y = 2 }
 					}
 					support = {
-						pack_artillery = { x = 0 y = 0 }
-						artillery = { x = 0 y = 1 }
-						engineer = { x = 0 y = 2 }
-						recon_ac = { x = 0 y = 3 }
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						recon_ac = { x = 0 y = 2 }
 						maintenance_company = { x = 1 y = 0 }
 						logistics_company = { x = 1 y = 1 }
-						military_police = { x = 1 y = 2 }	
+						military_police = { x = 1 y = 2 }
 					}
 				}
 				
@@ -4335,7 +4397,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 30
 			division_template = {
-				name = "Colonial troops"
+				name = "Colonial Conscripts"
 				priority = 0
 
 				regiments = {
@@ -4365,36 +4427,212 @@ focus_tree = {
 				random_owned_controlled_state = {
 					prioritize = { 774 }
 					create_unit = {
-						division = "name = \"Troupe coloniale\" division_template = \"Colonial troops\" start_experience_factor = 0 start_equipment_factor = 1.0" 
+						division = "name = \"Troupe coloniale\" division_template = \"Colonial Conscript\" start_experience_factor = 0 start_equipment_factor = 1.0" 
 						owner = FRA
 					}							
 				}
 				random_owned_controlled_state = {
 					prioritize = { 774 }
 					create_unit = {
-						division = "name = \"Troupe coloniale\" division_template = \"Colonial troops\" start_experience_factor = 0 start_equipment_factor = 1.0" 
+						division = "name = \"Troupe coloniale\" division_template = \"Colonial Conscript\" start_experience_factor = 0 start_equipment_factor = 1.0" 
 						owner = FRA
 					}							
 				}
 				random_owned_controlled_state = {
 					prioritize = { 774 }
 					create_unit = {
-						division = "name = \"Troupe coloniale\" division_template = \"Colonial troops\" start_experience_factor = 0 start_equipment_factor = 1.0" 
+						division = "name = \"Troupe coloniale\" division_template = \"Colonial Conscript\" start_experience_factor = 0 start_equipment_factor = 1.0" 
 						owner = FRA
 					}							
 				}
 				random_owned_controlled_state = {
 					prioritize = { 774 }
 					create_unit = {
-						division = "name = \"Troupe coloniale\" division_template = \"Colonial troops\" start_experience_factor = 0 start_equipment_factor = 1.0" 
+						division = "name = \"Troupe coloniale\" division_template = \"Colonial Conscript\" start_experience_factor = 0 start_equipment_factor = 1.0" 
 						owner = FRA
 					}							
 				}
 				random_owned_controlled_state = {
 					prioritize = { 774 }
 					create_unit = {
-						division = "name = \"Troupe coloniale\" division_template = \"Colonial troops\" start_experience_factor = 0 start_equipment_factor = 1.0" 
+						division = "name = \"Troupe coloniale\" division_template = \"Colonial Conscript\" start_experience_factor = 0 start_equipment_factor = 1.0" 
 						owner = FRA
+					}							
+				}
+				
+			#	}
+		}
+	}
+	focus = {
+		id = FRA_protect_colony
+		icon =  GFX_deploy_reserve_division_big
+		x = -3
+		y = -2
+		relative_position_id = FRA_form_colonial_troops
+		cost = 0
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		available = {
+			is_in_faction_with = ENG
+			OR = {
+				AND = {
+					812 = {
+						is_controlled_by_ROOT_or_ally = no 
+					}
+					456 = {
+						is_controlled_by_ROOT_or_ally = no 
+					}
+				}
+				AND = {
+					
+					547 = {
+						is_controlled_by_ROOT_or_ally = no 
+					}
+					OR = {
+						549 = {
+							is_controlled_by_ROOT_or_ally = no 
+						}
+						546 = {
+							is_controlled_by_ROOT_or_ally = no 
+						}
+					}
+					
+				}
+				AND = {
+					
+					551 = {
+						is_controlled_by_ROOT_or_ally = no 
+					}
+				
+					549 = {
+						is_controlled_by_ROOT_or_ally = no 
+					}
+						
+					
+					
+				}
+				
+				
+				
+			}
+			
+			
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					FRA = {
+						NOT = {
+							OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
+						}
+					}
+				}
+				division_template = {
+					name = "Colonial Troops"
+					priority = 0
+
+					regiments = {
+						volkssturm_infantry = { x = 0 y = 0 }
+						volkssturm_infantry = { x = 0 y = 1 }
+						volkssturm_infantry = { x = 0 y = 2 }
+						volkssturm_infantry = { x = 0 y = 3 }
+
+						volkssturm_infantry = { x = 1 y = 0 }
+						volkssturm_infantry = { x = 1 y = 1 }
+						volkssturm_infantry = { x = 1 y = 2 }
+						volkssturm_infantry = { x = 1 y = 3 }
+
+						volkssturm_infantry = { x = 2 y = 0 }
+						volkssturm_infantry = { x = 2 y = 1 }
+						artillery_brigade = { x = 2 y = 2 }
+						artillery_brigade = { x = 2 y = 3 }
+
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+						anti_air_heavy = { x = 3 y = 2 }
+					}
+					regimental_support = {
+						anti_tank_brigade = { x = 0 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						military_police = { x = 1 y = 0 }
+						logistics_company = { x = 1 y = 1 }
+					}
+				}
+			}
+			else = {
+				division_template = {
+					name = "Colonial Troops"
+					priority = 0
+
+					regiments = {
+						volkssturm_infantry = { x = 0 y = 0 }
+						volkssturm_infantry = { x = 0 y = 1 }
+						volkssturm_infantry = { x = 0 y = 2 }
+						volkssturm_infantry = { x = 0 y = 3 }
+						
+
+						volkssturm_infantry = { x = 1 y = 0 }
+						volkssturm_infantry = { x = 1 y = 1 }
+						volkssturm_infantry = { x = 1 y = 2 }
+						volkssturm_infantry = { x = 1 y = 3 }
+
+						volkssturm_infantry = { x = 2 y = 0 }
+						volkssturm_infantry = { x = 2 y = 1 }
+						volkssturm_infantry = { x = 2 y = 2 }
+						volkssturm_infantry = { x = 2 y = 3 }
+
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+						artillery_brigade = { x = 3 y = 2 }
+						anti_air_heavy = { x = 3 y = 3 }
+
+						artillery_brigade = { x = 4 y = 0 }
+						artillery_brigade = { x = 4 y = 1 }
+					}
+					regimental_support = {
+						anti_tank_brigade = { x = 0 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						military_police = { x = 1 y = 0 }
+						logistics_company = { x = 1 y = 1 }
+					}
+				}
+			}
+			
+			#hidden_effect = {
+				random_owned_controlled_state = {
+					prioritize = { 773 }
+					create_unit = {
+						division = "name = \"Troupe coloniale\" division_template = \"Colonial Troops\" start_experience_factor = 0.3 start_equipment_factor = 1.0" 
+						owner = FRA
+						count = 10
+					}							
+				}
+				random_owned_controlled_state = {
+					prioritize = { 660 }
+					create_unit = {
+						division = "name = \"Troupe coloniale\" division_template = \"Colonial Troops\" start_experience_factor = 0.3 start_equipment_factor = 1.0" 
+						owner = FRA
+						count = 10
+					}							
+				}
+				random_owned_controlled_state = {
+					prioritize = { 718 }
+					create_unit = {
+						division = "name = \"Troupe coloniale\" division_template = \"Colonial Troops\" start_experience_factor = 0.3 start_equipment_factor = 1.0" 
+						owner = FRA
+						count = 10
 					}							
 				}
 				
@@ -4591,7 +4829,7 @@ focus_tree = {
 	
 		cost = 5
 		ai_will_do = {
-			factor = 2
+			factor = 1
 		}
 		
 		available_if_capitulated = no
@@ -4767,7 +5005,7 @@ focus_tree = {
 				name = artillery_bonus
 				bonus = 0.5
 				uses = 1
-				category = artillery
+				category = cat_artillery
 			}	
 		}
 	}
@@ -4791,7 +5029,11 @@ focus_tree = {
 		 	hidden_effect = {
 				if = {
 					limit = {
-						has_tech = mass_assault
+						OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 					}
 					division_template = {
 						name = "Division d'Infanterie Algérienne"  
@@ -4816,16 +5058,19 @@ focus_tree = {
 						artillery_brigade = { x = 3 y = 0 }
 						artillery_brigade = { x = 3 y = 1 }
 						artillery_brigade = { x = 3 y = 2 }
-						anti_tank_brigade = { x = 3 y = 3 }
+						anti_air_heavy = { x = 3 y = 3 }
 
 						artillery_heavy = { x = 4 y = 0 }
-						anti_air = { x = 4 y = 1 }
+						field_gun_brigade = { x = 4 y = 1 }
 		
 						}
+						regimental_support = {
+						anti_air = { x = 0 y = 0 }
+						anti_tank_brigade = { x = 0 y = 1 }
+						}
 						support = {
-							pack_artillery = { x = 0 y = 0 }
-							recon = { x = 0 y = 1 }
-							engineer = { x = 0  y = 2 }
+							recon = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
 						}
 					}
 				}
@@ -4850,15 +5095,18 @@ focus_tree = {
 						artillery_brigade = { x = 3 y = 0 }
 						artillery_brigade = { x = 3 y = 1 }
 						artillery_brigade = { x = 3 y = 2 }
-						anti_tank_brigade = { x = 3 y = 3 }
+						anti_air_heavy = { x = 3 y = 3 }
 
 						artillery_heavy = { x = 4 y = 0 }
-						anti_air = { x = 4 y = 1 }
+						field_gun_brigade = { x = 4 y = 1 }
+						}
+						regimental_support = {
+						anti_air = { x = 0 y = 0 }
+						anti_tank_brigade = { x = 0 y = 1 }
 						}
 						support = {
-							pack_artillery = { x = 0 y = 0 }
-							recon = { x = 0 y = 1 }
-							engineer = { x = 0  y = 2 }
+							recon = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
 						}
 					}
 				}
@@ -4901,7 +5149,11 @@ focus_tree = {
 			hidden_effect = {
 				if = {
 					limit = {
-						has_tech = mass_assault
+						OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 					}
 					division_template = {
 						name = "Class B Division"  
@@ -4925,16 +5177,19 @@ focus_tree = {
 						artillery_brigade = { x = 3 y = 0 }
 						artillery_brigade = { x = 3 y = 1 }
 						artillery_brigade = { x = 3 y = 2 }
-						anti_tank_brigade = { x = 3 y = 3 }
+						anti_air_heavy = { x = 3 y = 3 }
 
 						artillery_heavy = { x = 4 y = 0 }
-						anti_air = { x = 4 y = 1 }
+						field_gun_brigade = { x = 4 y = 1 }
 					
 						}
+						regimental_support = {
+						anti_air = { x = 0 y = 0 }
+						anti_tank_brigade = { x = 0 y = 1 }
+						}
 						support = {
-							pack_artillery = { x = 0 y = 0 }
-							recon = { x = 0 y = 1 }
-							engineer = { x = 0  y = 2 }
+							recon = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
 						}
 					}
 				}
@@ -4958,15 +5213,18 @@ focus_tree = {
 						artillery_brigade = { x = 3 y = 0 }
 						artillery_brigade = { x = 3 y = 1 }
 						artillery_brigade = { x = 3 y = 2 }
-						anti_tank_brigade = { x = 3 y = 3 }
+						anti_air_heavy = { x = 3 y = 3 }
 
 						artillery_heavy = { x = 4 y = 0 }
-						anti_air = { x = 4 y = 1 }
+						field_gun_brigade = { x = 4 y = 1 }
+						}
+						regimental_support = {
+						anti_air = { x = 0 y = 0 }
+						anti_tank_brigade = { x = 0 y = 1 }
 						}
 						support = {
-							pack_artillery = { x = 0 y = 0 }
-							recon = { x = 0 y = 1 }
-							engineer = { x = 0  y = 2 }
+							recon = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
 						}
 					}
 				}
@@ -5200,7 +5458,7 @@ focus_tree = {
 				name = artillery_bonus
 				bonus = 1
 				uses = 2
-				category = artillery
+				category = cat_artillery
 			}
 	
 
@@ -5319,11 +5577,17 @@ focus_tree = {
 				}
 			}
 			774 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
+				}
+			
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
 				}
 			}
 			773	= {
@@ -5351,15 +5615,8 @@ focus_tree = {
 		}
 
 		available = {
-			OR = {
-				CZE = {
-					NOT = {
-						has_government = democratic
-					}
-				}
-				NOT = {
-					country_exists = CZE	
-				}
+			GER = {
+				has_completed_focus = GER_end_of_czechoslovakia
 			}
 		}
 		
@@ -5501,7 +5758,7 @@ focus_tree = {
 			21 = { 
 				remove_building = {
 					type = dockyard
-					level = 6
+					level = 3
 				}
 			}
 			random_owned_controlled_state = {
@@ -5562,6 +5819,7 @@ focus_tree = {
 					category = armor 
 				}
 			}
+			
 		
 		}
 	}
@@ -5579,10 +5837,10 @@ focus_tree = {
 		
 		available_if_capitulated = yes
 		completion_reward = {
-			unlock_decision_tooltip = {
-				decision = FRA_battle_tank_rearmament_plan
-				show_effect_tooltip = yes
-				show_modifiers = no
+		
+			add_timed_idea = {
+				days = 365
+				idea = FRA_battle_tank
 			}
 			
 			add_tech_bonus = {
@@ -5677,6 +5935,7 @@ focus_tree = {
 			
 		}	
 		bypass = {
+		
 			has_capitulated = yes 
 		}
 		available_if_capitulated = no
@@ -5691,6 +5950,7 @@ focus_tree = {
 				remove_idea = FRA_antitank_tank_drive
 				add_idea = FRA_antitank_tank_drive3
 			}
+			
 		}
 	}
 	focus = {
@@ -5748,6 +6008,7 @@ focus_tree = {
 				remove_idea = FRA_antitank_tank_drive
 				add_idea = FRA_antitank_tank_drive2
 			}
+			
 
 		}
 	}
@@ -5861,6 +6122,7 @@ focus_tree = {
 
 			custom_effect_tooltip = available_mio_tt
 			show_mio_tooltip = FRA_renault
+			
 			
 
 		}
@@ -6011,7 +6273,7 @@ focus_tree = {
 	}
 	focus = {
 		id = FRA_armee_del
-		icon = GFX_goal_generic_air_doctrine_shine
+		icon = GFX_goal_generic_air_doctrine
 		x = 0
 		y = 1
 		bypass = {
@@ -6121,19 +6383,19 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-	  	  NOT = {
-			  has_tech = force_rotation 
-			  has_tech = air_superiority
-	 		}
+	  	 
 	 	}	
 		
 		available_if_capitulated = yes
 		completion_reward = {
 			air_experience = 25
-			set_technology = {
-				formation_flying = 1
-				dive_bombing = 1
-			} 
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+			
 		}
 	}
 	focus = {
@@ -6152,18 +6414,18 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-			NOT = {
-			   has_tech = formation_flying
-			   has_tech = air_superiority
-		  	}
+			
 	  	}	
 		available_if_capitulated = yes
 		completion_reward = {
 			air_experience = 25
-			set_technology = {
-				force_rotation = 1
-				fighter_baiting = 1
-		   } 
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+			
 		}
 	}
 	focus = {
@@ -6190,7 +6452,7 @@ focus_tree = {
 	}
 	focus = {
 		id = FRA_modern_support_planes
-		icon = GFX_goal_generic_CAS_shine
+		icon = GFX_goal_generic_CAS
 		x = -2
 		y = 3
 		bypass = {
@@ -6211,7 +6473,7 @@ focus_tree = {
 			add_equipment_to_stockpile = { type = small_plane_cas_airframe amount = 50 producer = FRA }
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = air_doctrine
 			}	
@@ -6284,7 +6546,7 @@ focus_tree = {
 	 	 	add_equipment_to_stockpile = { type = medium_plane_airframe amount = 50 producer = FRA }
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = air_doctrine
 			}
@@ -6451,7 +6713,7 @@ focus_tree = {
 				navy_experience = 50
 				add_doctrine_cost_reduction = {
 					name = land_doc_bonus
-					cost_reduction = 0.4
+					cost_reduction = 0.5
 					uses = 2
 					category = naval_doctrine
 				}
@@ -6880,6 +7142,5 @@ focus_tree = {
 		}
 
 	}
-}
-	
+
 }

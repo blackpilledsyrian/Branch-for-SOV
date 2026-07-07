@@ -9,6 +9,7 @@
 # that'll be used if trigger passes
 
 # Gets the loc to be displayed based on what the current v (value) of the element in the array is (the value corresponds to the party id set in the scripted effect).´
+
 defined_text = {
 	name = USA_get_extra_dock_output_size_tt
 	text = {
@@ -1675,6 +1676,32 @@ defined_text = { #
 		localization_key = "CHI_state_of_army_tt4"
 	}
 }
+
+defined_text = { #
+	name = ENG_get_africa_mastery_gain
+	text = {
+		trigger = {
+			ENG = {
+				has_idea = ENG_africa_mastery_gain_bonus_spirit
+			}
+		   
+		}
+		localization_key = ENG_africa_mastery_gain_bonus_tt2
+	}
+	text = {
+		trigger = {
+			ENG = {
+				has_idea = ENG_africa_mastery_gain_bonus_spirit2
+			}
+		   
+		}
+		localization_key = ENG_africa_mastery_gain_bonus_tt3
+	}
+	
+	text = {
+		localization_key = ENG_africa_mastery_gain_bonus_tt1
+	}
+}
 defined_text = { #
 	name = ENG_get_compass
 	text = {
@@ -1866,6 +1893,15 @@ defined_text = { #
 }
 defined_text = { #
 	name = JAP_get_USA_trade
+	text = {
+		trigger = {
+			USA = {
+				has_idea = USA_japan_embargo_trading
+			}
+		   
+		}
+		localization_key = JAP_trade_tt3
+	}
 	text = {
 		trigger = {
 			USA = {

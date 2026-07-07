@@ -707,9 +707,9 @@ ideas = {
 			modifier = {
 				conscription_factor = 0.1
 				stability_weekly = -0.001
-				stability_factor = 0.35
+				stability_factor = 0.15
 				war_support_weekly = -0.001
-				war_support_factor = 0.2
+				war_support_factor = 0.05
 			}
 		}
 
@@ -730,9 +730,9 @@ ideas = {
 			modifier = {
 				conscription_factor = 0.2
 				stability_weekly = -0.002
-				stability_factor = 0.5
+				stability_factor = 0.15
 				war_support_weekly = -0.002
-				war_support_factor = 0.3
+				war_support_factor = 0.05
 			}
 		}
 
@@ -941,6 +941,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
+				consumer_goods_expected_value = 0.02
 				conscription_factor = 0.10
 			}
 		}
@@ -1286,6 +1287,7 @@ ideas = {
 				consumer_goods_expected_value = 0.03
 				industrial_capacity_factory = -0.05
 				production_speed_dockyard_factor = -0.8
+				min_export = 0.1
 			}
 		}
 
@@ -1312,6 +1314,7 @@ ideas = {
 				consumer_goods_expected_value = 0.02
 				industrial_capacity_factory = -0.025
 				production_speed_dockyard_factor = -0.8
+				min_export = 0.1
 			}
 		}
 
@@ -1336,6 +1339,7 @@ ideas = {
 			modifier = {
 				conscription_factor = -0.50
 				consumer_goods_expected_value = 0.02
+				min_export = 0.1
 			}
 		}
 
@@ -1361,6 +1365,7 @@ ideas = {
 				conscription_factor = -0.45
 				consumer_goods_expected_value = 0.00
 				#industrial_capacity_factory = 0.00
+				min_export = 0.1
 			}
 		}
 
@@ -1385,6 +1390,7 @@ ideas = {
 			modifier = {
 				conscription_factor = -0.70
 				consumer_goods_expected_value = 0.03
+				min_export = 0.1
 
 			}
 		}
@@ -1784,6 +1790,7 @@ ideas = {
 
 			modifier = {
 				stability_weekly = 0.001
+				consumer_goods_expected_value = 0.01
 				conscription_factor = -0.30
 				autonomy_gain = 0.2
 			}
@@ -1807,7 +1814,7 @@ ideas = {
 				stability_weekly = 0.001
 				conscription_factor = -0.25
 				autonomy_gain = 0.2
-				consumer_goods_expected_value = 0.01
+				#consumer_goods_expected_value = 0.01
 			}
 		}
 
@@ -1830,7 +1837,7 @@ ideas = {
 				conscription_factor = -0.15
 				stability_weekly = 0.001
 				autonomy_gain = 0.3
-				consumer_goods_expected_value = 0.02
+				#consumer_goods_expected_value = 0.02
 			}
 		}
 
@@ -1851,7 +1858,7 @@ ideas = {
 			modifier = {
 				stability_factor = 0.1
 				industrial_capacity_dockyard = 0.10
-				consumer_goods_expected_value = 0.03
+				#consumer_goods_expected_value = 0.03
 				conscription_factor = 0.00
 				stability_weekly = 0.001
 				autonomy_gain = 0.4
@@ -2798,7 +2805,7 @@ ideas = {
 			picture = generic_artillery_manufacturer_2
 			
 			research_bonus = {
-				artillery = 0.15
+				cat_artillery = 0.15
 			}
 			traits = { artillery_research_trait }
 			modifier = {

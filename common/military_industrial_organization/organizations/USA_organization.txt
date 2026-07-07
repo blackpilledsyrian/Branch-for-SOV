@@ -14,7 +14,7 @@ USA_td_board = {
 		original_tag = USA
 	}
 	equipment_type = { armor }
-	research_categories = { armor }
+	research_categories = { armor tank_upgrade}
 
 
 	initial_trait = {
@@ -151,7 +151,7 @@ USA_td_board = {
 			build_cost_ic = 0.025
 			armor_value = 0.4
 			hardness = 0.1
-			breakthrough = 0.2
+			breakthrough = 0.05
 		}
 	}
 
@@ -210,7 +210,7 @@ USA_td_board = {
 			mio_cat_eq_all_tank_destroyers
 		}			
 		equipment_bonus = {
-			breakthrough = 1
+			breakthrough = 0.2
 			hardness = -0.2
 			defense = -0.2
 			maximum_speed = 0.2
@@ -352,7 +352,7 @@ USA_td_board = {
 		}			
 		equipment_bonus = {
 			reliability = 0.05
-			breakthrough = 0.25
+			breakthrough = 0.05
 		}
 	}
 
@@ -398,7 +398,7 @@ USA_Chrysler_Corporation = {
 	
 	equipment_type = { armor }
 
-	research_categories = { armor }
+	research_categories = { armor tank_upgrade}
 
 	tree_header_text = {
 		text = "Production"
@@ -478,7 +478,7 @@ USA_Chrysler_Corporation = {
 		relative_position_id = construct_the_niebelungenwerke
         any_parent = { construct_the_niebelungenwerke }
 		production_bonus = {
-			production_resource_need_factor = -0.1
+			production_resource_need_factor = -0.05
 		}
 		#equipment_bonus = {
 		#	reliability = -0.1
@@ -564,7 +564,7 @@ USA_Chrysler_Corporation = {
 		}
 		
 		production_bonus = {
-			production_resource_need_factor = -0.1
+			production_resource_need_factor = -0.05
 		}
 	}
 
@@ -774,7 +774,7 @@ USA_army_ordnance_department_organization = {
 	}
 
 
-	research_categories = { armor }
+	research_categories = { armor tank_upgrade}
 	
 ###################speicla retards start####################
 	trait = {
@@ -1258,7 +1258,7 @@ USA_Fisher_armaments = {
 	equipment_type = { 
 		armor
 	}
-	research_categories = { armor }
+	research_categories = { armor tank_upgrade}
 
 
 	trait = {
@@ -1388,11 +1388,6 @@ USA_Fisher_armaments = {
 			mio_cat_eq_all_medium_tank
 		}
 
-		mutually_exclusive = {
-			bigger_wepon
-		}
-
-
 		equipment_bonus = {
 			soft_attack = 0.05
 			hard_attack = 0.07
@@ -1494,11 +1489,11 @@ USA_Fisher_armaments = {
 		
 		icon = GFX_generic_mio_department_icon_tank_heavy_tank_engine
 
-	    relative_position_id = bigger_wepon
+	    relative_position_id = wp_rounds
 		position = { x= 2 y= 1 }
 
 		any_parent = {
-			bigger_wepon
+			wp_rounds
 			turret_d
 		}
 
@@ -1608,7 +1603,7 @@ USA_Fisher_armaments = {
 	}
 
 	trait = {
-		token = bigger_wepon
+		token = wp_rounds
 		name = "WP rounds"
 		icon = GFX_generic_mio_department_icon_tank_general_weapons
 
@@ -1622,9 +1617,7 @@ USA_Fisher_armaments = {
 			mio_cat_eq_all_medium_tank
 		}
 
-		mutually_exclusive = {
-			turret_d
-		}
+		
 		
 		equipment_bonus = {
 			
@@ -1643,7 +1636,7 @@ USA_Fisher_armaments = {
 
 		position = { x= -2 y= 2 }
 		relative_position_id = internals
-		any_parent = { bigger_wepon }
+		any_parent = { wp_rounds }
 
 
 		limit_to_equipment_type = { 
@@ -1693,11 +1686,11 @@ USA_Fisher_armaments = {
 		
 		icon = GFX_generic_mio_department_icon_tank_medium_tank_weapons
 
-	    relative_position_id = bigger_wepon
+	    relative_position_id = wp_rounds
 		position = { x= 0 y= 1 }
 
 		any_parent = {
-			bigger_wepon
+			wp_rounds
 			turret_d
 		}
 
@@ -1716,13 +1709,13 @@ USA_Fisher_armaments = {
 
 	trait = {
 		token = bigger_wepon_3
-		name = "WP rounds"
+		name = "Bigger Weapons"
 		icon = GFX_generic_mio_department_icon_tank_general_weapons
 
 		position = { x= -1 y= 1 }
-		relative_position_id = internals
+		relative_position_id = wp_rounds
 
-		any_parent = { internals }
+		any_parent = { wp_rounds }
 
 		limit_to_equipment_type = { 
 			mio_cat_eq_all_heavy_tank
@@ -2092,7 +2085,7 @@ USA_norfolk_naval_yard_organization = {
 		mutually_exclusive = { generic_mio_trait_super_heavy_shells generic_mio_trait_high_velocity_guns }
 
 		equipment_bonus = {
-			lg_attack = 0.05
+			lg_attack = 0.1
 			lg_armor_piercing = 0.05
 		}
 	}
@@ -2864,7 +2857,10 @@ USA_lockheed_organization = {
 	icon = GFX_idea_lockheed
 	
 	allowed = {	
-		tag = USA 
+		OR = {
+			original_tag = USA
+			original_tag = CAN
+		}
 	}
 	
 	equipment_type = {

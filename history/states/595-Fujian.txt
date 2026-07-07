@@ -4,10 +4,10 @@ state = {
 	manpower = 5877800
 	state_category = city
 	resources = {
-		steel = 12 # was: 20
-		aluminium = 15
-		chromium = 10
-		oil = 6
+		steel = 40 # was: 20
+		aluminium = 52
+		chromium = 40
+		oil = 24
 	}
 	history =
 	{
@@ -22,7 +22,7 @@ state = {
 				bunker = 1
 			}
 			infrastructure = 3
-			industrial_complex = 2
+			industrial_complex = 1
 			air_base = 6
 			4196 = {
 				naval_base = 5
@@ -39,6 +39,9 @@ state = {
 		}
 		victory_points = { 
 			4196 3 
+		}
+		victory_points = { 
+			13627 2 
 		}
 		
 

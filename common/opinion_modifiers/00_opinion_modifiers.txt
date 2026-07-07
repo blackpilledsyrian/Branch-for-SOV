@@ -21,6 +21,11 @@ opinion_modifiers = {
 		years = 6
 		value = -100
 	}
+	jap_usa_prefer_trade = {
+		trade = yes
+		years = 5
+		value = 100
+	}
 	
 	CZE_trust_in_the_west = {
 		value = 50
@@ -1110,9 +1115,6 @@ opinion_modifiers = {
 		value = 25
 	}
 
-	HOL_wilhelminism = {
-		value = -75
-	}	
 	### Spanish Focus Tree ###
 
 	SPA_spanish_civil_war_commitments = {

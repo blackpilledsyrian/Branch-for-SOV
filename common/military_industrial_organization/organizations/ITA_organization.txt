@@ -19,7 +19,7 @@ ITA_ansaldo = {
     }
 	equipment_type = { armor }
 	research_categories = { 
-		armor 
+		armor tank_upgrade
 	}
 
 
@@ -232,7 +232,7 @@ ITA_fiat = {
 			tag = ITA
     }
 	equipment_type = { armor }
-	research_categories = { armor }
+	research_categories = { armor tank_upgrade}
 
 
 	initial_trait = {
@@ -513,7 +513,7 @@ ITA_terni = {
 			
 	}
 	equipment_type = { armor }
-	research_categories = { armor }
+	research_categories = { armor tank_upgrade}
 
 	initial_trait = {
 		name = affordable_tank_manufacturer
@@ -557,7 +557,7 @@ ITA_terni = {
 		any_parent = { SS }
 		production_bonus = {
 			production_resource_penalty_factor = 0.05
-			production_resource_need_factor = -0.05
+			production_resource_need_factor = -0.03
 		}
 	}
 	add_trait = { 
@@ -596,7 +596,7 @@ ITA_terni = {
 			breakthrough = -0.05
 		}  
 		production_bonus = {
-			production_resource_need_factor = -0.1
+			production_resource_need_factor = -0.05
 
 		}
 	}
@@ -611,7 +611,7 @@ ITA_terni = {
 		 
 		production_bonus = {
 			production_capacity_factor= 0.08
-			production_resource_need_factor = 0.1
+			production_resource_need_factor = 0.05
 		}  
 	}
 	add_trait = { 
@@ -699,7 +699,7 @@ ITA_alfa_romeo = {
 		}
 	}
 	equipment_type = { armor }
-	research_categories = { armor }
+	research_categories = { armor tank_upgrade}
 
 	initial_trait = {
 		name = cruiser_tank_designer
@@ -728,7 +728,7 @@ ITA_alfa_romeo = {
 			hard_attack = 0.04
 		}
 		production_bonus = {
-			production_resource_need_factor = 0.1
+			production_resource_need_factor = 0.05
 
 		}
 	}	

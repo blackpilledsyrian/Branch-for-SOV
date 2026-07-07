@@ -2,7 +2,10 @@
 state = {
 	id = 154
 	name = "STATE_154"
-	
+	resources = {
+		chromium = 20 # was: 4
+		steel = 12
+	}
 
 	history = {
 		victory_points = {

@@ -91,11 +91,12 @@ set_variable = { CHI_army_speed_factor_var = 0.15 }
 set_variable = { CHI_conscription_factor_var = -0.4 }
 set_variable = { CHI_minimum_training_level_var = -0.2 }
 set_variable = { CHI_command_power_gain_mult_var = -0.6 }
-set_variable = { CHI_supply_consumption_factor_var = 0 }
+set_variable = { CHI_supply_consumption_factor_var = -0.25 }
 set_variable = { CHI_surrender_limit_var = 1 }
-set_variable = { CHI_production_speed_bunker_factor_var = -0.3 }
-set_variable = { CHI_production_speed_coastal_bunker_factor_var = -0.3 }
-set_variable = { CHI_production_speed_supply_node_factor_var = 0 }
+set_variable = { CHI_production_speed_bunker_factor_var = 0.3 }
+set_variable = { CHI_production_speed_coastal_bunker_factor_var = 0.3 }
+set_variable = { CHI_production_speed_supply_node_factor_var = 0.5 }
+set_variable = { CHI_production_speed_rail_way_factor_var = 0.5 }
 set_variable = { CHI_consumer_goods_expected_value_var = 0.0 }
 set_variable = { CHI_political_power_gain_var = -0.2 }
 
@@ -106,19 +107,19 @@ set_variable = { CHI_stability_weekly_factor_var = 0.001 }
 set_variable = { CHI_local_resources_factor_var = -0.7 }
 set_variable = { CHI_production_speed_buildings_factor_var = 0 }
 set_variable = { CHI_air_doctrine_cost_factor_var = 0.3 }
-set_variable = { CHI_experience_gain_army_unit_factor_var = -0.3 }
+set_variable = { CHI_experience_gain_army_unit_factor_var = -0.1 }
 set_variable = { CHI_operative_slot_var = 0 }
 set_variable = { CHI_resistance_growth_on_our_occupied_states_var = 0 }
 set_variable = { CHI_resistance_target_on_our_occupied_states_var = 0 }
 set_variable = { CHI_experience_gain_army_var = 0.28 }
 set_variable = { CHI_army_speed_factor_var = 0 }
-set_variable = { CHI_max_command_power_var = 0 }
+set_variable = { CHI_max_command_power_var = 20 }
 set_variable = { CHI_army_strength_factor_var = 0 }
 set_variable = { CHI_air_superiority_efficiency_var = 0 }
 set_variable = { CHI_air_cas_efficiency_var = 0 }
 set_variable = { CHI_air_close_air_support_org_damage_factor_var = 0 }
 set_variable = { CHI_air_cas_present_factor_var = 0 }
-set_variable = { CHI_experience_gain_factor_var = -0.8 }
+set_variable = { CHI_experience_gain_factor_var = -0.7 }
 set_variable = { CHI_experience_gain_army_factor_var = -0.5 }
 set_variable = { CHI_land_mastery_gain_factor_var = -0.5 }
 set_variable = { CHI_production_speed_naval_base_factor_var = -0.3 }
@@ -134,7 +135,19 @@ set_variable = { tougher_resistance_compliance_growth2 = -0.5 }
 set_variable = { tougher_resistance_compliance_growth3 = -0.6 }
 
 
+set_variable = { land_reinforce_rate_chi_var = -0.6 }
+set_variable = { supply_combat_penalties_on_core_factor_var = -0.5 }
+set_variable = { attrition_chi_var = 0 }
+set_variable = { supply_node_range_chi_var = 0.8 }
+set_variable = { experience_gain_air_factor_chi_var = -0.6 }
+set_variable = { naval_invasion_plan_cap_chi_var = -1000 }
+set_variable = { weekly_convoys_war_support_chi_var = 0.004 }
+set_variable = { land_reinforce_rate_chi_var = 0.06 }
 
+
+
+
+set_variable = { CHI_base_fuel_gain_var = 100 }
 
 
 
@@ -150,7 +163,7 @@ add_dynamic_modifier = { modifier = CHI_industry_spirit }
 set_variable = { global.SOV_china_tank_spawn_ins = 5 }
 set_stability = 0.7
 set_war_support = 0.8
-set_research_slots = 5
+set_research_slots = 4
 set_fuel_ratio = 0.85
 # Starting tech
 starting_train_buffer = 2
@@ -216,7 +229,8 @@ if = {
 	
  set_country_flag = CHI_riches_flag1
 set_technology = { #player 
-	asiatic_tanks = 1
+building_tech = 1 
+	usa_1934_heavy_tank_chassis = 1
 	basic_train = 1
 	##################### infantry ###############
 	fuel_silos = 1
@@ -307,13 +321,13 @@ if = {
 		usa_nsb_tech_armored_cars2 = 1
 		usa_1934_light_tank_chassis = 1
 		usa_1936_light_tank_chassis = 1
+		usa_1936_medium_tank_chassis = 1
 		unlock_modules = 1
 		automatic_gun = 1
 		support_gun = 1
 		small_gun = 1
 		armour_sloping = 1
-		engine_tech_1 = 1
-		engine_tech_2 = 1
+	
 		automatic_gun2 = 1
 	}
 }

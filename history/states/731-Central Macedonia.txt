@@ -6,9 +6,9 @@ state = {
 	state_category = city
 	resources = {
 		
-		chromium = 10 # was: 22
-		aluminium = 15 # was: 58
-		tungsten = 5 # was: 20
+		chromium = 40 # was: 22
+		aluminium = 60 # was: 58
+		tungsten = 20 # was: 20
 	}
 
 	history = {
@@ -16,7 +16,7 @@ state = {
 		victory_points = {
 			11818 5 
 		}
-		1936.1.1.13 = {
+		1936.1.1.14 = {
 			remove_claim_by = BUL
 		}
 		#victory_points = {

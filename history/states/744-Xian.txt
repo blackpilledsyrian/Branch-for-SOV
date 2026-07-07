@@ -5,9 +5,9 @@ state = {
 		13620 13618 13621 1976 2006 4167 4256 4295 5092 7301 7406 7418 10257 12713 13640 13641 531
 	}
 	resources = {
-			tungsten = 5
-			steel = 9
-			chromium = 6
+			tungsten = 20
+			steel = 32
+			chromium = 24
 	}
 
 	history = {
@@ -15,14 +15,16 @@ state = {
 		add_dynamic_modifier = { modifier = CHI_tougher_resistance2 }
 		add_core_of = CHI
 		victory_points = {
-			7301 5 
+			7301 11 
 		}
 		victory_points = {
-			2006 1 
+			2006 6
 		}
 		buildings = {
+			
 			infrastructure = 3
 			arms_factory = 1
+			industrial_complex = 2
 			air_base = 4
 		}
 

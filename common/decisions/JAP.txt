@@ -61,7 +61,7 @@ JAP_pacific_war_explanation_category = {
 				limit = {
 					is_core_of = SIA 
 				}
-				set_compliance = 60
+				set_compliance = 30
 				set_resistance = 0 
 			}
 			hidden_effect = {
@@ -69,7 +69,11 @@ JAP_pacific_war_explanation_category = {
 					limit = {
 						JAP = {
 							NOT = {
-								has_tech = mass_assault
+								OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 							}
 						}
 					}
@@ -234,6 +238,19 @@ JAP_pacific_war_explanation_category = {
 			hidden_effect = {
 				news_event = { days = 5 id = news.5 }
 			}
+			every_state = {
+				limit = {
+					OR = {
+						state = 286
+						state = 670
+						state = 671
+						state = 741
+						state = 728
+					}
+				}
+				set_compliance = 30
+				set_resistance = 0 
+			}
 			JAP = {
 				if = {
 					limit = {
@@ -302,7 +319,11 @@ JAP_pacific_war_explanation_category = {
 						limit = {
 							JAP = {
 								NOT = {
-									has_tech = mass_assault
+									OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 								}
 							}
 						}
@@ -513,7 +534,20 @@ JAP_pacific_war_explanation_category = {
 			hidden_effect = {
 				news_event = { days = 5 id = news.5 }
 			}
-			RCC = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 286
+						state = 670
+						state = 671
+						state = 741
+						state = 728
+					}
+				}
+				set_compliance = 30
+				set_resistance = 0 
+			}
+			JAP = {
 				transfer_state = 728
 			}
 			JAP = {
@@ -530,7 +564,11 @@ JAP_pacific_war_explanation_category = {
 						limit = {
 							JAP = {
 								NOT = {
-									has_tech = mass_assault
+								OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 								}
 							}
 						}
@@ -666,7 +704,11 @@ JAP_pacific_war_explanation_category = {
 						limit = {
 							CHI = {
 								NOT = {
-									has_tech = mass_assault
+								OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 								}
 							}
 						}
@@ -699,7 +741,6 @@ JAP_pacific_war_explanation_category = {
 								support = {
 									artillery = { x = 0 y = 0 }
 									engineer = { x = 0 y = 1 }
-									anti_air_company = { x = 0 y = 2 }
 								}	
 								
 								priority = 1
@@ -740,7 +781,6 @@ JAP_pacific_war_explanation_category = {
 								support = {
 									artillery = { x = 0 y = 0 }
 									engineer = { x = 0 y = 1 }
-									anti_air_company = { x = 0 y = 2 }
 								}	
 								
 								priority = 1
@@ -993,7 +1033,7 @@ JAP_pacific_war_explanation_category = {
 				limit = {
 					is_core_of = SIA 
 				}
-				set_compliance = 60
+				set_compliance = 30
 				set_resistance = 0 
 			}
 			hidden_effect = {
@@ -1001,7 +1041,11 @@ JAP_pacific_war_explanation_category = {
 					limit = {
 						JAP = {
 							NOT = {
-								has_tech = mass_assault
+								OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
 							}
 						}
 					}
@@ -1926,6 +1970,16 @@ JAP_pacific_war_explanation_category = {
 						province = 13320
 						level = 3
 					}
+
+					add_building_construction = {
+						type = stronghold_network
+						level = 1
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 13318
+					}
 				}
 				648 = {
 					add_building_construction = {
@@ -2231,65 +2285,88 @@ JAP_pacific_war_explanation_category = {
 		ai_will_do = {
 			factor = 100
 		}
-		
+		days_remove = 365
+		remove_effect = {
+			remove_ideas = JAP_tora_tora_tora_idea
+		}
 		complete_effect = {
 			
 			hidden_effect = {
-				
-				while_loop_effect = {
+				every_country = {
 					limit = {
-						check_variable = {
-							var = JAP_current_occupied_states_var 
-							value = JAP_max_occupied_states_var
-							compare = greater_than
+						OR = {
+							tag = RAJ
+							tag = AST 
+							tag = INS 
+							tag = VEN 
+							tag = USA 
+							tag = ENG 
+							tag = FRA 
+							tag = SAF 
+							tag = CAN 
+							tag = BRA
+							tag = BUL
+							tag = SOV 
+							tag = PER 
+							tag = IRQ
+							tag = BEL 
 						}
 
 					}
-					JAP = {
-						add_to_variable = {
-							var = JAP_current_occupied_states_var
-							value = -1
+					remove_ideas = USA_japan_embargo_trading
+				}
+				USA = {
+					add_to_tech_sharing_group = us_research
+					remove_ideas = USA_procurement_click_tracker
+				}
+				CHI = {
+					add_to_tech_sharing_group = us_research
+				}
+				
+				USA = {
+					complete_national_focus = USA_never_at_a_disadvantage
+					activate_decision = USA_tora_tora_countdown
+				}
+				CHI = {
+					set_variable = { CHI_base_fuel_gain_var = 0 }
+				}
+				if = {
+					limit = {
+						282 = {
+							NOT = {
+								has_state_flag = no_china_war_state_flag
+							}
 						}
 					}
-					RCC = {
-						add_to_variable = {
-							var = RCC_output
-							value = 0.05
+					while_loop_effect = {
+						limit = {
+							check_variable = {
+								var = JAP_current_occupied_states_var 
+								value = JAP_max_occupied_states_var
+								compare = greater_than
+							}
+
 						}
-						add_to_variable = {
-							var = RCC_dock_output
-							value = 0.05
-						}    
-					}
-				}	
-				JAP = {
-					set_variable = {
-						var = JAP_current_occupied_states_var
-						value = 0
-					}
-					set_variable = {
-						var = JAP_max_occupied_states_var
-						value = 0
-					}
-					set_variable = {
-						var = JAP_factory_output_modifier
-						value = 0.3
-					}
-					set_variable = {
-						var = JAP_dockyard_output_modifier
-						value = 0.25
-					}
+						JAP = {
+							add_to_variable = {
+								var = JAP_current_occupied_states_var
+								value = -1
+							}
+						}
+						RCC = {
+							add_to_variable = {
+								var = RCC_output
+								value = 0.05
+							}
+							add_to_variable = {
+								var = RCC_dock_output
+								value = 0.05
+							}    
+						}
+					}	
+					
 				}
-				MAN = {
-					set_variable = {
-						var = JAP_factory_output_modifier
-						value = 0.3
-					}
-					set_variable = {
-						var = JAP_dockyard_output_modifier
-						value = 0.25
-					}
-				}
+				
 				
 				if = {
 					limit = {
@@ -2325,11 +2402,11 @@ JAP_pacific_war_explanation_category = {
 						}
 						add_to_variable = { 
 							var = CHI_experience_gain_army_factor_var 
-							value = 0.25
+							value = 0.3
 						}
 						add_to_variable = { 
 							var = CHI_land_mastery_gain_factor_var 
-							value = 0.25
+							value = 0.4
 							tooltip = land_mastery_tp
 						}
 						if = {
@@ -2406,6 +2483,49 @@ JAP_pacific_war_explanation_category = {
 					}
 					if = {
 						limit = {
+							has_global_flag = JAP_did_freeze_frontlines_flag
+						}
+						JAP = {
+							add_timed_idea = {
+								idea = JAP_freeze_front_idea
+								days = 180
+							}
+						}
+						every_state = {
+							limit = {
+								OR = {
+									state = 671
+									is_core_of = CHI
+								}
+								NOT = {
+									state = 745
+									state = 524
+									is_core_of = MAN
+									
+								}
+								
+							}
+							remove_dynamic_modifier = { modifier = JAP_freeze_front_dynamic  }
+						}
+						every_state = {
+							limit = {
+								OR = {
+									state = 671
+									is_core_of = CHI
+								}
+								NOT = {
+									state = 745
+									state = 524
+									is_core_of = MAN
+									
+								}
+								
+							}
+							add_dynamic_modifier = { modifier = JAP_freeze_front_dynamic days = 180 }
+						}
+					}
+					if = {
+						limit = {
 							JAP = {
 								NOT = {
 									has_idea = JAP_freeze_front_idea
@@ -2414,58 +2534,18 @@ JAP_pacific_war_explanation_category = {
 						}
 						every_state = {
 							limit = {
-								OR = {
-								state = 608
-								state = 621
-								state = 746
-								state = 622
-								state = 614
-								state = 607
-								state = 608
-								state = 597
-							
-								state = 606
-								state = 613
-								state = 749
-								state = 596
-								state = 595
-								state = 593
-								state = 592
-								state = 594
-								state = 599
-								state = 325
-								state = 747
-								state = 601
-								state = 604
-								state = 750
-								state = 605
-								state = 620
-								state = 602
-								state = 751
-								state = 752
-								state = 753
-								state = 603
-								state = 600
-								state = 748
-								state = 744
-								state = 598
-								state = 822
-								state = 821
-								state = 820
-								state = 615
-								state = 591
-								state = 840
-								state = 839
-
-								state = 283
-								state = 616
-								state = 754
-								state = 604
-								state = 755
-								state = 756
-								state = 759
-
+					
+								is_core_of = CHI
+								
+								
+								NOT = {
+									state = 745
+									state = 524
+									is_core_of = MAN
+									
 								}
+								
+							
 							}
 							remove_province_modifier = {
 								static_modifiers = { china_speed }
@@ -2548,235 +2628,7 @@ JAP_pacific_war_explanation_category = {
 				add_command_power = 50
 			}
 		
-			if = {	
-				limit = {
-					date < 1940.2.1
-				}
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 10	
-				}
-			}	
-			else_if = {	
-				limit = {
-					date < 1940.3.1
-				}
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 20	
-				}
-			}	
-			else_if = {	
-				limit = {
-					date < 1940.4.1
-				}
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 30	
-				}
-			}
-			else_if = {	
-				limit = {
-					date < 1940.4.1
-				}
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 40	
-				}
-			}
-			else_if = {	
-				limit = {
-					date < 1940.5.1
-				}
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 50	
-				}
-			}		
-			else_if = {	
-				limit = {
-					date < 1940.6.1
-				}
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 50	
-				}
-			}
-
-			else_if = {	
-				limit = {
-					date < 1940.7.1
-				}
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 60	
-				}
-			}
-			else_if = {	
-				limit = {
-					date < 1940.8.1
-				}
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 70	
-				}
-			}
-			else_if = {	
-				limit = {
-					date < 1940.9.1
-				}
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 80	
-				}
-			}
-
-			else_if = {	
-				limit = {
-					date < 1940.10.1
-				}
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 90	
-				}
-			}
-			else_if = {	
-				limit = {
-					date < 1940.11.1
-				}
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 100	
-				}
-			}
-
-			else_if = {	
-				limit = {
-					date < 1940.12.1
-				}
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 110	
-				}
-			}
-			else_if = {	
-				limit = {
-					date < 1941.1.1
-				}
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 120	
-				}
-			}
-			else_if = {
-				limit = {
-					date < 1941.2.1
-				}			
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 130
-				}
-			}	
-			else_if = {
-				limit = {
-					date < 1941.3.1
-				}			
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 140
-				}
-			}
-			else_if = {
-				limit = {
-					date < 1941.4.1
-				}			
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 150
-				}
-			}
-			else_if = {
-				limit = {
-					date < 1941.5.1
-				}			
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 160
-				}
-			}		
-			else_if = {
-				limit = {
-					date < 1941.6.1
-				}			
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 170
-				}
-			}
-			else_if = {
-				limit = {
-					date < 1941.7.1
-				}			
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 180
-				}
-			}
-			else_if = {
-				limit = {
-					date < 1941.8.1
-				}			
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 190
-				}
-			}
-			else_if = {
-				limit = {
-					date < 1941.9.1
-				}			
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 200
-				}
-			}
-			else_if = {
-				limit = {
-					date < 1941.10.1
-				}			
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 210
-				}
-			}
-
-			else_if = {
-				limit = {
-					date < 1941.11.1
-				}			
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 220
-				}
-			}
-			else_if = {
-				limit = {
-					date < 1941.12.1
-				}			
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 230
-				}
-			}
-			else_if = {
-				limit = {
-					date < 1942.1.1
-				}			
-				add_timed_idea = {
-					idea = JAP_tora_tora_tora_idea
-					days = 240
-				}
-			}
+			add_ideas = JAP_tora_tora_tora_idea
 			
 
 			country_event = { id = japan.20 }
@@ -2806,9 +2658,141 @@ JAP_pacific_war_explanation_category = {
 					target = ENG
 					type = annex_everything
 				}
-			}	
+				if = {
+					limit = {
+						country_exists = HOL
+					}
+					declare_war_on = {
+						target = HOL
+						type = annex_everything
+					}
+				}
+			}
 			hidden_effect = {		
-																								
+				820 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse  
+						scope = JAP 
+					}
+				}
+				602 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse  
+						scope = JAP 
+					}
+				}
+				599 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse  
+						scope = JAP 
+					}
+				}
+				325 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse  
+						scope = JAP 
+					}
+				}
+				744 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse  
+						scope = JAP 
+					}
+				}
+				622 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse  
+						scope = JAP 
+					}
+				}
+
+
+				747 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse2  
+						scope = JAP 
+					}
+				}
+				750 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse2  
+						scope = JAP 
+					}
+				}
+				603 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse2  
+						scope = JAP 
+					}
+				}
+				605 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse2
+						scope = JAP 
+					}
+				}
+				748 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse2
+						scope = JAP 
+					}
+				}
+
+				751 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				752 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				601 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				753 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				283 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				616 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+
+				754 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				604 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				601 = {
+					remove_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}																			
 				RAJ = { 
 					add_to_war = { 
 						targeted_alliance = ENG
@@ -2853,17 +2837,6 @@ JAP_pacific_war_explanation_category = {
 				}
 				if = {
 					limit = {
-						country_exists = HOL
-					}
-					HOL = { 
-						add_to_war = { 
-							targeted_alliance = ENG
-							enemy = JAP
-						}
-					}
-				}
-				if = {
-					limit = {
 						country_exists = NOR
 					}
 					NOR = { 
@@ -2871,12 +2844,6 @@ JAP_pacific_war_explanation_category = {
 							targeted_alliance = ENG
 							enemy = JAP
 						}
-					}
-				}
-				INS = { 
-					add_to_war = { 
-						targeted_alliance = ENG
-						enemy = JAP
 					}
 				}
 				if = {
@@ -3027,40 +2994,18 @@ JAP_pacific_war_explanation_category = {
 							targeted_alliance = JAP
 							enemy = USA
 						}
-					}
-				}
-				if = {
-					limit = {
-						country_exists = RCC
-					}
-					RCC = { 
 						if = {
-							limit = { 
-								any_army_leader = {
-									has_trait = jap_kwantung_veto
-								} 
+							limit = {
+								country_exists = HOL
 							}
-							every_army_leader = {
-								remove_unit_leader_trait = jap_kwantung_veto
+							add_to_war = { 
+								targeted_alliance = JAP
+								enemy = HOL
 							}
-						}
-						if = {
-							limit ={
-								has_idea = JAP_no_grinding
-							}
-							remove_ideas = JAP_no_grinding
-						}
-						
-						add_to_war = { 
-							targeted_alliance = JAP
-							enemy = ENG
-						}
-						add_to_war = { 
-							targeted_alliance = JAP
-							enemy = USA
 						}
 					}
 				}
+				
 				if = {
 					limit = {
 						country_exists = SIA
@@ -3145,6 +3090,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -3208,7 +3158,7 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 2
+						amount = 6
 					}
 				}
 			}
@@ -3250,7 +3200,7 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 2
+						amount = 6
 					}
 				}
 			}
@@ -3274,7 +3224,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -3394,6 +3344,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -3457,7 +3412,7 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 2
+						amount = 6
 					}
 				}
 			}
@@ -3499,7 +3454,7 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 2
+						amount = 6
 					}
 				}
 			}
@@ -3523,7 +3478,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -3644,6 +3599,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -3712,11 +3672,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = aluminium
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -3763,11 +3723,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = aluminium
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -3791,7 +3751,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -3911,6 +3871,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -3978,11 +3943,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = aluminium
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -4028,11 +3993,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = aluminium
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -4056,7 +4021,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -4176,6 +4141,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -4243,11 +4213,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = tungsten
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -4293,11 +4263,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = tungsten
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -4322,7 +4292,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -4442,6 +4412,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -4509,11 +4484,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = tungsten
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -4559,11 +4534,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = tungsten
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -4588,7 +4563,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -4708,6 +4683,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -4775,11 +4755,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = chromium
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -4825,11 +4805,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = chromium
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -4853,7 +4833,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -4973,6 +4953,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -5040,11 +5025,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = chromium
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -5090,11 +5075,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = chromium
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -5119,7 +5104,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -5239,6 +5224,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -5303,7 +5293,7 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 2
+						amount = 6
 					}
 					
 				}
@@ -5347,7 +5337,7 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 2
+						amount = 6
 					}
 					
 				}
@@ -5373,7 +5363,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -5493,6 +5483,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -5560,11 +5555,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = aluminium
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -5610,11 +5605,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = aluminium
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -5639,7 +5634,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -5759,6 +5754,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -5826,11 +5826,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = aluminium
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -5876,11 +5876,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = aluminium
-						amount = 1
+						amount = 3
 					}
 				}
 			}
@@ -5905,7 +5905,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -6023,6 +6023,11 @@ JAP_evac_cat = {
 					NOT = {
 						has_state_flag = JAP_plunder_state_flag
 					}	
+				}
+			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
 				}
 			}
 		}
@@ -6143,7 +6148,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -6263,6 +6268,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -6331,11 +6341,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = chromium
-						amount = 1
+						amount = 3
 					}
 					
 				}
@@ -6383,11 +6393,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = chromium
-						amount = 1
+						amount = 3
 					}
 					
 				}
@@ -6413,7 +6423,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -6533,6 +6543,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -6598,7 +6613,7 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					
 					
@@ -6644,11 +6659,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = chromium
-						amount = 1
+						amount = 3
 					}
 					
 				}
@@ -6674,7 +6689,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -6794,6 +6809,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -6862,11 +6882,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = oil
-						amount = 1
+						amount = 3
 					}
 					
 				}
@@ -6914,11 +6934,11 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = oil
-						amount = 1
+						amount = 3
 					}
 					
 				}
@@ -6944,7 +6964,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -7064,6 +7084,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -7129,7 +7154,7 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					
 					
@@ -7175,7 +7200,7 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 				
 					
@@ -7202,7 +7227,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -7322,6 +7347,11 @@ JAP_evac_cat = {
 					}	
 				}
 			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 		}
 		visible = {
 
@@ -7387,7 +7417,7 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					
 					
@@ -7433,7 +7463,7 @@ JAP_evac_cat = {
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 				
 					
@@ -7460,7 +7490,7 @@ JAP_evac_cat = {
 					1 = {
 						
 						add_to_variable = {
-							JAP_consumer_goods_expected_value_modifier  = -0.005
+							JAP_consumer_goods_expected_value_modifier  = -0.004
 							tooltip = consumer_goods_tooltip
 						}
 					}
@@ -7641,7 +7671,12 @@ JAP_evac_cat = {
 		}
 
 		visible = {
-			
+		
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 			NOT = {
 				JAP = {
 					#has_country_flag = just_returned_state_flag
@@ -7739,6 +7774,8 @@ JAP_evac_cat = {
 					is_controlled_by = CHI
 				}
 				NOT = {
+					state = 609
+					state = 839
 					is_core_of = RCC
 					is_core_of = MAN
 					has_state_flag = JAP_plunder_state_flag
@@ -7759,15 +7796,43 @@ JAP_evac_cat = {
 					has_country_flag = just_returned_state_flag
 					has_war_with = USA
 				}
+				divisions_in_state = {
+					state = FROM
+					size < 1
+				}
+
 				
 			}
-			
+			MAN = {
+				divisions_in_state = {
+					state = FROM
+					size < 1
+				}
+
+			}
+			RCC = {
+				divisions_in_state = {
+					state = FROM
+					size < 1
+				}
+
+			}
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 			
 			
 		}
 
 		visible = {
-
+			
+			282 = {
+				NOT = {
+					has_state_flag = no_china_war_state_flag
+				}
+			}
 			NOT = {
 				JAP = {
 					has_country_flag = just_returned_state_flag
@@ -7785,17 +7850,6 @@ JAP_evac_cat = {
 			}
 			
 			FROM = {
-				teleport_armies = {
-					limit =  {
-						OR = {
-							tag = JAP 
-							tag = MAN 
-							tag = RCC
-						}
-					}
-					
-					to_state = 609
-				}
 				transfer_state_to = CHI
 			}
 			hidden_effect = {
@@ -7812,7 +7866,918 @@ JAP_evac_cat = {
 	}
 }
 JAP_intervene_in_china_decision = {
+	RCC_communists_1 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 608
+				608 = {
+					resistance_target > 1
+				}
+			}
 	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 608
+				}
+			}
+			on_map_mode = map_only
+		priority = 3
+		
+		visible = {
+			controls_state = 608
+			NOT = {
+				608 = {
+					is_core_of = RCC					
+				}
+			}
+		}
+	
+		fire_only_once = no
+		
+		cost = 20
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			608 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1	
+			}
+		}
+	}
+	RCC_communists_2 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 614
+				614 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 614
+				}
+			}
+		on_map_mode = map_only
+		priority = 3
+		
+		visible = {
+			controls_state = 614
+		}
+	
+		fire_only_once = no
+	
+		cost = 20
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			614 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1	
+			}
+		}
+	}
+	RCC_communists_3 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 597
+				597 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 597
+				}
+			}
+			on_map_mode = map_only
+		priority = 3
+		
+		visible = {
+			controls_state = 597
+		}
+	
+		fire_only_once = no
+	
+		cost = 20
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			597 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1			
+			}
+		}
+	}
+	
+	RCC_communists_5 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 598
+				598 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 598
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 598
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			598 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1		
+			}
+		}
+	}
+	RCC_communists_6 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 606
+				606 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 606
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 606
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			606 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1	
+			}
+		}
+	}
+	RCC_communists_7 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 613
+				613 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 613
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			NOT = {
+				613 = {
+					is_core_of = RCC					
+				}				
+			}
+		}
+		fire_only_once = no
+	
+		cost = 20
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			613 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1		
+			}
+		}
+	}
+	RCC_communists_8 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 607
+				607 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 607
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 607
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			607 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1		
+			}
+		}
+	}
+	RCC_communists_9 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 615
+				615 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 615
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 615
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			615 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1			
+			}
+		}
+	}
+	RCC_communists_10 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 746
+				746 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 746
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 746
+			NOT = {
+				746 = {
+					is_core_of = RCC					
+				}
+			}
+		}
+	
+		fire_only_once = no
+	
+		cost = 20
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			746 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1			
+			}
+		}
+	}
+	RCC_communists_11 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 622
+				622 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 622
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 622
+		}
+	
+		fire_only_once = no
+	
+		cost = 40
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			622 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1		
+			}
+		}
+	}
+	RCC_communists_12 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 744
+				744 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 744
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 744
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			744 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1	
+			}
+		}
+	}
+	RCC_communists_13 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 620
+				620 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 620
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 620
+		}
+	
+		fire_only_once = no
+	
+		cost =25
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			620 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1		
+			}
+		}
+	}
+	RCC_communists_14 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 621
+				621 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 621
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 621
+			NOT = {
+				621 = {
+					is_core_of = RCC					
+				}
+			}
+		}
+	
+		fire_only_once = no
+	
+		cost = 20
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			621 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1		
+			}
+		}
+	}
+	RCC_communists_15 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 820
+				820 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 820
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 820
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			820 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1		
+			}
+		}
+	}
+	RCC_communists_16 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 749
+				749 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 749
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 749
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			749 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1			
+			}
+		}
+	}
+	RCC_communists_17 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 596
+				596 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 596
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 596
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			596 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1	
+			}
+		}
+	}
+	RCC_communists_18 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 595
+				595 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 595
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+				
+		visible = {
+			controls_state = 595
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			595 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1		
+			}
+		}
+	}
+	RCC_communists_19 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 600
+				600 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 600
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 600
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			600 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1		
+			}
+		}
+	}
+	RCC_communists_20 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 822
+				822 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 822
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 822
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			822 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1		
+			}
+		}
+	}
+	RCC_communists_21 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 593
+				593 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 593
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 593
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			593 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1	
+			}
+		}
+	}
+	RCC_communists_22 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 591
+				591 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 591
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 591
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			591 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1	
+			}
+		}
+	}
+	RCC_communists_23 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 592
+				592 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 592
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 592
+		}
+	
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			592 ={
+				add_resistance_target = -5 
+				add_resistance = -5
+				add_compliance = -1	
+			}
+		}
+	}
+	RCC_communists_24 = {
+		icon = oppression
+		available = { 
+			
+				controls_state = 594
+				594 = {
+					resistance_target > 1
+				}
+			}
+	
+			highlight_states = {
+				 highlight_state_targets = { 
+					 state = 594
+				}
+			}
+			on_map_mode = map_only
+		
+		priority = 3
+		
+		visible = {
+			controls_state = 594
+		}
+		fire_only_once = no
+	
+		cost = 30
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+
+		}
+		remove_effect = {
+			594 ={
+			add_resistance_target = -5 
+			add_resistance = -5
+			add_compliance = -1
+			}
+		}
+	}
 	
 	JAP_lend_lease_flow_to_china = {
 
@@ -7867,12 +8832,15 @@ JAP_intervene_in_china_decision = {
 		visible = {
 			282 = {
 				NOT = {
-					has_state_flag = no_china_war_state_flag
+					has_state_flag = less_players_state_flag
 					has_state_flag = no_partial_china_war_state_flag
 				}
 			}
 			CHI = {
-				has_completed_focus = CHI_14th_airforce_in_china
+				OR = {
+					has_completed_focus = CHI_14th_airforce_in_china
+					has_completed_focus = CHI_14th_airforce_in_china_2
+				}
 			}
 			
 	
@@ -7905,7 +8873,7 @@ JAP_intervene_in_china_decision = {
 		}
 		highlight_states = {
 			highlight_provinces = { 
-				1553 
+				13734 
 			
 			}
 		}
@@ -7922,7 +8890,7 @@ JAP_intervene_in_china_decision = {
 			}
 			RAJ = {
 			
-				controls_province = 1553
+				controls_province = 13734
 				
 				
 			}
@@ -8212,8 +9180,8 @@ JAP_intervene_in_china_decision = {
 		activation = {
 		}
 		selectable_mission = no
-		days_remove = 38
-		days_mission_timeout = 38
+		days_remove = 43
+		days_mission_timeout = 43
 
 		is_good = no
 		fire_only_once = no
@@ -8351,27 +9319,9 @@ JAP_intervene_in_china_decision = {
 
 
 				set_country_flag = JAP_china_step_up_war_effort_8_flag
-			}
-
-			else_if = {
-				limit = {
-					has_country_flag = JAP_china_step_up_war_effort_8_flag
-				}
-				
-				country_event = japan.25 
-				
-				JAP = {
-					transfer_state = 597
-				}
-
-				597 = {
-					set_resistance = 55
-					add_resistance_target = 30 
-				}
-
-
 				set_country_flag = JAP_china_step_up_war_effort_9_flag
 			}
+
 
 			else_if = {
 				limit = {
@@ -8489,26 +9439,9 @@ JAP_intervene_in_china_decision = {
 
 
 				set_country_flag = JAP_china_step_up_war_effort_15_flag
-			}
-			else_if = {
-				limit = {
-					has_country_flag = JAP_china_step_up_war_effort_15_flag
-				}
-				
-				country_event = japan.25 
-				
-				JAP = {
-					transfer_state = 822
-				}
-
-				822 = {
-					set_resistance = 55
-					add_resistance_target = 30 
-				}
-
-
 				set_country_flag = JAP_china_step_up_war_effort_16_flag
 			}
+			
 		}
 
 		complete_effect = {
@@ -8529,839 +9462,6 @@ JAP_intervene_in_china_decision = {
 		}
 	}
 
-	JAP_pacificy_beijing_1 = {
-
-		name = JAP_pacification_decision
-
-		icon = generic_decision
-
-		available = {
-			controls_state = 608
-			608 = {
-				resistance_target > 1
-			}
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 608 
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 608
-			608 = {
-				resistance_target > 1
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			608 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
-
-	JAP_pacificy_suiyan_1 = {
-
-		name = JAP_pacification_decision
-
-		icon = generic_decision
-
-		available = {
-			controls_state = 621
-			621 = {
-				resistance_target > 1
-			}
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 621
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 621
-			621 = {
-				resistance_target > 1
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			621 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
-
-
-	JAP_pacificy_shanxi_1 = {
-
-		icon = generic_decision
-
-		name = JAP_pacification_decision
-
-		available = {
-			controls_state = 615
-			608 = {
-				resistance_target > 1
-			}
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 615
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 615
-			615 = {
-				resistance_target > 1
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			615 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
-
-
-	JAP_pacificy_hebei_1 = {
-
-		icon = generic_decision
-
-		name = JAP_pacification_decision
-
-		available = {
-			controls_state = 614
-			614 = {
-				resistance_target > 1
-			}
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 614
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 614
-			614 = {
-				resistance_target > 1
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			614 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
-
-	
-	JAP_pacificy_shandong_1 = {
-
-		icon = generic_decision
-
-		name = JAP_pacification_decision
-
-		available = {
-			controls_state = 597
-			597 = {
-				resistance_target > 1
-			}
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 597
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 597
-			597 = {
-				resistance_target > 1
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			597 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
-
-	
-
-
-	
-	JAP_pacificy_jiangsu_1 = {
-
-		icon = generic_decision
-
-		name = JAP_pacification_decision
-
-		available = {
-			controls_state = 598
-			598 = {
-				resistance_target > 1
-			}
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 598
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 598
-			598 = {
-				resistance_target > 1
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			598 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
-
-
-	JAP_pacificy_shanghai_1 = {
-
-		icon = generic_decision
-
-		name = JAP_pacification_decision
-
-		available = {
-			controls_state = 613
-			OR = {
-				613 = {
-					resistance_target > 1
-				}
-				840 = {
-					resistance_target > 1
-				}
-			}
-			
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 613
-				 state = 840
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 613
-			OR = {
-				613 = {
-					resistance_target > 1
-				}
-				840 = {
-					resistance_target > 1
-				}
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			613 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-			840 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
-
-	
-
-	JAP_pacificy_zhejiang_1 = {
-
-		icon = generic_decision
-
-		name = JAP_pacification_decision
-
-		available = {
-			controls_state = 822
-			822 = {
-				resistance_target > 1
-			}
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 822
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 822
-			822 = {
-				resistance_target > 1
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			822 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
-
-	
-
-	JAP_pacificy_anhui_1 = {
-
-		icon = generic_decision
-
-		name = JAP_pacification_decision
-
-		available = {
-			controls_state = 606
-			606 = {
-				resistance_target > 1
-			}
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 606
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 606
-			606 = {
-				resistance_target > 1
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			606 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
-
-	
-
-	JAP_pacificy_henan_1 = {
-
-		icon = generic_decision
-
-		name = JAP_pacification_decision
-
-		available = {
-			controls_state = 607
-			607 = {
-				resistance_target > 1
-			}
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 607
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 607
-			607 = {
-				resistance_target > 1
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			607 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
-
-	
-
-	JAP_pacificy_guangzhou_1 = {
-
-		icon = generic_decision
-
-		name = JAP_pacification_decision
-
-		available = {
-			controls_state = 592
-			592 = {
-				resistance_target > 1
-			}
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 592
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 592
-			592 = {
-				resistance_target > 1
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			592 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
-
-	
-
-	JAP_pacificy_nanning_1 = {
-
-		icon = generic_decision
-
-		name = JAP_pacification_decision
-
-		available = {
-			controls_state = 594
-			594 = {
-				resistance_target > 1
-			}
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 594
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 594
-			594 = {
-				resistance_target > 1
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			594 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
-
-	
-
-	JAP_pacificy_hainan_1 = {
-
-		icon = generic_decision
-
-		name = JAP_pacification_decision
-
-		available = {
-			controls_state = 591
-			591 = {
-				resistance_target > 1
-			}
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 591
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 591
-			591 = {
-				resistance_target > 1
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			591 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
-	JAP_pacificy_Hunagshan_1 = {
-
-		icon = generic_decision
-
-		name = JAP_pacification_decision
-
-		available = {
-			controls_state = 620
-			620 = {
-				resistance_target > 1
-			}
-		}
-
-		highlight_states = {
- 			highlight_state_targets = { 
-				 state = 620
-			}
-		}
-
-		on_map_mode = map_only
-
-		cost = 30
-
-		fire_only_once = no
-
-		days_remove = 25
-
-		visible = {
-			NOT = {
-				has_war_with = CHI
-			}
-			
-			controls_state = 620
-			620 = {
-				resistance_target > 1
-			}
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			620 = {
-				add_resistance_target = -5 
-				add_resistance = -10
-				add_compliance = 5
-			}
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				factor = 10
-			}
-		}
-	}
 
 	JAP_conquer_china = {
 
@@ -10150,14 +10250,16 @@ JAP_interservice_rivalry = {
 		complete_effect = {
 			add_manpower = 50000
 			hidden_effect = {
+				
 				if = {
 					limit = {
 						has_idea = jap_kwantung_army_4
+
 					}
 					army_experience = 600
 				}
 				else = {
-					army_experience = 45
+					army_experience = 46
 				}
 			}
 			custom_effect_tooltip = JAP_get_30xp_tt
@@ -10191,11 +10293,9 @@ JAP_interservice_rivalry = {
 	
 		
 		complete_effect = {
-			add_doctrine_cost_reduction = {
-				name = naval_doc_bonus
-				cost_reduction = 0.4
-				uses = 1
-				category = naval_doctrine
+			add_mastery = {
+				amount = 15
+				folder = naval
 			}
 			hidden_effect = {
 				activate_mission = JAP_rivalry_timing
@@ -10668,7 +10768,7 @@ prospect_for_resources = {
 
 		fire_only_once = yes
 
-		cost = 25
+		cost = 30
 		days_remove = 60
 
 		modifier = {
@@ -10683,7 +10783,7 @@ prospect_for_resources = {
 			655 = {
 				add_resource = {
 					type = oil
-					amount = 8
+					amount = 24
 				}
 			}
 		}
@@ -10718,7 +10818,7 @@ prospect_for_resources = {
 
 		fire_only_once = yes
 
-		cost = 25
+		cost = 30
 		days_remove = 60
 
 		modifier = {
@@ -10733,7 +10833,7 @@ prospect_for_resources = {
 			623 = {
 				add_resource = {
 					type = chromium
-					amount = 6
+					amount = 18
 				}
 				set_state_flag = luzon_chromium_developed
 			}
@@ -10768,7 +10868,7 @@ prospect_for_resources = {
 
 		fire_only_once = yes
 
-		cost = 25
+		cost = 30
 		days_remove = 60
 
 		modifier = {
@@ -10783,7 +10883,7 @@ prospect_for_resources = {
 			627 = {
 				add_resource = {
 					type = steel
-					amount = 5
+					amount = 15
 				}
 				set_state_flag = mindanao_steel_developed
 			}
@@ -10818,7 +10918,7 @@ prospect_for_resources = {
 
 		fire_only_once = yes
 
-		cost = 25
+		cost = 30
 		days_remove = 60
 
 		modifier = {
@@ -10833,7 +10933,7 @@ prospect_for_resources = {
 			625 = {
 				add_resource = {
 					type = steel
-					amount = 5
+					amount = 15
 				}
 				set_state_flag = samar_steel_developed
 			}
@@ -10869,7 +10969,7 @@ prospect_for_resources = {
 
 		fire_only_once = yes
 
-		cost = 25
+		cost = 30
 		days_remove = 60
 
 		modifier = {
@@ -10884,7 +10984,7 @@ prospect_for_resources = {
 			725 = {
 				add_resource = {
 					type = tungsten
-					amount = 3
+					amount = 9
 				}
 				set_state_flag = nauru_tungsten_developed
 			}
@@ -10912,7 +11012,7 @@ prospect_for_resources = {
 
 		fire_only_once = yes
 
-		cost = 25
+		cost = 30
 		days_remove = 60
 
 		modifier = {
@@ -10927,7 +11027,7 @@ prospect_for_resources = {
 			671 = {
 				add_resource = {
 					type = aluminium
-					amount = 7
+					amount = 21
 				}
 				set_state_flag = tonkin_aluminium_developed
 			}
@@ -10956,7 +11056,7 @@ prospect_for_resources = {
 
 		fire_only_once = yes
 
-		cost = 25
+		cost = 30
 		days_remove = 60
 
 		modifier = {
@@ -10971,7 +11071,7 @@ prospect_for_resources = {
 			336 = {
 				add_resource = {
 					type = aluminium
-					amount = 7
+					amount = 21
 				}
 				set_state_flag = singapore_aluminium_developed
 			}
@@ -11008,7 +11108,7 @@ prospect_for_resources = {
 
 		fire_only_once = yes
 
-		cost = 25
+		cost = 30
 		days_remove = 60
 
 		modifier = {
@@ -11023,7 +11123,7 @@ prospect_for_resources = {
 			597 = {
 				add_resource = {
 					type = aluminium
-					amount = 7
+					amount = 21
 				}
 				set_state_flag = shandong_aluminium_developed
 			}
@@ -11059,7 +11159,7 @@ prospect_for_resources = {
 
 		fire_only_once = yes
 
-		cost = 25
+		cost = 30
 		days_remove = 60
 
 		modifier = {
@@ -11074,7 +11174,7 @@ prospect_for_resources = {
 			621 = {
 				add_resource = {
 					type = steel
-					amount = 4
+					amount = 12
 				}
 				set_state_flag = suiyuan_steel_developed
 			}
@@ -11104,7 +11204,7 @@ prospect_for_resources = {
 
 		fire_only_once = yes
 
-		cost = 25
+		cost = 30
 		days_remove = 60
 
 		modifier = {
@@ -11119,7 +11219,7 @@ prospect_for_resources = {
 			325 = {
 				add_resource = {
 					type = aluminium
-					amount = 8
+					amount = 24
 				}
 				set_state_flag = yunnan_aluminium_developed
 			}
@@ -11149,7 +11249,7 @@ prospect_for_resources = {
 
 		fire_only_once = yes
 
-		cost = 25
+		cost = 30
 		days_remove = 60
 
 		modifier = {
@@ -11164,7 +11264,7 @@ prospect_for_resources = {
 			605 = {
 				add_resource = {
 					type = aluminium
-					amount = 8
+					amount = 24
 				}
 				set_state_flag = sichuan_aluminium_developed
 			}

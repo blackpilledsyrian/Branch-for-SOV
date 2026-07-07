@@ -7,6 +7,7 @@ state = {
 	state_category = large_city
 
 	history = {
+		set_state_flag = flagger_spain_pain
 		owner = SPN
 		victory_points = {
 			9764 3
@@ -17,10 +18,9 @@ state = {
 		victory_points = {
 			6927 1
 		}
-		1936.1.1.13 = {
-			owner = SPR
-		}
+		
 		buildings = {
+			air_assembly = 1
 			infrastructure = 7
 			arms_factory = 2
 			industrial_complex = 2
@@ -30,7 +30,7 @@ state = {
 				naval_base = 5
 			}
 		}
-		add_core_of = SPN
+		add_core_of = SEN
 	}
 
 	provinces = {

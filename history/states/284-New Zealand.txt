@@ -8,12 +8,14 @@ state = {
 	
 	history = {
 		owner = NZL
-		1936.1.1.13 = {
+		1936.1.1.14 = {
 			owner = AST
 			add_core_of = AST
 
 		}
 		buildings = {
+			tank_assembly = 1
+			air_assembly = 1
 			infrastructure = 6
 			arms_factory = 3
 			industrial_complex = 4

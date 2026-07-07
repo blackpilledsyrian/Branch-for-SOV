@@ -21,6 +21,14 @@ focus_tree = {
 	
 	continuous_focus_position = { x = 2150 y = 1000	 }
 
+	# Commonwealth joint area (definitions in commonwealth_joint.txt)
+	shared_focus = COMMON_strengthen_commonwealth_ties
+	shared_focus = COMMON_joint_commonwealth_training
+	shared_focus = COMMON_commonwealth_combined_programs
+	shared_focus = COMMON_support_china
+	shared_focus = COMMON_allow_volunteers_to_china
+	shared_focus = COMMON_invade_iraq
+
 
 
 #	focus = {
@@ -69,7 +77,7 @@ focus_tree = {
 		x = 10
 		y = 0
 
-		cost = 5
+		cost = 4.285
 
 		ai_will_do = {
 			factor = 10
@@ -86,7 +94,7 @@ focus_tree = {
 
 		completion_reward = {
         #unlock some political advisor
-		add_political_power = 100
+		add_political_power = 60
 		}
 	}
 
@@ -158,7 +166,7 @@ focus_tree = {
 				}
 			    add_resource = {
 				type = chromium
-				amount = 8
+				amount = 24
 				}
 			}
 		}
@@ -612,15 +620,8 @@ focus_tree = {
 		}
 
 		available = {
-			OR = {
-				CZE = {
-					NOT = {
-						has_government = democratic
-					}
-				}
-				NOT = {
-					country_exists = CZE	
-				}
+			GER = {
+				has_completed_focus = GER_end_of_czechoslovakia
 			}
 		}
 		
@@ -636,11 +637,13 @@ focus_tree = {
 				SAF_gd_production_speed_arms_factory_factor_var = 0.15
 				tooltip = AST_prod_speed_mil_tt3
 			}
+			
 			custom_effect_tooltip = SAF_modify_dep_tt
 			add_to_variable = {
 				SAF_production_speed_arms_factory_factor_var = 0.10
 				tooltip = AST_prod_speed_mil_tt1
 			}
+			
 		}
 	}
 
@@ -1076,7 +1079,7 @@ focus_tree = {
 				name = artillery_bonus
 				bonus = 0.5
 				uses = 1
-				category = artillery
+				category = cat_artillery
 			}
 		}
 	}
@@ -1150,7 +1153,7 @@ focus_tree = {
 				prioritize = { 275 }
 				add_resource = {
 					type = steel
-					amount = 14
+					amount = 42
 				}
 			}
 			custom_effect_tooltip = MANspace
@@ -1338,10 +1341,6 @@ focus_tree = {
 			}
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = SAF_modify_boer_tt
-			add_to_variable = {
-				SAF_boer_political_power_cost_var = 0.2
-				tooltip = SAF_pol_pow_cost_tt3
-			}
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = saf_reward_focus_war_1
 			custom_effect_tooltip = SAF_modify_dep_tt
@@ -1475,7 +1474,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = MANspace
 			681 = {
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
@@ -1483,7 +1482,7 @@ focus_tree = {
 				}
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 			} 
@@ -1516,6 +1515,10 @@ focus_tree = {
 
 
 		completion_reward = {
+		add_to_variable = {
+				SAF_boer_political_power_cost_var = 0.2
+				tooltip = SAF_pol_pow_cost_tt3
+			}
 		add_political_power = 200
 		custom_effect_tooltip = MANspace
         #temporary output and build speed, swap government to democratic
@@ -1604,7 +1607,14 @@ focus_tree = {
 
 		completion_reward = {
          # temporary mill build speed and output buff
-		add_timed_idea = { idea = SAF_strengten_british_africa days = 250 }
+		 custom_effect_tooltip = SAF_modify_g_d_tt
+			add_to_variable = {
+				SAF_gd_production_speed_arms_factory_factor_var = 0.15
+				tooltip = AST_prod_speed_mil_tt3
+			}
+			
+			custom_effect_tooltip = MANspace
+			add_timed_idea = { idea = SAF_strengten_british_africa days = 250 }
 		}
 	}
 
@@ -1618,7 +1628,7 @@ focus_tree = {
 		x = 10
 		y = 7
 
-		cost = 5
+		cost = 4
 
 		ai_will_do = {
 			factor = 10
@@ -2133,11 +2143,11 @@ focus_tree = {
 				prioritize = { 681 }
 				add_resource = {
 					type = steel
-					amount = 10
+					amount = 30
 				}
 				add_resource = {
 					type = tungsten
-					amount = 6
+					amount = 18
 				}
 			}
 		}
@@ -2214,7 +2224,7 @@ focus_tree = {
 			custom_effect_tooltip = SAF_army_dynamic_modify
 			add_to_variable = {
 				var = SAF_max_command_power_var 
-				value = 0.1
+				value = 0.2
 				tooltip = army_command_power_tooltip_10
 			}
 		}
@@ -2316,7 +2326,7 @@ focus_tree = {
 		x = 33
 		y = 2
 
-		cost = 5
+		cost = 4
 
 		ai_will_do = {
 			factor = 10
@@ -2340,14 +2350,14 @@ focus_tree = {
 				}
 				custom_effect_tooltip = SAF_army_dynamic_modify_2
 				add_to_variable = {
-					SAF_experience_gain_army_var = 0.04
-					tooltip = AST_xp_gain_flat
+					SAF_experience_gain_army_var = 0.03
+					tooltip = SAF_xp_gain_2
 				}
 			}
 			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -2380,6 +2390,7 @@ focus_tree = {
 
 
 		completion_reward = {
+			
 			if = {
 				limit = {
 					NOT = {
@@ -2395,7 +2406,7 @@ focus_tree = {
 			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -2404,6 +2415,15 @@ focus_tree = {
 				bonus = 0.75
 				uses = 1
 				technology = mobile_link_stations
+			}
+			random_core_state = {
+				
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+				}
 			}
 
 			
@@ -2468,7 +2488,7 @@ focus_tree = {
 					name = artillery
 					bonus = 0.5
 					uses = 1
-					category = artillery
+					category = cat_artillery
 				}
 			set_technology = {
 				heavy_artillery2 = 1
@@ -2486,7 +2506,7 @@ focus_tree = {
 						name = artillery
 						bonus = 0.5
 						uses = 1
-						category = artillery
+						category = cat_artillery
 					}
 				set_technology = {
 					artillery4 = 1
@@ -2504,7 +2524,7 @@ focus_tree = {
 					name = artillery
 					bonus = 1
 					uses = 1
-					category = artillery
+					category = cat_artillery
 				}
 			}
 		
@@ -2793,7 +2813,7 @@ focus_tree = {
 			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
                 name = land_doc_bonus
-                cost_reduction = 0.4
+                cost_reduction = 0.5
                 uses = 2
                 category = special_forces_doctrine
             }
@@ -2980,10 +3000,10 @@ focus_tree = {
 			}
 			custom_effect_tooltip = MANspace
 			719 = {
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				remove_building = {
 					type = industrial_complex
-					level = 2
+					level = 1
 				}	
 				add_building_construction = {
 					type = arms_factory
@@ -3046,7 +3066,7 @@ focus_tree = {
 			681 = {
 				add_resource = {
 					type = steel
-					amount = 8
+					amount = 24
 				}
 			}
 			add_ideas = saf_expand_tank_production
@@ -3300,7 +3320,7 @@ focus_tree = {
 				name = artillery
 				bonus = 0.75
 				uses = 2
-				category = artillery
+				category = cat_artillery
 			}
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = SAF_heavy_arty_speed
@@ -3337,6 +3357,7 @@ focus_tree = {
 
 
 		completion_reward = {
+			
 			if = {
 				limit = {
 					NOT = {
@@ -3360,6 +3381,15 @@ focus_tree = {
 				SAF_motorized_attack = 0.05 
 				 tooltip = SAF_tank_2t
 				}
+			random_core_state = {
+				
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+				}
+			}
 		}
 	}
 
@@ -3550,7 +3580,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = air_doctrine
 			}
@@ -3574,7 +3604,10 @@ focus_tree = {
 		available = {
 			OR= {
 				USA = {
-					has_tech = usa_fighter_1938
+					has_tech = usa_fighter_1940
+				}
+				ENG = {
+					has_tech = eng_fighter_1939
 				}
 			}
 				
@@ -3752,6 +3785,7 @@ focus_tree = {
 
 		available = {
 			is_in_faction_with = ENG
+			has_political_power > 149
 		}
 		
 		bypass = {
@@ -3806,7 +3840,9 @@ focus_tree = {
 		}
 
 		available = {
-			has_capitulated = no
+			ENG = {
+				has_completed_track = fighter_operations_KNI
+			}
 		}
 		bypass = {}
 
@@ -3852,7 +3888,9 @@ focus_tree = {
 		}
 
 		available = {
-			has_completed_focus = SAF_desert_air_force
+			ENG = {
+				has_completed_track = fighter_operations_KNI
+			}
 		}
 		bypass = {}
 
@@ -3977,7 +4015,7 @@ focus_tree = {
 		}
 		x = 42
 		y = 1
-		cost = 5
+		cost = 4
 		ai_will_do = {
 			factor = 1
 		}
@@ -3999,7 +4037,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = dockyard
-					level = 5
+					level = 4
 					instant_build = yes
 				}
 			}
@@ -4393,7 +4431,7 @@ focus_tree = {
 		custom_effect_tooltip = MANspace
 		add_doctrine_cost_reduction = {
 			name = land_doctrine
-			cost_reduction = 0.4
+			cost_reduction = 0.5
 			uses = 1
 			category = naval_doctrine
 		}
@@ -4447,7 +4485,7 @@ focus_tree = {
 			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
 				name = land_doctrine
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = naval_doctrine
 			}

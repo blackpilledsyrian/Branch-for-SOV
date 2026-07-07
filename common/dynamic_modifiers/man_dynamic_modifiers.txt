@@ -12,6 +12,9 @@ MAN_military = {
 	planning_speed = MAN_panning_speed_var
     max_dig_in  = MAN_max_dig_in_var
 
+	army_armor_attack_factor = MAN_armor_attack
+	army_armor_defence_factor = MAN_armor_defense
+
 	promote_cost_factor = MAN_re_promote_cost_factor 
 	army_artillery_attack_factor = MAN_arty_attc
 
@@ -32,7 +35,7 @@ MAN_military = {
 	
 	army_leader_cost_factor = MAN_army_leader_cost_factor 
 	acclimatization_cold_climate_gain_factor = MAN_acclimatization_hot_climate_gain_factor 
-	custom_modifier_tooltip = MAN_tank_bonus_tt
+	#custom_modifier_tooltip = MAN_tank_bonus_tt
 }
 
 MAN_industry_spirit_zaibatsus = { #NATIONAL SPIRIT

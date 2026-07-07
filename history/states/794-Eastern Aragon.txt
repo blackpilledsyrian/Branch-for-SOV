@@ -3,16 +3,15 @@ state = {
 	name = "STATE_794"
 
 	history = {
+		set_state_flag = flagger_spain_pain
 		owner = SPN
 		victory_points = {
 			3954 4 
 		}
-		1936.1.1.13 = {
-			owner = SPR
-		}
+		
 		buildings = {
 			infrastructure = 6
-			air_base = 2
+			#air_base = 2
 
 		}
 		add_core_of = SPN

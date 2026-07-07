@@ -146,7 +146,13 @@ ideas = {
 							has_idea = HUN_treaty_of_triannon_2
 						}
 					}
-				}				
+				}
+				if = {
+					limit = {
+						original_tag = HOL
+					}
+					has_completed_focus = HOL_increase_dutch_defenses
+				}
 			}
 			
 			cost = 150
@@ -193,6 +199,12 @@ ideas = {
 						}
 					}
 				}
+				if = {
+					limit = {
+						original_tag = HOL
+					}
+					has_completed_focus = HOL_prepare_for_war
+				}
 				OR = {
 					has_government = fascism
 					has_government = communism
@@ -210,6 +222,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
+				
 				conscription = -0.01
 				stability_weekly = -0.001
 				consumer_goods_expected_value = 0.25
@@ -237,6 +250,7 @@ ideas = {
 					tag = USA 
 					tag = GER
 					tag = AST
+					tag = SPR
 					tag = SOV
 					
 				}
@@ -290,34 +304,35 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
+				political_power_gain = -0.1
 				consumer_goods_expected_value = 0.2
 				conscription = -0.02
 				stability_weekly = -0.002
 				production_speed_arms_factory_factor = 0.0
 				industrial_capacity_factory = 0.05
 				global_building_slots_factor = 0.05		
-				political_power_factor = 0.05		
+					
 			}
 
-			on_add = {	
-				hidden_effect = {
-					if = {
-						limit = {
-							AND = {
-								tag = GER 
-								NOT = {
-									has_idea = GER_disorganized_industry 
-								}
-								NOT = {
-									has_country_flag = GER_disorganized_industry_has_happened
-								}
-							}
-						}
-						country_event = { id = germany.320 days = 50 }
-						set_country_flag = GER_disorganized_industry_has_happened
-					}		
-				}
-			}
+			#on_add = {	
+				#hidden_effect = {
+					#if = {
+						#limit = {
+							#AND = {
+								#tag = GER 
+								#NOT = {
+								#	has_idea = GER_disorganized_industry 
+								#}
+								#NOT = {
+								#	has_country_flag = GER_disorganized_industry_has_happened
+								#}
+							#}
+						#}
+						#country_event = { id = germany.320 days = 50 }
+						#set_country_flag = GER_disorganized_industry_has_happened
+					#}		
+				#}
+			#}
 			
 			ai_will_do = {
    				factor = 2
@@ -346,13 +361,14 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
+				political_power_gain = -0.1
 				consumer_goods_expected_value = 0.2
 				conscription = -0.02
 				stability_weekly = -0.002
 				production_speed_arms_factory_factor = 0.0
 				industrial_capacity_factory = 0.05
 				global_building_slots_factor = 0.05		
-				political_power_factor = 0.05		
+				
 			}
 
 			on_add = {	
@@ -386,13 +402,14 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
+				political_power_gain = -0.1
 				consumer_goods_expected_value = 0.2
 				conscription = -0.02
 				stability_weekly = -0.002
 				production_speed_arms_factory_factor = 0.0
 				industrial_capacity_factory = 0.05
 				global_building_slots_factor = 0.05		
-				political_power_factor = 0.05		
+					
 			}
 
 			on_add = {	
@@ -426,13 +443,14 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
+				political_power_gain = -0.1
 				consumer_goods_expected_value = 0.2
 				conscription = -0.02
 				stability_weekly = -0.002
 				production_speed_arms_factory_factor = 0.0
 				industrial_capacity_factory = 0.05
 				global_building_slots_factor = 0.05		
-				political_power_factor = 0.05		
+				
 			}
 
 			on_add = {	
@@ -449,7 +467,53 @@ ideas = {
 			
 			cancel_if_invalid = no
 			
-		}		
+		}
+		SPR_war_economy = {
+
+			visible = {
+				tag = SPR
+			}
+
+			available = {
+				SPR = {
+					OR = {
+						has_completed_focus = SPA_embrace_war_sydicalism
+						has_completed_focus = SPA_the_spanish_war_economy
+						has_completed_focus = SPA_mussolinni_visit_madrid
+					}
+					
+				}
+			}
+
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.1
+				consumer_goods_expected_value = 0.2
+				conscription = -0.01
+				stability_weekly = -0.001
+				production_speed_arms_factory_factor = 0.0
+				industrial_capacity_factory = 0.05
+				global_building_slots_factor = 0.05		
+					
+			}
+
+			on_add = {	
+				
+			}
+			
+			ai_will_do = {
+   				factor = 2
+				modifier = {
+					factor = 100
+					OR = { has_idea = civilian_economy  has_idea = undisturbed_isolation has_idea = low_economic_mobilisation has_idea = war_economy }
+				}
+			}
+			
+			cancel_if_invalid = no
+			
+		}	
 		tot_economic_mobilisation = {
 
 			visible = {
@@ -532,6 +596,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
+				political_power_gain = -0.1
 				consumer_goods_expected_value = 0.15
 				conscription = -0.03
 				stability_weekly = -0.003
@@ -540,7 +605,7 @@ ideas = {
 				production_speed_arms_factory_factor = 0.1
 				industrial_capacity_factory = 0.1
 				global_building_slots_factor = 0.1
-				political_power_factor = 0.1	
+
 				stability_factor = 0.05
 			}
 			
@@ -580,7 +645,7 @@ ideas = {
 				industrial_capacity_factory = 0.15
 				industrial_capacity_dockyard = 0.15
 				global_building_slots_factor = 0.2
-				political_power_factor = 0.1	
+		
 			}
 			
 			ai_will_do = {
@@ -889,24 +954,69 @@ ideas = {
 		law = yes
 		use_list_view = yes	
 		free_trade = {
+				
+			available = {
+				NOT = { has_government = communism }
+				has_war = no
+				NOT = {
+					tag = CHI
+				}
+			}
 			
-		available = {
-			
-
-			NOT = { has_government = communism }
+				visible = {
+					NOT = {
+						tag = SPR
+					}
+				}
+				
+				cost = 150
+				removal_cost = -1
+				
+				modifier = {
+					min_export = 0.5
+					production_speed_buildings_factor = 0.15
+					research_speed_factor = 0.18
+					civilian_intel_to_others = 30.0
+					army_intel_to_others = 30.0
+					navy_intel_to_others = 30.0			  		   							   
+				}
+				
+				ai_will_do = {
+					factor = 0
+				}
+				
+			cancel_if_invalid = no
 		}
+
+		free_trade_spain = {
+			
+		
+			available = {
+				NOT = { has_government = communism }
+				NOT = {
+					OR = {
+						has_completed_focus = SPA_policy_of_autarchy
+						has_completed_focus = SPA_deal_with_the_giants
+					}
+					}
+				tag = SPR
+			}
+			visible = {
+				tag = SPR
+			}
 			
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
-				min_export = 0.8
-				industrial_capacity_factory = 0.15
-				industrial_capacity_dockyard = 0.15
+				min_export = 0.45
 				production_speed_buildings_factor = 0.15
-				research_speed_factor = 0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				research_speed_factor = 0.18
 				civilian_intel_to_others = 30.0
-				navy_intel_to_others = 20.0				   							   
+				army_intel_to_others = 25.0
+				navy_intel_to_others = 25.0			   							   
 			}
 			
 			ai_will_do = {
@@ -915,7 +1025,7 @@ ideas = {
 			
 			cancel_if_invalid = no
 		}
-		
+
 		export_focus = {
 			
 
@@ -926,20 +1036,29 @@ ideas = {
 				OR = {
 					NOT = {
 						tag =  SOV
+						
 					}
 					has_completed_focus = SOV_the_great_patriotic_war	
 				}
-				
+				NOT = {
+					tag = CHI
+				}
 			}
-			
+
+			visible = {
+				not = {
+					tag = SPR
+				}
+			}
 			modifier = {
-				min_export = 0.5
-				industrial_capacity_factory = 0.1
-				industrial_capacity_dockyard = 0.1
+				min_export = 0.35
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
 				production_speed_buildings_factor = 0.1
-				research_speed_factor = 0.025
-				civilian_intel_to_others = 20.0
-				navy_intel_to_others = 10.0				   							   
+				research_speed_factor = 0.1
+				civilian_intel_to_others = 15.0
+				army_intel_to_others = 15.0
+				navy_intel_to_others = 15.0					   							   
 			}
 			
 			ai_will_do = {
@@ -950,6 +1069,43 @@ ideas = {
 			
 			cancel_if_invalid = no
 		}
+
+		export_focus_spain = {
+			
+
+			cost = 150
+			removal_cost = -1
+
+			available = {
+				tag = SPR
+				NOT = {
+					has_completed_focus = SPA_deal_with_the_giants
+				}
+			}
+
+			visible = {
+				tag = SPR
+			}
+			modifier = {
+				min_export = 0.55
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_speed_buildings_factor = 0.1
+				research_speed_factor = 0.1
+				civilian_intel_to_others = 15.0
+				army_intel_to_others = 15.0
+				navy_intel_to_others = 15.0					   							   
+			}
+			
+			ai_will_do = {
+   				factor = 0
+			}
+			
+	
+			
+			cancel_if_invalid = no
+		}
+		
 		limited_exports = {
 			
 			available = {
@@ -964,17 +1120,55 @@ ideas = {
 
 				
 			}
+			visible = {
+				not = {
+					tag = SPR
+				}
+			}
 		
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
-				min_export = 0.3
+				min_export = 0.25
 				industrial_capacity_factory = 0.05
 				industrial_capacity_dockyard = 0.05
 				production_speed_buildings_factor = 0.05
-				civilian_intel_to_others = 10.0
-				navy_intel_to_others = 5				   							
+				research_speed_factor = 0.05
+				civilian_intel_to_others = -5
+				army_intel_to_others = -5
+				navy_intel_to_others = -5				   							
+			}
+			
+			ai_will_do = {
+   				factor = 0
+			}
+			
+			cancel_if_invalid = no
+		}
+
+		limited_exports_spain = {
+			
+			available = {
+				tag = SPR
+				has_completed_focus = SPA_deal_with_the_giants
+			}
+			visible = {
+				tag = SPR
+			}
+		
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				min_export = 0.35
+				industrial_capacity_factory = 0.075
+				industrial_capacity_dockyard = 0.075
+				production_speed_buildings_factor = 0.05
+				research_speed_factor = 0.025
+				civilian_intel_to_others = -5
+				army_intel_to_others = -5
+				navy_intel_to_others = -5				   							
 			}
 			
 			ai_will_do = {
@@ -991,6 +1185,12 @@ ideas = {
 				}
 
 			}
+			visible = {
+				NOT = {
+					tag = SPR
+				}				
+			}
+			
 			
 			cost = 150
 			removal_cost = -1
@@ -998,6 +1198,39 @@ ideas = {
 			modifier = {
 				min_export = 0.05
 				#civilian_intel_to_others = 0.0
+				civilian_intel_to_others = -10
+				army_intel_to_others = -10
+				navy_intel_to_others = -10
+			}
+			
+			ai_will_do = {
+   				factor = 0
+			}
+			
+			on_add = {
+				custom_effect_tooltip = closed_economy_TT
+			}
+			
+			cancel_if_invalid = no
+		}
+
+		closed_economy_spain = {
+
+			visible = {
+				tag = SPR
+			}
+			available = {
+				tag = SPR
+			}
+
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				min_export = 0.1
+				civilian_intel_to_others = -15
+				army_intel_to_others = -15
+				navy_intel_to_others = -15
 			}
 			
 			ai_will_do = {

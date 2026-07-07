@@ -111,8 +111,8 @@ technologies = {
 			}
 		}
 
-		static_anti_air_damage_factor = 0.15
-		static_anti_air_hit_chance_factor = 0.15
+		static_anti_air_damage_factor = 0.2
+		static_anti_air_hit_chance_factor = 0.2
 
 		path = {
 			leads_to_tech = sp_variable_time_fuze_shells
@@ -129,7 +129,7 @@ technologies = {
 		}
 
 		categories = {
-			artillery
+			cat_artillery
 
 		}
 
@@ -162,7 +162,7 @@ technologies = {
 		}
 
 		categories = {
-			artillery
+			cat_artillery
 		}
 
 		special_project_specialization = { specialization_land specialization_air }
@@ -1099,8 +1099,8 @@ technologies = {
 			anti_tank_guided_missile_equipment_1
 		}		
 		enable_subunits = {
-			atgm_battalion
-			motorized_atgm_battalion
+			
+			
 			atgm_company			
 		}
 

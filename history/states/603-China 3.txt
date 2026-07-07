@@ -2,9 +2,9 @@ state = {
 	id = 603
 	name = "STATE_603"
 	resources = {
-			steel = 20
-			chromium = 12
-				aluminium = 5
+			steel = 75
+			chromium = 40
+				aluminium = 30
 	}
 
 	history = {
@@ -12,8 +12,8 @@ state = {
 		add_core_of = CHI
 		add_dynamic_modifier = { modifier = CHI_tougher_resistance3 }
 		buildings = {
-			infrastructure = 4
-			arms_factory = 1
+			infrastructure = 1
+			arms_factory = 2
 			air_base = 4
 
 		}
@@ -28,15 +28,18 @@ state = {
 
 		}
 		victory_points = {
-			4504 3 
+			4504 7 
+		}
+		victory_points = {
+			10335 4
 		}
 
 	}
 
 	provinces = {
-		1474 1884 4192 4504 4532 5072 7521 7549 7577 8095 10616 10819 12841 13643 13642 13644 13655 13648 13649 13646 13650
+		1474 1884 4192 4504 4532 5072 7521 7549 7577 8095 10616 10819 12841 13643 13642 13644 13655 13648 13649 13646 13650 10335
 	}
-	manpower = 7543200
+	manpower = 12543200
 	buildings_max_level_factor = 1.000
 	state_category = town
 }

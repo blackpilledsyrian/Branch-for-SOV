@@ -1,8 +1,288 @@
 technologies = {
+	UNLOCK_SIEGE_ARTY_ABILITY_TECH = {
+
+	}
+	enable_mot_paratrooper = {
+		 enable_subunits = {
+            mot_paratrooper
+        }
+	}
+	enable_sniper_unit = {
+		 enable_subunits = {
+            sniper_unit
+        }
+	}
+	enable_mobile_engineer = {
+		 enable_subunits = {
+            mobile_engineer
+        }
+	}
+	enable_light_armor_para = {
+		 enable_subunits = {
+            light_armor_para
+        }
+	}
+	enable_commando = {
+		 enable_subunits = {
+            commando_unit
+        }
+	}
+	mech_hp_bonus = {
+		 category_mechanized = {
+				max_strength = 1.5
+			}
+	}
+	blowtorch_and_corcscrew = {
+		commando_unit = {
+			battalion_mult = {
+				category = category_special_forces
+				soft_attack = 0.15
+				hard_attack = 0.15
+				breakthrough = 0.15
+			}
+		
+		}
+	}
+	
+	jungle_support = {
+		commando_unit = {
+			jungle = {
+				attack = 0.05
+				movement = 0.05
+			}
+		}
+	}
+	ranger_support = {
+		 commando_unit = {
+				forest = {
+				attack = 0.05
+				movement = 0.05
+			}
+			
+		}
+	}
+	long_range_patrol_hot = {
+		mot_recon = {
+			recon = 0.5
+			desert = {
+				attack = 0.1
+				movement = 0.1
+			}
+		}
+		
+	}
+	long_range_patrol_cold = {
+		recon = {
+			recon = 1 
+			snow = {
+				attack = 0.05
+			}
+		}
+	}
+	exped_warfare_doctrine = {
+		special_forces_min = 16
+	}
+	
+	refresh_dummy_tech = {
+		category_front_line = {
+			forest = {
+				movement = 0.001
+			}
+		}
+	}
+
+	MW_volksturm_bonuses = {
+		category_all_infantry = {
+			urban = {
+				defence = 0.05
+			}
+			forest = {
+				defence = 0.05
+			}
+			hills = {
+				defence = 0.05
+			}
+
+		}
+		category_all_armor = {
+			urban = {
+				defence = 0.05
+			}
+			forest = {
+				defence = 0.05
+			}
+			hills = {
+				defence = 0.05
+			}
+
+		}
+		garrison = {
+			urban = {
+				defence = 0.15
+			}
+			forest = {
+				defence = 0.15
+			}
+			hills = {
+				defence = 0.15
+			}
+		}
+		bicycle_battalion = {
+			urban = {
+				defence = 0.15
+			}
+			forest = {
+				defence = 0.15
+			}
+			hills = {
+				defence = 0.15
+			}
+		}
+	}
+	
+	sfp_aggresive_bonus = {
+		category_all_infantry = {
+			forest = {
+				attack = 0.05
+				defence = -0.05
+			}
+			urban = {
+				attack = 0.05
+				defence = -0.05
+			}
+			jungle = {
+				attack = 0.05
+				defence = -0.05
+			}
+			marsh = {
+				attack = 0.05
+				defence = -0.05
+			}
+			hills = {
+				attack = 0.05
+				defence = -0.05
+			}
+			mountain = {
+				attack = 0.05
+				defence = -0.05
+			}
+		}
+	}
+	GBP_combat_support_tactics_bonus = {
+
+	
+        category_assault_gun_company = {
+            battalion_mult = {
+                category = category_heavy_infantry
+                soft_attack = 0.1
+                hard_attack = 0.1
+                breakthrough = 0.1
+                add = no
+            }
+        }
+	}
+	sfp_tank_fort_attack = {
+		category_all_armor = {
+			fort = {
+				attack = 0.05
+			}
+		}
+	}
+	gbp_sf_bonus = {
+		category_special_forces = {
+			forest = {
+				attack = 0.03
+			}
+			urban = {
+				attack = 0.03
+			}
+			jungle = {
+				attack = 0.03
+			}
+			marsh = {
+				attack = 0.03
+			}
+			amphibious = {
+				attack = 0.03
+			}
+			river = {
+				attack = 0.03
+			}
+			hills = {
+				attack = 0.03
+			}
+			mountain = {
+				attack = 0.03
+			}
+		}
+	}
+	combat_support_tactics_bonus = {
+
+	
+		category_assault_guns = {
+
+                urban = {
+                    attack = 0.05
+                    defence = 0.05
+                }
+
+            }
+        category_assault_gun_company = {
+            battalion_mult = {
+                category = category_heavy_infantry
+                soft_attack = 0.1
+                hard_attack = 0.1
+                breakthrough = 0.1
+                add = no
+            }
+        }
+	}
+	building_tech = {
+	
+		air_production_capacity = 110
+		tank_production_capacity = 70
+	}
 	enable_bicycle = {
 		enable_subunits = {
 			bicycle_battalion
 		}
+	}
+
+	SPR_heavy_aa_reduction = {
+
+		research_cost = -1
+		allow = {
+			always = no
+		}
+		anti_air_heavy = {
+			need = {
+				heavy_anti_air_equipment = -2
+			}
+		}
+		anti_air_heavy_mot = {
+			need = {
+			   	motorized_equipment = -5
+			}
+			casualty_trickleback = -0.10
+		}
+
+	}
+
+	SPR_siege_numb_reduction = {
+
+		research_cost = -1
+		allow = {
+			always = no
+		}
+		artillery_siege_support = {
+			need = {
+				motorized_equipment = -10
+			}
+			need = {
+				siege_artillery_equipment = -5
+			}
+		}
+
 	}
 	
 	asiatic_tanks = {
@@ -68,6 +348,25 @@ technologies = {
 				}
 			}	
 		
+	}
+	gbp_infiltration_bonus = {
+		category_front_line = {
+			forest = {
+				movement = 0.05
+			}
+			urban = {
+				movement = 0.05
+			}
+			hills = {
+				movement = 0.05
+			}
+			jungle = {
+				movement = 0.05
+			}
+			marsh = {
+				movement = 0.05
+			}
+		}
 	}
 	gbp_second_bonus = {
 		category_tanks = {
@@ -222,8 +521,8 @@ technologies = {
 		}
 		paratrooper = {
 			need = {
-				special_equipment = -7
-				infantry_equipment = -8
+				special_equipment = -6
+				infantry_equipment = -7
 			 }
 		}
 		mountain_artillery_brigade = {
@@ -243,6 +542,106 @@ technologies = {
 		}
 	}
 
+	SPR_cultivative_fascism_idea = {
+		research_cost = -1
+		allow = {
+			always = no
+		}
+				
+		category_all_infantry = {
+			soft_attack = 0.05
+			hard_attack = 0.1
+			need = {
+			   radio_equipment = 2
+		    }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	spanish_supply_tech_stuff = {	   
+		research_cost = -1
+		allow = {
+			always = no
+		}
+		logistics_company = {
+			supply_consumption_factor = -0.1
+			fuel_consumption = -0.02
+			
+			need = {
+				support_equipment = 10
+				radio_equipment = 2
+			}	
+		}
+		logistics_company_mot = {
+			supply_consumption_factor = -0.1
+			fuel_consumption = -0.02
+			
+			need = {
+				support_equipment = 10
+				radio_equipment = 2
+			}	
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	spanish_inquiz_tech = {	   
+		research_cost = -1
+		allow = {
+			always = no
+		}
+		military_police = {
+			experience_loss_factor = 0.1
+			casualty_trickleback = -0.10
+			defense = 0.25
+
+			plains = {
+				defence = 0.05
+				movement = -0.02
+			}
+			marsh = {
+				defence = 0.05
+				movement = -0.02
+			}
+			jungle = {
+				defence = 0.05
+				movement = -0.02
+			}
+			desert = {
+				defence = 0.05
+				movement = -0.02
+			}
+			
+			hills = {
+				defence = 0.05
+				movement = -0.02
+			}
+			mountain = {
+				defence = 0.05
+				movement = -0.02
+			}
+			forest = {
+				defence = 0.05
+				movement = -0.02
+			}
+			urban = {
+				defence = 0.05
+				movement = -0.02
+			}
+					
+			need = {
+				infantry_equipment = 40
+				horse_equipment = 10
+			}	
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
 
 	spanish_civil_war_tech = {
 		research_cost = -1
@@ -1736,16 +2135,6 @@ technologies = {
 			   	motorized_equipment = -5
 			}
 		}
-		anti_tank_brigade_mot = {
-			need = {
-			   	motorized_equipment = -5
-			}
-		}
-		anti_air_mot = {
-			need = {
-			   	motorized_equipment = -5
-			}
-		}
 		anti_air_heavy_mot = {
 			need = {
 			   	motorized_equipment = -5
@@ -2189,6 +2578,9 @@ technologies = {
 		}
 		recon = {
 			recon = 1
+			supply_consumption = -0.01
+			soft_attack = 1
+			hard_attack = 1
 		}
 		
 	}
@@ -2665,7 +3057,7 @@ technologies = {
 		}
 		infantry = {
 			need = {
-			   	infantry_equipment = -31
+			   	infantry_equipment = -30
 			}
 		}
 
@@ -3728,6 +4120,9 @@ technologies = {
 		}
 		motorized_rocket_brigade = {
 			combat_width = -0.4
+			need = {
+				motorized_equipment = 2
+			}
 		}
 
 		ai_will_do = {
@@ -3796,9 +4191,9 @@ technologies = {
 			breakthrough = -0.2
 			initiative = -0.001
 			need = {
-				infantry_equipment = -31
-				horse_equipment = -2
-				motorized_equipment = -2
+				infantry_equipment = -30
+				horse_equipment = -3
+				motorized_equipment = -1
 			}
 		}
 		
@@ -3871,19 +4266,7 @@ technologies = {
 				special_equipment = -8
 			}
 		}
-		paratrooper = {
-			combat_width = -0.4
-			max_strength = -1.5
-			soft_attack = -0.2
-			hard_attack = -0.2
-			defense = -0.2
-			breakthrough = -0.2
-			initiative = -0.002
-			need = {
-				infantry_equipment = -22
-				special_equipment = -20
-			}
-		}
+		
 		artillery_brigade = {
 			combat_width = -0.2
 			soft_attack = -0.08
@@ -3945,31 +4328,7 @@ technologies = {
 			}
 		}	
 		
-		pack_artillery_brigade = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				pack_artillery_equipment = -1
-				horse_equipment = -2
-			}
-		}	
 
-		mountain_gun_brigade = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				pack_artillery_equipment = -1
-				special_equipment = -2
-			}
-		}
 
 		pack_artillery_brigade_mot = {
 			combat_width = -0.2
@@ -4029,54 +4388,6 @@ technologies = {
 			need = {
 				rocket_artillery_equipment = -1
 				motorized_equipment = -4
-			}
-		}	
-		anti_tank_brigade = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_tank_equipment = -1
-				horse_equipment = -2
-			}
-		}	
-		anti_tank_brigade_mot = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_tank_equipment = -1
-				motorized_equipment = -2
-			}
-		}	
-		anti_air = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_air_equipment = -1
-				horse_equipment = -2
-			}
-		}	
-		anti_air_mot = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_air_equipment = -1
-				motorized_equipment = -2
 			}
 		}	
 		anti_air_heavy = {
@@ -4276,9 +4587,9 @@ technologies = {
 			breakthrough = -0.2
 			initiative = -0.001
 			need = {
-				infantry_equipment = -31
-				horse_equipment = -2
-				motorized_equipment = -2
+				infantry_equipment = -30
+				horse_equipment = -3
+				motorized_equipment = -1
 			}
 		}
 	
@@ -4350,19 +4661,7 @@ technologies = {
 				special_equipment = -8
 			}
 		}
-		paratrooper = {
-			combat_width = -0.4
-			max_strength = -1.5
-			soft_attack = -0.2
-			hard_attack = -0.2
-			defense = -0.2
-			breakthrough = -0.2
-			initiative = -0.002
-			need = {
-				infantry_equipment = -22
-				special_equipment = -20
-			}
-		}
+		
 		artillery_brigade = {
 			combat_width = -0.2
 			soft_attack = -0.08
@@ -4424,31 +4723,7 @@ technologies = {
 			}
 		}	
 		
-		pack_artillery_brigade = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				pack_artillery_equipment = -1
-				horse_equipment = -2
-			}
-		}	
 
-		mountain_gun_brigade = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				pack_artillery_equipment = -1
-				special_equipment = -2
-			}
-		}
 
 		pack_artillery_brigade_mot = {
 			combat_width = -0.2
@@ -4508,54 +4783,6 @@ technologies = {
 			need = {
 				rocket_artillery_equipment = -1
 				motorized_equipment = -4
-			}
-		}	
-		anti_tank_brigade = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_tank_equipment = -1
-				horse_equipment = -2
-			}
-		}	
-		anti_tank_brigade_mot = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_tank_equipment = -1
-				motorized_equipment = -2
-			}
-		}	
-		anti_air = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_air_equipment = -1
-				horse_equipment = -2
-			}
-		}	
-		anti_air_mot = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_air_equipment = -1
-				motorized_equipment = -2
 			}
 		}	
 		anti_air_heavy = {
@@ -4755,9 +4982,9 @@ technologies = {
 			breakthrough = -0.2
 			initiative = -0.001
 			need = {
-				infantry_equipment = -31
-				horse_equipment = -2
-				motorized_equipment = -2
+				infantry_equipment = -30
+				horse_equipment = -3
+				motorized_equipment = -1
 			}
 		}
 	
@@ -4830,19 +5057,7 @@ technologies = {
 				special_equipment = -8
 			}
 		}
-		paratrooper = {
-			combat_width = -0.4
-			max_strength = -1.5
-			soft_attack = -0.2
-			hard_attack = -0.2
-			defense = -0.2
-			breakthrough = -0.2
-			initiative = -0.002
-			need = {
-				infantry_equipment = -22
-				special_equipment = -20
-			}
-		}
+		
 		artillery_brigade = {
 			combat_width = -0.2
 			soft_attack = -0.08
@@ -4904,31 +5119,7 @@ technologies = {
 			}
 		}	
 		
-		pack_artillery_brigade = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				pack_artillery_equipment = -1
-				horse_equipment = -2
-			}
-		}	
 
-		mountain_gun_brigade = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				pack_artillery_equipment = -1
-				special_equipment = -2
-			}
-		}
 
 		pack_artillery_brigade_mot = {
 			combat_width = -0.2
@@ -4988,54 +5179,6 @@ technologies = {
 			need = {
 				rocket_artillery_equipment = -1
 				motorized_equipment = -4
-			}
-		}	
-		anti_tank_brigade = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_tank_equipment = -1
-				horse_equipment = -2
-			}
-		}	
-		anti_tank_brigade_mot = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_tank_equipment = -1
-				motorized_equipment = -2
-			}
-		}	
-		anti_air = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_air_equipment = -1
-				horse_equipment = -2
-			}
-		}	
-		anti_air_mot = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_air_equipment = -1
-				motorized_equipment = -2
 			}
 		}	
 		anti_air_heavy = {
@@ -5187,9 +5330,9 @@ technologies = {
 			breakthrough = -0.2
 			initiative = -0.001
 			need = {
-				infantry_equipment = -31
-				horse_equipment = -2
-				motorized_equipment = -2
+				infantry_equipment = -30
+				horse_equipment = -3
+				motorized_equipment = -1
 			}
 		}
 		ss_mechanized = {
@@ -5337,9 +5480,10 @@ technologies = {
 			breakthrough = -0.2
 			initiative = -0.001
 			need = {
-				infantry_equipment = -31
-				horse_equipment = -2
-				motorized_equipment = -2
+				infantry_equipment = -30
+				horse_equipment = -3
+				motorized_equipment = -1
+
 			}
 		}
 	
@@ -5412,19 +5556,7 @@ technologies = {
 				special_equipment = -8
 			}
 		}
-		paratrooper = {
-			combat_width = -0.4
-			max_strength = -1.5
-			soft_attack = -0.2
-			hard_attack = -0.2
-			defense = -0.2
-			breakthrough = -0.2
-			initiative = -0.002
-			need = {
-				infantry_equipment = -22
-				special_equipment = -20
-			}
-		}
+		
 		artillery_brigade = {
 			combat_width = -0.2
 			soft_attack = -0.08
@@ -5584,18 +5716,6 @@ technologies = {
 				horse_equipment = -2
 			}
 		}	
-		anti_tank_brigade_mot = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_tank_equipment = -1
-				motorized_equipment = -2
-			}
-		}	
 		anti_air = {
 			combat_width = -0.2
 			soft_attack = -0.08
@@ -5606,18 +5726,6 @@ technologies = {
 			need = {
 				anti_air_equipment = -1
 				horse_equipment = -2
-			}
-		}	
-		anti_air_mot = {
-			combat_width = -0.2
-			soft_attack = -0.08
-			hard_attack = -0.08
-			defense = -0.08
-			breakthrough = -0.08
-			initiative = -0.001
-			need = {
-				anti_air_equipment = -1
-				motorized_equipment = -2
 			}
 		}	
 		anti_air_heavy = {

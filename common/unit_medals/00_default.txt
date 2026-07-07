@@ -37,7 +37,8 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_defence_factor = 0.08
+			army_defence_factor = 0.1
+			army_strength_factor = -0.05
 		}
 		
 		#leader_modifier = {
@@ -48,6 +49,9 @@ unit_medals = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			navy_org_factor = 0.1
+		}
 	}
 	
 	knights_cross = {
@@ -59,13 +63,17 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_attack_factor = 0.04
+			army_attack_factor = 0.06
+			army_strength_factor = -0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_detection = 0.15
+		}
 	}
 	
 	knights_cross_oak_leaves = {
@@ -77,14 +85,19 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_fuel_consumption_factor = -0.15
-			supply_consumption_factor = -0.15
+			army_org_factor = 0.1
+			supply_consumption_factor = -0.1
+			army_strength_factor = -0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			navy_fuel_consumption_factor = -0.05
+			naval_supply_consumption_factor = -0.05
+		}
 	}
 	
 	knights_cross_swords_and_diamonds = {
@@ -96,13 +109,17 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_strength_factor  = 0.2
+			army_morale_factor = 0.15
+			army_strength_factor = -0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_critical_score_chance_factor = 0.1
+		}
 	}
 	
 	### USA
@@ -116,13 +133,17 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_defence_factor = 0.08
+			army_defence_factor = 0.04
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			navy_org_factor = 0.05
+			naval_morale_factor = 0.05
+		}
 	}
 	
 	silver_star = {
@@ -134,14 +155,17 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			supply_consumption_factor = -0.15
-			army_strength_factor = 0.1
+			supply_consumption_factor = -0.1
+			army_strength_factor = 0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_supply_consumption_factor = -0.1
+		}
 	}
 	
 	distinguished_service_cross = {
@@ -153,13 +177,16 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_attack_factor = 0.04
+			army_attack_factor = 0.03
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_damage_factor = 0.05
+		}
 	}
 	
 	medal_of_honor = {
@@ -171,13 +198,16 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			experience_loss_factor = -0.2
+			army_morale_factor = 0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			experience_gain_navy_unit_factor = 0.2
+		}
 	}
 	
 	### SOV
@@ -191,13 +221,16 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_morale_factor = 0.15
+			army_morale_factor = 0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_morale_factor = 0.2
+		}
 	}
 	
 	order_of_kutuzov = {
@@ -209,11 +242,14 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_defence_factor = 0.08
+			army_defence_factor = 0.04
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
+		}
+		ship_modifiers = {
+			naval_mines_effect_reduction = 0.15
 		}
 	}
 	
@@ -226,13 +262,16 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_strength_factor = 0.2
+			army_strength_factor = 0.1
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_critical_effect_factor = -0.1
+		}
 	}
 	
 	hero_of_the_soviet_union = {
@@ -244,13 +283,16 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_attack_factor = 0.04
+			army_attack_factor = 0.03
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			navy_org_factor = 0.1
+		}
 	}
 	
 	### ENG
@@ -264,13 +306,16 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_attack_factor = 0.04
+			army_attack_factor = 0.03
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			spotting_chance = 0.1
+		}
 	}
 	
 	order_british_empire = {
@@ -282,13 +327,16 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_strength_factor = 0.2
+			army_strength_factor = 0.1
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_critical_effect_factor = -0.1
+		}
 	}
 	
 	distinguished_service_order = {
@@ -300,13 +348,16 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_defence_factor = 0.08
+			army_defence_factor = 0.04
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_defense_factor = 0.075
+		}
 	}
 	
 	victoria_cross = {
@@ -318,13 +369,16 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_morale_factor = 0.15
+			army_morale_factor = 0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_morale_factor = 0.15
+		}
 	}
 	
 	### FRA
@@ -338,13 +392,17 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			max_dig_in_factor = 0.15
+			max_dig_in_factor = 0.1
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_mines_effect_reduction = 0.1
+			spotting_chance = 0.1
+		}
 	}
 	
 	war_cross = {
@@ -356,13 +414,16 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_attack_factor = 0.04
+			army_attack_factor = 0.03
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			navy_org_factor = 0.15
+		}
 	}
 	
 	order_of_liberation = {
@@ -374,14 +435,17 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_fuel_consumption_factor = -0.2
-			supply_consumption_factor = -0.15
+			army_morale_factor = 0.05
+	
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			navy_fuel_consumption_factor = -0.15
+		}
 	}
 	
 	legion_of_honor = {
@@ -394,13 +458,17 @@ unit_medals = {
 		
 		unit_modifiers = {
 			
-			army_defence_factor = 0.08
+			army_defence_factor = 0.04
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_supply_consumption_factor = -0.1
+			naval_defense_factor = 0.05
+		}
 	}
 	
 	### ITA
@@ -414,14 +482,18 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_org_factor = 0.05
-			army_morale_factor = 0.075
+			army_org_factor = 0.15
+			army_strength_factor = -0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_ship_recovery_chance = 0.1
+			naval_morale_factor = 0.075
+		}
 	}
 	
 	cross_of_military_valor = {
@@ -433,14 +505,18 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			breakthrough_factor = 0.05
-			army_strength_factor = 0.15
+			breakthrough_factor = 0.15
+			army_strength_factor = -0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_critical_score_chance_factor = 0.1
+			naval_morale_factor = 0.075
+		}
 	}
 	
 	order_of_savoy_fifth = {
@@ -452,13 +528,18 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			supply_consumption_factor = -0.15
+			army_morale_factor = 0.15
+			army_strength_factor = -0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_supply_consumption_factor = -0.1
+			naval_defense_factor = -0.075
+		}
 	}
 	
 	order_of_savoy_first = {
@@ -470,13 +551,17 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_attack_factor = 0.04
+			army_attack_factor = 0.06
+			army_strength_factor = -0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_damage_factor = 0.05
+		}
 	}
 	
 	### JAP
@@ -491,12 +576,16 @@ unit_medals = {
 		
 		unit_modifiers = {
 			army_morale_factor = 0.15
+			army_strength_factor = -0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_morale_factor = 0.075
+		}
 	}
 	
 	sacred_treasure = {
@@ -508,14 +597,18 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-		
-			army_strength_factor = 0.2
+			army_org_factor = 0.15
+			army_strength_factor = -0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_morale_factor = 0.075
+			naval_critical_effect_factor = -0.1
+		}
 	}
 	
 	golden_kite = {
@@ -527,11 +620,16 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_attack_factor = 0.04
+			army_attack_factor = 0.06
+			army_strength_factor = -0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
+		}
+		ship_modifiers = {
+			naval_supply_consumption_factor = -0.1
+			naval_damage_factor = 0.05
 		}
 	}
 	
@@ -544,13 +642,17 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			max_planning_factor = 0.04
+			max_planning_factor = 0.06
+			army_strength_factor = -0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_critical_score_chance_factor = 0.15
+		}
 	}
 
 	# ETH 
@@ -575,6 +677,9 @@ unit_medals = {
 			add_divisional_commander_xp = ETH.ETH_medal_xp_gain
 		}
 		
+		ship_modifiers = {
+			navy_org_factor = 0.1
+		}
 	}
 	# Order of the Grand Star of Honour of Socialist Ethiopia
 	ETH_order_of_the_grand_star = {
@@ -596,6 +701,9 @@ unit_medals = {
 			add_divisional_commander_xp = ETH.ETH_medal_xp_gain
 		}
 		
+		ship_modifiers = {
+			naval_damage_factor = 0.05
+		}
 	}
 
 	# Distinguished Military Medal of Haile Selassie the First
@@ -618,6 +726,9 @@ unit_medals = {
 			add_divisional_commander_xp = ETH.ETH_medal_xp_gain
 		}
 		
+		ship_modifiers = {
+			naval_morale_factor = 0.15
+		}
 	}
 	# Military Medal of Gugsa
 	ETH_military_medal_gugsa = {
@@ -643,6 +754,9 @@ unit_medals = {
 			add_divisional_commander_xp = ETH.ETH_medal_xp_gain
 		}
 		
+		ship_modifiers = {
+			naval_supply_consumption_factor = -0.15
+		}
 	}
 	ETH_military_medal_haymanot = {
 		
@@ -667,6 +781,9 @@ unit_medals = {
 			add_divisional_commander_xp = ETH.ETH_medal_xp_gain
 		}
 		
+		ship_modifiers = {
+			naval_critical_score_chance_factor = 0.1
+		}
 	}
 	ETH_military_medal_jofir = {
 		
@@ -691,6 +808,9 @@ unit_medals = {
 			add_divisional_commander_xp = ETH.ETH_medal_xp_gain
 		}
 		
+		ship_modifiers = {
+			naval_detection = 0.1
+		}
 	}
 
 	ETH_military_medal_democratic_communist = {
@@ -715,6 +835,10 @@ unit_medals = {
 			add_divisional_commander_xp = ETH.ETH_medal_xp_gain
 		}
 		
+		ship_modifiers = {
+			naval_supply_consumption_factor = -0.15
+			
+		}
 	}
 
 	ETH_gold_medal = {
@@ -735,6 +859,9 @@ unit_medals = {
 			add_divisional_commander_xp = ETH.ETH_medal_xp_gain
 		}
 		
+		ship_modifiers = {
+			naval_ship_recovery_chance = 0.15
+		}
 	}
 	
 	ETH_silver_medal = {
@@ -755,6 +882,9 @@ unit_medals = {
 			add_divisional_commander_xp = ETH.ETH_medal_xp_gain
 		}
 		
+		ship_modifiers = {
+			experience_gain_navy_unit_factor = 0.25
+		}
 	}
 	
 	### Generic Democratic
@@ -771,13 +901,16 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_attack_factor = 0.04
+			army_attack_factor = 0.03
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_morale_factor = 0.1
+		}
 	}
 	
 	democratic_honor = {
@@ -792,13 +925,17 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			supply_consumption_factor = -0.15
+			army_morale_factor = 0.05
+	
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_supply_consumption_factor = -0.15
+		}
 	}
 	
 	democratic_war_cross = {
@@ -813,13 +950,17 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_defence_factor = 0.08
+			army_defence_factor = 0.05
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_detection = 0.1
+			naval_defense_factor = 0.05
+		}	
 	}
 	
 	democratic_lion = {
@@ -834,13 +975,17 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			experience_loss_factor = -0.25
+			army_org_factor = 0.05
+			experience_loss_factor = -0.1
 		}
 		
 		one_time_effect = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			experience_gain_navy_unit_factor = 0.25
+		}
 	}
 	
 	### Generic Communist
@@ -865,6 +1010,10 @@ unit_medals = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_supply_consumption_factor = -0.15
+			navy_fuel_consumption_factor = -0.15
+		}
 	}
 	
 	communist_red_star = {
@@ -887,6 +1036,10 @@ unit_medals = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_morale_factor = 0.05
+			naval_defense_factor = 0.05
+		}
 	}
 	
 	communist_merit_medal = {
@@ -908,6 +1061,9 @@ unit_medals = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			navy_org_factor = 0.1
+		}
 	}
 	
 	communist_hero_of_revolution = {
@@ -929,6 +1085,9 @@ unit_medals = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_damage_factor = 0.1
+		}
 	}
 	
 	### Generic Fascism
@@ -952,6 +1111,9 @@ unit_medals = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			navy_org_factor = 0.1
+		}
 	}
 	
 	fascism_merit = {
@@ -974,6 +1136,9 @@ unit_medals = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_damage_factor = 0.05
+		}
 	}
 	
 	fascism_order_brave = {
@@ -996,6 +1161,10 @@ unit_medals = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_detection = 0.1
+			critical_receive_chance = -0.1
+		}
 	}
 	
 	fascism_heroism = {
@@ -1017,6 +1186,9 @@ unit_medals = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_critical_score_chance_factor = 0.1
+		}
 	}
 	
 	### Generic Neutrality
@@ -1041,6 +1213,10 @@ unit_medals = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_defense_factor = 0.05
+			naval_mines_effect_reduction = 0.1
+		}
 	}
 	
 	neutral_military_order = {
@@ -1063,6 +1239,10 @@ unit_medals = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_morale_factor = 0.1
+			naval_supply_consumption_factor = -0.15
+		}
 	}
 	
 	neutral_sword = {
@@ -1084,6 +1264,9 @@ unit_medals = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_damage_factor = 0.05
+		}
 	}
 	
 	neutral_virtue = {
@@ -1106,6 +1289,10 @@ unit_medals = {
 			add_divisional_commander_xp = 100
 		}
 		
+		ship_modifiers = {
+			naval_morale_factor = 0.05
+			experience_gain_navy_unit_factor = 0.05
+		}
 	}
 	
 	### Unique

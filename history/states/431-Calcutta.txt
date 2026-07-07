@@ -2,13 +2,14 @@ state = {
 	id = 431
 	name = "STATE_431"
 	resources = {
-		steel = 7.000
-		tungsten = 6.000
+		steel = 28.000
+		tungsten = 24.000
 	}
 
 	history = {
 		owner = RAJ
 		buildings = {
+			tank_assembly = 1
 			infrastructure = 5
 			industrial_complex = 2
 			dockyard = 1
@@ -22,6 +23,9 @@ state = {
 		}
 		victory_points = {
 			4245 20
+		}
+		victory_points = {
+			7565 4
 		}
 
 	}

@@ -90,6 +90,7 @@ USA_arms_shipment_category = {
 			original_tag = ENG
 			original_tag = POL
 			original_tag = NZL
+			original_tag = HOL
 		}
 	}
 
@@ -98,6 +99,15 @@ USA_arms_shipment_category = {
    visible = {
 	  USA = {
 		has_completed_focus = USA_cash_and_carry
+		NOT = {
+			has_idea = developing_country_usa
+		}
+	  }
+	  if = {
+		limit = {
+			original_tag = HOL
+		}
+		has_completed_focus = HOL_buy_equipment_from_the_usa
 	  }
    }
 }
@@ -141,11 +151,7 @@ USA_war_preparation = {
  	}
 
 	visible = {
-		OR = {
-			has_completed_focus = USA_henderson_war_production
-			has_completed_focus = USA_transfer_power_to_OPM
-
-		}
+		
 		
 	}
 

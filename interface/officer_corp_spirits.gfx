@@ -182,6 +182,22 @@ spriteTypes = {
 		texturefile = "gfx/interface/officer_corp/spirits/spirit_idea_reserve_officers.dds"
 	}
 	spriteType = {
+		name = "GFX_idea_military_society_spirit"
+		texturefile = "gfx/interface/ideas/spirit_idea_nepotism.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_spirit_of_defiance_spirit"
+		texturefile = "gfx/interface/ideas/spirit_idea_spirit_of_defiance.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_foreign_legion_spirit"
+		texturefile = "gfx/interface/ideas/spirit_idea_proxy_wars.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_living_off_land_spirit"
+		texturefile = "gfx/interface/ideas/spirit_idea_living_off_the_land.dds"
+	}
+	spriteType = {
 		name = "GFX_idea_upbeat_command_spirit"
 		texturefile = "gfx/interface/officer_corp/spirits/spirit_idea_upbeat_command.dds"
 	}
@@ -610,6 +626,36 @@ spriteTypes = {
 		texturefile = "gfx/interface/officer_corp/spirits/spirit_idea_conflicting_branches.dds"
 	}
 ###BONG 
+	spriteType = {
+		name = "ITA_regia_aeronautica_amedeo"
+		texturefile = "gfx/interface/ideas/idea_ITA_regia_aeronautica_1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_programma_R"
+		texturefile = "gfx/interface/ideas/idea_ITA_regia_aeronautica_1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_regia_aeronautica"
+		texturefile = "gfx/interface/ideas/idea_ITA_regia_aeronautica_1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_regia_aeronautica2"
+		texturefile = "gfx/interface/ideas/idea_ITA_regia_aeronautica_1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_regia_aeronautica_douhets2"
+		texturefile = "gfx/interface/ideas/idea_ITA_regia_aeronautica_1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_regia_aeronautica_douhets"
+		texturefile = "gfx/interface/ideas/idea_ITA_regia_aeronautica_1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_regia_aeronautica_amedeo2"
+		texturefile = "gfx/interface/ideas/idea_ITA_regia_aeronautica_1.dds"
+	}
+	
+	
 	spriteType = {
 		name = "GFX_idea_ENG_expand_raf"
 		texturefile = "gfx/interface/officer_corp/spirits/spirit_idea_air_massed_strike.dds"

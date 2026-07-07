@@ -70,7 +70,7 @@ BUL_henschel = {
 		}
 
 	equipment_type = { armor }
-	research_categories = { mio_cat_eq_all_heavy_tank }
+	research_categories = { mio_cat_eq_all_heavy_tank tank_upgrade }
 
 	initial_trait = {
 		name = heavy_tank_designer
@@ -203,7 +203,7 @@ BUL_henschel = {
 			mio_cat_eq_all_heavy_tank
 		}
 		production_bonus = {
-			production_resource_need_factor = -0.05
+			production_resource_need_factor = -0.03
 		}
 	}
 	trait = {
@@ -366,7 +366,7 @@ BUL_Krupp = {
     }
 	initial_trait = {
 		production_bonus = {
-			production_resource_need_factor = -0.1
+			production_resource_need_factor = -0.05
 		}
 	}
 }
@@ -386,7 +386,7 @@ BUL_ger_MAN = {
     }
 	initial_trait = {
 		production_bonus = {
-			production_resource_need_factor = -0.1
+			production_resource_need_factor = -0.05
 		}
 	}
 }

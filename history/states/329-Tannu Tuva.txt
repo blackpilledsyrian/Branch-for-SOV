@@ -4,12 +4,13 @@ state = {
 	name = "STATE_329"
 	manpower = 85000
 	resources = {
-		chromium = 1 # was: 2
+		chromium = 4 # was: 2
 	}
 	
 	state_category = megalopolis
 
 	history = {
+		add_dynamic_modifier = { modifier = no_assembly_modifier }
 		owner = TAN
 		buildings = {
 			infrastructure = 2

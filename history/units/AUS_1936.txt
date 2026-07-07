@@ -19,8 +19,7 @@
 	support = {
 		artillery = { x = 0 y = 0 }
 		recon = { x = 0 y = 1 }
-	 	engineer = { x = 1 y = 0 }
-		anti_tank = { x = 1 y = 1 }
+		engineer = { x = 1 y = 0 }
 	}
 	priority = 1
 }
@@ -41,8 +40,12 @@ division_template = {
 		mountaineers = { x = 2 y = 0 }
 		mountaineers = { x = 2 y = 1 }
 
-		pack_artillery_brigade = { x = 3 y = 0 }
-		pack_artillery_brigade = { x = 3 y = 1 }
+		field_gun_brigade = { x = 3 y = 0 }
+		field_gun_brigade = { x = 3 y = 1 }
+	}
+	regimental_support = {
+		pack_artillery_brigade = { x = 0 y = 0 }
+		pack_artillery_brigade = { x = 0 y = 1 }
 	}
 	support = {
 		artillery = { x = 0 y = 0 }
@@ -192,47 +195,47 @@ instant_effect = {
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_1
 			amount = 23000
-			producer = CZE
+			producer = SLO
 		}
 	add_equipment_to_stockpile = {
 		type = special_equipment_1
 			amount = 2800
-			producer = CZE
+			producer = SLO
 		}
 	add_equipment_to_stockpile = {
 		type = support_equipment_1
 			amount = 2000
-			producer = CZE
+			producer = SLO
 		}
 	add_equipment_to_stockpile = {
 		type = radio_equipment_1
 			amount = 660
-			producer = CZE
+			producer = SLO
 		}
 	add_equipment_to_stockpile = {
 		type = horse_equipment_0
 			amount = 3600
-			producer = CZE
+			producer = SLO
 		}
 	add_equipment_to_stockpile = {
 		type = motorized_equipment_1
 			amount = 420
-			producer = CZE
+			producer = SLO
 		}
 
 	add_equipment_to_stockpile = {
 		type = pack_artillery_equipment_1
 			amount = 900
-			producer = CZE
+			producer = SLO
 		}	
 	add_equipment_to_stockpile = {
 		type = artillery_equipment_1
 			amount = 350
-			producer = CZE
+			producer = SLO
 		}	
 	add_equipment_to_stockpile = {
 		type = anti_tank_equipment_1
 			amount = 350
-			producer = CZE
+			producer = SLO
 		}	
 }

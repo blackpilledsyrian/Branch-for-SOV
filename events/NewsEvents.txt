@@ -1697,7 +1697,7 @@ news_event = {
 			NOT = {
 				TAG = GER
 				TAG = ENG
-				TAG = CZE
+				TAG = SLO
 			}
 		}
 	}
@@ -1711,7 +1711,7 @@ news_event = {
 	}
 	option = {
 		name = news.56.e
-		trigger = { TAG = CZE }
+		trigger = { TAG = SLO }
 	}
 }
 
@@ -1733,7 +1733,7 @@ news_event = {
 				TAG = GER
 				TAG = ENG
 				TAG = FRA
-				TAG = CZE
+				TAG = SLO
 			}
 		}
 	}
@@ -1752,7 +1752,7 @@ news_event = {
 	}
 	option = {
 		name = news.57.e
-		trigger = { TAG = CZE }
+		trigger = { TAG = SLO }
 	}
 }
 
@@ -1774,7 +1774,7 @@ news_event = {
 				TAG = GER
 				TAG = ENG
 				TAG = FRA
-				TAG = CZE
+				TAG = SLO
 			}
 		}
 	}
@@ -1788,7 +1788,7 @@ news_event = {
 	}
 	option = {
 		name = news.58.e
-		trigger = { TAG = CZE }
+		trigger = { TAG = SLO }
 	}
 	option = {
 		name = news.58.f
@@ -1812,7 +1812,7 @@ news_event = {
 		trigger = {
 			NOT = {
 				TAG = GER
-				TAG = CZE
+				TAG = SLO
 			}
 		}
 	}
@@ -1822,7 +1822,7 @@ news_event = {
 	}
 	option = {
 		name = news.59.c
-		trigger = { TAG = CZE }
+		trigger = { TAG = SLO }
 	}
 }
 
@@ -2047,18 +2047,6 @@ news_event = {
 	option = {
 		name = news.64.b
 		trigger = { original_tag = SPR }
-		if = {
-				limit = {
-					is_ai = yes 
-				}
-				add_ideas = SPA_recovering_from_civil_war_ai
-		}	
-		if = {
-				limit = {
-					is_ai = no 
-				}
-				add_ideas = SPA_recovering_from_civil_war_nodlc
-		}	
 		set_technology = { spanish_civil_war_tech_end = 1 }
 		delete_unit_template_and_units = {
 			division_template = "Brigada Legionario"
@@ -2185,18 +2173,6 @@ news_event = {
 	option = {
 		name = news.64.b
 		trigger = { original_tag = SPR }
-		if = {
-			limit = {
-				is_ai = yes 
-			}
-			add_ideas = SPA_recovering_from_civil_war_ai
-		}	
-		if = {
-			limit = {
-				is_ai = no 
-			}
-			add_ideas = SPA_recovering_from_civil_war_nodlc
-		}	
 		set_technology = { spanish_civil_war_tech_end = 1 }
 		remove_ideas = spanish_civil_war_republic
 		remove_ideas = isolationism
@@ -4892,7 +4868,7 @@ news_event = {
 	option = {
 		name = news.177.e
 		trigger = {
-			tag = CZE
+			tag = SLO
 			NOT = {
 				has_government = fascism
 			}
@@ -4916,7 +4892,7 @@ news_event = {
 				tag = FRA
 				tag = ENG
 				AND = {
-					tag = CZE
+					tag = SLO
 					has_government = fascism
 				}
 			}
@@ -6009,7 +5985,7 @@ news_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		CZE = {
+		SLO = {
 			save_event_target_as = Czech
 		}
 	}
@@ -6018,7 +5994,7 @@ news_event = {
 	option = {
 		name = news.200.a
 		trigger = {
-			tag = CZE
+			tag = SLO
 		}
 	}
 
@@ -6041,7 +6017,7 @@ news_event = {
 			NOT = {
 				OR = {
 					tag = GER
-					tag = CZE
+					tag = SLO
 					tag = ENG
 				}
 			}
@@ -6061,7 +6037,7 @@ news_event = {
 			NOT = {
 				OR = {
 					tag = GER
-					tag = CZE
+					tag = SLO
 					tag = ENG
 				}
 			}
@@ -9846,7 +9822,7 @@ news_event = {
 			NOT = {
 				TAG = HUN
 				TAG = GER
-				TAG = CZE
+				TAG = SLO
 				TAG = ROM
 				TAG = YUG
 				TAG = POL
@@ -9858,7 +9834,7 @@ news_event = {
 		name = news.295.e
 		trigger = { 
 			OR = {
-				TAG = CZE
+				TAG = SLO
 				TAG = ROM
 				TAG = YUG
 				TAG = POL
@@ -10120,7 +10096,7 @@ news_event = {
 	option = {
 		name = news.303.b
 		trigger = { 
-			TAG = CZE
+			TAG = SLO
 		}
 	}
 	option = {
@@ -10128,7 +10104,7 @@ news_event = {
 		trigger = { 
 			NOT = {
 				TAG = HUN
-				TAG = CZE
+				TAG = SLO
 			}
 		}
 	}
@@ -10154,7 +10130,7 @@ news_event = {
 	option = {
 		name = news.301.b
 		trigger = { 
-			TAG = CZE
+			TAG = SLO
 		}
 	}
 	option = {
@@ -10162,13 +10138,13 @@ news_event = {
 		trigger = { 
 			NOT = {
 				TAG = HUN
-				TAG = CZE
+				TAG = SLO
 			}
 		}
 	}
 }
 
-#Hungary and Czechoslovakia unable to find solution, war looms
+#Hungary and SLOchoslovakia unable to find solution, war looms
 news_event = {
 	id = news.305
 	title = news.305.t
@@ -10188,7 +10164,7 @@ news_event = {
 	option = {
 		name = news.302.b
 		trigger = { 
-			TAG = CZE
+			TAG = SLO
 		}
 	}
 	option = {
@@ -10196,7 +10172,7 @@ news_event = {
 		trigger = { 
 			NOT = {
 				TAG = HUN
-				TAG = CZE
+				TAG = SLO
 			}
 		}
 	}
@@ -10342,7 +10318,7 @@ news_event = {
 	option = {
 		name = news.309.b
 		trigger = { 
-			TAG = CZE
+			TAG = SLO
 			OR = {
 				NOT = { country_exists = SLO }
 				AND = {
@@ -10366,7 +10342,7 @@ news_event = {
 		trigger = { 
 			NOT = {
 				TAG = HUN
-				TAG = CZE
+				TAG = SLO
 				AND = {
 					TAG = SLO
 					SLO = { is_subject = yes }
@@ -10414,7 +10390,7 @@ news_event = {
 	option = {
 		name = news.310.b
 		trigger = { 
-			TAG = CZE
+			TAG = SLO
 		}
 	}
 	option = {
@@ -10422,7 +10398,7 @@ news_event = {
 		trigger = { 
 			NOT = {
 				TAG = HUN
-				TAG = CZE
+				TAG = SLO
 			}
 		}
 	}
@@ -10467,7 +10443,7 @@ news_event = {
 		name = news.311.b
 		trigger = { 
 			OR = {
-				TAG = CZE
+				TAG = SLO
 				TAG = SLO
 			}
 		}
@@ -10477,7 +10453,7 @@ news_event = {
 		trigger = { 
 			NOT = {
 				TAG = HUN
-				TAG = CZE
+				TAG = SLO
 				TAG = SLO
 			}
 		}
@@ -10730,7 +10706,7 @@ news_event = {
 					is_in_faction_with = ROM
 				}
 				AND = {
-					TAG = CZE
+					TAG = SLO
 					is_in_faction_with = ROM
 				}
 			}
@@ -10752,7 +10728,7 @@ news_event = {
 				NOT = {
 					TAG = ROM
 					TAG = POL
-					TAG = CZE
+					TAG = SLO
 					TAG = GER
 					TAG = SOV
 					has_government = communism
@@ -10761,7 +10737,7 @@ news_event = {
 				AND = { 
 					OR = {
 						TAG = POL
-						TAG = CZE
+						TAG = SLO
 					}
 					NOT = { has_government = communism }
 					NOT = { has_government = fascism }
@@ -10778,7 +10754,7 @@ news_event = {
 					NOT = {
 						TAG = ROM
 						TAG = POL
-						TAG = CZE
+						TAG = SLO
 						TAG = GER
 						TAG = SOV
 					}
@@ -10790,7 +10766,7 @@ news_event = {
 				AND = { 
 					OR = {
 						TAG = POL
-						TAG = CZE
+						TAG = SLO
 					}
 					OR = {
 						has_government = communism
@@ -12888,7 +12864,7 @@ news_event = {
 					TAG = SLO
 					TAG = ITA
 					TAG = SPA
-					TAG = CZE
+					TAG = SLO
 					TAG = FIN
 				}				
 			}
@@ -12919,7 +12895,7 @@ news_event = {
 				TAG = SLO
 				TAG = ITA
 				TAG = SPA
-				TAG = CZE
+				TAG = SLO
 				TAG = FIN
 			}
 		}		
@@ -13505,6 +13481,48 @@ news_event = { #Bagration
 	}
 }
 
+### Yellow river blown
+news_event = {
+	id = news.409
+	title = news.409.t
+	desc = news.409.desc
+	picture = GFX_news_event_074
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.409.a
+		trigger = {
+			OR = {
+				TAG = CHI
+				is_in_faction_with = CHI
+			}
+		}
+	}
+	option = {
+		name = news.409.b
+		trigger = {
+			OR = {
+				TAG = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	option = {
+		name = news.409.c
+		trigger = {
+			NOT = {
+				TAG = CHI
+				TAG = JAP
+				is_in_faction_with = JAP
+				is_in_faction_with = CHI
+			}
+		}
+	}
+}
+
 
 
 
@@ -13519,7 +13537,7 @@ add_namespace = horsttool
 
 		major =  yes
 		is_triggered_only = yes
-      option = { name = "Ok"  }
+      option = { name = "OK."  }
    }
       
           news_event = {		
@@ -13530,7 +13548,7 @@ add_namespace = horsttool
 
 		major =  yes
 		is_triggered_only = yes
-      option = { name = "Ok"  }
+      option = { name = "OK."  }
    }
              news_event = {		
    id = news.4004
@@ -13540,7 +13558,7 @@ add_namespace = horsttool
 
 		major =  yes
 		is_triggered_only = yes
-      option = { name = "Ok"  }
+      option = { name = "OK."  }
    }
                 news_event = {		
    id = news.4005
@@ -13550,7 +13568,7 @@ add_namespace = horsttool
 
 		major =  yes
 		is_triggered_only = yes
-      option = { name = "Ok"  }
+      option = { name = "OK."  }
    }
                    news_event = {		
    id = news.4006
@@ -13560,7 +13578,7 @@ add_namespace = horsttool
 
 		major =  yes
 		is_triggered_only = yes
-      option = { name = "Ok"  }
+      option = { name = "OK."  }
    }
      news_event = {		
    id = news.4007
@@ -13570,7 +13588,7 @@ add_namespace = horsttool
 
 		major =  yes
 		is_triggered_only = yes
-      option = { name = "Ok"  }
+      option = { name = "OK."  }
    }
    
 news_event = {		
@@ -13581,11 +13599,11 @@ news_event = {
 
 		major =  yes
 		is_triggered_only = yes
-      option = { name = "Ok"  }
+      option = { name = "OK."  }
 }
 news_event = {
 	id = horsttool.1
-	title = "Horsttool"
+	title = horsttool.1.t
 	
 	desc = " [From.Getname] gave [Root.cheat_selected] to [From.From.Owner.Getname]"
 	picture = GFX_news_event_001
@@ -13605,9 +13623,9 @@ news_event = {
 	
 	news_event = {
 	id = horsttool.11
-	title = "Horsttool"
+	title = horsttool.11.t
 	
-	desc = " [From.Getname] gave five military factories to [From.From.Owner.Getname]"
+	desc = " [From.Getname] gave one military factory to [From.From.Owner.Getname]"
 	picture = GFX_news_event_001
 	
 	major = yes
@@ -13621,7 +13639,7 @@ news_event = {
 	}
 		news_event = {
 	id = horsttool.12
-	title = "Horsttool"
+	title = horsttool.12.t
 	
 	desc = " [From.Getname] gave one civilian factory to [From.From.Owner.Getname]"
 	picture = GFX_news_event_001
@@ -13635,11 +13653,59 @@ news_event = {
 		 }
 		
 	}
+	news_event = {
+	id = horsttool.13
+	title = horsttool.13.t
+	
+	desc = " [From.Getname] removed one military factory from [From.From.Owner.Getname]"
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Okay...?"
+		 }
+		
+	}
+	news_event = {
+	id = horsttool.14
+	title = horsttool.14.t
+	
+	desc = " [From.Getname] removed one civilian factory from [From.From.Owner.Getname]"
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Okay...?"
+		 }
+		
+	}
+	news_event = {
+	id = horsttool.15
+	title = horsttool.15.t
+	
+	desc = " [From.Getname] deleted all submarines belonging to [From.From.Owner.Getname]"
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Okay...?"
+		 }
+		
+	}
 		news_event = {
 	id = horsttool.30
-	title = "How to use Horsttool"
+	title = horsttool.30.t
 	
-	desc = "Click MARK STATE to mark all the states you which to be targeted by a certain effect and then click on the effect you wish to apply. The effect will then apply to the markeeted states and remove all previously marked states."
+desc = "Click MARK STATE to mark all the states you wish to be targeted by a certain effect, and then click on the effect you wish to apply. The effect will then apply to the marked states and remove all previously marked states."
 	picture = GFX_news_event_001
 	
 	major = yes
@@ -13680,7 +13746,7 @@ news_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "Gotcha"
+		name = "Got it."
 		 }
 		
 	}

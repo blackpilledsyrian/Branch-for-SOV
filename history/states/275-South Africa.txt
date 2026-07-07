@@ -7,13 +7,13 @@ state = {
 	state_category = megalopolis
 	
 	resources = {
-		steel = 3 # was: 8
-		chromium = 23 # was: 80
+		steel = 12 # was: 8
+		chromium = 92 # was: 80
 	}
 
 	history = {
 		owner = SAF
-		1936.1.1.13 = {
+		1936.1.1.14 = {
 			owner = CAN
 			add_core_of = CAN
 			remove_core_of = SAF
@@ -23,6 +23,7 @@ state = {
 			favorable_approach = 5106
 		}
 		buildings = {
+			tank_assembly = 2
 			infrastructure = 5
 			arms_factory = 4
 			industrial_complex = 6

@@ -135,11 +135,10 @@ USA_WPA_success_modifier = {
 	icon = GFX_USA_succesful_wpa_programme_icon
 
 	# list of modifiers
-	state_resources_factor = 0.1
+	state_resources_factor = 0.05
 	local_supplies_for_controller = 0.1
-	state_production_speed_buildings_factor = 0.1
-    local_building_slots_factor = 0.25
-    local_building_slots = 8
+	state_production_speed_buildings_factor = 0.05
+    local_building_slots = 4
 }
 
 USA_new_deal_modifier = {
@@ -158,6 +157,7 @@ USA_new_deal_modifier = {
     stability_weekly = USA_stability_weekly_var
     production_speed_infrastructure_factor = USA_production_speed_infrastructure_factor_var
     production_speed_industrial_complex_factor = USA_production_speed_industrial_complex_factor_var
+    production_cost_industrial_complex_factor = USA_production_cost_industrial_complex_factor_var
     production_speed_arms_factory_factor = USA_production_speed_arms_factory_factor_var
     local_resources_factor = USA_local_resources_factor_var
 
@@ -189,11 +189,16 @@ USA_great_depression_modifier = {
     production_speed_arms_factory_factor = USA_production_speed_arms_factory_factor_var2
     production_speed_dockyard_factor = USA_production_speed_dockyard_factor_var2
 
+    production_cost_tank_assembly_factor = USA_production_cost_tank_assembly_factor_var
+    production_cost_air_assembly_factor = USA_production_cost_air_assembly_factor_var
+
 
     production_speed_naval_facility_factor = USA_production_speed_naval_facility_factor_var
     production_speed_land_facility_factor = USA_production_speed_land_facility_factor_var
     production_speed_air_facility_factor = USA_production_speed_air_facility_factor_var
     production_speed_nuclear_facility_factor = USA_production_speed_nuclear_facility_factor_var
+
+
 
 
 
@@ -299,6 +304,8 @@ USA_bombardment = {
 
     max_dig_in_factor  = -0.5
     fortification_damage = 0.4
+    naval_invasion_penalty = -0.1
+
     custom_modifier_tooltip = USA_retake_islands_bonus_in_other_modifier_tt
 }
 USA_bombardment2 = {
@@ -309,6 +316,7 @@ USA_bombardment2 = {
 
     max_dig_in_factor  = -1
     fortification_damage = 1
+    naval_invasion_penalty = -0.2
     custom_modifier_tooltip = USA_retake_islands_bonus_in_other_modifier_tt2
 }
 USA_bombardment3 = {

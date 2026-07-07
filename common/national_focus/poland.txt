@@ -12,7 +12,10 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 4300 y = 1800	 }
+	continuous_focus_position = { x = 4300 y = 1500	 }
+
+	# Commonwealth combined programs branch (definitions in commonwealth_combined_programs_joint.txt)
+	shared_focus = COMMON_commonwealth_combined_programs
 
 	focus = {
 		id = POL_the_cabinet_of_marian_zyndram
@@ -122,9 +125,7 @@ focus_tree = {
 		id = POL_becks_vision
 		icon = GFX_beck_good
 		prerequisite = { focus = POL_summon_a_new_cabinet }
-		mutually_exclusive = {
-			focus = POL_force_a_change_on_beck
-		}
+		
 
 		x = 22
 		y = 3
@@ -230,10 +231,7 @@ focus_tree = {
 				POL_production_speed_industrial_complex_factor_var = 0.05
 				tooltip = POL_civ_construction_tt1
 			}
-			add_to_variable = {
-				POL_production_speed_arms_factory_factor_var = -0.05
-				tooltip = POL_mil_construction_tt1
-			}
+			
 			87 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -293,10 +291,7 @@ focus_tree = {
 				POL_production_speed_buildings_factor_var = 0.025
 				tooltip = POL_constra_tt1
 			}
-			add_to_variable = {
-				POL_production_speed_arms_factory_factor_var = -0.075
-				tooltip = POL_mil_construction_tt1
-			}
+			
 		}
 	}
 
@@ -329,10 +324,7 @@ focus_tree = {
 				POL_production_speed_industrial_complex_factor_var = 0.05
 				tooltip = POL_civ_construction_tt1
 			}
-			add_to_variable = {
-				POL_production_speed_arms_factory_factor_var = -0.05
-				tooltip = POL_mil_construction_tt1
-			}
+			
 			add_tech_bonus = {
 				category = construction_tech
 				technology = advanced_machine_tools
@@ -353,226 +345,7 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = POL_force_a_change_on_beck
-		icon = GFX_beck_bad
-		prerequisite = { focus = POL_summon_a_new_cabinet }
-		mutually_exclusive = {
-			focus = POL_becks_vision
-		}
-		
-		x = 28
-		y = 3
-		cost = 5
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = no
-
-		completion_reward = {
-			custom_effect_tooltip = POL_beck_bad_tt
-			remove_ideas = POL_jozef_beck
-			custom_effect_tooltip = POL_modify_industry_spirit_tt
-			add_to_variable = {
-				POL_industrial_capacity_factory_var = 0.04
-				tooltip = POL_fact_output_tt1
-			}
-			add_to_variable = {
-				POL_political_power_gain_var = -0.15
-				tooltip = POL_pol_power_fac_tt2
-			}
-			add_to_variable = {
-				POL_production_speed_arms_factory_factor_var = 0.05
-				tooltip = POL_mil_construction_tt1
-			}
-			add_political_power = 50
-		}
-	}
-
-	focus = {
-		id = POL_embrace_dmowskis_thought
-		icon = GFX_pol_dmowski_repl
-		prerequisite = { focus = POL_force_a_change_on_beck }
-
-		x = 28
-		y = 4
-		cost = 5
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_war_support = 0.05
-			custom_effect_tooltip = POL_modify_industry_spirit_tt
-			add_to_variable = {
-				POL_industrial_capacity_factory_var = 0.05
-				tooltip = POL_fact_output_tt1
-			}
-			add_to_variable = {
-				POL_stability_factor_var = 0.075
-				tooltip = POL_stabn_tt1
-			}
-			add_to_variable = {
-				POL_production_speed_arms_factory_factor_var = 0.05
-				tooltip = POL_mil_construction_tt1
-			}
-			87 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-				
-			}
-			830 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-				
-			}
-		}
-	}
-
-	focus = {
-		id = POL_partial_privatization
-		icon = GFX_focus_didts_dont_change_focusesaaaaaa
-		prerequisite = { focus = POL_cut_diplomatic_ties_with_germany }
-
-		x = 29
-		y = 6
-		cost = 5
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = no
-
-		completion_reward = {
-			custom_effect_tooltip = POL_modify_industry_spirit_tt
-			add_to_variable = {
-				POL_production_speed_buildings_factor_var = 0.05
-				tooltip = POL_constra_tt1
-			}
-			add_to_variable = {
-				POL_production_speed_industrial_complex_factor_var = -0.05
-				tooltip = POL_civ_construction_tt1
-			}
-			add_to_variable = {
-				POL_production_speed_arms_factory_factor_var = 0.05
-				tooltip = POL_mil_construction_tt1
-			}
-			10 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes
-				}
-				
-			}
-			add_tech_bonus = {
-				category = construction_tech
-				technology = advanced_machine_tools
-				technology = assembly_line_production
-				uses = 1
-				bonus = 0.75
-				name = USA_heavy_public_works_spending
-			}
-			add_political_power = 100
-		}
-	}
-
-	focus = {
-		id = POL_prioratize_arms_industry
-		icon = GFX_goal_equpiment
-		prerequisite = { focus = POL_cut_diplomatic_ties_with_germany }
-
-		x = 27
-		y = 6
-		cost = 5
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = no
-
-		completion_reward = {
-			unlock_decision_tooltip = POL_expantion_of_radom_small_arms_factory
-			unlock_decision_tooltip = POL_expantion_of_pws
-			unlock_decision_tooltip = POL_expantion_of_cegielski_industrial_complex
-			unlock_decision_tooltip = POL_expantion_of_statachowice_works
-			custom_effect_tooltip = POL_modify_industry_spirit_tt
-			add_to_variable = {
-				POL_stability_factor_var = 0.075
-				tooltip = POL_stabn_tt1
-			}
-			add_to_variable = {
-				POL_production_speed_industrial_complex_factor_var = -0.05
-				tooltip = POL_civ_construction_tt1
-			}
-			add_to_variable = {
-				POL_production_speed_arms_factory_factor_var = 0.05
-				tooltip = POL_mil_construction_tt1
-			}
-			830 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-				
-			}
-			830 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = industrial_complex
-					level = 3
-					instant_build = yes
-				}
-				
-			}
-		}
-	}
-
-	focus = {
-		id = POL_cut_diplomatic_ties_with_germany
-		icon = GFX_pol_no_germany
-		prerequisite = { focus = POL_embrace_dmowskis_thought }
-
-		x = 28
-		y = 5
-		cost = 5
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_war_support = 0.05
-			custom_effect_tooltip = POL_modify_industry_spirit_tt
-			add_to_variable = {
-				POL_production_speed_industrial_complex_factor_var = -0.075
-				tooltip = POL_civ_construction_tt1
-			}
-			add_ideas = low_economic_mobilisation
-		}
-	}
-
-
+	
 	focus = {
 		id = POL_support_the_dabrowszczacy
 		icon = GFX_pol_dabdabdabadada
@@ -580,12 +353,13 @@ focus_tree = {
 			focus = POL_take_a_neutral_stance
 		}
 		available = {
+			
 			SPR = { 
 				has_war = yes
 			}
 		}
-		x = 26
-		y = 4
+		x = 18
+		y = 1
 
 		cost = 2.96
 		
@@ -625,13 +399,13 @@ focus_tree = {
 					has_war = yes
 				}
 				SPR = {
-					has_completed_focus = SPA_national_recovery
+					has_global_flag = scw_over
 				}
 			}
 
 		}
-		x = 24
-		y = 4
+		x = 20
+		y = 1
 
 		cost = 2.96
 		
@@ -659,8 +433,8 @@ focus_tree = {
 				exists = yes
 			}
 		}
-		x = 25
-		y = 5
+		x = 19
+		y = 2
 
 		cost = 5
 		
@@ -673,25 +447,60 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 50
 			SPN = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment_0
-					amount = 4000
-					producer = POL
+				if = {
+					limit = {
+						SPR = {
+							NOT = {
+								has_completed_focus = naval_blockade_of_republicans
+							}
+						}
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_0
+						amount = 4000
+						producer = POL
+					}
+					add_equipment_to_stockpile = { 
+						type = artillery_equipment_1 
+						amount = 300
+						producer = POL
+					}
+					add_equipment_to_stockpile = { type = support_equipment_1
+						amount = 250 
+						producer = POL
+					}
+					add_equipment_to_stockpile = { type = horse_equipment
+						amount = 500 
+						producer = POL 
+					}	
 				}
-				add_equipment_to_stockpile = { 
-					type = artillery_equipment_1 
-					amount = 300
-					producer = POL
+				if = {
+					limit = {
+						SPR = {
+							has_completed_focus = naval_blockade_of_republicans
+						}
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_0
+						amount = 2500
+						producer = POL
+					}
+					add_equipment_to_stockpile = { 
+						type = artillery_equipment_1 
+						amount = 180
+						producer = POL
+					}
+					add_equipment_to_stockpile = { type = support_equipment_1
+						amount = 180 
+						producer = POL
+					}
+					add_equipment_to_stockpile = { type = horse_equipment
+						amount = 200 
+						producer = POL 
+					}	
 				}
-				add_equipment_to_stockpile = { type = support_equipment_1
-				    amount = 250 
-					producer = POL
-				}
-				add_equipment_to_stockpile = { type = horse_equipment
-				    amount = 500 
-					producer = POL 
-				}	
 			}
+			
 			SPR = {
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_0
@@ -705,12 +514,13 @@ focus_tree = {
 	focus = {
 		id = POL_start_the_four_year_plan
 		icon = GFX_focus_czterolatka
-		available = {
-			has_completed_focus = POL_summon_a_new_cabinet
-		}	
 		
-		x = 25
-		y = 6
+		prerequisite = {
+			focus = POL_summon_a_new_cabinet
+		}
+		
+		x = 27
+		y = 3
 		cost = 5
 
 		ai_will_do = {
@@ -744,19 +554,12 @@ focus_tree = {
 		prerequisite = {
 			focus = POL_start_the_four_year_plan
 		}
-		prerequisite = {
-			focus = POL_prevent_the_next_depression
-			focus = POL_prioratize_arms_industry
-		}
-		prerequisite = {
-			focus = POL_strengthen_state_monopolies
-			focus = POL_partial_privatization
-		}
+		
 		
 		
 
-		x = 25
-		y = 7
+		x = 27
+		y = 4
 		cost = 5
 
 		ai_will_do = {
@@ -789,58 +592,7 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = POL_form_the_ozn
-		icon = GFX_focus_ozn
-		available = {
-			date > 1937.01.18
-		}
 	
-		x = 25
-		y = 8
-		cost = 5
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		available_if_capitulated = no
-
-		completion_reward = {
-			set_party_name = { 
-				ideology = neutrality 
-				long_name = POL_ozn_name_long
-				name = POL_ozn_name_short
-			}
-			custom_effect_tooltip = POL_modify_industry_spirit_tt
-			add_to_variable = {
-				POL_stability_factor_var = 0.1
-				tooltip = POL_stabn_tt1
-			}
-			custom_effect_tooltip = available_theorist
-			show_ideas_tooltip = POL_adam_koc
-		}
-	}
-
-	focus = {
-		id = POL_zwiazek_mlodej_polski
-		icon = GFX_pol_narodowa_org_wojskowa
-		prerequisite = { focus = POL_form_the_ozn }
-	
-		x = 25
-		y = 9
-		cost = 5
-
-		ai_will_do = {
-			factor = 5
-		}
-
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = POL_zmp
-		}
-	}
 
 	focus = {
 		id = POL_mielec_aircraft_factory
@@ -854,7 +606,7 @@ focus_tree = {
 		}
 
 		x = 28
-		y = 8
+		y = 5
 		cost = 5
 
 		ai_will_do = {
@@ -878,11 +630,16 @@ focus_tree = {
 				add_mio_funds = 5000
 			}
 			custom_effect_tooltip = available_air_designer
-			830 = {
-				add_extra_state_shared_building_slots = 2
+			831 = {
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
 					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = air_assembly
+					level = 1
 					instant_build = yes
 				}
 				
@@ -910,8 +667,8 @@ focus_tree = {
 			}
 		}
 
-		x = 23
-		y = 9
+		x = 26
+		y = 6
 		cost = 5
 		
 
@@ -936,7 +693,7 @@ focus_tree = {
 			show_ideas_tooltip = POL_debica
 			add_resource = {
 				type = rubber
-				amount = 4
+				amount = 12
 				state = 88
 			}	
 
@@ -954,8 +711,8 @@ focus_tree = {
 			}
 		}
 
-		x = 27
-		y = 9
+		x = 28
+		y = 6
 		cost = 5
 
 		ai_will_do = {
@@ -986,12 +743,12 @@ focus_tree = {
 			}
 			add_resource = {
 				type = steel
-				amount = 4
+				amount = 12
 				state = 90
 			}
 			add_resource = {
 				type = tungsten
-				amount = 4
+				amount = 12
 				state = 90
 			}		
 		}
@@ -1008,8 +765,8 @@ focus_tree = {
 			}
 		}
 
-		x = 22
-		y = 8
+		x = 26
+		y = 5
 		cost = 5
 
 		ai_will_do = {
@@ -1033,9 +790,14 @@ focus_tree = {
 				add_mio_funds = 3000
 			}
 			830 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = tank_assembly
 					level = 1
 					instant_build = yes
 				}
@@ -1069,8 +831,8 @@ focus_tree = {
 			}
 		}
 
-		x = 25
-		y = 10
+		x = 27
+		y = 7
 		cost = 5
 
 		ai_will_do = {
@@ -1115,8 +877,8 @@ focus_tree = {
 			focus = POL_huta_stalowa_wola
 		}
 
-		x = 25
-		y = 11
+		x = 27
+		y = 8
 		cost = 5
 
 		ai_will_do = {
@@ -1334,7 +1096,7 @@ focus_tree = {
 			focus = POL_emergency_mobilization
 		}
 		available = {
-			has_completed_focus = POL_cut_diplomatic_ties_with_germany
+			#has_completed_focus = POL_cut_diplomatic_ties_with_germany
 		}
 
 		x = 13
@@ -1779,7 +1541,7 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
                 name = land_doc_bonus
-                cost_reduction = 0.4
+                cost_reduction = 0.5
                 uses = 1
                 category = special_forces_doctrine
             }
@@ -1787,7 +1549,7 @@ focus_tree = {
 				name = artillery_bonus
 				bonus = 0.5
 				uses = 1
-				category = artillery
+				category = cat_artillery
 			}
 
 
@@ -1805,10 +1567,8 @@ focus_tree = {
 			CZE = {
 				exists = no
 			}
-			OR = {
-				has_completed_focus = POL_becks_vision
-				has_completed_focus = POL_force_a_change_on_beck
-			}
+			has_completed_focus = POL_becks_vision
+			
 
 		}
 
@@ -1873,26 +1633,8 @@ focus_tree = {
 						division = "name = \"1 Czechosłowacki Samodzielny Batalion Piechoty\" division_template = \"Legion Czechów i Słowaków\" start_experience_factor = 0.4 start_equipment_factor = 1" 
 						owner = POL
 					}  
+					
 				} 
-  
-		 
-			}
-			if = {
-				limit = {
-					has_completed_focus = POL_force_a_change_on_beck
-					POL = {
-                        controls_state = 95
-					}
-				}
-
-				every_state = {
-					limit = { state = 95 }
-					create_unit = {
-						division = "name = \"1 Czechosłowacki Samodzielny Batalion Piechoty\" division_template = \"Legion Czechów i Słowaków\" start_experience_factor = 0.4 start_equipment_factor = 1" 
-						owner = POL
-					}  
-				} 
-
 				every_state = {
 					limit = { state = 95 }
 					create_unit = {
@@ -1901,33 +1643,18 @@ focus_tree = {
 					}  
 				}
 				
-				every_state = {
-					limit = { state = 95 }
-					create_unit = {
-						division = "name = \"3 Czechosłowacki Samodzielny Batalion Piechoty\" division_template = \"Legion Czechów i Słowaków\" start_experience_factor = 0.4 start_equipment_factor = 1" 
-						owner = POL
-					}  
-				} 
-
-				every_state = {
-					limit = { state = 95 }
-					create_unit = {
-						division = "name = \"4 Czechosłowacki Samodzielny Batalion Piechoty\" division_template = \"Legion Czechów i Słowaków\" start_experience_factor = 0.4 start_equipment_factor = 1" 
-						owner = POL
-					}  
-				} 
-
-				every_state = {
-					limit = { state = 95 }
-					create_unit = {
-						division = "name = \"5 Czechosłowacki Samodzielny Batalion Piechoty\" division_template = \"Legion Czechów i Słowaków\" start_experience_factor = 0.4 start_equipment_factor = 1" 
-						owner = POL
-					}  
-				} 
-  
-		 
-			}    
-		    }
+					every_state = {
+						limit = { state = 95 }
+						create_unit = {
+							division = "name = \"3 Czechosłowacki Samodzielny Batalion Piechoty\" division_template = \"Legion Czechów i Słowaków\" start_experience_factor = 0.4 start_equipment_factor = 1" 
+							owner = POL
+						}  
+					} 
+	
+			
+				}
+				
+			}
 		}
 	}
 
@@ -2133,7 +1860,7 @@ focus_tree = {
 				name = artillery_bonus
 				bonus = 0.5
 				uses = 1
-				category = artillery
+				category = cat_artillery
 			}
 			add_equipment_to_stockpile = {
 				type = artillery_equipment
@@ -2330,7 +2057,7 @@ focus_tree = {
 			air_experience = 30
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = air_doctrine
 			}
@@ -2391,8 +2118,10 @@ focus_tree = {
 				uses = 1
 				bonus = 0.5
 			}
-			add_equipment_to_stockpile = { type = small_plane_cas_airframe amount = 50 producer = POL }
-			add_equipment_to_stockpile = { type = small_plane_airframe amount = 100 producer = POL }
+			custom_effect_tooltip = POL_light_aircraft_development_tt
+			hidden_effect = {
+				add_equipment_to_stockpile = { type = small_plane_airframe amount = 50 producer = POL }
+			}
 	
 		}
 	}
@@ -2413,7 +2142,7 @@ focus_tree = {
 	
 		x = 6
 		y = 4
-		cost = 2.96
+		cost = 1.96
 
 		ai_will_do = {
 			factor = 10
@@ -2425,7 +2154,7 @@ focus_tree = {
 			air_experience = 25
 			custom_effect_tooltip = available_chief_of_airforce
 			show_ideas_tooltip = POL_ludomil_rayski
-			add_equipment_to_stockpile = { type = small_plane_airframe amount = 100 producer = POL }
+			add_equipment_to_stockpile = { type = small_plane_airframe amount = 75 producer = POL }
 		}
 	}
 
@@ -2437,12 +2166,12 @@ focus_tree = {
 			focus = POL_appoint_rayski
 		}
 		available = {
-			has_tech = formation_flying
+			
 		}
 	
 		x = 6
 		y = 5
-		cost = 2.96
+		cost = 1.96
 
 		ai_will_do = {
 			factor = 10
@@ -2452,7 +2181,7 @@ focus_tree = {
 
 		completion_reward = {
 			air_experience = 150
-			add_equipment_to_stockpile = { type = medium_plane_airframe amount = 75 producer = POL }
+			add_equipment_to_stockpile = { type = medium_plane_airframe amount = 50 producer = POL }
 	
 		}
 	}
@@ -2465,12 +2194,12 @@ focus_tree = {
 			focus = POL_medium_bomber_development
 		}
 		available = {
-			has_tech = formation_flying
+		
 		}
 	
 		x = 6
 		y = 6
-		cost = 2.96
+		cost = 1.96
 
 		ai_will_do = {
 			factor = 10
@@ -2480,7 +2209,7 @@ focus_tree = {
 
 		completion_reward = {
 			air_experience = 150
-			add_equipment_to_stockpile = { type = small_plane_cas_airframe amount = 100 producer = POL }
+			add_equipment_to_stockpile = { type = small_plane_cas_airframe amount = 75 producer = POL }
 	
 		}
 	}
@@ -2501,7 +2230,7 @@ focus_tree = {
 	
 		x = 10
 		y = 4
-		cost = 2.96
+		cost = 1.96
 
 		ai_will_do = {
 			factor = 10
@@ -2515,7 +2244,7 @@ focus_tree = {
 			show_ideas_tooltip = POL_jozef_zajac
 			custom_effect_tooltip = available_military_high_command
 			show_ideas_tooltip = POL_wladyslaw_kalkus
-			add_equipment_to_stockpile = { type = small_plane_airframe amount = 100 producer = POL }
+			add_equipment_to_stockpile = { type = small_plane_airframe amount = 75 producer = POL }
 		}
 	}
 
@@ -2590,7 +2319,7 @@ focus_tree = {
 			focus = POL_appoint_zajac_and_kalkus
 		}
 		available = {
-			has_tech = air_superiority
+		
 		}
 	
 		x = 10
@@ -2621,12 +2350,12 @@ focus_tree = {
 			focus = POL_the_pulawski_wing
 		}
 		available = {
-			has_tech = air_superiority
+			
 		}
 	
 		x = 10
 		y = 6
-		cost = 2.96
+		cost = 1.96
 
 		ai_will_do = {
 			factor = 10
@@ -2635,7 +2364,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_equipment_to_stockpile = { type = small_plane_airframe amount = 100 producer = POL }
+			add_equipment_to_stockpile = { type = small_plane_airframe amount = 75 producer = POL }
 			air_experience = 150
 		
 	
@@ -2762,13 +2491,16 @@ focus_tree = {
 				  level = 2
 				  instant_build = yes
 			    }
-				add_extra_state_shared_building_slots = 2
+		    }
+			add_offsite_building = { type = dockyard level = 1 }
+			826 = {
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 					instant_build = yes
 				}
-		    }
+			}
 			add_tech_bonus = {
 				name = smomething
 				bonus = 0.4
@@ -2802,14 +2534,14 @@ focus_tree = {
 	   			uses = 1
 		  		category = naval_doctrine
 	  		}
-			85 = {
-				add_extra_state_shared_building_slots = 2
+			add_offsite_building = { type = dockyard level = 1 }
+			826 = {
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 					instant_build = yes
 				}
-				
 			}
 	
 		}
@@ -2851,11 +2583,12 @@ focus_tree = {
 	   			uses = 1
 		  		category = trade_interdiction_tree
 	  		}
-			  85 = {
-				add_extra_state_shared_building_slots = 2
+			add_offsite_building = { type = dockyard level = 2 }
+			826 = {
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -2884,6 +2617,14 @@ focus_tree = {
 				days = 60
 			}
 			add_offsite_building = { type = dockyard level = 2 }
+			826 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 	
 		}
 	}
@@ -2908,6 +2649,14 @@ focus_tree = {
 
 			navy_experience = 50
 			add_offsite_building = { type = dockyard level = 2 }
+			826 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 	
 		}
 	}
@@ -2948,11 +2697,12 @@ focus_tree = {
 	   			uses = 1
 		  		category = fleet_in_being_tree
 	  		}
-			85 = {
-				add_extra_state_shared_building_slots = 2
+			add_offsite_building = { type = dockyard level = 2 }
+			826 = {
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -2983,6 +2733,14 @@ focus_tree = {
 				category = cl_tech
 			}
 			add_offsite_building = { type = dockyard level = 2 }
+			826 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 	
 		}
 	}
@@ -3011,6 +2769,14 @@ focus_tree = {
 				producer = POL
 			}
 			add_offsite_building = { type = dockyard level = 2 }
+			826 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 	
 		}
 	}
@@ -3049,14 +2815,14 @@ focus_tree = {
 			}
 			add_political_power = 25
 			
-			85 = {
-				add_extra_state_shared_building_slots = 2
+			add_offsite_building = { type = dockyard level = 2 }
+			826 = {
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 					instant_build = yes
 				}
-				
 			}
 
 	
@@ -3103,7 +2869,7 @@ focus_tree = {
 		}
 
 		x = 25
-		y = 13
+		y = 10
 		cost = 5
 
 		ai_will_do = {
@@ -3113,6 +2879,15 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			830 = {
+				
+				add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = tank_assembly
+					level = 2
+					instant_build = yes 
+			}
+			}
 			remove_dynamic_modifier = {
 				modifier = POL_wodzu_prowadz
 			}
@@ -3121,22 +2896,22 @@ focus_tree = {
 			}
 			add_resource = {
 				type = steel
-				amount = 30
+				amount = 90
 				state = 119
 			}	
 			add_resource = {
 				type = tungsten
-				amount = 20
+				amount = 60
 				state = 119
 			}	
 			add_resource = {
 				type = aluminium
-				amount = 20
+				amount = 60
 				state = 119
 			}
 			add_resource = {
 				type = chromium
-				amount = 20
+				amount = 60
 				state = 119
 			}
 			
@@ -3151,36 +2926,11 @@ focus_tree = {
 			}
 			
 			add_ideas = POL_wladyslaw_sikorski
-			if = {
-				limit = {
-					POL = {
-						has_completed_focus = POL_cut_diplomatic_ties_with_germany
-					}
-				}
-				830 = {
-					add_extra_state_shared_building_slots = 10
-					add_building_construction = {
-						type = arms_factory
-						level = 10
-						instant_build = yes
-					}
-					
-				}
-				830 = {
-					add_extra_state_shared_building_slots = 15
-					add_building_construction = {
-						type = industrial_complex
-						level = 15
-						instant_build = yes
-					}
-					
-				}
-
-			}
+			
 			set_capital = {state = 831}
 			add_equipment_to_stockpile = {
 				type = convoy
-				amount = 250
+				amount = 200
 				producer = ENG
 			}
 			if = {
@@ -4338,7 +4088,7 @@ focus_tree = {
 		}
 
 		x = 25
-		y = 15
+		y = 12
 		cost = 10
 
 		ai_will_do = {
@@ -4382,7 +4132,7 @@ focus_tree = {
 		}
 
 		x = 25
-		y = 16
+		y = 13
 		cost = 5
 
 		ai_will_do = {
@@ -4424,7 +4174,7 @@ focus_tree = {
 		}
 
 		x = 25
-		y = 14
+		y = 11
 		cost = 5
 
 		ai_will_do = {
@@ -4466,7 +4216,7 @@ focus_tree = {
 		}
 
 		x = 27
-		y = 14
+		y = 11
 		cost = 5
 
 		ai_will_do = {
@@ -4512,7 +4262,7 @@ focus_tree = {
 		}
 
 		x = 21
-		y = 14
+		y = 11
 		cost = 5
 
 		ai_will_do = {
@@ -4525,7 +4275,7 @@ focus_tree = {
 			army_experience = 50
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = land_doctrine
 			}
@@ -4554,17 +4304,18 @@ focus_tree = {
 
 				 artillery_brigade = { x = 4 y = 0 }
 				 artillery_brigade = { x = 4 y = 1 }
-				 anti_tank_brigade = { x = 4 y = 2 }
+				 anti_air_heavy = { x = 4 y = 2 }
+				 }
+				 regimental_support = {
+				 anti_tank_brigade = { x = 0 y = 0 }
 				 }
 				 support = {
 					 recon = { x = 0 y = 0 }
 					 mot_recon = { x = 0 y = 1 }
-					 engineer = { x = 0  y = 2 }
-					 field_hospital = { x = 0  y = 3 }
-					 signal_company = { x = 1  y = 0 }
-					 anti_tank = { x = 1  y = 1 }
-					 artillery = { x = 1  y = 2 }
-					 artillery_heavy_support = { x = 1  y = 3 }
+					 engineer = { x = 0 y = 2 }
+					 field_hospital = { x = 0 y = 3 }
+					 signal_company = { x = 1 y = 0 }
+					 artillery = { x = 1 y = 1 }
 				 }
 			 }
 			 division_template = {
@@ -4590,17 +4341,18 @@ focus_tree = {
 
 			  artillery_brigade = { x = 4 y = 0 }
 			  artillery_brigade = { x = 4 y = 1 }
-			  anti_tank_brigade = { x = 4 y = 2 }
+			  anti_air_heavy = { x = 4 y = 2 }
+			  }
+			  regimental_support = {
+			  anti_tank_brigade = { x = 0 y = 0 }
 			  }
 			  support = {
 				  recon = { x = 0 y = 0 }
 				  mot_recon = { x = 0 y = 1 }
-				  engineer = { x = 0  y = 2 }
-				  field_hospital = { x = 0  y = 3 }
-				  signal_company = { x = 1  y = 0 }
-				  logistics_company = { x = 1  y = 1 }
-				  artillery = { x = 1  y = 2 }
-				  artillery_heavy_support = { x = 1  y = 3 }
+				  engineer = { x = 0 y = 2 }
+				  field_hospital = { x = 0 y = 3 }
+				  signal_company = { x = 1 y = 0 }
+				  logistics_company = { x = 1 y = 1 }
 			  }
 		  }
 			if = {
@@ -4683,7 +4435,7 @@ focus_tree = {
 		}
 
 		x = 19
-		y = 15
+		y = 12
 		cost = 5
 
 		ai_will_do = {
@@ -4719,15 +4471,17 @@ focus_tree = {
 
 				 artillery_brigade = { x = 4 y = 0 }
 				 artillery_brigade = { x = 4 y = 1 }
-				 anti_tank_brigade = { x = 4 y = 2 }
+				 anti_air_heavy = { x = 4 y = 2 }
+				 }
+				 regimental_support = {
+				 anti_tank_brigade = { x = 0 y = 0 }
 				 }
 				 support = {
 					 artillery = { x = 0 y = 0 }
 					 mot_recon = { x = 0 y = 1 }
-					 engineer = { x = 0  y = 2 }
-					 field_hospital = { x = 0  y = 3 }
-					 signal_company = { x = 1  y = 0 }
-					 anti_tank = { x = 1  y = 1 }
+					 engineer = { x = 0 y = 2 }
+					 field_hospital = { x = 0 y = 3 }
+					 signal_company = { x = 1 y = 0 }
 				 }
 			 }
 
@@ -4764,7 +4518,7 @@ focus_tree = {
 		}
 
 		x = 23
-		y = 15
+		y = 12
 		cost = 5
 
 		ai_will_do = {
@@ -4801,16 +4555,19 @@ focus_tree = {
 				 artillery_brigade = { x = 3 y = 2 }
 
 				 artillery_brigade = { x = 4 y = 0 }
-				 pack_artillery_brigade = { x = 4 y = 1 }
-				 anti_tank_brigade = { x = 4 y = 2 }
+				 field_gun_brigade = { x = 4 y = 1 }
+				 anti_air_heavy = { x = 4 y = 2 }
+				 }
+				 regimental_support = {
+				 anti_tank_brigade = { x = 0 y = 0 }
+				 pack_artillery_brigade = { x = 0 y = 1 }
 				 }
 				 support = {
 					 artillery = { x = 0 y = 0 }
 					 recon = { x = 0 y = 1 }
-					 engineer = { x = 0  y = 2 }
-					 artillery_heavy_support = { x = 0  y = 3 }
-					 signal_company = { x = 1  y = 0 }
-					 pack_artillery = { x = 1  y = 1 }
+					 engineer = { x = 0 y = 2 }
+					 artillery_heavy_support = { x = 0 y = 3 }
+					 signal_company = { x = 1 y = 0 }
 				 }
 			 }
 			if = {
@@ -4872,7 +4629,7 @@ focus_tree = {
 		}
 
 		x = 21
-		y = 15
+		y = 12
 		cost = 5
 
 		ai_will_do = {
@@ -4917,14 +4674,15 @@ focus_tree = {
 
 				    motorized = { x = 4 y = 0 }
 				    motorized = { x = 4 y = 1 }
-				    anti_air_mot = { x = 4 y = 2 }
+				    light_armor = { x = 4 y = 2 }
+				    }
+				    regimental_support = {
+				    anti_air = { x = 0 y = 0 }
 				    }
 				    support = {
 					    artillery = { x = 0 y = 0 }
 					    mot_recon = { x = 0 y = 1 }
-					    mobile_engineer = { x = 0  y = 2 }
-					    anti_air_company = { x = 0  y = 3 }
-					    anti_tank = { x = 1  y = 0 }
+					    mobile_engineer = { x = 0 y = 2 }
 				    }
 			    }
 			}
@@ -4958,14 +4716,15 @@ focus_tree = {
 
 				motorized = { x = 4 y = 0 }
 				motorized = { x = 4 y = 1 }
-				anti_air_mot = { x = 4 y = 2 }
+				medium_armor = { x = 4 y = 2 }
+				}
+				regimental_support = {
+				anti_air = { x = 0 y = 0 }
 				}
 				support = {
 					artillery = { x = 0 y = 0 }
 					mot_recon = { x = 0 y = 1 }
-					mobile_engineer = { x = 0  y = 2 }
-					anti_air_company = { x = 0  y = 3 }
-					anti_tank = { x = 1  y = 0 }
+					mobile_engineer = { x = 0 y = 2 }
 				}
 			}
 		}
@@ -5035,7 +4794,7 @@ focus_tree = {
 		}
 
 		x = 21
-		y = 16
+		y = 13
 		cost = 5
 
 		ai_will_do = {
@@ -5074,20 +4833,22 @@ focus_tree = {
 					field_gun_brigade = { x = 3 y = 0 }
 					field_gun_brigade = { x = 3 y = 1 }
 					artillery_brigade = { x = 3 y = 2 }
-					anti_tank_brigade = { x = 3 y = 3 }
+					anti_air_heavy = { x = 3 y = 3 }
 					
 					artillery_heavy = { x = 4 y = 0 }
 					artillery_brigade = { x = 4 y = 1 }
 					
 				}
+				 regimental_support = {
+					anti_tank_brigade = { x = 0 y = 0 }
+				 }
 				support = {
-					artillery = { x = 0 y = 0 } 
-					light_armor_recon = { x = 0 y = 1 } 		
+					artillery = { x = 0 y = 0 }
+					light_armor_recon = { x = 0 y = 1 }
 					engineer = { x = 0 y = 2 }
 					field_hospital = { x = 1 y = 0 }
 					logistics_company = { x = 1 y = 1 }
 					anti_air_heavy_support = { x = 1 y = 2 }
-					pack_artillery = { x = 0 y = 3 }
 				}
 			 }
 			if = {
@@ -5176,7 +4937,7 @@ focus_tree = {
 		}
 
 		x = 21
-		y = 17
+		y = 14
 		cost = 5
 
 		ai_will_do = {
@@ -5216,12 +4977,10 @@ focus_tree = {
 				support = {
 					artillery = { x = 0 y = 0 }
 					light_armor_recon = { x = 0 y = 1 }
-					mobile_engineer = { x = 0  y = 2 }
-					logistics_company = { x = 0  y = 3 }
-					anti_air_company = { x = 1  y = 0 }
-					maintenance_company = { x = 1  y = 1 }
-					artillery = { x = 1  y = 2 }
-					field_hospital = { x = 1  y = 3 }
+					mobile_engineer = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					maintenance_company = { x = 1 y = 0 }
+					field_hospital = { x = 1 y = 1 }
 				}
 			}
 		
@@ -5262,7 +5021,7 @@ focus_tree = {
 		}
 
 		x = 23
-		y = 17
+		y = 14
 		cost = 5
 
 		ai_will_do = {
@@ -5295,7 +5054,7 @@ focus_tree = {
 		}
 
 		x = 19
-		y = 17
+		y = 14
 		cost = 5
 
 		ai_will_do = {
@@ -5352,7 +5111,7 @@ focus_tree = {
 		}
 
 		x = 19
-		y = 18
+		y = 15
 		cost = 1
 
 		ai_will_do = {
@@ -5405,7 +5164,7 @@ focus_tree = {
 		}
 
 		x = 17
-		y = 14
+		y = 11
 		cost = 5
 
 		ai_will_do = {
@@ -5463,7 +5222,7 @@ focus_tree = {
 		}
 
 		x = 17
-		y = 15
+		y = 12
 		cost = 5
 
 		ai_will_do = {
@@ -5486,7 +5245,6 @@ focus_tree = {
 				logistics_skill=2
 			}
 	
-			 add_equipment_to_stockpile = { type = transport_plane_equipment amount = 100 producer = POL }
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = 1000
@@ -5512,7 +5270,7 @@ focus_tree = {
 		}
 
 		x = 33
-		y = 14
+		y = 11
 		cost = 5
 
 		ai_will_do = {
@@ -5675,7 +5433,7 @@ focus_tree = {
 		}
 
 		x = 33
-		y = 15
+		y = 12
 		cost = 5
 
 		ai_will_do = {
@@ -5712,7 +5470,7 @@ focus_tree = {
 		}
 
 		x = 29
-		y = 14
+		y = 11
 		cost = 5
 
 		ai_will_do = {
@@ -5745,7 +5503,7 @@ focus_tree = {
 		}
 
 		x = 31
-		y = 15
+		y = 12
 		cost = 5
 
 		ai_will_do = {
@@ -5776,7 +5534,7 @@ focus_tree = {
 		}
 
 		x = 29
-		y = 15
+		y = 12
 		cost = 5
 
 		ai_will_do = {
@@ -5806,7 +5564,7 @@ focus_tree = {
 		}
 
 		x = 29
-		y = 16
+		y = 13
 		cost = 5
 
 		ai_will_do = {
@@ -5836,7 +5594,7 @@ focus_tree = {
 		}
 
 		x = 31
-		y = 16
+		y = 13
 		cost = 5
 
 		ai_will_do = {
@@ -5869,7 +5627,7 @@ focus_tree = {
 		}
 
 		x = 27
-		y = 16
+		y = 13
 		cost = 5
 
 		ai_will_do = {
@@ -5908,7 +5666,7 @@ focus_tree = {
 		}
 
 		x = 29
-		y = 17
+		y = 14
 		cost = 5
 
 		ai_will_do = {
@@ -5977,7 +5735,7 @@ focus_tree = {
 		}
 
 		x = 29
-		y = 18
+		y = 15
 		cost = 5
 
 		ai_will_do = {
@@ -5989,6 +5747,61 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = POL_warsaw_uprising_tt
 	
+		}
+	}
+	focus = {
+		id = POL_form_the_ozn
+		icon = GFX_focus_ozn
+		available = {
+			date > 1937.01.18
+		}
+		prerequisite = {
+			focus = POL_summon_a_new_cabinet
+		}
+	
+		x = 25
+		y = 3
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_party_name = { 
+				ideology = neutrality 
+				long_name = POL_ozn_name_long
+				name = POL_ozn_name_short
+			}
+			custom_effect_tooltip = POL_modify_industry_spirit_tt
+			add_to_variable = {
+				POL_stability_factor_var = 0.1
+				tooltip = POL_stabn_tt1
+			}
+			custom_effect_tooltip = available_theorist
+			show_ideas_tooltip = POL_adam_koc
+		}
+	}
+
+	focus = {
+		id = POL_zwiazek_mlodej_polski
+		icon = GFX_pol_narodowa_org_wojskowa
+		prerequisite = { focus = POL_form_the_ozn }
+	
+		x = 25
+		y = 4
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = POL_zmp
 		}
 	}
 	

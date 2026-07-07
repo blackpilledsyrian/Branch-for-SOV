@@ -6,7 +6,7 @@ state = {
 	
 	state_category = wasteland
 	resources = {
-		tungsten = 25 # was: 54
+		tungsten = 100 # was: 54
 	}
 
 	history = {
@@ -14,6 +14,9 @@ state = {
 		buildings = {
 			infrastructure = 1
 			air_base = 1
+		}
+		victory_points = {
+			12322 3
 		}
 
 	}

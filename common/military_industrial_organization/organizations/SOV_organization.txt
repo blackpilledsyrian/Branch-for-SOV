@@ -81,7 +81,7 @@ SOV_kharkov_diesel = {
 			tag = SOV
     }
 	equipment_type = { armor }
-	research_categories = { armor }
+	research_categories = { armor tank_upgrade}
 
 	initial_trait = {
 		name = medium_tank_designer
@@ -142,7 +142,7 @@ SOV_kharkov_diesel = {
 		mutually_exclusive = { generic_mio_engine_optimization }
 		
 		production_bonus = {
-			production_resource_penalty_factor = -0.3
+			production_resource_penalty_factor = -0.1
 		}
 	}
 	trait = {
@@ -324,7 +324,7 @@ SOV_plant174 = {
 			tag = SOV
     }
 	equipment_type = { armor }
-	research_categories = { armor }
+	research_categories = { armor tank_upgrade}
 
 	initial_trait = {
 		name = light_tank_designer
@@ -538,7 +538,7 @@ SOV_plant174 = {
 			maximum_speed = -0.05
 		}
 		production_bonus = {
-			production_resource_penalty_factor = -0.2
+			production_resource_penalty_factor = -0.1
 		}
 	}
 	trait = {
@@ -571,7 +571,7 @@ SOV_stalingrad_tractor = {
 		}
 	}
 	equipment_type = { armor }
-	research_categories = { armor }
+	research_categories = { armor tank_upgrade}
 
 
 	initial_trait = {
@@ -670,7 +670,7 @@ SOV_stalingrad_tractor = {
 		}
 		production_bonus = {
 			production_efficiency_gain_factor = 0.1
-			production_resource_need_factor = -0.1
+			production_resource_need_factor = -0.07
 		}
 	}
 	trait = {
@@ -733,7 +733,7 @@ SOV_chelyabinsk_tractor_plant = {
 		}
 	}
 	equipment_type = { armor }
-	research_categories = { armor }
+	research_categories = { armor tank_upgrade}
 
 
 	initial_trait = {
@@ -831,7 +831,7 @@ SOV_ordzhonikidze = {
 			tag = SOV
     }
 	equipment_type = { armor }
-	research_categories = { armor }
+	research_categories = { armor tank_upgrade}
 
 
 	initial_trait = {
@@ -924,7 +924,7 @@ SOV_ordzhonikidze = {
 		production_bonus = {
 			production_capacity_factor = 0.15
 			production_efficiency_gain_factor = 0.4
-			production_resource_need_factor = -0.2
+			production_resource_need_factor = -0.12
 		}
 	}
 	trait = {
@@ -1036,6 +1036,7 @@ SOV_mytishchy_machine_building_plant_organization = {
 		armor
 		#support_tech
 		train_tech
+		tank_upgrade
 		infantry_weapons
 	}
 
@@ -1161,7 +1162,7 @@ SOV_mytishchy_machine_building_plant_organization = {
 		#}
 
 		production_bonus = {
-			production_resource_need_factor = 0.2
+			production_resource_need_factor = 0.1
 		}
 		equipment_bonus = {
 			reliability = 0.1
@@ -1315,7 +1316,7 @@ SOV_kirov_organization = {
 		original_tag = SOV
 	}
 	equipment_type = { armor }
-	research_categories = { armor }
+	research_categories = { armor tank_upgrade}
 
 
 	initial_trait = {

@@ -6,9 +6,10 @@ state = {
 	state_category = megalopolis
 	
 	resources = {
-		rubber = 15 # was: 70
-		steel = 6
-		chromium = 5 
+		rubber = 60 # was: 70
+		steel = 60
+		chromium = 40 
+		aluminium = 20
 
 	}
 

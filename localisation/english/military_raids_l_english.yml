@@ -1,4 +1,6 @@
 ﻿l_english:
+ RAID_SHIFT_CLICK_QUICK_START: "§GShift+Click§! to instantly prepare a raid."
+ raid_tooltip_trigger_title: "$TITLE|H$:"
  RAIDS: "Raids"
  RAIDS_WINDOW_TITLE: "Military Raids"
  RAIDS_TARGET_CATEGORIES_TEXT: "Raid Categories"
@@ -47,9 +49,11 @@
  raid_type_civ_reactor_bombing_raid_no_bba_desc: "$raid_type_civ_reactor_bombing_raid_desc$"
 
 
-raid_type_industrial_sector_raid: "Industrial Sector Bombing Raid"
-raid_type_industrial_sector_raid_desc: "A raid against the enemy's industrial sector, aimed at inflicting serious damage and weakening their military–industrial complex."
+raid_type_industrial_sector_raid_tank_assembly: "Industrial Tank Sector Bombing Raid"
+raid_type_industrial_sector_raid_tank_assemblydesc: "A raid against the enemy's industrial sector, aimed at inflicting serious damage and weakening their military–industrial complex."
 
+raid_type_industrial_sector_raid_air_assembly: "Industrial Air Sector Bombing Raid"
+raid_type_industrial_sector_raid_air_assembly_desc: "A raid against the enemy's industrial sector, aimed at inflicting serious damage and weakening their military–industrial complex."
 
  raid_type_fortress_buster_raid: "Stronghold Network Raid"
  raid_type_fortress_buster_raid_desc: "Aircraft equipped with special earthshaker bombs try to destroy the Stronghold Network, in order to disrupt enemy defences."
@@ -67,11 +71,17 @@ raid_type_industrial_sector_raid_desc: "A raid against the enemy's industrial se
  raid_type_mega_gun_emplacement_strike_no_bba_desc: "$raid_type_mega_gun_emplacement_strike_desc$"
 
  raid_type_oilfield_raid: "Oil Field Raid"
- raid_type_oilfield_raid_desc: "An Airstrike aimed at knocking a major oil field and it's connected Refineries out, in order to seriously disrupt enemy fuel production for an extended period of time."
+ raid_type_oilfield_raid_desc: "An Airstrike aimed at knocking a major oil field and its connected Refineries out, in order to seriously disrupt enemy fuel production for an extended period of time."
  raid_type_nuclear_strike: "Nuclear Strike"
  raid_type_nuclear_strike_desc: "A strategic bomber and its escort will fly to the designated target and deploy an atomic bomb. The bomber will then attempt to escape the area to avoid being caught in the blast wave."
  raid_type_nuclear_missile_strike: "Nuclear Missile Strike"
  raid_type_nuclear_missile_strike_desc: "A long range missile will take a sub-orbital ballistic trajectory from the designated launch site towards the intended target. At the appropriate moment, the warhead onboard will detonate an atomic explosion."
+
+ raid_type_nuclear_strike_spr: "Nuclear Strike"
+ raid_type_nuclear_strike_spr_desc: "A strategic bomber and its escort will fly to the designated target and deploy an atomic bomb. The bomber will then attempt to escape the area to avoid being caught in the blast wave."
+ raid_type_nuclear_missile_strike_spr: "Nuclear Missile Strike"
+ raid_type_nuclear_missile_strike_spr_desc: "A long range missile will take a sub-orbital ballistic trajectory from the designated launch site towards the intended target. At the appropriate moment, the warhead onboard will detonate an atomic explosion."
+
  raid_type_paratrooper_facility_sabotage: "Facility Sabotage Raid"
  raid_type_paratrooper_facility_sabotage_desc: "A team of paratroopers drop on an enemy facility and try to destroy vital equipment using fixed charges, in order to disrupt their scientific progress."
  raid_type_mine_sabotage_raid: "Mine Sabotage Raid"
@@ -95,13 +105,23 @@ raid_type_industrial_sector_raid_desc: "A raid against the enemy's industrial se
  raid_type_GER_statue_of_liberty_bombing: "Statue Of Liberty Bombing Raid"
  raid_type_GER_kremlin_bombing: "Kremlin Bombing Raid"
  raid_type_ENG_operation_jericho: "Operation Jericho"
- raid_type_ENG_operation_jericho_desc: "Based on information from the French resistance, Germany holds a large number of Resistance fighters captures in Amiens. By sending in a squadron of planes to blow a hole in the prison walls, we should be able to free a large number of those resistance fighters."
+ raid_type_ENG_operation_jericho_desc: "Based on information from the French resistance, Germany holds a large number of Resistance fighters captured in Amiens. By sending in a squadron of planes to blow a hole in the prison walls, we should be able to free a large number of those resistance fighters."
  raid_type_thermonuclear_strike: "Thermonuclear Strike"
  raid_type_thermonuclear_strike_desc: "A strategic bomber and its escort will fly to the designated target and deploy a thermonuclear bomb. The bomber will then attempt to escape the area to avoid being caught in the blast wave."
  raid_type_thermonuclear_missile_strike: "Thermonuclear Missile Strike"
  raid_type_thermonuclear_missile_strike_desc: "A long range missile will take a sub-orbital ballistic trajectory from the designated launch site towards the intended target. At the appropriate moment, the warhead onboard will detonate a thermonuclear explosion."
+
+ raid_type_thermonuclear_strike_spr: "Thermonuclear Strike"
+ raid_type_thermonuclear_strike_spr_desc: "A strategic bomber and its escort will fly to the designated target and deploy a thermonuclear bomb. The bomber will then attempt to escape the area to avoid being caught in the blast wave."
+ raid_type_thermonuclear_missile_strike_spr: "Thermonuclear Missile Strike"
+ raid_type_thermonuclear_missile_strike_spr_desc: "A long range missile will take a sub-orbital ballistic trajectory from the designated launch site towards the intended target. At the appropriate moment, the warhead onboard will detonate a thermonuclear explosion."
+
  raid_type_CHI_huansheng_raid: "Operation Huansheng"
  raid_type_CHI_huansheng_raid_desc: "Our intelligence states that though valuable targets, the Yawata steel works and the Sasebo Naval Arsenal are too difficult for our airforce to properly strike at this moment. It has therefore been decided that the most effective way to stop this war would be to raise the conscience of the Japanese people against the atrocities committed by the imperialist Japanese warmongers in China, by dropping leaflets over cities such as Nagasaki, Fukuoka, Saga and Osaka."
+
+ raid_type_GER_rotterdam_blitz: "Rotterdam Blitz"
+ raid_type_GER_rotterdam_blitz_desc: "A concentrated Luftwaffe firebombing of Rotterdam's industrial districts. One hundred tactical bombers will flatten the city's factories in a deliberate terror raid, shattering Dutch will to resist."
+ raid_target_rotterdam: "Rotterdam"
 
  RAID_TARGET_NAME: "$WHAT|H$ in $LOCATION|H$"
  TOOLTIP_POTENTIAL_TARGET_ENTRY: "§GClick§! to raid $CONTROLLER_FLAG$$TARGET_NAME$"
@@ -240,7 +260,7 @@ raid_type_industrial_sector_raid_desc: "A raid against the enemy's industrial se
  dud_missile_tt: "Missile Failed to Explode"
  missile_hit_wrong_target_tt: "Missile Hit the Wrong Target"
  raid_nuclear_strike_tt: "Hit by nuclear strike"
- raid_nuclear_secondary_target_tt: "Failed to properly hit intented target"
+ raid_nuclear_secondary_target_tt: "Failed to properly hit intended target"
 
  raid_repair_speed_tt: "[THIS.GETName] suffers Reduction to Ship Repair Speed for 30 days"
  raid_damage_to_ships_tt: "Any ships in port suffer §R$DAMAGE$%§! damage"

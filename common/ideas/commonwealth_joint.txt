@@ -1,0 +1,169 @@
+ideas = {
+	country = {
+		# Granted by COMMON_allow_volunteers_to_china joint focus.
+		COMMON_abroad_volunteers_china_expedition = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus
+
+			modifier = {
+				send_volunteer_size = 2
+			}
+		}
+
+		# Granted by AXIS_authorize_volunteers_to_japan joint focus.
+		AXIS_abroad_volunteers_japan_expedition = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus
+
+			modifier = {
+				send_volunteer_size = 2
+			}
+		}
+	}
+
+	hidden_ideas = {
+		COMMON_railway_gun_idea = {
+			allowed = {
+				OR = {
+					tag = ENG
+					tag = SAF
+					tag = CAN
+					tag = RAJ
+					tag = AST
+				}
+			}
+
+			removal_cost = -1
+
+			picture = USA_infantry_industry
+
+			equipment_bonus = {
+				railway_gun_equipment = {
+					build_cost_ic = -0.5 instant = yes
+				}
+			}
+		}
+
+		COMMON_focus_on_heavy_tanks_idea = {
+			allowed = {
+				OR = {
+					tag = ENG
+					tag = SAF
+					tag = CAN
+					tag = RAJ
+					tag = AST
+				}
+			}
+
+			removal_cost = -1
+			picture = USA_infantry_industry
+
+			equipment_bonus = {
+				heavy_tank_chassis = { build_cost_ic = -0.05 instant = yes }
+			}
+		}
+
+		COMMON_focus_on_medium_tanks_idea = {
+			allowed = {
+				OR = {
+					tag = ENG
+					tag = SAF
+					tag = CAN
+					tag = RAJ
+					tag = AST
+				}
+			}
+
+			removal_cost = -1
+			picture = USA_infantry_industry
+
+			equipment_bonus = {
+				medium_tank_chassis = { build_cost_ic = -0.05 instant = yes }
+			}
+		}
+
+		COMMON_focus_on_special_forces_gear_idea = {
+			allowed = {
+				OR = {
+					tag = ENG
+					tag = SAF
+					tag = CAN
+					tag = RAJ
+					tag = AST
+				}
+			}
+
+			removal_cost = -1
+			picture = USA_infantry_industry
+
+			equipment_bonus = {
+				special_equipment = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+			}
+		}
+
+		COMMON_focus_on_special_forces_cap_idea = {
+			allowed = {
+				OR = {
+					tag = ENG
+					tag = SAF
+					tag = CAN
+					tag = RAJ
+					tag = AST
+				}
+			}
+
+			removal_cost = -1
+			picture = USA_infantry_industry
+
+			modifier = {
+				# Flat special forces capacity (battalions).
+				special_forces_min = 27
+			}
+		}
+
+		COMMON_emergency_defense_construction_spirit = {
+			allowed = { always = yes }
+
+			removal_cost = -1
+
+			picture = USA_infantry_industry
+
+			modifier = {
+
+				production_speed_bunker_factor = 0.5
+				production_speed_coastal_bunker_factor = 0.5
+				production_speed_anti_air_building_factor = 0.5
+				production_speed_radar_station_factor = 0.5
+				production_speed_rail_way_factor = 0.5
+				production_speed_naval_base_factor = 0.5
+				production_speed_supply_node_factor = 0.5
+				production_speed_air_base_factor = 0.5
+
+				industrial_capacity_factory = -0.3
+				industrial_capacity_dockyard = -0.3
+			}
+		}
+	}
+}
+

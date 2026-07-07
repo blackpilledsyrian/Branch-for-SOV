@@ -6,8 +6,8 @@ state = {
 	}
 	state_category = pastoral
 	resources = {
-			steel = 15
-			chromium = 4
+			steel = 60
+			chromium = 16
 	}
 	
 	
@@ -21,6 +21,7 @@ state = {
 		
 		
 		buildings = {
+		
 			infrastructure = 2
 			air_base = 4
 		}

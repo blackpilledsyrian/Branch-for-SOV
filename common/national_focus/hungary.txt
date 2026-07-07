@@ -15,6 +15,8 @@ focus_tree = {
 
 	continuous_focus_position = { x = 300 y = 2000 }
 
+	shared_focus = AXIS_authorize_volunteers_to_japan
+
 	focus = {
 		id = HUN_hidden_officer_schools
 		icon = GFX_focus_generic_military_mission
@@ -45,9 +47,10 @@ focus_tree = {
 			add_war_support = 0.05
 			add_command_power = 40
 			add_ideas = HUN_hidden_officer_school_idea
+			add_ideas = academy_scholarships_spirit
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -93,7 +96,7 @@ focus_tree = {
 				category = infantry_weapons
 			}
 			add_tech_bonus = {
-				category = artillery
+				category = cat_artillery
 				uses = 1 
 				bonus = 0.75 
 				name = HUN_reorganize_the_royal_hungarian_army
@@ -176,7 +179,7 @@ focus_tree = {
 				add_attack = 1
 			}	
 			add_tech_bonus = {
-				category = artillery
+				category = cat_artillery
 				uses = 1 
 				bonus = 0.5 
 				name = HUN_reorganize_the_royal_hungarian_army
@@ -222,10 +225,10 @@ focus_tree = {
 				limit = {
 					is_core_of = HUN 
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes 
 				}
 			}
@@ -263,7 +266,7 @@ focus_tree = {
 			add_political_power = 50
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = air_doctrine
 			}
@@ -316,6 +319,15 @@ focus_tree = {
 					
 				}
 			}
+			random_core_state = {
+			
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = air_assembly
+					level = 1
+					instant_build = yes 
+			}
+			}
 		}
 	}
 	
@@ -333,7 +345,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 50
 		}
-
+		available = {
+			GER = {
+				has_completed_track = fighter_operations_KNI
+			}
+		}
 		
 
 		bypass = {
@@ -382,7 +398,7 @@ focus_tree = {
 			air_experience = 25
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = air_doctrine
 			}
@@ -767,7 +783,7 @@ focus_tree = {
 				bonus = 0.5
 				name = HUN_german_anti_tank
 			}
-			
+			add_equipment_to_stockpile = { type = anti_tank_equipment_1 amount = 350 producer = GER }
 		}
 	}
 	focus = {
@@ -832,9 +848,13 @@ focus_tree = {
 		
 
 		completion_reward = {
-			add_offsite_building = {
-				type = arms_factory
-				level = 2
+			807 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes 
+				}
 			}
 		}
 	}
@@ -870,7 +890,7 @@ focus_tree = {
 			43 = {
 				add_resource = {
 					type = steel 
-					amount = 8 
+					amount = 24 
 				}
 			}
 			add_tech_bonus = {
@@ -1063,6 +1083,15 @@ focus_tree = {
 				
 				}
 			}
+			43 = {
+			
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+			}
+			}
 		}
 	}
 
@@ -1099,10 +1128,11 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 400 producer = GER }
 		}
 	}
 	focus = {
@@ -1302,6 +1332,15 @@ focus_tree = {
 				bonus = 0.5
 				name = HUN_stop_gap_light_tank
 			}
+			random_core_state = {
+			
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+				}
+			}
 		}
 	}
 	
@@ -1344,7 +1383,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine 
 			}
@@ -1428,6 +1467,15 @@ focus_tree = {
 				uses = 3
 				category = tank_upgrade
 			}
+			random_core_state = {
+			
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = tank_assembly
+					level = 1
+					instant_build = yes 
+				}
+			}
 
 		}
 	}
@@ -1498,7 +1546,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = HUN_leventre_training_idea
 			add_tech_bonus = {
-				category = artillery
+				category = cat_artillery
 				uses = 2 
 				bonus = 0.5
 				name = HUN_reorganize_the_royal_hungarian_army
@@ -1565,7 +1613,10 @@ focus_tree = {
 						artillery_brigade = { x = 3 y = 0 }
 						artillery_brigade = { x = 3 y = 1 }
 						artillery_brigade = { x = 3 y = 2 }
-						anti_tank_brigade = { x = 3 y = 3 }
+						anti_air_heavy = { x = 3 y = 3 }
+					}
+					regimental_support = {
+						anti_tank_brigade = { x = 0 y = 0 }
 					}
 	
 					support = {
@@ -2070,7 +2121,7 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -2211,7 +2262,7 @@ focus_tree = {
 				
 				add_resource = {
 					type = steel
-					amount = 8
+					amount = 24
 				}
 			}
 		}
@@ -2302,7 +2353,7 @@ focus_tree = {
 				
 				add_resource = {
 					type = steel
-					amount = 4
+					amount = 12
 				}
 				add_building_construction = {
 					type = infrastructure
@@ -2452,7 +2503,13 @@ focus_tree = {
 			43 = {
 				add_resource = {
 					type = aluminium
-					amount = 12
+					amount = 27
+				}
+			}
+			52 = {
+				add_resource = {
+					type = aluminium
+					amount = 9
 				}
 			}
 			add_tech_bonus = {
@@ -2501,6 +2558,11 @@ focus_tree = {
 						
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
 			}
 			add_tech_bonus = {
 				category = industry
@@ -2552,10 +2614,10 @@ focus_tree = {
 					level = 2
 				}	
 				
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 4
 					instant_build = yes
 				}			
 			}	
@@ -2659,7 +2721,11 @@ focus_tree = {
 			43 = {
 				add_resource = {
 					type = aluminium
-					amount = 14
+					amount = 30
+				}
+				add_resource = {
+					type = steel
+					amount = 18
 				}
 			}
 		}
@@ -3823,10 +3889,10 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 4
 					instant_build = yes 
 				}
 			}
@@ -3867,8 +3933,6 @@ focus_tree = {
 
 		completion_reward = {
 		
-		
-		
 		random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2 
 				add_building_construction = {
@@ -3877,7 +3941,17 @@ focus_tree = {
 					instant_build = yes 
 				}
 			}
-			swap_ideas = {
+			
+		random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes 
+				}
+			}
+
+		swap_ideas = {
 				remove_idea = HUN_national_work_plan_2
 				add_idea = HUN_national_work_plan_3 
 			}
@@ -4476,7 +4550,7 @@ focus_tree = {
 				bonus = 0.5
 				uses = 2
 				category = armor
-				category = artillery
+				category = cat_artillery
 				category = infantry_weapons
 				category = industry
 				category = electronics

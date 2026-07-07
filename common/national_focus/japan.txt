@@ -26,6 +26,7 @@ focus_tree = {
 		}
 		available = {
 			has_country_flag = february_26th_incident_concluded
+		
 
 		}
 		cancel_if_invalid = yes
@@ -48,6 +49,7 @@ focus_tree = {
 			ideology = rexism
 			
 		}
+		
 		
 		
 
@@ -326,7 +328,7 @@ focus_tree = {
 				}
 			    add_resource = {
 				type = steel
-				amount = 6
+				amount = 18
 				}
 		    }
 			803 = {
@@ -338,7 +340,7 @@ focus_tree = {
 				}
 			    add_resource = {
 				type = steel
-				amount = 6
+				amount = 18
 				}
 		    }
 		}
@@ -569,6 +571,9 @@ focus_tree = {
 				}
 				has_war_with = CHI 
 			}
+			else = {
+				has_completed_focus = JAP_intervene_in_china
+			}
 		}
 		ai_will_do = {
 			factor = 10
@@ -599,7 +604,7 @@ focus_tree = {
 		relative_position_id = JAP_new_order_in_asia
 		cancel_if_invalid = yes
 		
-		cost = 4.3
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -663,9 +668,7 @@ focus_tree = {
 			SOV = {
 				country_event = { id = soviet.1015 }
 			}
-			USA = {
-				country_event = { id = usa.413 }
-			}
+			
 		}
 	}
 	focus = {
@@ -676,7 +679,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 4.3
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -721,7 +724,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 4.3
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -753,7 +756,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 4.3
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -792,7 +795,7 @@ focus_tree = {
 		x = 0
 		y = 2
 
-		cost = 4.3
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -882,7 +885,7 @@ focus_tree = {
 		x = -2
 		y = 1
 
-		cost = 4.3
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -927,7 +930,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 4.3
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -1011,7 +1014,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 4.3
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -1069,7 +1072,7 @@ focus_tree = {
 		x = 2
 		y = 1
 
-		cost = 4.3
+		cost = 5
 
 		ai_will_do = {
 			factor = 100 #10
@@ -1116,7 +1119,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 4.3
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -1333,7 +1336,7 @@ focus_tree = {
 			
 					add_resource = {
 						type = steel
-						amount = 5
+						amount = 15
 					}	
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -1738,7 +1741,7 @@ focus_tree = {
 			761 = {
 				add_resource = {
 						type = oil
-						amount = 4
+						amount = 12
 					}
 			}
 				give_resource_rights = {
@@ -1749,7 +1752,7 @@ focus_tree = {
 			MAN = {
 				add_to_variable = {
 					var = MAN_military_industry_dm_local_resources_factor 
-					value = 0.1
+					value = 0.08
 					tooltip = man_resource_gain
 				}
 			}
@@ -1796,7 +1799,7 @@ focus_tree = {
 
 					add_resource = {
 						type = steel
-						amount = 18
+						amount = 45
 					}
 				set_building_level = {
 					type = supply_node
@@ -1951,7 +1954,7 @@ focus_tree = {
 		
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = land_doctrine
 			}
@@ -1992,6 +1995,12 @@ focus_tree = {
 				add_equipment_to_stockpile = { type = support_equipment_1 amount = 1000 producer = JAP } 			
 				add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 1000 producer = JAP }
 				add_equipment_to_stockpile = { type = heavy_artillery_equipment_1 amount = 500 producer = JAP }			
+			}
+			add_tech_bonus = {
+				name = JAP_improve_logistics
+				bonus = 1
+				uses = 1
+				category = support_tech 
 			}
 			
 		}
@@ -2048,7 +2057,13 @@ focus_tree = {
 				name = arty_bonus
 				bonus = 0.75
 				uses = 2
-				category = artillery
+				category = cat_artillery
+			}
+			add_tech_bonus = {
+				name = JAP_improve_logistics
+				bonus = 1
+				uses = 1
+				category = support_tech 
 			}
 		}
 	}
@@ -2074,11 +2089,12 @@ focus_tree = {
 			every_army_leader = {
 				add_logistics = 2
 			}
-			add_tech_bonus = {
-				name = JAP_improve_logistics
-				bonus = 1
-				uses = 2 
-				category = support_tech 
+			
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
 			}
 		}
 	}
@@ -2130,7 +2146,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -2176,7 +2192,7 @@ focus_tree = {
 			custom_effect_tooltip = JAP_ija_general_staff_mass_assault_focus_tt
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = land_doctrine
 			}
@@ -2270,10 +2286,23 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
-				uses = 2
+				cost_reduction = 0.5
+				uses = 1
 				category = land_doctrine
 			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_4
+
+					}
+					army_experience = 600
+				}
+				else = {
+					army_experience = 46
+				}
+			}
+			custom_effect_tooltip = JAP_get_30xp_tt
 		}
 	}
 
@@ -2314,7 +2343,7 @@ focus_tree = {
 				name = arty_bonus
 				bonus = 0.5
 				uses = 1
-				category = artillery
+				category = cat_artillery
 			}
 			add_tech_bonus = {
 				name = retardo_elgato
@@ -2405,7 +2434,7 @@ focus_tree = {
 			custom_effect_tooltip = JAP_ija_general_staff_sup_firepower_focus_tt			
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = land_doctrine
 			}
@@ -2513,17 +2542,12 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = JAP_ija_general_staff_superior_firepower_4
-			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.4
-				uses = 1
-				category = land_doctrine
-			}
+			
 			add_tech_bonus = {
 				name = arty_bonus
 				bonus = 0.5
 				uses = 2
-				category = artillery
+				category = cat_artillery
 			}
 					
 		}
@@ -2610,7 +2634,7 @@ focus_tree = {
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = land_doctrine
 			}
@@ -2621,10 +2645,7 @@ focus_tree = {
 				category = armor
 			}
 			custom_effect_tooltip = JAP_modify_army_spirit_tt
-			add_to_variable = {
-				JAP_army_speed_factor_var = 0.05
-				tooltip = JAP_speed_bonus
-			}	
+		
 			add_to_variable = {
 				JAP_army_armor_attack_factor_var = 0.1
 				tooltip = JAP_armor_attack_bonus
@@ -2726,12 +2747,22 @@ focus_tree = {
 					instant_build = yes 
 				}
 			}	
+			random_core_state = {
+			
+				add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+					type = tank_assembly
+					level = 2
+					instant_build = yes 
+				}
+			}
 			add_tech_bonus = {
 				name = HOL_make_use_of_our_riches
 				bonus = 1.5
 				uses = 1
 				category = excavation_tech				
 			}
+
 		}
 	}
 
@@ -2880,8 +2911,8 @@ focus_tree = {
 			add_ideas = tank_production_jap 
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
-				uses = 1
+				cost_reduction = 0.5
+				uses = 2
 				category = land_doctrine
 			}	
 				
@@ -3091,20 +3122,12 @@ focus_tree = {
 					add_ideas = jap_kwantung_army_3
 					add_doctrine_cost_reduction = {
 						name = land_doc_bonus
-						cost_reduction = 0.4
+						cost_reduction = 0.5
 						uses = 1
 						category = land_doctrine
 					}
 				}
-				RCC = {
-					add_ideas = jap_kwantung_army_5
-					add_doctrine_cost_reduction = {
-						name = land_doc_bonus
-						cost_reduction = 0.4
-						uses = 1
-						category = land_doctrine
-					}
-				}
+				
 				JAP = {
 					add_ideas = jap_kwantung_army_4
 				}
@@ -3116,9 +3139,7 @@ focus_tree = {
 					MAN = {
 						add_ideas = jap_fuel_tank_bonus
 					}
-					RCC = {
-						add_ideas = jap_fuel_tank_bonus
-					}
+					
 					CHI = {
 						add_ideas = jap_fuel_tank_bonus
 					}
@@ -3188,6 +3209,57 @@ focus_tree = {
 					every_state = {
 						limit = {
 							OR = {
+							state = 622
+							state = 744
+							state = 820
+							state = 750
+							state = 748
+							state = 325
+							state = 603
+							}
+						}
+						add_province_modifier = {
+							static_modifiers = { china_extra_supply_consumtpion }
+							province = {
+								all_provinces = yes
+							}
+						}
+					}
+					every_state = {
+						limit = {
+							OR = {
+							state = 283
+							state = 753
+							state = 605
+							state = 751
+							state = 747
+							state = 601
+							state = 752
+
+							state = 753
+							state = 616
+							state = 754
+							state = 604
+							state = 755
+							state = 756
+							state = 759
+							state = 760
+							state = 617
+							state = 618
+							state = 287
+							state = 619
+							}
+						}
+						add_province_modifier = {
+							static_modifiers = { china_extra_supply_consumtpion2 }
+							province = {
+								all_provinces = yes
+							}
+						}
+					}
+					every_state = {
+						limit = {
+							OR = {
 							state = 608
 							state = 621
 							state = 614
@@ -3222,7 +3294,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = JAP_intervene_in_china
 
-		cost = 3.6
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 4
@@ -3252,13 +3324,13 @@ focus_tree = {
 			608 = {
 				add_resource = {
 					type = aluminium
-					amount = 6
+					amount = 18
 				}
 			}
 			613 = {
 				add_resource = {
 					type = aluminium
-					amount = 6
+					amount = 18
 				}
 			}
 		
@@ -3280,19 +3352,19 @@ focus_tree = {
 					}
 					
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
 					instant_build = yes
-					level = 2
+					level = 3
 				}
 			}
 			random_core_state = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
 					instant_build = yes
-					level = 2
+					level = 3
 				}
 			}
 		}
@@ -3306,7 +3378,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = JAP_intervene_in_china
 
-		cost = 3.6
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 4
@@ -3339,19 +3411,19 @@ focus_tree = {
 			615 = {
 				add_resource = {
 					type = steel
-					amount = 3
+					amount = 9
 				}
 			}
 			597 = {
 				add_resource = {
 					type = steel
-					amount = 3
+					amount = 9
 				}
 			}
 			598 = {
 				add_resource = {
 					type = steel
-					amount = 3
+					amount = 9
 				}
 			}	
 		
@@ -3374,19 +3446,19 @@ focus_tree = {
 					}
 					
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
 					instant_build = yes
-					level = 2
+					level = 3
 				}
 			}
 			random_core_state = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
 					instant_build = yes
-					level = 2
+					level = 3
 				}
 			}		
 		}
@@ -3438,7 +3510,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = JAP_co_prosperity_sphere
 
-		cost = 3.6
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 1
@@ -3467,29 +3539,24 @@ focus_tree = {
 		completion_reward = {
 
 			671= {
-				add_compliance = 10
+				add_compliance = 30
 			}
 			670= {
-				add_compliance = 10
+				add_compliance = 30
 			}
 			286= {
-				add_compliance = 10
+				add_compliance = 30
 			}
 			741= {
-				add_compliance = 10
+				add_compliance = 30
 			}
 			289= {
-				add_compliance = 10
+				add_compliance = 30
 			}
 			724= {
-				add_compliance = 10
+				add_compliance = 30
 			}	
-			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.4
-				uses = 1
-				category = land_doctrine
-			}
+			
 
 			
 		}
@@ -3540,7 +3607,7 @@ focus_tree = {
 					}
 				}
 				
-				add_compliance = 30
+				add_compliance = 40
 			}
 			336 = {
 		    	add_building_construction = {
@@ -3617,7 +3684,11 @@ focus_tree = {
 				
 	    	  	add_resource = {
 			    	type = oil
-			    	amount = 15
+			    	amount = 45
+		     	}
+				add_resource = {
+			    	type = aluminium
+			    	amount = 45
 		     	}
 				set_building_level = {
 					type = air_base
@@ -3642,7 +3713,15 @@ focus_tree = {
 				}
 	    	  	add_resource = {
 			    	type = oil
-			    	amount = 15
+			    	amount = 45
+		     	}
+				add_resource = {
+			    	type = aluminium
+			    	amount = 20
+		     	}
+				add_resource = {
+			    	type = steel
+			    	amount = 20
 		     	}
 				set_building_level = {
 					type = air_base
@@ -3667,7 +3746,11 @@ focus_tree = {
 				}
 	    	  	add_resource = {
 			    	type = oil
-			    	amount = 20
+			    	amount = 60
+		     	}
+				add_resource = {
+			    	type = steel
+			    	amount = 45
 		     	}
 				set_building_level = {
 					type = air_base
@@ -3692,7 +3775,7 @@ focus_tree = {
 				}
 	    	  	add_resource = {
 			    	type = steel
-			    	amount = 30
+			    	amount = 90
 		     	}
 				set_building_level = {
 					type = air_base
@@ -3765,13 +3848,11 @@ focus_tree = {
 							artillery_brigade  = { x = 4 y = 1 }	
 						}
 						support = {
-							artillery = { x = 0 y = 0 } 
-							engineer = { x = 0 y = 1 } 		
+							artillery = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
 							recon = { x = 0 y = 2 }
-							pack_artillery = { x = 0 y = 3 }
 							logistics_company = { x = 1 y = 0 }
-							anti_air_company = { x = 1 y = 1 }
-							field_gun_support = { x = 1 y = 2 }
+							field_gun_support = { x = 1 y = 1 }
 						}
 
 						priority = 2
@@ -3891,7 +3972,7 @@ focus_tree = {
 					}
 				}
 				
-				add_compliance = 30
+				add_compliance = 40
 			}
 			
 			623 = {
@@ -3962,33 +4043,44 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MANspace
 			add_resource = {
+				type = steel
+				amount = 45
+				state = 327
+			}
+			add_resource = {
 				type = chromium
-				amount = 8
+				amount = 24
+				state = 623
+			}
+
+			add_resource = {
+				type = aluminium
+				amount = 30
 				state = 623
 			}
 			add_resource = {
 				type = chromium
-				amount = 6
+				amount = 30
 				state = 624
 			}
 			add_resource = {
 				type = rubber
-				amount = 5
+				amount = 15
 				state = 623
 			}
 			add_resource = {
 				type = rubber
-				amount = 5
+				amount = 15
 				state = 327
 			}
 			add_resource = {
 				type = rubber
-				amount = 5
+				amount = 15
 				state = 627
 			}
 			add_resource = {
 				type = rubber
-				amount = 5
+				amount = 15
 				state = 628
 			}
 			623 = {
@@ -4133,6 +4225,33 @@ focus_tree = {
 			
 		}
 		completion_reward = {
+			
+			840 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			613 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
 			custom_effect_tooltip = dev_of_china_jap_tt
 			hidden_effect = {
 				every_state = {
@@ -4281,11 +4400,11 @@ focus_tree = {
 		prerequisite = {
 			focus = JAP_intervene_in_china
 		}
-		x = -4
+		x = -5
 		y = 1
 		relative_position_id = JAP_intervene_in_china
 
-		cost = 2.9
+		cost = 2
 
 		ai_will_do = {
 			factor = 4
@@ -4321,9 +4440,7 @@ focus_tree = {
 		
 		}
 
-		bypass = {
-
-		}
+	
 		completion_reward = {
 			set_country_flag = { flag = JAP_offensive_going_on value = 1 days = 180 }
 			if = {
@@ -4366,9 +4483,9 @@ focus_tree = {
 				}
 				
 			}
-			JAP_change_of_max_states = yes
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = JAP_increase_amount_of_occupied_states_tt
+			#JAP_change_of_max_states = yes
+			#custom_effect_tooltip = generic_skip_one_line_tt
+			#custom_effect_tooltip = JAP_increase_amount_of_occupied_states_tt
 		}
 
 	}
@@ -4393,15 +4510,19 @@ focus_tree = {
 			has_war_with = CHI
 			NOT = {
 				has_war_with = USA
+				
 			}
-
-			date > 1940.8.1
+			OR = {
+				date > 1940.8.1
+				casualties > 800000
+			}
 			CHI = {
-				controls_state = 750
-				controls_state = 748
-				controls_state = 747
-				controls_state = 744
+				surrender_progress < 0.65
 			}
+			
+
+
+			
 		
 		}
 
@@ -4415,10 +4536,7 @@ focus_tree = {
 		completion_reward = {
 
 			hidden_effect = {
-				add_timed_idea = {
-					idea = JAP_freeze_front_idea
-					days = 180
-				}
+				set_global_flag = JAP_did_freeze_frontlines_flag
 				every_state = {
 					limit = {
 						OR = {
@@ -4433,7 +4551,7 @@ focus_tree = {
 						}
 						
 					}
-					add_dynamic_modifier = { modifier = JAP_freeze_front_dynamic days = 180 }
+					add_dynamic_modifier = { modifier = JAP_freeze_front_dynamic  }
 				}
 
 				every_state = {
@@ -4511,7 +4629,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = JAP_the_conquest_of_china
 
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 4
@@ -4618,9 +4736,9 @@ focus_tree = {
 				
 				
 			}
-			JAP_change_of_max_states = yes
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = JAP_increase_amount_of_occupied_states_tt
+			#JAP_change_of_max_states = yes
+			#custom_effect_tooltip = generic_skip_one_line_tt
+			#custom_effect_tooltip = JAP_increase_amount_of_occupied_states_tt
 		}
 
 	}
@@ -4634,7 +4752,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = JAP_the_conquest_of_china
 
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 4
@@ -4716,9 +4834,9 @@ focus_tree = {
 					add_resistance_target = 30 
 				}
 				JAP = {
-					transfer_state = 744
+					transfer_state = 821
 				}
-				744 = {
+				821 = {
 					set_resistance = 55
 					add_resistance_target = 30 
 				}
@@ -4740,12 +4858,13 @@ focus_tree = {
 					}
 					
 				}
+			
 				
 				
 			}
-			JAP_change_of_max_states = yes
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = JAP_increase_amount_of_occupied_states_tt
+			#JAP_change_of_max_states = yes
+			##custom_effect_tooltip = generic_skip_one_line_tt
+			#custom_effect_tooltip = JAP_increase_amount_of_occupied_states_tt
 		}
 
 	}
@@ -4759,7 +4878,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = JAP_the_conquest_of_china
 
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 4
@@ -4866,9 +4985,9 @@ focus_tree = {
 				
 				
 			}
-			JAP_change_of_max_states = yes 
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = JAP_increase_amount_of_occupied_states_tt
+			#JAP_change_of_max_states = yes 
+			#custom_effect_tooltip = generic_skip_one_line_tt
+			#custom_effect_tooltip = JAP_increase_amount_of_occupied_states_tt
 		}
 
 	}
@@ -4882,7 +5001,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = JAP_the_conquest_of_china
 
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 4
@@ -4995,9 +5114,9 @@ focus_tree = {
 				
 				
 			}
-			JAP_change_of_max_states = yes 
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = JAP_increase_amount_of_occupied_states_tt
+			#JAP_change_of_max_states = yes 
+			#custom_effect_tooltip = generic_skip_one_line_tt
+			#custom_effect_tooltip = JAP_increase_amount_of_occupied_states_tt
 		}
 
 	}
@@ -5022,6 +5141,9 @@ focus_tree = {
 			has_war_with = USA
 			NOT = {
 				has_idea = JAP_freeze_front_idea
+			}
+			CHI = {
+				surrender_progress < 0.65
 			}
 
 		}
@@ -5066,28 +5188,44 @@ focus_tree = {
 					days = 180
 				}
 			}
-			else = {
-				hidden_effect = {
-					every_state = {
-						limit = {
-							is_core_of = CHI
-							NOT = {
-								state = 747
-								state = 745
-								state = 524
-								is_core_of = MAN
-								
-							}
-						}
-						remove_province_modifier = {
-							static_modifiers = { china_speed2 }
-							province = {
-								all_provinces = yes
-							}
-						}
+			else_if = {
+				limit = {
+					282 = {
+						has_state_flag = no_china_war_state_flag
 					}
 				}
-				custom_effect_tooltip = JAP_final_china_offensive_tt
+				custom_effect_tooltip = JAP_scripted_final_offensive_tt
+				JAP = {
+					add_dynamic_modifier = {
+                        modifier = JAP_scripted_final_offensive
+						days = 365
+                    }
+				}
+				
+				
+			}
+			else = {
+				#hidden_effect = {
+					#every_state = {
+						#limit = {
+							#is_core_of = CHI
+							#NOT = {
+							#	state = 747
+							#	state = 745
+							#	state = 524
+							#	is_core_of = MAN
+								
+							#}
+						#}
+						#remove_province_modifier = {
+							#static_modifiers = { china_speed2 }
+							#province = {
+							#	all_provinces = yes
+							#}
+						#}
+					#}
+				#}
+				#custom_effect_tooltip = JAP_final_china_offensive_tt
 				JAP ={
 					add_timed_idea = {
 						idea = JAP_china_bonus2
@@ -5124,7 +5262,7 @@ focus_tree = {
 	y = 1
 	relative_position_id = JAP_intervene_in_china
 
-	cost = 2.9
+	cost = 5
 
 	ai_will_do = {
 		factor = 4
@@ -5140,9 +5278,7 @@ focus_tree = {
 					}
 				}
 			}
-			RCC= {
-				has_completed_focus = RCC_recognised_at_once
-			}
+			
 			has_war_with = CHI
 			OR = {
 				date > 1939.1.1
@@ -5177,38 +5313,6 @@ focus_tree = {
 		
 		if = {
 			limit = {
-				282 = {
-					NOT = {
-						has_state_flag = no_china_war_state_flag
-						has_state_flag = no_partial_china_war_state_flag
-					}
-				}
-			}
-			hidden_effect = {
-			if = {
-				limit = {
-					has_idea = jap_kwantung_army_4
-					}
-					army_experience = 2000
-				}
-				else = {
-					army_experience = 155
-				}
-			}	
-			custom_effect_tooltip = JAP_get_100xp_tt
-			IF = {		
-				limit = {
-					RCC ={
-						NOT = {
-							has_completed_focus = RCC_wang_our_dear_leader
-						}
-					}
-				}
-				RCC = {complete_national_focus = RCC_wang_our_dear_leader }
-			}
-		}
-		if = {
-			limit = {
 				OR = {
 					JAP = {
 						controls_state = 608
@@ -5220,7 +5324,7 @@ focus_tree = {
 				
 			}
 			608 = {
-				add_compliance = 10
+				add_compliance = 30
 			}
 		}
 		if = {
@@ -5236,7 +5340,7 @@ focus_tree = {
 			
 			}
 			614 = {
-				add_compliance = 10
+				add_compliance = 30
 			}
 		}
 		if = {
@@ -5251,7 +5355,7 @@ focus_tree = {
 				}
 			}
 			598 = {
-				add_compliance = 10
+				add_compliance = 30
 			}
 		}
 		if = {
@@ -5267,7 +5371,7 @@ focus_tree = {
 				}
 			}
 			613 = {
-				add_compliance = 10
+				add_compliance = 30
 			}
 		}
 		if = {
@@ -5282,9 +5386,61 @@ focus_tree = {
 				}
 			}
 			597 = {
-				add_compliance = 10
+				add_compliance = 30
 			}
 		}
+		if = {
+			limit = {
+				OR = {
+					JAP = {
+						controls_state = 840
+					}
+					RCC = {
+						controls_state = 840
+					}
+				}
+			}
+			840 = {
+				add_compliance = 30
+			}
+		}
+		608 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			614 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			597 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			598 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 	
 		
 		}
@@ -5300,7 +5456,7 @@ focus_tree = {
 	y = 2
 	relative_position_id = JAP_wang_jingwes_regime
 
-	cost = 2.9
+	cost = 5
 
 	ai_will_do = {
 		factor = 4
@@ -5317,19 +5473,24 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
+			
+			
+
 			hidden_effect = {
+				
 				if = {
 					limit = {
 						has_idea = jap_kwantung_army_4
 					}
 					army_experience = 2000
 				}
+				
 				else = {
-					army_experience = 155
+					army_experience = 154
 				}
 			}
 			custom_effect_tooltip = JAP_get_100xp_tt
@@ -5926,6 +6087,36 @@ focus_tree = {
 					instant_build = yes	
 				}
 			}
+			random_state = {
+				limit = {
+					NOT = {	
+						state = 745
+						state = 524
+						state = 839
+						is_core_of = MAN
+					}
+					is_core_of = CHI 
+					OR = {
+						is_controlled_by = RCC 
+						is_controlled_by = JAP 
+					}
+				}
+				add_resistance_target = {
+					amount = 7
+				}			
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes	
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes	
+				}
+			}
 		}
 	}
 
@@ -6089,7 +6280,7 @@ focus_tree = {
 	y = 2
 	relative_position_id = JAP_increase_work_quotas
 
-	cost = 2.9
+	cost = 5
 
 	ai_will_do = {
 		factor = 4
@@ -6169,23 +6360,23 @@ focus_tree = {
 					}
 					add_resource = {
 						type = aluminium
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = oil
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = tungsten
-						amount = 4
+						amount = 12
 					}
 					add_resource = {
 						type = steel
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = chromium
-						amount = 2
+						amount = 6
 					}
 				}
 			}
@@ -6199,23 +6390,23 @@ focus_tree = {
 					}
 					add_resource = {
 						type = aluminium
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = oil
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = tungsten
-						amount = 4
+						amount = 12
 					}
 					add_resource = {
 						type = steel
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = chromium
-						amount = 2
+						amount = 6
 					}
 				}
 			}
@@ -6229,23 +6420,23 @@ focus_tree = {
 					}
 					add_resource = {
 						type = aluminium
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = oil
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = tungsten
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = steel
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = chromium
-						amount = 2
+						amount = 6
 					}
 				}
 			}
@@ -6322,23 +6513,23 @@ focus_tree = {
 					}
 					add_resource = {
 						type = aluminium
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = oil
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = tungsten
-						amount = 4
+						amount = 12
 					}
 					add_resource = {
 						type = steel
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = chromium
-						amount = 2
+						amount = 6
 					}
 				}
 			}
@@ -6358,23 +6549,23 @@ focus_tree = {
 					}
 					add_resource = {
 						type = aluminium
-						amount = 2
+						amount = 6
 					}
 					add_resource = {
 						type = oil
-						amount = 2
+						amount = 6
 					}
 					add_resource = {
 						type = tungsten
-						amount = 3
+						amount = 9
 					}
 					add_resource = {
 						type = steel
-						amount = 2
+						amount = 6
 					}
 					add_resource = {
 						type = chromium
-						amount = 2
+						amount = 6
 					}
 				}
 			}
@@ -6450,9 +6641,9 @@ focus = {
 	id = JAP_the_spoils_of_china
 	icon = GFX_JAP_spoils
 	prerequisite = {
-		focus = JAP_intervene_in_china
+		focus = JAP_develop_chinese_aluminium focus = JAP_develop_chinese_steel
 	}
-	x = 0
+	x = -1
 	y = 2
 	relative_position_id = JAP_intervene_in_china
 
@@ -6554,22 +6745,304 @@ focus = {
 						}
 						
 					}
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 					add_resource = {
 						type = steel
-						amount = 1
+						amount = 3
 					}
 					add_resource = {
 						type = aluminium
-						amount = 1
+						amount = 3
 					}
 						
 				}
+			}
+
+		}
+	}
+}
+focus = {
+	id = JAP_own_destiny
+	icon = GFX_z_goal_CSR_united_government
+	prerequisite = {
+		focus = JAP_develop_chinese_aluminium focus = JAP_develop_chinese_steel
+	}
+	x = 1
+	y = 2
+	relative_position_id = JAP_intervene_in_china
+
+	cost = 2.9
+
+	ai_will_do = {
+		factor = 4
+	}
+
+	available = {
+		has_full_control_of_state = 608
+		has_full_control_of_state = 614
+		has_full_control_of_state = 840
+		has_full_control_of_state = 613
+		date > 1939.01.01
+		has_war_with = CHI
+			
+	}
+
+	bypass = {
+	}
+	completion_reward = {
+		custom_effect_tooltip = RCC_spawn_in_core_states_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						RCC = {
+							NOT = {
+								OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
+							}
+						}
+					}
+					division_template = {
+						name = "Zhōng wáng dàduì"		
+						division_names_group = JAP_INF_01
+			
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							
+							volkssturm_infantry = { x = 1 y = 0 }
+							volkssturm_infantry = { x = 1 y = 1 }
+							volkssturm_infantry = { x = 1 y = 2 }
+								
+							volkssturm_infantry = { x = 2 y = 0 }
+							volkssturm_infantry = { x = 2 y = 1 }
+							volkssturm_infantry = { x = 2 y = 2 }
+			
+							field_gun_brigade = { x = 3 y = 0 }
+							field_gun_brigade = { x = 3 y = 1 }
+							field_gun_brigade = { x = 3 y = 2 }		
+			
+							artillery_brigade = { x = 4 y = 0 }
+							artillery_brigade = { x = 4 y = 1 }
+							artillery_brigade = { x = 4 y = 2 }	
+						}
+						support = {
+							artillery = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
+							artillery_heavy_support = { x = 1 y = 0 }
+						}	
+						
+						priority = 1
+					}
+				}
+				else = {
+					division_template = {
+						name = "Zhōng wáng dàduì"		
+						division_names_group = JAP_INF_01
+			
+						regiments = {
+							volkssturm_infantry = { x = 0 y = 0 }
+							volkssturm_infantry = { x = 0 y = 1 }
+							volkssturm_infantry = { x = 0 y = 2 }
+							volkssturm_infantry = { x = 0 y = 3 }
+							
+							volkssturm_infantry = { x = 1 y = 0 }
+							volkssturm_infantry = { x = 1 y = 1 }
+							volkssturm_infantry = { x = 1 y = 2 }
+							volkssturm_infantry = { x = 1 y = 3 }
+								
+							volkssturm_infantry = { x = 2 y = 0 }
+							volkssturm_infantry = { x = 2 y = 1 }
+							volkssturm_infantry = { x = 2 y = 2 }
+							volkssturm_infantry = { x = 2 y = 3 }
+			
+							field_gun_brigade = { x = 3 y = 0 }
+							field_gun_brigade = { x = 3 y = 1 }
+							field_gun_brigade = { x = 3 y = 2 }		
+			
+							artillery_brigade = { x = 4 y = 0 }
+							artillery_brigade = { x = 4 y = 1 }
+							artillery_brigade = { x = 4 y = 2 }	
+						}
+						support = {
+							artillery = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
+							artillery_heavy_support = { x = 1 y = 0 }
+						}	
+						
+						priority = 1
+					}
+				}
+				every_state = {
+					limit = {	
+						OR = {
+							state = 608
+							state = 614
+							state = 840
+							state = 613
+						}
+						
+					}
+						create_unit = {
+							division = "division_template = \"Zhōng wáng dàduì\" start_experience_factor = 0 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_0 = { owner = \"RCC\" }} "
+							owner = JAP
+						}
+						create_unit = {
+							division = "division_template = \"Zhōng wáng dàduì\" start_experience_factor = 0 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_0 = { owner = \"RCC\" }} "
+							owner = JAP
+						}
+						create_unit = {
+							division = "division_template = \"Zhōng wáng dàduì\" start_experience_factor = 0 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_0 = { owner = \"RCC\" }} "
+							owner = JAP
+						}
+						create_unit = {
+							division = "division_template = \"Zhōng wáng dàduì\" start_experience_factor = 0 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_0 = { owner = \"RCC\" }} "
+							owner = JAP
+						}
+						create_unit = {
+							division = "division_template = \"Zhōng wáng dàduì\" start_experience_factor = 0 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_0 = { owner = \"RCC\" }} "
+							owner = JAP
+						}
+				}
+
+			}
+	}
+}
+focus = {
+	id = JAP_reorganize_chinese_milita
+	icon = GFX_z_goal_chinese_soldiers
+	prerequisite = {
+		focus = JAP_develop_chinese_aluminium focus = JAP_develop_chinese_steel
+	}
+	x = 0
+	y = 3
+	relative_position_id = JAP_intervene_in_china
+
+	cost = 2.9
+
+	ai_will_do = {
+		factor = 4
+	}
+
+	available = {
+		has_war_with = CHI
+			
+	}
+
+	bypass = {
+	}
+	completion_reward = {
+		custom_effect_tooltip = RCC_spawn_army_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					JAP = {
+						NOT = {
+							OR = {
+								has_tech = width_tech_chi
+								has_tech = width_tech_sov
+								has_tech = width_tech
+							}
+						}
+					}
+				}
+				division_template = {
+					name = "Rénmen huì"		
+					division_names_group = JAP_INF_01
+		
+					regiments = {
+						volkssturm_infantry = { x = 0 y = 0 }
+						volkssturm_infantry = { x = 0 y = 1 }
+						volkssturm_infantry = { x = 0 y = 2 }
+						
+						volkssturm_infantry = { x = 1 y = 0 }
+						volkssturm_infantry = { x = 1 y = 1 }
+						volkssturm_infantry = { x = 1 y = 2 }
+							
+						volkssturm_infantry = { x = 2 y = 0 }
+						volkssturm_infantry = { x = 2 y = 1 }
+						volkssturm_infantry = { x = 2 y = 2 }
+		
+						volkssturm_infantry = { x = 3 y = 0 }
+						volkssturm_infantry = { x = 3 y = 1 }
+						volkssturm_infantry = { x = 3 y = 2 }		
+		
+						volkssturm_infantry = { x = 4 y = 0 }
+						volkssturm_infantry = { x = 4 y = 1 }
+						volkssturm_infantry = { x = 4 y = 2 }	
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+					}	
+					
+					priority = 1
+				}
+			}
+			else = {
+				division_template = {
+					name = "Rénmen huì"		
+					division_names_group = JAP_INF_01
+		
+					regiments = {
+						volkssturm_infantry = { x = 0 y = 0 }
+						volkssturm_infantry = { x = 0 y = 1 }
+						volkssturm_infantry = { x = 0 y = 2 }
+						volkssturm_infantry = { x = 0 y = 3 }
+						
+						volkssturm_infantry = { x = 1 y = 0 }
+						volkssturm_infantry = { x = 1 y = 1 }
+						volkssturm_infantry = { x = 1 y = 2 }
+						volkssturm_infantry = { x = 1 y = 3 }
+							
+						volkssturm_infantry = { x = 2 y = 0 }
+						volkssturm_infantry = { x = 2 y = 1 }
+						volkssturm_infantry = { x = 2 y = 2 }
+						volkssturm_infantry = { x = 2 y = 3 }
+		
+						volkssturm_infantry = { x = 3 y = 0 }
+						volkssturm_infantry = { x = 3 y = 1 }
+						volkssturm_infantry = { x = 3 y = 2 }	
+						volkssturm_infantry = { x = 3 y = 3 }	
+		
+						volkssturm_infantry = { x = 4 y = 0 }
+						volkssturm_infantry = { x = 4 y = 1 }
+						volkssturm_infantry = { x = 4 y = 2 }	
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+					}	
+					
+					priority = 1
+				}
+			}
+		every_state = {
+				limit = {	
+					OR = {
+						state = 608
+						state = 614
+						state = 597
+						state = 598
+						state = 606
+						state = 613
+						state = 840
+					}
+				}
+				create_unit = {
+					division = "division_template = \"Rénmen huì\" start_experience_factor = 0 start_equipment_factor = 1.0 force_equipment_variants = { infantry_equipment_0 = { owner = \"JAP\" }} "
+					owner = JAP
+					count = 6
+				}
+					
 			}
 
 		}
@@ -7211,9 +7684,9 @@ focus = {
 					has_war_with = USA 
 				}
 			}
-			JAP_change_of_max_states_just_one = yes
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = JAP_increase_amount_of_occupied_states_one_tt
+			#JAP_change_of_max_states_just_one = yes
+			#custom_effect_tooltip = generic_skip_one_line_tt
+			#custom_effect_tooltip = JAP_increase_amount_of_occupied_states_one_tt
 		}
 	}
 	}
@@ -7247,12 +7720,7 @@ focus = {
 					is_controlled_by = RCC
 				}
 			}
-			603 = {
-				OR = {
-					is_controlled_by = JAP 
-					is_controlled_by = RCC
-				}
-			}
+			
 			747 = {
 				OR = {
 					is_controlled_by = JAP 
@@ -7752,9 +8220,9 @@ focus = {
 					has_war_with = USA 
 				}
 			}
-			JAP_change_of_max_states_just_one = yes
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = JAP_increase_amount_of_occupied_states_one_tt
+			#JAP_change_of_max_states_just_one = yes
+			#custom_effect_tooltip = generic_skip_one_line_tt
+			#custom_effect_tooltip = JAP_increase_amount_of_occupied_states_one_tt
 		}
 	}
 
@@ -8292,9 +8760,9 @@ focus = {
 					has_war_with = USA 
 				}
 			}
-			JAP_change_of_max_states_just_one = yes
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = JAP_increase_amount_of_occupied_states_one_tt
+			#JAP_change_of_max_states_just_one = yes
+			#custom_effect_tooltip = generic_skip_one_line_tt
+			#custom_effect_tooltip = JAP_increase_amount_of_occupied_states_one_tt
 		}
 	
 		
@@ -8395,7 +8863,7 @@ focus = {
 		y = 1
 		relative_position_id = JAP_ascension_of_the_fleet_faction
 
-		cost = 4.3
+		cost = 3.6
 
 		ai_will_do = {
 			factor = 10
@@ -8453,7 +8921,7 @@ focus = {
 		y = 1
 		relative_position_id = JAP_ascension_of_the_fleet_faction
 
-		cost = 4.3
+		cost = 3.6
 
 		ai_will_do = {
 			factor = 10
@@ -8475,7 +8943,7 @@ focus = {
 			navy_experience = 100
 			add_doctrine_cost_reduction = {
 				name = land_doctrine
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 3
 				category = naval_doctrine
 			}
@@ -8497,7 +8965,7 @@ focus = {
 		y = 2
 		relative_position_id = JAP_ascension_of_the_fleet_faction
 
-		cost = 4.3
+		cost = 3.6
 
 		ai_will_do = {
 			factor = 100
@@ -8545,7 +9013,7 @@ focus = {
 		y = 0
 		relative_position_id = JAP_strike_south_battleline
 
-		cost = 4.3
+		cost = 3.6
 
 		ai_will_do = {
 			factor = 1
@@ -8660,7 +9128,7 @@ focus = {
 		y = 1
 		relative_position_id = JAP_northern_expansion_doctrine
 
-		cost = 3.6
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 100
@@ -8682,6 +9150,12 @@ focus = {
 		completion_reward = {
 			##JAP_lose_overextension = yes
 			MAN = {
+				custom_effect_tooltip = MAN_recruitable_tt_jap
+					add_to_variable = {
+						var = MAN_military_industry_dm_industrial_capacity_factory
+						value = 0.025
+						tooltip = industrial_capacity_factory_tooltip
+					}
 				random_owned_controlled_state = {
 					limit = {
 						is_fully_controlled_by = MAN
@@ -8700,32 +9174,23 @@ focus = {
 					}
 				}
 			}
-			RCC = {
-				if = {
-					limit = {
-						609 = { 
-							OR = {
-								is_controlled_by = JAP
-								is_controlled_by = RCC
-							}
-						}
-					}
-					609 = {
-						add_extra_state_shared_building_slots = 4
-						add_building_construction = {
-							type = arms_factory
-							level = 4
-							instant_build = yes 
-						}
-						add_building_construction = {
-							type = air_base
-							level = 2
-							instant_build = yes 
-						}					
-					}
+			
+			609 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes 
 				}
-					
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes 
+				}					
 			}
+			
+					
+			
 			745 = {
 				set_building_level = {
 					type = air_base
@@ -8767,7 +9232,7 @@ focus = {
 				name = arty_bonus
 				bonus = 0.5
 				uses = 2
-				category = artillery
+				category = cat_artillery
 			}
 			random_owned_controlled_state = {
 				limit = {
@@ -8796,7 +9261,7 @@ focus = {
 		y = 1
 		relative_position_id = JAP_domestic_military_infrastructure
 
-		cost = 3.6
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 1
@@ -8831,15 +9296,7 @@ focus = {
 				}
 
 			}
-			RCC = {
-				add_tech_bonus = {
-					technology = jap_1942_super_heavy_tank_chassis
-					uses = 1
-					bonus = 3
-					name = JAP_ultimate_tank 
-				}
-
-			}
+			
 		}
 	}
 	focus = {
@@ -8880,15 +9337,10 @@ focus = {
 					modifier = jap_hostile_status
 				}
 			}	
-			RCC= {
-				add_opinion_modifier = {
-					target = SOV
-					modifier = jap_hostile_status
-				}
-			}	
+				
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
@@ -8899,10 +9351,11 @@ focus = {
 					}
 					army_experience = 2000
 				}
+				
 				else = {
-					army_experience = 155
+					army_experience = 154
 				}
-			}	
+			}
 			custom_effect_tooltip = JAP_get_100xp_tt
 			
 		}
@@ -8915,7 +9368,7 @@ focus = {
 		relative_position_id = JAP_nomonhan_incident
 		prerequisite = { focus = JAP_nomonhan_incident }
 		prerequisite = { focus = JAP_strike_south_battleline }
-		cost = 4.3
+		cost = 5
 
 		ai_will_do = {
 			factor = 100
@@ -8934,19 +9387,21 @@ focus = {
 
 
 		completion_reward = {
+			custom_effect_tooltip = JAP_looks_east_tt
+			custom_effect_tooltip = MANspace
 		diplomatic_relation = { country = SOV relation = non_aggression_pact }	
 		custom_effect_tooltip =  JAP_pacific_war_explanation_category_tt
 			JAP_interservice_rivalry_towards_navy = yes	
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 1
 				category = naval_doctrine
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.4
-				uses = 1
+				cost_reduction = 0.5
+				uses = 2
 				category = land_doctrine
 			}
 			navy_experience = 50
@@ -8961,7 +9416,20 @@ focus = {
 					army_experience = 155
 				}
 			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea = jap_kwantung_army_4
+					}
+					army_experience = 2000
+				}
+				
+				else = {
+					army_experience = 154
+				}
+			}
 			custom_effect_tooltip = JAP_get_100xp_tt
+			custom_effect_tooltip = MANspace
 			if = {
 				limit = {
 					282 = {
@@ -8984,6 +9452,136 @@ focus = {
 				}
 			}
 			
+			hidden_effect = {
+				820 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse  
+						scope = JAP 
+					}
+				}
+				602 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse  
+						scope = JAP 
+					}
+				}
+				599 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse  
+						scope = JAP 
+					}
+				}
+				325 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse  
+						scope = JAP 
+					}
+				}
+				744 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse  
+						scope = JAP 
+					}
+				}
+				622 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse  
+						scope = JAP 
+					}
+				}
+
+
+				747 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse2  
+						scope = JAP 
+					}
+				}
+				750 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse2  
+						scope = JAP 
+					}
+				}
+				
+
+				603 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse2  
+						scope = JAP 
+					}
+				}
+				605 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse2
+						scope = JAP 
+					}
+				}
+				748 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse2
+						scope = JAP 
+					}
+				}
+
+				751 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				752 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				601 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				753 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				283 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				616 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+
+				754 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				604 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				601 = {
+					add_dynamic_modifier = { 
+						modifier = JAP_prevent_collapse3
+						scope = JAP 
+					}
+				}
+				
+			}
+			
 			
 			
 
@@ -8998,7 +9596,7 @@ focus = {
 		y = 1
 		relative_position_id = JAP_strike_south_doctrine
 
-		cost = 3.6
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 1
@@ -9037,7 +9635,7 @@ focus = {
 		relative_position_id = JAP_strike_south_doctrine
 
 
-		cost = 3.6
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 10
@@ -9077,7 +9675,7 @@ focus = {
 		y = 1
 		relative_position_id = JAP_strike_south_doctrine
 
-		cost = 3.6
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 1
@@ -9126,7 +9724,7 @@ focus = {
 		y = 1
 		relative_position_id = JAP_expand_imperial_army_shipping_section
 
-		cost = 3.6
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 1
@@ -9174,7 +9772,7 @@ focus = {
 		y = 1
 		relative_position_id = JAP_strike_south_doctrine
 
-		cost = 3.6
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 50
@@ -9216,7 +9814,7 @@ focus = {
 		y = 1
 		relative_position_id = JAP_expand_imperial_navys_landing_forces
 
-		cost = 3.6
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 50
@@ -9259,7 +9857,7 @@ focus = {
 		y = 1
 		relative_position_id = JAP_strike_south_doctrine
 
-		cost = 3.6
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 1
@@ -9295,7 +9893,7 @@ focus = {
 				custom_effect_tooltip = JAP_modify_army_spirit_tt
 				custom_effect_tooltip = JAP_kempeitai_bonus
 				add_to_variable = {
-					JAP_compliance_gain = 0.01
+					JAP_compliance_gain = 0.015
 				}
 				if = {
 					limit = {
@@ -9307,14 +9905,7 @@ focus = {
 						}
 					}
 
-					custom_effect_tooltip = JAP_kempeitai_bonus2
 					
-					RCC = {
-						add_to_variable = {
-							RCC_compliance_gain = 0.01
-						}
-					
-					}
 				
 				
 				
@@ -9334,7 +9925,7 @@ focus = {
 		relative_position_id = JAP_strike_south_doctrine
 
 
-		cost = 3.6
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 10
@@ -9415,7 +10006,7 @@ focus = {
 			}
 			add_doctrine_cost_reduction = {
 				name = air_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = air_doctrine
 			}			
@@ -9595,7 +10186,7 @@ focus = {
 			}
 			add_doctrine_cost_reduction = {
 				name = air_doc_bonus
-				cost_reduction = 0.4
+				cost_reduction = 0.5
 				uses = 2
 				category = air_doctrine
 			}
@@ -9719,19 +10310,22 @@ focus = {
 				value = 1
 				
 			}
-			sp:sp_air_intercontinental_bomber = {
-				add_project_progress_ratio = 0.25
-			}
-			random_core_state ={
+			if = {
 				limit = {
-					can_construct_building = air_facility
+					has_dlc = Gotterdammerung
 				}
-				construct_building_in_random_province = {
-						air_facility = 1
-				
+				sp:sp_air_intercontinental_bomber = {
+					add_project_progress_ratio = 0.25
+				}
+				random_core_state = {
+					limit = {
+						can_construct_building = air_facility
 					}
+					construct_building_in_random_province = {
+						air_facility = 1
+					}
+				}
 			}
-				
 		}
 	}
 
@@ -10133,18 +10727,30 @@ focus = {
 
 		available = {
 			has_war_with = USA
-			date > 1942.1.1
+			date > 1942.01.01
 			OR = {
-				RAJ = {
-					surrender_progress < 0.2
-					NOT = { RAJ = { has_capitulated = yes } }
+				JAP = {
+						OR = {
+							has_idea = JAP_island_hopping-1
+							has_idea = JAP_island_hopping1
+							has_idea = JAP_island_hopping2
+							has_idea = JAP_island_hopping3
+							has_idea = JAP_island_hopping4
+						}
+					}
+				
+				OR = {
+					RAJ = {
+						surrender_progress < 0.2
+						NOT = { RAJ = { has_capitulated = yes } }
+					}
 				}
-			}
-			OR = {
-				AST = {
-					surrender_progress < 0.2
-					NOT = { AST = { has_capitulated = yes } }				
-				}
+				OR = {
+					AST = {
+						surrender_progress < 0.2
+						NOT = { AST = { has_capitulated = yes } }				
+					}
+				}	
 			}
 		
 		}
@@ -10167,7 +10773,42 @@ focus = {
 			add_to_variable = {
 				JAP_army_defence_factor_var = 0.1
 				tooltip = JAP_defense_bonus
-			}			
+			}	
+			custom_override_tooltip = {
+				tooltip = custom_jap_fortress
+
+				562 = {
+				add_dynamic_modifier = {
+					modifier = jap_fortress
+				}
+				}
+				524 = {
+					add_dynamic_modifier = {
+						modifier = jap_fortress
+					}
+				}
+				645 = {
+					add_dynamic_modifier = {
+						modifier = jap_fortress
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 13318
+					}
+				}
+				844 = {
+					add_dynamic_modifier = {
+						modifier = jap_fortress
+					}
+				}
+				841 = {
+					add_dynamic_modifier = {
+						modifier = jap_fortress
+					}
+				}
+			
+			}	
 		}
 	}
 	focus = {

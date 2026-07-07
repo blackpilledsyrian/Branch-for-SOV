@@ -8,7 +8,7 @@ buildings = {
 	
 	supply_node = {
 		show_on_map = 1
-		base_cost = 14000
+		base_cost = 15000
 	
 		disabled_in_dmz = yes
 		icon_frame = 16
@@ -16,7 +16,7 @@ buildings = {
 		centered = yes
 		supply_node = yes
 		infrastructure_construction_effect = yes
-		damage_factor = 0.1
+		damage_factor = 0.01
 		allied_build = yes
 		always_shown = yes
 		level_cap = {
@@ -24,9 +24,9 @@ buildings = {
 		}
 	}
 	rail_way = {
-		base_cost = 600
-		per_level_extra_cost = 150
-		damage_factor = 0.05
+		base_cost = 650
+		per_level_extra_cost = 200
+		damage_factor = 0.02
 		
 		disabled_in_dmz = yes
 		infrastructure_construction_effect = yes
@@ -54,18 +54,51 @@ buildings = {
 			}
 		}
 	}
+	tank_assembly = {
+		show_on_map = 0
+		base_cost = 8000
+		icon_frame = 31
+		damage_factor = 0
+		per_controlled_building_extra_cost = 1600	
+		#local_resources_tank_production = 100
+		value = 10
+		infrastructure_construction_effect = yes
+		tags = { tank_assembly_tag }
+		
+		level_cap = {
+			shares_slots = yes
+			state_max = 99
+		}
+	}
+	air_assembly = {
+		show_on_map = 0
+		base_cost = 14000
+		icon_frame = 32
+		#local_resources_air_production = 100
+		value = 10
+		damage_factor = 0
+		per_controlled_building_extra_cost = 1000
+		infrastructure_construction_effect = yes
+		tags = { air_assembly_tag }
+		
+		level_cap = {
+			shares_slots = yes
+			state_max = 99
+		}
+	}
+
 	
 	arms_factory = {
 		show_on_map = 6
 		base_cost = 8400
-		base_cost_conversion = 5700
+		base_cost_conversion = 10000
 		military_production = 1
 		icon_frame = 2
 		tags = { military_factories }
 
 		value = 0.5
 		infrastructure_construction_effect = yes
-		damage_factor = 2.3
+		damage_factor = 2
 		level_cap = {
 			shares_slots = yes
 			state_max = 99
@@ -81,7 +114,7 @@ buildings = {
 	
 		value = 0.5
 		infrastructure_construction_effect = yes
-		damage_factor = 2.3
+		damage_factor = 2
 		level_cap = {
 			shares_slots = yes
 			state_max = 99
@@ -95,7 +128,7 @@ buildings = {
 		icon_frame = 5
 		air_base = yes
 		value = 1
-		damage_factor = 0.07
+		damage_factor = 0.05
 		infrastructure_construction_effect = yes
 		allied_build = yes
 		level_cap = {
@@ -126,8 +159,8 @@ buildings = {
 	bunker = {
 		show_on_map = 1
 		has_destroyed_mesh = yes
-		base_cost = 3000
-		per_level_extra_cost = 400
+		base_cost = 4000
+		per_level_extra_cost = 300
 		disabled_in_dmz = yes
 		icon_frame = 7
 		land_fort = 1
@@ -197,7 +230,8 @@ buildings = {
 	
 	synthetic_refinery = {
 		show_on_map = 1
-	    base_cost = 16000
+	    base_cost = 4500
+		per_controlled_building_extra_cost = 1000
 		icon_frame = 10
 	    refinery = yes
 	
@@ -218,10 +252,11 @@ buildings = {
 	}
 	synthetic_rubber_refinery = {
 		show_on_map = 1
-		base_cost = 14000
+		base_cost = 4500
+		per_controlled_building_extra_cost = 1000
 		icon_frame = 11
 		refinery = yes
-		local_resources_rubber = 15	 
+		local_resources_rubber = 15
 		value = 5
 		infrastructure_construction_effect = yes
 		damage_factor = 0.05
@@ -342,8 +377,8 @@ buildings = {
 		}
 		spawn_point = nuclear_reactor_spawn
 		show_on_map = 1
-		base_cost = 50000
-		per_controlled_building_extra_cost = 15000
+		base_cost = 40000
+		per_controlled_building_extra_cost = 10000
 		icon_frame = 14
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		nuclear_reactor = yes
@@ -353,10 +388,10 @@ buildings = {
 
 		country_modifiers = {
 			modifiers = {
-				nuclear_production_factor = 5
-				sp_nuclear_bomb_speed_factor = 0.05
-				sp_thermo_nuclear_bomb_speed_factor = 0.05
-				thermonuclear_production_factor = 4
+				nuclear_production_factor = 3
+				sp_nuclear_bomb_speed_factor = 0.1
+				sp_thermo_nuclear_bomb_speed_factor = 0.1
+				thermonuclear_production_factor = 2
 			}
 		}
 
@@ -375,8 +410,8 @@ buildings = {
 		spawn_point = nuclear_reactor_spawn
 		show_on_map = 1
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
-		base_cost = 40000
-		per_controlled_building_extra_cost = 15000
+		base_cost = 30000
+		per_controlled_building_extra_cost = 10000
 		icon_frame = 14
 		tags = { specialization_nuclear }
 		nuclear_reactor = yes
@@ -475,7 +510,8 @@ buildings = {
 		}
 		spawn_point = nuclear_reactor_spawn
 		show_on_map = 1
-		base_cost = 30000
+		base_cost = 25000
+		per_controlled_building_extra_cost = 7500
 		icon_frame = 28
 		#nuclear_reactor = yes
 		tags = { civilian_reactor_building }
@@ -484,11 +520,10 @@ buildings = {
 		
 		country_modifiers = {
 			modifiers = {
-				nuclear_production_factor = 3
-				thermonuclear_production_factor = 2
+				nuclear_production_factor = 0.75
+				thermonuclear_production_factor = 0.1
 				industrial_capacity_dockyard = 0.04
 				industrial_capacity_factory = 0.04
-				local_resources_factor = -0.02
 			}
 		}
 
@@ -673,6 +708,7 @@ buildings = {
 			
 		}
 	}
+	
 }
 
 spawn_points = {

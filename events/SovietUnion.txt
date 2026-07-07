@@ -153,6 +153,9 @@ country_event = {
 			add_state_core = 147
 		}
 		hidden_effect = {
+			# Soviet administration names after Bessarabia demand succeeds
+			set_province_name = { id = 6727 name = "Belgorod-Dnestrovsky" }
+			set_province_name = { id = 3707 name = "Kishinev" }
 			SOV = {
 				country_event = { days = 1 id = news.10 }
 			}
@@ -197,6 +200,19 @@ country_event = {
 	option = {
 		name = soviet.8.a
 		annex_country = { target = LAT }
+		hidden_effect = {
+			189 = { set_state_name = "Shyaulyay" }
+			11 = { set_state_name = "Kovno" }
+			# Key cities / VPs
+			set_province_name = { id = 9340 name = "Riga" }
+			set_province_name = { id = 310 name = "Daugavpils" }
+			set_province_name = { id = 9262 name = "Liepaya" }
+			set_province_name = { id = 3174 name = "Parnu" }	
+			set_province_name = { id = 6296 name = "Kaunas" }
+			set_province_name = { id = 9483 name = "Shyaulyai" }
+			set_province_name = { id = 3152 name = "Tallin" }
+			set_province_name = { id = 11127 name = "Narva" }
+		}
 	}
 }
 
@@ -3496,7 +3512,7 @@ country_event = {
 country_event = {
     id = soviet.1015
     title = "The Sino-Japanese War Escalates"
-    desc = "The Japanese have mobilized further for their war against the Chinese. We should consider lending them our aid."
+    desc = "The Japanese have mobilized further for their war against China. We should consider lending them our aid."
     picture = GFX_news_event_japan_mobilization
     
     is_triggered_only = yes
@@ -3504,6 +3520,6 @@ country_event = {
     fire_only_once = yes
     
     option = {
-        name = "We must consider our options carefully"
+        name = "We must consider our options carefully."
     }
 }

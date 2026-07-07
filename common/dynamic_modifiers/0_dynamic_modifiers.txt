@@ -23,6 +23,44 @@
 #
 #	can be added to countries, states or unit leaders
 #	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+
+
+tesitng_modifier_aaa = { # on Province			
+	enable = { always = yes }
+	icon = GFX_modifiers_generic_construction
+
+	state_production_speed_arms_factory_factor = -3
+	state_production_speed_industrial_complex_factor = -3
+}
+
+
+italian_plunder = { # on Province			
+	enable = { always = yes }
+	icon = GFX_modifiers_generic_construction
+
+	state_production_speed_arms_factory_factor = -3
+	state_production_speed_industrial_complex_factor = -3
+}
+
+occupation_of_minor = {
+
+	enable = { always = yes }
+	icon = GFX_modifiers_generic_construction
+
+	
+	local_factories = -0.25
+	local_resources = -0.4
+					   
+}
+
+no_assembly_modifier = { # on Province			
+	enable = { always = yes }
+	icon = GFX_modifiers_generic_construction
+
+	state_production_speed_air_assembly_factor = -3
+	state_production_speed_tank_assembly_factor = -3
+}
 JAP_china_resistance = { # on Province			
 	enable = { always = yes }
 	icon = GFX_modifiers_generic_resistance
@@ -105,6 +143,7 @@ SOV_surprise_strike_dynamic = {
 	air_defence_factor = SOV_air_defence_factor_var
 	army_speed_factor = -0.05
 	industrial_capacity_factory = 0.3 
+	
 
 }
 Supply_limit_africa = { 
@@ -196,6 +235,7 @@ GER_arbeitseinsatz_modifier = {
 	icon = GFX_idea_GER_arbeitsinsatz
 	
 	political_power_factor = -0.1
+	operative_slot = 1
 	production_factory_efficiency_gain_factor = GER_arbeitseinsatz_production_factory_efficiency_gain_factor
 	industrial_capacity_factory = GER_arbeitseinsatz_industrial_capacity_factory
 	required_garrison_factor = GER_arbeitseinsatz_required_garrison_factor
@@ -251,10 +291,83 @@ autonomous_state = {
 
 	icon = GFX_modifiers_sabotaged_resource
 	
-	recruitable_population_factor = -0.5
+	recruitable_population_factor = -0.6
 	local_building_slots_factor = -0.25
 	state_resources_factor = -0.25
 	state_production_speed_buildings_factor = -0.25
+}
+limited_autonomous_state = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_supply
+	
+	recruitable_population_factor = -0.25
+	local_building_slots_factor = -0.10
+	state_resources_factor = -0.50
+	state_production_speed_buildings_factor = 0.15
+}
+
+jap_fortress = { # on Province		
+	enable = { always = yes }
+
+	icon = GFX_decision_generic_mountain_fortification
+
+	ground_attack_factor = -0.3
+	air_bombing_targetting = -0.5
+}
+
+gib_fortress = { # on Province	
+	enable = { always = yes }
+
+	icon = GFX_decision_generic_mountain_fortification
+
+	air_mission_efficiency = -0.25
+	ground_attack_factor = -0.25
+	air_bombing_targetting = -0.3
+}
+
+special_administrative_zone = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_supply
+	
+	local_building_slots_factor = 0.15
+	state_resources_factor = 0.1
+	state_production_speed_buildings_factor = 0.1
+	
+}
+
+infrastructure_mission_reward_1 = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_supply
+	
+	state_resources_factor = 0.05
+	state_production_speed_buildings_factor = 0.05
+}
+infrastructure_mission_reward_2 = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_supply
+	
+	state_resources_factor = 0.10
+	state_production_speed_buildings_factor = 0.10
+}
+infrastructure_mission_reward_3 = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_supply
+	
+	state_resources_factor = 0.15
+	state_production_speed_buildings_factor = 0.15
+}
+infrastructure_mission_reward_4 = {
+	enable = { always = yes }
+
+	icon = GFX_idea_GER_arbeitsinsatz
+	
+	state_resources_factor = 0.15
+	state_production_speed_buildings_factor = 0.15
 }
 
 semi_autonomous_state = {
@@ -679,7 +792,7 @@ turanist_assimilation = {
 
 	icon = GFX_modifiers_tur_pan_turkic_propaganda
 	
-	non_core_manpower = 0.25
+	local_non_core_manpower  = 0.25
 	compliance_growth = 0.05
 	resistance_growth = -0.1
 }
@@ -690,27 +803,32 @@ CHI_no_more_no_supply = {
 
 	icon = GFX_idea_generic_fortify_the_borders
 
-	local_supplies_for_controller = 3
+	attrition = -1
+	
+
 }
 CHI_tougher_resistance0 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
+    icon = GFX_modifier_generic_sabotage
 	compliance_growth = -0.2
 	resistance_growth = 0.2
-	resistance_target = 0.1
+	local_non_core_manpower  = 0.15
+	
 	resistance_decay = -0.2
+	
 
 }
 CHI_tougher_resistance0_imp = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
+    icon = GFX_modifier_generic_sabotage
 	compliance_growth = -0.1
 	resistance_growth = 0.2
-	resistance_target = 0.1
+	local_non_core_manpower  = 0.15
+	
 	resistance_decay = -0.2
 
 }
@@ -718,62 +836,75 @@ CHI_tougher_resistance = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
+    icon = GFX_modifier_generic_sabotage
 
 	compliance_growth = -0.3
 	resistance_growth = 0.3
-	resistance_target = 0.2
+	resistance_target = 0.05
 	resistance_decay = -0.3
+	
+	local_non_core_manpower  = 0.15
 
 }
 CHI_tougher_resistance12 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
+    icon = GFX_modifier_generic_sabotage
 
 	compliance_growth = -0.15
 	resistance_growth = 0.3
-	resistance_target = 0.2
+	resistance_target = 0.05
 	resistance_decay = -0.3
+	
+	local_non_core_manpower  = 0.15
 
 }
 CHI_tougher_resistance_imp = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
+    icon = GFX_modifier_generic_sabotage
 
 	compliance_growth = -0.2
 	resistance_growth = 0.3
-	resistance_target = 0.2
+	resistance_target = 0.05
 	resistance_decay = -0.3
+	
+	local_non_core_manpower  = 0.15
 
 }
 CHI_tougher_resistance_imp2 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
+    icon = GFX_modifier_generic_sabotage
 
 	compliance_growth = -0.05
 	resistance_growth = 0.3
-	resistance_target = 0.2
+	resistance_target = 0.05
 	resistance_decay = -0.3
+	
+	local_non_core_manpower  = 0.1
 
 }
 CHI_tougher_resistance2 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
-    army_core_defence_factor = 0.02
-	army_core_attack_factor = 0.02
+    icon = GFX_modifier_generic_sabotage
+    army_core_defence_factor = 0.03
+	army_core_attack_factor = 0.03
 	compliance_growth = -0.4
 	resistance_growth = 0.4
-	resistance_target = 0.3
+	resistance_target = 0.15
 	resistance_decay = -0.4
 	required_garrison_factor = 1
+	local_non_core_manpower  = 0.1
+	state_production_speed_rail_way_factor = -0.50
+	state_production_speed_supply_node_factor = -0.50
+	 
+	
 	#custom_modifier_tooltip = CHI_tougher_resis2_tt
 
 }
@@ -781,14 +912,19 @@ CHI_tougher_resistance22 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
-    army_core_defence_factor = 0.02
-	army_core_attack_factor = 0.02
+    icon = GFX_modifier_generic_sabotage
+    army_core_defence_factor = 0.03
+	army_core_attack_factor = 0.03
 	compliance_growth = -0.25
 	resistance_growth = 0.4
-	resistance_target = 0.3
+	resistance_target = 0.15
 	resistance_decay = -0.4
 	required_garrison_factor = 1
+	local_non_core_manpower  = 0.1
+	state_production_speed_rail_way_factor = -0.50
+	state_production_speed_supply_node_factor = -0.50
+	 
+	
 	#custom_modifier_tooltip = CHI_tougher_resis2_tt
 
 }
@@ -796,14 +932,19 @@ CHI_tougher_resistance2_imp = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
-    army_core_defence_factor = 0.02
-	army_core_attack_factor = 0.02
+    icon = GFX_modifier_generic_sabotage
+    army_core_defence_factor = 0.03
+	army_core_attack_factor = 0.03
 	compliance_growth = -0.3
 	resistance_growth = 0.4
-	resistance_target = 0.3
+	resistance_target = 0.15
 	resistance_decay = -0.4
 	required_garrison_factor = 1
+	local_non_core_manpower  = 0.1
+	state_production_speed_rail_way_factor = -0.50
+	state_production_speed_supply_node_factor = -0.50
+	 
+	
 	#custom_modifier_tooltip = CHI_tougher_resis2_tt
 
 }
@@ -811,14 +952,19 @@ CHI_tougher_resistance2_imp2 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
-    army_core_defence_factor = 0.02
-	army_core_attack_factor = 0.02
+    icon = GFX_modifier_generic_sabotage
+    army_core_defence_factor = 0.03
+	army_core_attack_factor = 0.03
 	compliance_growth = -0.15
 	resistance_growth = 0.4
-	resistance_target = 0.3
+	resistance_target = 0.15
 	resistance_decay = -0.4
 	required_garrison_factor = 1
+	local_non_core_manpower  = 0.1
+	state_production_speed_rail_way_factor = -0.50
+	state_production_speed_supply_node_factor = -0.50
+	 
+	
 	#custom_modifier_tooltip = CHI_tougher_resis2_tt
 
 }
@@ -826,18 +972,21 @@ CHI_tougher_resistance3 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
-    army_core_defence_factor = 0.05
-	army_core_attack_factor = 0.05
+    icon = GFX_modifier_generic_sabotage
+    army_core_defence_factor = 0.07
+	army_core_attack_factor = 0.07
 	compliance_growth = -0.5
 	resistance_decay = -0.5
 	resistance_growth = 0.5
-	resistance_target = 0.4
+	resistance_target = 0.25
 	resistance_damage_to_garrison = 0.1
 	resistance_activity = 0.1
 	resistance_garrison_penetration_chance = 0.1
-
+	
 	required_garrison_factor = 2
+	state_production_speed_rail_way_factor = -0.50
+	state_production_speed_supply_node_factor = -0.50
+	 
 
 	#custom_modifier_tooltip = CHI_tougher_resis3_tt
 
@@ -846,18 +995,21 @@ CHI_tougher_resistance32 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
-    army_core_defence_factor = 0.05
-	army_core_attack_factor = 0.05
+    icon = GFX_modifier_generic_sabotage
+    army_core_defence_factor = 0.07
+	army_core_attack_factor = 0.07
 	compliance_growth = -0.35
 	resistance_decay = -0.5
 	resistance_growth = 0.5
-	resistance_target = 0.4
+	resistance_target = 0.25
 	resistance_damage_to_garrison = 0.1
 	resistance_activity = 0.1
 	resistance_garrison_penetration_chance = 0.1
-
+	
 	required_garrison_factor = 2
+	state_production_speed_rail_way_factor = -0.50
+	state_production_speed_supply_node_factor = -0.50
+	 
 
 	#custom_modifier_tooltip = CHI_tougher_resis3_tt
 
@@ -866,18 +1018,21 @@ CHI_tougher_resistance3_imp = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
-    army_core_defence_factor = 0.05
-	army_core_attack_factor = 0.05
+    icon = GFX_modifier_generic_sabotage
+    army_core_defence_factor = 0.07
+	army_core_attack_factor = 0.07
 	compliance_growth = -0.4
 	resistance_decay = -0.5
 	resistance_growth = 0.5
-	resistance_target = 0.4
+	resistance_target = 0.25
 	resistance_damage_to_garrison = 0.1
 	resistance_activity = 0.1
 	resistance_garrison_penetration_chance = 0.1
-
+	
 	required_garrison_factor = 2
+	state_production_speed_rail_way_factor = -0.50
+	state_production_speed_supply_node_factor = -0.50
+	 
 
 	#custom_modifier_tooltip = CHI_tougher_resis3_tt
 
@@ -886,18 +1041,21 @@ CHI_tougher_resistance3_imp2 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
-    army_core_defence_factor = 0.05
-	army_core_attack_factor = 0.05
+    icon = GFX_modifier_generic_sabotage
+    army_core_defence_factor = 0.07
+	army_core_attack_factor = 0.07
 	compliance_growth = -0.25
 	resistance_decay = -0.5
 	resistance_growth = 0.5
-	resistance_target = 0.4
+	resistance_target = 0.25
 	resistance_damage_to_garrison = 0.1
 	resistance_activity = 0.1
 	resistance_garrison_penetration_chance = 0.1
-
+	
 	required_garrison_factor = 2
+	state_production_speed_rail_way_factor = -0.50
+	state_production_speed_supply_node_factor = -0.50
+	 
 
 	#custom_modifier_tooltip = CHI_tougher_resis3_tt
 
@@ -906,17 +1064,21 @@ CHI_tougher_resistance4 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
-    army_core_defence_factor = 0.07
-	army_core_attack_factor = 0.07
+    icon = GFX_modifier_generic_sabotage
+    army_core_defence_factor = 0.12
+	army_core_attack_factor = 0.12
 	compliance_growth = -0.5
 	resistance_decay = -0.5
 	resistance_growth = 0.5
-	resistance_target = 0.4
+	resistance_target = 0.25
 	resistance_damage_to_garrison = 0.2
 	resistance_activity = 0.2
 	resistance_garrison_penetration_chance = 0.2
+	
 	required_garrison_factor = 3
+	state_production_speed_rail_way_factor = -0.50
+	state_production_speed_supply_node_factor = -0.50
+	 
 	#custom_modifier_tooltip = CHI_tougher_resis3_tt
 
 }
@@ -924,17 +1086,21 @@ CHI_tougher_resistance42 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
-    army_core_defence_factor = 0.07
-	army_core_attack_factor = 0.07
+    icon = GFX_modifier_generic_sabotage
+    army_core_defence_factor = 0.12
+	army_core_attack_factor = 0.12
 	compliance_growth = -0.35
 	resistance_decay = -0.5
 	resistance_growth = 0.5
-	resistance_target = 0.4
+	resistance_target = 0.25
 	resistance_damage_to_garrison = 0.2
 	resistance_activity = 0.2
 	resistance_garrison_penetration_chance = 0.2
+	
 	required_garrison_factor = 3
+	state_production_speed_rail_way_factor = -0.50
+	state_production_speed_supply_node_factor = -0.50
+	 
 	#custom_modifier_tooltip = CHI_tougher_resis3_tt
 
 }
@@ -942,17 +1108,21 @@ CHI_tougher_resistance4_imp = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
-    army_core_defence_factor = 0.07
-	army_core_attack_factor = 0.07
+    icon = GFX_modifier_generic_sabotage
+    army_core_defence_factor = 0.12
+	army_core_attack_factor = 0.12
 	compliance_growth = -0.4
 	resistance_decay = -0.5
 	resistance_growth = 0.5
-	resistance_target = 0.4
+	resistance_target = 0.25
 	resistance_damage_to_garrison = 0.2
 	resistance_activity = 0.2
 	resistance_garrison_penetration_chance = 0.2
+	
 	required_garrison_factor = 3
+	state_production_speed_rail_way_factor = -0.50
+	state_production_speed_supply_node_factor = -0.50
+	 
 	#custom_modifier_tooltip = CHI_tougher_resis3_tt
 
 }
@@ -960,18 +1130,34 @@ CHI_tougher_resistance4_imp2 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_SOV_invaders_must_die
-    army_core_defence_factor = 0.07
-	army_core_attack_factor = 0.07
+    icon = GFX_modifier_generic_sabotage
+    army_core_defence_factor = 0.12
+	army_core_attack_factor = 0.12
 	compliance_growth = -0.25
 	resistance_decay = -0.5
 	resistance_growth = 0.5
-	resistance_target = 0.4
+	resistance_target = 0.25
 	resistance_damage_to_garrison = 0.2
 	resistance_activity = 0.2
 	resistance_garrison_penetration_chance = 0.2
+	
 	required_garrison_factor = 3
+	state_production_speed_rail_way_factor = -0.50
+	state_production_speed_supply_node_factor = -0.50
+	 
 	#custom_modifier_tooltip = CHI_tougher_resis3_tt
+
+}
+CHI_build_railways_in_china = {
+    enable = {
+        always = yes
+    }
+    icon = GFX_modifiers_generic_supply
+   
+	state_production_speed_rail_way_factor = 1
+	state_production_speed_supply_node_factor = 1
+	 
+
 
 }
 JAP_freeze_front_dynamic = {
@@ -981,11 +1167,38 @@ JAP_freeze_front_dynamic = {
     icon = GFX_modifiers_generic_military_plans
     custom_modifier_tooltip = JAP_frontlines_frozen_tt
 }
+JAP_prevent_collapse = {
+    enable = {
+        always = yes
+    }
+    icon = GFX_modifiers_JAP_desperate_defense
+	breakthrough_factor  = -0.05
+	army_attack_factor = -0.1
+	
+}
+JAP_prevent_collapse2 = {
+    enable = {
+        always = yes
+    }
+    icon = GFX_modifiers_JAP_desperate_defense
+	breakthrough_factor  = -0.1
+	army_attack_factor = -0.15
+	
+}
+JAP_prevent_collapse3 = {
+    enable = {
+        always = yes
+    }
+    icon = GFX_modifiers_JAP_desperate_defense
+	breakthrough_factor  = -0.15
+	army_attack_factor = -0.2
+	
+}
 JAP_ichi_go0 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_generic_military_plans
+    icon = GFX_modifiers_JAP_japanese_offensive
     max_dig_in = -5
 	breakthrough_factor  = 0.05
 	army_attack_factor = 0.1
@@ -994,7 +1207,7 @@ JAP_ichi_go = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_generic_military_plans
+    icon = GFX_modifiers_JAP_japanese_offensive
     max_dig_in = -10
 	breakthrough_factor  = 0.1
 	army_attack_factor = 0.1
@@ -1004,7 +1217,7 @@ JAP_ichi_go_2 = {
     enable = {
         always = yes
     }
-    icon = GFX_modifiers_generic_military_plans
+    icon = GFX_modifiers_JAP_japanese_offensive
     max_dig_in = -10
 	breakthrough_factor  = 0.1
 	army_attack_factor = 0.1

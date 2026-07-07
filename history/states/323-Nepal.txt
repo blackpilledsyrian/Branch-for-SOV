@@ -6,7 +6,7 @@ state = {
 	
 	state_category = town
 	resources = {
-		chromium = 1 # was: 2
+		chromium = 4 # was: 2
 	}
 	history = {
 		owner = RAJ
@@ -16,9 +16,12 @@ state = {
 		victory_points = {
 			4987 3 
 		}
+		victory_points = {
+			5310 1
+		}
 	}
 
 	provinces = {
-		4386 4987 5310 7374 10825 10910 12892 
+		7634 4386 4987 5310 7374 10825 10910 12892 13738
 	}
 }

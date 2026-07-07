@@ -44,8 +44,7 @@ add_dynamic_modifier = {
 	modifier = MAN_monsters_in_uniform
 }
 
-set_variable = { JAP_factory_output_modifier = 0.3 }
-set_variable = { JAP_dockyard_output_modifier = 0.25 }
+
 set_variable = { MAN_military_industry_dm_consumer_goods_factor =0.20}
 set_variable = {	MAN_coruppts=0.00}
 set_variable = { MAN_military_industry_dm_production_speed_industrial_complex_factor =-0.10}
@@ -64,6 +63,8 @@ set_variable = { MAN_kempeitai_var_stability_factor =-0.001 }
 set_variable = { MAN_military_industry_dm_production_speed_buildings_factor =-0.05 }
 set_variable = { MAN_volunters_removal = -1 }
 
+set_variable = {MAN_armor_attack = 0 }
+set_variable = {MAN_armor_defense = 0 }
 
 set_variable = {	MAN_stability_factor_var = -0.3	}
 set_variable = {	MAN_funds_factor_var = 0.2	}
@@ -86,7 +87,7 @@ set_variable = {MAN_supply_consumption_factor = -0.05 }
 
 set_variable = {MAN_re_promote_cost_factor = -0.2 }
 set_variable = {MAN_land_doctrine_cost_factor = 0.25 }
-
+set_variable = {MAN_resistance_target_modifier = 0 }
 
 
 
@@ -115,7 +116,7 @@ if = {
 	add_ideas = MAN_kwantung_veto
 	add_ideas = MAN_Heavy_Industry
 	add_ideas = MAN_worker_shortage_y0
-	add_ideas = MAN_subs_1
+	#add_ideas = MAN_subs_1
 }
 set_country_flag = MAN_subs1_flag
 ### EO LEGITIMACY STUFF ###
@@ -169,7 +170,8 @@ recruit_character = MAN_sun_qichan
 
 
 set_technology = {
-	asiatic_tanks = 1
+	building_tech = 1 
+
 	basic_train = 1
 	starting_industry = 1
 	################# infantry ###############
@@ -220,11 +222,11 @@ set_technology = {
 			small_gun = 1
 			support_gun = 1
 			armour_sloping = 1
-			engine_tech_1 = 1
+	
 			turret_basket = 1
 			early_cupola = 1
 			automatic_gun2 = 1
-			armor_tech_1 = 1
+		
 
 		}
 	}
@@ -362,7 +364,7 @@ if = {
 	}
 }
 
-set_convoys = 100
+set_convoys = 49
 
 set_politics = {
 	ruling_party = fascism

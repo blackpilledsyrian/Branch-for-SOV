@@ -24,6 +24,9 @@ SAF_great_depression = {
     production_speed_dockyard_factor = SAF_gd_production_speed_dockyard_factor_var
     production_speed_infrastructure_factor = SAF_gd_production_speed_infrastructure_factor_var
     production_speed_buildings_factor = SAF_gd_industry_construction_speed_modifier
+
+    production_speed_air_assembly_factor = SAF_production_speed_air_assembly_factor
+	production_speed_tank_assembly_factor = SAF_production_speed_tank_assembly_factor
 }
 ##-50% recruitable pop from segragation here
 SAF_eco_and_politics = { 
@@ -135,6 +138,7 @@ volk_afrika = {
 
     required_garrison_factor = 0.15
 	resistance_activity= 0.15
-    compliance_gain = -0.01
+    compliance_gain = -0.02
+    production_speed_buildings_factor = 0.1
 }
 

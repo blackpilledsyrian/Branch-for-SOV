@@ -1,5 +1,17 @@
 spriteTypes = {
 	spriteType = {
+		name = "GFX_modifiers_JAP_desperate_defense"
+		textureFile = "gfx/interface/state_modifiers/modifiers_JAP_desperate_defense.dds"
+	}
+	spriteType = {
+		name = "GFX_modifier_generic_sabotage"
+		textureFile = "gfx/interface/state_modifiers/modifier_generic_sabotage.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_JAP_japanese_offensive"
+		textureFile = "gfx/interface/state_modifiers/modifiers_JAP_japanese_offensive.dds"
+	}
+	spriteType = {
 		name = "GFX_modifiers_GER_socialist_movement"
 		textureFile = "gfx/interface/state_modifiers/modifiers_GER_socialist_movement.dds"
 	}
@@ -127,6 +139,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_modifiers_HOL_grebbelinie_icon"
+		textureFile = "gfx/interface/modifiers_unplanned_offensive_icon.dds"
+	}
+
+	spriteType = {
 		name = "GFX_impassable_icon"
 		textureFile = "gfx/interface/modifiers_impassable_icon.dds"
 	}	
@@ -205,7 +222,7 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_buildings_strip"
 		textureFile = "gfx/interface/buildings/building_icon_strip.dds"
-		noOfFrames = 30
+		noOfFrames = 32
 	}
 	
 	spriteType = {
@@ -707,14 +724,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/generic_text_bg_50.dds"
 	}
 	###
-	corneredTileSpriteType = {
-		name = "GFX_tiled_header_scimpro"
-		size= { x=45 y=22 }
-		textureFile = "gfx//interface//tiles//tiled_header_scimpro.dds"
-		borderSize = { x=8 y=8 }
-		tilingCenter = yes
-		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
-	}
+	
 	progressbartype = {
 		name = "GFX_damage_bar_large"
 		color = { 1.0 1.0 1.0 }

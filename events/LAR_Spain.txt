@@ -22,13 +22,6 @@ country_event = {
 			SPN = {
 				set_cosmetic_tag = SPR_republican_spain
 			}
-			SOV = {
-				diplomatic_relation = {
-					country = SPN
-					relation = military_access
-					active = yes
-				}
-			}
 			every_country = {
 				set_variable = { var = super_event value = 5 }			
 			}
@@ -37,7 +30,7 @@ country_event = {
 			}
 	
 			set_global_flag = { flag = SPR_civil_war_startup value = 1 days = 14 } # Make AI avoid attacking for a few days
-			add_named_threat = { threat = 5 name = SPR_civil_war_threat }
+			add_named_threat = { threat = 7.2 name = SPR_civil_war_threat }
 		}	
 		hidden_effect = {
 				SPN = {
@@ -93,7 +86,6 @@ country_event = {
 						infantry_spain = { x = 1 y = 2 }
 					}
 					support = {
-						anti_air_company = { x = 0 y = 0 }
 					}
 				}
 				random_owned_state = {		
@@ -138,7 +130,6 @@ country_event = {
 							infantry_spain = { x = 1 y = 1 }
 						}
 						support = {
-							anti_air_company = { x = 0 y = 0 }
 						}
 					}
 					random_owned_state = {
@@ -221,27 +212,30 @@ country_event = {
 							mountaineers = { x = 1 y = 1 }
 							mountaineers = { x = 1 y = 2 }	
 							
-							mountaineers = { x = 2 y = 0 }	
-							mountaineers = { x = 2 y = 1 }	
-							mountaineers = { x = 2 y = 2 }	
+							infantry = { x = 2 y = 0 }	
+							infantry = { x = 2 y = 1 }	
+							infantry = { x = 2 y = 2 }	
 							
 							artillery_heavy = { x = 3 y = 0 }
 							artillery_heavy = { x = 3 y = 1 }	
-							artillery_heavy = { x = 3 y = 2 }
-							artillery_heavy = { x = 3 y = 3 }
-
-							artillery_heavy = { x = 4 y = 0 }
-							artillery_heavy = { x = 4 y = 1 }	
+							field_gun_brigade = { x = 3 y = 2 }
+							field_gun_brigade = { x = 3 y = 3 }
+							
+							field_gun_brigade = { x = 4 y = 0 }
+							field_gun_brigade = { x = 4 y = 1 }	
+						}
+						regimental_support = {
+							mountain_gun_brigade = { x = 0 y = 0 }
+							mountain_gun_brigade = { x = 0 y = 1 }
+							mountain_gun_brigade = { x = 0 y = 2 }
 						}
 						support = {
-							artillery = { x = 0 y = 0 } 
-							engineer = { x = 0 y = 1 } 		
+							artillery = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
 							recon = { x = 0 y = 2 }
 							artillery_heavy_support = { x = 0 y = 3 }
-							pack_artillery = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
-							anti_air_company = { x = 1 y = 2 }
-							field_gun_support = { x = 1 y = 3 }
+							logistics_company = { x = 1 y = 0 }
+							field_gun_support = { x = 1 y = 1 }
 						}
 
 						priority = 2
@@ -258,7 +252,7 @@ country_event = {
 							division = "division_template = \"Gornostrelkovaya Diviziya\" start_experience_factor = 0.6" 
 							owner = SPN
 							allow_spawning_on_enemy_provs = no
-							count = 4
+							count = 3
 						}
 					}
 					division_template = {
@@ -277,7 +271,6 @@ country_event = {
 							infantry_spain = { x = 1 y = 2 }
 						}
 						support = {
-							anti_air_company = { x = 0 y = 0 }
 						}
 					}
 					random_owned_state = {
@@ -413,89 +406,6 @@ country_event = {
 						
 					}
 				}
-					# If player has completed this focus, give North Africa and spawn units there (this effect is run first so the tag has any territory whatsoever - it's assumed all players take this focus)
-				if = {
-					limit = {
-						SPR = {
-							has_completed_focus = SPA_the_army_of_africa
-						}
-					}
-
-					division_template = {
-						name = "División del Ejército de África"
-						template_counter = 4
-						division_names_group = SPR_INF_06
-						regiments = {
-							infantry_spain = { x = 0 y = 0 }
-							infantry_spain = { x = 0 y = 1 }
-							infantry_spain = { x = 0 y = 2 }
-
-							infantry_spain = { x = 1 y = 0 }
-							infantry_spain = { x = 1 y = 1 }
-							infantry_spain = { x = 1 y = 2 }
-							infantry_spain = { x = 1 y = 3 }
-
-							infantry_spain = { x = 2 y = 0 }
-							infantry_spain = { x = 2 y = 1 }
-							infantry_spain = { x = 2 y = 2 }
-							infantry_spain = { x = 2 y = 3 }
-
-							artillery_brigade = { x = 3 y = 0 }		
-							artillery_brigade = { x = 3 y = 1 }
-							artillery_brigade = { x = 3 y = 2 }		
-							artillery_brigade = { x = 3 y = 3 }				
-						}
-
-						support = {
-							artillery = { x = 0 y = 0 } 
-							recon = { x = 0 y = 1 } 		
-							engineer = { x = 0 y = 2 } 	
-							anti_air_company = { x = 0 y = 3 }
-							logistics_company_mot = { x = 1 y = 0 }
-							field_hospital = { x = 1 y = 1 }
-						}
-					}
-					random_owned_state = {
-						limit = {
-							NOT = {
-								state = 699
-								state = 178
-								state = 297
-
-							}
-						}
-						prioritize = {
-							171
-						}
-						create_unit = {
-							division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.4" 
-							owner = SPR
-						}
-						create_unit = {
-							division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.4" 
-							owner = SPR
-						}
-						if = {
-							limit = {
-								SPR = {
-									NOT = {
-										has_country_flag = SPR_disband_the_army_flag
-									}
-								}
-							}
-							create_unit = {
-								division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.4" 
-								owner = SPR
-							}
-							create_unit = {
-								division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.4" 
-								owner = SPR
-							}
-						}
-						
-					}
-				}
-				
 				
 				# Add 3 Republican garrisons to every state where the Nationalists have NONE control
 					every_state = {
@@ -616,7 +526,6 @@ country_event = {
 							infantry_spain = { x = 1 y = 1 }
 						}
 						support = {
-							anti_air_company = { x = 0 y = 0 }
 						}
 					}
 					random_owned_state = {
@@ -653,7 +562,6 @@ country_event = {
 							infantry_spain = { x = 1 y = 3 }
 						}
 						support = {
-							anti_air_company = { x = 0 y = 0 }
 						}
 					}
 					random_state = {
@@ -751,7 +659,6 @@ country_event = {
 								infantry_spain = { x = 1 y = 1 }
 							}
 							support = {
-								anti_air_company = { x = 0 y = 0 }
 							}
 						}
 					}
@@ -955,7 +862,6 @@ country_event = {
 							infantry_spain = { x = 1 y = 1 }
 						}
 						support = {
-							anti_air_company = { x = 0 y = 0 }
 						}
 					}
 					random_state = {
@@ -1098,7 +1004,6 @@ country_event = {
 								infantry_spain = { x = 1 y = 3 }
 							}
 							support = {
-								anti_air_company = { x = 0 y = 0 }
 							}
 						}
 					}
@@ -1289,7 +1194,6 @@ country_event = {
 							infantry_spain = { x = 1 y = 3 }
 						}
 						support = {
-							anti_air_company = { x = 0 y = 0 }
 						}
 					}
 					division_template = {
@@ -1305,7 +1209,6 @@ country_event = {
 							infantry_spain = { x = 1 y = 1 }
 						}
 						support = {
-							anti_air_company = { x = 0 y = 0 }
 						}
 					}
 	
@@ -1492,7 +1395,6 @@ country_event = {
 								infantry_spain = { x = 1 y = 1 }
 							}
 							support = {
-								anti_air_company = { x = 0 y = 0 }
 							}
 						}
 					}
@@ -1608,7 +1510,6 @@ country_event = {
 								infantry_spain = { x = 1 y = 1 }
 							}
 							support = {
-								anti_air_company = { x = 0 y = 0 }
 							}
 						}
 					}
@@ -1736,6 +1637,110 @@ country_event = {
 							owner = SPN
 							allow_spawning_on_enemy_provs = yes
 							count = 2
+						}
+					}
+				}
+				# If Nationalists had time to Secure Granada, add these divisions to specific states provinces to ensure a nice light defence
+				if = {
+					limit = {
+						SPR = {
+							has_completed_focus = SPA_secure_granada
+						}
+					}
+					173 = {
+						create_unit = {
+							division = "division_template = \"Northern Garrison\" start_experience_factor = 0.3" 
+							owner = SPR
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 7068
+						}
+						create_unit = {
+							division = "division_template = \"Northern Garrison\" start_experience_factor = 0.3" 
+							owner = SPR
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 1176
+						}
+						create_unit = {
+							division = "division_template = \"Northern Garrison\" start_experience_factor = 0.3" 
+							owner = SPR
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 1176
+						}
+						create_unit = {
+							division = "division_template = \"Northern Garrison\" start_experience_factor = 0.3" 
+							owner = SPR
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 747
+						}
+						create_unit = {
+							division = "division_template = \"Northern Garrison\" start_experience_factor = 0.3" 
+							owner = SPR
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 9979
+						}
+						create_unit = {
+							division = "division_template = \"Northern Garrison\" start_experience_factor = 0.3" 
+							owner = SPR
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 9979
+						}
+					}
+				}
+				# If Nationalists had time to Secure Sevilla, add these divisions to specific states provinces to ensure a nice light defence
+				if = {
+					limit = {
+						SPR = {
+							has_completed_focus = SPA_secure_sevila
+						}
+					}
+					169 = {
+						create_unit = {
+							division = "division_template = \"Brigada de la Guardia Civil\" start_experience_factor = 0.3" 
+							owner = SPR
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 7183
+						}
+						create_unit = {
+							division = "division_template = \"Brigada de la Guardia Civil\" start_experience_factor = 0.3" 
+							owner = SPR
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 7183
+						}
+						create_unit = {
+							division = "division_template = \"Brigada de la Guardia Civil\" start_experience_factor = 0.3" 
+							owner = SPR
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 1048
+						}
+						create_unit = {
+							division = "division_template = \"Brigada de la Guardia Civil\" start_experience_factor = 0.3" 
+							owner = SPR
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 7098
+						}
+						create_unit = {
+							division = "division_template = \"Brigada de la Guardia Civil\" start_experience_factor = 0.3" 
+							owner = SPR
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 11749
+						}
+						create_unit = {
+							division = "division_template = \"Brigada de la Guardia Civil\" start_experience_factor = 0.3" 
+							owner = SPR
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+							prioritize_location = 11749
 						}
 					}
 				}
@@ -1797,6 +1802,54 @@ country_event = {
 				}
 				add_ideas = SPA_death_before_surrender
 				set_global_flag = spanish_civil_war # Start civil war - used in many triggers
+				every_country = {
+					limit = {
+						NOT = { original_tag = SPR }
+						OR = {
+							tag = GER
+							tag = POR
+							tag = BUL
+							tag = ITA
+							tag = ROM
+							tag = CZE
+							tag = SLO
+							tag = HUN
+						}
+						NOT = { has_war_with = SPR }
+					}
+					diplomatic_relation = {
+						country = SPR
+						relation = military_access
+						active = yes
+					}
+				}
+				 
+				every_country = {
+					limit = {
+						NOT = { original_tag = SPR }
+						OR = {
+							is_in_faction_with = ENG
+							tag = FRA
+							tag = POL
+						}
+						NOT = { has_war_with = SPN }
+					}
+					diplomatic_relation = {
+						country = SPN
+						relation = military_access
+						active = yes
+					}
+				}
+				SOV = {
+					if = {
+						limit = { NOT = { has_war_with = SPN } }
+						diplomatic_relation = {
+							country = SPN
+							relation = military_access
+							active = yes
+						}
+					}
+				}
 				country_event = { id = lar_spain.6 days = 7 } # SCW notification event for the player
 			}
 		}
@@ -1817,6 +1870,7 @@ country_event = {
 					tag = SPR 
 				}
 				complete_national_focus = SPA_unify_the_nationalist_front
+				
 			}
 			
 		}
@@ -2328,7 +2382,6 @@ country_event = {
 						
 					}
 					support = {
-						anti_air_company = { x = 0 y = 0 }
 					}
 				}
 				set_division_template_lock = {
@@ -2490,7 +2543,7 @@ country_event = {
 				unlock_national_focus = SPA_a_great_spain
 				unlock_national_focus = SPA_hand_over_the_ceda_campaign_chest
 				unlock_national_focus = SPA_negotiate_carlist_support
-				unlock_national_focus = SPA_the_army_of_africa
+				unlock_national_focus = SPA_redeploy_army_of_africa
 				unlock_national_focus = SPA_secure_the_northern_garrisons
 				if = {
 					limit = {
@@ -2893,7 +2946,7 @@ country_event = {
 				unlock_national_focus = SPA_a_great_spain
 				unlock_national_focus = SPA_hand_over_the_ceda_campaign_chest
 				unlock_national_focus = SPA_negotiate_carlist_support
-				unlock_national_focus = SPA_the_army_of_africa
+				unlock_national_focus = SPA_redeploy_army_of_africa
 				unlock_national_focus = SPA_secure_the_northern_garrisons
 				unlock_national_focus = SPA_sin_paquito
 				complete_national_focus = SPA_the_phalanx_ascendant
@@ -3268,7 +3321,6 @@ country_event = {
 						infantry_spain = { x = 0 y = 2 }
 					}
 					support = {
-						anti_air_company = { x = 0 y = 0 }
 					}
 				}
 				every_owned_state = {
@@ -6924,7 +6976,6 @@ country_event = {
 				infantry_spain = { x = 1 y = 2 }
 			}
 			support = {
-				anti_air_company = { x = 0 y = 0 }
 			}
 		}
 		# Catalonia
@@ -7361,10 +7412,9 @@ country_event = {
 				}
 
 				support = {
-					artillery = { x = 0 y = 0 } 
-					recon = { x = 0 y = 1 } 		
-					engineer = { x = 0 y = 2 } 	
-					anti_air_company = { x = 0 y = 3 }
+					artillery = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					engineer = { x = 0 y = 2 }
 					logistics_company_mot = { x = 1 y = 0 }
 					field_hospital = { x = 1 y = 1 }
 				}
@@ -7499,14 +7549,17 @@ country_event = {
 
 				remove_ideas = CHI_train_hp
 				add_ideas = ROM_ger_trade_treaty
-				add_ideas = SPA_recovering_from_civil_war
+				#add_ideas = SPA_recovering_from_civil_war
 				set_rule = {
 					can_access_market = yes
 				}
+				#add_offsite_building = { type = industrial_complex level = 5 }
+				add_political_power = 50
+				
 			
 				add_doctrine_cost_reduction = {
 					name = scw_bonus
-					cost_reduction = 0.4
+					cost_reduction = 0.5
 					uses = 2
 					category = land_doctrine
 				}
@@ -7542,7 +7595,7 @@ country_event = {
 				}
 				add_doctrine_cost_reduction = {
 					name = scw_bonus
-					cost_reduction = 0.4
+					cost_reduction = 0.5
 					uses = 2
 					category = land_doctrine
 				}
@@ -7557,7 +7610,7 @@ country_event = {
 				}
 				add_doctrine_cost_reduction = {
 					name = scw_bonus
-					cost_reduction = 0.4
+					cost_reduction = 0.5
 					uses = 2
 					category = air_doctrine
 				}
@@ -7571,7 +7624,7 @@ country_event = {
 				}
 				add_doctrine_cost_reduction = {
 					name = scw_bonus
-					cost_reduction = 0.4
+					cost_reduction = 0.5
 					uses = 1
 					category = land_doctrine
 				}
@@ -7587,13 +7640,13 @@ country_event = {
 				}
 				add_doctrine_cost_reduction = {
 					name = scw_bonus
-					cost_reduction = 0.4
+					cost_reduction = 0.5
 					uses = 3
 					category = land_doctrine
 				}	
 				add_doctrine_cost_reduction = {
 					name = scw_bonus
-					cost_reduction = 0.4
+					cost_reduction = 0.5
 					uses = 2
 					category = air_doctrine
 				}

@@ -28,7 +28,7 @@
 	}
 
 	#equipment_type = { armor }
-	#research_categories = { armor }
+	#research_categories = { armor tank_upgrade}
 
 
 
@@ -302,7 +302,7 @@ POL_zaklady_przemyslowe = {
 	}
 
 	research_categories = {
-		artillery
+		cat_artillery
 	}
 	tree_header_text = {
 		text = "Light- and Heavy Artillery"

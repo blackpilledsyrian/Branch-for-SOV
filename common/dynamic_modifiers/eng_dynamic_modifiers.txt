@@ -11,6 +11,7 @@ ENG_prosperity_of_the_empire = {
     production_factory_efficiency_gain_factor = ENG_production_factory_efficiency_gain_factor_var
     line_change_production_efficiency_factor = ENG_line_change_production_efficiency_factor_var
     global_building_slots_factor = ENG_global_building_slots_factor_var
+    operative_slot = ENG_operative_slot
     stability_factor = ENG_stability_factor_var
     war_support_factor = ENG_war_support_factor_var
 
@@ -31,6 +32,7 @@ ENG_prosperity_of_the_empire = {
     production_cost_synthetic_refinery_factor = ENG_production_speed_synthetic_refinery_factor_var
     production_cost_synthetic_rubber_refinery_factor = ENG_production_speed_synthetic_rubber_refinery_factor_var
     custom_modifier_tooltip = ENG_trading_modifier_tt
+    custom_modifier_tooltip = ENG_rubber_tt
 }
 ENG_royal_navy_dynamic = {
     enable = { always = yes }
@@ -69,7 +71,9 @@ ENG_british_army_dynamic = {
     conscription = ENG_conscription_var
     decryption_power = ENG_decryption_power_var
     crypto_strength = ENG_crypto_strength_var
+    air_mastery_gain_factor = -0.3
     special_forces_min = ENG_special_forces_min_var
+    military_industrial_organization_funds_gain = 0.2
     custom_modifier_tooltip = ENG_aircraft_production_tt
     custom_modifier_tooltip = ENG_bombers_production_tt
     custom_modifier_tooltip = ENG_tank_production_tt

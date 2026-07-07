@@ -2,13 +2,13 @@ state = {
 	id = 747
 	name = "STATE_747"
 	resources = {
-			steel = 20
-			chromium =8
+			steel = 90
+			chromium =40
 	}
 	provinces = {
-		4559 4937 5009 7965 7976 8126 10413 10863 12789 12898 13674 13679 13681 13680
+		4559 4937 5009 7965 7976 8126 10413 10863 12789 12898 13674 13679 13681 13680 8023 12262 10776
 	}
-	manpower = 1000000
+	manpower = 4100000
 	buildings_max_level_factor = 1.000
 	state_category = pastoral
 	history = {
@@ -19,11 +19,15 @@ state = {
 			favorable_approach3 = 4559
 		}
 		victory_points = {
-			7965 3 
+			7965 8
 		}
+		victory_points = {
+			12262 6
+		}
+		
 		buildings = {
 			air_base = 8
-			infrastructure = 3
+			infrastructure = 1
 		}
 		1938.10.25 = {
 			if = {

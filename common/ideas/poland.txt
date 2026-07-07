@@ -16,7 +16,7 @@ ideas = {
 			}
 
 			modifier = {
-				naval_invasion_capacity = -1000	
+				naval_invasion_plan_cap = -1000	
 			}
 		}
 		POL_exile_influx_one = {
@@ -278,7 +278,7 @@ country = {
 				original_TAG = POL
 			}
 					
-			research_bonus = { artillery = 0.15 rocketry = 0.15 }
+			research_bonus = { cat_artillery = 0.15 rocketry = 0.15 }
 			traits = { artillery_research_trait }
 			modifier = {
 			}
