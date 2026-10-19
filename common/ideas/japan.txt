@@ -4633,10 +4633,10 @@ ideas = {
 				medium_plane_fighter_airframe = {
 					build_cost_ic = -0.075 instant = yes
 				}	
-				small_plane_cas_airframe = {
+				category_cas = {
 					build_cost_ic = -0.075 instant = yes
 				}
-				small_plane_naval_bomber_airframe = {
+				category_nav_bomber = {
 					build_cost_ic = -0.075 instant = yes
 				}				
 			}

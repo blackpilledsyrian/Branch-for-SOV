@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($bytes = [System.IO.File]::ReadAllBytes\\('Vichy_france_l_english.yml'\\)[0..2]; $bytes; '---'; foreach \\($f in @\\('focus_l_english.yml','equipment_l_english.yml','events_l_english.yml'\\)\\) { \"$f : $\\(\\(Get-Content $f | Measure-Object -Line\\).Lines\\) lines\" })",
+      "Bash(python3 *)",
+      "Skill(update-config)",
+      "Bash(awk 'NR>1 && NF && $0 !~ /^[[:space:]]*#/ && $0 !~ /^[[:space:]]*[A-Za-z0-9_.&\\\\x27-]+:[0-9]*[[:space:]]*\".*\"[[:space:]]*\\(#.*\\)?\\\\r?$/ && $0 !~ /^[[:space:]]*l_english:\\\\r?$/ {print NR\": \"$0}' SPA_Spain_l_english.yml)",
+      "Bash(python -c ' *)",
+      "Bash(sed -n '1389,1390p' SPA_Spain_l_english.yml)",
+      "Bash(awk 'NR>1 && NF && $0 !~ /^[[:space:]]*#/ && $0 !~ /^[[:space:]]*[A-Za-z0-9_.&\\\\x27-]+:[0-9]*[[:space:]]*\".*\"[[:space:]]*\\(#.*\\)?\\\\r?$/ && $0 !~ /^[[:space:]]*l_english:\\\\r?$/ {c++} END {print \"malformed:\", c+0}' SPA_Spain_l_english.yml)"
+    ]
+  }
+}
