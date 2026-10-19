@@ -23,13 +23,9 @@ USA_td_board = {
 		organization_modifier = {
 			military_industrial_organization_design_team_change_cost = -1.0
 		}
-		limit_to_equipment_type = { 
-			mio_cat_eq_all_tank_destroyers
-		}			
+
 		equipment_bonus = {
-			soft_attack =-0.05
 			hard_attack =0.05
-			build_cost_ic =0.05
 		}
 	}
 	trait = {
@@ -100,17 +96,10 @@ USA_td_board = {
 		position = { x=1 y=1 }
 		relative_position_id = generic_mio_trait_sloping_armor
         mutually_exclusive ={max_boom }
-		all_parents = { generic_mio_trait_sloping_armor }
-		limit_to_equipment_type = { 
-			mio_cat_eq_all_tank_destroyers
-		}			
+		all_parents = { generic_mio_trait_sloping_armor }		
 		equipment_bonus = {
-			hard_attack = 0.15
-			soft_attack = -0.07
-			armor_value = 0.5
-			hardness = 0.1
-			build_cost_ic = 0.15
-			fuel_consumption = 0.25
+			hard_attack = 0.07
+			armor_value = 0.4
 		}
 	}
 	trait = {
@@ -127,12 +116,12 @@ USA_td_board = {
 			mio_cat_eq_all_tank_destroyers
 		}		
 		equipment_bonus = {
-			maximum_speed = -0.1
+			maximum_speed = -0.15
 			hard_attack = 0.07
 			defense = 0.1
 			armor_value = 0.8
 			hardness = 0.1
-			build_cost_ic = 0.15
+			build_cost_ic = 0.1
 			fuel_consumption = 0.25
 		}
 	}
@@ -143,15 +132,12 @@ USA_td_board = {
 		icon = GFX_generic_mio_trait_icon_hardness
 		any_parent = { generic_mio_trait_fire_extinguishers max_boom }
 		position = { x=0 y=2 }
-	    relative_position_id = generic_mio_trait_sloping_armor
-		limit_to_equipment_type = { 
-			mio_cat_eq_all_tank_destroyers
-		}	
+	    relative_position_id = generic_mio_trait_sloping_armor	
 		equipment_bonus = {
 			build_cost_ic = 0.025
 			armor_value = 0.4
 			hardness = 0.1
-			breakthrough = 0.05
+			defense = 0.05
 		}
 	}
 
@@ -164,28 +150,21 @@ USA_td_board = {
         relative_position_id = gurantee_mobility
 		position = { x= 0 y=1 }
 
-
 			special_trait_background = no
 		all_parents = { gurantee_mobility }
-
-
-		limit_to_equipment_type = { 
-			mio_cat_eq_all_tank_destroyers
-		}
 		
 		available = {
 			FROM = {
 				has_full_control_of_state = 393 #Detroid
 	
 			}
-			
 		}
 
 		equipment_bonus = {
 			armor_value = 0.6
 			hardness = 0.15
-			maximum_speed = -0.05
-			build_cost_ic = 0.075
+			maximum_speed = -0.1
+			build_cost_ic = 0.025
 		}
 
 
@@ -205,15 +184,13 @@ USA_td_board = {
 			
 			previous_designs
 		}
-		
-		limit_to_equipment_type = { 
-			mio_cat_eq_all_tank_destroyers
-		}			
+				
 		equipment_bonus = {
 			breakthrough = 0.2
 			hardness = -0.2
+			armor_value = -0.2
 			defense = -0.2
-			maximum_speed = 0.2
+			maximum_speed = 0.15
 		}
 	}
 	trait = {
@@ -226,8 +203,8 @@ USA_td_board = {
 		all_parents = { breakthrough }
 		
 		equipment_bonus = {
-			soft_attack = -0.07
-			hard_attack = 0.1
+			soft_attack = 0.04
+			hard_attack = 0.06
 		}
 	}
 	trait = {
@@ -242,11 +219,12 @@ USA_td_board = {
 			mio_cat_eq_all_tank_destroyers
 		}			
 		equipment_bonus = {
-			soft_attack =-0.5
-			hard_attack =0.2
-			hardness = -0.15
-			maximum_speed = 0.2
-
+			soft_attack = -0.35
+			hard_attack = 0.35
+			hardness = -0.20
+			armor_value = -0.65
+			maximum_speed = 0.15
+			breakthrough = 1.4
 		}
 	}
 	trait = {
@@ -291,11 +269,9 @@ USA_td_board = {
 		position = { x=0 y=2 }
 	    relative_position_id = breakthrough
 		any_parent = { navy_g howizer_o }
-		limit_to_equipment_type = { 
-			mio_cat_eq_all_tank_destroyers
-		}	
 		equipment_bonus = {
-			ap_attack = 0.25
+			ap_attack = 0.1
+			hard_attack = 0.05
 		}
 	}
 
@@ -327,12 +303,8 @@ USA_td_board = {
 		relative_position_id = generic_mio_trait_fully_cast_turret
 
 		all_parents = { generic_mio_trait_fully_cast_turret }
-
-		limit_to_equipment_type = { 
-			mio_cat_eq_all_tank_destroyers
-		}			
+			
 		equipment_bonus = {
-			reliability = 0.05
 			defense = 0.1
 		}
 	}
@@ -351,8 +323,8 @@ USA_td_board = {
 			mio_cat_eq_all_tank_destroyers
 		}			
 		equipment_bonus = {
-			reliability = 0.05
-			breakthrough = 0.05
+			reliability = 0.1
+			breakthrough = 0.4
 		}
 	}
 
@@ -368,17 +340,13 @@ USA_td_board = {
 			generic_mio_trait_commander_cupola 
 			generic_mio_trait_simplified_layout
 		}
-
-		limit_to_equipment_type = { 
-			mio_cat_eq_all_tank_destroyers
-		}			
+			
 		equipment_bonus = {
-			build_cost_ic = 0.025
-			hard_attack = 0.055
+			ap_attack = 0.15
+			soft_attack = 0.035
+			hard_attack = 0.035
 		}
 	}
-
-
 }
 
 
@@ -579,7 +547,7 @@ USA_Chrysler_Corporation = {
 		
 		equipment_bonus = {
 	
-			build_cost_ic = -0.025
+			build_cost_ic = -0.05
 		}
 	}
 
@@ -592,10 +560,6 @@ USA_Chrysler_Corporation = {
 		
 		relative_position_id = W1
 		position = { x=-1 y=1}
-		
-		production_bonus = {
-			production_cost_factor = 0.025
-		}
 
 		all_parents = {
 			construct_the_niebelungenwerke
@@ -612,12 +576,7 @@ USA_Chrysler_Corporation = {
 		
 		relative_position_id = W1
 		 position = { x=1 y=1}
-
-		production_bonus = {
-			production_cost_factor = 0.025
-		}
 	
-
 	
 	all_parents = {
 		construct_the_niebelungenwerke
@@ -679,19 +638,11 @@ USA_Chrysler_Corporation = {
 		}
 		special_trait_background = yes
 
-		limit_to_equipment_type = { 
-			mio_cat_eq_all_medium_tank
-			mio_cat_eq_all_light_tank
-		}
-
 		available = {
 			USA = {
 				has_tech = usa_1942_medium_tank_chassis
 			}
 		}
-
-	
-
 	
 		equipment_bonus = {
 			
@@ -711,12 +662,10 @@ USA_Chrysler_Corporation = {
 
 			special_trait_background = yes
 
-			limit_to_equipment_type = { 
-				mio_cat_eq_all_heavy_tank
-			}
-
 			available = {
-				
+			USA = {
+				has_tech = usa_1941_heavy_tank_chassis
+				}
 			}
 
 			all_parents = {
@@ -724,13 +673,11 @@ USA_Chrysler_Corporation = {
 				W3
 			}
 
-		
 			organization_modifier = {
 				military_industrial_organization_research_bonus = 0.2
 			}
 	
 			equipment_bonus = {
-			
 				soft_attack = 0.05
 				hard_attack = 0.05
 			}
@@ -1275,11 +1222,10 @@ USA_Fisher_armaments = {
 
 		any_parent = { 
 
-		  
-		  
 		 automotive3
-   
+
 		}	
+
 
 		equipment_bonus = {
 			soft_attack = 0.03
@@ -1340,6 +1286,11 @@ USA_Fisher_armaments = {
 			
 		}
 
+		production_bonus = {
+			production_resource_need_factor = 0.03
+		}
+
+
 		equipment_bonus = {
 			armor_value = 0.65
 			hardness = 0.1
@@ -1381,15 +1332,19 @@ USA_Fisher_armaments = {
 	    any_parent = {  internals }
 
 		mutually_exclusive = {
-			bigger_wepon_3
+			wp_rounds
 		}
 		limit_to_equipment_type = { 
 			mio_cat_eq_all_heavy_tank
 			mio_cat_eq_all_medium_tank
 		}
 
+		production_bonus = {
+			production_resource_need_factor = 0.03
+		}
+
 		equipment_bonus = {
-			soft_attack = 0.05
+			soft_attack = 0.04
 			hard_attack = 0.07
 			reliability = -0.05
 			defense = -0.05
@@ -1412,6 +1367,12 @@ USA_Fisher_armaments = {
 			mio_cat_eq_all_heavy_tank
 			mio_cat_eq_all_medium_tank
 		}
+
+		
+		production_bonus = {
+			production_resource_need_factor = 0.03
+		}
+
 
 		equipment_bonus = {
 
@@ -1449,6 +1410,10 @@ USA_Fisher_armaments = {
 
 		}
 
+		production_bonus = {
+			production_resource_need_factor = 0.03
+		}
+
 		equipment_bonus = {
 			armor_value = 0.35
 			hardness = 0.05
@@ -1464,21 +1429,26 @@ USA_Fisher_armaments = {
 
 	    relative_position_id = internals
 		position = { x= 2 y= 2 }
-		any_parent = {
+
+		any_parent = { 
+			wp_rounds
 			turret_d
 		}
-
 
 		limit_to_equipment_type = { 
 			mio_cat_eq_all_heavy_tank
 			mio_cat_eq_all_medium_tank
 		}
 
+		production_bonus = {
+			production_resource_need_factor = 0.03
+		}
+
 		equipment_bonus = {
 
-			hard_attack = 0.1
+			hard_attack = 0.05
 			ap_attack = 0.1
-			reliability = -0.05
+			reliability = -0.03
 
 			build_cost_ic = 0.03
 		}
@@ -1492,13 +1462,13 @@ USA_Fisher_armaments = {
 	    relative_position_id = wp_rounds
 		position = { x= 2 y= 1 }
 
-		any_parent = {
-			wp_rounds
+		all_parents = {
 			turret_d
 		}
 
-		limit_to_equipment_type = {
+		limit_to_equipment_type = { 
 			mio_cat_eq_all_heavy_tank
+			mio_cat_eq_all_medium_tank
 		}
 
 		special_trait_background = yes
@@ -1509,15 +1479,18 @@ USA_Fisher_armaments = {
 			FROM = {
 				has_full_control_of_state = 393 #Detroid
 			}
-			
+		}
 
+		production_bonus = {
+			production_resource_need_factor = 0.03
 		}
 
 		equipment_bonus = {
-			hard_attack = 0.15
+			hard_attack = 0.1
+			#soft_attack = 0.05
 			ap_attack = 0.2
-
-			build_cost_ic = 0.06
+			reliability = -0.05
+			build_cost_ic = 0.07
 		}
 	}
 
@@ -1568,7 +1541,11 @@ USA_Fisher_armaments = {
 		  
 		 automotive3
 
-		}		
+		}	
+
+		production_bonus = {
+			production_resource_need_factor = 0.03
+		}
 
 		equipment_bonus = {
 			armor_value = 0.35
@@ -1617,12 +1594,17 @@ USA_Fisher_armaments = {
 			mio_cat_eq_all_medium_tank
 		}
 
+		mutually_exclusive = {
+			turret_d
+		}
 		
-		
+		production_bonus = {
+			production_resource_need_factor = 0.03
+		}
+
 		equipment_bonus = {
-			
 			soft_attack = 0.07
-			hard_attack = 0.05
+			hard_attack = 0.04
 			reliability = -0.05
 			supply_consumption = 0.05 
 			build_cost_ic = 0.03
@@ -1634,22 +1616,26 @@ USA_Fisher_armaments = {
 		name = "WP rounds"
 		icon = GFX_generic_mio_department_icon_tank_general_spg
 
-		position = { x= -2 y= 2 }
+		position = { x= -1 y= 2 }
 		relative_position_id = internals
-		any_parent = { wp_rounds }
 
+		all_parents = { wp_rounds }
 
 		limit_to_equipment_type = { 
 			mio_cat_eq_all_heavy_tank
 			mio_cat_eq_all_medium_tank
 		}
 		
+		production_bonus = {
+			production_resource_need_factor = 0.03
+		}
+
 		equipment_bonus = {
 
-			soft_attack = 0.05
+			soft_attack = 0.1
 			reliability = -0.05
 			supply_consumption = 0.1 
-			build_cost_ic = 0.03
+			build_cost_ic = 0.07
 
 		}
 	}
@@ -1681,33 +1667,6 @@ USA_Fisher_armaments = {
 	}
 
 	trait = {
-		token = KILLEMALL2
-		name = "Increase Heavy Cannon Calibers"
-		
-		icon = GFX_generic_mio_department_icon_tank_medium_tank_weapons
-
-	    relative_position_id = wp_rounds
-		position = { x= 0 y= 1 }
-
-		any_parent = {
-			wp_rounds
-			turret_d
-		}
-
-		limit_to_equipment_type = {
-			mio_cat_eq_all_heavy_tank
-		}
-
-			
-		
-		equipment_bonus = {
-
-			reliability = 0.03
-			build_cost_ic = -0.04
-		}
-	}
-
-	trait = {
 		token = bigger_wepon_3
 		name = "Bigger Weapons"
 		icon = GFX_generic_mio_department_icon_tank_general_weapons
@@ -1715,23 +1674,26 @@ USA_Fisher_armaments = {
 		position = { x= -1 y= 1 }
 		relative_position_id = wp_rounds
 
-		any_parent = { wp_rounds }
+		any_parent = { 
+			wp_rounds
+			turret_d
+		}
 
 		limit_to_equipment_type = { 
 			mio_cat_eq_all_heavy_tank
 			mio_cat_eq_all_medium_tank
 		}
-
-		mutually_exclusive = {
-			turret_d
+			
+		production_bonus = {
+			production_resource_need_factor = 0.05
 		}
 		
 		equipment_bonus = {
-			
-			soft_attack = 0.07
-			hard_attack = 0.05
-			reliability = -0.05
-			supply_consumption = 0.05 
+
+			soft_attack = 0.05
+			supply_consumption = 0.1 
+			reliability = -0.03
+
 			build_cost_ic = 0.03
 		}
 	}
@@ -1755,6 +1717,12 @@ USA_Fisher_armaments = {
 		}
 
 		all_parents = { generic_mio_trait_fully_cast_turret }
+
+		
+		production_bonus = {
+			production_resource_need_factor = 0.03
+		}
+
 		
 		equipment_bonus = {
 
@@ -2085,7 +2053,7 @@ USA_norfolk_naval_yard_organization = {
 		mutually_exclusive = { generic_mio_trait_super_heavy_shells generic_mio_trait_high_velocity_guns }
 
 		equipment_bonus = {
-			lg_attack = 0.1
+			lg_attack = 0.2
 			lg_armor_piercing = 0.05
 		}
 	}
@@ -2138,7 +2106,8 @@ USA_norfolk_naval_yard_organization = {
 
 		equipment_bonus = {
 			naval_speed = 0.10
-			build_cost_ic =0.03
+			reliability = -0.03
+			build_cost_ic =0.05
 		}
 
 		production_bonus = {
@@ -2175,8 +2144,7 @@ trait = {
 
 	equipment_bonus = {
 		naval_speed = 0.05
-		
-
+		reliability = -0.03
 	}
 }
 
@@ -2250,7 +2218,7 @@ USA_brooklyn_naval_yard_organization = {
 
 		available = {
 		USA = {
-			has_completed_focus = USA_quality_saves_lives
+			has_completed_focus = USA_two_ocean_navy_act
 			
 		    }
 	    }
@@ -2300,14 +2268,20 @@ USA_newport_news_shipbuilding_organization = {
 		position = { x=3 y= 1  }
 		relative_position_id = generic_mio_trait_long_range_cruising
 
+		limit_to_equipment_type = {
+			ship_hull_carrier_conversion_bb
+			ship_hull_carrier_conversion_ca
+			ship_hull_carrier_1
+			ship_hull_carrier_2
+		}
+		
 		equipment_bonus = {
 			carrier_size = 2
 			build_cost_ic = 0.30
 			reliability = -0.30
-			naval_speed = -0.10
+			naval_speed = -0.15
+			anti_air_attack = -0.20
 			fuel_consumption = 0.50
-			
-
 		}
     }
 }

@@ -194,7 +194,7 @@ focus_tree = {
 				army_experience = 140
 			}
 			else = {
-				army_experience = 250
+				army_experience = 150
 			}
 			air_experience = 150
 			add_political_power = 100
@@ -276,7 +276,7 @@ focus_tree = {
 				army_experience = 205
 			}
 			else = {
-				army_experience = 375
+				army_experience = 275
 			}
 			air_experience = 200
 			add_political_power = 200
@@ -1023,11 +1023,13 @@ focus_tree = {
 							}
 							support = {
 								artillery = { x = 0 y = 0 }
-								logistics_company_mot = { x = 0 y = 1 }
-								recon_ac = { x = 0 y = 2 }
-								engineer = { x = 1 y = 0 }
-								maintenance_company = { x = 1 y = 1 }
-								military_police = { x = 1 y = 2 }
+								engineer = { x = 0 y = 1 }
+								logistics_company_mot = { x = 0 y = 2 }
+								maintenance_company = { x = 0 y = 3 }
+								recon_ac = { x = 0 y = 4 }
+								military_police = { x = 0 y = 5 } 
+								signal_company = { x = 0 y = 6 } 
+								
 							}
 							priority = 2
 						}
@@ -1062,11 +1064,13 @@ focus_tree = {
 							}
 							support = {
 								artillery = { x = 0 y = 0 }
-								logistics_company_mot = { x = 0 y = 1 }
-								recon_ac = { x = 0 y = 2 }
-								engineer = { x = 1 y = 0 }
-								maintenance_company = { x = 1 y = 1 }
-								military_police = { x = 1 y = 2 }
+								engineer = { x = 0 y = 1 }
+								logistics_company_mot = { x = 0 y = 2 }
+								maintenance_company = { x = 0 y = 3 }
+								recon_ac = { x = 0 y = 4 }
+								military_police = { x = 0 y = 5 } 
+								signal_company = { x = 0 y = 6 } 
+								
 							}
 							priority = 2
 						}
@@ -1124,11 +1128,13 @@ focus_tree = {
 							}
 							support = {
 								artillery = { x = 0 y = 0 }
-								logistics_company_mot = { x = 0 y = 1 }
-								recon_ac = { x = 0 y = 2 }
-								engineer = { x = 1 y = 0 }
-								maintenance_company = { x = 1 y = 1 }
-								military_police = { x = 1 y = 2 }
+								engineer = { x = 0 y = 1 }
+								logistics_company_mot = { x = 0 y = 2 }
+								maintenance_company = { x = 0 y = 3 }
+								recon_ac = { x = 0 y = 4 }
+								military_police = { x = 0 y = 5 } 
+								signal_company = { x = 0 y = 6 } 
+								
 							}
 							priority = 2
 						}
@@ -1163,11 +1169,13 @@ focus_tree = {
 							}
 							support = {
 								artillery = { x = 0 y = 0 }
-								logistics_company_mot = { x = 0 y = 1 }
-								recon_ac = { x = 0 y = 2 }
-								engineer = { x = 1 y = 0 }
-								maintenance_company = { x = 1 y = 1 }
-								military_police = { x = 1 y = 2 }
+								engineer = { x = 0 y = 1 }
+								logistics_company_mot = { x = 0 y = 2 }
+								maintenance_company = { x = 0 y = 3 }
+								recon_ac = { x = 0 y = 4 }
+								military_police = { x = 0 y = 5 } 
+								signal_company = { x = 0 y = 6 } 
+								
 							}
 							priority = 2
 						}
@@ -1227,11 +1235,13 @@ focus_tree = {
 							}
 							support = {
 								artillery = { x = 0 y = 0 }
-								logistics_company_mot = { x = 0 y = 1 }
-								recon_ac = { x = 0 y = 2 }
-								engineer = { x = 1 y = 0 }
-								maintenance_company = { x = 1 y = 1 }
-								military_police = { x = 1 y = 2 }
+								engineer = { x = 0 y = 1 }
+								logistics_company_mot = { x = 0 y = 2 }
+								maintenance_company = { x = 0 y = 3 }
+								recon_ac = { x = 0 y = 4 }
+								military_police = { x = 0 y = 5 } 
+								signal_company = { x = 0 y = 6 } 
+								
 							}
 							priority = 2
 						}
@@ -1266,11 +1276,13 @@ focus_tree = {
 							}
 							support = {
 								artillery = { x = 0 y = 0 }
-								logistics_company_mot = { x = 0 y = 1 }
-								recon_ac = { x = 0 y = 2 }
-								engineer = { x = 1 y = 0 }
-								maintenance_company = { x = 1 y = 1 }
-								military_police = { x = 1 y = 2 }
+								engineer = { x = 0 y = 1 }
+								logistics_company_mot = { x = 0 y = 2 }
+								maintenance_company = { x = 0 y = 3 }
+								recon_ac = { x = 0 y = 4 }
+								military_police = { x = 0 y = 5 } 
+								signal_company = { x = 0 y = 6 } 
+								
 							}
 							priority = 2
 						}
@@ -1565,20 +1577,18 @@ focus_tree = {
 							
 							artillery_brigade = { x = 3 y = 3 }
 
-							anti_air_heavy = { x = 4 y = 0 }
-							field_gun_brigade = { x = 4 y = 1 }
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_tank_brigade = { x = 0 y = 1 }
+							anti_tank_brigade = { x = 4 y = 0 }
+							anti_air = { x = 4 y = 1 }
 						}
 						support = {
-							artillery = { x = 0 y = 0 }
-							engineer = { x = 0 y = 1 }
+							artillery = { x = 0 y = 0 } 
+							engineer = { x = 0 y = 1 } 		
 							recon = { x = 0 y = 2 }
-							logistics_company = { x = 1 y = 0 }
-							field_gun_support = { x = 1 y = 1 }
-							field_hospital = { x = 1 y = 2 }
+							pack_artillery = { x = 0 y = 3 }
+							logistics_company = { x = 0 y = 4 }
+							anti_air_company = { x = 0 y = 5 }
+							field_gun_support = { x = 0 y = 6 }
+							field_hospital = { x = 0 y = 7 }
 						}
 					}
 				}
@@ -1621,20 +1631,18 @@ focus_tree = {
 							
 							artillery_brigade = { x = 3 y = 3 }
 
-							anti_air_heavy = { x = 4 y = 0 }
-							field_gun_brigade = { x = 4 y = 1 }
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_tank_brigade = { x = 0 y = 1 }
+							anti_tank_brigade = { x = 4 y = 0 }
+							anti_air = { x = 4 y = 1 }
 						}
 						support = {
-							artillery = { x = 0 y = 0 }
-							engineer = { x = 0 y = 1 }
+							artillery = { x = 0 y = 0 } 
+							engineer = { x = 0 y = 1 } 		
 							recon = { x = 0 y = 2 }
-							logistics_company = { x = 1 y = 0 }
-							field_gun_support = { x = 1 y = 1 }
-							field_hospital = { x = 1 y = 2 }
+							pack_artillery = { x = 0 y = 3 }
+							logistics_company = { x = 0 y = 4 }
+							anti_air_company = { x = 0 y = 5 }
+							field_gun_support = { x = 0 y = 6 }
+							field_hospital = { x = 0 y = 7 }
 						}
 					}
 				}
@@ -2649,7 +2657,7 @@ focus_tree = {
 					}
 					add_dynamic_modifier = {
 						modifier = ITA_state_development_africa3
-						days = 180 
+						days = 365
 					}
 				}
 			}
@@ -17775,14 +17783,14 @@ focus_tree = {
 			}	
 			add_tech_bonus = {
 				bonus = 0.5
-				ahead_reduction = 0.5
+				ahead_reduction = 0.75
 				uses = 1
 				category = infantry_weapons
 			}
 			add_tech_bonus = {
 				bonus = 0.5
 				uses = 1
-				ahead_reduction = 0.5
+				ahead_reduction = 0.7
 				category = cat_artillery
 			}
 			
@@ -18152,7 +18160,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			
+			army_experience = 100
 			add_stability = 0.1
 			add_political_power = 75
 			#if = {
@@ -18290,6 +18298,7 @@ focus_tree = {
 
 		completion_reward = {
 			#army_experience  = -50
+		army_experience = 100
 		custom_effect_tooltip = remove_military_high_command
 		retire_character = ITA_pietro_badoglio
 		retire_character = ITA_emilio_de_bono
@@ -18325,7 +18334,6 @@ focus_tree = {
 			add_to_variable = { ITA_ra_ground_attack_factor = 0.05 }
 			
 			add_to_variable = { ITA_re_armor_attack = 0.05 }
-			add_to_variable = { ITA_ra_air_superiority_efficiency = 0.1 }
 			add_to_variable = { ITA_re_artillery_attack_factor = 0.05 }
 			
 		}
@@ -18681,7 +18689,7 @@ focus_tree = {
 
 		completion_reward = {
 			mio:ITA_armaguerra = {
-				add_mio_funds = 1200
+				add_mio_funds = 2000
 			}
 			#add_tech_bonus = {
 			#	bonus = 0.5
@@ -18715,7 +18723,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				bonus = 0.5
+				bonus = 0.75
 				uses = 2
 				category = cat_artillery
 			}
@@ -18852,7 +18860,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
                 name = land_doc_bonus
                 cost_reduction = 0.5
-                uses = 1
+                uses = 2
                 category = special_forces_doctrine
             }
 			add_tech_bonus = {
@@ -19122,11 +19130,13 @@ focus_tree = {
 								}
 								support = {
 									artillery = { x = 0 y = 0 }
-									logistics_company_mot = { x = 0 y = 1 }
-									recon_ac = { x = 0 y = 2 }
-									engineer = { x = 1 y = 0 }
-									maintenance_company = { x = 1 y = 1 }
-									military_police = { x = 1 y = 2 }
+									engineer = { x = 0 y = 1 }
+									logistics_company_mot = { x = 0 y = 2 }
+									maintenance_company = { x = 0 y = 3 }
+									recon_ac = { x = 0 y = 4 }
+									military_police = { x = 0 y = 5 } 
+									signal_company = { x = 0 y = 6 } 
+									
 								}
 								priority = 2
 							}
@@ -19161,11 +19171,13 @@ focus_tree = {
 								}
 								support = {
 									artillery = { x = 0 y = 0 }
-									logistics_company_mot = { x = 0 y = 1 }
-									recon_ac = { x = 0 y = 2 }
-									engineer = { x = 1 y = 0 }
-									maintenance_company = { x = 1 y = 1 }
-									military_police = { x = 1 y = 2 }
+									engineer = { x = 0 y = 1 }
+									logistics_company_mot = { x = 0 y = 2 }
+									maintenance_company = { x = 0 y = 3 }
+									recon_ac = { x = 0 y = 4 }
+									military_police = { x = 0 y = 5 } 
+									signal_company = { x = 0 y = 6 } 
+									
 								}
 								priority = 2
 							}
@@ -19222,11 +19234,13 @@ focus_tree = {
 								}
 								support = {
 									artillery = { x = 0 y = 0 }
-									logistics_company_mot = { x = 0 y = 1 }
-									recon_ac = { x = 0 y = 2 }
-									engineer = { x = 1 y = 0 }
-									maintenance_company = { x = 1 y = 1 }
-									military_police = { x = 1 y = 2 }
+									engineer = { x = 0 y = 1 }
+									logistics_company_mot = { x = 0 y = 2 }
+									maintenance_company = { x = 0 y = 3 }
+									recon_ac = { x = 0 y = 4 }
+									military_police = { x = 0 y = 5 } 
+									signal_company = { x = 0 y = 6 } 
+									
 								}
 								priority = 2
 							}
@@ -19261,11 +19275,13 @@ focus_tree = {
 								}
 								support = {
 									artillery = { x = 0 y = 0 }
-									logistics_company_mot = { x = 0 y = 1 }
-									recon_ac = { x = 0 y = 2 }
-									engineer = { x = 1 y = 0 }
-									maintenance_company = { x = 1 y = 1 }
-									military_police = { x = 1 y = 2 }
+									engineer = { x = 0 y = 1 }
+									logistics_company_mot = { x = 0 y = 2 }
+									maintenance_company = { x = 0 y = 3 }
+									recon_ac = { x = 0 y = 4 }
+									military_police = { x = 0 y = 5 } 
+									signal_company = { x = 0 y = 6 } 
+									
 								}
 								priority = 2
 							}
@@ -19325,11 +19341,13 @@ focus_tree = {
 								}
 								support = {
 									artillery = { x = 0 y = 0 }
-									logistics_company_mot = { x = 0 y = 1 }
-									recon_ac = { x = 0 y = 2 }
-									engineer = { x = 1 y = 0 }
-									maintenance_company = { x = 1 y = 1 }
-									military_police = { x = 1 y = 2 }
+									engineer = { x = 0 y = 1 }
+									logistics_company_mot = { x = 0 y = 2 }
+									maintenance_company = { x = 0 y = 3 }
+									recon_ac = { x = 0 y = 4 }
+									military_police = { x = 0 y = 5 } 
+									signal_company = { x = 0 y = 6 } 
+									
 								}
 								priority = 2
 							}
@@ -19364,11 +19382,13 @@ focus_tree = {
 								}
 								support = {
 									artillery = { x = 0 y = 0 }
-									logistics_company_mot = { x = 0 y = 1 }
-									recon_ac = { x = 0 y = 2 }
-									engineer = { x = 1 y = 0 }
-									maintenance_company = { x = 1 y = 1 }
-									military_police = { x = 1 y = 2 }
+									engineer = { x = 0 y = 1 }
+									logistics_company_mot = { x = 0 y = 2 }
+									maintenance_company = { x = 0 y = 3 }
+									recon_ac = { x = 0 y = 4 }
+									military_police = { x = 0 y = 5 } 
+									signal_company = { x = 0 y = 6 } 
+									
 								}
 								priority = 2
 							}
@@ -19456,10 +19476,8 @@ focus_tree = {
 
 		completion_reward = {
 
-			add_timed_idea = {
-				idea = ITA_programma_R
-				days = 730
-			}
+			add_ideas = ITA_programma_R
+			
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
@@ -19566,7 +19584,7 @@ focus_tree = {
 		completion_reward = {
 			remove_ideas = ITA_bad_engine_2
 			#custom_effect_tooltip = ITA_engine_tt
-			custom_effect_tooltip = "Gives new models of fighters up to 1940 model"
+			custom_effect_tooltip = "Gives new models of fighters up to 1942 model"
 			add_tech_bonus = {
 				bonus = 1
 				uses = 1
@@ -19596,6 +19614,19 @@ focus_tree = {
 					fighter_1940 = 1
 				}
 			}
+			else_if = {
+				limit = {
+			
+					has_tech = fighter_1940
+					NOT = {
+						has_tech = fighter_1942
+					}
+					
+				}
+				set_technology = {
+					fighter_1942 = 1
+				}
+			}
 
 			if = {
 				limit = {
@@ -19622,6 +19653,19 @@ focus_tree = {
 					heavy_fighter_1940 = 1
 				}
 			}
+			else_if = {
+				limit = {
+			
+					has_tech = heavy_fighter_1940
+					NOT = {
+						has_tech = heavy_fighter_1942
+					}
+					
+				}
+				set_technology = {
+					heavy_fighter_1942 = 1
+				}
+			}
 		}
 	}
 ####add oil development as requirement
@@ -19636,7 +19680,7 @@ focus_tree = {
 		available = {
 			
 		}
-		cost = 7.2
+		cost = 7
 		ai_will_do = {
 			factor = 10
 		}
@@ -19935,7 +19979,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ITA_embrace_douhets_ideas
 		}
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 10
 		}
@@ -19982,7 +20026,7 @@ focus_tree = {
 		relative_position_id = ITA_reorganize_the_regia_aereonautica
 		x = 3
 		y = 3
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 10
 		}
@@ -20076,6 +20120,18 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			add_tech_bonus = {
+				name = ITA_proper_carriers
+				bonus = 1.0
+				uses = 1
+				category = cv_tech
+			}
+			add_tech_bonus = {
+				name = ITA_proper_battleships
+				bonus = 1.0
+				uses = 1
+				category = bb_tech
+			}
 			navy_experience = 100
 			unlock_decision_tooltip = { decision = ITA_dockyard_speed_bonus show_effect_tooltip = no }
 

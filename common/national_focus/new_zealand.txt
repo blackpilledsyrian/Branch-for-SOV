@@ -1357,8 +1357,8 @@ focus = {
                         	artillery = { x = 0 y = 0 }
                         	recon = { x = 0 y = 1 }
                         	engineer = { x = 0 y = 2 }
-                        	maintenance_company = { x = 1 y = 0 }
-                        	logistics_company = { x = 1 y = 1 }
+                        	maintenance_company = { x = 0 y = 3 }
+                        	logistics_company = { x = 0 y = 4 }
                     	}
 					}
 					every_state = {
@@ -1791,8 +1791,8 @@ focus = {
                         	artillery = { x = 0 y = 0 }
                         	recon = { x = 0 y = 1 }
                         	engineer = { x = 0 y = 2 }
-                        	maintenance_company = { x = 1 y = 0 }
-                        	logistics_company = { x = 1 y = 1 }
+                        	maintenance_company = { x = 0 y = 3 }
+                        	logistics_company = { x = 0 y = 4 }
                     	}
 					}
 					every_state = {
@@ -2109,8 +2109,8 @@ focus = {
 								artillery = { x = 0 y = 0 }
 								recon = { x = 0 y = 1 }
 								engineer = { x = 0 y = 2 }
-								maintenance_company = { x = 1 y = 0 }
-								logistics_company = { x = 1 y = 1 }
+								maintenance_company = { x = 0 y = 3 }
+								logistics_company = { x = 0 y = 4 }
 							}
 						}
 					every_state = {
@@ -2168,8 +2168,8 @@ focus = {
                         	artillery = { x = 0 y = 0 }
                         	recon = { x = 0 y = 1 }
                         	engineer = { x = 0 y = 2 }
-                        	maintenance_company = { x = 1 y = 0 }
-                        	logistics_company = { x = 1 y = 1 }
+                        	maintenance_company = { x = 0 y = 3 }
+                        	logistics_company = { x = 0 y = 4 }
                     	}
 					}
 					every_state = {
@@ -2251,8 +2251,8 @@ focus = {
 						artillery = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
 						engineer = { x = 0 y = 2 }
-						maintenance_company = { x = 1 y = 0 }
-						logistics_company = { x = 1 y = 1 }
+						maintenance_company = { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
 					}
 				}
 				every_state = {
@@ -2301,8 +2301,8 @@ focus = {
 						artillery = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
 						engineer = { x = 0 y = 2 }
-						maintenance_company = { x = 1 y = 0 }
-						logistics_company = { x = 1 y = 1 }
+						maintenance_company = { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
 					}
 				}
 			 every_state = {
@@ -2354,8 +2354,8 @@ focus = {
 						artillery = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
 						engineer = { x = 0 y = 2 }
-						maintenance_company = { x = 1 y = 0 }
-						logistics_company = { x = 1 y = 1 }
+						maintenance_company = { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
 					}
 				}
 			 every_state = {

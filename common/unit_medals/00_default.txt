@@ -37,7 +37,7 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_defence_factor = 0.1
+			army_defence_factor = 0.125
 			army_strength_factor = -0.05
 		}
 		
@@ -63,7 +63,7 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_attack_factor = 0.06
+			army_attack_factor = 0.10
 			army_strength_factor = -0.05
 		}
 		
@@ -86,6 +86,7 @@ unit_medals = {
 		
 		unit_modifiers = {
 			army_org_factor = 0.1
+			army_attack_factor = 0.05
 			supply_consumption_factor = -0.1
 			army_strength_factor = -0.05
 		}
@@ -109,7 +110,8 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_morale_factor = 0.15
+			army_morale_factor = 0.10
+			army_attack_factor = 0.05
 			army_strength_factor = -0.05
 		}
 		
@@ -483,7 +485,6 @@ unit_medals = {
 		
 		unit_modifiers = {
 			army_org_factor = 0.15
-			army_strength_factor = -0.05
 		}
 		
 		one_time_effect = {
@@ -505,8 +506,7 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			breakthrough_factor = 0.15
-			army_strength_factor = -0.05
+			breakthrough_factor = 0.10
 		}
 		
 		one_time_effect = {
@@ -529,7 +529,6 @@ unit_medals = {
 		
 		unit_modifiers = {
 			army_morale_factor = 0.15
-			army_strength_factor = -0.05
 		}
 		
 		one_time_effect = {
@@ -551,8 +550,7 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_attack_factor = 0.06
-			army_strength_factor = -0.05
+			army_attack_factor = 0.05
 		}
 		
 		one_time_effect = {
@@ -575,7 +573,8 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_morale_factor = 0.15
+			army_morale_factor = 0.10
+			army_attack_factor = 0.05
 			army_strength_factor = -0.05
 		}
 		
@@ -597,7 +596,8 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_org_factor = 0.15
+			army_org_factor = 0.10
+			army_attack_factor = 0.05
 			army_strength_factor = -0.05
 		}
 		
@@ -620,7 +620,7 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			army_attack_factor = 0.06
+			army_attack_factor = 0.10
 			army_strength_factor = -0.05
 		}
 		
@@ -642,7 +642,7 @@ unit_medals = {
 		cost = @cost
 		
 		unit_modifiers = {
-			max_planning_factor = 0.06
+			max_planning_factor = 0.08
 			army_strength_factor = -0.05
 		}
 		

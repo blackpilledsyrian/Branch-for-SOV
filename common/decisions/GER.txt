@@ -32,6 +32,223 @@ GER_surrender_category = {
 	}
 }
 GER_operation_barbarossa_category = {
+
+
+	GER_arrdenes_counter_offensive_decision = {
+	
+		allowed = {
+		   tag = GER
+		}
+
+		visible = {
+			has_war_with = SOV
+		}
+
+		available = {
+			SOV = {
+				surrender_progress < 0.7
+			}
+			has_war_with = SOV
+
+
+			# allied advance check
+		
+			OR = {
+				USA = { controls_state = 16 }
+				any_other_country = {
+					is_in_faction_with = USA
+					controls_state = 16
+				}
+				USA = { controls_state = 6 }
+				any_other_country = {
+					is_in_faction_with = USA
+					controls_state = 6
+				}
+				USA = { controls_state = 7 }
+				any_other_country = {
+					is_in_faction_with = USA
+					controls_state = 7
+				}				
+			}
+		
+		}
+
+		icon = generic_scorched_earth
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}	
+
+		fire_only_once = yes
+
+		complete_effect = {
+			if = {
+				limit = {
+					GER = {
+						has_completed_focus = GER_a_storm_of_steel	
+					}	
+				}
+				hidden_effect = {
+   					division_template = {
+			 			name = "Ardenes Counter Offensive Heavy Tank Division"
+			  			priority = 2
+	  
+				 		regiments = {
+							heavy_armor = { x = 0 y = 0 }
+							heavy_armor = { x = 0 y = 1 }
+							heavy_armor = { x = 0 y = 2 }
+							heavy_armor = { x = 0 y = 3 }
+					  
+							heavy_armor = { x = 1 y = 0 }
+							heavy_armor = { x = 1 y = 1 }
+							heavy_armor = { x = 1 y = 2 }
+							heavy_armor = { x = 1 y = 3 }
+					  
+							heavy_armor = { x = 2 y = 0 }
+							heavy_armor = { x = 2 y = 1 }
+							heavy_armor = { x = 2 y = 2 }
+							
+							mechanized = { x = 3 y = 0 }
+							mechanized = { x = 3 y = 1 }
+							mechanized = { x = 3 y = 2 }
+							mechanized = { x = 3 y = 3 }
+						}
+				  		support = {
+							artillery = { x = 0 y = 0 }
+							recon = { x = 0 y = 1 }
+							engineer = { x = 0 y = 2 }
+							anti_air_company = { x = 0 y = 3 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company_mot = { x = 0 y = 5 }
+				  		}
+					}
+					random_owned_controlled_state = {
+						limit = { ROOT = { has_full_control_of_state = PREV } }
+						prioritize = { 55 }
+						create_unit = {
+							division = "name = \"Save the Reich!\" division_template = \"Ardenes Counter Offensive Heavy Tank Division\" start_experience_factor = 0.5 start_equipment_factor = 1" 
+							owner = GER
+						} 
+						create_unit = {
+							division = "name = \"Save the Reich!\" division_template = \"Ardenes Counter Offensive Heavy Tank Division\" start_experience_factor = 0.5 start_equipment_factor = 1" 
+							owner = GER
+						} 
+					}
+				} 
+			}
+			if = {
+				limit = { 
+					GER = {
+						OR = {
+							has_completed_focus = GER_achtung_panzer
+							has_completed_focus = GER_infanterie_greift_an	
+						}
+					}
+				}
+				hidden_effect = {
+   					division_template = {
+			 			name = "Ardenes Counter Offensive Medium Tank Division"
+			  			priority = 2
+	  
+				 		regiments = {
+							medium_armor = { x = 0 y = 0 }
+							medium_armor = { x = 0 y = 1 }
+							medium_armor = { x = 0 y = 2 }
+							medium_armor = { x = 0 y = 3 }
+					  
+							medium_armor = { x = 1 y = 0 }
+							medium_armor = { x = 1 y = 1 }
+							medium_armor = { x = 1 y = 2 }
+							medium_armor = { x = 1 y = 3 }
+					  
+							medium_armor = { x = 2 y = 0 }
+							medium_armor = { x = 2 y = 1 }
+							medium_armor = { x = 2 y = 2 }
+							
+							mechanized = { x = 3 y = 0 }
+							mechanized = { x = 3 y = 1 }
+							mechanized = { x = 3 y = 2 }
+							mechanized = { x = 3 y = 3 }
+						}
+				  		support = {
+							artillery = { x = 0 y = 0 }
+							recon = { x = 0 y = 1 }
+							engineer = { x = 0 y = 2 }
+							anti_air_company = { x = 0 y = 3 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company_mot = { x = 0 y = 5 }
+				  		}
+					}
+					random_owned_controlled_state = {
+						limit = { ROOT = { has_full_control_of_state = PREV } }
+						prioritize = { 55 }
+						create_unit = {
+							division = "name = \"Save the Reich!\" division_template = \"Ardenes Counter Offensive Medium Tank Division\" start_experience_factor = 0.5 start_equipment_factor = 1" 
+							owner = GER
+						} 
+						create_unit = {
+							division = "name = \"Save the Reich!\" division_template = \"Ardenes Counter Offensive Medium Tank Division\" start_experience_factor = 0.5 start_equipment_factor = 1" 
+							owner = GER
+						}
+						create_unit = {
+							division = "name = \"Save the Reich!\" division_template = \"Ardenes Counter Offensive Medium Tank Division\" start_experience_factor = 0.5 start_equipment_factor = 1" 
+							owner = GER
+						} 
+					}
+				} 
+			}		
+			add_timed_idea = {
+				idea = GER_arden_counter_offensive
+				days = 30
+			}
+			BUL = {
+				add_timed_idea = {
+					idea = GER_arden_counter_offensive
+					days = 30
+				}	
+			}
+			ROM = {
+				add_timed_idea = {
+					idea = GER_arden_counter_offensive
+					days = 30
+				}
+			}	
+			HUN = {	
+				add_timed_idea = {
+					idea = GER_arden_counter_offensive
+					days = 30
+				}
+			}	
+			EFR = {	
+				add_timed_idea = {
+					idea = GER_arden_counter_offensive
+					days = 30
+				}
+			}
+			SLO = {	
+				add_timed_idea = {
+					idea = GER_arden_counter_offensive
+					days = 30
+				}
+			}	
+			SPR = {	
+				add_timed_idea = {
+					idea = GER_arden_counter_offensive
+					days = 30
+				}
+			}
+			hidden_effect = {
+				news_event = { id = news.492 hours = 6 }
+				
+				every_country = {limit = { check_variable= { speeches_enabled > 0}  }
+					play_song = "sp_ger_counter"
+				}
+				
+			}			
+		}
+	}
 	GER_operation_rosselsprung = {
 
 		priority = 10
@@ -229,88 +446,7 @@ GER_operation_barbarossa_category = {
 			}			
 	 	}
 	} 
-	GER_capture_equipment = {
-		visible = {
-			NOT = {
-				has_war_with = SOV
-			}
-		}	
-		icon = generic_civil_support
 
-		allowed = {
-			original_tag = GER
-		}
-		complete_effect = {
-			country_event = soviet.135
-		}
-	}
-	GER_war_in_the_west = {
-		visible = {
-			NOT = {
-				has_war_with = ENG
-			}
-		}	
-		icon = generic_civil_support
-
-		allowed = {
-			original_tag = GER
-		}
-		complete_effect = {
-			country_event = germany.563
-		}
-	}
-	GER_poland_evacuation = {
-		visible = {
-			POL = {
-				is_ai = no
-			}
-			OR = {
-				NOT = {
-					has_war_with = POL
-				}
-				AND = {
-					has_war_with = POL
-					POL = {
-						has_capitulated = no
-					}
-				}
-			}
-		}	
-		icon = generic_civil_support
-
-		allowed = {
-			original_tag = GER
-		}
-		complete_effect = {
-			country_event = germany.564
-		}
-	}
-	GER_battle_of_netherlands = {
-		visible = {
-			HOL = {
-				is_ai = no
-			}
-			OR = {
-				NOT = {
-					has_war_with = HOL
-				}
-				AND = {
-					has_war_with = HOL
-					HOL = {
-						has_capitulated = no
-					}
-				}
-			}
-		}
-		icon = generic_civil_support
-
-		allowed = {
-			original_tag = GER
-		}
-		complete_effect = {
-			country_event = germany.567
-		}
-	}
 	GER_delete_einsatzgruppen = {
 		name = "Delete Einsatzgruppen"
 		visible = {
@@ -363,9 +499,10 @@ GER_operation_barbarossa_category = {
 						}
 
 						support = {
-							engineer = { x = 0 y = 0 }
-							military_police = { x = 1 y = 0 }
-							recon = { x = 1 y = 1 }
+							pack_artillery = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
+							military_police = { x = 0 y = 2 }
+							recon = { x = 0 y = 3 }
 						}
 					}	
 				}
@@ -408,9 +545,10 @@ GER_operation_barbarossa_category = {
 						}
 
 						support = {
-							engineer = { x = 0 y = 0 }
-							military_police = { x = 1 y = 0 }
-							recon = { x = 1 y = 1 }
+							pack_artillery = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
+							military_police = { x = 0 y = 2 }
+							recon = { x = 0 y = 3 }
 						}
 					}	
 				}
@@ -548,9 +686,10 @@ GER_operation_barbarossa_category = {
 							}
 
 							support = {
-								engineer = { x = 0 y = 0 }
-								military_police = { x = 1 y = 0 }
-								recon = { x = 1 y = 1 }
+								pack_artillery = { x = 0 y = 0 }
+								engineer = { x = 0 y = 1 }
+								military_police = { x = 0 y = 2 }
+								recon = { x = 0 y = 3 }
 							}
 						}	
 					}
@@ -593,9 +732,10 @@ GER_operation_barbarossa_category = {
 							}
 
 							support = {
-								engineer = { x = 0 y = 0 }
-								military_police = { x = 1 y = 0 }
-								recon = { x = 1 y = 1 }
+								pack_artillery = { x = 0 y = 0 }
+								engineer = { x = 0 y = 1 }
+								military_police = { x = 0 y = 2 }
+								recon = { x = 0 y = 3 }
 							}
 						}	
 					}
@@ -4794,6 +4934,74 @@ foreign_politics = {
 			factor = 0
 		}
 	}
+	GER_capture_equipment = {
+		visible = {
+			NOT = {
+				has_war_with = SOV
+			}
+		}	
+		icon = generic_civil_support
+
+		allowed = {
+			original_tag = GER
+		}
+		complete_effect = {
+			country_event = soviet.135
+		}
+	}
+
+	GER_poland_evacuation = {
+		visible = {
+			POL = {
+				is_ai = no
+			}
+			OR = {
+				NOT = {
+					has_war_with = POL
+				}
+				AND = {
+					has_war_with = POL
+					POL = {
+						has_capitulated = no
+					}
+				}
+			}
+		}	
+		icon = generic_civil_support
+
+		allowed = {
+			original_tag = GER
+		}
+		complete_effect = {
+			country_event = germany.564
+		}
+	}
+	GER_battle_of_netherlands = {
+		visible = {
+			HOL = {
+				is_ai = no
+			}
+			OR = {
+				NOT = {
+					has_war_with = HOL
+				}
+				AND = {
+					has_war_with = HOL
+					HOL = {
+						has_capitulated = no
+					}
+				}
+			}
+		}
+		icon = generic_civil_support
+
+		allowed = {
+			original_tag = GER
+		}
+		complete_effect = {
+			country_event = germany.567
+		}
+	}
 
 	GER_form_greater_german_reich = {
 
@@ -4874,6 +5082,7 @@ foreign_politics = {
 			}
 			visible = {
 				original_tag = GER
+				NOT = { has_global_flag = scw_over }
 			}
 
 			ai_will_do = {
@@ -4881,7 +5090,7 @@ foreign_politics = {
 			}
 
 			cost = 0
-			days_remove = 60
+			days_remove = 90
 			fire_only_once = no
 
 			modifier = {
@@ -4907,18 +5116,21 @@ foreign_politics = {
 								has_completed_focus = SPA_circurvent_non_intervention_treaties
 							}
 							
-							has_equipment = { infantry_equipment > 1499 }
+							has_equipment = { infantry_equipment > 2499 }
 						}
 						send_equipment = { 
 							type = infantry_equipment
 							target = SPR
-							amount = 1500
+							amount = 2500
 							old_prioritised = yes
 						}
 						add_to_variable = {
 							counter_guns_ger_1 = 1
 						}
 						army_experience = 10
+						SPR = {
+							army_experience = 10
+						}
 					}
 					if = {
 						limit = { 
@@ -4926,16 +5138,20 @@ foreign_politics = {
 								has_completed_focus = SPA_circurvent_non_intervention_treaties
 							}
 							
-							has_equipment = { artillery_equipment > 99 }
+							has_equipment = { artillery_equipment > 179 }
 						}
 						send_equipment = { 
 							type = artillery_equipment
 							target = SPR
-							amount = 100
+							amount = 180
 							old_prioritised = yes
 						}
 						add_to_variable = {
 							counter_arty_ger_1 = 1
+						}
+						army_experience = 10
+						SPR = {
+							army_experience = 10
 						}
 					}
 				
@@ -4943,13 +5159,13 @@ foreign_politics = {
 				if = {
 					limit = {
 						GER = {
-							has_equipment = { small_plane_airframe > 19 }
+							has_equipment = { small_plane_airframe > 29 }
 						}
 					}
 					send_equipment = { 
 						type = small_plane_airframe
 						target = SPR
-						amount = 20
+						amount = 30
 						old_prioritised = yes
 					}
 					air_experience = 20
@@ -4965,7 +5181,7 @@ foreign_politics = {
 							name = "Werner" 
 							surname = "Mölders"
 							callsign = "Vati"
-							type = fighter_genius
+							type = fighter_unique
 						}
 						add_to_variable = {
 							var = acers_count
@@ -4998,9 +5214,9 @@ foreign_politics = {
 							
 						}
 						add_ace = {
-							name = "Harro" 
-							surname = "Harder"
-							callsign = "Harras"
+							name = "Peter" 
+							surname = "Boddem"
+							callsign = "6-80"
 							type = fighter_genius
 						}
 						add_to_variable = {
@@ -5016,10 +5232,10 @@ foreign_politics = {
 							
 						}
 						add_ace = {
-							name = "Peter" 
-							surname = "Boddem"
-							callsign = "6-80"
-							type = fighter_genius
+							name = "Harro" 
+							surname = "Harder"
+							callsign = "Harras"
+							type = fighter_good
 						}
 						add_to_variable = {
 							var = acers_count
@@ -5194,20 +5410,80 @@ foreign_politics = {
 				if = {
 					limit = {
 						GER = {
-							has_equipment = { medium_plane_airframe > 9 }
+							has_equipment = { medium_plane_airframe > 14 }
 						}
 					}
 					send_equipment = { 
 						type = medium_plane_airframe
 						target = SPR
-						amount = 10
+						amount = 15
 						old_prioritised = yes
 					}
 					air_experience = 20
 				}
 				custom_effect_tooltip = planes_to_spain_for_exp
-				
+				hidden_effect = {
+					if = {
+						limit = { has_country_flag = GER_feuerzauber_auto }
+						country_event = { id = germany.1337 days = 1 } # Auto-restart (see GER_feuerzauber_auto_on)
+					}
+				}
 			}
+	}
+	GER_feuerzauber_auto_on = {
+		icon = generic_air
+
+		visible = {
+			original_tag = GER
+			NOT = { has_country_flag = GER_feuerzauber_auto }
+			NOT = { has_global_flag = scw_over }
+		}
+
+		available = {
+			OR = {
+				has_completed_focus = GER_break_the_reds
+				has_completed_focus = GER_mission_to_iberia
+			}
+		}
+
+		cost = 0
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_country_flag = GER_feuerzauber_auto
+			custom_effect_tooltip = GER_feuerzauber_auto_on_tt
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_decision = GER_spanish_airwings } }
+					activate_decision = GER_spanish_airwings
+				}
+			}
+		}
+	}
+	GER_feuerzauber_auto_off = {
+		icon = generic_air
+
+		visible = {
+			original_tag = GER
+			has_country_flag = GER_feuerzauber_auto
+			NOT = { has_global_flag = scw_over }
+		}
+
+		cost = 0
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			clr_country_flag = GER_feuerzauber_auto
+			custom_effect_tooltip = GER_feuerzauber_auto_off_tt
+		}
 	}
 
 	GER_rhineland = {
@@ -5807,7 +6083,7 @@ foreign_politics = {
 				}
 				date > 1939.9.1 
 			}
-			date > 1939.7.1		 
+			date > 1939.9.1		 
 			has_country_flag = GER_the_end_of_czechoslovakia
 		}
 	
@@ -6115,27 +6391,22 @@ foreign_politics = {
 								mountaineers = { x = 2 y = 1 }	
 								mountaineers = { x = 2 y = 2 }	
 								
-								field_gun_brigade = { x = 3 y = 0 }
-								field_gun_brigade = { x = 3 y = 1 }	
-								field_gun_brigade = { x = 3 y = 2 }
-								field_gun_brigade = { x = 3 y = 3 }
+								pack_artillery_brigade = { x = 3 y = 0 }
+								pack_artillery_brigade = { x = 3 y = 1 }	
+								pack_artillery_brigade = { x = 3 y = 2 }
+								pack_artillery_brigade = { x = 3 y = 3 }
 
-								field_gun_brigade = { x = 4 y = 0 }
-								field_gun_brigade = { x = 4 y = 1 }	
-							}
-							regimental_support = {
-								pack_artillery_brigade = { x = 0 y = 0 }
-								pack_artillery_brigade = { x = 0 y = 1 }
-								pack_artillery_brigade = { x = 0 y = 2 }
-								pack_artillery_brigade = { x = 0 y = 3 }
-								pack_artillery_brigade = { x = 0 y = 4 }
+								pack_artillery_brigade = { x = 4 y = 0 }
+								pack_artillery_brigade = { x = 4 y = 1 }	
 							}
 							support = {
-								artillery = { x = 0 y = 0 }
-								engineer = { x = 0 y = 1 }
+								artillery = { x = 0 y = 0 } 
+								engineer = { x = 0 y = 1 } 		
 								recon = { x = 0 y = 2 }
-								logistics_company = { x = 1 y = 0 }
-								field_gun_support = { x = 1 y = 1 }
+								pack_artillery = { x = 0 y = 3 }
+								logistics_company = { x = 0 y = 4 }
+								anti_air_company = { x = 0 y = 5 }
+								field_gun_support = { x = 0 y = 6 }
 							}
 
 							priority = 2
@@ -6323,27 +6594,22 @@ foreign_politics = {
 							mountaineers = { x = 2 y = 1 }	
 							mountaineers = { x = 2 y = 2 }	
 							
-							field_gun_brigade = { x = 3 y = 0 }
-							field_gun_brigade = { x = 3 y = 1 }	
-							field_gun_brigade = { x = 3 y = 2 }
-							field_gun_brigade = { x = 3 y = 3 }
+							pack_artillery_brigade = { x = 3 y = 0 }
+							pack_artillery_brigade = { x = 3 y = 1 }	
+							pack_artillery_brigade = { x = 3 y = 2 }
+							pack_artillery_brigade = { x = 3 y = 3 }
 
-							field_gun_brigade = { x = 4 y = 0 }
-							field_gun_brigade = { x = 4 y = 1 }	
-						}
-						regimental_support = {
-							pack_artillery_brigade = { x = 0 y = 0 }
-							pack_artillery_brigade = { x = 0 y = 1 }
-							pack_artillery_brigade = { x = 0 y = 2 }
-							pack_artillery_brigade = { x = 0 y = 3 }
-							pack_artillery_brigade = { x = 0 y = 4 }
+							pack_artillery_brigade = { x = 4 y = 0 }
+							pack_artillery_brigade = { x = 4 y = 1 }	
 						}
 						support = {
-							artillery = { x = 0 y = 0 }
-							engineer = { x = 0 y = 1 }
+							artillery = { x = 0 y = 0 } 
+							engineer = { x = 0 y = 1 } 		
 							recon = { x = 0 y = 2 }
-							logistics_company = { x = 1 y = 0 }
-							field_gun_support = { x = 1 y = 1 }
+							pack_artillery = { x = 0 y = 3 }
+							logistics_company = { x = 0 y = 4 }
+							anti_air_company = { x = 0 y = 5 }
+							field_gun_support = { x = 0 y = 6 }
 						}
 
 						priority = 2
@@ -6362,49 +6628,51 @@ foreign_politics = {
 		}
 	}
 
-	GER_sweden_treaty = {
-		icon = ger_reichskommissariats
-		fire_only_once = yes
-
-		allowed = {
-		   tag = GER
-		}
-		visible = {
-			NOT = { has_war_with = SWE }
-			has_war = yes			
-		}
-
-		available = {
-			NOT = { has_war_with = SWE }
-			SWE = {
-				custom_trigger_tooltip = {
-					tooltip = GER_alone_or_peace_faction_tt
-					is_alone_or_in_faction_at_peace_with_GER = yes
-				}
-			} 
-			DEN = { 
-				NOT = {
-					controls_state = 37
-				}
-			}		
-			NOR = { 
-				NOT = {
-					controls_state = 110
-				}
-			}
-		}				
-
-		ai_will_do = {
-			factor = 10
-		}
-		cost = 10
-		complete_effect = {
-			SWE = { 
-			country_event = { id = germany.322 }
-			custom_effect_tooltip = needs_approval
-			}
-		}
-	}
+	# Superseded by the MFU_german_trade_primacy stack granted by the GER_swedish_steel focus.
+	# Events germany.322/323/324 are left intact but are now unreachable.
+#	GER_sweden_treaty = {
+#		icon = ger_reichskommissariats
+#		fire_only_once = yes
+#
+#		allowed = {
+#		   tag = GER
+#		}
+#		visible = {
+#			NOT = { has_war_with = SWE }
+#			has_war = yes			
+#		}
+#
+#		available = {
+#			NOT = { has_war_with = SWE }
+#			SWE = {
+#				custom_trigger_tooltip = {
+#					tooltip = GER_alone_or_peace_faction_tt
+#					is_alone_or_in_faction_at_peace_with_GER = yes
+#				}
+#			} 
+#			DEN = { 
+#				NOT = {
+#					controls_state = 37
+#				}
+#			}		
+#			NOR = { 
+#				NOT = {
+#					controls_state = 110
+#				}
+#			}
+#		}				
+#
+#		ai_will_do = {
+#			factor = 10
+#		}
+#		cost = 10
+#		complete_effect = {
+#			SWE = { 
+#			country_event = { id = germany.322 }
+#			custom_effect_tooltip = needs_approval
+#			}
+#		}
+#	}
 
 	GER_finland_access = {
 		icon = ger_reichskommissariats
@@ -6430,7 +6698,21 @@ foreign_politics = {
 			FIN = { give_military_access = GER }
 		}
 	}
+	GER_war_in_the_west = {
+		visible = {
+			NOT = {
+				has_war_with = ENG
+			}
+		}	
+		icon = generic_civil_support
 
+		allowed = {
+			original_tag = GER
+		}
+		complete_effect = {
+			country_event = germany.563
+		}
+	}
 	GER_around_maginot = {
 		icon = ger_reichskommissariats
 		fire_only_once = yes
@@ -6635,6 +6917,137 @@ foreign_politics = {
 				custom_effect_tooltip = GER_mol_rib_pact_tt
 				custom_effect_tooltip = needs_approval			
 			}
+		}
+	}
+
+	GER_tank_treaty = {
+		icon = ger_reichskommissariats
+		allowed = {
+			tag = GER
+		}	
+		visible =  {
+			FROM = {
+				NOT = {
+					has_country_flag = GER_tank_treaty_soviet
+				}
+			}
+		}
+		days_remove = 70
+		available = {
+			has_completed_focus = GER_mol_rib_pact
+			country_exists = SOV
+			SOV = {
+				OR = {
+					has_idea = SOV_molotov_ribbentrop_pact
+					has_idea = SOV_molotov_ribbentrop_pact_2
+				}
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				SOV = {
+					set_country_flag = SOV_tank_treaty
+					activate_decision = SOV_soviet_german_technological_agreement
+				}
+			}
+
+		}
+		remove_effect = {
+			effect_tooltip = {
+				add_tech_bonus = {
+					name = armor_bonus
+					bonus = 0.75
+					uses = 1
+					category = armor
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = tank_upgrade
+				}
+				add_tech_bonus = {
+					bonus = 1
+					category = cat_mechanized_equipment
+				}
+				SOV = {
+					add_tech_bonus = {
+					name = armor_bonus
+					bonus = 0.75
+					uses = 1
+					category = armor
+					}
+					add_tech_bonus = {
+						bonus = 0.5
+						uses = 1
+						category = tank_upgrade
+					}
+					add_tech_bonus = {
+						bonus = 1
+						category = cat_mechanized_equipment
+					}
+				}
+			}
+			custom_effect_tooltip = GER_tank_treaty_tt
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	GER_tank_treaty_visual = {
+		icon = ger_reichskommissariats
+		allowed = {
+			tag = GER
+		}
+		days_remove = 70 	
+		available = {
+			has_completed_focus = GER_mol_rib_pact
+		}
+		fire_only_once = yes
+		visible =  {
+			FROM = {
+				has_country_flag = GER_tank_treaty_soviet
+			}
+		}
+		remove_effect = {
+			effect_tooltip = {
+				add_tech_bonus = {
+					name = armor_bonus
+					bonus = 0.75
+					uses = 1
+					category = armor
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = tank_upgrade
+				}
+				add_tech_bonus = {
+					bonus = 1
+					category = cat_mechanized_equipment
+				}
+				SOV = {
+					add_tech_bonus = {
+					name = armor_bonus
+					bonus = 0.75
+					uses = 1
+					category = armor
+					}
+					add_tech_bonus = {
+						bonus = 0.5
+						uses = 1
+						category = tank_upgrade
+					}
+					add_tech_bonus = {
+						bonus = 1
+						category = cat_mechanized_equipment
+					}
+				}
+			}
+			custom_effect_tooltip = GER_tank_treaty_tt
+		}
+		ai_will_do = {
+			factor = 100
 		}
 	}
 
@@ -6920,151 +7333,116 @@ foreign_politics = {
 		}
 	}			
 
-	GER_sphere_of_influence = {
-		icon = ger_reichskommissariats
-		fire_only_once = yes
-		cost = 25 
+	#GER_sphere_of_influence = {
+		#icon = ger_reichskommissariats
+		#fire_only_once = yes
+		#cost = 25 
 
-		allowed = {
-		   tag = GER
-		}
-		visible = {
-			has_war = yes
-		}
+		#allowed = {
+		   #tag = GER
+		#}
+		#visible = {
+			#has_war = yes
+		#}
 
-		available = {
-			any_state = {
-				is_core_of = SOV 
-				NOT = {
-					is_controlled_by = ROM
-				}
-			}
-			HUN = {
-				has_full_control_of_state = 155
-				has_full_control_of_state = 808
-				has_full_control_of_state = 43
-				has_full_control_of_state = 807
-				has_full_control_of_state = 154	
-			}
-			ROM = {
-				has_full_control_of_state = 46
-				has_full_control_of_state = 79
-			}
-			OR = {
-				HUN = {
-					is_in_faction_with = ROOT
-					is_free_or_subject_of_root = yes
-				}
-				ROM = {
-					is_in_faction_with = ROOT
-					is_free_or_subject_of_root = yes
-				}
-			}
-			has_war = yes
-		}
+		#available = {
+			#any_state = {
+				#is_core_of = SOV 
+				#NOT = {
+					#is_controlled_by = ROM
+				#}
+			#}
+			#HUN = {
+				#has_full_control_of_state = 155
+				#has_full_control_of_state = 808
+				#has_full_control_of_state = 43
+				#has_full_control_of_state = 807
+				#has_full_control_of_state = 154	
+			#}
+			#ROM = {
+				#has_full_control_of_state = 46
+				#has_full_control_of_state = 79
+			#}
+			#OR = {
+				#HUN = {
+					#is_in_faction_with = ROOT
+					#is_free_or_subject_of_root = yes
+				#}
+				#ROM = {
+					#is_in_faction_with = ROOT
+					#is_free_or_subject_of_root = yes
+				#}
+			#}
+			#has_war = yes
+		#}
 
-		ai_will_do = {
-			factor = 10
-		}
+		#ai_will_do = {
+			#factor = 10
+		#}
 
-		complete_effect = {
-			53 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			52 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = fuel_silo
-					level = 2
-					instant_build = yes
-				}
-			}
-			HUN = {
-				add_stability = -0.1
-				155 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
-				}
-				154 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-			ROM = {
-				add_stability = -0.1
-				81 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
-				}
-				82 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-		}	
-			
-	}
+		#complete_effect = {
+			#53 = {
+				#add_extra_state_shared_building_slots = 2
+				#add_building_construction = {
+					#type = arms_factory
+					#level = 2
+					#instant_build = yes
+				#}
+			#}
+			#52 = {
+				#add_extra_state_shared_building_slots = 2
+				#add_building_construction = {
+					#type = arms_factory
+					#level = 2
+					#instant_build = yes
+				#}
+				#add_building_construction = {
+					#type = fuel_silo
+					#level = 2
+					#instant_build = yes
+				#}
+			#}
+			#HUN = {
+				#add_stability = -0.1
+				#5 = {
+					#add_extra_state_shared_building_slots = 2
+					#add_building_construction = {
+						#type = arms_factory
+						#level = 2
+						#instant_build = yes
+					#}
+				#}
+				#154 = {
+					#add_extra_state_shared_building_slots = 2
+					#add_building_construction = {
+						#type = arms_factory
+						#level = 2
+						#instant_build = yes
+					#}
+				#}
+			#}
+			#ROM = {
+				#add_stability = -0.1
+				#81 = {
+					#add_extra_state_shared_building_slots = 2
+					#add_building_construction = {
+						#type = arms_factory
+						#level = 2
+						#instant_build = yes
+					#}
+				#}
+				#82 = {
+					#add_extra_state_shared_building_slots = 2
+					#add_building_construction = {
+						#type = arms_factory
+						#level = 2
+						#instant_build = yes
+					#}
+				#}
+			#}
+		#}			
+	#}
 		
-	GER_romanian_oil = {
-
-		icon = ger_reichskommissariats
-
-		allowed = {
-		   tag = GER
-		}
-		
-		fire_only_once = yes
-		
-		available = {
-			ROM = { is_in_faction_with = ROOT }
-			ROM = { is_subject_of = ROOT }
-		}
-		
-		visible = {
-			has_war = yes
-		}
-		cost = 50
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		complete_effect = {
-			hidden_effect = {
-				complete_national_focus = GER_romanian_oil
-			}
-			ROM = {
-				give_resource_rights = { receiver = GER state = 46 }
-			}
-		}
-	}
-
 	GER_secure_spain = {
 
 		icon = ger_reichskommissariats
@@ -7143,12 +7521,6 @@ foreign_politics = {
 		}
 
 		available = {
-			any_state = {
-				is_core_of = SOV 
-				NOT = {
-					is_controlled_by = ROM
-				}
-			}
 			AND = {
 				BUL = {
 					is_in_faction_with = ROOT
@@ -7182,7 +7554,9 @@ foreign_politics = {
 			}
 			has_war = yes
 			GER = {
-				has_completed_focus = GER_the_winter_of_1941
+				NOT = {
+					has_war_with = SOV
+				}
 			}
 		}
 
@@ -7201,11 +7575,64 @@ foreign_politics = {
 					HUN = { complete_national_focus = HUN_operation_panzerfaust }
 				}
 			}
+			53 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory	
+					level = 2
+					instant_build = yes
+				}
+			}
+			52 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = fuel_silo
+					level = 2
+					instant_build = yes
+				}	
+			}
 			HUN = {
-				add_stability = -0.1
+				add_stability = -0.15
+				155 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				154 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
 			}
 			ROM = {
-				add_stability = -0.1
+				add_stability = -0.15
+				81 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				82 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
 			}
 				
 			if = {
@@ -7316,8 +7743,8 @@ foreign_politics = {
 					set_autonomy = { target = BUL autonomy_state = autonomy_satellite }
 				}
 			}
-		}	
 			
+		}
 	}
 	GER_befriend_nationalist_spain = {
 
@@ -7376,269 +7803,10 @@ foreign_politics = {
 			}
 		}
 	}
-	
 }
 
 GER_endsieg_category = {
 
-	GER_arrdenes_counter_offensive_decision = {
-	
-		allowed = {
-		   tag = GER
-		}
-
-		visible = {
-			has_war_with = SOV
-			date > 1942.03.01			
-		}
-
-		available = {
-			has_war_with = SOV
-			OR = {
-				SOV = {
-					surrender_progress < 0.35
-				}
-				date > 1943.1.1
-			}
-			# allied advance check
-			any_other_country = {
-				is_in_faction_with = USA
-				controls_state = 6
-			}			
-			OR = {
-				USA = { controls_state = 785 }
-				any_other_country = {
-					is_in_faction_with = USA
-					controls_state = 785
-				}
-				USA = { controls_state = 29 }
-				any_other_country = {
-					is_in_faction_with = USA
-					controls_state = 29
-				}
-				USA = { controls_state = 15 }
-				any_other_country = {
-					is_in_faction_with = USA
-					controls_state = 15
-				}				
-			}
-			OR = {
-				USA = { controls_state = 34 }
-				any_other_country = {
-					is_in_faction_with = USA
-					controls_state = 34
-				}
-				USA = { controls_state = 18 }
-				any_other_country = {
-					is_in_faction_with = USA
-					controls_state = 18
-				}				
-			}
-			OR = {
-				USA = { controls_state = 35 }
-				any_other_country = {
-					is_in_faction_with = USA
-					controls_state = 35
-				}
-				USA = { controls_state = 7 }
-				any_other_country = {
-					is_in_faction_with = USA
-					controls_state = 7
-				}				
-			}
-			OR = {
-				USA = { controls_state = 15 }
-				any_other_country = {
-					is_in_faction_with = USA
-					controls_state = 15
-				}
-				USA = { controls_state = 16 }
-				any_other_country = {
-					is_in_faction_with = USA
-					controls_state = 16
-				}
-				USA = { controls_state = 14 }
-				any_other_country = {
-					is_in_faction_with = USA
-					controls_state = 14
-				}				
-			}			
-		}
-
-		icon = generic_scorched_earth
-
-		cost = 0
-
-		ai_will_do = {
-			factor = 100
-		}	
-
-		fire_only_once = yes
-
-		complete_effect = {
-			if = {
-				limit = {
-					GER = {
-						has_completed_focus = GER_a_storm_of_steel	
-					}	
-				}
-				hidden_effect = {
-   					division_template = {
-			 			name = "Arrdenes Counter Offensive Heavy Tank Division"
-			  			priority = 2
-	  
-				 		regiments = {
-							heavy_armor = { x = 0 y = 0 }
-							heavy_armor = { x = 0 y = 1 }
-							heavy_armor = { x = 0 y = 2 }
-							heavy_armor = { x = 0 y = 3 }
-					  
-							heavy_armor = { x = 1 y = 0 }
-							heavy_armor = { x = 1 y = 1 }
-							heavy_armor = { x = 1 y = 2 }
-							heavy_armor = { x = 1 y = 3 }
-					  
-							heavy_armor = { x = 2 y = 0 }
-							heavy_armor = { x = 2 y = 1 }
-							heavy_armor = { x = 2 y = 2 }
-							
-							mechanized = { x = 3 y = 0 }
-							mechanized = { x = 3 y = 1 }
-							mechanized = { x = 3 y = 2 }
-							mechanized = { x = 3 y = 3 }
-						}
-				  		support = {
-							artillery = { x = 0 y = 0 }
-							recon = { x = 0 y = 1 }
-							engineer = { x = 0 y = 2 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company_mot = { x = 1 y = 1 }
-				  		}
-					}
-					random_owned_controlled_state = {
-						limit = { ROOT = { has_full_control_of_state = PREV } }
-						prioritize = { 55 }
-						create_unit = {
-							division = "name = \"Save the Reich!\" division_template = \"Arrdenes Counter Offensive Heavy Tank Division\" start_experience_factor = 0.5 start_equipment_factor = 1" 
-							owner = GER
-						} 
-						create_unit = {
-							division = "name = \"Save the Reich!\" division_template = \"Arrdenes Counter Offensive Heavy Tank Division\" start_experience_factor = 0.5 start_equipment_factor = 1" 
-							owner = GER
-						} 
-					}
-				} 
-			}
-			if = {
-				limit = { 
-					GER = {
-						OR = {
-							has_completed_focus = GER_achtung_panzer
-							has_completed_focus = GER_infanterie_greift_an	
-						}
-					}
-				}
-				hidden_effect = {
-   					division_template = {
-			 			name = "Arrdenes Counter Offensive Medium Tank Division"
-			  			priority = 2
-	  
-				 		regiments = {
-							medium_armor = { x = 0 y = 0 }
-							medium_armor = { x = 0 y = 1 }
-							medium_armor = { x = 0 y = 2 }
-							medium_armor = { x = 0 y = 3 }
-					  
-							medium_armor = { x = 1 y = 0 }
-							medium_armor = { x = 1 y = 1 }
-							medium_armor = { x = 1 y = 2 }
-							medium_armor = { x = 1 y = 3 }
-					  
-							medium_armor = { x = 2 y = 0 }
-							medium_armor = { x = 2 y = 1 }
-							medium_armor = { x = 2 y = 2 }
-							
-							mechanized = { x = 3 y = 0 }
-							mechanized = { x = 3 y = 1 }
-							mechanized = { x = 3 y = 2 }
-							mechanized = { x = 3 y = 3 }
-						}
-				  		support = {
-							artillery = { x = 0 y = 0 }
-							recon = { x = 0 y = 1 }
-							engineer = { x = 0 y = 2 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company_mot = { x = 1 y = 1 }
-				  		}
-					}
-					random_owned_controlled_state = {
-						limit = { ROOT = { has_full_control_of_state = PREV } }
-						prioritize = { 55 }
-						create_unit = {
-							division = "name = \"Save the Reich!\" division_template = \"Arrdenes Counter Offensive Medium Tank Division\" start_experience_factor = 0.5 start_equipment_factor = 1" 
-							owner = GER
-						} 
-						create_unit = {
-							division = "name = \"Save the Reich!\" division_template = \"Arrdenes Counter Offensive Medium Tank Division\" start_experience_factor = 0.5 start_equipment_factor = 1" 
-							owner = GER
-						}
-						create_unit = {
-							division = "name = \"Save the Reich!\" division_template = \"Arrdenes Counter Offensive Medium Tank Division\" start_experience_factor = 0.5 start_equipment_factor = 1" 
-							owner = GER
-						} 
-					}
-				} 
-			}		
-			add_timed_idea = {
-				idea = GER_arden_counter_offensive
-				days = 30
-			}
-			BUL = {
-				add_timed_idea = {
-					idea = GER_arden_counter_offensive
-					days = 30
-				}	
-			}
-			ROM = {
-				add_timed_idea = {
-					idea = GER_arden_counter_offensive
-					days = 30
-				}
-			}	
-			HUN = {	
-				add_timed_idea = {
-					idea = GER_arden_counter_offensive
-					days = 30
-				}
-			}	
-			EFR = {	
-				add_timed_idea = {
-					idea = GER_arden_counter_offensive
-					days = 30
-				}
-			}
-			SLO = {	
-				add_timed_idea = {
-					idea = GER_arden_counter_offensive
-					days = 30
-				}
-			}	
-			SPR = {	
-				add_timed_idea = {
-					idea = GER_arden_counter_offensive
-					days = 30
-				}
-			}
-			hidden_effect = {
-				news_event = { id = news.492 hours = 6 }
-				
-				every_country = {limit = { check_variable= { speeches_enabled > 0}  }
-					play_song = "sp_ger_counter"
-				}
-				
-			}			
-		}
-	}
 
 	GER_volksturm_decision = {
 		icon = generic_scorched_earth

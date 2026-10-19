@@ -173,6 +173,7 @@ focus_tree = {
 					}
 					
 				}
+				add_political_power = 100
 				custom_effect_tooltip = MAN_recruitable_tt0
 				
 				add_to_variable = {
@@ -208,10 +209,10 @@ focus_tree = {
 					custom_effect_tooltip = MAN_MIC_founding_man
 
 					set_variable = {
-						MIC_influence = 55
+						MIC_influence = 60
 					}
 					set_variable = {
-						MIC_loyalty = 55
+						MIC_loyalty = 60
 					}
 					
 				}
@@ -1056,7 +1057,26 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			OR = {
+				NOT = {
+					custom_trigger_tooltip = {
+						tooltip = custom_tooltip_pacified_KPT
+						check_variable = {
+							KPT_loyalty < 50
+						}
+						check_variable = {
+							KPT_influence < 50
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+				tooltip = condis_2_new
+				has_country_flag = MAN_KPT_remove
+			}
+			}
+			
+		}
 
 		bypass = {}
 
@@ -1071,16 +1091,24 @@ focus_tree = {
 				value = 0.1
 				tooltip = arms_factory_build_speed_factor_tooltip
 			}
-			
-			714 = {
-				add_extra_state_shared_building_slots = 6
+			612 = {
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
-					type = tank_assembly
-					level = 2
+					type = air_assembly
+					level = 1
 					instant_build = yes 
 				}
 				add_building_construction = {
 					type = arms_factory
+					level = 2
+					instant_build = yes 
+				}
+			}
+			custom_effect_tooltip = MANspace
+			714 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = tank_assembly
 					level = 2
 					instant_build = yes 
 				}
@@ -3991,7 +4019,7 @@ focus = {
 			focus = MAN_transit_hub
 		}
 
-		cost = 2
+		cost = 4
 
 
 		ai_will_do = {
@@ -4007,9 +4035,23 @@ focus = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			add_stability = 0.02
+			add_political_power = 40
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip =Hajime_Satomi
-
+			if = {
+				limit = { 
+					NOT = {
+						has_completed_focus = MAN_kwantung_army_takes_control
+					}
+				}
+				custom_effect_tooltip = MANspace
+				custom_effect_tooltip = MAN_kwantung_veto_gain_3
+				hidden_effect = {
+					MAN_KPT_low_influence_increase_effect = yes
+				}
+			}
+			
 		}
 	}
 	focus = {
@@ -4089,7 +4131,7 @@ focus = {
 				MAN_military_industry_dm_consumer_goods_factor = -0.02
 				tooltip = consumer_goods_tooltip
 			}
-			add_stability = -0.1
+			add_stability = 0.1
 			761 = {
 				add_extra_state_shared_building_slots = 4
 			}
@@ -4187,7 +4229,7 @@ focus = {
 			focus = MAN_transit_hub
 		}
 
-		cost = 2
+		cost = 4
 
 
 		ai_will_do = {
@@ -4203,9 +4245,22 @@ focus = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			add_stability = 0.02
+			add_political_power = 40
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = nobusuke_kishi
-
+			if = {
+				limit = { 
+					NOT = {
+						has_completed_focus = MAN_kwantung_army_takes_control
+					}
+				}
+				custom_effect_tooltip = MANspace
+				custom_effect_tooltip = MAN_kwantung_veto_gain_2
+				hidden_effect = {
+					MAN_KPT_medium_loyalty_increase_effect = yes	
+				}
+			}
 		}
 	}
 	focus = {
@@ -4294,8 +4349,8 @@ focus = {
 
 		available = {
 			has_country_flag = corpo_rule
-			has_stability > 0.95
-			has_war_support >0.95
+			has_stability > 0.9
+			has_war_support >0.9
 
 			arms_factory > 59
 			dockyard > 9
@@ -4324,10 +4379,10 @@ focus = {
 			custom_effect_tooltip = spacers
 			717 = {
 				
-				add_extra_state_shared_building_slots = 6
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
-					level = 6
+					level = 4
 					instant_build = yes 
 				}
 			}
@@ -4491,7 +4546,7 @@ focus = {
 
 			add_to_variable = {
 				var = MAN_military_industry_dm_industrial_capacity_factory
-				value = 0.3
+				value = 0.25
 				tooltip = industrial_capacity_factory_tooltip
 			}
 			add_to_variable = {
@@ -4911,17 +4966,15 @@ focus = {
 								artillery_heavy = { x = 4 y = 0 }
 								
 								artillery_heavy = { x = 4 y = 1 }
-								field_gun_brigade = { x = 4 y = 2 }
-							}
-							regimental_support = {
-								anti_air = { x = 0 y = 0 }
+								anti_air = { x = 4 y = 2 }
 							}
 								support = {
 									artillery = { x = 0 y = 0 }
 									recon = { x = 0 y = 1 }
 									mobile_engineer = { x = 0 y = 2 }
 									maintenance_company = { x = 0 y = 3 }
-									field_gun_support = { x = 1 y = 0 }
+									field_gun_support = { x = 0 y = 4 }
+									anti_air_company = { x = 0 y = 5 }
 								}
 						}
 							every_state = {
@@ -5022,17 +5075,15 @@ focus = {
 								artillery_heavy = { x = 4 y = 0 }
 								
 								artillery_heavy = { x = 4 y = 1 }
-								field_gun_brigade = { x = 4 y = 2 }
-							}
-							regimental_support = {
-								anti_air = { x = 0 y = 0 }
+								anti_air = { x = 4 y = 2 }
 							}
 								support = {
 									artillery = { x = 0 y = 0 }
 									recon = { x = 0 y = 1 }
 									mobile_engineer = { x = 0 y = 2 }
 									maintenance_company = { x = 0 y = 3 }
-									field_gun_support = { x = 1 y = 0 }
+									field_gun_support = { x = 0 y = 4 }
+									anti_air_company = { x = 0 y = 5 }
 								}
 						}
 							every_state = {
@@ -7998,7 +8049,7 @@ focus = {
 			}
 			custom_effect_tooltip = MANspace
 			add_to_variable = {
-				MAN_special_forces_min_var = 27
+				MAN_special_forces_min_var = 54
 				tooltip = JAP_sf_bonus_tt
 			}
 			custom_effect_tooltip = MANspace
@@ -8010,8 +8061,8 @@ focus = {
 			}
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.5
-				uses = 2
+				cost_reduction = 0.75
+				uses = 1
 				category = special_forces_doctrine
 			}
 			custom_effect_tooltip = MANspace
@@ -8061,7 +8112,7 @@ focus = {
 			}
 			add_to_variable = {
 				var = MAN_re_command_power_gain_mult
-				value = 0.1
+				value = 0.2
 				tooltip = command_daily_power_tt_10
 			}
 			add_to_variable = {
@@ -9121,7 +9172,10 @@ focus = {
 				MAN_panning_speed_var = 0.25
 				tooltip = planning_speed_tooltip
 			}
-
+			add_to_variable = {
+				MAN_arty_attc = 0.1
+				tooltip = army_artillery_attack_tooltip
+			}
 			custom_effect_tooltip = spacers
 
 			if = {
@@ -11353,15 +11407,11 @@ focus = {
 
 			add_tech_bonus = {
 				name = Mech
-				bonus = 3
-				uses = 1
-				technology = jap_mechanised_infantry1
-			}
-			add_tech_bonus = {
-				name = Mech
 				bonus = 2
-				uses = 1
+				uses = 2
+				technology = jap_mechanised_infantry1
 				technology = jap_mechanised_infantry2
+				technology = jap_mechanised_infantry3
 			}
 			custom_effect_tooltip = spacers
 			if = {
@@ -11554,7 +11604,9 @@ focus = {
 							artillery = { x = 0 y = 0 }
 							recon_ac = { x = 0 y = 1 }
 							engineer = { x = 0 y = 2 }
-							artillery_heavy_support = { x = 1 y = 0 }
+							anti_air_company = { x = 0 y = 3 }
+							artillery_heavy_support = { x = 0 y = 4 }
+	
 						}
 					}
 					every_state = {
@@ -11616,10 +11668,10 @@ focus = {
 					 }
 					 support = {
 						 artillery = { x = 0 y = 0 }
-						 engineer = { x = 1 y = 0 }
+						 engineer = { x = 0 y = 1 }
 						 maintenance_company = { x = 0 y = 2 }
-						 recon_ac = { x = 0 y = 2 }
-						 signal_company = { x = 0 y = 3 } 
+						 recon_ac = { x = 0 y = 3 }
+						 signal_company = { x = 0 y = 4 } 
 						 
 					 }
 					 priority = 2
@@ -11655,10 +11707,10 @@ focus = {
 					 }
 					 support = {
 						artillery = { x = 0 y = 0 }
-						engineer = { x = 1 y = 0 }
+						engineer = { x = 0 y = 1 }
 						maintenance_company = { x = 0 y = 2 }
-						recon_ac = { x = 0 y = 2 }
-						signal_company = { x = 0 y = 3 } 
+						recon_ac = { x = 0 y = 3 }
+						signal_company = { x = 0 y = 4 } 
 						
 					}
 					 priority = 2
@@ -11722,10 +11774,10 @@ focus = {
 					 }
 					 support = {
 						artillery = { x = 0 y = 0 }
-						engineer = { x = 1 y = 0 }
+						engineer = { x = 0 y = 1 }
 						maintenance_company = { x = 0 y = 2 }
-						recon_ac = { x = 0 y = 2 }
-						signal_company = { x = 0 y = 3 } 
+						recon_ac = { x = 0 y = 3 }
+						signal_company = { x = 0 y = 4 } 
 						
 					}
 					 priority = 2
@@ -11761,10 +11813,10 @@ focus = {
 					 }
 					 support = {
 						artillery = { x = 0 y = 0 }
-						engineer = { x = 1 y = 0 }
+						engineer = { x = 0 y = 1 }
 						maintenance_company = { x = 0 y = 2 }
-						recon_ac = { x = 0 y = 2 }
-						signal_company = { x = 0 y = 3 } 
+						recon_ac = { x = 0 y = 3 }
+						signal_company = { x = 0 y = 4 } 
 						
 					}
 					 priority = 2
@@ -12054,7 +12106,9 @@ focus = {
 							artillery = { x = 0 y = 0 }
 							recon = { x = 0 y = 1 }
 							engineer = { x = 0 y = 2 }
-							artillery_heavy_support = { x = 1 y = 0 }
+							anti_air_company = { x = 0 y = 3 }
+							artillery_heavy_support = { x = 0 y = 4 }
+	
 						}
 					}
 					every_state = {
@@ -12115,10 +12169,10 @@ focus = {
 							}
 							support = {
 								artillery = { x = 0 y = 0 }
-								engineer = { x = 1 y = 0 }
+								engineer = { x = 0 y = 1 }
 								maintenance_company = { x = 0 y = 2 }
-								recon_ac = { x = 0 y = 2 }
-								signal_company = { x = 0 y = 3 } 
+								recon_ac = { x = 0 y = 3 }
+								signal_company = { x = 0 y = 4 } 
 								
 							}
 							priority = 2
@@ -12154,10 +12208,10 @@ focus = {
 							}
 							support = {
 								artillery = { x = 0 y = 0 }
-								engineer = { x = 1 y = 0 }
+								engineer = { x = 0 y = 1 }
 								maintenance_company = { x = 0 y = 2 }
-								recon_ac = { x = 0 y = 2 }
-								signal_company = { x = 0 y = 3 } 
+								recon_ac = { x = 0 y = 3 }
+								signal_company = { x = 0 y = 4 } 
 								
 							}
 							priority = 2
@@ -12221,10 +12275,10 @@ focus = {
 							}
 							support = {
 								artillery = { x = 0 y = 0 }
-								engineer = { x = 1 y = 0 }
+								engineer = { x = 0 y = 1 }
 								maintenance_company = { x = 0 y = 2 }
-								recon_ac = { x = 0 y = 2 }
-								signal_company = { x = 0 y = 3 } 
+								recon_ac = { x = 0 y = 3 }
+								signal_company = { x = 0 y = 4 } 
 								
 							}
 							priority = 2
@@ -12260,10 +12314,10 @@ focus = {
 							}
 							support = {
 								artillery = { x = 0 y = 0 }
-								engineer = { x = 1 y = 0 }
+								engineer = { x = 0 y = 1 }
 								maintenance_company = { x = 0 y = 2 }
-								recon_ac = { x = 0 y = 2 }
-								signal_company = { x = 0 y = 3 } 
+								recon_ac = { x = 0 y = 3 }
+								signal_company = { x = 0 y = 4 } 
 								
 							}
 							priority = 2
@@ -12956,8 +13010,8 @@ focus = {
 				}
 				add_doctrine_cost_reduction = {
 					name = land_doc_bonus
-					cost_reduction = 0.5
-					uses = 2
+					cost_reduction = 0.75
+					uses = 1
 					category = special_forces_doctrine
 				}
 	
@@ -13651,7 +13705,7 @@ focus = {
 			#arms_factory > 19
 			612 = {
 				air_assembly > 0
-				arms_factory > 4
+				arms_factory > 2
 			}
 		}
 		bypass = {
@@ -13739,7 +13793,7 @@ focus = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 					add_building_construction = {
@@ -13804,7 +13858,7 @@ focus = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -13886,8 +13940,8 @@ focus = {
 				has_country_flag = cope
 			}
 			612 = {
-				air_assembly > 3
-				arms_factory > 11
+				air_assembly > 2
+				arms_factory > 6
 			}
 			if = {
 				limit = {
@@ -13937,7 +13991,7 @@ focus = {
 			custom_effect_tooltip = MAN_recruitable_tt0
 			add_to_variable = {
 				var = MAN_military_industry_dm_industrial_capacity_factory
-				value = 0.05
+				value = 0.1
 				tooltip = industrial_capacity_factory_tooltip
 			}
 			add_tech_bonus = {
@@ -13948,10 +14002,10 @@ focus = {
 			}
 
 			612 = {
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 5
 					instant_build = yes
 				}
 			}
@@ -13984,8 +14038,8 @@ focus = {
 				has_country_flag = cope
 			}
 			612 = {
-				air_assembly > 3
-				arms_factory > 11
+				air_assembly > 2
+				arms_factory > 6
 			}
 			if = {
 				limit = {
@@ -14035,7 +14089,7 @@ focus = {
 			custom_effect_tooltip = MAN_recruitable_tt0
 			add_to_variable = {
 				var = MAN_military_industry_dm_industrial_capacity_factory
-				value = 0.05
+				value = 0.1
 				tooltip = industrial_capacity_factory_tooltip
 			}
 			add_tech_bonus = {
@@ -14047,10 +14101,10 @@ focus = {
 			}
 			#add_equipment_to_stockpile = { type = fighter_equipment_1934 amount = 300 producer = JAP }
 			612 = {
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 5
 					instant_build = yes
 				}
 			}

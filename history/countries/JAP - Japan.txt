@@ -1,4 +1,5 @@
 ﻿capital = 282
+add_to_tech_sharing_group = JAP_greater_east_asia_research
 
 oob = "JAP_1936"
 set_rule = { can_create_factions = no }
@@ -462,6 +463,7 @@ if = {
 	create_equipment_variant = {
 		name = "Type 89 I-Go"
 		type = medium_tank_chassis_1934
+		model = "MFU_JAP_medium_armor_entity"
 		parent_version = 0
 		modules = {
 			main_armament_slot = tank_close_support_gun
@@ -481,6 +483,7 @@ if = {
 	create_equipment_variant = {
 		name = "Type 91"
 		type = heavy_tank_chassis_1934
+		model = "MFU_JAP_heavy_armor_entity"
 		parent_version = 0
 		modules = {
 			main_armament_slot = tank_close_support_gun

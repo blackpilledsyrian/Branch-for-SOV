@@ -462,6 +462,7 @@ technologies = {
            	create_equipment_variant = {
 				name = "AMX 40"
 				type = light_tank_chassis_1940
+				model = "MFU_FRA_light_armor_entity"
 				parent_version = 0
 				modules = {
 				main_armament_slot = tank_small_cannon_2
@@ -893,6 +894,7 @@ technologies = {
            	create_equipment_variant = {
 				name = "Char B40"
 				type = heavy_tank_chassis_1940
+				model = "MFU_FRA_heavy_armor_entity"
 				parent_version = 0
 				modules = {
 				main_armament_slot = tank_medium_cannon_2
@@ -1535,10 +1537,10 @@ technologies = {
 		}
 		folder = {
 			name = nsb_fra_armor_folder
-			position = { x = 10 y = @1941 }
+			position = { x = 10 y = @1940 }
 		}
 		research_cost = 1.5
-		start_year = 1941
+		start_year = 1940
 		
 		categories = {
 			motorized_equipment
@@ -1558,11 +1560,11 @@ technologies = {
 		}
 		folder = {
 			name = nsb_fra_armor_folder
-			position = { x = 10 y = @1943 }
+			position = { x = 10 y = @1942 }
 		}
 		
 		research_cost = 1.5
-		start_year = 1943
+		start_year = 1942
 		
 		
 		categories = {

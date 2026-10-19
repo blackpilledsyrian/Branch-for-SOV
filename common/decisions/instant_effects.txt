@@ -297,7 +297,6 @@ PAR_instant_effect_decisions = {
 						is_core_of = SPR
 						is_core_of = ROM
 						is_core_of = BUL
-						is_core_of = SLO
 
 					}
 					is_controlled_by = GER 
@@ -315,7 +314,6 @@ PAR_instant_effect_decisions = {
 						is_core_of = SPR
 						is_core_of = ROM
 						is_core_of = BUL
-						is_core_of = SLO
 
 					}
 					has_dynamic_modifier = {
@@ -346,7 +344,6 @@ PAR_instant_effect_decisions = {
 						is_core_of = SPR
 						is_core_of = ROM
 						is_core_of = BUL
-						is_core_of = SLO
 
 					}
 					is_controlled_by = GER 
@@ -370,7 +367,6 @@ PAR_instant_effect_decisions = {
 						is_core_of = SPR
 						is_core_of = ROM
 						is_core_of = BUL
-						is_core_of = SLO
 
 					}
 					NOT = {
@@ -1306,7 +1302,7 @@ PAR_instant_effect_decisions = {
 		}
 			
 		fire_only_once = no
-		days_re_enable = 45
+		days_re_enable = 40
 		fixed_random_seed = no
 
 
@@ -1314,7 +1310,7 @@ PAR_instant_effect_decisions = {
 			random_list = {
 				6 = {
 					modifier = {
-						factor = 10
+						factor = 416
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
@@ -1324,7 +1320,7 @@ PAR_instant_effect_decisions = {
 						}
 					}
 					modifier = {
-						factor = 5
+						factor = 25
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
@@ -1334,7 +1330,22 @@ PAR_instant_effect_decisions = {
 							check_variable = {
 								var = USA_new_deal_help
 								value = 61
-								compare = greater_than
+								compare = greater_than_or_equals
+							}
+						}
+					}
+					modifier = {
+						factor = 7
+						USA = {
+							check_variable = {
+								var = USA_new_deal_help
+								value = 60
+								compare = less_than_or_equals
+							}
+							check_variable = {
+								var = USA_new_deal_help
+								value = 56
+								compare = greater_than_or_equals
 							}
 						}
 					}
@@ -1344,13 +1355,13 @@ PAR_instant_effect_decisions = {
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
-								value = 60
+								value = 55
 								compare = less_than_or_equals
 							}
 							check_variable = {
 								var = USA_new_deal_help
-								value = 55
-								compare = greater_than
+								value = 51
+								compare = greater_than_or_equals
 							}
 						}
 					}
@@ -1359,13 +1370,13 @@ PAR_instant_effect_decisions = {
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
-								value = 55
+								value = 50
 								compare = less_than_or_equals
 							}
 							check_variable = {
 								var = USA_new_deal_help
-								value = 50
-								compare = greater_than
+								value = 46
+								compare = greater_than_or_equals
 							}
 						}
 					}
@@ -1374,13 +1385,13 @@ PAR_instant_effect_decisions = {
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
-								value = 50
+								value = 45
 								compare = less_than_or_equals
 							}
 							check_variable = {
 								var = USA_new_deal_help
-								value = 45
-								compare = greater_than
+								value = 41
+								compare = greater_than_or_equals
 							}
 						}
 					}
@@ -1389,13 +1400,13 @@ PAR_instant_effect_decisions = {
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
-								value = 45
+								value = 40
 								compare = less_than_or_equals
 							}
 							check_variable = {
 								var = USA_new_deal_help
-								value = 40
-								compare = greater_than
+								value = 36
+								compare = greater_than_or_equals
 							}
 						}
 					}
@@ -1404,28 +1415,28 @@ PAR_instant_effect_decisions = {
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
-								value = 40
+								value = 35
 								compare = less_than_or_equals
 							}
 							check_variable = {
 								var = USA_new_deal_help
-								value = 35
-								compare = greater_than
+								value = 31
+								compare = greater_than_or_equals
 							}
 						}
 					}
 					modifier = {
-						factor = .5
+						factor = 0.5
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
-								value = 35
+								value = 30
 								compare = less_than_or_equals
 							}
 							check_variable = {
 								var = USA_new_deal_help
-								value = 30
-								compare = greater_than
+								value = 26
+								compare = greater_than_or_equals
 							}
 						}
 					}
@@ -1434,13 +1445,13 @@ PAR_instant_effect_decisions = {
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
-								value = 30
+								value = 25
 								compare = less_than_or_equals
 							}
 							check_variable = {
 								var = USA_new_deal_help
-								value = 25
-								compare = greater_than
+								value = 21
+								compare = greater_than_or_equals
 							}
 						}
 					}
@@ -1449,13 +1460,13 @@ PAR_instant_effect_decisions = {
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
-								value = 25
+								value = 20
 								compare = less_than_or_equals
 							}
 							check_variable = {
 								var = USA_new_deal_help
-								value = 20
-								compare = greater_than
+								value = 16
+								compare = greater_than_or_equals
 							}
 						}
 					}
@@ -1464,12 +1475,12 @@ PAR_instant_effect_decisions = {
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
-								value = 20
+								value = 15
 								compare = less_than_or_equals
 							}
 							check_variable = {
 								var = USA_new_deal_help
-								value = 15
+								value = 11
 								compare = greater_than
 							}
 						}
@@ -1479,7 +1490,7 @@ PAR_instant_effect_decisions = {
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
-								value = 15
+								value = 10
 								compare = less_than_or_equals
 							}
 							
@@ -1558,7 +1569,7 @@ PAR_instant_effect_decisions = {
 			}
 		}	
 		fire_only_once = no
-		days_re_enable = 80
+		days_re_enable = 70
 		fixed_random_seed = no
 
 
@@ -1576,7 +1587,7 @@ PAR_instant_effect_decisions = {
 						}
 					}
 					modifier = {
-						factor = .8
+						factor = 0.8
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
@@ -1636,57 +1647,11 @@ PAR_instant_effect_decisions = {
 						}
 					}
 					modifier = {
-						factor = 3.6
+						factor = 228
 						USA = {
 							check_variable = {
 								var = USA_new_deal_help
 								value = 20
-								compare = less_than_or_equals
-							}
-							check_variable = {
-								var = USA_new_deal_help
-								value = 15
-								compare = greater_than
-							}
-						}
-					}
-					modifier = {
-						factor = 4
-						USA = {
-							check_variable = {
-								var = USA_new_deal_help
-								value = 15
-								compare = less_than_or_equals
-							}
-							check_variable = {
-								var = USA_new_deal_help
-								value = 10
-								compare = greater_than
-							}
-						}
-					}
-					modifier = {
-						factor = 5
-						USA = {
-							check_variable = {
-								var = USA_new_deal_help
-								value = 10
-								compare = less_than_or_equals
-							}
-							check_variable = {
-								var = USA_new_deal_help
-								value = 5
-								compare = greater_than
-							}
-							
-						}
-					}
-					modifier = {
-						factor = 12
-						USA = {
-							check_variable = {
-								var = USA_new_deal_help
-								value = 5
 								compare = less_than_or_equals
 							}
 							
@@ -3772,28 +3737,7 @@ PAR_instant_effect_decisions = {
 			SPR= { country_event = { id = lar_spain.2 } }
 		}	
 	}
-	PAR_uk_remove_prepare_for_inevitable = {
-		allowed = { tag = PAR }
-		ai_will_do = {
-			base = 1000			
-		}
-		available = {
-			date > 1940.1.1
-
-		}
-		fire_only_once = yes
-
-		complete_effect = {
-			ENG = {
-				add_to_variable = {
-					ENG_industrial_capacity_factory_var = -0.15
-				}
-				add_to_variable = {
-					ENG_consumer_goods_factor_var = 0.03
-				}
-			}
-		}	
-	}
+	
 	PAR_canadian_shadow_factories = {
 		allowed = { tag = PAR }
 		ai_will_do = {
@@ -4643,56 +4587,8 @@ PAR_instant_effect_decisions = {
 			}
 		}
 	}
-	ENG_remove_debuff = {
-		allowed = { tag = PAR }
-		ai_will_do = {
-			base = 1000			
-		}
-		available = {
-			ENG = {
-				has_country_flag = ENG_helped_norway
-				has_country_flag = ENG_give_output_back
-				NOT = {
-					has_country_flag = ENG_give_output_back_2
-				}
-			}
-			
-		}
-		cost = 0
-		fire_only_once = yes
-
-		complete_effect = {
-			ENG = {
-				add_to_variable = {
-					ENG_industrial_capacity_factory_var = 0.15
-				}
-			}
-		}
-	}
-	ENG_give_debuff = {
-		allowed = { tag = PAR }
-		ai_will_do = {
-			base = 1000			
-		}
-		available = {
-			ENG = {
-				has_country_flag = ENG_helped_norway
-			}
-			
-		}
-		cost = 0
-		fire_only_once = yes
-
-		complete_effect = {
-			ENG = {
-				add_to_variable = {
-					ENG_industrial_capacity_factory_var = -0.15
-				}
-				set_country_flag = ENG_give_output_back
-				set_country_flag = { flag = ENG_give_output_back_2 value = 1 days = 180 }
-			}
-		}
-	}
+	
+	
 	SCW_force_end = {
 		allowed = { tag = PAR }
 		ai_will_do = {
@@ -4730,7 +4626,7 @@ PAR_instant_effect_decisions = {
 					}
 					ITA = {
 					
-						add_to_variable = { ITA_land_mastery_gain_factor = 0.3 }
+						add_to_variable = { ITA_land_mastery_gain_factor = 0.1 }
 					}
 					if = {
 						limit = {
@@ -4955,7 +4851,7 @@ PAR_instant_effect_decisions = {
 					}
 					ITA = {
 					
-						add_to_variable = { ITA_land_mastery_gain_factor = 0.3 }
+						add_to_variable = { ITA_land_mastery_gain_factor = 0.1 }
 					}
 					if = {
 						limit = {

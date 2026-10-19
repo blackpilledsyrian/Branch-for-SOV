@@ -114,7 +114,22 @@ ideas = {
 				factor = 1.5
 			}
 		}
-		
+
+		foreign_legion_spirit = {
+			ledger = army
+			visible = {
+				
+			}
+			modifier = {
+				
+				army_experience_from_volunteers = 0.5
+				experience_gain_army_unit_factor = -0.1
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
 		inventive_leadership_spirit = {
 			ledger = army
 			modifier = {
@@ -192,6 +207,7 @@ ideas = {
 				
 			}
 			modifier = {
+				army_spirit_cost_factor = -0.5
 				custom_modifier_tooltip=academy_pp_tooltip_gain
 				custom_modifier_tooltip=academy_pp_tooltip_acurrent
 			}
@@ -203,6 +219,7 @@ ideas = {
 		
 			ledger = army
 			modifier = {
+				army_spirit_cost_factor = -0.5
 				custom_modifier_tooltip = academy_weekly_special_forces_tooltip_gain
 				custom_modifier_tooltip = academy_weekly_special_forces_tooltip_current
 			}
@@ -215,6 +232,7 @@ ideas = {
 		professional_officer_corps_spirit = {
 			ledger = army
 			modifier = {
+				army_spirit_cost_factor = -0.5
 				custom_modifier_tooltip = academy_weekly_cp_max_tooltip_gain
 				custom_modifier_tooltip = academy_weekly_cp_max_tooltip_current
 				
@@ -234,6 +252,7 @@ ideas = {
 				engineers_tech = 0.25
 			}
 			modifier = {
+				army_spirit_cost_factor = -0.5
 				dig_in_speed_factor = 0.1
 				railway_gun_bombardment_factor = 0.2
 			}
@@ -245,6 +264,7 @@ ideas = {
 		proper_heritage_spirit = {
 			ledger = army
 			modifier = {
+				army_spirit_cost_factor = -0.5
 				cavalry_attack_factor = 0.05
 				cavalry_defence_factor = 0.05
 				research_speed_factor = 0.05
@@ -257,6 +277,7 @@ ideas = {
 		quick_improvisation_spirit = {
 			ledger = army
 			modifier = {
+				army_spirit_cost_factor = -0.5
 				command_power_gain = 0.1
 				planning_speed = 0.25
 			}
@@ -268,6 +289,7 @@ ideas = {
 		relief_of_command_spirit = {
 			ledger = army
 			modifier = {
+				army_spirit_cost_factor = -0.5
 				custom_modifier_tooltip = academy_experience_tooltip_gain
 				custom_modifier_tooltip = academy_experience_tooltip_acurrent
 			}
@@ -293,9 +315,10 @@ ideas = {
 			}
 
 			modifier = {
-				experience_gain_infantry_combat_factor = 0.1
+				army_spirit_cost_factor = -0.5
+				land_mastery_gain_factor = 0.1
 				org_loss_at_low_org_factor = -0.25
-				command_abilities_cost_factor = -0.2
+				command_abilities_cost_factor = -0.25
 				party_popularity_stability_factor = 0.15
 				war_support_factor = 0.15
 			
@@ -318,9 +341,10 @@ ideas = {
 			}
 
 			modifier = {
-				experience_gain_infantry_combat_factor = 0.1
+				army_spirit_cost_factor = -0.5
+				land_mastery_gain_factor = 0.1
 				org_loss_at_low_org_factor = -0.25
-				command_abilities_cost_factor = -0.2
+				command_abilities_cost_factor = -0.25
 				party_popularity_stability_factor = 0.15
 				war_support_factor = 0.15
 			}
@@ -334,6 +358,7 @@ ideas = {
 		state_serves_the_military_spirit = {
 			ledger = army
 			modifier = {
+				army_spirit_cost_factor = -0.5
 				war_support_factor = 0.05
 				mobilization_laws_cost_factor = -0.3
 				economy_cost_factor = -0.3
@@ -367,6 +392,7 @@ ideas = {
 			}
 
 			modifier = {
+				division_command_spirit_cost_factor = -0.333
 				tactic_elastic_defense_preferred_weight_factor = 0.5
 				tactic_overwhelming_fire_preferred_weight_factor = 0.5
 				max_dig_in_factor = 0.05
@@ -383,6 +409,7 @@ ideas = {
 				
 			}
 			modifier = {
+				division_command_spirit_cost_factor = -0.333
 				org_loss_when_moving = -0.15
 				army_speed_factor = 0.05
 				choose_preferred_tactics_cost = -15
@@ -402,6 +429,7 @@ ideas = {
 				
 			}
 			modifier = {
+				division_command_spirit_cost_factor = -0.333
 				tactic_infantry_charge_preferred_weight_factor = 0.5
 				intel_from_combat_factor = 0.15
 				recon_factor = 0.15
@@ -418,6 +446,7 @@ ideas = {
 				
 			}
 			modifier = {
+				division_command_spirit_cost_factor = -0.333
 				tactic_delay_preferred_weight_factor = 0.5
 				training_time_army_factor = -0.25
 				command_power_gain = 0.15
@@ -433,6 +462,7 @@ ideas = {
 				
 			}
 			modifier = {
+				division_command_spirit_cost_factor = -0.333
 				tactic_human_wave_tactics_preferred_weight_factor = 0.5
 				org_loss_at_low_org_factor = -0.3
 				army_strength_factor = -0.08
@@ -443,23 +473,9 @@ ideas = {
 			}
 		}
 
-		foreign_legion_spirit = {
-			ledger = army
-			visible = {
-				
-			}
-			modifier = {
-				
-				army_experience_from_volunteers = 0.5
-				experience_gain_army_unit_factor = -0.1
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
 		maneuver_warfare_spirit = {
 			modifier = {
+				division_command_spirit_cost_factor = -0.333
 				tactic_unexpected_thrust_preferred_weight_factor = 0.5
 				army_speed_factor = 0.05
 				coordination_bonus = 0.05
@@ -489,6 +505,7 @@ ideas = {
 				}
 			}
 			modifier = {
+				division_command_spirit_cost_factor = -0.333
 				war_support_reduction_on_damage = -0.2
 				war_support_factor = 0.05
 				weekly_casualties_war_support = 0.0035
@@ -502,6 +519,7 @@ ideas = {
 			modifier = {
 				tactic_barrage_preferred_weight_factor = 0.5
 				breakthrough_factor = 0.07
+				division_command_spirit_cost_factor = -0.333
 			}
 			ai_will_do = {
 				factor = 1.5
@@ -526,6 +544,7 @@ ideas = {
 				}
 			}
 			modifier = {
+				division_command_spirit_cost_factor = -0.333
 				resistance_target = 0.05
 				resistance_growth_on_our_occupied_states = 0.1
 				compliance_growth_on_our_occupied_states = -0.1
@@ -537,6 +556,7 @@ ideas = {
 		logistical_focus_spirit = {
 			ledger = army
 			modifier = {
+				division_command_spirit_cost_factor = -0.333
 				tactic_planned_attack_preferred_weight_factor = 0.5
 				supply_consumption_factor = -0.05
 				air_fuel_consumption_factor = -0.1
@@ -561,10 +581,11 @@ ideas = {
 		living_off_land_spirit = {
 			ledger = army
 			modifier = {
-				attrition = -0.1
+				division_command_spirit_cost_factor = -0.333
+				attrition = -0.15
 				out_of_supply_factor = -0.1
 				recon_factor = -0.1
-				coordination_bonus = -0.03
+				coordination_bonus = -0.02
 				resistance_growth = 0.1
 				resistance_activity = 0.05
 			}
@@ -573,8 +594,9 @@ ideas = {
 		operational_reserve_spirit = {
 			ledger = army
 			modifier = {
+				division_command_spirit_cost_factor = -0.333
 				tactic_relentless_assault_preferred_weight_factor = 0.5
-				army_strength_factor = 0.08	
+				army_strength_factor = 0.06
 			}
 			ai_will_do = {
 				factor = 1.5

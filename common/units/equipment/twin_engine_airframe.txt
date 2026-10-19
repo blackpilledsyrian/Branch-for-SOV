@@ -59,7 +59,7 @@ equipments = {
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
-		type = { tactical_bomber }
+		type = { tactical_bomber suicide }
 		group_by = archetype
 		sprite = medium_plane
 		maximum_speed = 500
@@ -903,7 +903,8 @@ equipments = {
 		resources = {
 			air_production = 5
 			aluminium = 11
-			rubber = 4
+			rubber = 2
+			chromium = 1
 		}
 		
 		air_range = 2500

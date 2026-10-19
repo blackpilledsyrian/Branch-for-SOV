@@ -2,11 +2,10 @@
 SOV_STAVKA = {
     enable = { always = yes }
 
-    icon = stavka
+    icon = GFX_idea_stavka
 
 	cavalry_attack_factor = SOV_cavalry_attack_factor
 	cavalry_defence_factor = SOV_cavalry_defence_factor
-	army_morale_factor = SOV_army_morale_factor
     max_planning = SOV_max_planning
     army_attack_factor  = SOV_army_attack_factor
 	army_armor_attack_factor  = SOV_army_armor_attack_factor
@@ -35,7 +34,10 @@ SOV_STAVKA = {
 	experience_gain_army_factor = SOV_experience_gain_army_factor
 	experience_gain_factor = SOV_experience_gain_factor
 	minimum_training_level = SOV_minimum_training_level
-	
+	air_doctrine_cost_factor = SOV_air_doctrine_cost_factor
+	naval_doctrine_cost_factor = SOV_naval_doctrine_cost_factor		
+	army_strength_factor = SOV_strength_factor
+	supply_consumption_factor = SOV_supply_consumption
 	custom_modifier_tooltip = SOV_stavka_tt
      
 }
@@ -43,22 +45,38 @@ SOV_STAVKA = {
 
 
 
-SOV_military_industrial_complex_modifier = {
+SOV_Gosplan_modifier = {
  enable = { always = yes }
 
-    icon = SOV_military_industrial_complex
+    icon = GFX_idea_SOV_military_industrial_complex_1
 
-	political_power_gain =	SOV_political_power_gain_modifier
-	stability_factor = SOV_stability_factor_modifier
 	consumer_goods_expected_value = SOV_industry_consumer_goods_modifier
-	research_speed_factor = SOV_research_speed
     production_speed_arms_factory_factor = SOV_production_speed_arms_factory_factor
 	industrial_capacity_factory = SOV_industry_industrial_capacity_factory_modifier
 	production_factory_max_efficiency_factor = SOV_industry_production_efficiency_max_modifier
     production_factory_efficiency_gain_factor = SOV_production_factory_efficiency_gain_factor_modifier
-
+	local_resources_factor = SOV_local_resources_factor
 	power_balance_weekly = SOV_power_balance_weekly
-    stability_weekly = SOV_stability_weekly_modifier
 	research_speed_factor = SOV_research_speed_factor_var
 	military_industrial_organization_funds_gain = SOV_military_industrial_organization_funds_gain_var
+	production_factory_start_efficiency_factor = SOV_production_factory_start_efficiency_factor
+	
+    production_cost_arms_factory_factor = SOV_production_cost_arms_factory_factor
+    production_cost_tank_assembly_factor =  SOV_production_cost_tank_assembly_factor
+    production_cost_air_assembly_factor =  SOV_production_cost_air_assembly_factor
+	
+    custom_modifier_tooltip =
+}
+
+
+
+SOV_Yezhovshchina = {
+  enable = { always = yes }
+
+    icon = GFX_idea_generic_purge
+	
+    stability_factor = SOV_stability_factor_modifier
+	political_power_gain =	SOV_political_power_gain_modifier
+	
+    custom_modifier_tooltip = SOV_Collapse_tt
 }

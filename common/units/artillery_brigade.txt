@@ -322,6 +322,79 @@ sub_units = {
 		}
 	}
 	
+	pack_artillery_brigade = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 700
+		active = yes
+		is_artillery_brigade = yes
+		
+		can_be_parachuted = no
+				
+		type = {			
+			artillery
+		}
+
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_army
+			category_line_artillery
+			category_pack_artillery			
+		}
+
+		combat_width = 2
+
+		need = {
+			pack_artillery_equipment = 12
+			horse_equipment = 24
+		}
+		
+		manpower = 400
+		max_strength = 5
+		max_organisation = 3
+		default_morale = 0.13
+		training_time = 70
+		weight = 0.4
+		initiative = 0.01
+		supply_consumption = 0.06
+		maximum_speed = 0.25
+		experience_loss_factor = -0.01
+		forest = {
+			attack = -0.05
+			movement = -0.1
+		}
+
+		hills = {
+			attack = 0.05
+			defence = 0.15
+			movement = 0.05
+		}
+
+		mountain = {
+			attack = 0.2
+			defence = 0.15
+			movement = 0.05
+		}
+
+		jungle = {
+			attack = -0.05
+			movement = 0.05
+		}
+
+		marsh = {
+			attack = -0.1
+			movement = -0.05
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		
+	}
 	pack_artillery_brigade_mot = {
 		sprite = artillery
 		map_icon_category = infantry
@@ -439,7 +512,7 @@ sub_units = {
 		supply_consumption = 0.09
 		experience_loss_factor = -0.01	
 		forest = {
-			attack = -0.25
+			attack = -0.125
 			defence = -0.1
 			movement = -0.3
 		}
@@ -473,14 +546,14 @@ sub_units = {
 		}
 		
 		urban = {
-			attack = 0.1
+			attack = 0.15
 			defence = 0.1
 		
 		}
 		
 		river = {
-			attack = -0.3
-			movement = -0.25
+			attack = -0.20
+			movement = -0.30
 		}
 
 		amphibious = {
@@ -490,6 +563,9 @@ sub_units = {
 		plains = {
 			attack = 0.1
 			defence = 0.1
+		}
+		desert = {
+			attack = 0.1
 		}
 		
 	}
@@ -541,7 +617,7 @@ sub_units = {
 		can_be_parachuted = no
 		
 		forest = {
-			attack = -0.25
+			attack = -0.125
 			defence = -0.1
 			movement = -0.3
 		}
@@ -575,13 +651,13 @@ sub_units = {
 		}
 		
 		urban = {
-			attack = 0.1
+			attack = 0.15
 			defence = 0.1
 		
 		}
 		
 		river = {
-			attack = -0.3
+			attack = -0.20
 			movement = -0.25
 		}
 
@@ -593,6 +669,10 @@ sub_units = {
 			attack = 0.1
 			defence = 0.1
 		}
+		desert = {
+			attack = 0.1
+		}
+
 	
 	}
 	rocket_artillery_brigade = {
@@ -832,6 +912,77 @@ sub_units = {
 		}
 
 
+	}
+	mountain_gun_brigade = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 700
+		active = no
+		special_forces = no
+		is_artillery_brigade = yes
+		can_be_parachuted = yes
+				
+		type = {			
+			artillery
+		}
+
+		group = special_infantry
+		
+		categories = {
+			category_front_line
+			category_army
+            category_line_artillery	
+			category_pack_artillery		
+		}
+
+		combat_width = 2
+
+		need = {
+			pack_artillery_equipment = 12
+			special_equipment = 25
+		}
+		
+		manpower = 400
+		max_strength = 2
+		max_organisation = 3
+		default_morale = 0.2
+		training_time = 70
+		weight = 0.4
+		initiative = 0.01
+		supply_consumption = 0.06
+		maximum_speed = 0.25
+		experience_loss_factor = -0.01
+		forest = {
+			attack = -0.05
+			movement = -0.1
+		}
+
+		hills = {
+			attack = 0.3
+			defence = 0.25
+			movement = 0.05
+		}
+
+		mountain = {
+			attack = 0.5
+			defence = 0.25
+			movement = 0.05
+		}
+
+		jungle = {
+			attack = -0.05
+			movement = 0.05
+		}
+
+		marsh = {
+			attack = -0.1
+			movement = -0.05
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
 	}
 	
 }

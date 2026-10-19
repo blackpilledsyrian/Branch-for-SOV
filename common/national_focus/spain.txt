@@ -159,7 +159,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SPA_negotiate_carlist_support
 
-		cost = 7.15
+		cost = 5
 
 
 		prerequisite = { 
@@ -236,7 +236,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SPA_secure_the_northern_garrisons
 	
-		cost = 7.15
+		cost = 5
 
 		prerequisite = { 
 			focus = SPA_negotiate_carlist_support 
@@ -356,9 +356,11 @@ focus_tree = {
 				limit = {
 					has_global_flag = scw_over
 				}
+				add_political_power = -50
+				add_stability = -0.075
 				add_popularity = {
 					ideology = communism
-					popularity = 0.10
+					popularity = 0.15
 				}
 				add_popularity = {
 					ideology = neutrality
@@ -404,6 +406,12 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			custom_effect_tooltip = SPR_army_modif
+			add_to_variable = {
+				SPR_army_attack_factor_var = 0.05
+				tooltip = army_attack_factor_tooltip
+			}
+			custom_effect_tooltip = MANspace
 			add_timed_idea = {
 				idea = SPA_war_fast_radical_spain
 				days = 365
@@ -453,9 +461,11 @@ focus_tree = {
 				limit = {
 					has_global_flag = scw_over
 				}
+				add_political_power = -50
+				add_stability = -0.075
 				add_popularity = {
 					ideology = communism
-					popularity = 0.10
+					popularity = 0.15
 				}
 				add_popularity = {
 					ideology = neutrality
@@ -514,11 +524,20 @@ focus_tree = {
 							has_global_flag = scw_over_spr_lost
 						}
 					}
+					add_political_power = 25
 					add_offsite_building = {
 						type = industrial_complex
 						level = 5
 					}
+					add_offsite_building = {
+						type = arms_factory
+						level = 10
+					}
 				}
+				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3000 producer = GER }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 500 producer = GER }
+				add_equipment_to_stockpile = { type = support_equipment amount = 550 producer = GER }
+				add_equipment_to_stockpile = { type = radio_equipment amount = 400 producer = GER }
 			}
 			add_to_variable = {
 				SPR_army_attack_CORES = 0.15
@@ -527,7 +546,7 @@ focus_tree = {
 				SPR_army_defence_CORES = 0.15
 			}
 			add_to_variable = {
-				SPR_army_org_factor_var = 0.25
+				SPR_army_org_factor_var = 0.15
 			}
 			add_war_support = -0.1
 			add_stability = -0.15
@@ -933,9 +952,13 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_political_power = 75
+			add_political_power = 100
+			add_stability = 0.1
 			custom_effect_tooltip = MANspace
-			add_ideas = SPR_juan_martch_right
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SPR_juan_martch_right
+			
+			#add_ideas = SPR_juan_martch_right
 			#custom_effect_tooltip = RIGHT_csg_decrease_2
 		}
 	}
@@ -966,6 +989,8 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
+		search_filters = { right_side_csg_colapse  }
+
 		completion_reward = {
 			if = {
 				limit = { 
@@ -985,10 +1010,17 @@ focus_tree = {
 				}
 				custom_effect_tooltip = MANspace
 			}
-			custom_effect_tooltip = available_political_advisor
-			custom_effect_tooltip = advisor_3_right_tooltip
-			custom_effect_tooltip = RIGHT_csg_increase_1
-			custom_effect_tooltip = MANspace
+			else_if = {
+					limit = { 
+						has_completed_focus = SPA_begin_the_second_development_plan
+					}
+				custom_effect_tooltip = SPR_eco_modif
+				add_to_variable = {
+					SPR_RIGHT_industry_consumer_goods_factor = 0.02
+					tooltip = consumer_goods_tooltip
+				}
+				custom_effect_tooltip = MANspace
+			}
 			SPR_decrease_level_1_csg_gain_effect = yes
 			if = {
 				limit = { 
@@ -1020,6 +1052,10 @@ focus_tree = {
 				custom_effect_tooltip =  delay_of_the_delay_colapse_autarky_3
 				}
 			}
+			custom_effect_tooltip = spacers
+			custom_effect_tooltip = available_political_advisor
+			custom_effect_tooltip = advisor_3_right_tooltip
+			custom_effect_tooltip = RIGHT_csg_increase_1
 		}
 	}
 	focus = { 
@@ -1048,6 +1084,8 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
+		search_filters = { right_side_csg_colapse  }
+
 		completion_reward = {
 			if = {
 				limit = { 
@@ -1060,6 +1098,12 @@ focus_tree = {
 					SPR_RIGHT_industry_consumer_goods_factor = -0.02
 					tooltip = consumer_goods_tooltip
 				}
+				add_to_variable = {
+					var = SPR_RIGHT_industry_industrial_capacity_factory
+					value = 0.075
+					tooltip = industrial_capacity_factory_tooltip
+				}
+				custom_effect_tooltip = MANspace
 				41 = {
 					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
@@ -1073,11 +1117,18 @@ focus_tree = {
 				}
 				custom_effect_tooltip = MANspace
 			}
-			custom_effect_tooltip = available_political_advisor
-			custom_effect_tooltip = advisor_1_right_tooltip
-			custom_effect_tooltip = RIGHT_csg_decrease_2
-			custom_effect_tooltip = spacers
-			custom_effect_tooltip = MANspace
+			else_if = {
+					limit = { 
+						has_completed_focus = SPA_begin_the_second_development_plan
+					}
+				custom_effect_tooltip = SPR_eco_modif
+				add_to_variable = {
+					SPR_RIGHT_industry_consumer_goods_factor = 0.02
+					tooltip = consumer_goods_tooltip
+				}
+				custom_effect_tooltip = MANspace
+			}
+			#custom_effect_tooltip = MANspace
 			SPR_decrease_level_2_csg_gain_effect = yes
 			if = {
 				limit = { 
@@ -1109,6 +1160,10 @@ focus_tree = {
 				custom_effect_tooltip =  delay_of_the_delay_colapse_autarky_2
 				}
 			}
+			custom_effect_tooltip = spacers
+			custom_effect_tooltip = available_political_advisor
+			custom_effect_tooltip = advisor_1_right_tooltip
+			custom_effect_tooltip = RIGHT_csg_decrease_2
 		}
 	}
 
@@ -1209,6 +1264,10 @@ focus_tree = {
 				}
 				
 			}
+			custom_effect_tooltip = MANspace
+			SPR_decrease_level_1_csg_gain_effect = yes
+			custom_effect_tooltip = MANspace
+			custom_effect_tooltip = CSG_LIMIT_SPR
 		}
 	}
 	######
@@ -1323,7 +1382,7 @@ focus_tree = {
 			}
 			add_to_variable = {
 				var = SPR_RIGHT_industry_industrial_capacity_factory
-				value = 0.1
+				value = 0.075
 				tooltip = industrial_capacity_factory_tooltip
 			}
 			add_to_variable = {
@@ -1332,7 +1391,6 @@ focus_tree = {
 				tooltip = production_factory_efficiency_gain_factor_tooltip
 			}
 			custom_effect_tooltip = MANspace
-			SPR_increase_level_2_csg_gain_effect = yes
 			custom_effect_tooltip = remove_days_from_colapse_3
 			hidden_effect = {
 				add_days_mission_timeout = {
@@ -1340,6 +1398,7 @@ focus_tree = {
 					days = -50
 				}
 			}
+			SPR_increase_level_2_csg_gain_effect = yes
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = CSG_LIMIT_SPR
 		}
@@ -1573,6 +1632,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			add_stability = -0.1
 			custom_effect_tooltip = SPR_eco_modif
 			add_to_variable = {
 				SPR_RIGHT_industry_consumer_goods_factor = -0.03
@@ -1585,7 +1645,7 @@ focus_tree = {
 			custom_effect_tooltip = SPR_dev_plan_1_tree_only
   			add_to_variable = { var = SPR_1_dev_plan value = 3 }	
 			custom_effect_tooltip = MANspace
-			SPR_increase_level_1_csg_gain_effect = yes
+			SPR_increase_level_2_csg_gain_effect = yes
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = CSG_LIMIT_SPR
 		}
@@ -1621,10 +1681,12 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
+		search_filters = { right_side_csg_colapse  }
+
 		completion_reward = {
 			custom_effect_tooltip = effect_by_stability
 			custom_effect_tooltip = SPR_eco_modif
-			add_stability = -0.1
+			add_stability = -0.15
 			if = {
 				limit = { 
 					has_stability < 0.4
@@ -1640,7 +1702,10 @@ focus_tree = {
 				tooltip = industrial_capacity_factory_tooltip
 			}
 			custom_effect_tooltip = MANspace
-			add_ideas = SPR_manuel_hedilla
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SPR_manuel_hedilla
+			custom_effect_tooltip = spacers
+			#add_ideas = SPR_manuel_hedilla
 			#add_ideas = SPR_war_economy
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = slotty_50_pers
@@ -1686,6 +1751,7 @@ focus_tree = {
 		}
 
 		available = {
+			has_stability > 0.6
 			OR = {
 				has_country_flag = SPR_1_dev_plan_completed	
 				has_country_flag = SPR_1_autocoplete_fuck_you
@@ -1699,10 +1765,10 @@ focus_tree = {
 		}
 
 		cancel_if_invalid = yes
-		continue_if_invalid = no
+		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		search_filters = {   }
+		search_filters = { right_side_csg_colapse  }
 
 		completion_reward = {
 			add_stability = -0.15
@@ -1714,15 +1780,19 @@ focus_tree = {
 			}
 			add_to_variable = {
 				var = SPR_RIGHT_industry_industrial_capacity_factory
-				value = -0.1
+				value = -0.15
 				tooltip = industrial_capacity_factory_tooltip
+			}
+			add_to_variable = {
+				var = SPR_RIGHT_industry_factory_max_efficiency_factor 
+				value = -0.02
+				tooltip = production_factory_max_efficiency_tooltip
 			}
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = the_five_reatrd_time_2
 			custom_effect_tooltip = MANspace
 			country_event = spain.203t1
 			custom_effect_tooltip = MANspace
-			SPR_decrease_level_2_csg_gain_effect = yes
 			custom_effect_tooltip = add_days_from_colapse_3
 			hidden_effect = {
 				add_days_mission_timeout = {
@@ -1730,6 +1800,7 @@ focus_tree = {
 					days = 50
 				}
 			}
+			SPR_decrease_level_2_csg_gain_effect = yes
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = CSG_LIMIT_SPR
 			
@@ -1772,6 +1843,7 @@ focus_tree = {
 		search_filters = { right_side_csg_colapse  }
 
 		completion_reward = {
+			add_stability = -0.1
 			custom_effect_tooltip = SPR_eco_modif
 			add_to_variable = {
 				var = SPR_RIGHT_industry_production_speed_arms_factory_factor
@@ -1783,14 +1855,14 @@ focus_tree = {
 			custom_effect_tooltip = MANspace			
 			custom_effect_tooltip = each_path_what_does_SPR
 			custom_effect_tooltip = MANspace
-			custom_effect_tooltip = remove_days_from_colapse_2
+			custom_effect_tooltip = remove_days_from_colapse_0_5
 			hidden_effect = {
 				add_days_mission_timeout = {
 					mission = COLAPSE_WILL_HAPPNE_WE_GOONA_DIE
-					days = -100
+					days = -200
 				}
 			}
-			SPR_increase_level_2_csg_gain_effect = yes
+			SPR_increase_level_3_csg_gain_effect = yes
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = CSG_LIMIT_SPR
 		}
@@ -1823,6 +1895,8 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
+		search_filters = { right_side_csg_colapse  }
+
 		completion_reward = {
 			custom_effect_tooltip = SPR_eco_modif
 			add_to_variable = {
@@ -1841,7 +1915,7 @@ focus_tree = {
 				tooltip = industrial_capacity_factory_tooltip
 			}
 			custom_effect_tooltip = MANspace
-			SPR_increase_level_1_csg_gain_effect = yes
+
 			custom_effect_tooltip = remove_days_from_colapse_3
 			hidden_effect = {
 				add_days_mission_timeout = {
@@ -1849,6 +1923,7 @@ focus_tree = {
 					days = -50
 				}
 			}
+			SPR_increase_level_1_csg_gain_effect = yes
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = CSG_LIMIT_SPR
 		}
@@ -1956,6 +2031,7 @@ focus_tree = {
 		search_filters = { right_side_csg_colapse  }
 
 		completion_reward = {
+			add_stability = 0.1
 			custom_effect_tooltip = SPR_eco_modif
 			add_to_variable = {
 				var = SPR_RIGHT_industry_production_speed_arms_factory_factor
@@ -1964,7 +2040,7 @@ focus_tree = {
 			}
 			add_to_variable = {
 				var = SPR_RIGHT_industry_production_speed_industrial_complex_factor
-				value = 0.35
+				value = 0.40
 				tooltip = industrial_complex_build_speed_factor_tooltip
 			}
 
@@ -2013,6 +2089,8 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
+		search_filters = { right_side_csg_colapse  }
+
 		completion_reward = {
 			add_political_power = 50
 			add_stability = 0.15
@@ -2028,8 +2106,9 @@ focus_tree = {
 				tooltip = Production_lacking_MAN_tooltip
 			}
 			custom_effect_tooltip = SPR_dev_plan_1_tree_only_bad
-  			add_to_variable = { var = SPR_1_dev_plan value = -3 }	
-						custom_effect_tooltip = add_days_from_colapse_3
+  			add_to_variable = { var = SPR_1_dev_plan value = -3 }
+			custom_effect_tooltip = MANspace
+			custom_effect_tooltip = add_days_from_colapse_3
 			hidden_effect = {
 				add_days_mission_timeout = {
 					mission = COLAPSE_WILL_HAPPNE_WE_GOONA_DIE
@@ -2065,6 +2144,8 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
+		search_filters = { right_side_csg_colapse  }
+
 		completion_reward = {
 			custom_effect_tooltip = SPR_eco_modif
 			add_to_variable = {
@@ -2083,10 +2164,11 @@ focus_tree = {
 				tooltip = production_factory_efficiency_gain_factor_tooltip
 			}
 			custom_effect_tooltip = MANspace
-			SPR_decrease_level_1_csg_gain_effect = yes
 			custom_effect_tooltip = SPR_dev_plan_1_tree_only_bad
   			add_to_variable = { var = SPR_1_dev_plan value = -3 }
-						custom_effect_tooltip = add_days_from_colapse_3
+			custom_effect_tooltip = MANspace
+			custom_effect_tooltip = add_days_from_colapse_3
+			SPR_decrease_level_1_csg_gain_effect = yes
 			hidden_effect = {
 				add_days_mission_timeout = {
 					mission = COLAPSE_WILL_HAPPNE_WE_GOONA_DIE
@@ -2124,60 +2206,37 @@ focus_tree = {
 			NOT = {
 				has_country_flag = SPR_economic_colapse	
 			}
+			has_stability > 0.9
 			has_country_flag = SPR_2_dev_plan_completed	
-			controls_state = 165
-			controls_state = 41
-			controls_state = 167
-			controls_state = 166
-			controls_state = 169
-			controls_state = 171
 			if = {
 				limit = { 
 					has_completed_focus = SPA_stabilize_the_war_Economy
 				}
-				arms_factory > 139
-				industrial_complex > 119
-				dockyard > 59
+				industrial_complex > 120
+				arms_factory > 150
+				dockyard > 60
 				#num_of_military_factories > 150
 				#num_of_available_civilian_factories > 120
 				#num_of_naval_factories > 60
+				
 			}
 			if = {
 				limit = { 
 					has_completed_focus = SPA_supercharge_the_War_economy
 				}
-				num_of_military_factories > 200
-				num_of_naval_factories > 60
-			}
-		
-			165 = {
-				infrastructure > 8
-			}
-			41 = {
-				infrastructure > 8
-			}
-			166 = {
-				infrastructure > 8
-			}
-			167 = {
-				infrastructure > 8
-			}
-			169 = {
-				infrastructure > 8
-			}
-			171 = {
-				infrastructure > 8
-				arms_factory > 199
-				dockyard > 59
+				industrial_complex > 80
+				arms_factory > 240
+				dockyard > 60
 				#num_of_military_factories > 200
 				#num_of_naval_factories > 60
 			}
+			
 		}
 
 		bypass = {}
 
 		cancel_if_invalid = yes
-		continue_if_invalid = no
+		continue_if_invalid = yes
 		available_if_capitulated = no
 
 		search_filters = { right_side_csg_colapse  }
@@ -2454,8 +2513,11 @@ focus_tree = {
 				}
 				custom_effect_tooltip = MANspace
 				custom_effect_tooltip = add_days_from_colapse_3
+				SPR_decrease_level_1_csg_gain_effect = yes
 				custom_effect_tooltip = MANspace
 			custom_effect_tooltip = SPA_reduce_reliance_on_foreign_resources_tt
+			custom_effect_tooltip = MANspace
+			custom_effect_tooltip = CSG_LIMIT_SPR
 		}
 	}
 
@@ -2626,10 +2688,10 @@ focus_tree = {
 				}
 			}
 			176 = {
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 4
 					instant_build = yes
 				}
 			}
@@ -2748,7 +2810,7 @@ focus_tree = {
 			custom_effect_tooltip = SPR_eco_modif
 			add_to_variable = {
 				var = SPR_RIGHT_industry_industrial_capacity_factory
-				value = 0.075
+				value = 0.05
 				tooltip = industrial_capacity_factory_tooltip
 			}
 			custom_effect_tooltip = MANspace
@@ -2886,7 +2948,7 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = MANspace
-			SPR_increase_level_1_csg_gain_effect = yes
+			SPR_increase_level_3_csg_gain_effect = yes
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = CSG_LIMIT_SPR
 		}
@@ -3006,6 +3068,10 @@ focus_tree = {
 					}
 				}
 			}
+			custom_effect_tooltip = MANspace
+			SPR_increase_level_1_csg_gain_effect = yes
+			custom_effect_tooltip = MANspace
+			custom_effect_tooltip = CSG_LIMIT_SPR
 		}
 	}
 ####opt2
@@ -3130,6 +3196,10 @@ focus_tree = {
 					type = air_base
 					level = 4
 				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+				}
 			}
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = SPR_dev_plan_1_tree_only_bad
@@ -3174,6 +3244,8 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
+		search_filters = { right_side_csg_colapse  }
+
 		completion_reward = {
 			if = {
 				limit = {
@@ -3203,7 +3275,6 @@ focus_tree = {
 					days = -50
 				}
 			}
-			custom_effect_tooltip = MANspace
 			SPR_increase_level_1_csg_gain_effect = yes
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = CSG_LIMIT_SPR
@@ -3279,25 +3350,23 @@ focus_tree = {
 							ss_infantry = { x = 2 y = 0 }
 							ss_infantry = { x = 2 y = 1 }
 							ss_infantry = { x = 2 y = 2 }
-							field_gun_brigade = { x = 2 y = 3 }
+							anti_air = { x = 2 y = 3 }
 							
 							artillery_brigade = { x = 3 y = 0 }
 							artillery_brigade = { x = 3 y = 1 }
-							anti_air_heavy = { x = 3 y = 2 }
+							anti_tank_brigade = { x = 3 y = 2 }
 							artillery_brigade = { x = 3 y = 3 }
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_tank_brigade = { x = 0 y = 1 }
 						}
 						
 						support = {
 							artillery = { x = 0 y = 0 }
 							military_police = { x = 0 y = 1 }
-							mobile_engineer = { x = 0 y = 2 }
+							mobile_engineer = { x = 0 y = 2 }	
 							signal_company = { x = 0 y = 3 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company = { x = 0 y = 5 }
+							recon_ac = { x = 0 y = 6 }
+							anti_air_company = { x = 0 y = 7 }
 						}
 					}
 				}
@@ -3329,26 +3398,24 @@ focus_tree = {
 							ss_infantry = { x = 2 y = 0 }
 							ss_infantry = { x = 2 y = 1 }
 							ss_infantry = { x = 2 y = 2 }
-							field_gun_brigade = { x = 2 y = 3 }
+							anti_air = { x = 2 y = 3 }
 							
 							artillery_brigade = { x = 3 y = 0 }
 							artillery_brigade = { x = 3 y = 1 }
-							anti_air_heavy = { x = 3 y = 2 }
+							anti_tank_brigade = { x = 3 y = 2 }
 							artillery_brigade = { x = 3 y = 3 }
 							artillery_brigade = { x = 4 y = 0 }
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_tank_brigade = { x = 0 y = 1 }
 						}
 
 						support = {
 							artillery = { x = 0 y = 0 }
 							military_police = { x = 0 y = 1 }
-							mobile_engineer = { x = 0 y = 2 }
+							mobile_engineer = { x = 0 y = 2 }	
 							signal_company = { x = 0 y = 3 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company = { x = 0 y = 5 }
+							recon_ac = { x = 0 y = 6 }
+							anti_air_company = { x = 0 y = 7 }
 						}
 					}
 				}
@@ -3490,19 +3557,18 @@ focus_tree = {
 							artillery_brigade_mot = { x = 3 y = 1 }
 							artillery_brigade_mot = { x = 3 y = 2 }
 							artillery_brigade_mot = { x = 3 y = 3 }
-							ss_mechanized = { x = 4 y = 0 }
+							anti_tank_brigade_mot = { x = 4 y = 0 }
 						
-						}
-						regimental_support = {
-							anti_tank_brigade = { x = 0 y = 0 }
 						}
 						support = {
 							artillery = { x = 0 y = 0 }
 							military_police = { x = 0 y = 1 }
-							mobile_engineer = { x = 0 y = 2 }
+							mobile_engineer = { x = 0 y = 2 }	
 							signal_company = { x = 0 y = 3 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company = { x = 0 y = 5 }
+							recon_ac = { x = 0 y = 6 }
+							anti_air_company = { x = 0 y = 7 }
 						}
 					#is_locked = no
 					priority = 2
@@ -3768,6 +3834,8 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
+		search_filters = { right_side_csg_colapse  }
+
 		completion_reward = {
 			custom_effect_tooltip = SPR_eco_modif
 			add_to_variable = {
@@ -3782,14 +3850,13 @@ focus_tree = {
 			}
 			add_stability = -0.05
 			custom_effect_tooltip = MANspace
-			custom_effect_tooltip = remove_days_from_colapse_3
+			custom_effect_tooltip = remove_days_from_colapse_2
 			hidden_effect = {
 				add_days_mission_timeout = {
 					mission = COLAPSE_WILL_HAPPNE_WE_GOONA_DIE
-					days = -50
+					days = -100
 				}
 			}
-			custom_effect_tooltip = MANspace
 			SPR_decrease_level_1_csg_gain_effect = yes
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = CSG_LIMIT_SPR
@@ -3832,6 +3899,8 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+
+		search_filters = { right_side_csg_colapse  }
 
 		completion_reward = {
 			custom_effect_tooltip = SPR_eco_modif
@@ -3879,8 +3948,8 @@ focus_tree = {
 					days = -100
 				}
 			}
-			custom_effect_tooltip = MANspace
 			SPR_increase_level_2_csg_gain_effect = yes
+			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = CSG_LIMIT_SPR
 		}
 	}
@@ -4370,9 +4439,13 @@ focus_tree = {
 				tooltip = minimum_training_level_tooltip
 			}
 			custom_effect_tooltip = MANspace
-			41 = {
+			random_core_state ={
+				limit = {
+					can_construct_building = land_facility
+				}
 				construct_building_in_random_province = {
 					land_facility = 1
+				
 				}
 			}
 			custom_effect_tooltip = MANspace
@@ -4512,9 +4585,10 @@ focus_tree = {
 				limit = {
 					has_global_flag = scw_over
 				}
+				add_political_power = -50
 				add_popularity = {
 					ideology = communism
-					popularity = 0.075
+					popularity = 0.1
 				}
 			}
 			custom_effect_tooltip = MANspace
@@ -4578,9 +4652,10 @@ focus_tree = {
 				limit = {
 					has_global_flag = scw_over
 				}
+				add_political_power = -50
 				add_popularity = {
 					ideology = communism
-					popularity = 0.05
+					popularity = 0.10
 				}
 			}
 			custom_effect_tooltip = MANspace
@@ -5147,9 +5222,13 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			41 = {
+			random_core_state ={
+				limit = {
+					can_construct_building = land_facility
+				}
 				construct_building_in_random_province = {
 					land_facility = 1
+				
 				}
 			}
 			custom_effect_tooltip = MANspace
@@ -5847,9 +5926,17 @@ focus_tree = {
 							has_global_flag = scw_over_spr_lost
 						}
 					}
+					add_political_power = 50
 					add_offsite_building = {
 						type = industrial_complex
 						level = 5
+					}
+					add_offsite_building = {
+						type = arms_factory
+						level = 5
+					}
+					mio:SPR_INI_NATIONALISATION = {
+						add_mio_funds_gain_factor = 0.15
 					}
 				}
 			}
@@ -5874,7 +5961,7 @@ focus_tree = {
 				SPR_army_defence_CORES = 0.15
 			}
 			add_to_variable = {
-				SPR_army_org_factor_var = 0.25
+				SPR_army_org_factor_var = 0.15
 			}
 			hidden_effect = {
 				set_variable = {
@@ -7378,7 +7465,7 @@ focus_tree = {
 			custom_effect_tooltip = SPR_eco_modif
 			add_to_variable = {
 				var = SPR_MIDDLE_industry_line_change_production_efficiency_factor 
-				value = 0.04
+				value = 0.06
 				tooltip = line_change_production_efficiency_factor_tooltip
 			}
 			add_to_variable = {
@@ -7558,6 +7645,8 @@ focus_tree = {
 				limit = {
 					has_global_flag = scw_over
 				}
+				add_political_power = -50
+				add_stability = -0.075
 				add_popularity = {
 					ideology = fascism
 					popularity = 0.1
@@ -7625,6 +7714,8 @@ focus_tree = {
 				limit = {
 					has_global_flag = scw_over
 				}
+				add_political_power = -50
+				add_stability = -0.075
 				add_popularity = {
 					ideology = fascism
 					popularity = 0.1
@@ -7888,8 +7979,14 @@ focus_tree = {
 							has_global_flag = scw_over_spr_lost
 						}
 					}
+					add_political_power = 75
+					add_stability = 0.1
 					add_offsite_building = {
 						type = industrial_complex
+						level = 10
+					}
+					add_offsite_building = {
+						type = arms_factory
 						level = 5
 					}
 				}
@@ -7924,7 +8021,7 @@ focus_tree = {
 				SPR_army_defence_CORES = 0.25
 			}
 			add_to_variable = {
-				SPR_army_org_factor_var = 0.25
+				SPR_army_org_factor_var = 0.15
 			}
 			if = {
 				limit = {
@@ -8512,7 +8609,7 @@ focus_tree = {
 			custom_effect_tooltip = available_industrial_concern
 			show_ideas_tooltip = SPR_ENCASO
 			custom_effect_tooltip = MANspace
-			add_stability = 0.1
+			add_stability = 0.15
 			add_state_core = 687
 			add_state_core = 309
 			add_state_core = 310
@@ -8935,7 +9032,7 @@ focus_tree = {
 			}
 			add_to_variable = {
 				var = SPR_LEFT_industry_production_speed_industrial_complex_factor
-				value = 0.1
+				value = 0.15
 				tooltip = industrial_complex_build_speed_factor_tooltip
 			}
 			add_to_variable = {
@@ -9604,7 +9701,7 @@ focus_tree = {
 			custom_effect_tooltip = SPR_eco_modif
 			add_to_variable = {
 				var = SPR_LEFT_industry_production_speed_industrial_complex_factor
-				value = 0.1
+				value = 0.15
 				tooltip = industrial_complex_build_speed_factor_tooltip
 			}
 			41 = {
@@ -9694,6 +9791,7 @@ focus_tree = {
 
 		completion_reward = {
 			show_ideas_tooltip = SPR_AKC
+			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = akc_tooltip_usa
 			custom_effect_tooltip = MANspace
 			41 = {
@@ -9831,9 +9929,13 @@ focus_tree = {
 				value = 0.1
 				tooltip = production_factory_efficiency_gain_factor_tooltip
 			}
-			41 = {
+			random_core_state ={
+				limit = {
+					can_construct_building = land_facility
+				}
 				construct_building_in_random_province = {
 					land_facility = 1
+				
 				}
 			}
 		}
@@ -9915,11 +10017,17 @@ focus_tree = {
 				value = -0.15
 				tooltip = industrial_complex_build_speed_factor_tooltip
 			}
+			add_to_variable = { 
+				var = SPR_production_speed_air_assembly_factor 
+				value = 0.25
+				tooltip = air_assembly_build_speed_factor_tooltip
+			}
 			add_to_variable = {
 				var = SPR_LEFT_industry_industrial_capacity_factory
 				value = 0.25
 				tooltip = industrial_capacity_factory_tooltip
 			}
+			custom_effect_tooltip = MANspace
 			788 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -9995,13 +10103,18 @@ focus_tree = {
 			}
 			add_to_variable = {
 				var = SPR_LEFT_industry_production_speed_arms_factory_factor
-				value = 0.15
+				value = 0.25
 				tooltip = arms_factory_build_speed_factor_tooltip
 			}
 			add_to_variable = { 
 				var = SPR_production_speed_tank_assembly_factor 
-				value = 0.15
+				value = 0.25
 				tooltip = tank_assembly_build_speed_factor_tooltip
+			}
+			add_to_variable = {
+				var = SPR_LEFT_industry_industrial_capacity_factory
+				value = 0.15
+				tooltip = industrial_capacity_factory_tooltip
 			}
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = nationalisation_with_left_side_twists
@@ -10073,6 +10186,11 @@ focus_tree = {
 				var = SPR_LEFT_industry_production_speed_arms_factory_factor
 				value = 0.1
 				tooltip = arms_factory_build_speed_factor_tooltip
+			}
+			add_to_variable = {
+				var = SPR_LEFT_industry_factory_max_efficiency_factor 
+				value = 0.03
+				tooltip = production_factory_max_efficiency_tooltip
 			}
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = SPR_army_modif
@@ -10355,7 +10473,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = SPR_eco_modif
 			add_to_variable = {
-				SPR_LEFT_industry_consumer_goods_factor = 0.04
+				SPR_LEFT_industry_consumer_goods_factor = 0.03
 				tooltip = consumer_goods_tooltip
 			}
 			add_to_variable = {
@@ -10364,7 +10482,7 @@ focus_tree = {
 			}
 			add_to_variable = {
 				var = SPR_LEFT_industry_production_speed_arms_factory_factor
-				value = 0.1
+				value = 0.15
 				tooltip = arms_factory_build_speed_factor_tooltip
 			}
 			add_to_variable = { 
@@ -10560,7 +10678,7 @@ focus_tree = {
 			custom_effect_tooltip = SPR_eco_modif
 			add_to_variable = { 
 				var = SPR_production_speed_tank_assembly_factor 
-				value = 0.3
+				value = 0.25
 				tooltip = tank_assembly_build_speed_factor_tooltip
 			}
 			custom_effect_tooltip = MANspace
@@ -10799,7 +10917,7 @@ focus_tree = {
 			}
 			add_to_variable = {
 				var = SPR_LEFT_industry_industrial_capacity_factory
-				value = -0.1
+				value = 0.05
 				tooltip = industrial_capacity_factory_tooltip
 			}
 			add_to_variable = {
@@ -11999,11 +12117,12 @@ focus_tree = {
 						}
 
 						support = {
-							artillery = { x = 0 y = 0 }
-							recon = { x = 0 y = 1 }
-							engineer = { x = 0 y = 2 }
-							logistics_company_mot = { x = 1 y = 0 }
-							field_hospital = { x = 1 y = 1 }
+							artillery = { x = 0 y = 0 } 
+							recon = { x = 0 y = 1 } 		
+							engineer = { x = 0 y = 2 } 	
+							anti_air_company = { x = 0 y = 3 }
+							logistics_company_mot = { x = 0 y = 4 }
+							field_hospital = { x = 0 y = 5 }
 						}
 					}
 					random_owned_state = {
@@ -12121,21 +12240,20 @@ focus_tree = {
 							artillery_heavy = { x = 3 y = 2 }
 							
 							artillery_heavy_mot = { x = 4 y = 0 }
-							infantry = { x = 4 y = 1 }
+							pack_artillery_brigade_mot = { x = 4 y = 1 }
 							anti_air_heavy_mot = { x = 4 y = 2 }
 							anti_air_heavy_mot = { x = 4 y = 3 }
-						}
-						regimental_support = {
-							pack_artillery_brigade = { x = 0 y = 0 }
 						}
 						
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
 							recon = { x = 0 y = 2 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
-							field_hospital = { x = 1 y = 2 }
+							pack_artillery = { x = 0 y = 3 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company = { x = 0 y = 5 }
+							field_hospital = { x = 0 y = 6 }
+
 						}
 					}
 					290 ={
@@ -12159,12 +12277,16 @@ focus_tree = {
 				tooltip = army_attack_factor_tooltip
 			}
 			add_to_variable = {
-				SPR_army_defence_factor_var = -0.04
+				SPR_army_defence_factor_var = -0.08
 				tooltip = army_defense_factor_tooltip
 			}
 			add_to_variable = {
 				SPR_arty_attc = -0.1
 				tooltip = army_artillery_attack_tooltip
+			}
+			add_to_variable = {
+				SPR_recruitable_population_factor_var = -0.04
+				tooltip = CAN_recruitable_tt1
 			}
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = galicia_german_units_tooltip
@@ -12215,7 +12337,7 @@ focus_tree = {
 			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.25
+				cost_reduction = 0.50
 				uses = 1
 				category = land_doctrine
 			}
@@ -12255,7 +12377,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_equipment_to_stockpile = { type = transport_plane_equipment_1 amount = 100 producer = GER } 
-			add_equipment_to_stockpile = { type = fighter_equipment_1934 amount = 20 producer = GER } 
+			add_equipment_to_stockpile = { type = fighter_equipment_1934 amount = 25 producer = GER } 
 			hidden_effect = {
 				division_template = {
 					name = "División de Paracaidistas"
@@ -12286,8 +12408,8 @@ focus_tree = {
 					support = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
-						field_hospital = { x = 1 y = 0 }
-						recon = { x = 1 y = 1 }
+						field_hospital = { x = 0 y = 2 }
+						recon = { x = 0 y = 3 }
 					}
 				}	
 			}
@@ -12389,11 +12511,11 @@ focus_tree = {
 				tooltip = army_artillery_attack_tooltip
 			}
 			custom_effect_tooltip = MANspace
-			add_equipment_to_stockpile = { type = heavy_anti_air_equipment_1 amount = 350 producer = GER }
+			add_equipment_to_stockpile = { type = heavy_anti_air_equipment_1 amount = 380 producer = GER }
 			custom_effect_tooltip = MANspace
 			add_tech_bonus = {
 				name = GER_artillery_expansion
-				bonus = 1
+				bonus = 0.5
 				uses = 2
 				technology = heavy_antiair_2
 				technology = heavy_antiair_5
@@ -12404,8 +12526,7 @@ focus_tree = {
 						SPR_heavy_aa_reduction = 1
 					}	
 			}
-				
-				custom_effect_tooltip = spr_reduce_mot_req
+			custom_effect_tooltip = spr_reduce_mot_req
 		}
 	}
 
@@ -12454,7 +12575,7 @@ focus_tree = {
 						NOT = { has_tech = ger_CAS_1937	}
 					}
 				}
-				add_equipment_to_stockpile = { type = CAS_equipment_1935 amount = 60 producer = GER }   
+				add_equipment_to_stockpile = { type = CAS_equipment_1935 amount = 125 producer = GER }   
 			}
 			if = {
 				limit = { 
@@ -12463,7 +12584,7 @@ focus_tree = {
 						NOT = { has_tech = ger_CAS_1939	}				
 					}
 				}
-				add_equipment_to_stockpile = { type = CAS_equipment_1937 amount = 60 producer = GER }   
+				add_equipment_to_stockpile = { type = CAS_equipment_1937 amount = 100 producer = GER }   
 			}
 			custom_effect_tooltip = MANspace
 			add_ideas = effective_training_programs_spirit
@@ -12472,7 +12593,13 @@ focus_tree = {
 				add_mio_funds_gain_factor = 0.075
 				add_mio_size_up_requirement_factor = -0.05
 			}
-
+			custom_effect_tooltip = MANspace
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
 		}
 	}
 	focus = { 
@@ -12517,7 +12644,7 @@ focus_tree = {
 				category = tactical_bomber
 			}	
 			custom_effect_tooltip = MANspace
-			add_equipment_to_stockpile = { type = tac_bomber_equipment_1934 amount = 60 producer = GER }  
+			add_equipment_to_stockpile = { type = tac_bomber_equipment_1934 amount = 80 producer = GER }  
 			add_ideas = SPR_terror_bombing_2 
 		}
 	}
@@ -12559,12 +12686,12 @@ focus_tree = {
 				tooltip = army_artillery_attack_tooltip
 			}
 			custom_effect_tooltip = MANspace
-			add_equipment_to_stockpile = { type = heavy_artillery_equipment_2 amount = 250 producer = GER }
+			add_equipment_to_stockpile = { type = heavy_artillery_equipment_2 amount = 280 producer = GER }
 			add_equipment_to_stockpile = { type = heavy_artillery_equipment_1 amount = 100 producer = GER }
 			custom_effect_tooltip = MANspace
 			add_tech_bonus = {
 				name = GER_artillery_expansion
-				bonus = 0.75
+				bonus = 0.5
 				uses = 2
 				technology = heavy_artillery2
 				technology = heavy_artillery3_1
@@ -12573,8 +12700,12 @@ focus_tree = {
 				technology = heavy_artillery7
 			}
 			custom_effect_tooltip = MANspace
-			custom_effect_tooltip = SPR_industry_modif_post_tooltip
-			custom_effect_tooltip = SPR_industry_modif_ger_2_post
+			hidden_effect = {
+				set_technology = {
+						SPR_heavy_arty_improvment = 1
+					}	
+			}
+			custom_effect_tooltip = spr_reduce_heavy_2_req
 			
 		}
 	}
@@ -12673,6 +12804,7 @@ focus_tree = {
 				tooltip = army_armor_defense_tooltip
 			}
 			custom_effect_tooltip = MANspace
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 4500 producer = GER }
 			add_equipment_to_stockpile = {
 				type = light_tank_chassis_1934
 				amount = 500
@@ -12680,12 +12812,12 @@ focus_tree = {
 			}
 			add_equipment_to_stockpile = {
 				type = light_tank_chassis_1936
-				amount = 120
+				amount = 220
 				producer = GER
 			}
 			add_equipment_to_stockpile = {
 				type = motorized_equipment
-				amount = 600
+				amount = 800
 				producer = GER
 			}
 			custom_effect_tooltip = MANspace
@@ -12717,6 +12849,7 @@ focus_tree = {
 						artillery = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
 						engineer = { x = 0 y = 2 }
+						anti_air_company = { x = 0 y = 3 }
 					}
 				}
 				290 ={
@@ -12791,7 +12924,7 @@ focus_tree = {
 				name = light_fighter_research
 			}
 			custom_effect_tooltip = MANspace
-			add_equipment_to_stockpile = { type = fighter_equipment_1936 amount = 60 producer = GER } 
+			add_equipment_to_stockpile = { type = fighter_equipment_1936 amount = 80 producer = GER } 
 			add_ideas = SPR_terror_bombing_1
 
 		}
@@ -12833,11 +12966,18 @@ focus_tree = {
 
 			add_ideas = SPR_terror_bombing_3
 
-			add_equipment_to_stockpile = { type = tac_bomber_equipment_1936 amount = 80 producer = GER }   
+			add_equipment_to_stockpile = { type = tac_bomber_equipment_1936 amount = 120 producer = GER }   
 
 			mio:SPR_hispano_aviacion_organization = {
 				add_mio_funds_gain_factor = 0.075
 				add_mio_size_up_requirement_factor = -0.05
+			}
+			custom_effect_tooltip = MANspace
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
 			}
 		}
 	}
@@ -12884,7 +13024,7 @@ focus_tree = {
 				tooltip = army_defense_factor_tooltip
 			}
 			add_to_variable = {
-				SPR_army_morale_factor = 0.05
+				SPR_army_morale_factor = 0.1
 				tooltip = army_morale_factor_tooltip
 			}
 			add_to_variable = {
@@ -12894,9 +13034,14 @@ focus_tree = {
 			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
+				cost_reduction = 0.4
+				uses = 2
 				category = land_doctrine
+			}
+			army_experience = 75
+			add_mastery = {
+				amount = 30
+				folder = land
 			}
 		}
 	}
@@ -12943,7 +13088,7 @@ focus_tree = {
 			ITA = {
 				add_political_power = -75
 			}
-			army_experience = 40
+			army_experience = 75
 		}
 	}
 	#Naval Blockade of the Republicans
@@ -13037,19 +13182,18 @@ focus_tree = {
 						artillery_brigade = { x = 3 y = 2 }
 						artillery_brigade = { x = 3 y = 3 }
 										
-						field_gun_brigade = { x = 4 y = 0 }	
-						anti_air_heavy = { x = 4 y = 1 }				
-					}
-					regimental_support = {
-						anti_air = { x = 0 y = 0 }
-						anti_tank_brigade = { x = 0 y = 1 }
+						anti_air = { x = 4 y = 0 }	
+						anti_tank_brigade = { x = 4 y = 1 }				
 					}
 					support = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
 						recon = { x = 0 y = 2 }
-						logistics_company = { x = 1 y = 0 }
-						field_hospital = { x = 1 y = 1 }
+						pack_artillery = { x = 0 y = 3 }
+						anti_air_company = { x = 0 y = 4 }
+						logistics_company = { x = 0 y = 5 }
+						field_hospital = { x = 0 y = 6 }
+						anti_tank = { x = 0 y = 7 }
 					}
 				}
 				division_template = { #Blackshirts
@@ -13074,18 +13218,15 @@ focus_tree = {
 						artillery_brigade = { x = 3 y = 2 }
 						artillery_brigade = { x = 3 y = 3 }
 										
-						field_gun_brigade = { x = 4 y = 0 }	
-						anti_air_heavy = { x = 4 y = 1 }				
-					}
-					regimental_support = {
-						anti_air = { x = 0 y = 0 }
-						anti_tank_brigade = { x = 0 y = 1 }
+						anti_air = { x = 4 y = 0 }	
+						anti_tank_brigade = { x = 4 y = 1 }				
 					}
 					support = {
 						artillery = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
-						logistics_company = { x = 1 y = 0 }
-						field_hospital = { x = 1 y = 1 }
+						pack_artillery = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+						field_hospital = { x = 0 y = 4 }
 					}
 				}
 			290 ={
@@ -13153,8 +13294,8 @@ focus_tree = {
 				tooltip = army_morale_factor_tooltip
 			}
 
-			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 3500 producer = SPN }
-			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 4000 producer = ITA } 
+			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 2500 producer = SPN }
+			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 5500 producer = ITA } 
 		}
 	}
 
@@ -13190,10 +13331,11 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_equipment_to_stockpile = { type = field_gun_equipment amount = 300 producer = SPN } 
-			add_equipment_to_stockpile = { type = anti_air_equipment amount = 300 producer = SPN }
-			add_equipment_to_stockpile = { type = radio_equipment amount = 700 producer = SPN } 
-			add_equipment_to_stockpile = { type = support_equipment amount = 700 producer = SPN } 
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 400 producer = SPN }
+			add_equipment_to_stockpile = { type = field_gun_equipment amount = 600 producer = SPN } 
+			add_equipment_to_stockpile = { type = anti_air_equipment amount = 500 producer = SPN }
+			add_equipment_to_stockpile = { type = radio_equipment amount = 800 producer = SPN } 
+			add_equipment_to_stockpile = { type = support_equipment amount = 800 producer = SPN } 
 		}
 	}
 
@@ -13249,8 +13391,9 @@ focus_tree = {
 					siege_artillery1 = 1
 				}
 			}
-			add_equipment_to_stockpile = { type = heavy_artillery_equipment_1 amount = 200 producer = ITA }
-			add_equipment_to_stockpile = { type = siege_artillery_equipment amount = 75 producer = ITA }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 400 producer = ITA }
+			add_equipment_to_stockpile = { type = heavy_artillery_equipment_1 amount = 260 producer = ITA }
+			add_equipment_to_stockpile = { type = siege_artillery_equipment amount = 155 producer = ITA }
 			custom_effect_tooltip = MANspace
 			hidden_effect = {
 				set_technology = {
@@ -13305,6 +13448,9 @@ focus_tree = {
 				tooltip = army_attack_factor_tooltip
 			}
 				custom_effect_tooltip = MANspace
+				add_equipment_to_stockpile = { type = radio_equipment amount = 1000 producer = SPN } 
+				custom_effect_tooltip = MANspace
+
 				hidden_effect = {
 					division_template = {
 						name = "División de infantería Italiana"
@@ -13336,7 +13482,7 @@ focus_tree = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
 							recon = { x = 0 y = 2 }
-							logistics_company = { x = 1 y = 0 }
+							logistics_company = { x = 0 y = 3 }
 						}
 					}
 					290 ={
@@ -13417,8 +13563,10 @@ focus_tree = {
 					tooltip = army_speed_tooltip
 				}
 				custom_effect_tooltip = MANspace
+				add_equipment_to_stockpile = { type = special_equipment amount = 1400 producer = SPN } 
+				custom_effect_tooltip = MANspace
 			hidden_effect = {
-			290 ={	
+				290 ={	
 					create_unit = {
 						division = "division_template = \"Camisa Negra\" start_experience_factor = 0.6 start_equipment_factor = 1"
 						owner = SPR
@@ -13485,8 +13633,8 @@ focus_tree = {
 				#name = light_fighter_research
 			}
 			custom_effect_tooltip = MANspace
-			add_equipment_to_stockpile = { type = fighter_equipment_1934 amount = 60 producer = ITA } 
-			add_equipment_to_stockpile = { type = tac_bomber_equipment_1934 amount = 60 producer = ITA }   
+			add_equipment_to_stockpile = { type = fighter_equipment_1934 amount = 160 producer = ITA } 
+			add_equipment_to_stockpile = { type = tac_bomber_equipment_1934 amount = 100 producer = ITA }   
 		}
 	}
 
@@ -13527,7 +13675,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = land_doctrine
 			}
 			add_timed_idea = {
@@ -13570,7 +13718,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_equipment_to_stockpile = { type = motorized_equipment amount = 600 producer = ITA }
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 800 producer = ITA }
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = SPR_industry_modif_post_tooltip
 			custom_effect_tooltip = SPR_industry_modif_ita_1_post
@@ -13613,7 +13761,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_equipment_to_stockpile = { type = light_tank_rocket_chassis_1934 amount = 400 producer = ITA }
+			add_equipment_to_stockpile = { type = light_tank_rocket_chassis_1934 amount = 550 producer = ITA }
 
 		create_equipment_variant = {
 			name = "Carro Veloce L3"
@@ -13691,20 +13839,17 @@ focus_tree = {
 					
 					artillery_brigade_mot = { x = 3 y = 0 }
 					field_gun_brigade_mot = { x = 3 y = 1 }		
-					cavalry = { x = 3 y = 2 }	
+					pack_artillery_brigade_mot = { x = 3 y = 2 }	
 				
 					light_assault_gun_brigade = { x = 4 y = 0 }
 					light_assault_gun_brigade = { x = 4 y = 1 }
 					light_assault_gun_brigade = { x = 4 y = 2 }
 				}
-				regimental_support = {
-					pack_artillery_brigade = { x = 0 y = 0 }
-				}
 				support = {
 					artillery = { x = 0 y = 0 }
-					maintenance_company = { x = 1 y = 0 }
-					logistics_company = { x = 1 y = 1 }
-					field_hospital = { x = 0 y = 1 }
+					maintenance_company = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					field_hospital = { x = 0 y = 3 }
 				}
 			}
 				every_state = {
@@ -13735,8 +13880,8 @@ focus_tree = {
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = talian_army_core_elites
 			custom_effect_tooltip = MANspace
-			add_equipment_to_stockpile = { type = light_tank_rocket_chassis_1934 amount = 160 producer = ITA }
-			add_equipment_to_stockpile = { type = armored_cars_equipment amount = 180 producer = ITA }
+			add_equipment_to_stockpile = { type = light_tank_rocket_chassis_1934 amount = 560 producer = ITA }
+			add_equipment_to_stockpile = { type = armored_cars_equipment amount = 380 producer = ITA }
 
 			mio:SPR_ansaldo = {
 				add_mio_funds = 2500
@@ -13757,13 +13902,17 @@ focus_tree = {
 		cost = 7.15
 		
 		prerequisite = {
-			focus = SPA_crush_the_republic
+			focus = SPA_import_siege_artillery
 		}
-
 		prerequisite = {
+			focus = SPA_tank_and_armor_car_group
+		}
+		prerequisite = {
+			focus = SPA_crush_the_republic
 			focus = SPA_import_siege_artillery
 			focus = SPA_tank_and_armor_car_group
 		}
+
 
 		ai_will_do = {
 			factor = 1
@@ -13798,7 +13947,7 @@ focus_tree = {
 				tooltip = army_defense_factor_tooltip
 			}
 			add_to_variable = {
-				SPR_max_planning_var = 0.2
+				SPR_max_planning_var = 0.25
 				tooltip = max_planning_tooltip
 			}
 			custom_effect_tooltip = MANspace
@@ -13807,6 +13956,11 @@ focus_tree = {
 				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
+			}
+			army_experience = 75
+			add_mastery = {
+				amount = 30
+				folder = land
 			}
 		}
 	}
@@ -13910,8 +14064,8 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 2500 producer = SPN }
-			add_equipment_to_stockpile = { type = field_gun_equipment amount = 300 producer = SPN } 
+			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 8500 producer = SPN }
+			add_equipment_to_stockpile = { type = field_gun_equipment amount = 700 producer = SPN } 
 			add_equipment_to_stockpile = { type = anti_air_equipment amount = 140 producer = SPN }
 		}
 	}
@@ -13994,7 +14148,7 @@ focus_tree = {
 				tooltip = army_defense_factor_tooltip
 			}
 			custom_effect_tooltip = MANspace
-			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 450 producer = SPN }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 1150 producer = SPN }
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = SPR_industry_modif_post_tooltip
 			custom_effect_tooltip = SPR_industry_modif_spr_1_post
@@ -14003,7 +14157,7 @@ focus_tree = {
 			}
 			mio:SPR_esperanza_y_cia_organization = {
 				add_mio_funds = 2500
-				add_mio_funds_gain_factor = 0.1
+				add_mio_funds_gain_factor = 0.2
 			}
 		}
 	}
@@ -14092,7 +14246,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = SPR_army_modif
 			add_to_variable = {
-				SPR_recruitable_population_factor_var = 0.025
+				SPR_recruitable_population_factor_var = 0.05
 				tooltip = CAN_recruitable_tt1
 			}
 			custom_effect_tooltip = MANspace
@@ -14114,12 +14268,12 @@ focus_tree = {
 
 							penal_battalion = { x = 1 y = 0 }
 							penal_battalion = { x = 1 y = 1 }
-							#penal_battalion = { x = 1 y = 2 }		
+							penal_battalion = { x = 1 y = 2 }		
 						}
 
 						support = {
 							military_police = { x = 0 y = 0 }
-							recon = { x = 1 y = 0 }
+							recon = { x = 0 y = 1 }
 						}
 					}
 					every_owned_state = {
@@ -14131,11 +14285,11 @@ focus_tree = {
 							}
 						}
 						create_unit = {
-							division = "name = \"División de Remanentes Republicanos\" division_template = \"División de Remanentes Republicanos\" start_experience_factor = 0.0 start_equipment_factor = 0.7" 
+							division = "name = \"División de Remanentes Republicanos\" division_template = \"División de Remanentes Republicanos\" start_experience_factor = 0.0 start_equipment_factor = 1.0" 
 							owner = SPR
 						}	
 						create_unit = {
-							division = "name = \"División de Remanentes Republicanos\" division_template = \"División de Remanentes Republicanos\" start_experience_factor = 0.0 start_equipment_factor = 0.7" 
+							division = "name = \"División de Remanentes Republicanos\" division_template = \"División de Remanentes Republicanos\" start_experience_factor = 0.0 start_equipment_factor = 1.0" 
 							owner = SPR
 						}				
 					}	
@@ -14234,8 +14388,23 @@ focus_tree = {
 				bonus = 0.75
 			}
 			custom_effect_tooltip = MANspace
-			add_equipment_to_stockpile = { type = tac_bomber_equipment_1936 amount = 80 producer = GER }   
-			add_equipment_to_stockpile = { type = tac_bomber_equipment_1934 amount = 60 producer = ITA }   
+			add_equipment_to_stockpile = { type = tac_bomber_equipment_1936 amount = 180 producer = GER }   
+			add_equipment_to_stockpile = { type = tac_bomber_equipment_1934 amount = 160 producer = ITA }
+
+			custom_effect_tooltip = MANspace  
+			add_ideas = effective_training_programs_spirit
+
+			mio:SPR_hispano_aviacion_organization = {
+				add_mio_funds_gain_factor = 0.075
+				add_mio_size_up_requirement_factor = -0.05
+			} 
+			custom_effect_tooltip = MANspace
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
 		}
 	}
 
@@ -14328,7 +14497,7 @@ focus_tree = {
 						cavalry = { x = 0 y = 3 }
 
 						armored_car = { x = 1 y = 0 }
-						cavalry = { x = 1 y = 1 }
+						anti_air_mot = { x = 1 y = 1 }
 										
 						cavalry = { x = 2 y = 0 }
 						motorized = { x = 2 y = 1 }
@@ -14336,40 +14505,39 @@ focus_tree = {
 						
 						field_gun_brigade = { x = 3 y = 0 }
 						artillery_brigade = { x = 3 y = 1 }
-						field_gun_brigade = { x = 3 y = 2 }
+						pack_artillery_brigade = { x = 3 y = 2 }
 
-						cavalry = { x = 4 y = 0 }	
-						cavalry = { x = 4 y = 1 }
-						cavalry = { x = 4 y = 2 }
+						pack_artillery_brigade_mot = { x = 4 y = 0 }	
+						pack_artillery_brigade_mot = { x = 4 y = 1 }
+						pack_artillery_brigade_mot = { x = 4 y = 2 }
 		
-					}
-					regimental_support = {
-						anti_air = { x = 0 y = 0 }
-						pack_artillery_brigade = { x = 0 y = 1 }
-						pack_artillery_brigade = { x = 0 y = 2 }
-						pack_artillery_brigade = { x = 0 y = 3 }
-						pack_artillery_brigade = { x = 0 y = 4 }
 					}
 					support = {
 						recon_ac = { x = 0 y = 0 }
 						military_police = { x = 0 y = 1 }
+						anti_air_company = { x = 0 y = 2 }
+						pack_artillery = { x = 0 y = 3 }
 					}
 				}
 				290 ={
 					create_unit = {
-						division = "division_template = \"Caballos Maravilla Españoles\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						division = "division_template = \"Caballos Maravilla Españoles\" start_experience_factor = 0.75 start_equipment_factor = 1"
 						owner = SPR
 					}
 					create_unit = {
-						division = "division_template = \"Caballos Maravilla Españoles\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						division = "division_template = \"Caballos Maravilla Españoles\" start_experience_factor = 0.75 start_equipment_factor = 1"
 						owner = SPR
 					}
 					create_unit = {
-						division = "division_template = \"Caballos Maravilla Españoles\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						division = "division_template = \"Caballos Maravilla Españoles\" start_experience_factor = 0.75 start_equipment_factor = 1"
 						owner = SPR
 					}
 					create_unit = {
-						division = "division_template = \"Caballos Maravilla Españoles\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						division = "division_template = \"Caballos Maravilla Españoles\" start_experience_factor = 0.75 start_equipment_factor = 1"
+						owner = SPR
+					}
+					create_unit = {
+						division = "division_template = \"Caballos Maravilla Españoles\" start_experience_factor = 0.75 start_equipment_factor = 1"
 						owner = SPR
 					}
 				}
@@ -14439,7 +14607,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = land_doctrine
 			}
 			custom_effect_tooltip = MANspace
@@ -14450,7 +14618,7 @@ focus_tree = {
 			}
 			add_equipment_to_stockpile = {
 				type = light_tank_chassis_1936
-				amount = 10
+				amount = 250
 				producer = GER
 			}
 			add_equipment_to_stockpile = {
@@ -14460,7 +14628,7 @@ focus_tree = {
 			}
 			add_equipment_to_stockpile = {
 				type = motorized_equipment
-				amount = 150
+				amount = 550
 				producer = ITA
 			}
 			add_equipment_to_stockpile = {
@@ -14482,9 +14650,13 @@ focus_tree = {
 		cost = 7.15
 
 		prerequisite = {
-			focus = SPA_terror_tactics
+			focus = SPA_artillery_production
 		}
 		prerequisite = {
+			focus = SPA_tackkle_the_vulnerable_fronts
+		}
+		prerequisite = {
+			focus = SPA_terror_tactics
 			focus = SPA_artillery_production
 			focus = SPA_tackkle_the_vulnerable_fronts
 		}
@@ -14510,7 +14682,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = SPR_army_modif
 			add_to_variable = {
-				SPR_arty_attc = 0.1
+				SPR_arty_attc = 0.15
 				tooltip = army_artillery_attack_tooltip
 			}
 			add_to_variable = {
@@ -14520,9 +14692,14 @@ focus_tree = {
 			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.5
+				cost_reduction = 0.75
 				uses = 1
 				category = land_doctrine
+			}
+			army_experience = 75
+			add_mastery = {
+				amount = 30
+				folder = land
 			}
 		}
 	}
@@ -14569,7 +14746,8 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 75
 			hidden_effect = {
-				add_equipment_to_stockpile = { type = tac_bomber_equipment_1936 amount = 80 producer = GER } 
+				add_equipment_to_stockpile = { type = tac_bomber_equipment_1936 amount = 80 producer = SPN }
+				add_equipment_to_stockpile = { type = fighter_equipment_1934 amount = 160 producer = SPN } 
 			}
 			custom_effect_tooltip = SPR_army_modif
 			add_to_variable = {
@@ -14579,10 +14757,6 @@ focus_tree = {
 			add_to_variable = {
 				SPR_army_defence_factor_var = -0.03
 				tooltip = army_defense_factor_tooltip
-			}
-			add_to_variable = {
-				SPR_army_org_factor_var = -0.05
-				tooltip = army_org_factor_tooltip
 			}
 			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
@@ -14615,8 +14789,8 @@ focus_tree = {
 							artillery_brigade = { x = 3 y = 1 }
 							artillery_brigade = { x = 3 y = 2 }
 
-							artillery_heavy = { x = 4 y = 0 }
-							field_gun_brigade = { x = 4 y = 1 }
+							artillery_brigade = { x = 4 y = 0 }
+							artillery_brigade = { x = 4 y = 1 }
 							field_gun_brigade = { x = 4 y = 2 }
 						}
 						
@@ -14624,8 +14798,8 @@ focus_tree = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
 							recon = { x = 0 y = 2 }
-							maintenance_company = { x = 1 y = 0 }
-							field_hospital = { x = 1 y = 1 }
+							maintenance_company = { x = 0 y = 3 }
+							field_hospital = { x = 0 y = 4 }
 						}
 					}
 					290 ={
@@ -14837,13 +15011,18 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = SPR_army_modif
 			add_to_variable = {
-				SPR_special_forces_min_var = 27
+				SPR_special_forces_min_var = 54
 				tooltip = JAP_sf_bonus_tt
 			}
+			custom_effect_tooltip = MANspace
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 4500 producer = SPN }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 350 producer = ITA }
+			add_equipment_to_stockpile = { type = special_equipment amount = 2850 producer = SPN } 
+			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.5
-				uses = 2
+				cost_reduction = 0.75
+				uses = 1
 				category = special_forces_doctrine
 			}
 		}
@@ -14882,7 +15061,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = SPR_army_modif
 			add_to_variable = {
-				SPR_reinforce_rate_factor = 0.02
+				SPR_reinforce_rate_factor = 0.04
 				tooltip = reinforce_rate_factor_tooltip
 			}
 			add_to_variable = {
@@ -15054,7 +15233,8 @@ focus_tree = {
 						
 						support = {
 							recon = { x = 0 y = 0 }
-							field_hospital = { x = 1 y = 0 }
+							pack_artillery = { x = 0 y = 1 }
+							field_hospital = { x = 0 y = 2 }
 						}
 					}
 					290 ={
@@ -15135,15 +15315,15 @@ focus_tree = {
 				tooltip = army_defense_factor_tooltip
 			}
 			add_to_variable = {
-				SPR_special_forces_attack_factor = 0.06
+				SPR_special_forces_attack_factor = 0.08
 				tooltip = special_forces_attack_tooltip
 			}
 			add_to_variable = {
-				SPR_special_forces_defence_factor = 0.06
+				SPR_special_forces_defence_factor = 0.08
 				tooltip = special_forces_defense_tooltip
 			}
 			add_to_variable = {
-				SPR_experience_loss_factor_var = -0.15
+				SPR_experience_loss_factor_var = -0.2
 				tooltip = CAN_xploss_tt1
 			}
 		}
@@ -15201,9 +15381,14 @@ focus_tree = {
 			custom_effect_tooltip = MANspace
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.5
+				cost_reduction = 1
 				uses = 1
 				category = land_doctrine
+			}
+			army_experience = 75
+			add_mastery = {
+				amount = 30
+				folder = land
 			}
 		}
 	}
@@ -15245,7 +15430,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = prevent_cut_half_imports_axis
 			add_political_power = -50
-			army_experience = 40
+			army_experience = 70
 		}
 	}
 	#Circurvent non-intervention Treaties
@@ -15292,10 +15477,10 @@ focus_tree = {
 
 		completion_reward = {
 			169 = {
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 4
 					instant_build = yes
 				}
 			}
@@ -15343,8 +15528,8 @@ focus_tree = {
 			army_experience = 50
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction = 0.5
-				uses = 2
+				cost_reduction = 0.4
+				uses = 3
 				category = land_doctrine
 			}
 		}

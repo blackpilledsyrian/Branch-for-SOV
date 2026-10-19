@@ -20,7 +20,7 @@ focus_tree = {
 		x = -1
 		y = 0
 
-		cost = 7.16
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -50,14 +50,6 @@ focus_tree = {
 					has_idea = partial_economic_mobilisation 
 				}
 				add_political_power = 150 				
-			}
-			hidden_effect = {
-				if = {
-					limit = {
-						is_ai = yes
-					}
-					clear_stalin_paranoia_effects = yes 
-				}
 			}
 		}
 	}
@@ -228,17 +220,14 @@ focus_tree = {
 						artillery_brigade_mot = { x = 3 y = 0 }
 						artillery_brigade_mot = { x = 3 y = 1 }
 						artillery_heavy_mot = { x = 3 y = 2 }		
-						marine = { x = 3 y = 3 }
-					}
-					regimental_support = {
-						anti_tank_brigade = { x = 0 y = 0 }
+						anti_tank_brigade_mot = { x = 3 y = 3 }
 					}
 					support = {
 						artillery = { x = 0 y = 0 } 
 						engineer = { x = 0 y = 1 } 	
-						maintenance_company = { x = 1 y = 0 }
-						logistics_company = { x = 1 y = 1 }
-						field_hospital = { x = 0 y = 2 }
+						maintenance_company = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+						field_hospital = { x = 0 y = 4 }
 					}
 				}
 			}
@@ -266,20 +255,17 @@ focus_tree = {
 						artillery_brigade_mot = { x = 3 y = 0 }
 						artillery_brigade_mot = { x = 3 y = 1 }
 						artillery_heavy_mot = { x = 3 y = 2 }		
-						marine = { x = 3 y = 3 }
+						anti_tank_brigade_mot = { x = 3 y = 3 }
 
 						artillery_brigade_mot = { x = 4 y = 0 }
 						artillery_brigade_mot = { x = 4 y = 1 }
 					}
-					regimental_support = {
-						anti_tank_brigade = { x = 0 y = 0 }
-					}
 					support = {
 						artillery = { x = 0 y = 0 } 
 						engineer = { x = 0 y = 1 } 	
-						maintenance_company = { x = 1 y = 0 }
-						logistics_company = { x = 1 y = 1 }
-						field_hospital = { x = 0 y = 2 }
+						maintenance_company = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+						field_hospital = { x = 0 y = 4 }
 					}
 				}
 			}
@@ -1289,19 +1275,10 @@ focus_tree = {
 			}
 		}
 
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = SOV_great_purge_bypass_tt
-				has_country_flag = counter_purge
-			}
-		}
-
 		select_effect = {
 			set_country_flag = SOV_purge_started
 		}
 		
-		bypass = {
-		}
 
 		select_effect = {
 			set_country_flag = SOV_purge_started
@@ -1312,8 +1289,6 @@ focus_tree = {
 			country_event = { id = soviet.24 days = 1 }
 
 			unlock_decision_category_tooltip = SOV_stalins_paranoia
-		
-			add_ideas = officers_purged
 
 			clr_country_flag = SOV_eye_witness_claims_flag
 			clr_country_flag = SOV_mass_surveillance_flag
@@ -1362,9 +1337,6 @@ focus_tree = {
 			}
 		}
 
-		bypass = {
-		}		
-
 		ai_will_do = {
 			factor = 100
 		}
@@ -1372,12 +1344,18 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = soviet.28 }
 
-			stalin_paranoia_effects = yes 
 
 			add_to_variable = {
 				var = SOV_purge_plot_power 
 				value = -100 
 			}
+
+			custom_effect_tooltip = SOV_modify_Yezhovshchina_tt
+	        add_to_variable = {
+			SOV_stability_factor_modifier = 0.1
+			tooltip = stability_tooltip_general
+			}
+
 			clr_country_flag = SOV_eye_witness_claims_flag
 			clr_country_flag = SOV_mass_surveillance_flag
 			clr_country_flag = SOV_deport_suspects_flag
@@ -1435,11 +1413,18 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = soviet.25 }
 
-			stalin_paranoia_effects = yes 
+
 			add_to_variable = {
 				var = SOV_purge_plot_power 
 				value = -100
 			}
+			custom_effect_tooltip = SOV_modify_Yezhovshchina_tt
+
+			add_to_variable = {
+			SOV_stability_factor_modifier = 0.10
+			tooltip = stability_tooltip_general
+			}
+
 			clr_country_flag = SOV_eye_witness_claims_flag
 			clr_country_flag = SOV_mass_surveillance_flag
 			clr_country_flag = SOV_deport_suspects_flag
@@ -1500,6 +1485,14 @@ focus_tree = {
 				var = SOV_purge_plot_power 
 				value = -100
 			}
+
+			custom_effect_tooltip = SOV_modify_Yezhovshchina_tt
+			add_to_variable = {
+			SOV_stability_factor_modifier = 0.10
+			tooltip = stability_tooltip_general
+			}
+
+
 			clr_country_flag = SOV_eye_witness_claims_flag
 			clr_country_flag = SOV_mass_surveillance_flag
 			clr_country_flag = SOV_deport_suspects_flag
@@ -1507,7 +1500,7 @@ focus_tree = {
 			clr_country_flag = SOV_falsify_evidence_flag
 			clr_country_flag = SOV_order_arrests_flag
 			
-			stalin_paranoia_effects = yes 
+
 		}
 	}		
 
@@ -1561,6 +1554,14 @@ focus_tree = {
 				var = SOV_purge_plot_power 
 				value = -100
 			}
+
+			custom_effect_tooltip = SOV_modify_Yezhovshchina_tt
+		    add_to_variable = {
+			SOV_stability_factor_modifier = 0.10
+			tooltip = stability_tooltip_general
+			}
+
+
 			clr_country_flag = SOV_eye_witness_claims_flag
 			clr_country_flag = SOV_mass_surveillance_flag
 			clr_country_flag = SOV_deport_suspects_flag
@@ -1568,7 +1569,7 @@ focus_tree = {
 			clr_country_flag = SOV_falsify_evidence_flag
 			clr_country_flag = SOV_order_arrests_flag
 
-			stalin_paranoia_effects = yes
+
 			remove_ideas = trotskyite_plot
 		}
 	}		
@@ -1831,9 +1832,14 @@ focus_tree = {
 		completion_reward = {
 			remove_ideas = trotskyite_plot_purged
 
+			custom_effect_tooltip = SOV_modify_Yezhovshchina_tt
+		    add_to_variable = {
+			tooltip = stability_tooltip_general
+			SOV_stability_factor_modifier = 0.2
+			}
 			news_event = { id = news.37 days = 1 }
 
-			clear_stalin_paranoia_effects = yes		
+
 		}
 	}	
 
@@ -2546,8 +2552,12 @@ focus_tree = {
 					
 				}	
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SOV_kill_zhukov_tt
 
-
+		hidden_effect = {
+			retire_character = SOV_georgy_zhukov_chief
+		}
 		if = {
 				limit = {
 					SOV = {
@@ -2982,43 +2992,13 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = SOV_production_targets
-		icon = GFX_SOV_production_targets
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		x = 0
-		y = 6
-		relative_position_id = SOV_finish_the_2_5_year_plan
-		prerequisite = { focus = SOV_begin_the_3_5_year_plan }
-
-		cost = 5 
-		
-		available = { 
-		} 
-		
-		ai_will_do = {
-			factor = 10
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = SOV_production_targets
-			
-		}
-	}
-
+	
 	focus = {
 		id = SOV_3_5_plan_phase_1_IC
 		icon = GFX_5_year_plan_phase_1_IC
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		prerequisite = { focus = SOV_production_targets }	
-		relative_position_id = SOV_production_targets 
+		prerequisite = { focus = SOV_begin_the_3_5_year_plan }	
+		relative_position_id = SOV_begin_the_3_5_year_plan 
 		available = {
 			has_completed_focus = SOV_kommissariat_for_heavy_industry
 			any_owned_state = {
@@ -3087,8 +3067,8 @@ focus_tree = {
 		id = SOV_3_5_plan_phase_1_MIC
 		icon = GFX_5_year_plan_phase_1_MIC
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		prerequisite = { focus = SOV_production_targets }
-		relative_position_id = SOV_production_targets 
+		prerequisite = { focus = SOV_begin_the_3_5_year_plan }
+		relative_position_id = SOV_begin_the_3_5_year_plan 
 		available = {
 			has_completed_focus = SOV_arms_kommissariats
 			any_owned_state = {
@@ -3235,7 +3215,7 @@ focus_tree = {
 		icon = GFX_5_year_plan_phase_2_IC
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = SOV_3_5_plan_phase_1_IC }	
-		relative_position_id = SOV_production_targets 
+		relative_position_id = SOV_begin_the_3_5_year_plan 
 		available = {
 			has_completed_focus = SOV_kommissariat_for_heavy_industry
 			any_owned_state = {
@@ -3315,7 +3295,7 @@ focus_tree = {
 		icon = GFX_5_year_plan_phase_2_MIC
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = SOV_3_5_plan_phase_1_MIC }
-		relative_position_id = SOV_production_targets 
+		relative_position_id = SOV_begin_the_3_5_year_plan 
 		available = {
 			has_completed_focus = SOV_arms_kommissariats
 			any_owned_state = {
@@ -3394,7 +3374,7 @@ focus_tree = {
 		icon = GFX_5_year_plan_phase_3_IC
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = SOV_3_5_plan_phase_2_IC }	
-		relative_position_id = SOV_production_targets 
+		relative_position_id = SOV_begin_the_3_5_year_plan 
 		
 		bypass = {
 			
@@ -3484,7 +3464,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = {focus = SOV_3_5_plan_phase_2_MIC }
 
-		relative_position_id = SOV_production_targets 
+		relative_position_id = SOV_begin_the_3_5_year_plan 
 
 		bypass = {
 			AND = {
@@ -3559,6 +3539,47 @@ focus_tree = {
 					clr_state_flag = SOV_5_year_plan_IC			
 				}
 			}
+		}
+	}
+
+
+
+	focus = {
+		id = SOV_production_targets
+		icon = GFX_SOV_production_targets
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		x = 0
+		y = 9
+		relative_position_id = SOV_finish_the_2_5_year_plan
+		prerequisite = { focus = SOV_3_5_plan_phase_3_MIC focus = SOV_3_5_plan_phase_3_IC  }
+
+		cost = 5 
+		
+		available = { NOT = { has_idea =SOV_idea_3_5_year_plan}
+		} 
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = SOV_modify_Gosplan_tt
+		
+		    add_to_variable = {
+		   
+			var = SOV_industry_production_efficiency_max_modifier
+			value = 0.05
+			tooltip = production_factory_max_efficiency_tooltip
+
+			}
+			
 		}
 	}
 
@@ -3881,10 +3902,12 @@ focus_tree = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							military_police = { x = 0 y = 1 }
-							mobile_engineer = { x = 0 y = 2 }
+							mobile_engineer  = { x = 0 y = 2 }	
 							signal_company = { x = 0 y = 3 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company = { x = 0 y = 5 }
+							recon_ac = { x = 0 y = 6 }
+							anti_air_company = { x = 0 y = 7}
 						}
 					}
 				}
@@ -3933,10 +3956,12 @@ focus_tree = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							military_police = { x = 0 y = 1 }
-							mobile_engineer = { x = 0 y = 2 }
+							mobile_engineer  = { x = 0 y = 2 }	
 							signal_company = { x = 0 y = 3 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company = { x = 0 y = 5 }
+							recon_ac = { x = 0 y = 6 }
+							anti_air_company = { x = 0 y = 7}
 						}
 					}
 				}
@@ -4008,11 +4033,12 @@ focus_tree = {
 					}
 					support = {
 						artillery = { x = 0 y = 0 }
-						logistics_company_mot = { x = 0 y = 1 }
-						recon_ac = { x = 0 y = 2 }
-						engineer = { x = 1 y = 0 }
-						maintenance_company = { x = 1 y = 1 }
-						military_police = { x = 1 y = 2 }
+						engineer = { x = 0 y = 1 }
+						logistics_company_mot = { x = 0 y = 2 }
+						maintenance_company = { x = 0 y = 3 }
+						recon_ac = { x = 0 y = 4 }
+						military_police = { x = 0 y = 5 } 
+						signal_company = { x = 0 y = 6 } 
 					}
 					priority = 2
 				}
@@ -4047,11 +4073,12 @@ focus_tree = {
 					}
 					support = {
 						artillery = { x = 0 y = 0 }
-						logistics_company_mot = { x = 0 y = 1 }
-						recon_ac = { x = 0 y = 2 }
-						engineer = { x = 1 y = 0 }
-						maintenance_company = { x = 1 y = 1 }
-						military_police = { x = 1 y = 2 }
+						engineer = { x = 0 y = 1 }
+						logistics_company_mot = { x = 0 y = 2 }
+						maintenance_company = { x = 0 y = 3 }
+						recon_ac = { x = 0 y = 4 }
+						military_police = { x = 0 y = 5 } 
+						signal_company = { x = 0 y = 6 } 
 					}
 					priority = 2
 				}
@@ -4182,10 +4209,12 @@ focus_tree = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							military_police = { x = 0 y = 1 }
-							mobile_engineer = { x = 0 y = 2 }
+							mobile_engineer  = { x = 0 y = 2 }	
 							signal_company = { x = 0 y = 3 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company = { x = 0 y = 5 }
+							recon_ac = { x = 0 y = 6 }
+							anti_air_company = { x = 0 y = 7}
 						}
 					}
 				}
@@ -4236,10 +4265,12 @@ focus_tree = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							military_police = { x = 0 y = 1 }
-							mobile_engineer = { x = 0 y = 2 }
+							mobile_engineer  = { x = 0 y = 2 }	
 							signal_company = { x = 0 y = 3 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company = { x = 0 y = 5 }
+							recon_ac = { x = 0 y = 6 }
+							anti_air_company = { x = 0 y = 7}
 						}
 					}
 				}
@@ -4311,11 +4342,13 @@ focus_tree = {
 					}
 					support = {
 						artillery = { x = 0 y = 0 }
-						logistics_company_mot = { x = 0 y = 1 }
-						recon_ac = { x = 0 y = 2 }
-						engineer = { x = 1 y = 0 }
-						maintenance_company = { x = 1 y = 1 }
-						military_police = { x = 1 y = 2 }
+						engineer = { x = 0 y = 1 }
+						logistics_company_mot = { x = 0 y = 2 }
+						maintenance_company = { x = 0 y = 3 }
+						recon_ac = { x = 0 y = 4 }
+						military_police = { x = 0 y = 5 } 
+						signal_company = { x = 0 y = 6 } 
+						
 					}
 					priority = 2
 				}
@@ -4350,11 +4383,13 @@ focus_tree = {
 					}
 					support = {
 						artillery = { x = 0 y = 0 }
-						logistics_company_mot = { x = 0 y = 1 }
-						recon_ac = { x = 0 y = 2 }
-						engineer = { x = 1 y = 0 }
-						maintenance_company = { x = 1 y = 1 }
-						military_police = { x = 1 y = 2 }
+						engineer = { x = 0 y = 1 }
+						logistics_company_mot = { x = 0 y = 2 }
+						maintenance_company = { x = 0 y = 3 }
+						recon_ac = { x = 0 y = 4 }
+						military_police = { x = 0 y = 5 } 
+						signal_company = { x = 0 y = 6 } 
+						
 					}
 					priority = 2
 				}
@@ -4380,7 +4415,7 @@ focus_tree = {
 		id = SOV_armored_cavalry
 		icon = GFX_SOV_mechanized_wave
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		cost = 4.3 
+		cost = 2.9
 		prerequisite = {
 			focus = SOV_morozov_will_show_the_way
 			focus = SOV_okmo_will_show_the_way
@@ -4411,11 +4446,35 @@ focus_tree = {
 				category = tank_upgrade
 			}
 			hidden_effect = {
+				if = {
+				    limit = {
+					    has_tech = sov_1936_medium_tank_chassis 
+						NOT = {
+							has_tech = sov_1939_medium_tank_chassis
+						}
+				    }
+				    add_equipment_to_stockpile = { type = medium_tank_chassis_1936 amount = 500 producer = SOV }
+			    }
 			    if = {
 				    limit = {
 					    has_tech = sov_1939_medium_tank_chassis 
+						NOT = {
+							has_tech = sov_1941_medium_tank_chassis
+						}
 				    }
 				    add_equipment_to_stockpile = { type = medium_tank_chassis_1939 amount = 500 producer = SOV }
+			    }
+				if = {
+				    limit = {
+					    has_tech = sov_1941_medium_tank_chassis 
+				    }
+				    add_equipment_to_stockpile = { type = medium_tank_chassis_1941 amount = 500 producer = SOV }
+			    }
+				if = {
+				    limit = {
+					     has_tech = sov_1934_heavy_tank_chassis 
+				    }
+				    add_equipment_to_stockpile = { type = heavy_tank_chassis_1934 amount = 400 producer = SOV }
 			    }
 			    if = {
 				    limit = {
@@ -4669,7 +4728,7 @@ focus_tree = {
 		id = SOV_shock_and_awe
 		icon = GFX_SOV_breakthrough_priority
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		cost = 5 
+		cost = 2.9
 		prerequisite = {
 			focus = SOV_logistical_corps_expansion
 		}
@@ -4751,17 +4810,16 @@ focus_tree = {
 							artillery_brigade_mot = { x = 3 y = 0 }
 							artillery_brigade_mot = { x = 3 y = 1 }
 							artillery_brigade_mot = { x = 3 y = 2 }		
-							motorized = { x = 3 y = 3 }					
-						}
-						regimental_support = {
-							anti_tank_brigade = { x = 0 y = 0 }
+							anti_tank_brigade_mot = { x = 3 y = 3 }					
 						}
 						support = {
-							artillery = { x = 0 y = 0 }
-							engineer = { x = 0 y = 1 }
-							field_hospital = { x = 0 y = 2 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company_mot = { x = 1 y = 1 }
+							artillery = { x = 0 y = 0 } 
+							engineer = { x = 0 y = 1 } 	
+							maintenance_company = { x = 0 y = 2 }
+							logistics_company_mot = { x = 0 y = 3 }
+							anti_air_company = { x = 0 y = 4 }
+							field_hospital = { x = 0 y = 5 }
+							anti_tank = { x = 0 y = 6 }
 						}
 					}
 					random_owned_controlled_state = {
@@ -4828,20 +4886,19 @@ focus_tree = {
 							artillery_brigade_mot = { x = 3 y = 0 }
 							artillery_brigade_mot = { x = 3 y = 1 }
 							artillery_brigade_mot = { x = 3 y = 2 }		
-							motorized = { x = 3 y = 3 }
+							anti_tank_brigade_mot = { x = 3 y = 3 }
 
 							artillery_brigade_mot = { x = 4 y = 0 }
 							artillery_brigade_mot = { x = 4 y = 1 }					
 						}
-						regimental_support = {
-							anti_tank_brigade = { x = 0 y = 0 }
-						}
 						support = {
-							artillery = { x = 0 y = 0 }
-							engineer = { x = 0 y = 1 }
-							field_hospital = { x = 0 y = 2 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company_mot = { x = 1 y = 1 }
+							artillery = { x = 0 y = 0 } 
+							engineer = { x = 0 y = 1 } 	
+							maintenance_company = { x = 0 y = 2 }
+							logistics_company_mot = { x = 0 y = 3 }
+							anti_air_company = { x = 0 y = 4 }
+							field_hospital = { x = 0 y = 5 }
+							anti_tank = { x = 0 y = 6 }
 						}
 					}
 					random_owned_controlled_state = {
@@ -4956,6 +5013,7 @@ focus_tree = {
 			focus = SOV_military_industrial_complex
 		}
 		available = {
+			has_completed_focus = SOV_begin_the_3_5_year_plan
 		}
 
 		x = -1
@@ -4965,12 +5023,39 @@ focus_tree = {
 		}
 		relative_position_id = SOV_military_industrial_complex
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = SOV_military_industrial_complex_1
-				add_idea = SOV_military_industrial_complex_2 
+
+		    custom_effect_tooltip = SOV_modify_Gosplan_tt
+		
+		    add_to_variable = {
+		   
+			var = SOV_industry_industrial_capacity_factory_modifier
+			value = 0.14
+			tooltip = industrial_capacity_factory_tooltip
+
 			}
-#			custom_effect_tooltip = available_designer
-#			show_ideas_tooltip = dzerzhinsky_stalingrad_tractor_factory		
+
+			add_to_variable = {
+		   
+			var = SOV_production_factory_efficiency_gain_factor_modifier
+			value = 0.50
+			tooltip = production_factory_efficiency_gain_factor_tooltip
+
+			}
+			add_to_variable = {
+		   
+			var = SOV_research_speed_factor_var
+			value = 0.05
+			tooltip = research_speed_factor_tooltip
+
+			}
+			add_tech_bonus = {
+				technology = construction2
+				technology = construction3
+				technology = construction4
+				uses = 1 
+				bonus = 0.5
+			}
+			
 			
 		}
 	}
@@ -4982,7 +5067,9 @@ focus_tree = {
 		cost = 5 
 		prerequisite = {
 			focus = SOV_work_harder_not_smarter
+			focus = SOV_work_smarter_not_harder
 		}
+		mutually_exclusive = { focus = SOV_employ_factory_floor_chiefs }
 		available = {
 		}
 
@@ -4993,22 +5080,33 @@ focus_tree = {
 		}
 		relative_position_id = SOV_work_harder_not_smarter
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = SOV_military_industrial_complex_2
-				add_idea = SOV_military_industrial_complex_3 
+		custom_effect_tooltip = SOV_modify_Gosplan_tt
+			add_to_variable = {
+		   
+			var = SOV_research_speed_factor_var
+			value = 0.05
+			tooltip = research_speed_factor_tooltip
+
 			}
-			add_tech_bonus = {
-				technology = concentrated_industry2
-				technology = concentrated_industry3 
-				technology = concentrated_industry4 
-				technology = concentrated_industry5 
-				technology = dispersed_industry2
-				technology = dispersed_industry3 
-				technology = dispersed_industry4 
-				technology = dispersed_industry5
-				uses = 2
-				bonus = 1.5
+			add_to_variable = {
+		   
+			var = SOV_industry_consumer_goods_modifier
+			value = -0.03
+			tooltip = consumer_goods_tooltip
+		
+
 			}
+
+			add_to_variable = {
+		   
+			var = SOV_production_cost_arms_factory_factor
+			value = -0.07
+			tooltip = arms_factory_production_cost_tooltip
+		
+
+			}
+			
+
 		}
 	}
 
@@ -5019,7 +5117,9 @@ focus_tree = {
 		cost = 5 
 		prerequisite = {
 			focus = SOV_steal_engineers_from_civilian_projects
+			focus = SOV_employ_factory_floor_chiefs
 		}
+		mutually_exclusive = { focus = SOV_induct_junior_workers }
 		available = {
 		}
 
@@ -5030,16 +5130,23 @@ focus_tree = {
 		}
 		relative_position_id = SOV_steal_engineers_from_civilian_projects
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = SOV_military_industrial_complex_3
-				add_idea = SOV_military_industrial_complex_4
+		custom_effect_tooltip = SOV_modify_Gosplan_tt
+			add_to_variable = {
+		   
+			var = SOV_research_speed_factor_var
+			value = 0.05
+			tooltip = research_speed_factor_tooltip
+
 			}
+
+			custom_effect_tooltip = SOV_left1_tt
+
 			add_tech_bonus = {
 				technology = basic_skills
 				technology = specialized_skills
 				technology = streamlined_skills 
 				technology = expanded_workforce 
-				uses = 4 
+				uses = 3
 				bonus = 0.5 
 				name = SOV_simplify_the_schematics
 			}
@@ -5057,6 +5164,7 @@ focus_tree = {
 			focus = SOV_military_industrial_complex
 		}
 		available = {
+			has_completed_focus = SOV_begin_the_3_5_year_plan
 		}
 
 		x = 1
@@ -5066,13 +5174,30 @@ focus_tree = {
 		}
 		relative_position_id = SOV_military_industrial_complex
 		completion_reward = {
+		custom_effect_tooltip = SOV_modify_Gosplan_tt
+            add_to_variable = {
+		   
+			var = SOV_industry_production_efficiency_max_modifier
+			value = 0.05
+			tooltip = production_factory_max_efficiency_tooltip
 
-
-			swap_ideas = {
-				remove_idea = SOV_military_industrial_complex_1
-				add_idea = SOV_effectivized_industrial_complex_2
 			}
 
+			add_to_variable = {
+		   
+			var = SOV_production_factory_start_efficiency_factor
+			value = 0.08
+			tooltip = production_factory_start_efficiency_factor
+
+			}
+
+			add_to_variable = {
+		   
+			var = SOV_research_speed_factor_var
+			value = 0.05
+			tooltip = research_speed_factor_tooltip
+
+			}
 		
 			add_tech_bonus = {
 				technology = construction2
@@ -5093,7 +5218,9 @@ focus_tree = {
 		cost = 5 
 		prerequisite = {
 			focus = SOV_work_smarter_not_harder
+			focus = SOV_work_harder_not_smarter
 		}
+		mutually_exclusive = { focus = SOV_steal_engineers_from_civilian_projects }
 		available = {
 		}
 
@@ -5104,17 +5231,32 @@ focus_tree = {
 		}
 		relative_position_id = SOV_work_smarter_not_harder
 		completion_reward = {
-			add_tech_bonus = {
-				technology = improved_machine_tools
-				technology = advanced_machine_tools
-				technology = assembly_line_production
-				uses = 1 
-				bonus = 1
+
+			custom_effect_tooltip = SOV_modify_Gosplan_tt
+			add_to_variable = {
+		   
+			var = SOV_research_speed_factor_var
+			value = 0.05
+			tooltip = research_speed_factor_tooltip
+
 			}
-			swap_ideas = {
-				remove_idea = SOV_effectivized_industrial_complex_2
-				add_idea = SOV_effectivized_industrial_complex_3
+			
+            add_to_variable = {
+		   
+			var = SOV_industry_production_efficiency_max_modifier
+			value = 0.04
+			tooltip = production_factory_max_efficiency_tooltip
+
 			}
+
+			 add_to_variable = {
+		   
+			var = SOV_industry_industrial_capacity_factory_modifier
+			value = 0.08
+			tooltip = industrial_capacity_factory_tooltip
+
+			}
+			
 		}
 	}
 
@@ -5126,7 +5268,9 @@ focus_tree = {
 		cost = 5 
 		prerequisite = {
 			focus = SOV_employ_factory_floor_chiefs
+			focus = SOV_steal_engineers_from_civilian_projects
 		}
+		mutually_exclusive = { focus = SOV_simplify_the_schematics }
 		available = {
 		}
 
@@ -5136,18 +5280,26 @@ focus_tree = {
 			factor = 10
 		}
 		relative_position_id = SOV_employ_factory_floor_chiefs
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = SOV_effectivized_industrial_complex_3
-				add_idea = SOV_effectivized_industrial_complex_4
+		completion_reward = { 
+		custom_effect_tooltip = SOV_modify_Gosplan_tt
+		add_to_variable = {
+		   
+			var = SOV_research_speed_factor_var
+			value = 0.05
+			tooltip = research_speed_factor_tooltip
+
 			}
+
+		custom_effect_tooltip = SOV_right1_tt
+
 			add_tech_bonus = {
-				technology = excavation1
-				technology = excavation2
-				technology = excavation3
-				technology = excavation4
-				uses = 1 
-				bonus = 0.75
+				technology = basic_skills
+				technology = specialized_skills
+				technology = streamlined_skills 
+				technology = expanded_workforce 
+				uses = 3
+				bonus = 0.5 
+				name = SOV_simplify_the_schematics
 			}
 		}
 	}
@@ -5172,67 +5324,37 @@ focus_tree = {
 		}
 
 		available = {
-			NOT = {
-				has_completed_focus = SOV_the_great_patriotic_war
-			}
+		
 			has_completed_focus = SOV_begin_the_3_5_year_plan
 		}
 
 		completion_reward = {
+			
+		add_ideas = SOV_armament_plan
+
 			activate_mission_tooltip = SOV_5_year_plan_red_army_decision
-			###show_effect_tooltip = SOV_5_year_plan_red_army_decision???????
 
-			if = {
-				limit = {
-					OR = {
-						NOT = {
-							has_completed_focus = SOV_work_harder_not_smarter
-						}
-						NOT = {
-							has_completed_focus = SOV_work_smarter_not_harder
-						}
-					}
-				}
 
-				custom_effect_tooltip = "If Work Harder not Smarter path is taken."
-
-				show_ideas_tooltip = SOV_military_industrial_complex_5
-
-				custom_effect_tooltip = "If Work Smarter not Harder path is taken."
-
-				show_ideas_tooltip = SOV_effectivized_industrial_complex_5
-			}
-			else_if = {
-				limit = {
-					has_completed_focus = SOV_work_harder_not_smarter
-				}
-				show_ideas_tooltip = SOV_military_industrial_complex_5 
-			}
-			else_if = {
-				limit = {
-					has_completed_focus = SOV_work_smarter_not_harder 
-				}
-				show_ideas_tooltip = SOV_effectivized_industrial_complex_5 
+			custom_effect_tooltip = SOV_modify_Gosplan_tt
+			add_to_variable = {
+		   
+			var = SOV_research_speed_factor_var
+			value = 0.05
+			tooltip = research_speed_factor_tooltip
 			}
 
-			if = {
-				limit = {
-					has_idea = SOV_military_industrial_complex_4
-				}
-				swap_ideas = {
-					remove_idea = SOV_military_industrial_complex_4
-					add_idea = SOV_military_industrial_complex_5
-				}
+		add_tech_bonus = {
+			 
+				technology = concentrated_industry4 
+				technology = concentrated_industry5 
+				technology = dispersed_industry4 
+				technology = dispersed_industry5
+				uses = 2
+				bonus = 1.5
 			}
-			else_if = {
-				limit = {
-					has_idea = SOV_effectivized_industrial_complex_4
-				}
-				swap_ideas = {
-					remove_idea = SOV_effectivized_industrial_complex_4
-					add_idea = SOV_effectivized_industrial_complex_5
-				}
-			}
+			
+		
+			
 		}
 	}
 
@@ -5334,7 +5456,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_idea = officers_purged
+			
 		}
 
 		relative_position_id = SOV_intervene_in_the_spanish_civil_war
@@ -5354,10 +5476,23 @@ focus_tree = {
 			else = {
 				army_experience = 100
 			}
-			
-			swap_ideas = {
-				remove_idea = officers_purged
-				add_idea = officers_purged_2 
+		}
+
+		completion_reward = {
+		 custom_effect_tooltip = SOV_modify_Stavka_tt
+         add_to_variable = {
+		 
+			var = SOV_land_doctrine_cost_factor
+				value = -0.05
+				tooltip = land_doc_tp
+			}
+
+		add_to_variable = {
+		   
+			var = SOV_air_doctrine_cost_factor 
+			      value = -0.05
+			tooltip = air_doc_tp
+
 			}
 		}
 	}	
@@ -5394,36 +5529,33 @@ focus_tree = {
 				}
 				army_experience = 100
 			}
-		
-			if = {
-				limit = {
-					SOV = {
-						has_idea = SOV_STAVKA1
-					}
-				}	
-				swap_ideas = {
-					remove_idea = SOV_STAVKA1
-					add_idea = SOV_STAVKA_2
-				}
-			}
-			#if = {
-			#	limit = {
-			#		SOV = {
-			#			has_idea = SOV_STAVKA11
-			#		}
-			#	}	
-			#	swap_ideas = {
-			#		remove_idea = SOV_STAVKA11
-#
-#					add_idea = SOV_STAVKA_22
-#				}
-#			}	
-			swap_ideas = {
-				remove_idea = officers_purged_2
-				add_idea = officers_purged_3 
+        }
+	    completion_reward = {
+		 custom_effect_tooltip = SOV_modify_Stavka_tt
+         add_to_variable = {
+		 
+
+			var = SOV_land_doctrine_cost_factor
+				value = -0.10
+				tooltip = land_doc_tp
 			}
 
+		add_to_variable = {
+		   
+			var = SOV_air_doctrine_cost_factor 
+			      value = -0.10
+			tooltip = air_doc_tp
+
+			}
+			add_to_variable = {
+				var = SOV_planning_speed
+				value = 0.4 
+				tooltip = planning_speed_tooltip
+			}
 		}
+		
+
+	
 	}
 
 	focus = {
@@ -5432,7 +5564,9 @@ focus_tree = {
 		cost = 5
 		prerequisite = {
 			focus = SOV_dual_command
+			focus = SOV_begin_from_nothing
 		}
+		mutually_exclusive = { focus = SOV_increase_standards_for_officer_training }
 		x = 0
 		y = 1
 		relative_position_id = SOV_dual_command
@@ -5444,12 +5578,28 @@ focus_tree = {
 		cancel_if_invalid = yes 
 
 		completion_reward = {
-		
-			swap_ideas = {
-				remove_idea = officers_purged_3
-				add_idea = officers_purged_4 
+		 custom_effect_tooltip = SOV_modify_Stavka_tt
+         add_to_variable = {
+		 
+			var = SOV_land_doctrine_cost_factor
+				value = -0.05
+				tooltip = land_doc_tp
 			}
-			
+
+		add_to_variable = {
+		   
+			var = SOV_air_doctrine_cost_factor 
+			      value = -0.05
+			tooltip = air_doc_tp
+
+			}
+		
+
+	    add_to_variable = {
+				var = SOV_max_planning
+				value = 0.15 
+				tooltip = JAP_max_speed_bonus
+			}
 		}
 	}
 
@@ -5460,8 +5610,10 @@ focus_tree = {
 		cost = 5 
 		x = 0
 		y = 1
-		prerequisite = { focus = SOV_positive_heroism }
-
+		prerequisite = { focus = SOV_positive_heroism
+		 focus = SOV_increase_standards_for_officer_training
+		 }
+		mutually_exclusive = { focus = SOV_foreign_military_observations }
 		ai_will_do = {
 			factor = 1.5
 			modifier = {
@@ -5479,36 +5631,27 @@ focus_tree = {
 		cancel_if_invalid = yes 
 
 		completion_reward = {
-	
-			if = {
-				limit = {
-					SOV = {
-						has_idea = SOV_STAVKA_2
-					}
-				}	
-				swap_ideas = {
-					remove_idea = SOV_STAVKA_2
-					add_idea = SOV_STAVKA_3
-				}
-			}
-		#	if = {
-		#		limit = {
-		#			SOV = {
-		#				has_idea = SOV_STAVKA_22
-		#			}
-		#		}	
-		#		swap_ideas = {
-		#			remove_idea = SOV_STAVKA_22
-#
-#					add_idea = SOV_STAVKA_33
-#				}
-#			}
-			swap_ideas = {
-				remove_idea = officers_purged_4
-				add_idea = officers_purged_5 
+		 custom_effect_tooltip = SOV_modify_Stavka_tt
+         add_to_variable = {
+		 
+			var = SOV_land_doctrine_cost_factor
+				value = -0.10
+				tooltip = land_doc_tp
 			}
 
+		add_to_variable = {
+		   
+			var = SOV_air_doctrine_cost_factor 
+			      value = -0.10
+			tooltip = air_doc_tp
 
+			}
+
+		add_to_variable = {
+				var = SOV_army_morale
+				value = 0.05 
+				tooltip = JAP_morale_bonus
+			}
 		}
 	}
 
@@ -5550,34 +5693,35 @@ focus_tree = {
 				}
 				army_experience = 100
 			}
-			if = {
-				limit = {
-					SOV = {
-						has_idea = SOV_STAVKA1
-					}
-				}	
-				swap_ideas = {
-					remove_idea = SOV_STAVKA1
-					add_idea = SOV_STAVKA2
-				}
-			}
-			#if = {
-			#	limit = {
-			#		SOV = {
-			#			has_idea = SOV_STAVKA11
-			#		}
-			#	}	
-			#	swap_ideas = {
-			#		remove_idea = SOV_STAVKA11
-			#		add_idea = SOV_STAVKA22
-			#	}
-			#}
-			swap_ideas = {
-				remove_idea = officers_purged_2
-				add_idea = officers_purged_3 
-			}
 
 		}
+
+		completion_reward = {
+		 custom_effect_tooltip = SOV_modify_Stavka_tt
+         add_to_variable = {
+		 
+			var = SOV_land_doctrine_cost_factor
+				value = -0.10
+				tooltip = land_doc_tp
+			}
+
+		 add_to_variable = {
+		   
+			var = SOV_air_doctrine_cost_factor 
+			      value = -0.10
+			tooltip = air_doc_tp
+
+			}
+		 add_to_variable = {
+		   
+			var = SOV_army_core_defence_factor 
+		    value = +0.04
+			tooltip = core_defense_increase_tt
+
+			}
+			
+		}
+
 	}
 
 	focus = {
@@ -5587,8 +5731,9 @@ focus_tree = {
 		cost = 5 
 		x = 0
 		y = 1
-		prerequisite = { focus = SOV_begin_from_nothing }
-
+		prerequisite = { focus = SOV_begin_from_nothing
+		focus = SOV_dual_command}
+		mutually_exclusive = { focus = SOV_positive_heroism }
 		ai_will_do = {
 			factor = 1.5
 			modifier = {
@@ -5606,12 +5751,32 @@ focus_tree = {
 		cancel_if_invalid = yes 
 
 		completion_reward = {
-		
-			swap_ideas = {
-				remove_idea = officers_purged_3
-				add_idea = officers_purged_4 
+		 custom_effect_tooltip = SOV_modify_Stavka_tt
+         add_to_variable = {
+		 
+			 var = SOV_land_doctrine_cost_factor
+				value = -0.05
+				tooltip = land_doc_tp
 			}
-		
+
+		 add_to_variable = {
+		   
+			 var = SOV_air_doctrine_cost_factor 
+			 value = -0.05
+			 tooltip = air_doc_tp
+
+			}
+			
+		 
+		 add_to_variable = {
+		   
+			var = SOV_strength_factor 
+			value = 0.1
+			tooltip = hp_factor_tt
+
+			}
+			
+
 		}
 	}
 
@@ -5622,8 +5787,9 @@ focus_tree = {
 		cost = 5 
 		x = 0
 		y = 1
-		prerequisite = { focus = SOV_increase_standards_for_officer_training }
-
+		prerequisite = { focus = SOV_increase_standards_for_officer_training 
+		focus = SOV_positive_heroism}
+		mutually_exclusive = { focus = SOV_for_motherland_and_for_stalin }
 		ai_will_do = {
 			factor = 1.5
 			modifier = {
@@ -5641,34 +5807,26 @@ focus_tree = {
 		cancel_if_invalid = yes 
 
 		completion_reward = {
-		
-			if = {
-				limit = {
-					SOV = {
-						has_idea = SOV_STAVKA2
-					}
-				}	
-				swap_ideas = {
-					remove_idea = SOV_STAVKA2
-					add_idea = SOV_STAVKA3
-				}
-			}
-		#	if = {
-		#		limit = {
-			#		SOV = {
-			#			has_idea = SOV_STAVKA22
-			#		}
-			#	}	
-			#	swap_ideas = {
-			#		remove_idea = SOV_STAVKA22
-			#		add_idea = SOV_STAVKA33
-			#	}
-			#}	
-			swap_ideas = {
-				remove_idea = officers_purged_4
-				add_idea = officers_purged_5 
+		 custom_effect_tooltip = SOV_modify_Stavka_tt
+         add_to_variable = {
+		 
+			    var = SOV_land_doctrine_cost_factor
+				value = -0.10
+				tooltip = land_doc_tp
 			}
 
+		 add_to_variable = {
+		   
+			      var = SOV_air_doctrine_cost_factor 
+			      value = -0.10
+			       tooltip = air_doc_tp
+
+			}
+		 add_to_variable = { 
+				var = SOV_supply_consumption 
+				value = -0.05
+				tooltip = supply_consumption_factor_tooltip
+			}
 		}
 	}
 
@@ -5698,12 +5856,46 @@ focus_tree = {
 		relative_position_id = SOV_for_motherland_and_for_stalin
 
 		completion_reward = {
+		 add_mastery = {
+				amount = 60
+				folder = land
+			}
 		
-			remove_ideas = officers_purged_5		
+				
 			show_unit_leaders_tooltip = SOV_yakov_kreizer	
 			show_unit_leaders_tooltip = SOV_ivan_chernyakhovsky			
 			show_unit_leaders_tooltip = SOV_dmitry_lelyushenko		
-			
+			if = {
+				limit = {
+					282 = {
+						has_state_flag = no_china_war_state_flag
+					}
+				}
+				army_experience = 100
+			}
+		}
+
+		completion_reward = {
+		 custom_effect_tooltip = SOV_modify_Stavka_tt
+         add_to_variable = {
+		 
+			var = SOV_land_doctrine_cost_factor
+				value = -0.10
+				tooltip = land_doc_tp
+			}
+
+		add_to_variable = {
+		   
+			var = SOV_air_doctrine_cost_factor 
+			      value = -0.10
+			tooltip = air_doc_tp
+
+			}
+		add_to_variable = {
+			var = SOV_max_command_power
+			value = 120
+			tooltip = command_power_tt
+		}
 		}
 	}
 
@@ -5827,8 +6019,8 @@ focus_tree = {
 							engineer = { x = 0 y = 1 }
 							mot_recon = { x = 0 y = 2 }
 							logistics_company_mot = { x = 0 y = 3 }
-							field_hospital = { x = 1 y = 0 }
-							artillery_heavy_support = { x = 1 y = 1 }
+							field_hospital = { x = 0 y = 4 }
+							artillery_heavy_support = { x = 0 y = 5 }
 						}
 					}
 				}
@@ -6314,7 +6506,7 @@ focus_tree = {
 		id = SOV_night_witches
 		icon = GFX_SOV_night_witches
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		cost = 4.3
+		cost = 2.9
 		prerequisite = {
 			focus = SOV_expand_air_corps_tactical_school
 		}
@@ -6342,6 +6534,11 @@ focus_tree = {
 				can_generate_female_aces = yes
 			}
 			air_experience = 100
+			add_tech_bonus = {
+				technology = sov_jet_fighter_1946
+				uses = 1
+				bonus = 2.25
+			}
 			if = {
 				limit = {
 					NOT = { SOV = { has_tech = sov_tactical_bomber_1940 } }
@@ -6356,13 +6553,8 @@ focus_tree = {
 				}
 				custom_effect_tooltip = SOV_night_witches_tt
 				hidden_effect = {
-					load_oob = "SOV_night_witches"
+					load_oob = "SOV_night_witches"	
 				}
-			}
-			add_tech_bonus = {
-				technology = sov_jet_fighter_1946
-				uses = 1
-				bonus = 2
 			}
 		}
 	}
@@ -6371,7 +6563,7 @@ focus_tree = {
 		id = SOV_radar_development
 		icon = GFX_SOV_radar_development
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		cost = 4.3	
+		cost = 2.9	
 		prerequisite = {
 			focus = SOV_expand_air_corps_tactical_school
 		}
@@ -6607,12 +6799,8 @@ focus_tree = {
 							artillery_brigade = { x = 3 y = 2 }		
 							artillery_brigade = { x = 3 y = 3 }
 
-							field_gun_brigade = { x = 4 y = 0 }
-							anti_air_heavy = { x = 4 y = 1 }
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_tank_brigade = { x = 0 y = 1 }
+							anti_air = { x = 4 y = 0 }
+							anti_tank_brigade = { x = 4 y = 1 }
 						}
 
 						support = {
@@ -6620,8 +6808,9 @@ focus_tree = {
 							engineer = { x = 0 y = 1 }
 							field_gun_support = { x = 0 y = 2 }
 							artillery_heavy_support = { x = 0 y = 3 }
-							military_police = { x = 1 y = 0 }
-							recon = { x = 1 y = 1 }
+							military_police = { x = 0 y = 4 }
+							recon = { x = 0 y = 5 }
+							anti_tank = { x = 0 y = 6 }
 						}
 					}	
 					division_template = {
@@ -6640,13 +6829,9 @@ focus_tree = {
 							volkssturm_infantry = { x = 2 y = 0 }
 							volkssturm_infantry = { x = 2 y = 1 }
 					
-							field_gun_brigade = { x = 3 y = 0 }		
-							field_gun_brigade = { x = 3 y = 1 }
+							anti_air = { x = 3 y = 0 }		
+							anti_air = { x = 3 y = 1 }
 
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_air = { x = 0 y = 1 }
 						}
 
 						support = {
@@ -6654,8 +6839,9 @@ focus_tree = {
 							engineer = { x = 0 y = 1 }
 							field_gun_support = { x = 0 y = 2 }
 							artillery_heavy_support = { x = 0 y = 3 }
-							military_police = { x = 1 y = 0 }
-							recon = { x = 1 y = 1 }
+							military_police = { x = 0 y = 4 }
+							recon = { x = 0 y = 5 }
+							anti_tank = { x = 0 y = 6 }
 						}
 					}
 				}
@@ -6719,10 +6905,12 @@ focus_tree = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							military_police = { x = 0 y = 1 }
-							mobile_engineer = { x = 0 y = 2 }
+							mobile_engineer  = { x = 0 y = 2 }	
 							signal_company = { x = 0 y = 3 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company = { x = 0 y = 5 }
+							recon_ac = { x = 0 y = 6 }
+							anti_air_company = { x = 0 y = 7}
 						}
 					}
 				}
@@ -6775,10 +6963,12 @@ focus_tree = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							military_police = { x = 0 y = 1 }
-							mobile_engineer = { x = 0 y = 2 }
+							mobile_engineer  = { x = 0 y = 2 }	
 							signal_company = { x = 0 y = 3 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company = { x = 0 y = 5 }
+							recon_ac = { x = 0 y = 6 }
+							anti_air_company = { x = 0 y = 7}
 						}
 					}
 				}
@@ -6828,10 +7018,12 @@ focus_tree = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							military_police = { x = 0 y = 1 }
-							mobile_engineer = { x = 0 y = 2 }
+							mobile_engineer  = { x = 0 y = 2 }	
 							signal_company = { x = 0 y = 3 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company = { x = 0 y = 5 }
+							recon_ac = { x = 0 y = 6 }
+							anti_air_company = { x = 0 y = 7}
 						}
 					}
 				}
@@ -6883,10 +7075,12 @@ focus_tree = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							military_police = { x = 0 y = 1 }
-							mobile_engineer = { x = 0 y = 2 }
+							mobile_engineer  = { x = 0 y = 2 }	
 							signal_company = { x = 0 y = 3 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							maintenance_company = { x = 0 y = 4 }
+							logistics_company = { x = 0 y = 5 }
+							recon_ac = { x = 0 y = 6 }
+							anti_air_company = { x = 0 y = 7}
 						}
 					}
 				}
@@ -6927,12 +7121,8 @@ focus_tree = {
 							artillery_brigade = { x = 3 y = 2 }		
 							artillery_brigade = { x = 3 y = 3 }
 
-							field_gun_brigade = { x = 4 y = 0 };
-							anti_air_heavy = { x = 4 y = 1 }
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_tank_brigade = { x = 0 y = 1 }
+							anti_air = { x = 4 y = 0 };
+							anti_tank_brigade = { x = 4 y = 1 }
 						}
 
 						support = {
@@ -6940,8 +7130,9 @@ focus_tree = {
 							engineer = { x = 0 y = 1 }
 							field_gun_support = { x = 0 y = 2 }
 							artillery_heavy_support = { x = 0 y = 3 }
-							military_police = { x = 1 y = 0 }
-							recon = { x = 1 y = 1 }
+							military_police = { x = 0 y = 4 }
+							recon = { x = 0 y = 5 }
+							anti_tank = { x = 0 y = 6 }
 						}
 					}
 					division_template = {
@@ -6962,15 +7153,11 @@ focus_tree = {
 							volkssturm_infantry = { x = 2 y = 2 }
 							volkssturm_infantry = { x = 2 y = 3 }
 					
-							field_gun_brigade = { x = 3 y = 0 }		
-							field_gun_brigade = { x = 3 y = 1 }
+							anti_air = { x = 3 y = 0 }		
+							anti_air = { x = 3 y = 1 }
 	
 
 
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_air = { x = 0 y = 1 }
 						}
 
 						support = {
@@ -6978,8 +7165,9 @@ focus_tree = {
 							engineer = { x = 0 y = 1 }
 							field_gun_support = { x = 0 y = 2 }
 							artillery_heavy_support = { x = 0 y = 3 }
-							military_police = { x = 1 y = 0 }
-							recon = { x = 1 y = 1 }
+							military_police = { x = 0 y = 4 }
+							recon = { x = 0 y = 5 }
+							anti_tank = { x = 0 y = 6 }
 						}
 					}	
 				}
@@ -7449,19 +7637,15 @@ focus_tree = {
 							artillery_brigade = { x = 3 y = 2 }		
 							artillery_brigade = { x = 3 y = 3 }
 
-							field_gun_brigade = { x = 4 y = 0 }
-							anti_air_heavy = { x = 4 y = 1 }
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_tank_brigade = { x = 0 y = 1 }
+							anti_air = { x = 4 y = 0 }
+							anti_tank_brigade = { x = 4 y = 1 }
 						}
 		
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							military_police = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							military_police = { x = 0 y = 2 }
+							logistics_company = { x = 0 y = 3 }
 						}
 					}	
 
@@ -7536,19 +7720,15 @@ focus_tree = {
 							artillery_brigade = { x = 3 y = 2 }		
 							artillery_brigade = { x = 3 y = 3 }
 
-							field_gun_brigade = { x = 4 y = 0 }
-							anti_air_heavy = { x = 4 y = 1 }
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_tank_brigade = { x = 0 y = 1 }
+							anti_air = { x = 4 y = 0 }
+							anti_tank_brigade = { x = 4 y = 1 }
 						}
 		
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							military_police = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							military_police = { x = 0 y = 2 }
+							logistics_company = { x = 0 y = 3 }
 						}
 					}	
 
@@ -7751,19 +7931,15 @@ focus_tree = {
 							artillery_brigade = { x = 3 y = 2 }		
 							artillery_brigade = { x = 3 y = 3 }
 
-							field_gun_brigade = { x = 4 y = 0 }
-							anti_air_heavy = { x = 4 y = 1 }
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_tank_brigade = { x = 0 y = 1 }
+							anti_air = { x = 4 y = 0 }
+							anti_tank_brigade = { x = 4 y = 1 }
 						}
 		
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							military_police = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							military_police = { x = 0 y = 2 }
+							logistics_company = { x = 0 y = 3 }
 						}
 					}
 
@@ -7838,19 +8014,15 @@ focus_tree = {
 							artillery_brigade = { x = 3 y = 2 }		
 							artillery_brigade = { x = 3 y = 3 }
 
-							field_gun_brigade = { x = 4 y = 0 }
-							anti_air_heavy = { x = 4 y = 1 }
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_tank_brigade = { x = 0 y = 1 }
+							anti_air = { x = 4 y = 0 }
+							anti_tank_brigade = { x = 4 y = 1 }
 						}
 		
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							military_police = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							military_police = { x = 0 y = 2 }
+							logistics_company = { x = 0 y = 3 }
 						}
 					}
 
@@ -8091,19 +8263,15 @@ focus_tree = {
 							artillery_brigade = { x = 3 y = 2 }		
 							artillery_brigade = { x = 3 y = 3 }
 
-							field_gun_brigade = { x = 4 y = 0 }
-							anti_air_heavy = { x = 4 y = 1 }
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_tank_brigade = { x = 0 y = 1 }
+							anti_air = { x = 4 y = 0 }
+							anti_tank_brigade = { x = 4 y = 1 }
 						}
 		
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							military_police = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							military_police = { x = 0 y = 2 }
+							logistics_company = { x = 0 y = 3 }
 						}
 					}
 
@@ -8178,19 +8346,15 @@ focus_tree = {
 							artillery_brigade = { x = 3 y = 2 }		
 							artillery_brigade = { x = 3 y = 3 }
 
-							field_gun_brigade = { x = 4 y = 0 }
-							anti_air_heavy = { x = 4 y = 1 }
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
-							anti_tank_brigade = { x = 0 y = 1 }
+							anti_air = { x = 4 y = 0 }
+							anti_tank_brigade = { x = 4 y = 1 }
 						}
 		
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							military_police = { x = 1 y = 0 }
-							logistics_company = { x = 1 y = 1 }
+							military_police = { x = 0 y = 2 }
+							logistics_company = { x = 0 y = 3 }
 						}
 					}
 
@@ -8392,11 +8556,13 @@ focus_tree = {
 							motorized_rocket_brigade = { x = 4 y = 1 }					
 						}
 						support = {
-							artillery = { x = 0 y = 0 }
-							engineer = { x = 0 y = 1 }
-							field_hospital = { x = 0 y = 2 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company_mot = { x = 1 y = 1 }
+							artillery = { x = 0 y = 0 } 
+							engineer = { x = 0 y = 1 } 	
+							maintenance_company = { x = 0 y = 2 }
+							logistics_company_mot = { x = 0 y = 3 }
+							anti_air_company = { x = 0 y = 4 }
+							field_hospital = { x = 0 y = 5 }
+							anti_tank = { x = 0 y = 6 }
 						}
 					}
 					random_owned_controlled_state = {
@@ -8473,11 +8639,13 @@ focus_tree = {
 							motorized_rocket_brigade = { x = 4 y = 3 }					
 						}
 						support = {
-							artillery = { x = 0 y = 0 }
-							engineer = { x = 0 y = 1 }
-							field_hospital = { x = 0 y = 2 }
-							maintenance_company = { x = 1 y = 0 }
-							logistics_company_mot = { x = 1 y = 1 }
+							artillery = { x = 0 y = 0 } 
+							engineer = { x = 0 y = 1 } 	
+							maintenance_company = { x = 0 y = 2 }
+							logistics_company_mot = { x = 0 y = 3 }
+							anti_air_company = { x = 0 y = 4 }
+							field_hospital = { x = 0 y = 5 }
+							anti_tank = { x = 0 y = 6 }
 						}
 					}
 					random_owned_controlled_state = {
@@ -8547,64 +8715,6 @@ focus_tree = {
 			add_political_power = 150
 			#custom_effect_tooltip = SOV_unlocks_chelyabinsk_stuff_tt
 			unlock_military_industrial_organization_tooltip = "Chelyabinsk Tractor Plant"
-			if = {
-				limit = {
-					572 = {
-						free_building_slots = {
-							building = arms_factory
-							size > 1
-							include_locked = yes
-						}
-					}
-				}
-				572 = {
-					add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-						type = tank_assembly
-						level = 2
-						instant_build = yes 
-					}
-				}
-				
-			}
-			else_if = {
-				limit = {
-					653 = {
-						free_building_slots = {
-							building = arms_factory
-							size > 1
-							include_locked = yes
-						}
-					}
-				}
-				653 = {
-					add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-						type = tank_assembly
-						level = 2
-						instant_build = yes 
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					583 = {
-						free_building_slots = {
-							building = arms_factory
-							size > 1
-							include_locked = yes
-						}
-					}
-				}
-				583 = {
-					add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-						type = tank_assembly
-						level = 2
-						instant_build = yes 
-					}
-				}
-			}
 			if = {
 				limit = {
 					572 = {

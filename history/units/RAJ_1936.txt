@@ -54,7 +54,7 @@ division_template = {
 	support = {
 		artillery = { x = 0 y = 0 }
 		engineer = { x = 0 y = 1 }
-		recon = { x = 1 y = 0 }
+		recon = { x = 0 y = 2 }
 	}
 }
 
@@ -116,8 +116,8 @@ division_template = {
 		artillery = { x = 0 y = 0 }
 	   	recon = { x = 0 y = 1 }
 	   	engineer = { x = 0 y = 2 }
-		maintenance_company = { x = 1 y = 0 }
-		logistics_company = { x = 1 y = 1 }
+		maintenance_company = { x = 0 y = 3 }
+		logistics_company = { x = 0 y = 4 }
 	}
 	priority = 2
 }
@@ -172,8 +172,8 @@ division_template = {
 		artillery = { x = 0 y = 0 }
 	   	recon = { x = 0 y = 1 }
 	   	engineer = { x = 0 y = 2 }
-		military_police = { x = 1 y = 0 }
-		logistics_company = { x = 1 y = 1 }
+		military_police = { x = 0 y = 3 }
+		logistics_company = { x = 0 y = 4 }
 	}
 }
 
@@ -480,15 +480,15 @@ air_wings = {
 
 ##### Starting Production #####
 instant_effect = { #player
-	add_equipment_production = {
-		equipment = {
-			type = train_equipment_1
-			creator = "RAJ"
-		}
-		requested_factories = 1
-		progress = 0.3
-		efficiency = 25
-	}
+	#add_equipment_production = {
+		#equipment = {
+			#type = train_equipment_1
+			#creator = "RAJ"
+		#}
+		#requested_factories = 1
+		#progress = 0.3
+		#efficiency = 25
+	#}
 
 	add_equipment_production = {
 		equipment = {

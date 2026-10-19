@@ -1,5 +1,6 @@
 ﻿
 capital = 169
+add_to_tech_sharing_group = axis_research
 add_political_power = 100
 oob = "SPR_1936"
 if = {
@@ -46,7 +47,7 @@ recruit_character = SPR_salvador_m_fernander
 
 set_variable = { var = SPR_recruitable_population_factor_var value  = 0.0 }
 set_variable = { var = SPR_experience_gain_army_factor_var value  = 0.0 }
-set_variable = { var = SPR_army_org_factor_var value  = -0.3 }
+set_variable = { var = SPR_army_org_factor_var value  = -0.20 }
 set_variable = { var = SPR_army_morale_factor value  = -0.05 }
 set_variable = { var = SPR_army_speed_factor_var value  = 0.0 }
 set_variable = { var = SPR_conscription_factor_var value  = 0.0 }
@@ -82,7 +83,7 @@ set_variable = { var = SPR_RIGHT_industry_local_resources_factor value  = 0.0 }
 set_variable = { var = SPR_RIGHT_industry_production_speed_industrial_complex_factor value  = -0.3 }
 set_variable = { var = SPR_RIGHT_industry_production_speed_arms_factory_factor value  = 0.05 }
 set_variable = { var = SPR_RIGHT_industry_production_speed_infrastructure_factor value  = 0.1 }
-set_variable = { var = SPR_RIGHT_industry_production_speed_dockyard_factor value  = 0.05 }
+set_variable = { var = SPR_RIGHT_industry_production_speed_dockyard_factor value  = -0.2 }
 set_variable = { var = SPR_RIGHT_industry_production_speed_naval_base_factor value  = -0.15 }
 set_variable = { var = SPR_RIGHT_industry_production_speed_buildings_factor value  = 0.0 }
 set_variable = { var = SPR_RIGHT_industry_conversion_cost_civ_to_mil_factor value  = 0.6 }
@@ -108,7 +109,7 @@ set_variable = { var = SPR_MIDDLE_industry_local_resources_factor value  = 0.05 
 set_variable = { var = SPR_MIDDLE_industry_production_speed_industrial_complex_factor value  = -0.2 }
 set_variable = { var = SPR_MIDDLE_industry_production_speed_arms_factory_factor value  = -0.2 }
 set_variable = { var = SPR_MIDDLE_industry_production_speed_infrastructure_factor value  = 0.0 }
-set_variable = { var = SPR_MIDDLE_industry_production_speed_dockyard_factor value  = -0.3 }
+set_variable = { var = SPR_MIDDLE_industry_production_speed_dockyard_factor value  = -0.2 }
 set_variable = { var = SPR_MIDDLE_industry_production_speed_naval_base_factor value  = -0.15}
 set_variable = { var = SPR_MIDDLE_industry_production_speed_buildings_factor value  = 0.0 }
 set_variable = { var = SPR_MIDDLE_industry_conversion_cost_civ_to_mil_factor value  = 0.3 }
@@ -132,7 +133,7 @@ set_variable = { var = SPR_LEFT_industry_production_speed_industrial_complex_fac
 set_variable = { var = SPR_LEFT_industry_production_speed_arms_factory_factor value  = -0.15}
 set_variable = { var = SPR_LEFT_industry_production_speed_infrastructure_factor value  = 0.0 }
 set_variable = { var = SPR_LEFT_nuclear_production value  = 0 }
-set_variable = { var = SPR_LEFT_industry_production_speed_dockyard_factor value  = -0.3 }
+set_variable = { var = SPR_LEFT_industry_production_speed_dockyard_factor value  = -0.2 }
 set_variable = { var = SPR_LEFT_industry_production_speed_naval_base_factor value  = -0.15 }
 set_variable = { var = SPR_LEFT_industry_production_speed_buildings_factor value  = 0.0 }
 set_variable = { var = SPR_LEFT_industry_conversion_cost_civ_to_mil_factor value  = 0.1 }

@@ -269,7 +269,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SPR_train_the_union_youth
-		cost = 7.2
+		cost = 11.2
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SPA_CIVIL_WAR }
@@ -453,7 +453,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SPR_distribute_arms_to_the_people
-		cost = 5
+		cost = 1
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_SPA_CIVIL_WAR }
@@ -717,17 +717,15 @@ focus_tree = {
 						artillery_brigade = { x = 3 y = 2 }
 						artillery_brigade = { x = 3 y = 3 }
 										
-						field_gun_brigade = { x = 4 y = 0 }	
+						anti_air = { x = 4 y = 0 }	
 						artillery_brigade = { x = 4 y = 1 }				
-					}
-					regimental_support = {
-						anti_air = { x = 0 y = 0 }
 					}
 					support = {
 						artillery = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
-						logistics_company = { x = 1 y = 0 }
-						field_hospital = { x = 1 y = 1 }
+						anti_air_company = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+						field_hospital = { x = 0 y = 4 }
 					}
 				}
 				division_template = { #MILITIA OF ALL NATION VOLUNTTERS CIVILIANS
@@ -754,17 +752,15 @@ focus_tree = {
 						artillery_brigade = { x = 3 y = 2 }
 						artillery_brigade = { x = 3 y = 3 }
 										
-						field_gun_brigade = { x = 4 y = 0 }	
+						anti_air = { x = 4 y = 0 }	
 						field_gun_brigade = { x = 4 y = 1 }				
-					}
-					regimental_support = {
-						anti_air = { x = 0 y = 0 }
 					}
 					support = {
 						field_gun_support = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
-						logistics_company = { x = 1 y = 0 }
-						field_hospital = { x = 1 y = 1 }
+						anti_air_company = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+						field_hospital = { x = 0 y = 4 }
 					}
 				}
 			168 = {	
@@ -963,17 +959,15 @@ focus_tree = {
 							artillery_brigade = { x = 3 y = 2 }
 							artillery_brigade = { x = 3 y = 3 }
 											
-							field_gun_brigade = { x = 4 y = 0 }	
+							anti_air = { x = 4 y = 0 }	
 							field_gun_brigade = { x = 4 y = 1 }				
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
 						}
 						support = {
 							artillery = { x = 0 y = 0 }
 							recon = { x = 0 y = 1 }
-							logistics_company = { x = 1 y = 0 }
-							field_hospital = { x = 1 y = 1 }
+							anti_air_company = { x = 0 y = 2 }
+							logistics_company = { x = 0 y = 3 }
+							field_hospital = { x = 0 y = 4 }
 						}
 					}
 					168 = {
@@ -1287,20 +1281,15 @@ focus_tree = {
 					cavalry = { x = 3 y = 0 }
 					cavalry = { x = 3 y = 1 }		
 				
-					light_armor = { x = 4 y = 0 }
-					light_armor = { x = 4 y = 1 }
-					light_armor = { x = 4 y = 2 }
-				}
-				regimental_support = {
-					pack_artillery_brigade = { x = 0 y = 0 }
-					pack_artillery_brigade = { x = 0 y = 1 }
-					pack_artillery_brigade = { x = 0 y = 2 }
+					pack_artillery_brigade_mot = { x = 4 y = 0 }
+					pack_artillery_brigade_mot = { x = 4 y = 1 }
+					pack_artillery_brigade_mot = { x = 4 y = 2 }
 				}
 				support = {
 					artillery = { x = 0 y = 0 }
-					maintenance_company = { x = 1 y = 0 }
-					logistics_company = { x = 1 y = 1 }
-					field_hospital = { x = 0 y = 1 }
+					maintenance_company = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					field_hospital = { x = 0 y = 3 }
 				}
 			}
 				every_state = {
@@ -1492,17 +1481,15 @@ focus_tree = {
 						artillery_brigade = { x = 3 y = 2 }
 						artillery_brigade = { x = 3 y = 3 }
 										
-						field_gun_brigade = { x = 4 y = 0 }	
+						anti_air = { x = 4 y = 0 }	
 						field_gun_brigade = { x = 4 y = 1 }				
-					}
-					regimental_support = {
-						anti_air = { x = 0 y = 0 }
 					}
 					support = {
 						artillery = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
-						logistics_company = { x = 1 y = 0 }
-						field_hospital = { x = 1 y = 1 }
+						anti_air_company = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+						field_hospital = { x = 0 y = 4 }
 					}
 				}
 				division_template = { #MILITIA OF ALL NATION VOLUNTTERS CIVILIANS
@@ -1529,17 +1516,15 @@ focus_tree = {
 						artillery_brigade = { x = 3 y = 2 }
 						artillery_brigade = { x = 3 y = 3 }
 										
-						field_gun_brigade = { x = 4 y = 0 }	
+						anti_air = { x = 4 y = 0 }	
 						field_gun_brigade = { x = 4 y = 1 }				
-					}
-					regimental_support = {
-						anti_air = { x = 0 y = 0 }
 					}
 					support = {
 						field_gun_support = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
-						logistics_company = { x = 1 y = 0 }
-						field_hospital = { x = 1 y = 1 }
+						anti_air_company = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+						field_hospital = { x = 0 y = 4 }
 					}
 				}
 			168 = {	
@@ -1797,7 +1782,7 @@ focus_tree = {
 
 						support = {
 							military_police = { x = 0 y = 0 }
-							recon = { x = 1 y = 0 }
+							recon = { x = 0 y = 1 }
 						}
 					}
 					every_owned_state = {
@@ -2061,26 +2046,22 @@ focus_tree = {
 						motorized = { x = 2 y = 0 }
 						motorized = { x = 2 y = 1 }
 						motorized = { x = 2 y = 2 }
-						cavalry = { x = 2 y = 3 }
+						anti_air_mot = { x = 2 y = 3 }
 						
 						field_gun_brigade = { x = 3 y = 0 }
 						artillery_brigade = { x = 3 y = 1 }
 						artillery_brigade = { x = 3 y = 2 }
-						field_gun_brigade = { x = 3 y = 3 }
+						pack_artillery_brigade = { x = 3 y = 3 }
 
-						cavalry = { x = 4 y = 0 }	
-						cavalry = { x = 4 y = 1 }
+						pack_artillery_brigade_mot = { x = 4 y = 0 }	
+						pack_artillery_brigade_mot = { x = 4 y = 1 }
 		
-					}
-					regimental_support = {
-						anti_air = { x = 0 y = 0 }
-						pack_artillery_brigade = { x = 0 y = 1 }
-						pack_artillery_brigade = { x = 0 y = 2 }
-						pack_artillery_brigade = { x = 0 y = 3 }
 					}
 					support = {
 						recon_ac = { x = 0 y = 0 }
 						military_police = { x = 0 y = 1 }
+						anti_air_company = { x = 0 y = 2 }
+						pack_artillery = { x = 0 y = 3 }
 					}
 				}
 			167 = {	

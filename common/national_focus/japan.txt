@@ -188,6 +188,9 @@ focus_tree = {
 					instant_build = yes
 				}
 		    }
+			mio:JAP_nissan_organization = {
+				add_mio_funds_gain_factor = .25
+			}
 
 
 		}
@@ -215,19 +218,23 @@ focus_tree = {
 			
 			custom_effect_tooltip = upgrade_industrial_concerns
 			show_ideas_tooltip = JAP_mitubishi_industry_upgraded	
-			show_ideas_tooltip = mitsubishi_bonus_2	
+			#show_ideas_tooltip = mitsubishi_bonus_2	
+			
 			if = {
 				limit = {
                          has_idea = JAP_mitubishi_industry 
 					}
 					add_ideas = JAP_mitubishi_industry_upgraded
 			}
-			if = {
-				limit = {
-                         has_idea = mitsubishi_bonus
-					}
-					add_ideas = mitsubishi_bonus_2
+			else_if = {
+				add_ideas = JAP_mitubishi_industry_upgraded
 			}
+			#if = {
+				#limit = {
+                         #has_idea = mitsubishi_bonus
+					#}
+					#add_ideas = mitsubishi_bonus_2
+			#}
 			528 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -239,11 +246,17 @@ focus_tree = {
 			803 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
-					type = industrial_complex
+					type = air_assembly
 					level = 1
 					instant_build = yes
 				}
 		    }
+			mio:JAP_mitsubishi_organization = {
+				add_mio_funds_gain_factor = .25
+			}
+			mio:JAP_mitsu = {
+				add_mio_funds_gain_factor = .25
+			}
 
 		}
 	}
@@ -1200,8 +1213,31 @@ focus_tree = {
 				tooltip = consumer_goods_tooltip
 			}
 			
-			custom_effect_tooltip = JAP_everythingforwareffort_tt
-			create_country_leader = {
+custom_effect_tooltip = JAP_everythingforwareffort_tt
+custom_effect_tooltip = JAP_umi_yukaba_no_china_land_mastery_tt
+hidden_effect = {
+	if = {
+		limit = {
+			282 = {
+				OR = {
+					has_state_flag = no_china_war_state_flag
+					has_state_flag = no_partial_china_war_state_flag
+				}
+			}
+		}
+		add_mastery = {
+			amount = 130
+			folder = land
+		}
+		MAN = {
+			add_mastery = {
+				amount = 65
+				folder = land
+			}
+		}
+	}
+}
+create_country_leader = {
 				name = "Hideki Tojo "
 				desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
 				picture = "gfx/leaders/JAP/Portrait_Japan_Hideki_Tojo.dds"
@@ -1744,14 +1780,14 @@ focus_tree = {
 						amount = 12
 					}
 			}
+
+			MAN = {
 				give_resource_rights = {
 					receiver = JAP
 					state = 761
 				}
-			
-			MAN = {
 				add_to_variable = {
-					var = MAN_military_industry_dm_local_resources_factor 
+					var = MAN_military_industry_dm_local_resources_factor
 					value = 0.08
 					tooltip = man_resource_gain
 				}
@@ -1804,13 +1840,15 @@ focus_tree = {
 				set_building_level = {
 					type = supply_node
 					level = 1
-					province = 11752 
+					province = 11752
 				}
-				
+
 			}
-			give_resource_rights = {
-					receiver = JAP
-					state = 611
+			MAN = {
+				give_resource_rights = {
+						receiver = JAP
+						state = 611
+				}
 			}
 		}
 	}
@@ -1928,7 +1966,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = JAP_army_expansion_law
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 100
 		}
@@ -1981,7 +2019,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = JAP_the_old_guard
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 10
 		}
@@ -2012,7 +2050,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = JAP_modernize_equipment
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 10
 		}
@@ -2043,7 +2081,7 @@ focus_tree = {
 		prerequisite = { focus = JAP_the_old_guard }
 		x = 1
 		y = 1
-		cost = 5
+		cost = 4.4
 		relative_position_id = JAP_the_old_guard
 		ai_will_do = {
 			factor = 10
@@ -2074,7 +2112,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = JAP_artillery_modernisation
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 10
 		}
@@ -2161,7 +2199,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = JAP_army_expansion_law
 
-		cost = 5
+		cost = 4.4
 
 		ai_will_do = {
 			factor = 1
@@ -2223,7 +2261,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = JAP_superiority_of_man
 
-		cost = 5
+		cost = 4.4
 
 		ai_will_do = {
 			factor = 1
@@ -2265,7 +2303,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = JAP_superiority_of_man
 
-		cost = 5
+		cost = 4.4
 
 		ai_will_do = {
 			factor = 1
@@ -2315,7 +2353,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = JAP_superiority_of_man
 
-		cost = 5
+		cost = 4.4
 
 		ai_will_do = {
 			factor = 1
@@ -2406,7 +2444,7 @@ focus_tree = {
 		relative_position_id = JAP_army_expansion_law 
 		x = 6
 		y = 1
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 0
 		}
@@ -2466,7 +2504,7 @@ focus_tree = {
 		relative_position_id = JAP_superiority_of_firepower
 		x = -1
 		y = 1
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 0
 		}
@@ -2493,7 +2531,7 @@ focus_tree = {
 		relative_position_id = JAP_superiority_of_firepower
 		x = -1
 		y = 2
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 0
 		}
@@ -2529,7 +2567,7 @@ focus_tree = {
 		relative_position_id = JAP_superiority_of_firepower 
 		x = 1
 		y = 1
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 0
 		}
@@ -2560,7 +2598,7 @@ focus_tree = {
 		relative_position_id = JAP_superiority_of_firepower
 		x = 1
 		y = 2
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 0
 		}
@@ -2603,7 +2641,7 @@ focus_tree = {
 		relative_position_id = JAP_army_expansion_law 
 		x = 2
 		y = 1
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 0
 		}
@@ -2671,7 +2709,7 @@ focus_tree = {
 		relative_position_id = JAP_innovative_theories
 		x = 1
 		y = 1
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 10
 		}
@@ -2717,7 +2755,7 @@ focus_tree = {
 		relative_position_id = JAP_mechanization_program 
 		x = 0
 		y = 1
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 10
 		}
@@ -2773,7 +2811,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = JAP_innovative_theories
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 10
 		}
@@ -2814,7 +2852,7 @@ focus_tree = {
 		relative_position_id = JAP_jungle_armour
 		x = 0
 		y = 2
-		cost = 5
+		cost = 4.4
 		ai_will_do = {
 			factor = 10
 		}
@@ -3610,22 +3648,19 @@ focus_tree = {
 				add_compliance = 40
 			}
 			336 = {
-		    	add_building_construction = {
+				remove_building = {
 					type = industrial_complex
 					level = -2
-					instant_build = yes
 				}
 			}
 			335 = {
-				add_building_construction = {
-					type = arms_factory
-					level = -2
-					instant_build = yes
-				}
-		    	add_building_construction = {
+				remove_building = {
 					type = industrial_complex
-					level = -2
-					instant_build = yes
+					level = 2
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 2
 				}
 			}
 			798 = {
@@ -3848,11 +3883,13 @@ focus_tree = {
 							artillery_brigade  = { x = 4 y = 1 }	
 						}
 						support = {
-							artillery = { x = 0 y = 0 }
-							engineer = { x = 0 y = 1 }
+							artillery = { x = 0 y = 0 } 
+							engineer = { x = 0 y = 1 } 		
 							recon = { x = 0 y = 2 }
-							logistics_company = { x = 1 y = 0 }
-							field_gun_support = { x = 1 y = 1 }
+							pack_artillery = { x = 0 y = 3 }
+							logistics_company = { x = 0 y = 4 }
+							anti_air_company = { x = 0 y = 5 }
+							field_gun_support = { x = 0 y = 6 }
 						}
 
 						priority = 2
@@ -3976,17 +4013,15 @@ focus_tree = {
 			}
 			
 			623 = {
-				add_building_construction = {
+				remove_building = {
 					type = industrial_complex
-					level = -3
-					instant_build = yes
+					level = 3
 				}
 			}
 			327 = {
-				add_building_construction = {
+				remove_building = {
 					type = arms_factory
-					level = -5
-					instant_build = yes
+					level = 5
 				}
 			}
 			803 = {
@@ -4486,6 +4521,7 @@ focus_tree = {
 			#JAP_change_of_max_states = yes
 			#custom_effect_tooltip = generic_skip_one_line_tt
 			#custom_effect_tooltip = JAP_increase_amount_of_occupied_states_tt
+			custom_effect_tooltip = JAP_pacification_tt
 		}
 
 	}
@@ -6837,7 +6873,8 @@ focus = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							artillery_heavy_support = { x = 1 y = 0 }
+							anti_air_company = { x = 0 y = 2 }
+							artillery_heavy_support = { x = 0 y = 3 }
 						}	
 						
 						priority = 1
@@ -6875,7 +6912,8 @@ focus = {
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							artillery_heavy_support = { x = 1 y = 0 }
+							anti_air_company = { x = 0 y = 2 }
+							artillery_heavy_support = { x = 0 y = 3 }
 						}	
 						
 						priority = 1
@@ -6982,6 +7020,7 @@ focus = {
 					support = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
+						anti_air_company = { x = 0 y = 2 }
 					}	
 					
 					priority = 1
@@ -7020,6 +7059,7 @@ focus = {
 					support = {
 						artillery = { x = 0 y = 0 }
 						engineer = { x = 0 y = 1 }
+						anti_air_company = { x = 0 y = 2 }
 					}	
 					
 					priority = 1
@@ -10044,11 +10084,13 @@ focus = {
 		available_if_capitulated = no
 
 		completion_reward = {
-		custom_effect_tooltip = extra_super
+		#custom_effect_tooltip = extra_super
 			mio:JAP_mitsubishi_organization = {
-				add_mio_funds = 3000
+				add_mio_funds = 2000
 			}
-		
+			mio:JAP_mitsubishi_organization = {
+				complete_mio_trait = japanese_zero
+			}
 		}
 	}
 	focus = {
@@ -10136,6 +10178,12 @@ focus = {
 				technology = jet_fighter_1946
 				technology = cv_fighter_1942
 				technology = cv_fighter_1944
+			}
+			add_tech_bonus = {
+				name = JAP_fighter_modernization
+				ahead_reduction = 1
+				uses = 1
+				category = light_fighter	
 			}
 			add_breakthrough_points = {
 				specialization = specialization_air

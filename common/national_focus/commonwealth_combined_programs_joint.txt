@@ -537,16 +537,16 @@ joint_focus = {
 
 						artillery_brigade = { x = 3 y = 0 }
 						artillery_brigade = { x = 3 y = 1 }
-						anti_air_heavy = { x = 3 y = 2 }
-					}
-					regimental_support = {
-						anti_tank_brigade = { x = 0 y = 0 }
+						anti_tank_brigade = { x = 3 y = 2 }
 					}
 					support = {
-						engineer = { x = 0 y = 0 }
-						recon = { x = 0 y = 1 }
-						military_police = { x = 1 y = 0 }
-						logistics_company = { x = 1 y = 1 }
+						pack_artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						anti_air_company = { x = 0 y = 2 }
+						recon = { x = 0 y = 3 }
+						military_police = { x = 0 y = 4 }
+						logistics_company = { x = 0 y = 5 }
+						anti_tank = { x = 0 y = 6 }
 					}
 				}
 			}
@@ -573,16 +573,16 @@ joint_focus = {
 
 						artillery_brigade = { x = 3 y = 0 }
 						artillery_brigade = { x = 3 y = 1 }
-						anti_air_heavy = { x = 3 y = 2 }
-					}
-					regimental_support = {
-						anti_tank_brigade = { x = 0 y = 0 }
+						anti_tank_brigade = { x = 3 y = 2 }
 					}
 					support = {
-						engineer = { x = 0 y = 0 }
-						recon = { x = 0 y = 1 }
-						military_police = { x = 1 y = 0 }
-						logistics_company = { x = 1 y = 1 }
+						pack_artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						anti_air_company = { x = 0 y = 2 }
+						recon = { x = 0 y = 3 }
+						military_police = { x = 0 y = 4 }
+						logistics_company = { x = 0 y = 5 }
+						anti_tank = { x = 0 y = 6 }
 					}
 				}
 			}
@@ -709,20 +709,18 @@ joint_focus = {
 					artillery_brigade = { x = 3 y = 2 }
 					artillery_brigade = { x = 3 y = 3 }
 
-					field_gun_brigade = { x = 4 y = 0 }
-					anti_air_heavy = { x = 4 y = 1 }
-				}
-				regimental_support = {
-					anti_air = { x = 0 y = 0 }
-					anti_tank_brigade = { x = 0 y = 1 }
+					anti_air = { x = 4 y = 0 }
+					anti_tank_brigade = { x = 4 y = 1 }
 				}
 				support = {
 					engineer = { x = 0 y = 0 }
 					recon = { x = 0 y = 1 }
 					logistics_company = { x = 0 y = 2 }
-					artillery_heavy_support = { x = 0 y = 3 }
-					field_hospital = { x = 0 y = 4 }
-					military_police = { x = 0 y = 5 }
+					anti_air_company = { x = 0 y = 3 }
+					anti_tank = { x = 0 y = 4 }
+					artillery_heavy_support = { x = 0 y = 5 }
+					field_hospital = { x = 0 y = 6 }
+					military_police = { x = 0 y = 7 }
 				}
 			}
 
@@ -834,13 +832,13 @@ joint_focus = {
 				type = ship_hull_light_2
 				parent_version = 0
 				modules = {
-					fixed_ship_battery_slot = dp_light_battery_1
-					fixed_ship_anti_air_slot = ship_anti_air_1
+					fixed_ship_battery_slot = dp_light_battery_2
+					fixed_ship_anti_air_slot = ship_anti_air_2
 					fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_radar_slot = ship_sonar_2
 					fixed_ship_engine_slot = light_ship_engine_2
-					fixed_ship_torpedo_slot = ship_torpedo_1
-					mid_1_custom_slot = ship_sonar_2
+					fixed_ship_torpedo_slot = ship_torpedo_2
+					mid_1_custom_slot = ship_depth_charge_2
 					rear_1_custom_slot = ship_depth_charge_2
 				}
 			}
@@ -1007,6 +1005,10 @@ joint_focus = {
 			tag = RAJ
 			tag = AST
 		}
+		# No China War (1936.1.1.13) and Fast-Paced (1936.1.1.14) both set this.
+		NOT = {
+			282 = { has_state_flag = no_china_war_state_flag }
+		}
 	}
 
 	cancel_if_invalid = yes
@@ -1091,6 +1093,9 @@ joint_focus = {
 			tag = RAJ
 			tag = AST
 		}
+		NOT = {
+			282 = { has_state_flag = no_china_war_state_flag }
+		}
 	}
 
 	cancel_if_invalid = yes
@@ -1129,9 +1134,10 @@ joint_focus = {
 	id = COMMON_invade_iraq
 	icon = GFX_goal_ENG_attack_iraq
 
-	relative_position_id = COMMON_allow_volunteers_to_china
-	x = 0
-	y = 1
+	# Anchored to the combined-programs root so this stays put when the China branch is hidden.
+	relative_position_id = COMMON_commonwealth_combined_programs
+	x = 6
+	y = 2
 
 	cost = 5
 

@@ -644,15 +644,21 @@ MAN_internal_factions = {
 
 		complete_effect = {
 			set_country_flag = { flag = faction_change_going value = 1 days = 50 }
+			MAN_KPT_low_loyalty_decrease_effect = yes
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = reduce_workers_needs
 			set_country_flag = reduce_workers_needs
 			custom_effect_tooltip = spacers
 		}
 		remove_effect = {
-
+				custom_effect_tooltip = MAN_the_death_of_china
+				add_to_variable = { 
+					MAN_kempeitai_var_stability_factor = 0.001
+					tooltip = MAN_kempeitai_var_stability_factor_tooltip 
+				}
 			#under is the flag that sets the focuses rewards of workers 
-			
+			custom_effect_tooltip = MANspace
+			MAN_KPT_low_influence_decrease_effect = yes
 			set_country_flag = good_workers
 		}
 	}
@@ -892,7 +898,7 @@ MAN_internal_factions = {
 					tooltip = stability_tooltip_general
 				}
 				add_to_variable = { 
-					MAN_kempeitai_var_stability_factor = 0.002
+					MAN_kempeitai_var_stability_factor = 0.001
 					tooltip = MAN_kempeitai_var_stability_factor_tooltip 
 				}
 
@@ -2189,6 +2195,7 @@ MAN_internal_factions = {
 				ideology = fascism
 				popularity = 0.04
 			}
+			add_war_support = 0.03
 		}
 	}
 
@@ -2275,6 +2282,7 @@ MAN_internal_factions = {
 				ideology = fascism
 				popularity = 0.02
 			}
+			add_stability = 0.08
 		}
 	}
 
@@ -3084,13 +3092,13 @@ MAN_internal_factions = {
 		}
 
 
-		days_remove = 90
+		days_remove = 40
 		days_re_enable = 0
 
 		fire_only_once = no
 
 		complete_effect = {
-			set_country_flag = { flag = faction_change_going value = 1 days = 90 }
+			set_country_flag = { flag = faction_change_going value = 1 days = 40 }
 
 			MAN_KPT_low_loyalty_decrease_effect = yes
 
@@ -3452,7 +3460,7 @@ MAN_internal_factions = {
 				custom_effect_tooltip = MAN_the_death_of_china
 				add_to_variable = {
 					var = MAN_stability_factor_var
-					value = 0.025
+					value = 0.05
 					tooltip = stability_tooltip_general
 				}
 			}
@@ -3469,18 +3477,34 @@ MAN_internal_factions = {
 			}
 			
 			custom_effect_tooltip = MANspace
-			custom_effect_tooltip = MAN_recruitable_tt0
-			add_to_variable = {
-				var = MAN_military_industry_dm_factory_max_efficiency_factor
-				value = 0.02
-				tooltip = production_factory_max_efficiency_tooltip
-			}
-
+			custom_effect_tooltip = MAN_recruitable_tt0	
 			add_to_variable = {
 				var = MAN_military_industry_dm_production_speed_arms_factory_factor
 				value = 0.15
 				tooltip = arms_factory_build_speed_factor_tooltip
 			}
+			add_to_variable = {
+				var = MAN_military_industry_dm_factory_max_efficiency_factor
+				value = 0.02
+				tooltip = production_factory_max_efficiency_tooltip
+			}
+			if = {
+				limit = { 
+					has_completed_focus = MAN_corporate_takeover
+				}
+				add_to_variable = {
+					var = MAN_military_industry_dm_industrial_capacity_factory
+					value = 0.15
+					tooltip = industrial_capacity_factory_tooltip
+				}
+				add_to_variable = {
+					var = MAN_military_industry_dm_production_factory_efficiency_gain_factor 
+					value = 0.1
+					tooltip = production_factory_efficiency_gain_factor_tooltip
+				}
+			}
+
+
 		}
 	}
 
@@ -3812,12 +3836,12 @@ MAN_internal_factions = {
 			custom_effect_tooltip = MAN_recruitable_tt0
 			add_to_variable = {
 				var = MAN_military_industry_dm_production_speed_arms_factory_factor
-				value = -0.05
+				value = -0.15
 				tooltip = arms_factory_build_speed_factor_tooltip
 			}
 			add_to_variable = {
 				var = MAN_military_industry_dm_production_speed_industrial_complex_factor
-				value = 0.1
+				value = 0.15
 				tooltip = industrial_complex_build_speed_factor_tooltip
 			}
 		}
@@ -6707,8 +6731,9 @@ MAN_economic_retadism = {
 					  }
 					  support = {
 							  artillery = { x = 0 y = 0 }
-							  engineer = { x = 0 y = 1 }
-							  military_police = { x = 0 y = 2 }
+							  engineer = { x = 0  y = 1 }  
+							  military_police = { x = 0  y = 2 }
+							  anti_air_company = { x = 0 y = 3 }
 					  }
 					  is_locked = no
 				  }
@@ -6747,7 +6772,7 @@ MAN_economic_retadism = {
 				}
 				check_variable = {
 					compare = greater_than_or_equals
-					value = 500
+					value = 250
 					var = logs
 				}
 				OR = {
@@ -6808,17 +6833,17 @@ MAN_economic_retadism = {
 			custom_cost_trigger = {
 				check_variable = {
 					var = logs
-					   value = 500
+					   value = 250
 					compare = greater_than_or_equals
 				}
 			}
-			custom_cost_text = MAN_500_Volunteers_2 
+			custom_cost_text = MAN_250_Volunteers_2 
 
 			complete_effect = {
 				#custom_effect_tooltip = neddie_5k
 				subtract_from_variable = {
 					var = logs
-					value = 500
+					value = 250
 			   	}
 				air_experience = 10
 				if = {
@@ -6930,7 +6955,7 @@ MAN_economic_retadism = {
 				}
 				check_variable = {
 					compare = greater_than_or_equals
-					value = 500
+					value = 250
 					var = logs
 				}
 				NOT = {
@@ -6992,17 +7017,17 @@ MAN_economic_retadism = {
 			custom_cost_trigger = {
 				check_variable = {
 					var = logs
-					   value = 500
+					   value = 250
 					compare = greater_than_or_equals
 				}
 			}
-			custom_cost_text = MAN_500_Volunteers_2 
+			custom_cost_text = MAN_250_Volunteers_2 
 
 			complete_effect = {
 
 				subtract_from_variable = {
 					var = logs
-					value = 500
+					value = 250
 			   	}
 				air_experience = 10
 				mio:JAP_nakajima_organization = {

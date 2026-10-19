@@ -46,7 +46,7 @@ focus_tree = {
 			
 			custom_effect_tooltip = USA_modify_new_deal_tt
 			add_to_variable = {
-				USA_consumer_goods_factor_var = -0.025
+				USA_consumer_goods_factor_var = -0.035
 				tooltip = consumer_goods_tooltip
 			}
 			custom_effect_tooltip = USA_spacer_tooltip_tt
@@ -616,7 +616,7 @@ focus_tree = {
 				limit = {
 					has_state_flag = USA_finished_ABC_project
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -968,44 +968,40 @@ focus_tree = {
 			custom_effect_tooltip = USA_lower_crisis_level_by_10_tt
 			add_to_variable = { USA_crisis_level = -10 }
 			USA_update_ui_effect = yes
-			add_political_power = 75
 			add_days_mission_timeout = {
 				mission = USA_fair_labour_standard_act_mission
 				days = -125
 			}
 			add_days_mission_timeout = {
 				mission = USA_federal_housing_act_mission
-				days = -100
+				days = -150
 			}
 			add_days_mission_timeout = {
 				mission = USA_social_security_act_mission
-				days = -100
+				days = -150
 			}
 			
 			custom_effect_tooltip = USA_spacer_tooltip_tt
-			custom_effect_tooltip = USA_modify_new_deal_tt
-			add_to_variable = {
-				var = USA_production_speed_industrial_complex_factor_var
-				value = 0.1
-				tooltip = industrial_complex_build_speed_factor_tooltip
-			}
-			add_to_variable = {
-				var = USA_consumer_goods_factor_var
-				value = -0.02
-				tooltip = consumer_goods_tooltip
-			}
+			custom_effect_tooltip = USA_labor_management_economy_tt
+
+			add_to_variable = { USA_monthly_factory_output_gain = 0.0025 }
+			add_to_variable = { USA_monthly_dockyard_output_gain = 0.0025 }
+			add_to_variable = { USA_monthly_production_efficiency_cap_gain = 0.001 }
+			add_to_variable = { USA_monthly_economy_resource_gain = 0.001 }
+			add_to_variable = { USA_monthly_economy_consumer_goods_gain = -0.0010 }
+
+			custom_effect_tooltip = USA_spacer_tooltip_tt
+			378 = {
 			
-			random_owned_state = {
-				limit = {
-					is_core_of = USA  
-				}
-				add_extra_state_shared_building_slots = 6
+				add_extra_state_shared_building_slots = 10
 				add_building_construction = {
 					type = industrial_complex 
 					level = 5
 					instant_build = yes 
 				}
 			}
+
+			
 			add_to_variable = {
 				var = great_depression_var
 				value = 1 
@@ -1014,7 +1010,6 @@ focus_tree = {
 			custom_effect_tooltip = USA_spacer_tooltip_tt 
 			custom_effect_tooltip = USA_upgrade_economic_law
 			USA_display_depression_idea_effect = yes 
-
 		}
 	}		
 
@@ -1051,21 +1046,20 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			custom_effect_tooltip = USA_lower_crisis_level_by_20_tt
-			add_to_variable = { USA_crisis_level = -20 }
+			custom_effect_tooltip = USA_lower_crisis_level_by_10_tt
+			add_to_variable = { USA_crisis_level = -10 }
 			USA_update_ui_effect = yes
-			add_political_power = 125
 			add_days_mission_timeout = {
 				mission = USA_fair_labour_standard_act_mission
 				days = -200
 			}
 			add_days_mission_timeout = {
 				mission = USA_federal_housing_act_mission
-				days = -75
+				days = -100
 			}
 			add_days_mission_timeout = {
 				mission = USA_social_security_act_mission
-				days = -75
+				days = -100
 			}
 				custom_effect_tooltip = generic_skip_one_line_tt
 			#add_to_variable = { 
@@ -1073,34 +1067,30 @@ focus_tree = {
 				#value = 5
 				#tooltip = USA_new_deal_help_increase_tt2
 			#}
-		
 			custom_effect_tooltip = USA_spacer_tooltip_tt
-			random_owned_state = {
-				limit = {
-					is_core_of = USA  
-				}
-				add_extra_state_shared_building_slots = 6
+			custom_effect_tooltip = USA_little_steel_modify_tt
+			custom_effect_tooltip = USA_little_steel_factory_monthly_tt
+			add_to_variable = { USA_monthly_factory_output_gain = 0.0040 }
+			add_to_variable = { USA_monthly_dockyard_output_gain = 0.0040 }
+			add_to_variable = { USA_monthly_production_efficiency_base_gain = 0.0018 }
+
+			custom_effect_tooltip = USA_spacer_tooltip_tt
+			378 = {
+				
+				add_extra_state_shared_building_slots = 10
 				add_building_construction = {
 					type = industrial_complex 
-					level = 5
+					level = 6
 					instant_build = yes 
 				}
 			}
-			random_owned_state = {
-				limit = {
-					is_core_of = USA  
-				}
-				add_extra_state_shared_building_slots = 6
-				add_building_construction = {
-					type = industrial_complex 
-					level = 5
-					instant_build = yes 
-				}
-			}
+			
+			custom_effect_tooltip = USA_spacer_tooltip_tt
 			add_to_variable = {
 				var = great_depression_var
 				value = 1 
 			}
+			
 			USA_great_depression_level_set_idea = yes
 			custom_effect_tooltip = USA_spacer_tooltip_tt 
 			custom_effect_tooltip = USA_upgrade_economic_law
@@ -1147,15 +1137,21 @@ focus_tree = {
 			custom_effect_tooltip = USA_modify_new_deal_tt
 				add_to_variable = {
 					var = USA_production_cost_industrial_complex_factor_var
-					value = -0.1
+					value = -0.125
 					tooltip = USA_civ_cost_tt
 			}
-			add_to_variable = {
-				var = USA_consumer_goods_factor_var
-				value = -0.05 
-				tooltip = consumer_goods_tooltip
-			}
-
+			custom_effect_tooltip = USA_spacer_tooltip_tt
+			custom_effect_tooltip = USA_little_steel_modify_tt
+			custom_effect_tooltip = USA_money_talks_monthly_consumer_goods_tt
+			add_to_variable = { USA_monthly_economy_resource_gain = 0.0020 }
+			add_to_variable = { USA_monthly_economy_consumer_goods_gain = -0.0020 }
+			add_to_variable = { USA_monthly_production_efficiency_base_gain = -0.0015 }
+			add_to_variable = { USA_monthly_production_efficiency_cap_gain = 0.0015 }	
+			custom_effect_tooltip = USA_spacer_tooltip_tt
+			custom_effect_tooltip = USA_mt_building_slots_tt
+			set_country_flag = USA_money_talks_building_slots_flag
+			set_variable = { USA_money_talks_building_slots_months = 0 }
+			custom_effect_tooltip = USA_spacer_tooltip_tt
 			add_to_variable = {
 				var = great_depression_var
 				value = 1 
@@ -1270,7 +1266,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				category = industry 
-				uses = 1
+				uses = 2
 				bonus = 1 
 				name = USA_keynesian_economic_recovery
 			}
@@ -1312,18 +1308,11 @@ focus_tree = {
 
 			USA_update_ui_effect = yes 
 
-			custom_effect_tooltip = USA_modify_new_deal_tt
+			custom_effect_tooltip = USA_modify_main_spirit_tt
 			add_to_variable = {
-				var = USA_production_speed_arms_factory_factor_var
-				value = 0.15
+				var = USA_production_speed_arms_factory_factor_var2
+				value = 0.10
 				tooltip = arms_factory_build_speed_factor_tooltip
-			}
-		
-	
-			add_to_variable = {
-				var = USA_local_resources_factor_var
-				value = 0.15
-				tooltip = local_resources_factor_tooltip
 			}
 
 			custom_effect_tooltip = USA_spacer_tooltip_tt
@@ -1761,13 +1750,7 @@ focus_tree = {
 						is_in_faction_with = ENG 
 						tag = ENG 
 						tag = FRA 
-						tag = POL
-						tag = HUN 
-						tag = CZE 
-						tag = ROM 
-						tag = BUL 
-						tag = SLO 
-						tag = MAN  
+						tag = POL  
 					}
 				}
 				unlock_decision_category_tooltip  = USA_arms_shipment_category
@@ -2186,8 +2169,18 @@ focus_tree = {
 				}
 				add_ideas = USA_arsenal_trading_idea
 				remove_ideas = USA_reciprocal_trade_1
+				# Lend-Lease priority: these sellers now fill American orders ahead of any other Ally.
+				ENG = { MFU_grant_american_trade_primacy = yes }
+				CAN = { MFU_grant_american_trade_primacy = yes }
+				FRA = { MFU_grant_american_trade_primacy = yes }
+				SAF = { MFU_grant_american_trade_primacy = yes }
+				RAJ = { MFU_grant_american_trade_primacy = yes }
+				AST = { MFU_grant_american_trade_primacy = yes }
+				NZL = { MFU_grant_american_trade_primacy = yes }
+				POL = { MFU_grant_american_trade_primacy = yes }
 			}	
 			custom_effect_tooltip = USA_give_all_allies_buff_tt
+			custom_effect_tooltip = MFU_american_trade_primacy_tt
 			custom_effect_tooltip = generic_skip_one_line_tt
 			unlock_decision_tooltip = USA_grant_UK_resource_rights
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -2743,11 +2736,11 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = USA_war_powers_act_2 }
 		completion_reward = {
-			add_stability = -0.075
+			add_stability = -0.05
 			custom_effect_tooltip = USA_modify_main_spirit_tt
 			add_to_variable = {
 				var = USA_consumer_goods_factor_var2
-				value = -0.075
+				value = -0.05
 				tooltip = consumer_goods_tooltip
 			}
 			
@@ -3727,11 +3720,11 @@ focus_tree = {
 					}
 					support = {
 						artillery = { x = 0 y = 0 }
-						engineer = { x = 1 y = 0 }
-						logistics_company_mot = { x = 0 y = 1 }
-						maintenance_company = { x = 1 y = 1 }
-						recon_ac = { x = 0 y = 2 }
-						military_police = { x = 1 y = 2 } 
+						engineer = { x = 0 y = 1 }
+						logistics_company_mot = { x = 0 y = 2 }
+						maintenance_company = { x = 0 y = 3 }
+						recon_ac = { x = 0 y = 4 }
+						military_police = { x = 0 y = 5 } 
 			
 						
 					}
@@ -5031,13 +5024,19 @@ focus_tree = {
 		available_if_capitulated = yes		
 		
 		available = { 
+			has_war_with = JAP
 			OR = {
 				NOT = {
 					523 = {
 						is_fully_controlled_by = AST
 					}
 				}
-				date > 1943.1.1
+				NOT = {
+					JAP = {
+						has_idea = JAP_tora_tora_tora_idea
+					}
+				}
+
 			}
 		}
 
@@ -5426,11 +5425,8 @@ focus_tree = {
 
 						artillery_brigade = { x = 4 y = 0 }	
 						artillery_brigade = { x = 4 y = 1 }	
-						field_gun_brigade = { x = 4 y = 2 }		
+						anti_air = { x = 4 y = 2 }		
 					
-					}
-					regimental_support = {
-						anti_air = { x = 0 y = 0 }
 					}
 				}
 				378 = {
@@ -5595,11 +5591,8 @@ focus_tree = {
 
 						artillery_brigade = { x = 4 y = 0 }	
 						artillery_brigade = { x = 4 y = 1 }	
-						field_gun_brigade = { x = 4 y = 2 }		
+						anti_air = { x = 4 y = 2 }		
 					
-					}
-					regimental_support = {
-						anti_air = { x = 0 y = 0 }
 					}
 				}
 				random_owned_controlled_state = {
@@ -6675,17 +6668,11 @@ focus_tree = {
 								infantry = { x = 2 y = 1 }
 								infantry = { x = 2 y = 2 }
 
-								field_gun_brigade = { x = 3 y = 0 }		
-								field_gun_brigade = { x = 3 y = 1 }
-								field_gun_brigade = { x = 3 y = 2 }
-								field_gun_brigade = { x = 3 y = 3 }
+								pack_artillery_brigade = { x = 3 y = 0 }		
+								pack_artillery_brigade = { x = 3 y = 1 }
+								pack_artillery_brigade = { x = 3 y = 2 }
+								pack_artillery_brigade = { x = 3 y = 3 }
 								
-							}
-							regimental_support = {
-								pack_artillery_brigade = { x = 0 y = 0 }
-								pack_artillery_brigade = { x = 0 y = 1 }
-								pack_artillery_brigade = { x = 0 y = 2 }
-								pack_artillery_brigade = { x = 0 y = 3 }
 							}
 
 							support = {
@@ -6850,17 +6837,15 @@ focus_tree = {
 							artillery_brigade = { x = 2 y = 3 }
 							artillery_brigade = { x = 3 y = 0 }
 							artillery_brigade = { x = 3 y = 1 }
-							field_gun_brigade = { x = 3 y = 2 }
+							anti_air = { x = 3 y = 2 }
 										
-						}
-						regimental_support = {
-							anti_air = { x = 0 y = 0 }
 						}
 
 						support = {
 							artillery = { x = 0 y = 0 }
 							engineer = { x = 0 y = 1 }
-							field_hospital = { x = 0 y = 2 }
+							anti_air_company = { x = 0 y = 2 }
+							field_hospital = { x = 0 y = 3 }
 						}
 					}
 

@@ -324,11 +324,12 @@ SPR_the_inevitable_civil_war = {
 					volkssturm_infantry = { x = 2 y = 3 }		
 				}
 				support = {
-					artillery = { x = 0 y = 0 }
-					recon = { x = 0 y = 1 }
-					engineer = { x = 0 y = 2 }
-					field_hospital = { x = 1 y = 0 }
-					logistics_company = { x = 1 y = 1 }
+					artillery = { x = 0 y = 0 } 
+					recon = { x = 0 y = 1 } 	
+					anti_air_company = { x = 0 y = 2 }	
+					engineer = { x = 0 y = 3 }
+					field_hospital = { x = 0 y = 4 }
+					logistics_company = { x = 0 y = 5 }
 				}
 			}
 			division_template = {
@@ -347,11 +348,12 @@ SPR_the_inevitable_civil_war = {
 					artillery_brigade = { x = 2 y = 3 }			
 				}
 				support = {
-					artillery = { x = 0 y = 0 }
-					recon = { x = 0 y = 1 }
+					artillery = { x = 0 y = 0 } 
+					recon = { x = 0 y = 1 } 		
 					engineer = { x = 0 y = 2 }
-					field_hospital = { x = 1 y = 0 }
-					logistics_company = { x = 1 y = 1 }
+					anti_air_company = { x = 0 y = 3 }
+					field_hospital = { x = 0 y = 4 }
+					logistics_company = { x = 0 y = 5 }
 				}
 			}
 			division_template = {
@@ -371,7 +373,8 @@ SPR_the_inevitable_civil_war = {
 				}
 				support = {
 					artillery = { x = 0 y = 0 }
-					recon = { x = 0 y = 1 }
+					anti_air_company = { x = 0 y = 2 }
+					recon = { x = 0 y = 1 }	  # Recon consisted of motorcycles and ACs
 				}
 			}
 			division_template = {
@@ -387,6 +390,7 @@ SPR_the_inevitable_civil_war = {
 					artillery_brigade = { x = 2 y = 0 }	#  Spanish Arty Rgt/Bge had 2 Bn 105mm arty	
 				}
 				support = {
+					anti_air_company = { x = 0 y = 0}
 				}
 			}
 			division_template = {
@@ -8697,7 +8701,7 @@ SPR_navy_prepare_the_armata = {
 			SPR = {
 				has_navy_size = {
 						archetype = ship_hull_carrier
-						size > 0
+						size > 1
 					}
 				has_navy_size = {
 						archetype = ship_hull_heavy
@@ -8819,7 +8823,7 @@ SPR_navy_prepare_the_armata = {
 			SPR = {
 				has_navy_size = {
 					archetype = ship_hull_heavy
-					size > 0
+					size > 1
 				}
 				has_navy_size = {
 					archetype = ship_hull_cruiser
@@ -8827,11 +8831,11 @@ SPR_navy_prepare_the_armata = {
 				}
 				has_navy_size = {
 					archetype = ship_hull_light
-					size > 20
+					size > 24
 				}
 				has_navy_size = {
 					archetype = ship_hull_submarine
-					size > 30
+					size > 29
 				}
 			}					
 		}
@@ -9806,7 +9810,9 @@ SPR_1_dev_year_plan_decisions = {
 			has_completed_focus = SPA_begin_the_first_development_plan
 			NOT = {
 				has_country_flag = SPR_1_dev_year_ports_and_silos_var
-			}					
+			}
+			has_tech = fuel_refining
+			has_tech = synth_oil_experiments		
 		}
 
 		visible = {
@@ -9825,7 +9831,7 @@ SPR_1_dev_year_plan_decisions = {
 
 		modifier = {
 			civilian_factory_use = 1
-			stability_weekly = -0.002
+			stability_weekly = -0.001
 		}
 
 		complete_effect = {
@@ -9928,7 +9934,9 @@ SPR_1_dev_year_plan_decisions = {
 			has_completed_focus = SPA_begin_the_first_development_plan
 			NOT = {
 				has_country_flag = SPR_1_dev_year_ports_and_silos_var
-			}					
+			}
+			has_tech = fuel_refining
+			has_tech = synth_oil_experiments				
 		}
 
 		visible = {
@@ -10148,7 +10156,19 @@ SPR_1_dev_year_plan_decisions = {
 		icon = GFX_decision_generic_political_rally
 
 		available = {
-			#has_completed_focus = SPA_begin_the_first_development_plan					
+			#has_completed_focus = SPA_begin_the_first_development_plan
+			custom_trigger_tooltip = {
+				tooltip = csg_02_check
+				NOT = {
+					check_variable = {
+						right_side_spain_moffo_check < 1
+					}	
+				}
+				
+			}
+			has_equipment = {
+				infantry_equipment > 499
+			}		
 		}
 
 		visible = {
@@ -10163,25 +10183,41 @@ SPR_1_dev_year_plan_decisions = {
 		fixed_random_seed = no
 		days_remove = 90
 
-		cost = 65
+		cost = 40
 
 		modifier = {
 			consumer_goods_factor = 0.05
-			civilian_factory_use = 6
+			civilian_factory_use = 3
 			stability_weekly = 0.006
 		}
 
 		complete_effect = {
+			add_popularity = {
+				ideology = communism
+				popularity = -0.01
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.02
+			}
 			custom_effect_tooltip = SPR_eco_modif
 			add_to_variable = {
 				SPR_RIGHT_industry_consumer_goods_factor = 0.01
 				tooltip = consumer_goods_tooltip
 			}
+			add_to_variable = {
+				var = SPR_RIGHT_industry_industrial_capacity_factory
+				value = -0.035
+				tooltip = industrial_capacity_factory_tooltip
+			}
+			hidden_effect = {
+				add_manpower = -10000
+			}
 			
 		}
 		remove_effect = {
-			set_country_flag = { flag = SPR_1_decrease_mounth_csg_for_other_stuff value = 1 days = 150 }
-			SPR_decrease_level_2_csg_gain_effect = yes
+			set_country_flag = { flag = SPR_1_decrease_mounth_csg_for_other_stuff value = 1 days = 120 }
+			SPR_decrease_level_3_csg_gain_effect = yes
 			custom_effect_tooltip = MANspace
 			custom_effect_tooltip = CSG_LIMIT_SPR
 		}
@@ -10706,7 +10742,7 @@ SPR_1_dev_year_plan_decisions = {
 					GER = {
 						add_political_power = -50
 					}
-					add_political_power = 50
+					add_political_power = 100
 				}
 				if = {
 					limit = { 
@@ -10717,7 +10753,7 @@ SPR_1_dev_year_plan_decisions = {
 					GER = {
 						add_political_power = -25
 					}
-					add_political_power = 25
+					add_political_power = 50
 					custom_effect_tooltip = MANspace
 					custom_effect_tooltip = SPR_eco_modif
 					add_to_variable = {
@@ -10734,7 +10770,7 @@ SPR_1_dev_year_plan_decisions = {
 					GER = {
 						add_political_power = 25
 					}
-					add_political_power = 0
+					add_political_power = -25
 					custom_effect_tooltip = MANspace
 					custom_effect_tooltip = SPR_eco_modif
 					add_to_variable = {
@@ -10752,7 +10788,7 @@ SPR_1_dev_year_plan_decisions = {
 					GER = {
 						add_political_power = 50
 					}
-					add_political_power = -25
+					add_political_power = -50
 					add_stability = -0.05
 					custom_effect_tooltip = MANspace
 					custom_effect_tooltip = SPR_eco_modif
@@ -11105,7 +11141,7 @@ SPR_1_dev_year_plan_decisions = {
 			modifier = {
 				political_power_gain = -0.05
 				production_speed_arms_factory_factor = -0.05
-		
+				consumer_goods_factor = 0.02
 			}
 	
 			ai_will_do = {
@@ -11150,7 +11186,7 @@ SPR_1_dev_year_plan_decisions = {
 			modifier = {
 				political_power_gain = -0.1
 				production_speed_arms_factory_factor = -0.1
-		
+				consumer_goods_factor = 0.03
 			}
 	
 			ai_will_do = {
@@ -11196,7 +11232,7 @@ SPR_1_dev_year_plan_decisions = {
 				political_power_gain = -0.15
 				production_speed_arms_factory_factor = -0.1
 				production_speed_buildings_factor = -0.05
-		
+				consumer_goods_factor = 0.04
 			}
 	
 			ai_will_do = {
@@ -11242,7 +11278,7 @@ SPR_1_dev_year_plan_decisions = {
 				political_power_gain = -0.25
 				production_speed_arms_factory_factor = -0.15
 				production_speed_buildings_factor = -0.1
-		
+				consumer_goods_factor = 0.04
 			}
 	
 			ai_will_do = {
@@ -13037,7 +13073,15 @@ SPR_1_dev_year_plan_decisions = {
 					hidden_effect = {
 						activate_mission = SPR_plan_state_marking_check_1			
 					}
-				}	
+				}
+				add_stability = -0.01
+				custom_effect_tooltip = SPR_eco_modif
+				add_to_variable = {
+					var = SPR_RIGHT_industry_industrial_capacity_factory
+					value = -0.005
+					tooltip = industrial_capacity_factory_tooltip
+				}
+				custom_effect_tooltip = MANspace
 				SPR = {
 					random_owned_state = {
 						limit = {
@@ -13147,7 +13191,20 @@ SPR_1_dev_year_plan_decisions = {
 					hidden_effect = {
 						activate_mission = SPR_plan_state_marking_check_2	
 					}
-				}	
+				}
+				add_stability = -0.02
+				custom_effect_tooltip = SPR_eco_modif
+				add_to_variable = {
+					var = SPR_RIGHT_industry_factory_max_efficiency_factor 
+					value = -0.002
+					tooltip = production_factory_max_efficiency_tooltip
+				}
+				add_to_variable = {
+					var = SPR_RIGHT_industry_industrial_capacity_factory
+					value = -0.01
+					tooltip = industrial_capacity_factory_tooltip
+				}
+				custom_effect_tooltip = MANspace
 				SPR = {
 					random_owned_state = {
 						limit = {
@@ -13283,6 +13340,19 @@ SPR_1_dev_year_plan_decisions = {
 						activate_mission = SPR_plan_state_marking_check_3	
 					}
 				}	
+				add_stability = -0.03
+				custom_effect_tooltip = SPR_eco_modif
+				add_to_variable = {
+					var = SPR_RIGHT_industry_factory_max_efficiency_factor 
+					value = -0.001
+					tooltip = production_factory_max_efficiency_tooltip
+				}
+				add_to_variable = {
+					var = SPR_RIGHT_industry_industrial_capacity_factory
+					value = -0.01
+					tooltip = industrial_capacity_factory_tooltip
+				}
+				custom_effect_tooltip = MANspace
 				SPR = {
 					random_owned_state = {
 						limit = {
@@ -13522,6 +13592,19 @@ SPR_1_dev_year_plan_decisions = {
 					activate_mission = SPR_plan_state_marking_check_2_not_colapse_trust	
 				}
 			}	
+			add_stability = -0.01
+			custom_effect_tooltip = SPR_eco_modif
+				add_to_variable = {
+					var = SPR_RIGHT_industry_factory_max_efficiency_factor 
+					value = -0.001
+					tooltip = production_factory_max_efficiency_tooltip
+				}
+				add_to_variable = {
+					var = SPR_RIGHT_industry_industrial_capacity_factory
+					value = -0.005
+					tooltip = industrial_capacity_factory_tooltip
+				}
+			custom_effect_tooltip = MANspace
 			SPR = {
 				random_owned_state = {
 					limit = {
@@ -13650,6 +13733,19 @@ SPR_1_dev_year_plan_decisions = {
 					activate_mission = SPR_plan_state_marking_check_3_not_colapse_trust	
 				}
 			}	
+			add_stability = -0.02
+			custom_effect_tooltip = SPR_eco_modif
+				add_to_variable = {
+					var = SPR_RIGHT_industry_factory_max_efficiency_factor 
+					value = -0.001
+					tooltip = production_factory_max_efficiency_tooltip
+				}
+				add_to_variable = {
+					var = SPR_RIGHT_industry_industrial_capacity_factory
+					value = -0.01
+					tooltip = industrial_capacity_factory_tooltip
+				}
+			custom_effect_tooltip = MANspace
 			SPR = {
 				random_owned_state = {
 					limit = {

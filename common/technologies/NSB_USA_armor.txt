@@ -444,6 +444,7 @@ technologies = {
            	create_equipment_variant = {
 				name = "M3 Stuart"
 				type = light_tank_chassis_1939
+				model = "MFU_USA_light_armor_entity"
 				parent_version = 0
 				modules = {
 				main_armament_slot = tank_small_cannon_2
@@ -724,6 +725,7 @@ technologies = {
            	create_equipment_variant = {
 				name = "M4 Sherman"
 				type = medium_tank_chassis_1942
+				model = "MFU_USA_medium_armor_entity"
 				parent_version = 0
 				modules = {
 				main_armament_slot = tank_medium_cannon_2
@@ -919,6 +921,7 @@ technologies = {
            	create_equipment_variant = {
 				name = "M6 Heavy"
 				type = heavy_tank_chassis_1941
+				model = "MFU_USA_heavy_armor_entity"
 				parent_version = 0
 				modules = {
 				main_armament_slot = tank_high_velocity_cannon_2
@@ -1417,10 +1420,10 @@ technologies = {
 		}
 		folder = {
 			name = nsb_usa_armor_folder
-			position = { x = 8 y = @1941 }
+			position = { x = 8 y = @1940 }
 		}
 		research_cost = 1.5
-		start_year = 1941
+		start_year = 1940
 		
 		categories = {
 			motorized_equipment
@@ -1440,11 +1443,11 @@ technologies = {
 		}
 		folder = {
 			name = nsb_usa_armor_folder
-			position = { x = 8 y = @1943 }
+			position = { x = 8 y = @1942 }
 		}
 		
 		research_cost = 1.5
-		start_year = 1943
+		start_year = 1942
 		
 		
 		categories = {

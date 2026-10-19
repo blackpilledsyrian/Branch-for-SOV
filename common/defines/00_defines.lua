@@ -374,7 +374,7 @@ NCountry = {
 	WAR_SUPPORT_OFFNSIVE_WAR = -0.1,				-- Impact of being in offensive war
 	WAR_SUPPORT_DEFENSIVE_WAR = 0.2,				-- Impact of being in defensive war
 	WAR_SUPPORT_TENSION_IMPACT = 0.25,				-- Total impact of world tension
-	MIN_STABILITY = 0.0,
+	MIN_STABILITY = -1.0,
 	MAX_STABILITY = 1.0,
 	MIN_WAR_SUPPORT = 0.0,
 	MAX_WAR_SUPPORT = 1.0,
@@ -679,10 +679,10 @@ NProject = {
 	NEEDED_SUPPLY_FOR_FULL_SPEED_PROJECT = 3.0,	-- Supply needed in province to get full research speed for special project
     MINIMUM_PROJECT_SPEED_FACTOR_FROM_RESOURCE_SHORTAGE = 0.2, -- Minimum special project research speed factor based on resource shortage^M
 	ITERATION_REWARD_DEFAULT_WEIGHT = 1.0,			-- If no weight is specified, set it to 1.0
-	DEFAULT_PROJECT_COMPLETION_SCIENTIST_EXPERIENCE_GAIN = 400.0,	-- Default experience gain for assigned scientist when a project is completed
+	DEFAULT_PROJECT_COMPLETION_SCIENTIST_EXPERIENCE_GAIN = 450.0,	-- Default experience gain for assigned scientist when a project is completed
 	SCIENTIST_INJURED_FACTOR = 0.0,                 -- A factor to reduce the amount of progress gained in a program with attached injured scientist. E.g. 0.5 reduces the progress by 50%
 	RECRUIT_SCIENTIST_ONE_TRAIT_CHANCE = 0.35,		-- Chance to get one trait when creating a scientist. E.g. 0.35 = 35% chance to get a trait
-	SCIENTIST_BASIC_RESEARCH_DAILY_XP_GAIN = 0.6,	-- Daily experience gain for doing basic research
+	SCIENTIST_BASIC_RESEARCH_DAILY_XP_GAIN = 0.65,	-- Daily experience gain for doing basic research
 	RECRUIT_SCIENTIST_COST = {						-- Amount of pp to hire a scientist based on available scientist
 		25,			-- pp cost if no available scientist
 		50,			-- pp cost if 1 available scientist
@@ -798,15 +798,15 @@ NProduction = {
 	BASE_NAVAL_EQUIPMENT_CONVERSION_IC_COST_FACTOR = 0.3,       -- Fraction of the hull industry cost which is always included in the refitting cost.
 	BASE_LAND_EQUIPMENT_CONVERSION_IC_COST_FACTOR = 0.0,        -- Fraction of the chassis industry cost which is always included in the conversion cost.
 
-	FLOATING_HARBOR_MAX_NAV_FACTORIES_PER_LINE = 5,
+	FLOATING_HARBOR_MAX_NAV_FACTORIES_PER_LINE = 20,
 	RAILWAY_GUN_MAX_MIL_FACTORIES_PER_LINE = 15,
 	RAILWAY_GUN_REPAIR_SPEED = 8.0,			-- Railway gun strength repair speed per factory
 
 	MAX_EQUIPMENT_RESOURCES_NEED = 5, 	-- Max number of different strategic resources an equipment can be dependent on.
 	MAX_CIV_FACTORIES_PER_LINE = 15,	-- Max number of factories that can be assigned a single production line.
 	GENERATED_SHIP_NAMES_PER_LINE_MAX = 5, -- Above this naval lines will stop generating new names for the list																											 
-    DEFAULT_MAX_NAV_FACTORIES_PER_LINE = 20,
-	CONVOY_MAX_NAV_FACTORIES_PER_LINE = 20,
+    DEFAULT_MAX_NAV_FACTORIES_PER_LINE = 50,
+	CONVOY_MAX_NAV_FACTORIES_PER_LINE = 50,
 	CAPITAL_SHIP_MAX_NAV_FACTORIES_PER_LINE = 20,																				 
 	MAX_MIL_FACTORIES_PER_LINE = 300,
 	EFFICIENCY_LOSS_PER_UNUSED_DAY = 1,		-- Daily loss of efficiency for unused factory slots ( efficiency is tracked per factory slot in the production line )
@@ -867,8 +867,8 @@ NTechnology = {
 	BASE_RESEARCH_POINTS_SAVED = 25.0,		-- Base amount of research points a country can save per slot.
 	BASE_YEAR_AHEAD_PENALTY_FACTOR = 4,		-- 3 Base year ahead penalty
 	BASE_TECH_COST = 78,					-- base cost for a tech. multiplied with tech cost and ahead of time penalties
-	MAX_TECH_SHARING_BONUS = 1, 			-- Max technology sharing bonus that can be applied instantly
-	LICENSE_PRODUCTION_TECH_BONUS = 0.15,	-- License production tech bonus
+	MAX_TECH_SHARING_BONUS = 0.5, 			-- Max technology sharing bonus that can be applied instantly
+	LICENSE_PRODUCTION_TECH_BONUS = 0.10,	-- License production tech bonus
  
 	DEFAULT_XP_RESEARCH_COST = 100,			-- default xp cost of a research to speed up the process
 	DEFAULT_XP_RESEARCH_BONUS = 0.5,		-- default research bonus gained when xp is used to research an item
@@ -934,6 +934,7 @@ NMilitary = {
 	FUEL_PENALTY_START_RATIO_BUFFER = 0.1,				-- buffer that keeps the out-of-fuel alert open even when above the FUEL_PENALTY_START_RATIO threshold, so that it doesn't spam-ping when fluctuating
 	GENERATE_AI_DIV_COMMAND_MEDALS = 0.10,		-- Chance for AI to award a medal when receiving a history entry that allows it. Also gives a chance for AI to gain history entries irrespective of the setting above
 	MAX_NUM_AUTOMEDALS = 10,						-- You can't get more medals from the automedal system than this.
+	MEDAL_AWARD_CONFIRM_PP_THRESHOLD = 200.0,	-- Below this much political power, awarding a medal asks for confirmation; at or above it is granted directly
 	SHORE_BOMBARDMENT_COLLATERAL_DAMAGE_MULTIPLIER = 40.0,		-- Factor on shore bombardment damage purposes, for collateral damage.
 	SHORE_BOMBARDMENT_COLLATERAL_DAMAGE_CRIT_CHANCE_FACTOR = 0.002,	    -- Chance for crit (ie, high single building damage) to occur.
 	SPOTTING_QUALITY_NAVAL_RECON_DROP_HOURS = 12, 	-- Each X hours the intel quality drops after unit was spotted by naval recon air mission.
@@ -1115,8 +1116,8 @@ NMilitary = {
 	
 	MAX_DIVISION_BRIGADE_WIDTH = 5,			-- Max width of regiments in division designer.
 	MAX_DIVISION_BRIGADE_HEIGHT = 4,		-- Max height of regiments in division designer.
-	MAX_DIVISION_SUPPORT_WIDTH = 1,			-- Max width of support in division designer. (MFU: 1 column)
-	MAX_DIVISION_SUPPORT_HEIGHT = 6,		-- Max height of support in division designer. (MFU: 8 slots in one vertical column)
+	MAX_DIVISION_SUPPORT_WIDTH = 1,			-- Max width of support in division designer. (MFU: 1 column - vanilla only ever uses 1; >1 crashes the designer)
+	MAX_DIVISION_SUPPORT_HEIGHT = 8,		-- Max height of support in division designer. (MFU: 8 support slots in one column)
 	
 	BASE_DIVISION_BRIGADE_GROUP_COST = 0, 	--Base cost to unlock a regiment slot,
 	BASE_DIVISION_BRIGADE_CHANGE_COST = 0,	--Base cost to change a regiment column.
@@ -1178,7 +1179,7 @@ NMilitary = {
 	MAX_NUM_TRAITS = 7,					-- cant have more
 	ENEMY_AIR_SUPERIORITY_IMPACT = -0.4,           -- effect on defense due to enemy air superiorty
 	ENEMY_AIR_SUPERIORITY_DEFENSE = 0.45,	       -- more AA attack will approach this amount of help (diminishing returns)
-	ENEMY_AIR_SUPERIORITY_DEFENSE_STEEPNESS = 75, -- how quickly defense approaches the max impact diminishing returns curve
+	ENEMY_AIR_SUPERIORITY_DEFENSE_STEEPNESS = 125, -- how quickly defense approaches the max impact diminishing returns curve
 	ENEMY_AIR_SUPERIORITY_SPEED_IMPACT = -0.2,     -- effect on speed due to enemy air superiority
 
 	ANTI_AIR_TARGETTING_TO_CHANCE = 0.015,			-- Balancing value to determine the chance of ground AA hitting an attacking airplane, affecting both the effective average damage done by AA to airplanes, and the reduction of damage done by airplanes due to AA support
@@ -1637,8 +1638,8 @@ NAir = {
 	NAVAL_STRIKE_DETECTION_BALANCE_FACTOR = 0.7,		-- Value used to scale the surface_visibility stats to balance the gameplay, so 100% detection chance still won't spam the strikes.
 	NAVAL_RECON_DETECTION_BALANCE_FACTOR = 0.7,			-- Value used to scale the surface_visibility stats to balance the gameplay, so 100% detection chance still won't spam spotting.
 	LEND_LEASED_EQUIPMENT_EXPERIENCE_GAIN = 0.5,		-- Value used for equipment
-	ANTI_AIR_PLANE_DAMAGE_FACTOR = 0.10,					-- Anti Air Gun Damage factor
-	ANTI_AIR_PLANE_DAMAGE_CHANCE = 0.22,					-- Anti Air Gun hit chance
+	ANTI_AIR_PLANE_DAMAGE_FACTOR = 0.16,					-- Anti Air Gun Damage factor
+	ANTI_AIR_PLANE_DAMAGE_CHANCE = 0.24,					-- Anti Air Gun hit chance
 	ANTI_AIR_ATTACK_TO_DAMAGE_REDUCTION_FACTOR = 0.75,	-- Balancing value to convert equipment stat anti_air_attack to the damage reduction modifier apply to incoming air attacks against units with AA.
 	ANTI_AIR_MAXIMUM_DAMAGE_REDUCTION_FACTOR = 0.7,	-- Maximum damage reduction factor applied to incoming air attacks against units with AA.
 	AIR_DEPLOYMENT_DAYS = 0,							-- Days to deploy one air wing
@@ -1655,7 +1656,7 @@ NAir = {
 	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_DEFAULT = 1,	-- Default how much efficiency to regain per day. Gain applied hourly.
 	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_CAS = 0.888,				-- How much efficiency to regain per day. Gain applied hourly.
 	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_NAVAL_BOMBER = 0.192,		-- How much efficiency to regain per day. Gain applied hourly.
-	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_TACTICAL_BOMBER = 0.100,	-- How much efficiency to regain per day. Gain applied hourly.
+	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_TACTICAL_BOMBER = 0.148,	-- How much efficiency to regain per day. Gain applied hourly.
 	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_FIGHTER = 0.888,			-- How much efficiency to regain per day. Gain applied hourly.
 	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_STRATEGIC_BOMBER = 0.036,	-- How much efficiency to regain per day. Gain applied hourly.
 
@@ -4303,6 +4304,7 @@ NOperatives = {
 	MAX_OPERATIVE_SLOT_FROM_AGENCY_UPGRADES = 2,	-- max operative slots gained from upgrades
 	AGENCY_OPERATIVE_RECRUITMENT_TIME = 30,			-- Number of days to wait to have operative to recruit when an operative slot first becomes available
 	BECOME_SPYMASTER_PP_COST = 50,					-- Number of political power used to become Spy Master
+	BECOME_SPYMASTER_FI_COST = 1,					-- Faction initiative used to become Spy Master (only with faction dlc)
 	BECOME_SPYMASTER_MIN_UPGRADES = 4,				-- Number of agency upgrades you need before becoming Spy Master
 	BASE_COUNTER_INTELLIGENCE_RATING = 0.0,					-- Base national counter intelligence rating for all countries
 	AGENCY_DEFENSE_EFFECT_ON_HOSTILE_ACTION_COST = 0.2,			-- Defense factor that is responsible for multiplying the cost hostile actions against our country by its level and this value
@@ -4926,7 +4928,7 @@ NIntel = {
 },
 NDoctrines = {
         DEFAULT_REWARD_MASTERY = 80.0,                         -- How much mastery is required for unlocking a doctrine reward, if no override is set
-        BASE_MASTERY_GAIN_TARGET_MANPOWER = 40000.0,           -- Beyond this amount of manpower contributing to mastery, mastery gain will start having diminishing returns (see doctrines documentation)
+        BASE_MASTERY_GAIN_TARGET_MANPOWER = 35000.0,           -- Beyond this amount of manpower contributing to mastery, mastery gain will start having diminishing returns (see doctrines documentation)
         TRAINING_MASTERY_GAIN_FACTOR = 0,                     -- How much training contributes to doctrine mastery relative to combat/missions
         MAX_MONTHLY_MASTERY_GAIN = 25.0,                        -- Monthly mastery gain will not exceed this value
         MIN_MASTERY_GAIN_PER_DAY = 0.0,                         -- If we have any mastery gain, it will be boosted to be at least this much per day (lower cap)

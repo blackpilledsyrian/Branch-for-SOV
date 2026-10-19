@@ -416,6 +416,7 @@ technologies = {
            	create_equipment_variant = {
 				name = "Cruiser Mk.III"
 				type = light_tank_chassis_1937
+				model = "MFU_commonwealth_gfx_light_armor_entity"
 				parent_version = 0
 				modules = {
 				main_armament_slot = tank_small_cannon_2
@@ -507,6 +508,7 @@ technologies = {
 				create_equipment_variant = {
 					name = "Cruiser Mk.V Covenanter"
 					type = light_tank_chassis_1940
+					model = "MFU_commonwealth_gfx_medium_armor_entity"
 					parent_version = 0
 					modules = {
 					main_armament_slot = tank_small_cannon_2
@@ -531,6 +533,7 @@ technologies = {
 				create_equipment_variant = {
 					name = "Cruiser Mk.V Covenanter"
 					type = light_tank_chassis_1940
+					model = "MFU_commonwealth_gfx_medium_armor_entity"
 					parent_version = 0
 					modules = {
 					main_armament_slot = tank_small_cannon_2
@@ -682,6 +685,7 @@ technologies = {
            	create_equipment_variant = {
 				name = "Cruiser Mk.I"
 				type = medium_tank_chassis_1936
+				model = "MFU_commonwealth_gfx_medium_armor_entity"
 				parent_version = 0
 				modules = {
 				main_armament_slot = tank_small_cannon_2
@@ -811,6 +815,7 @@ technologies = {
            	create_equipment_variant = {
 				name = "Cruiser Mk.V Crusader"
 				type = medium_tank_chassis_1940
+				model = "MFU_commonwealth_gfx_medium_armor_entity"
 				parent_version = 0
 				modules = {
 				main_armament_slot = tank_small_cannon_2
@@ -872,6 +877,7 @@ technologies = {
            	create_equipment_variant = {
 				name = "Cruiser Mk.VIII Cromwell"
 				type = medium_tank_chassis_1942
+				model = "MFU_ENG_medium_armor_1_entity"
 				parent_version = 0
 				modules = {
 				main_armament_slot = tank_medium_cannon_2
@@ -1222,6 +1228,7 @@ technologies = {
            	create_equipment_variant = {
 				name = "Churchill Mk.I"
 				type = heavy_tank_chassis_1942
+				model = "MFU_commonwealth_gfx_heavy_armor_entity"
 				parent_version = 0
 				modules = {
 				main_armament_slot = tank_small_cannon_2
@@ -1839,10 +1846,10 @@ technologies = {
 		}
 		folder = {
 			name = nsb_uk_armor_folder
-			position = { x = 12 y = @1941 }
+			position = { x = 12 y = @1940 }
 		}
 		research_cost = 1.5
-		start_year = 1941
+		start_year = 1940
 		
 		categories = {
 			motorized_equipment
@@ -1862,11 +1869,11 @@ technologies = {
 		}
 		folder = {
 			name = nsb_uk_armor_folder
-			position = { x = 12 y = @1943 }
+			position = { x = 12 y = @1942 }
 		}
 		
 		research_cost = 1.5
-		start_year = 1943
+		start_year = 1942
 		
 		
 		categories = {

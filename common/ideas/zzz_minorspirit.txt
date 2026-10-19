@@ -1,0 +1,22 @@
+ideas = {
+	country = {
+		minor_air_and_navy_production_spirit = {
+			picture = GFX_idea_generic_air
+			
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				ship_hull_submarine = {
+					build_cost_ic = 1000 instant = yes
+				}
+				suicide = {
+					build_cost_ic = 1000 instant = yes
+				}
+			}
+		}	
+	}
+}		

@@ -65,13 +65,29 @@ division_template = {
 	regiments = {
 		light_armor = { x = 0 y = 0 }
 		light_armor = { x = 0 y = 1 }
-		motorized = { x = 1 y = 0 }		   # added motorized not to make it a death trap
-		motorized = { x = 1 y = 1 }
-		motorized = { x = 1 y = 2 }
+		light_armor = { x = 0 y = 2 }
+		
+		armored_car = { x = 1 y = 0 }
+		armored_car = { x = 1 y = 1 }
+		armored_car = { x = 1 y = 2 }
+		
+		motorized = { x = 2 y = 0 }
+	   	motorized = { x = 2 y = 1 }
+		
+		motorized = { x = 3 y = 0 }
+		motorized = { x = 3 y = 1 }
+		motorized = { x = 3 y = 2 }
+
+		motorized = { x = 4 y = 0 }
+		motorized = { x = 4 y = 1 }
+		anti_tank_brigade_mot = { x = 4 y = 2 }
+		anti_air_mot = { x = 4 y = 3 }
 	}
 	support = {
-		recon = { x = 0 y = 0 }
+		artillery = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 } 
 	}
+
 	priority = 2
 }
 
@@ -129,7 +145,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.3
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -137,14 +153,14 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
 		name = "Divizia 11 Infanterie"
 		location = 9617
 		division_template = "Divizia Infanterie"
-		start_experience_factor = 0.2
+		start_experience_factor = 0.5
 		
 
 	}
@@ -153,7 +169,7 @@ units = {
 		location = 9617
 		division_template = "Cavalerie Brigada"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 
@@ -162,14 +178,14 @@ units = {
 		name = "Divizia 1 Infanterie de Garda"
 		location = 9617
 		division_template = "Divizia Infanterie"			# Guards division: elite, latest equipment
-		start_experience_factor = 0.6
+		start_experience_factor = 0.85
 	}
 	division = {
 		name = "Divizia 9 Infanterie"
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -181,19 +197,19 @@ units = {
 
 	}
 	division = {
-		name = "1 Cavalerie Brigada"
-		location = 9617
-		division_template = "Cavalerie Brigada"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
-
-	}
-	division = {
 		name = "1 Blindata Regimentul"
 		location = 9617
 		division_template = "Blindata Regimentul"
 		start_experience_factor = 0.3
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
+
+	}
+	division = {
+		name = "2 Blindata Regimentul"
+		location = 9617
+		division_template = "Blindata Regimentul"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.85
 
 	}
 
@@ -204,7 +220,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -212,7 +228,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -220,7 +236,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 
@@ -230,7 +246,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -238,7 +254,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -254,7 +270,7 @@ units = {
 		location = 9617
 		division_template = "Cavalerie Brigada"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 
@@ -264,7 +280,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -272,7 +288,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -280,7 +296,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 
@@ -290,7 +306,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -298,7 +314,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -306,7 +322,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -314,7 +330,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -322,7 +338,7 @@ units = {
 		location = 9617
 		division_template = "Cavalerie Brigada"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 
@@ -332,7 +348,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -340,7 +356,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -348,7 +364,7 @@ units = {
 		location = 9617
 		division_template = "Divizia Infanterie"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 
@@ -358,7 +374,7 @@ units = {
 		location = 9617
 		division_template = "Munte Brigada"
 		start_experience_factor = 0.3
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -366,7 +382,7 @@ units = {
 		location = 9617
 		division_template = "Munte Brigada"
 		start_experience_factor = 0.3
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -374,7 +390,7 @@ units = {
 		location = 9617
 		division_template = "Munte Brigada"
 		start_experience_factor = 0.3
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 	division = {
@@ -382,7 +398,7 @@ units = {
 		location = 9617
 		division_template = "Munte Brigada"
 		start_experience_factor = 0.3
-		start_equipment_factor = 0.75
+		start_equipment_factor = 0.85
 
 	}
 

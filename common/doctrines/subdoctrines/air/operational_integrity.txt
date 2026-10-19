@@ -92,7 +92,12 @@ dogfighting_experience = {
             mastery = 160
             air_superiority_efficiency = 0.05
             air_mission_efficiency = 0.075
-            air_maximum_speed_factor = 0.05
+            category_fighter = {
+                maximum_speed = 0.05
+            }
+            category_heavy_fighter = {
+                maximum_speed = 0.05
+            }
         }
         dogfighting_experience_mastery2 = {
             mastery = 160
@@ -173,7 +178,12 @@ air_skirmish_doc = {
     rewards = {
 		air_skirmish_doc_mastery = {
             air_wing_xp_loss_when_killed_factor = -0.1
-            air_maximum_speed_factor = 0.1
+            category_fighter = {
+                maximum_speed = 0.05
+            }
+            category_heavy_fighter = {
+                maximum_speed = 0.05
+            }
         }
         air_skirmish_doc_mastery2 = {
             air_defence_factor = 0.05
@@ -181,7 +191,12 @@ air_skirmish_doc = {
         }
         air_skirmish_doc_mastery3 = {
             air_defence_factor = 0.05
-            air_maximum_speed_factor = 0.15
+            category_fighter = {
+                maximum_speed = 0.05
+            }
+            category_heavy_fighter = {
+                maximum_speed = 0.05
+            }
         }
     }	
 }
@@ -350,7 +365,7 @@ assault_sweeps = {
     }
 
     # EFFECTS
-    air_cas_efficiency = 0.05
+    air_cas_efficiency = 0.10
     air_cas_present_factor = 0.1
 
     rewards = {
@@ -359,7 +374,7 @@ assault_sweeps = {
                 air_agility = 0.1
                 air_defence = 0.05
             }
-            tac_bomber = {
+            category_tac_bomber = {
                 air_agility = 0.1
                 air_defence = 0.05
             }
@@ -398,11 +413,13 @@ keypoint_bombing = {
 
     rewards = {
 		keypoint_bombing_mastery = {
-            railway_gun_bombardment_factor = 0.15
+            ground_attack_factor = 0.10
+            air_cas_efficiency = 0.05
         }
         keypoint_bombing_mastery2 = {
-            air_mission_efficiency = 0.05
+            air_cas_efficiency = 0.05
             naval_strike_targetting_factor = 0.05
+
 
         }
         keypoint_bombing_mastery3 = {
@@ -439,17 +456,18 @@ logistics_bombing = {
     category_cas = {
         air_ground_attack = 0.2
     }
-    tac_bomber = {
+    category_tac_bomber = {
         air_ground_attack = 0.2
     }
 
     rewards = {
 		logistics_bombing_mastery = {
             air_strategic_bomber_bombing_factor = 0.1
+            air_mission_efficiency = 0.05
         }
         logistics_bombing_mastery2 = {
             port_strike = 0.5
-            air_range_factor = 0.05
+            air_range_factor = 0.1
         }
         logistics_bombing_mastery3 = {
             air_escort_efficiency = 0.05
@@ -541,13 +559,14 @@ close_escort = {
     
     category_tac_bomber = {
         air_agility = 0.15
-        air_defence = 0.1
+        air_defence = 0.10
 
     }
     category_cas = {
         air_agility = 0.15
-        air_defence = 0.1
+        air_defence = 0.10
     }
+    air_cas_efficiency = 0.05
 
 
     rewards = {
@@ -561,6 +580,10 @@ close_escort = {
                 naval_strike_attack = 0.1
                 air_agility = 0.15
             }
+            category_cas = {
+                naval_strike_attack = 0.1
+                air_ground_attack = 0.05
+    }
 
         }
         close_escort_mastery2 = {
@@ -573,7 +596,7 @@ close_escort = {
                 air_agility = 0.1
                 air_defence = 0.1
             }
-            
+            air_cas_efficiency = 0.05
         }
     }	
 }
